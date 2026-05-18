@@ -17,7 +17,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 _BASE     = os.path.dirname(os.path.abspath(__file__))
 JSON_DIR  = os.path.join(_BASE, 'JSON')
-OUT_DIR   = os.path.join(_BASE, 'site')
+OUT_DIR   = os.path.join(_BASE, 'docs')
 SITE_NAME = '学習ポータル'
 
 GROUPS = {
