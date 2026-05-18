@@ -30,7 +30,7 @@ web-hakubyo/
 │   ├── Photoshop___Illusrator_実践演習_articles.json
 │   └── The_復習_articles.json
 │
-└── site/                  # 生成された静的サイト（デプロイ対象）
+└── docs/                  # 生成された静的サイト（デプロイ対象）
     ├── index.html          # トップページ（ブログ一覧）
     ├── style.css           # 共通スタイル
     ├── search.html         # 全文検索ページ
@@ -62,7 +62,7 @@ web-hakubyo/
 
 ### download_images.py
 - **役割**: JSONのcontent_html内の画像URLをダウンロード
-- **出力先**: `site/images/`
+- **出力先**: `docs/images/`
 - **マッピング**: URL → ローカルファイル名を `image-map.json` に保存
 - **並列数**: 8スレッド、タイムアウト20秒
 - **再実行**: 既存ファイルはスキップ（冪等）
@@ -70,7 +70,7 @@ web-hakubyo/
 ### generate_site.py
 - **役割**: JSON + image-map.json からHTMLサイトを生成
 - **生成内容**:
-  - `site/index.html`（ポータルトップ）
+  - `docs/index.html`（ポータルトップ）
   - 各ブログの `index.html`（記事一覧）
   - 各記事の個別HTMLファイル
   - `search-index.json`（検索用）
@@ -100,9 +100,9 @@ web-hakubyo/
     ↓ hatena_scraper.js（Chromeコンソール）
 [JSON/*.json]
     ↓ download_images.py
-[site/images/ + image-map.json]
+[docs/images/ + image-map.json]
     ↓ generate_site.py
-[site/ 静的HTML完成]
+[docs/ 静的HTML完成]
     ↓ GitHub Push → デプロイ
 [公開URL]
 ```
@@ -113,7 +113,7 @@ web-hakubyo/
 
 ### 採用: GitHub Pages（無料）
 - **理由**: 静的サイトのみ、更新頻度低い、無料枠で十分
-- **公開ソース**: リポジトリの `site/` フォルダ
+- **公開ソース**: リポジトリの `docs/` フォルダ
 - **画像**: Git に含める（各ファイル 100MB 以下、合計 218MB → Pages 1GB 制限内）
 - **自動反映**: `git push` だけで更新完了（CI/CD 不要）
 
@@ -128,12 +128,12 @@ git remote add origin https://github.com/{ユーザー名}/{リポジトリ名}.
 git push -u origin main
 
 # 3. GitHub → Settings → Pages → Source: Deploy from branch
-#    Branch: main / Folder: /site → Save
+#    Branch: main / Folder: /docs → Save
 ```
 
 ### 更新時
 ```bash
-git add site/
+git add docs/
 git commit -m "update articles"
 git push
 ```
@@ -148,15 +148,15 @@ git push
 ```python
 # 現状（Desktopを参照 → 動かない）
 JSON_DIR = r'c:\Users\user\Desktop\web-hakubyo\JSON'
-OUT_DIR  = r'c:\Users\user\Desktop\web-hakubyo\site'
+OUT_DIR  = r'c:\Users\user\Desktop\web-hakubyo\docs'
 
 # 実際のプロジェクトパス
 JSON_DIR = r'c:\iino\web-hakubyo\JSON'
-OUT_DIR  = r'c:\iino\web-hakubyo\site'
+OUT_DIR  = r'c:\iino\web-hakubyo\docs'
 ```
 → スクリプト実行前に修正必須
 
 ### sass/ ディレクトリ
-`site/sass/` は手動作成されたもの。  
+`docs/sass/` は手動作成されたもの。  
 `generate_site.py` の BLOGS リストに含まれていないため、サイト再生成しても上書きされないが、  
 `index.html` には自動リンクされない。手動でトップページに追加が必要。
