@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>超入門問題（テンプレートリテラル編） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>超入門問題（テンプレートリテラル編）</span>
+  </div>
+  <div class="article-head">
+    <h1>超入門問題（テンプレートリテラル編）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">演習課題</span>
+      <span class="date">2025/10/06</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="prompt--テンプレートリテラル編">prompt() + テンプレート<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EA%A5%C6%A5%E9%A5%EB">リテラル</a>編</h4>
+    
+<ul>
+<li>入力と出力の練習</li>
+<li>prompt() で入力を受け取る</li>
+<li>文字列 → 数値の変換</li>
+<li>テンプレート<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EA%A5%C6%A5%E9%A5%EB">リテラル</a>（``）バッククォートで囲む文字列で出力</li>
+</ul>
+<div class="section">
+    <h5 id="実行環境">実行環境</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a> Playground</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fplaycode.io%2Fjavascript" title="JavaScript Playground" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://playcode.io/javascript">playcode.io</a></cite></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="第1問名前を入力してあいさつしよう">第1問：名前を入力してあいさつしよう</h5>
+    <p></p><h6 id="問題">【問題】</h6><p></p>
+
+<ul>
+<li>ユーザーに名前を入力してもらい、「こんにちは、〇〇さん！」と表示してください。</li>
+</ul><p></p><h6 id="ヒント">【ヒント】</h6><p></p>
+
+<ul>
+<li>prompt() を使うと入力を受け取れます。</li>
+</ul><p></p><h6 id="解答例">【解答例】</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"あなたの名前を教えてください："</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`こんにちは、</span><span class="synSpecial">${</span>name<span class="synSpecial">}</span><span class="synConstant">さん！`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="第2問好きな食べ物を聞こう">第2問：好きな食べ物を聞こう</h5>
+    <p></p><h6 id="問題-1">【問題】</h6><p></p>
+
+<ul>
+<li>ユーザーに「好きな食べ物」を聞いて、「あなたの好きな食べ物は〇〇ですね！」と表示してください。</li>
+</ul><p></p><h6 id="解答例-1">【解答例】</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> food <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"好きな食べ物は何ですか？"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`あなたの好きな食べ物は</span><span class="synSpecial">${</span>food<span class="synSpecial">}</span><span class="synConstant">ですね！`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="第3問年齢を聞いて来年の年齢を出そう">第3問：年齢を聞いて来年の年齢を出そう</h5>
+    <p></p><h6 id="問題-2">【問題】</h6><p></p>
+
+<ul>
+<li>ユーザーに年齢を聞いて、「来年は〇歳ですね」と表示してください。</li>
+</ul><p></p><h6 id="ヒント-1">【ヒント】</h6><p></p>
+
+<ul>
+<li>入力された値は文字列なので、計算の前に数値に変換します。</li>
+</ul><p>　→ Number() を使います。（小数点、負の数も含む）<br>
+　→整数化（切り捨て）の場合は、parseInt()を使います。</p><p></p><h6 id="解答例-2">【解答例】</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> age <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"あなたの年齢を教えてください："</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+age <span class="synStatement">=</span> <span class="synStatement">parseInt</span><span class="synSpecial">(</span>age<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`来年は</span><span class="synSpecial">${</span>age <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synSpecial">}</span><span class="synConstant">歳ですね`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="第4問商品の合計金額を計算しよう">第4問：商品の合計金額を計算しよう</h5>
+    <p></p><h6 id="問題-3">【問題】</h6><p></p>
+
+<ul>
+<li>ユーザーに「商品価格」と「個数」を入力してもらい、「合計金額は〇〇円です」と表示してください。</li>
+</ul><p></p><h6 id="解答例-3">【解答例】</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> price <span class="synStatement">=</span> <span class="synStatement">parseInt</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"商品の価格を入力してください："</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">const</span> count <span class="synStatement">=</span> <span class="synStatement">parseInt</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"購入する個数を入力してください："</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`合計金額は</span><span class="synSpecial">${</span>price <span class="synStatement">*</span> count<span class="synSpecial">}</span><span class="synConstant">円です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="第5問簡単な自己紹介を作ろう">第5問：簡単な自己紹介を作ろう</h5>
+    <p></p><h6 id="問題-4">【問題】</h6><p></p>
+
+<ul>
+<li>ユーザーに名前・年齢・出身地を入力してもらい、「私は〇〇です。〇歳で、〇〇出身です。」と表示してください。</li>
+</ul><p></p><h6 id="解答例-4">【解答例】</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"あなたの名前を教えてください："</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> age <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"あなたの年齢を教えてください："</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> place <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"あなたの出身地を教えてください："</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`私は</span><span class="synSpecial">${</span>name<span class="synSpecial">}</span><span class="synConstant">です。</span><span class="synSpecial">${</span>age<span class="synSpecial">}</span><span class="synConstant">歳で、</span><span class="synSpecial">${</span>place<span class="synSpecial">}</span><span class="synConstant">出身です。`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ダイアログボックスを使った記述.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ダイアログボックスを使った記述</span></a><a href="演算子（operator）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">演算子（operator）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

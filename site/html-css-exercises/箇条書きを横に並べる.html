@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箇条書きを横に並べる - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>箇条書きを横に並べる</span>
+  </div>
+  <div class="article-head">
+    <h1>箇条書きを横に並べる</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング演習</span>
+      <span class="date">2025/12/18</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="箇条書きを横に並べる">箇条書きを横に並べる</h4>
+    
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>初心者が２カラムを理解するためのシンプルなレイアウトを作成して </p>
+
+<ul>
+<li>ロゴは中央揃え </li>
+<li>ロゴ下にnavを５個長方形の横個並び </li>
+<li>メインビジュアルの下に「main」と「aside」を配置 </li>
+<li>footerは、幅100%・背景色：黒色</li>
+</ul>
+    </blockquote>
+<p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260301165255.jpg" width="600" height="271" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code" data-lang="" data-unlink="">[ ロゴ（中央） ]
+[ nav ×5（横並び） ]
+[ メインビジュアル ]
+[ main | aside ]   ← 2カラム
+[ footer（黒・100%） ]</pre>
+<div class="section">
+    <h5 id="完成例">完成例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260301193710.jpg" width="680" height="577" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>本来「２カラムレイアウト」は、ブログ（CMS）のようにデータベースの更新にともなう表示の更新に向いています</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="ワイヤーフレーム">ワイヤーフレーム</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250412143128.jpg" width="600" height="602" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="制作ポイント">制作ポイント</h5>
+    
+<ul>
+<li>コンテンツをブラウザの左右中央に配置</li>
+<li>ナビゲーション・ボタンを横並び（均等割）</li>
+<li>文章構造（mainとaside）を横並び</li>
+<li>main内のdl（dtとdd）を横並び</li>
+</ul><p></p><h6 id="main-タグ"> main タグ</h6><p></p>
+
+<ul>
+<li>body 内に、１回のみ設定</li>
+<li>main 直下に見出しは不要</li>
+</ul><p></p><h6 id="aside-タグ"> aside タグ</h6><p></p>
+
+<ul>
+<li>主要な内容と間接的な関係しかない記事に設定（asideがなくても、mainの内容のみでテーマを伝えることが可能）</li>
+</ul><p></p><h6 id="nav-タグ"> nav タグ</h6><p></p>
+
+<ul>
+<li>ナビゲーションリンクの主要なブロックのみに用います（グローバルナビゲーションにのみ設定）</li>
+<li>現在このような長方形型ボタンは、積極的には採用されてはいません</li>
+</ul><p></p><h6 id="time-タグ"> time タグ</h6><p></p>
+
+<ul>
+<li>特に「ブログ」のような「投稿時間」と数字を連携させる場合は必須</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FHTML%2FReference%2FElements%2Ftime" title="&lt;time&gt;: （日付）時刻要素 - HTML | MDN" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements/time">developer.mozilla.org</a></cite></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="テキスト">テキスト</h5>
+    
+<ul>
+<li>架空バンドのポートフォリオサイト</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink="">GROOVE’S
+MENU
+
+NEWS
+
+PROFILE
+
+DISCOGRAPHY
+
+MEDIA / LIVE
+
+CONTACT
+
+TOPICS
+
+2025.12.30
+MUSIC AWARDS グランプリ受賞！
+
+2025.09.12
+【重要】チケット発送料金の変更について
+
+2025.08.02
+勝手ながら、8月12日〜16日まで夏期休暇とさせていただきます。
+
+2025.02.01
+JAPAN TOUR 応募について
+
+EVENT / LIVE
+
+WORLD TOUR
+2025.05.01 〜 05.05
+
+YouTubeチャンネル開設
+2025.04.01
+
+© GROOVE’S Web
+</pre>
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="indexhtml">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>GROOVE’S<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synComment">&lt;!-- header --&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"logo"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/logo.png"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"GROOVE’S"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">nav</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"gnav"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">NEWS</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">PROFILE</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">DISCOGRAPHY</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">MEDIA / LIVE</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">CONTACT</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+  <span class="synComment">&lt;!-- /header --&gt;</span>
+
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"key-Visual"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/kv.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /key-Visual --&gt;</span>
+
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"wrapper"</span><span class="synIdentifier">&gt;</span>
+    <span class="synComment">&lt;!-- main --&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"news"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>TOPICS<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">time</span><span class="synIdentifier"> </span><span class="synType">datetime</span><span class="synIdentifier">=</span><span class="synConstant">"2025-12-30"</span><span class="synIdentifier">&gt;</span>2025.12.30<span class="synIdentifier">&lt;/</span><span class="synStatement">time</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>MUSIC AWARDS グランプリ受賞！<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">time</span><span class="synIdentifier"> </span><span class="synType">datetime</span><span class="synIdentifier">=</span><span class="synConstant">"2025-09-12"</span><span class="synIdentifier">&gt;</span>2025.09.12<span class="synIdentifier">&lt;/</span><span class="synStatement">time</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>【重要】チケット発送料金の変更について<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">time</span><span class="synIdentifier"> </span><span class="synType">datetime</span><span class="synIdentifier">=</span><span class="synConstant">"2025-08-02"</span><span class="synIdentifier">&gt;</span>2025.08.02<span class="synIdentifier">&lt;/</span><span class="synStatement">time</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>勝手ながら、8月12日〜16日まで夏期休暇とさせていただきます。<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">time</span><span class="synIdentifier"> </span><span class="synType">datetime</span><span class="synIdentifier">=</span><span class="synConstant">"2025-02-01"</span><span class="synIdentifier">&gt;</span>2025.02.01<span class="synIdentifier">&lt;/</span><span class="synStatement">time</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>JAPAN TOUR 応募について<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.news --&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+    <span class="synComment">&lt;!-- /main --&gt;</span>
+
+    <span class="synComment">&lt;!-- /sidebar --&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">aside</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"sidebar"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>EVENT / LIVE<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"event"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">WORLD TOUR</span><span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">2025.05.01〜05.05</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">YouTubeチャンネル開設</span><span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">2025.04.01</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">aside</span><span class="synIdentifier">&gt;</span>
+    <span class="synComment">&lt;!-- /sidebar --&gt;</span>
+
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.wrapper --&gt;</span>
+
+  <span class="synComment">&lt;!-- footer --&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"footer"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">small</span><span class="synIdentifier">&gt;</span><span class="synSpecial">&amp;copy;</span> GROOVE’S Web<span class="synIdentifier">&lt;/</span><span class="synStatement">small</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+  <span class="synComment">&lt;!-- /footer --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ロゴ">ロゴ</h6><p></p>
+
+<ul>
+<li>以下の画像を「名前をつけて保存」する</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250412144559.png" width="200" height="82" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="背景画像">背景画像</h6><p></p>
+
+<ul>
+<li>以下の画像を「名前をつけて保存」する</li>
+<li>背景画像「パターン」は、Illustratorの初期を「グレースケール」に変換後「彩度」を低くした</li>
+</ul><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250412143514.jpg" width="1326" height="137" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="ナビゲーションの設定">ナビゲーションの設定</h5>
+    <p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250413184131.jpg" width="680" height="118" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><h6 id="幅の計算">幅の計算</h6><p></p>
+
+<ul>
+<li>calc() 関数は、計算式の結果を CSS プロパティの値として使用されます</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FCSS%2Fcalc" title="calc() - CSS | MDN" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://developer.mozilla.org/ja/docs/Web/CSS/calc">developer.mozilla.org</a></cite></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.gnav</span> <span class="synStatement">li</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synIdentifier">calc(</span><span class="synConstant">100% / 5</span><span class="synIdentifier">)</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">50px</span>;  <span class="synComment">/* ボタンの高さを指定 */</span>
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="wrapper-の指定">.wrapper の指定</h6><p></p>
+
+<ul>
+<li>「display: flex;」で、横並び</li>
+<li>「gap: 40px;」で空きを指定（「justify-content: space-between;」を設定すると、この空きが可変になります）</li>
+<li>「gap: 40px;」を固定値で指定した場合、「main」「aside」は足して「100％」にすると、gapの値を引いて計算しなくても自動的に割合を計算して表示されます</li>
+</ul><p></p><h6 id="stylecss">style.css</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span><span class="synSpecial">,</span> <span class="synStatement">li</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">#222</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">960px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.wrapper</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  gap: <span class="synConstant">40px</span>;
+  <span class="synType">margin-bottom</span>: <span class="synConstant">30px</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">0</span> <span class="synConstant">30px</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  nav</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synIdentifier">.gnav</span>  <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.gnav</span> <span class="synSpecial">&gt;</span> <span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.gnav</span> <span class="synStatement">li</span> <span class="synIdentifier">{</span>
+      <span class="synType">width</span>: <span class="synIdentifier">calc(</span><span class="synConstant">100% / 5</span><span class="synIdentifier">)</span>;
+      <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+      <span class="synType">line-height</span>: <span class="synConstant">50px</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.gnav</span> <span class="synStatement">li</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+      <span class="synType">display</span>: <span class="synConstant">block</span>;
+      <span class="synType">border-right</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#666</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.gnav</span> <span class="synStatement">li</span>:<span class="synPreProc">first-child</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+      <span class="synType">border-left</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#666</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.gnav</span> <span class="synStatement">li</span> <span class="synStatement">a</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+      <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+      <span class="synType">background-color</span>: <span class="synConstant">#879ba5</span>;
+    <span class="synIdentifier">}</span>
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  key-Visual</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synIdentifier">.key-Visual</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">30px</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">---------------------------------- */</span>
+  <span class="synIdentifier">.main</span> <span class="synIdentifier">{</span>
+    <span class="synType">width</span>: <span class="synConstant">70%</span>;
+  <span class="synIdentifier">}</span>
+
+  <span class="synComment">/* ------- section.news ------- */</span>
+  <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">16px</span>;
+    <span class="synType">padding</span>: <span class="synConstant">16px</span>;
+    <span class="synType">background</span>: 
+    <span class="synIdentifier">url(</span><span class="synConstant">../img/h2_bg.jpg</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synConstant">center</span> <span class="synConstant">center</span> / <span class="synConstant">cover</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">18px</span>;
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.news</span> <span class="synStatement">dl</span> <span class="synIdentifier">{</span>
+      <span class="synType">display</span>: <span class="synConstant">flex</span>;
+      <span class="synType">flex-wrap</span>: <span class="synConstant">wrap</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.news</span> <span class="synStatement">dt</span> <span class="synIdentifier">{</span>
+      <span class="synType">width</span>: <span class="synConstant">8em</span>;
+      <span class="synType">padding</span>: <span class="synConstant">16px</span> <span class="synConstant">0</span>;
+      <span class="synType">border-bottom</span>: <span class="synConstant">1px</span> <span class="synConstant">dashed</span> <span class="synConstant">#666</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.news</span> <span class="synStatement">dd</span> <span class="synIdentifier">{</span>
+      <span class="synType">width</span>: <span class="synIdentifier">calc(</span><span class="synConstant">100% - 8em</span><span class="synIdentifier">)</span>;
+      <span class="synType">padding</span>: <span class="synConstant">16px</span> <span class="synConstant">0</span>;
+      <span class="synType">border-bottom</span>: <span class="synConstant">1px</span> <span class="synConstant">dashed</span> <span class="synConstant">#666</span>;
+    <span class="synIdentifier">}</span>
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  aside</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synIdentifier">.sidebar</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">30%</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.event</span> <span class="synStatement">li</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">18px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">8px</span>;
+  <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">dotted</span> <span class="synConstant">#999</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">14px</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.6</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.event</span> <span class="synStatement">li</span>::<span class="synPreProc">first-line</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">18px</span>;
+    <span class="synType">font-weight</span>: <span class="synConstant">bold</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synIdentifier">.footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">30px</span> <span class="synConstant">0</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">14px</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ポートフォリオ（架空）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ポートフォリオ（架空）</span></a><a href="Butter Crumb（１カラム）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">Butter Crumb（１カラム）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

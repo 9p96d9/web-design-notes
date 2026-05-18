@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【003】計算結果をコンソールに表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【003】計算結果をコンソールに表示</span>
+  </div>
+  <div class="article-head">
+    <h1>【003】計算結果をコンソールに表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">四則演算</span>
+      <span class="date">2026/01/03</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="003計算結果をコンソールに表示">【003】計算結果をコンソールに表示</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227084131.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで四則演算の問題を５問作成して </p>
+
+<ul>
+<li>変数を利用しないで</li>
+</ul>
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="学習ポイント">学習ポイント</h4>
+    
+<table>
+    <tbody><tr>
+    <th> + </th>
+    <td>足し算</td>
+    </tr>
+    <tr>
+    <th> - </th>
+    <td>引き算</td>
+    </tr>
+    <tr>
+    <th> * </th>
+    <td>掛け算</td>
+    </tr>
+    <tr>
+    <th> / </th>
+    <td>割り算</td>
+    </tr>
+    <tr>
+    <th> () </th>
+    <td>計算の優先順位を変える</td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="問題足し算">問題①（足し算）</h5>
+    
+    <blockquote>
+        <p>15 + 27 を計算し、console.log に出力してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">15</span> <span class="synStatement">+</span> <span class="synConstant">27</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題引き算">問題②（引き算）</h5>
+    
+    <blockquote>
+        <p>100 − 58 を計算し、console.log に出力してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">100</span> <span class="synStatement">-</span> <span class="synConstant">58</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題掛け算">問題③（掛け算）</h5>
+    
+    <blockquote>
+        <p>12 × 7 を計算し、console.log に出力してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">12</span> <span class="synStatement">*</span> <span class="synConstant">7</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題割り算">問題④（割り算）</h5>
+    
+    <blockquote>
+        <p>144 ÷ 12 を計算し、console.log に出力してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">144</span> <span class="synStatement">/</span> <span class="synConstant">12</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題四則混合">問題⑤（四則混合）</h5>
+    
+    <blockquote>
+        <p>(8 + 4) × 3 − 6 ÷ 2 を計算し、console.log に出力してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">((</span><span class="synConstant">8</span> <span class="synStatement">+</span> <span class="synConstant">4</span><span class="synSpecial">)</span> <span class="synStatement">*</span> <span class="synConstant">3</span> <span class="synStatement">-</span> <span class="synConstant">6</span> <span class="synStatement">/</span> <span class="synConstant">2</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-剰余演算">🔹 剰余演算（%）</h4>
+    
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>剰余算の例も</p>
+
+    </blockquote>
+<p>「%」は、割り算したときの「余り」を求める演算子 です。</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">10</span> <span class="synStatement">%</span> <span class="synConstant">3</span>   <span class="synComment">// → 1</span>
+</pre><p>「10 ÷ 3 = 3 あまり 1」の意味</p>
+
+<div class="section">
+    <h5 id="問題">問題①</h5>
+    
+    <blockquote>
+        <p>9 ÷ 2 の余り を表示してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">9</span> <span class="synStatement">%</span> <span class="synConstant">2</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題-1">問題②</h5>
+    
+    <blockquote>
+        <p>25 ÷ 6 の余り を表示してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">25</span> <span class="synStatement">%</span> <span class="synConstant">6</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題-2">問題③</h5>
+    
+    <blockquote>
+        <p>30 ÷ 4 の余り を表示してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">30</span> <span class="synStatement">%</span> <span class="synConstant">4</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題-3">問題④</h5>
+    
+    <blockquote>
+        <p>100 ÷ 9 の余り を表示してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">100</span> <span class="synStatement">%</span> <span class="synConstant">9</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題応用">問題⑤（応用）</h5>
+    
+    <blockquote>
+        <p>(20 + 7) ÷ 5 の余り を表示してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">((</span><span class="synConstant">20</span> <span class="synStatement">+</span> <span class="synConstant">7</span><span class="synSpecial">)</span> <span class="synStatement">%</span> <span class="synConstant">5</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-剰余演算の重要な活用例">🔹 剰余演算の重要な活用例</h5>
+    <p></p><h6 id="-偶数奇数の判定">① 偶数・奇数の判定</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">10</span> <span class="synStatement">%</span> <span class="synConstant">2</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// 0 → 偶数</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">7</span> <span class="synStatement">%</span> <span class="synConstant">2</span><span class="synSpecial">)</span><span class="synStatement">;</span>   <span class="synComment">// 1 → 奇数</span>
+</pre><p>【ルール】</p>
+
+<ul>
+<li>2で割って余り0 → 偶数</li>
+<li>2で割って余り1 → 奇数</li>
+</ul><p></p><h6 id="-繰り返し処理の周期判定超重要">② 繰り返し処理の周期判定（超重要）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">1</span> <span class="synStatement">%</span> <span class="synConstant">3</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">2</span> <span class="synStatement">%</span> <span class="synConstant">3</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">3</span> <span class="synStatement">%</span> <span class="synConstant">3</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">4</span> <span class="synStatement">%</span> <span class="synConstant">3</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">5</span> <span class="synStatement">%</span> <span class="synConstant">3</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>【結果】</p>
+<pre class="code" data-lang="" data-unlink="">1
+2
+0
+1
+2</pre><p>➡ <strong>0,1,2 が繰り返される → ループ処理と相性抜群</strong></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【002】コンソールに表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【002】コンソールに表示</span></a><a href="【004】変数を使った四則演算結果をコンソールに表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【004】変数を使った四則演算結果をコンソールに表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

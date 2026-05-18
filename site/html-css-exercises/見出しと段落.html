@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>見出しと段落 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>見出しと段落</span>
+  </div>
+  <div class="article-head">
+    <h1>見出しと段落</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2025/12/06</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="見出しと段落">見出しと段落</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260221073622.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLの見出しと段落の関係について解説して</p>
+
+    </blockquote>
+<p>HTMLにおける見出し（heading）と段落（paragraph）の関係は、文書構造を正しく表現し、可読性・アクセシビリティ・SEOを高めるためにとても重要です。</p>
+
+</div>
+<div class="section">
+    <h4 id="1-見出しと段落の基本">1. 見出しと段落の基本</h4>
+    
+<div class="section">
+    <h5 id="見出しh1--h6">見出し（&lt;h1&gt; ～ &lt;h6&gt;）</h5>
+    
+<ul>
+<li>文書の構造（アウトライン）を作るための要素</li>
+<li>重要度の高い順に：</li>
+<li>&lt;h1&gt; → 最も重要な見出し（ページ全体のタイトル）</li>
+<li>&lt;h2&gt; → 大きな章</li>
+<li>&lt;h3&gt; → 小さな節</li>
+<li>...</li>
+<li>&lt;h6&gt; → 最も小さな見出し</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="段落p">段落（&lt;p&gt;）</h5>
+    
+<ul>
+<li><strong>文章のまとまり</strong>を表す要素</li>
+<li>見出しの<strong>説明・本文</strong>として使う</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="2-正しい構造の基本形">2. 正しい構造の基本形</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>HTMLの基本<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>見出しとは<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>見出しは文書の構造を表します。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>段落とは<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>段落は文章のまとまりを表します。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="構造イメージ">構造イメージ</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">HTMLの基本（h1）
+ ├ 見出しとは（h2）
+ │   └ 説明文（p）
+ └ 段落とは（h2）
+     └ 説明文（p）</pre>
+</div>
+<div class="section">
+    <h4 id="3-見出しと段落の関係性">3. 見出しと段落の関係性</h4>
+    <p></p><h6 id="基本ルール">基本ルール</h6>👉 「見出し → その説明として段落」<br>
+つまり：<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>トピック<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>このトピックについての説明文<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>という形が最も自然です。</p>
+
+</div>
+<div class="section">
+    <h4 id="4-良い例と悪い例">4. 良い例と悪い例</h4>
+    
+<ul>
+<li>✅ 見出しは順番を守る</li>
+<li>❌ いきなり飛ばさない</li>
+<li>✅ &lt;h1&gt;は基本1ページに1つ（特に &lt;header&gt;  内にある &lt;h1&gt; ）</li>
+<li>❌ デザイン目的で使わない（文字を大きくしたいだけなら CSS を使う）</li>
+</ul><p></p><h6 id="-良い例">✅ 良い例</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>犬の特徴<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>犬は人懐っこく、学習能力が高い動物です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>見出しと段落の意味が一致</li>
+<li>文書構造が明確</li>
+</ul><p></p><h6 id="-悪い例見出しレベルが飛ぶ">❌ 悪い例①：見出しレベルが飛ぶ</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>概要<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 <strong>h2 を飛ばすのはNG</strong><br>
+正しくは：</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>概要<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="-悪い例見出しだけで文章構造を作る">❌ 悪い例②：見出しだけで文章構造を作る</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>犬の特徴<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>犬は人懐っこく、学習能力が高い動物です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 見出しは文章を書く場所ではない<br>
+→ 段落（</p><p>）を使うべき</p><p></p><h6 id="p-の中に入れられないタグ重要"> &lt;p&gt; の中に入れられないタグ（重要）</h6><p></p>
+
+<ul>
+<li>&lt;p&gt; は ブロック要素を中に含められない</li>
+<li>✅ OKなもの（インライン要素）</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="5-SEOアクセシビリティの観点">5. SEO・アクセシビリティの観点</h4>
+    <p></p><h6 id="検索エンジンSEO">検索エンジン（SEO）</h6><p></p>
+
+<ul>
+<li>見出し構造を元にページ内容を理解</li>
+<li>正しい構造 → 検索順位向上に有利</li>
+</ul><p></p><h6 id="スクリーンリーダーアクセシビリティ">スクリーンリーダー（アクセシビリティ）</h6><p></p>
+
+<ul>
+<li>見出しを使って文章構造を把握</li>
+<li>適切な階層 → 視覚障害者にも読みやすい</li>
+</ul>
+<div class="section">
+    <h5 id="ありがちなNG例まとめ">ありがちなNG例まとめ</h5>
+    <p></p><h6 id="見た目は似てるけど-意味が全然違う">見た目は似てるけど 意味が全然違う</h6><p></p>
+
+<ul>
+<li>❌ 空の &lt;p&gt;</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>❌ デザイン目的だけの &lt;p&gt;</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>ただの箱<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>文章じゃないなら &lt;div&gt; を使う</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="head と body の違い.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">head と body の違い</span></a><a href="箇条書き.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">箇条書き</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

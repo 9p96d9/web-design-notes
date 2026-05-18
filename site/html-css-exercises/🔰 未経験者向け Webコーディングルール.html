@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔰 未経験者向け Webコーディングルール - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>🔰 未経験者向け Webコーディングルール</span>
+  </div>
+  <div class="article-head">
+    <h1>🔰 未経験者向け Webコーディングルール</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング演習</span>
+      <span class="date">2025/12/12</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="-未経験者向け-Webコーディングルール">🔰 未経験者向け Webコーディングルール</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260301131538.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>未経験者が作るWebページのコーディングルール</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="-ファイルフォルダ構成の基本">① ファイル・フォルダ構成の基本</h5>
+    <p>まずは 整理された構成 を作ることが超重要です。</p>
+<pre class="code" data-lang="" data-unlink="">project/
+ ├ index.html
+ ├ css/
+ │   └ style.css
+ ├ js/
+ │   └ script.js
+ └ img/</pre><p></p><h6 id="ルール">ルール</h6><p></p>
+
+<ul>
+<li>HTML / CSS / JS を分ける</li>
+<li>画像は必ず img フォルダに入れる</li>
+<li>ファイル名は 英小文字 + 単語区切りはハイフン</li>
+</ul><p>【例】main-visual.jpg, site-header.css</p>
+
+</div>
+<div class="section">
+    <h5 id="-HTMLの基本ルール">② HTMLの基本ルール</h5>
+    <p><strong>インデント（字下げ）を必ず揃える</strong></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>メニュー<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+</pre><p>→ 構造が一目で分かる = バグ防止</p><p></p><h6 id="正しいタグを使う意味を大切に">正しいタグを使う（意味を大切に）</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>目的</th>
+    <th>タグ</th>
+    </tr>
+    <tr>
+    <td> 見出し  </td>
+    <td> &lt;h1&gt;～&lt;h6&gt; </td>
+    </tr>
+    <tr>
+    <td> 段落   </td>
+    <td> &lt;p&gt;      </td>
+    </tr>
+    <tr>
+    <td> リスト  </td>
+    <td> &lt;ul&gt; &lt;li&gt; </td>
+    </tr>
+    <tr>
+    <td> ナビ   </td>
+    <td> &lt;nav&gt;     </td>
+    </tr>
+    <tr>
+    <td> ヘッダー </td>
+    <td> &lt;header&gt;  </td>
+    </tr>
+    <tr>
+    <td> フッター </td>
+    <td> &lt;footer&gt;  </td>
+    </tr>
+</tbody></table><p>❌ &lt;div&gt; ばかり使う → NG<br>
+⭕ 意味のあるタグを優先</p><p></p><h6 id="class名の付け方">class名の付け方</h6><strong>何の役割か分かる名前にする</strong><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main-visual"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"contact-form"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-CSSの基本ルール">③ CSSの基本ルール</h5>
+    <p></p><h6 id="CSSは必ず外部ファイルで管理">CSSは必ず外部ファイルで管理</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+</pre><p>❌ HTML内に直接書く<br>
+⭕ CSSファイルにまとめる</p><p></p><h6 id="上から大--小構成で書く">上から「大 → 小」構成で書く</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* 全体 */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{}</span>
+
+<span class="synComment">/* レイアウト */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{}</span>
+<span class="synIdentifier">.main</span> <span class="synIdentifier">{}</span>
+<span class="synIdentifier">.footer</span> <span class="synIdentifier">{}</span>
+
+<span class="synComment">/* 部品 */</span>
+<span class="synIdentifier">.btn</span> <span class="synIdentifier">{}</span>
+<span class="synIdentifier">.card</span> <span class="synIdentifier">{}</span>
+</pre><p></p><h6 id="数値の単位ルール">数値の単位ルール</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>用途</th>
+    <th>推奨</th>
+    </tr>
+    <tr>
+    <td> 文字サイズ </td>
+    <td> rem         </td>
+    </tr>
+    <tr>
+    <td> 余白    </td>
+    <td> px or rem </td>
+    </tr>
+    <tr>
+    <td> 幅     </td>
+    <td> % or px   </td>
+    </tr>
+</tbody></table><p><strong>まずは px でOK！</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-命名ルールclass名">④ 命名ルール（class名）</h5>
+    <p></p><h6 id="基本形役割--内容">基本形：役割 + 内容</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.header</span>
+<span class="synIdentifier">.header-logo</span>
+<span class="synIdentifier">.header-nav</span>
+<span class="synIdentifier">.main-visual</span>
+<span class="synIdentifier">.news-list</span>
+<span class="synIdentifier">.news-item</span>
+</pre><p><strong>誰が見ても意味が分かる名前が正解</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-コメントを必ず書く">⑤ コメントを必ず書く</h5>
+    <p></p><h6 id="HTML">HTML</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!-- ヘッダー --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">CSS</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* ===== ヘッダー ===== */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{}</span>
+</pre><p>→ <strong>後で見返したときの自分を助ける</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-コーディングの正しい手順">⑥ コーディングの正しい手順</h5>
+    
+<ol>
+<li>ワイヤーフレーム（簡単な構成図）を書く</li>
+<li>HTMLで構造を作る</li>
+<li>CSSでデザイン</li>
+<li>レスポンシブ対応</li>
+</ol><p><strong>最初からデザインしない！</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-初心者が必ず守るべき5大ルール">⑦ 初心者が必ず守るべき5大ルール</h5>
+    
+<ol>
+<li>インデントを揃える</li>
+<li>意味のあるタグを使う</li>
+<li>class名は分かりやすく</li>
+<li>CSSを整理して書く</li>
+<li>コメントを書く</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="-超おすすめ学習ステップ">⑧ 超おすすめ学習ステップ</h5>
+    <p></p><h6 id="-HTMLのみでページを完成させる">① HTMLのみでページを完成させる</h6>→ 構造理解<p></p><p></p><h6 id="-CSSで見た目を整える">② CSSで見た目を整える</h6>→ デザイン理解<p></p><p></p><h6 id="-レスポンシブ対応">③ レスポンシブ対応</h6>→ 実務レベル<p></p>
+
+</div>
+<div class="section">
+    <h5 id="-超初心者用-最小テンプレート">⑨ 超初心者用 最小テンプレート</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>サイトタイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>サイトタイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>本文<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"footer"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>© 2026<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="リンクを記述.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">リンクを記述</span></a><a href="HTML構造の練習（１カラムレイアウト理解）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">HTML構造の練習（１カラムレイアウト理解）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

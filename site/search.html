@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>検索 - 学習ポータル</title>
+<link rel="stylesheet" href="style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container search-results">
+  <div class="breadcrumb">
+    <a href="index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <span>検索</span>
+  </div>
+  <h2>記事を検索 &nbsp;<small id="result-count" style="font-size:13px;color:#64748b;font-weight:400"></small></h2>
+  <div style="margin: 16px 0 24px">
+    <input id="search-input" type="text" placeholder="キーワードを入力..."
+      style="width:100%;max-width:560px;padding:10px 16px;border:1px solid #e2e8f0;border-radius:8px;font-size:15px;outline:none">
+  </div>
+  <div id="search-results"></div>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="search.js"></script>
+
+</body>
+</html>

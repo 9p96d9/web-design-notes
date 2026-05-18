@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>透明とグラデーション - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>透明とグラデーション</span>
+  </div>
+  <div class="article-head">
+    <h1>透明とグラデーション</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/11/26</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="グラデーション">グラデーション</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611170200.jpg" width="181" height="181" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="indexhtml">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>CSS3 - グラデーション）<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box grd01"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box grd02"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box grd03"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box grd04"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="stylecss">style.<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a></h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.content</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  gap: <span class="synConstant">20px</span>;
+  <span class="synType">max-width</span>: <span class="synConstant">900px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#aaa</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;
+  <span class="synType">height</span>: <span class="synConstant">200px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#aaa</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611174050.jpg" width="500" height="139" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="CSS3-linear-gradientの書き方">CSS3 linear-gradientの書き方</h5>
+    
+<ul>
+<li>gradient</li>
+<li>linearは「線状の」</li>
+<li>radialは「放射状の」</li>
+</ul>
+    <blockquote>
+        <p>background: linear-gradient( to 方向, 開始色, 終了色 ); </p>
+
+    </blockquote>
+
+<ul>
+<li>background: linear-gradient( to bottom, 開始色, 終了色 ); は、初期設定</li>
+</ul><p></p><h6 id="上から下に初期値">上から下に（初期値）</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611175247.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.grd01</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">#F89174</span><span class="synIdentifier">,</span><span class="synConstant"> #3490D4</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="左から右に">左から右に</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611175503.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.grd02</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">to right</span><span class="synIdentifier">,</span><span class="synConstant"> #F8EE74</span><span class="synIdentifier">,</span><span class="synConstant"> #3490D4</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="色が変わる位置を変える">色が変わる位置を変える</h5>
+    
+<ul>
+<li>0〜50%までは黃色で塗られ、50以降がグラデーションになる</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611180019.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.grd03</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">to right</span><span class="synIdentifier">,</span><span class="synConstant"> #F8EE74 50%</span><span class="synIdentifier">,</span><span class="synConstant"> #3490D4</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="中心から外に向かってグラデーションをかける">中心から外に向かってグラデーションをかける</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611201435.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.grd04</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">radial-gradient(</span><span class="synConstant">#FFF</span><span class="synIdentifier">,</span><span class="synConstant"> #3490D4</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="斜めにグラデーションをかける">斜めにグラデーションをかける</h5>
+    
+<ul>
+<li>この方法で指定できるのは45度のグラデーションだけです</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611203419.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.grd05</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">to bottom right</span><span class="synIdentifier">,</span><span class="synConstant"> #D29FE5</span><span class="synIdentifier">,</span><span class="synConstant"> #3490D4</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="角度を指定する">角度を指定する</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611203620.jpg" width="600" height="194" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.grd06</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">0deg</span><span class="synIdentifier">,</span><span class="synConstant"> #D29FE5</span><span class="synIdentifier">,</span><span class="synConstant"> #3490D4</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.grd07</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">45deg</span><span class="synIdentifier">,</span><span class="synConstant"> #D29FE5</span><span class="synIdentifier">,</span><span class="synConstant"> #3490D4</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.grd08</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">90deg</span><span class="synIdentifier">,</span><span class="synConstant"> #D29FE5</span><span class="synIdentifier">,</span><span class="synConstant"> #3490D4</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="片側を透明にする">片側を透明にする</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611203849.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.grd09</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">to bottom</span><span class="synIdentifier">,</span><span class="synConstant"> #9FE5D8</span><span class="synIdentifier">,</span><span class="synConstant"> transparent</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="片側を半透明にする">片側を半透明にする</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611204051.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.grd10</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">to top</span><span class="synIdentifier">,</span><span class="synConstant"> #9FE5D8</span><span class="synIdentifier">,</span><span class="synConstant"> </span><span class="synIdentifier">rgba(</span><span class="synConstant">255</span><span class="synIdentifier">,</span><span class="synConstant"> 0</span><span class="synIdentifier">,</span><span class="synConstant"> 0</span><span class="synIdentifier">,</span><span class="synConstant"> 0.2</span><span class="synIdentifier">))</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="写真にグラデーションを重ねるオーバーレイ">写真にグラデーションを重ねる（オーバーレイ）</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250611204742.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.grd11</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">25deg</span><span class="synIdentifier">,</span><span class="synConstant"> </span><span class="synIdentifier">rgba(</span><span class="synConstant">255</span><span class="synIdentifier">,</span><span class="synConstant"> 0</span><span class="synIdentifier">,</span><span class="synConstant"> 0</span><span class="synIdentifier">,</span><span class="synConstant"> 0.4</span><span class="synIdentifier">),</span><span class="synConstant"> </span><span class="synIdentifier">rgba(</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant"> 255</span><span class="synIdentifier">,</span><span class="synConstant"> 0</span><span class="synIdentifier">,</span><span class="synConstant"> 0.4</span><span class="synIdentifier">))</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.grd12</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">25deg</span><span class="synIdentifier">,</span><span class="synConstant"> </span><span class="synIdentifier">rgba(</span><span class="synConstant">255</span><span class="synIdentifier">,</span><span class="synConstant"> 0</span><span class="synIdentifier">,</span><span class="synConstant"> 0</span><span class="synIdentifier">,</span><span class="synConstant"> 0.4</span><span class="synIdentifier">),</span><span class="synConstant"> </span><span class="synIdentifier">rgba(</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant"> 255</span><span class="synIdentifier">,</span><span class="synConstant"> 0</span><span class="synIdentifier">,</span><span class="synConstant"> 0.4</span><span class="synIdentifier">))</span><span class="synSpecial">,</span> <span class="synIdentifier">url(</span><span class="synConstant">../img/01.jpg</span><span class="synIdentifier">)</span>;
+  <span class="synType">background-size</span>: <span class="synConstant">cover</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="ボタングラデーション">ボタン（グラデーション）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.btn</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;;
+  <span class="synType">height</span>: <span class="synConstant">60px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">10px</span>;
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">#FFCED7 0%</span><span class="synIdentifier">,</span><span class="synConstant"> #F74657 49%</span><span class="synIdentifier">,</span><span class="synConstant"> #F10013 51%</span><span class="synIdentifier">,</span><span class="synConstant"> #FE2951 100%</span><span class="synIdentifier">)</span>; 
+  <span class="synType">border-radius</span>: <span class="synConstant">6px</span>;
+  <span class="synType">box-shadow</span>: <span class="synConstant">1px</span> <span class="synConstant">1px</span> <span class="synConstant">5px</span> <span class="synConstant">#AAA</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">text-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">2px</span> <span class="synConstant">#000</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">60px</span>;
+  <span class="synType">color</span>: <span class="synConstant">#FFF</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">30px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">"Arial Black"</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.btn</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">linear-gradient(</span><span class="synConstant">#D4A76A 0%</span><span class="synIdentifier">,</span><span class="synConstant"> #D6AD25 49%</span><span class="synIdentifier">,</span><span class="synConstant"> #D6AD25 51%</span><span class="synIdentifier">,</span><span class="synConstant"> #FCCF6B 100%</span><span class="synIdentifier">)</span>;
+  <span class="synType">cursor</span>: <span class="synConstant">pointer</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-0220_20190114220545.jpg" width="453" height="88" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="CSSジェネレーター"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>ジェネレーター</h4>
+    
+<div class="section">
+    <h5 id="WebGradients"><a href="https://webgradients.com/">WebGradients</a></h5>
+    <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwebgradients.com%2F" title="Free Gradients Collection by itmeo.com" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://webgradients.com/">webgradients.com</a></cite></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="uiGradients"><a href="https://uigradients.com/#Atlas">uiGradients</a></h5>
+    <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fuigradients.com%2F%23Atlas" title="uiGradients - Beautiful colored gradients" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://uigradients.com/#Atlas">uigradients.com</a></cite></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="Ultimate-CSS-Gradient-Generator"><a href="http://www.colorzilla.com/gradient-editor/">Ultimate CSS Gradient Generator</a></h5>
+    <p><iframe src="https://hatenablog-parts.com/embed?url=http%3A%2F%2Fwww.colorzilla.com%2Fgradient-editor%2F" title="Ultimate CSS Gradient Generator from ColorZilla" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="http://www.colorzilla.com/gradient-editor/">www.colorzilla.com</a></cite></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="SVG ARTISTA.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">SVG ARTISTA</span></a><a href="グラデーションを使ったデザイン.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">グラデーションを使ったデザイン</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>テンプレートリテラルで出力 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>テンプレートリテラルで出力</span>
+  </div>
+  <div class="article-head">
+    <h1>テンプレートリテラルで出力</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/10</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="テンプレートリテラルで出力">テンプレートリテラルで出力</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260209040410.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptのテンプレートリテラルに解説して、問題例も５問作成して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="テンプレートリテラルとは">テンプレートリテラルとは？</h5>
+    
+<ul>
+<li>テンプレートリテラルは、文字列を簡単・柔軟に書ける記法です</li>
+<li>バッククォート（ ` ）を使います</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">` 文字列 `</span>
+</pre><p></p><h6 id="従来の書き方シングルクォート">従来の書き方（シングルクォート）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> <span class="synConstant">'太郎'</span><span class="synStatement">;</span>
+<span class="synType">const</span> message <span class="synStatement">=</span> <span class="synConstant">'こんにちは、'</span> <span class="synStatement">+</span> name <span class="synStatement">+</span> <span class="synConstant">'さん！'</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="テンプレートリテラル">テンプレートリテラル</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> <span class="synConstant">'太郎'</span><span class="synStatement">;</span>
+<span class="synType">const</span> message <span class="synStatement">=</span> <span class="synConstant">`こんにちは、</span><span class="synSpecial">${</span>name<span class="synSpecial">}</span><span class="synConstant">さん！`</span><span class="synStatement">;</span>
+</pre><p>👉 ${} の中に変数や式を直接書ける のが最大の特徴です。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="変数計算式を埋め込める">変数・計算式を埋め込める</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> a <span class="synStatement">=</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+<span class="synType">const</span> b <span class="synStatement">=</span> <span class="synConstant">5</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`合計は </span><span class="synSpecial">${</span>a <span class="synStatement">+</span> b<span class="synSpecial">}</span><span class="synConstant"> です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>【出力】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">合計は <span class="synConstant">15</span> です
+</pre>
+</div>
+<div class="section">
+    <h5 id="改行をそのまま書ける">改行をそのまま書ける</h5>
+    <p></p><h6 id="従来の方法">従来の方法</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> text <span class="synStatement">=</span> <span class="synConstant">"こんにちは\nお元気ですか？"</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="テンプレートリテラル-1">テンプレートリテラル</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> text <span class="synStatement">=</span> <span class="synConstant">`こんにちは</span>
+<span class="synConstant">お元気ですか？`</span><span class="synStatement">;</span>
+</pre><p>👉 改行をそのまま書けて読みやすい<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="HTML文字列の生成がとても楽">HTML文字列の生成がとても楽</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> <span class="synConstant">'花子'</span><span class="synStatement">;</span>
+<span class="synType">const</span> html <span class="synStatement">=</span> <span class="synConstant">`</span>
+<span class="synConstant">  &lt;div&gt;</span>
+<span class="synConstant">    &lt;p&gt;こんにちは、</span><span class="synSpecial">${</span>name<span class="synSpecial">}</span><span class="synConstant">さん&lt;/p&gt;</span>
+<span class="synConstant">  &lt;/div&gt;</span>
+<span class="synConstant">`</span><span class="synStatement">;</span>
+</pre><p>👉 Web開発で非常によく使われます<br>
+<br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="練習問題5問">練習問題（5問）</h4>
+    
+<div class="section">
+    <h5 id="問題">問題①</h5>
+    
+<ul>
+<li>変数 name に 'Ken' が入っています。</li>
+<li>テンプレートリテラルを使って</li>
+<li>「Hello, Ken!」 と表示してください。</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題-1">問題②</h5>
+    
+<ul>
+<li>price = 1200</li>
+<li>tax = 1.1</li>
+<li>テンプレートリテラルを使って「税込価格は 1320 円です」 と表示してください。</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題-2">問題③</h5>
+    
+<ul>
+<li>age = 20</li>
+<li>「あなたは20歳です」 と表示してください。</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題-3">問題④</h5>
+    
+<ul>
+<li>次のような 複数行のメッセージ をテンプレートリテラルで作ってください。</li>
+</ul>
+    <blockquote>
+        <p>おはようございます。<br>
+今日も頑張りましょう！</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="問題応用">問題⑤（応用）</h5>
+    
+<ul>
+<li>次のHTMLをテンプレートリテラルで作ってください。</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"card"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>商品名: りんご<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>価格: 150円<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="模範解答">模範解答</h4>
+    
+<div class="section">
+    <h5 id="解答">解答①</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> <span class="synConstant">"Ken"</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`Hello, </span><span class="synSpecial">${</span>name<span class="synSpecial">}</span><span class="synConstant">!`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="解答-1">解答②</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> price <span class="synStatement">=</span> <span class="synConstant">1200</span><span class="synStatement">;</span>
+<span class="synType">const</span> tax <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synSpecial">.</span><span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`税込価格は </span><span class="synSpecial">${</span>price <span class="synStatement">*</span> tax<span class="synSpecial">}</span><span class="synConstant"> 円です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="解答-2">解答③</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> age <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`あなたは</span><span class="synSpecial">${</span>age<span class="synSpecial">}</span><span class="synConstant">歳です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="解答-3">解答④</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> msg <span class="synStatement">=</span> <span class="synConstant">`おはようございます。</span>
+<span class="synConstant">今日も頑張りましょう！`</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="解答-4">解答⑤</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> product <span class="synStatement">=</span> <span class="synConstant">'りんご'</span><span class="synStatement">;</span>
+<span class="synType">const</span> price <span class="synStatement">=</span> <span class="synConstant">150</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> html <span class="synStatement">=</span> <span class="synConstant">`</span>
+<span class="synConstant">&lt;div class="card"&gt;</span>
+<span class="synConstant">  &lt;h2&gt;商品名: </span><span class="synSpecial">${</span>product<span class="synSpecial">}</span><span class="synConstant">&lt;/h2&gt;</span>
+<span class="synConstant">  &lt;p&gt;価格: </span><span class="synSpecial">${</span>price<span class="synSpecial">}</span><span class="synConstant">円&lt;/p&gt;</span>
+<span class="synConstant">&lt;/div&gt;</span>
+<span class="synConstant">`</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="変数への代入で計算問題.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">変数への代入で計算問題</span></a><a href="条件分岐.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">条件分岐</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

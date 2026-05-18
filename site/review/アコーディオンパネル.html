@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アコーディオンパネル - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>アコーディオンパネル</span>
+  </div>
+  <div class="article-head">
+    <h1>アコーディオンパネル</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">jQuery</span>
+      <span class="date">2025/10/21</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="アコーディオンパネル---復習"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A2%A5%B3%A1%BC%A5%C7%A5%A3%A5%AA%A5%F3">アコーディオン</a>パネル - 復習</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241126233219.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="完成例">完成例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241126234041.jpg" width="600" height="213" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241126234129.jpg" width="600" height="223" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241126234226.jpg" width="600" height="499" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="indexhtml">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>アコーディオンパネル（復習）<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"accordion"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>今日の日付と曜日<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"now"</span><span class="synIdentifier">&gt;</span>ここに結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>今日の運勢<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"fortune"</span><span class="synIdentifier">&gt;</span>ここに結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>現在の位置<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"googleMap"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">iframe</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"map"</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.993377822478!2d139.76513621264584!3d35.70178057246621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1935930869%3A0x14f09f3b0c658744!2z56We55Sw56We56S-IOmaj-elnumWgA!5e0!3m2!1sja!2sjp!4v1750240534900!5m2!1sja!2sjp"</span><span class="synIdentifier"> </span><span class="synType">width</span><span class="synIdentifier">=</span><span class="synConstant">"600"</span><span class="synIdentifier"> </span><span class="synType">height</span><span class="synIdentifier">=</span><span class="synConstant">"450"</span><span class="synIdentifier"> </span><span class="synType">style</span><span class="synIdentifier">=</span><span class="synConstant">"border:0;"</span><span class="synIdentifier"> </span><span class="synType">allowfullscreen</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> loading=</span><span class="synConstant">"lazy"</span><span class="synIdentifier"> referrerpolicy=</span><span class="synConstant">"no-referrer-when-downgrade"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">iframe</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="stylecss">style.<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a></h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* ---------------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">--------------------------------------------- */</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">100%</span>;
+  <span class="synType">overflow-y</span>: <span class="synConstant">scroll</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ---------------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">--------------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">1.0rem</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">Arial</span><span class="synSpecial">,</span> <span class="synConstant">Helvetica</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ---------------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">--------------------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: min(<span class="synConstant">90%</span><span class="synSpecial">,</span> <span class="synConstant">960px</span>);
+  <span class="synType">margin</span>: <span class="synConstant">10px</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ---------------------------------------------</span>
+<span class="synComment">  accordion</span>
+<span class="synComment">--------------------------------------------- */</span>
+<span class="synStatement">dl</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">1.125rem</span>;
+  <span class="synType">font-weight</span>: <span class="synConstant">bold</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">dt</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#03a6bc</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#03a6bc</span>;
+  <span class="synType">border-bottom</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#ffffff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">cursor</span>: <span class="synConstant">pointer</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">dd</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">0</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#03a6bc</span>;
+  <span class="synType">border-top</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ---------- Google Map ---------- */</span>
+<span class="synIdentifier">#googleMap</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">5px</span>;
+  <span class="synType">height</span>: <span class="synConstant">400px</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.map</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">height</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ---------- 追加クラス名 ---------- */</span>
+<span class="synIdentifier">.open</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#000</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#000</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.good</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">#f00</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">2.0rem</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="アコーディオンパネルの開閉"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A2%A5%B3%A1%BC%A5%C7%A5%A3%A5%AA%A5%F3">アコーディオン</a>パネルの開閉</h5>
+    
+<ul>
+<li>この記述より前に、<a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>本体が読み込まれていることが必須</li>
+<li>記述は、<a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>のイベントで記述</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synComment">// アコーディオンパネルの開閉</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dd'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dt'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">(){</span>
+    <span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">next</span><span class="synSpecial">()</span><span class="synStatement">.</span><span class="synIdentifier">css</span><span class="synSpecial">(</span><span class="synConstant">'display'</span><span class="synSpecial">)</span> <span class="synStatement">==</span> <span class="synConstant">'none'</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dd'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideUp</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">next</span><span class="synSpecial">()</span><span class="synStatement">.</span><span class="synIdentifier">slideDown</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>この時点で、開閉の確認</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241126235057.jpg" width="600" height="213" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="クリックされた位置dtにクラス名を追加または削除">クリックされた位置（dt）にクラス名を追加（または削除）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synComment">// アコーディオンパネルの開閉</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dd'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dt'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">(){</span>
+    <span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">next</span><span class="synSpecial">()</span><span class="synStatement">.</span><span class="synIdentifier">css</span><span class="synSpecial">(</span><span class="synConstant">'display'</span><span class="synSpecial">)</span> <span class="synStatement">==</span> <span class="synConstant">'none'</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+      <span class="synComment">// クラス名を削除</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dt'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">removeClass</span><span class="synSpecial">(</span><span class="synConstant">'open'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dd'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideUp</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+      <span class="synComment">// クラス名を追加</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addClass</span><span class="synSpecial">(</span><span class="synConstant">'open'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">next</span><span class="synSpecial">()</span><span class="synStatement">.</span><span class="synIdentifier">slideDown</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241126235824.jpg" width="600" height="214" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="id名nowの処理">id名「now」の処理</h5>
+    
+<ul>
+<li>この位置に「今日の日付と曜日」を表示</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// 今日の日付と曜日を取得して表示</span>
+<span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> year <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> month <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span><span class="synStatement">+</span><span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synType">const</span> date <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> day <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> week <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'日'</span><span class="synStatement">,</span><span class="synConstant">'月'</span><span class="synStatement">,</span><span class="synConstant">'火'</span><span class="synStatement">,</span><span class="synConstant">'水'</span><span class="synStatement">,</span><span class="synConstant">'木'</span><span class="synStatement">,</span><span class="synConstant">'金'</span><span class="synStatement">,</span><span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span> nowelement <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#now'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+nowelement<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`今日は、</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">年</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>date<span class="synSpecial">}</span><span class="synConstant">日、</span><span class="synSpecial">${</span>week<span class="synSpecial">[</span>day<span class="synSpecial">]}</span><span class="synConstant">曜日です。`</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="id名fortuneの処理">id名「fortune」の処理</h5>
+    
+<ul>
+<li>この位置に「おみくじ」の結果を表示</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// 今日の運勢をランダムに表示</span>
+<span class="synType">const</span> luck <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'大吉'</span><span class="synStatement">,</span><span class="synConstant">'吉'</span><span class="synStatement">,</span><span class="synConstant">'中吉'</span><span class="synStatement">,</span><span class="synConstant">'小吉'</span><span class="synStatement">,</span><span class="synConstant">'凶'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span><span class="synStatement">*</span>luck<span class="synStatement">.</span>length<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> luckelement <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#fortune'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+luckelement<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`</span><span class="synSpecial">${</span>luck<span class="synSpecial">[</span>rnd<span class="synSpecial">]}</span><span class="synConstant">`</span><span class="synStatement">;</span>
+<span class="synStatement">if</span><span class="synSpecial">(</span>rnd <span class="synStatement">===</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  luckelement<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  luckelement<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">remove</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="id名nowの処理と-id名fortuneの処理をまとめる">id名「now」の処理と id名「fortune」の処理をまとめる</h5>
+    
+<ul>
+<li>イベントリスナーは「load」を設定</li>
+<li>無名関数でまとめる</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">window</span>.<span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'load'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  
+  <span class="synComment">// 今日の日付と曜日を取得して表示</span>
+  <span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synType">const</span> year <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synType">const</span> month <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span><span class="synStatement">+</span><span class="synConstant">1</span><span class="synStatement">;</span>
+  <span class="synType">const</span> date <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synType">const</span> day <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synType">const</span> week <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'日'</span><span class="synStatement">,</span><span class="synConstant">'月'</span><span class="synStatement">,</span><span class="synConstant">'火'</span><span class="synStatement">,</span><span class="synConstant">'水'</span><span class="synStatement">,</span><span class="synConstant">'木'</span><span class="synStatement">,</span><span class="synConstant">'金'</span><span class="synStatement">,</span><span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+  <span class="synType">const</span> nowelement <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#now'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  nowelement<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`今日は、</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">年</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>date<span class="synSpecial">}</span><span class="synConstant">日、</span><span class="synSpecial">${</span>week<span class="synSpecial">[</span>day<span class="synSpecial">]}</span><span class="synConstant">曜日です。`</span><span class="synStatement">;</span>
+
+  <span class="synComment">// 今日の運勢をランダムに表示</span>
+  <span class="synType">const</span> luck <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'大吉'</span><span class="synStatement">,</span><span class="synConstant">'吉'</span><span class="synStatement">,</span><span class="synConstant">'中吉'</span><span class="synStatement">,</span><span class="synConstant">'小吉'</span><span class="synStatement">,</span><span class="synConstant">'凶'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+  <span class="synType">const</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span><span class="synStatement">*</span>luck<span class="synStatement">.</span>length<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synType">const</span> luckelement <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#fortune'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  luckelement<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`</span><span class="synSpecial">${</span>luck<span class="synSpecial">[</span>rnd<span class="synSpecial">]}</span><span class="synConstant">`</span><span class="synStatement">;</span>
+  <span class="synStatement">if</span><span class="synSpecial">(</span>rnd <span class="synStatement">===</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    luckelement<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+    luckelement<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">remove</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="jQuery-と-JavaScript-をまとめる"><a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a> と <a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a> をまとめる</h5>
+    <p></p><h6 id="scriptjs">script.js</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synComment">// アコーディオンパネルの開閉</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dd'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dt'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">(){</span>
+    <span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">next</span><span class="synSpecial">()</span><span class="synStatement">.</span><span class="synIdentifier">css</span><span class="synSpecial">(</span><span class="synConstant">'display'</span><span class="synSpecial">)</span> <span class="synStatement">==</span> <span class="synConstant">'none'</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+      <span class="synComment">// クラス名を削除</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dt'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">removeClass</span><span class="synSpecial">(</span><span class="synConstant">'open'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.accordion &gt; dd'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideUp</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+      <span class="synComment">// クラス名を追加</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addClass</span><span class="synSpecial">(</span><span class="synConstant">'open'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">next</span><span class="synSpecial">()</span><span class="synStatement">.</span><span class="synIdentifier">slideDown</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+
+<span class="synStatement">window</span>.<span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'load'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  
+  <span class="synComment">// 今日の日付と曜日を取得して表示</span>
+  <span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synType">const</span> year <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synType">const</span> month <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span><span class="synStatement">+</span><span class="synConstant">1</span><span class="synStatement">;</span>
+  <span class="synType">const</span> date <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synType">const</span> day <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synType">const</span> week <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'日'</span><span class="synStatement">,</span><span class="synConstant">'月'</span><span class="synStatement">,</span><span class="synConstant">'火'</span><span class="synStatement">,</span><span class="synConstant">'水'</span><span class="synStatement">,</span><span class="synConstant">'木'</span><span class="synStatement">,</span><span class="synConstant">'金'</span><span class="synStatement">,</span><span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+  <span class="synType">const</span> nowelement <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#now'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  nowelement<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`今日は、</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">年</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>date<span class="synSpecial">}</span><span class="synConstant">日、</span><span class="synSpecial">${</span>week<span class="synSpecial">[</span>day<span class="synSpecial">]}</span><span class="synConstant">曜日です。`</span><span class="synStatement">;</span>
+
+  <span class="synComment">// 今日の運勢をランダムに表示</span>
+  <span class="synType">const</span> luck <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'大吉'</span><span class="synStatement">,</span><span class="synConstant">'吉'</span><span class="synStatement">,</span><span class="synConstant">'中吉'</span><span class="synStatement">,</span><span class="synConstant">'小吉'</span><span class="synStatement">,</span><span class="synConstant">'凶'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+  <span class="synType">const</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span><span class="synStatement">*</span>luck<span class="synStatement">.</span>length<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synType">const</span> luckelement <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#fortune'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  luckelement<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`</span><span class="synSpecial">${</span>luck<span class="synSpecial">[</span>rnd<span class="synSpecial">]}</span><span class="synConstant">`</span><span class="synStatement">;</span>
+  <span class="synStatement">if</span><span class="synSpecial">(</span>rnd <span class="synStatement">===</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    luckelement<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+    luckelement<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">remove</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Google-Map-の挿入"><a class="keyword" href="https://d.hatena.ne.jp/keyword/Google">Google</a> Map の挿入</h5>
+    
+<ul>
+<li>住所を入力して位置を表示</li>
+<li>「共有」ボタンをクリック</li>
+</ul><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241127002153.jpg" width="680" height="465" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+</p>
+
+<ul>
+<li>「地図を埋め込む」</li>
+</ul><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241127002435.jpg" width="680" height="420" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+</p>
+
+<ul>
+<li>「HTMLをコピー」</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">iframe</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.011903551635!2d139.71130827681762!3d35.72592577257291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d69a1bfc623%3A0x6f829dc3047a4f7c!2z44CSMTcxLTAwMjIg5p2x5Lqs6YO96LGK5bO25Yy65Y2X5rGg6KKL77yS5LiB55uu77yR77yS4oiS77yZIO-8q--8q-ODk-ODqw!5e0!3m2!1sja!2sjp!4v1732634566827!5m2!1sja!2sjp"</span><span class="synIdentifier"> </span><span class="synType">width</span><span class="synIdentifier">=</span><span class="synConstant">"600"</span><span class="synIdentifier"> </span><span class="synType">height</span><span class="synIdentifier">=</span><span class="synConstant">"450"</span><span class="synIdentifier"> </span><span class="synType">style</span><span class="synIdentifier">=</span><span class="synConstant">"border:0;"</span><span class="synIdentifier"> </span><span class="synType">allowfullscreen</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> loading=</span><span class="synConstant">"lazy"</span><span class="synIdentifier"> referrerpolicy=</span><span class="synConstant">"no-referrer-when-downgrade"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">iframe</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="クラス名を追加">クラス名を追加</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink="">    <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"googleMap"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">iframe</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"map"</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.01190355164!2d139.71130827477194!3d35.72592577257279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d69a1bfc623%3A0x6f829dc3047a4f7c!2z44CSMTcxLTAwMjIg5p2x5Lqs6YO96LGK5bO25Yy65Y2X5rGg6KKL77yS5LiB55uu77yR77yS4oiS77yZIO-8q--8q-ODk-ODqw!5e0!3m2!1sja!2sjp!4v1732594356496!5m2!1sja!2sjp"</span><span class="synIdentifier"> </span><span class="synType">width</span><span class="synIdentifier">=</span><span class="synConstant">"600"</span><span class="synIdentifier"> </span><span class="synType">height</span><span class="synIdentifier">=</span><span class="synConstant">"450"</span><span class="synIdentifier"> </span><span class="synType">style</span><span class="synIdentifier">=</span><span class="synConstant">"border:0;"</span><span class="synIdentifier"> </span><span class="synType">allowfullscreen</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> loading=</span><span class="synConstant">"lazy"</span><span class="synIdentifier"> referrerpolicy=</span><span class="synConstant">"no-referrer-when-downgrade"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">iframe</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>ddスペース全体に表示</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* ---------- Google Map ---------- */</span>
+<span class="synIdentifier">#googleMap</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">5px</span>;
+  <span class="synType">height</span>: <span class="synConstant">400px</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.map</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">height</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="thisキーワード.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">thisキーワード</span></a><a href="CTAを数秒後に表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">CTAを数秒後に表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

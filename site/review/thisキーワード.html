@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>thisキーワード - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>thisキーワード</span>
+  </div>
+  <div class="article-head">
+    <h1>thisキーワード</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">jQuery</span>
+      <span class="date">2025/10/20</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="thisキーワード">thisキーワード</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029231722.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>の<a class="keyword" href="https://d.hatena.ne.jp/keyword/%CD%BD%CC%F3%B8%EC">予約語</a></li>
+<li>thisは、標準の要素オブジェクト</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>メソッドにアクセスするには、「$()関数」で「this」をラッピングする必要があります</li>
+<li>「$()関数」を利用することで、標準の要素オブジェクトを<a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>オブジェクトに変換できます</li>
+<li>その時の流れに応じて意味するものが変わります</li>
+</ul><p><br>
+《例》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">document</span><span class="synStatement">.</span>body <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">css</span><span class="synSpecial">(</span> <span class="synConstant">'background-color'</span><span class="synStatement">,</span> <span class="synConstant">'red'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<div class="section">
+    <h5 id="イベントハンドラ内のthis"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A4%A5%D9%A5%F3%A5%C8%A5%CF%A5%F3%A5%C9%A5%E9">イベントハンドラ</a>内のthis</h5>
+    
+<ul>
+<li>htisは、イベント処理の対象となる要素自体を指します（<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>と同義）</li>
+<li>thisというキーワードを使うことで、どの要素が対象となったか特定できます</li>
+<li>thisは、<a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>オブジェクトではない「DOM要素」のため、<a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>メソッドを続けて書くことができません</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>のメソッドを使えるようにする場合は、「$( this )」とすることで可能になります</li>
+</ul><p><br>
+《onメソッドを使用しない場合》</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>thisキーワード<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">form</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"button"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">"HTML"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"button"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">"CSS"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"button"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">"JavaScript"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">form</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'input[type=button]'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">click</span><span class="synSpecial">(</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+    <span class="synType">let</span> val <span class="synStatement">=</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">val</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+    <span class="synIdentifier">alert</span><span class="synSpecial">(</span> val <span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span> val <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="onメソッドの利用">onメソッドの利用</h5>
+    
+<ul>
+<li>onメソッドは、offメソッドでイベントを外すことが可能</li>
+<li>appendメソッドで「後から追加される」要素に対してもイベントを付与することが可能</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%DE%A1%BC%A5%C8%A5%D5%A5%A9%A5%F3">スマートフォン</a>のイベントを取得する際に「$( '<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>' ).0n( 'touchstart' )」が使用可能です</li>
+</ul><p><br>
+《onメソッドを使用した場合》</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>thisキーワード<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">form</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"button"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">"HTML"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"button"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">"CSS"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"button"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">"JavaScript"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">form</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'input[type=button]'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span> <span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+    <span class="synType">let</span> val <span class="synStatement">=</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">val</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+    <span class="synIdentifier">alert</span><span class="synSpecial">(</span> val <span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span> val <span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="イベント.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">イベント</span></a><a href="アコーディオンパネル.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">アコーディオンパネル</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

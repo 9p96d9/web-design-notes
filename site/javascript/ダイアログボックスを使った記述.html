@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ダイアログボックスを使った記述 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>ダイアログボックスを使った記述</span>
+  </div>
+  <div class="article-head">
+    <h1>ダイアログボックスを使った記述</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">ダイアログボックス</span>
+      <span class="date">2025/10/05</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="ダイアログボックスを使った記述">ダイアログボックスを使った記述</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20250429030324.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="３種類のダイアログボックス">３種類のダイアログボックス</h4>
+    <p></p><table>
+<tbody><tr><th width="100">項目</th><th width="100">コード</th></tr>
+<tr><td>警告</td><td>alert()</td></tr>
+<tr><td>確認</td><td>confirm()</td></tr>
+<tr><td>入力</td><td>prompt()</td></tr>
+</tbody></table><p></p><p></p>
+
+<div class="section">
+    <h5 id="メッセージを表示するダイアログボックス">メッセージを表示するダイアログボックス</h5>
+    
+    <blockquote>
+        <p>alert( メッセージ );</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="ユーザーに確認を求めるダイアログボックス">ユーザーに確認を求めるダイアログボックス</h5>
+    
+    <blockquote>
+        <p>confirm( メッセージ );</p>
+
+    </blockquote>
+
+    <blockquote>
+        <p>変数 = confirm( メッセージ );</p>
+
+    </blockquote>
+
+<ul>
+<li>confirmメソッドは「戻り値を返す」</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D6%A1%BC%A5%EA%A5%A2%A5%F3">ブーリアン</a>型「true（真）」または「false（偽）」</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="ユーザーにデータを入力してもらうダイアログボックス">ユーザーにデータを入力してもらうダイアログボックス</h5>
+    
+<ul>
+<li>promptから取得できた値は「文字列」です</li>
+</ul>
+    <blockquote>
+        <p>prompt( メッセージ );</p>
+
+    </blockquote>
+
+    <blockquote>
+        <p>変数 = prompt( メッセージ, デフォルトの値 );</p>
+
+    </blockquote>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="警告ダイアログに出力表示">警告ダイアログに出力（表示）</h4>
+    
+<ul>
+<li>警告ダイアログに「ありがとう！」と表示させる</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ありがとう！<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synStatement">window</span><span class="synSpecial">.</span><span class="synStatement">alert</span><span class="synSpecial">(</span> <span class="synConstant">'ありがとう！'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">noscript</span><span class="synIdentifier">&gt;</span>
+  JavaScript対応ブラウザで表示してください。
+<span class="synIdentifier">&lt;/</span><span class="synStatement">noscript</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="警告ダイアログ表示">警告ダイアログ表示</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>で警告ダイアログを表示するには、「window.alert( )」を使います</li>
+</ul><p></p><h6 id="windowalert-">window.alert( );</h6><p></p>
+
+<ul>
+<li>［OK］ボタンのある警告ダイアログウィンドウに(　)の中の文字列を表示します</li>
+<li>「window.」は省略できます。</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="コンソールconsoleに出力表示">コンソール（console）に出力（表示）</h4>
+    <p></p><h6 id="consolelog-">console.log( );</h6><p></p>
+
+<ul>
+<li>「検証」→「コンソール」に表示</li>
+</ul>
+<div class="section">
+    <h5 id="文字列を出力表示">文字列を出力（表示）</h5>
+    
+<ul>
+<li>テンプレート<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EA%A5%C6%A5%E9%A5%EB">リテラル</a></li>
+<li>「バッククォート」で囲む</li>
+<li>変数は「${変数名}」で文字列内に挿入する</li>
+</ul><p></p><h6 id="文字列と変数の連結テンプレートリテラル">文字列と変数の連結（テンプレート<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EA%A5%C6%A5%E9%A5%EB">リテラル</a>）</h6><p></p>
+
+<ul>
+<li>「バッククォーテーション」で囲む</li>
+<li>変数は「${変数}」と記述する</li>
+<li>consolに出力（表示）</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>平成を西暦に変換する<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>reiwa<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">7</span><span class="synStatement">;</span>
+<span class="synType">let</span><span class="synSpecial"> </span>fullYear<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">0</span><span class="synStatement">;</span>
+<span class="synType">let</span><span class="synSpecial"> </span>message<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">''</span><span class="synStatement">;</span>
+
+fullYear<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>reiwa<span class="synSpecial"> </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">2018</span><span class="synStatement">;</span>
+message<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">`令和</span><span class="synSpecial">${</span>reiwa<span class="synSpecial">}</span><span class="synConstant">年は、西暦</span><span class="synSpecial">${</span>fullYear<span class="synSpecial">}</span><span class="synConstant">年です。`</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span> message <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20251009012220.jpg" width="400" height="122" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="ブラウザーで出力表示"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D6%A5%E9%A5%A6%A5%B6%A1%BC">ブラウザー</a>で出力（表示）</h5>
+    
+<ul>
+<li>document.write(  );</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D6%A5%E9%A5%A6%A5%B6%A1%BC">ブラウザー</a>の表示を上書き</li>
+<li>2025年時点では「非推奨」</li>
+</ul><p></p><h6 id="parseInt-">parseInt( );</h6><p></p>
+
+<ul>
+<li>文字列を数値に変換</li>
+<li>promptから取得できた「文字列」の値を数値として認識させる関数</li>
+<li>整数型 【 integer 】 インテジャー</li>
+</ul><p></p><h6 id="Mathround-">Math.round( );</h6><p></p>
+
+<ul>
+<li>数値を「四捨五入」する</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>消費税合算後の支払金額を求める<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">// 消費税権さんの初期値</span>
+<span class="synType">let</span><span class="synSpecial"> </span>price<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'購入単価を入力してください。'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+price<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">parseInt</span><span class="synSpecial">(</span>price<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">let</span><span class="synSpecial"> </span>piece<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'購入個数を入力してください。'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+piece<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">parseInt</span><span class="synSpecial">(</span>piece<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>taxRate<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">0</span><span class="synSpecial">.</span><span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synType">let</span><span class="synSpecial"> </span>total<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">0</span><span class="synStatement">;</span>
+<span class="synType">let</span><span class="synSpecial"> </span>message<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">''</span><span class="synStatement">;</span>
+
+<span class="synComment">// 演算（処理）</span>
+total<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> (</span>price <span class="synStatement">*</span> piece<span class="synSpecial">) </span><span class="synStatement">+</span><span class="synSpecial"> (</span>price <span class="synStatement">*</span> piece <span class="synStatement">*</span> taxRate<span class="synSpecial">)</span><span class="synStatement">;</span>
+total<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>total<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+message<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">`単価</span><span class="synSpecial">${</span>price<span class="synSpecial">}</span><span class="synConstant">円の商品を</span><span class="synSpecial">${</span>piece<span class="synSpecial">}</span><span class="synConstant">個購入したとき、消費税合算後の支払金額は</span><span class="synSpecial">${</span>total<span class="synSpecial">}</span><span class="synConstant">円です。`</span><span class="synStatement">;</span>
+
+<span class="synComment">// 出力（コンソールに表示）</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>message<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// ブラウザに表示</span>
+<span class="synStatement">document</span><span class="synSpecial">.</span><span class="synIdentifier">write</span><span class="synSpecial">(</span>message<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="confirm-で確認">confirm() で確認</h5>
+    
+<ul>
+<li>「男性」か「女性」かを確認する</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>BMIの値を求める<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synComment">// ユーザーからの入力を受け取る</span>
+<span class="synSpecial">  </span><span class="synType">let</span><span class="synSpecial"> </span>weight<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'体重を kg 単位で入力してください：'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synType">let</span><span class="synSpecial"> </span>height<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'身長を cm 単位で入力してください：'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synComment">// 性別を確認（OK なら 男性、Cancel なら 女性）</span>
+<span class="synSpecial">  </span><span class="synType">let</span><span class="synSpecial"> </span>isMale<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synIdentifier">confirm</span><span class="synSpecial">(</span><span class="synConstant">'性別が男性であれば「OK」、女性であれば「キャンセル」をクリックしてください。'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synType">let</span><span class="synSpecial"> </span>gender<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>isMale<span class="synSpecial"> </span><span class="synStatement">?</span> <span class="synConstant">'男性'</span> <span class="synStatement">:</span><span class="synSpecial"> </span><span class="synConstant">'女性'</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synComment">// 文字列を数値に変換</span>
+<span class="synSpecial">  </span>weight<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">parseFloat</span><span class="synSpecial">(</span>weight<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span>height<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">parseFloat</span><span class="synSpecial">(</span>height<span class="synSpecial">) </span><span class="synStatement">/</span><span class="synSpecial"> </span><span class="synConstant">100</span><span class="synStatement">;</span><span class="synSpecial">  </span><span class="synComment">// cm → m</span>
+
+<span class="synSpecial">  </span><span class="synComment">// 入力チェック</span>
+<span class="synSpecial">  </span><span class="synStatement">if</span><span class="synSpecial"> (</span><span class="synStatement">isNaN</span><span class="synSpecial">(</span>weight<span class="synSpecial">)</span> <span class="synStatement">||</span> <span class="synStatement">isNaN</span><span class="synSpecial">(</span>height<span class="synSpecial">)</span> <span class="synStatement">||</span> weight <span class="synStatement">&lt;=</span> <span class="synConstant">0</span> <span class="synStatement">||</span> height <span class="synStatement">&lt;=</span> <span class="synConstant">0</span><span class="synSpecial">) {</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'正しい数値を入力してください。'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">} </span><span class="synStatement">else</span><span class="synSpecial"> {</span>
+    <span class="synComment">// BMI 計算</span>
+    <span class="synType">let</span> bmi <span class="synStatement">=</span> weight <span class="synStatement">/</span> <span class="synSpecial">(</span>height <span class="synStatement">*</span> height<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+    <span class="synComment">// コンソールに結果を表示</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`=== 結果 ===`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`性別：</span><span class="synSpecial">${</span>gender<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`体重：</span><span class="synSpecial">${</span>weight<span class="synSpecial">}</span><span class="synConstant"> kg`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`身長：</span><span class="synSpecial">${(</span>height <span class="synStatement">*</span> <span class="synConstant">100</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">toFixed</span><span class="synSpecial">(</span><span class="synConstant">1</span><span class="synSpecial">)}</span><span class="synConstant"> cm`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`BMI：</span><span class="synSpecial">${</span>bmi<span class="synStatement">.</span><span class="synIdentifier">toFixed</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synSpecial">)}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+    <span class="synComment">// BMIの判定</span>
+    <span class="synStatement">if</span> <span class="synSpecial">(</span>bmi <span class="synStatement">&lt;</span> <span class="synConstant">18</span><span class="synSpecial">.</span><span class="synConstant">5</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+      <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`判定：低体重（やせ型）`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>bmi <span class="synStatement">&lt;</span> <span class="synConstant">25</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+      <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`判定：普通体重`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>bmi <span class="synStatement">&lt;</span> <span class="synConstant">30</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+      <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`判定：肥満（1度）`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+      <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`判定：高度肥満`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span>
+  <span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="出力（結果を表示）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">出力（結果を表示）</span></a><a href="超入門問題（テンプレートリテラル編）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">超入門問題（テンプレートリテラル編）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

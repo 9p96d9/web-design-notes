@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>相対位置を指定する position: relative; - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>相対位置を指定する position: relative;</span>
+  </div>
+  <div class="article-head">
+    <h1>相対位置を指定する position: relative;</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/11/05</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="相対位置を指定する-position-relative">相対位置を指定する position: relative;</h4>
+    <p></p><p align="center"></p><p></p><p></p>
+
+<ul>
+<li>現在位置を基準に、相対位置を指定することができます</li>
+<li>position: relative; は単体で使用せず、position: absolute; とセットで使うことが多いです</li>
+<li>positionプロパティはrelativeの他にも下記の4つがあります
+<ul>
+<li>fixed</li>
+<li>absolute</li>
+<li>static</li>
+<li>sticky</li>
+</ul></li>
+</ul>
+<div class="section">
+    <h5 id="position-relative-の使い方">position: relative; の使い方</h5>
+    
+<ul>
+<li>positionプロパティは、要素の配置を指定するプロパティです</li>
+<li>positionプロパティの初期値はstaticで、relativeは要素の現在位置を基準に相対位置を指定することができます</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink="">セレクタ <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<ul>
+<li>positionプロパティは「top」「right」「bottom」「left」の4つのプロパティと合わせて要素の配置を指定します</li>
+<li>要素の位置を確定させるため、最低でも2つは適用するようにします</li>
+</ul><p><br></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"min-box"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">top</span>: <span class="synConstant">50px</span>;
+  <span class="synType">left</span>: <span class="synConstant">130px</span>;
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;
+  <span class="synType">height</span>: <span class="synConstant">200px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ffe100</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.min-box</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100px</span>;
+  <span class="synType">height</span>: <span class="synConstant">100px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#87ceeb</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220821071458.jpg" width="500" height="242" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="z-indexプロパティで重なり順を指定する">z-indexプロパティで重なり順を指定する</h5>
+    
+<ul>
+<li>positionプロパティはstaticを除いて、重なり順を指定するz-indexプロパティを指定することができます</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">top</span>: <span class="synConstant">50px</span>;
+  <span class="synType">left</span>: <span class="synConstant">80px</span>;
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;
+  <span class="synType">height</span>: <span class="synConstant">200px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ffe100</span>;
+  <span class="synType">z-index</span>: <span class="synConstant">-1</span>;  <span class="synComment">/* 追記 */</span>
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.min-box</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100px</span>;
+  <span class="synType">height</span>: <span class="synConstant">100px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#87ceeb</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<ul>
+<li>z-index: -1; を適用したことによって、boxクラスの要素はmin-boxクラス要素の裏側に配置されました</li>
+<li>z-indexは、値の数字が大きいほど前に、小さいほど後ろに配置されます</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220821072934.jpg" width="500" height="351" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="要素の絶対位置を指定する position_ absolute;.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">要素の絶対位置を指定する position: absolute;</span></a><a href="Transform［トランスフォームアニメーション］.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">Transform［トランスフォームアニメーション］</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

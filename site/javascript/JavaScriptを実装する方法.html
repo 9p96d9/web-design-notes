@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScriptを実装する方法 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>JavaScriptを実装する方法</span>
+  </div>
+  <div class="article-head">
+    <h1>JavaScriptを実装する方法</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/08</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="JavaScriptを実装する方法">JavaScriptを実装する方法</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250711231402.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptを実装するには？</p>
+
+    </blockquote>
+
+<ul>
+<li>JavaScriptを実装する方法は、Webページに動きを付ける場合とアプリやサーバーで使う場合で少し違います</li>
+</ul>
+<div class="section">
+    <h5 id="HTMLにJavaScriptを実装する基本">HTMLにJavaScriptを実装する基本</h5>
+    <p></p><h6 id="方法1HTML内に直接書く簡単学習向け">方法1：HTML内に直接書く（簡単・学習向け）</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>JavaScriptテスト<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synStatement">alert</span><span class="synSpecial">(</span><span class="synConstant">'こんにちは！'</span><span class="synSpecial">)"</span><span class="synIdentifier">&gt;</span>クリック<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 ボタンを押すとアラートが表示されます。</p><p></p><h6 id="方法2">方法2：<script></script>
+</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>JS実装<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>クリック<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synStatement">document</span><span class="synSpecial">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"btn"</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+    <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは！"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 実務では この書き方が基本 です。</p><p></p><h6 id="方法3外部ファイルとして読み込む実務で最重要">方法3：外部ファイルとして読み込む（実務で最重要）</h6>【HTML】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p>【script.js】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">document</span>.<span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"btn"</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは！"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p>👉 規模が大きくなったら必ずこの方法<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="JavaScriptで何ができる">JavaScriptで何ができる？</h5>
+    
+<ul>
+<li>ボタン操作</li>
+<li>アニメーション</li>
+<li>フォームチェック</li>
+<li>API通信</li>
+<li>ゲーム</li>
+<li>Webアプリ開発</li>
+<li>サーバー開発（Node.js）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="JavaScriptを実行できる環境">JavaScriptを実行できる環境</h5>
+    
+<table>
+    <tbody><tr>
+    <th>環境</th>
+    <th>説明</th>
+    </tr>
+    <tr>
+    <td>ブラウザ</td>
+    <td>Chrome / Edge / Firefox など</td>
+    </tr>
+    <tr>
+    <td>Node.js</td>
+    <td>サーバー / アプリ開発</td>
+    </tr>
+    <tr>
+    <td>スマホ</td>
+    <td>React Native / Ionic</td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="すぐ試せる学習方法超おすすめ">すぐ試せる学習方法（超おすすめ）</h5>
+    <p>▶ ブラウザの開発者ツール</p>
+
+<ul>
+<li>Chromeで → F12 → Console に直接入力</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">alert</span><span class="synSpecial">(</span><span class="synConstant">"Hello World"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="学習ロードマップ初心者向け">学習ロードマップ（初心者向け）</h5>
+    
+<ol>
+<li>変数 / if / for</li>
+<li>関数</li>
+<li>DOM操作</li>
+<li>イベント処理</li>
+<li>API通信</li>
+<li>フレームワーク（React / Vue）</li>
+</ol>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="JavaScriptにおける let と const の違い.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">JavaScriptにおける let と const の違い</span></a><a href="変数への代入で計算問題.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">変数への代入で計算問題</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【018】アロー関数を使った計算結果をコンソールに表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【018】アロー関数を使った計算結果をコンソールに表示</span>
+  </div>
+  <div class="article-head">
+    <h1>【018】アロー関数を使った計算結果をコンソールに表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">アロー関数</span>
+      <span class="date">2026/01/18</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    <p>【018】アロー関数を使った計算結果をコンソールに表示</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227105634.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで関数を使った完全未経験者向けの問題を５問作成して </p>
+
+<ul>
+<li>アロー関数の事例 </li>
+<li>出力は、consoleに</li>
+</ul>
+    </blockquote>
+
+<div class="section">
+    <h4 id="アロー関数を使うときのポイント">アロー関数を使うときのポイント</h4>
+    
+<div class="section">
+    <h5 id="書き方の基本">書き方の基本</h5>
+    <p></p><h6 id="基本形">基本形</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> 関数名 <span class="synStatement">=</span> <span class="synSpecial">(</span>引数<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  処理
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synIdentifier">関数名</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="例">例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> greet <span class="synStatement">=</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="-ポイント">👉 ポイント</h6><p></p>
+
+<ul>
+<li>function は使わない</li>
+<li>=&gt; が最大の特徴（アロー = 矢印）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="引数がない場合">引数がない場合</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> hello <span class="synStatement">=</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`Hello`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p>👉 () は必ず必要</p>
+
+</div>
+<div class="section">
+    <h5 id="引数が1つだけのとき">引数が1つだけのとき</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> double <span class="synStatement">=</span> num <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>num <span class="synStatement">*</span> <span class="synConstant">2</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p>👉 () は省略OK</p><p>初心者のうちは</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synSpecial">(</span>num<span class="synSpecial">)</span>
+</pre><p>と書く方が安全 👍</p>
+
+</div>
+<div class="section">
+    <h5 id="理が1行だけなら--を省略できる">理が1行だけなら {} を省略できる</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> add <span class="synStatement">=</span> <span class="synSpecial">(</span>a<span class="synStatement">,</span> b<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a <span class="synStatement">+</span> b<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>👉 でも 初心者は省略しない方が理解しやすい！</p>
+
+</div>
+<div class="section">
+    <h5 id="return-を使う場合">return を使う場合</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> add <span class="synStatement">=</span> <span class="synSpecial">(</span>a<span class="synStatement">,</span> b<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> a <span class="synStatement">+</span> b<span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">5</span><span class="synSpecial">))</span><span class="synStatement">;</span>  <span class="synComment">// 8</span>
+</pre><p>👉 return = 結果を返す</p>
+
+</div>
+<div class="section">
+    <h5 id="よくあるミス-TOP3">よくあるミス TOP3</h5>
+    <p></p><h6 id="---を忘れる">❌ ① =&gt; を忘れる</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> test <span class="synStatement">=</span> <span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"NG"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="-正解">⭕ 正解</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> test <span class="synStatement">=</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`OK`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="---を忘れる-1">❌ ② () を忘れる</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> hello <span class="synStatement">=</span> =&gt; <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`NG`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="-正解-1">⭕ 正解</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> hello <span class="synStatement">=</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`OK`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="--実行し忘れる">❌ ③ 実行し忘れる</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> greet <span class="synStatement">=</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`こんにちは`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="-実行する">⭕ 実行する</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">greet</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="アロー関数を使う練習問題">アロー関数を使う練習問題</h4>
+    
+<div class="section">
+    <h5 id="問題1あいさつを表示する関数">問題1：あいさつを表示する関数</h5>
+    
+    <blockquote>
+        <p>「こんにちは！」と表示するアロー関数を作って、実行してください。</p>
+
+    </blockquote>
+<p></p><h6 id="条件">条件</h6><p></p>
+
+<ul>
+<li>関数名：greet</li>
+<li>出力：こんにちは！</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題22つの数を足す関数">問題2：2つの数を足す関数</h5>
+    
+    <blockquote>
+        <p>2つの数を受け取って、足し算の結果を表示するアロー関数を作ってください。</p>
+
+    </blockquote>
+<p></p><h6 id="条件-1">条件</h6><p></p>
+
+<ul>
+<li>関数名：add</li>
+<li>引数：a, b</li>
+<li>出力例：add(3, 5) → 8</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題3名前を使って自己紹介">問題3：名前を使って自己紹介</h5>
+    
+    <blockquote>
+        <p>名前を受け取って「私の名前は〇〇です」と表示する関数を作ってください。</p>
+
+    </blockquote>
+<p></p><h6 id="条件-2">条件</h6><p></p>
+
+<ul>
+<li>関数名：introduce</li>
+<li>引数：name</li>
+<li>出力例：introduce("太郎") → 私の名前は太郎です</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題4正方形の面積を求める">問題4：正方形の面積を求める</h5>
+    
+    <blockquote>
+        <p>一辺の長さを受け取り、正方形の面積を表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="条件-3">条件</h6><p></p>
+
+<ul>
+<li>関数名：squareArea</li>
+<li>引数：side</li>
+<li>出力例：squareArea(4) → 16</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題5偶数かどうか判定する">問題5：偶数かどうか判定する</h5>
+    
+    <blockquote>
+        <p>数値を受け取り、偶数なら「偶数です」、奇数なら「奇数です」と表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="条件-4">条件</h6><p></p>
+
+<ul>
+<li>関数名：checkEven</li>
+<li>引数：num</li>
+<li>出力例：
+<ul>
+<li>checkEven(10) → 偶数です</li>
+<li>checkEven(7) → 奇数です</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="-解答例">✅ 解答例</h4>
+    
+<div class="section">
+    <h5 id="問題1あいさつを表示する関数-1">問題1：あいさつを表示する関数</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> greet <span class="synStatement">=</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`こんにちは！`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synIdentifier">greet</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題22つの数を足す関数-1">問題2：2つの数を足す関数</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> add <span class="synStatement">=</span> <span class="synSpecial">(</span>a<span class="synStatement">,</span> b<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a <span class="synStatement">+</span> b<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">5</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題3名前を使って自己紹介-1">問題3：名前を使って自己紹介</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> introduce <span class="synStatement">=</span> <span class="synSpecial">(</span>name<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`私の名前は </span><span class="synSpecial">${</span>name<span class="synSpecial">}</span><span class="synConstant"> です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synIdentifier">introduce</span><span class="synSpecial">(</span><span class="synConstant">`太郎`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題4正方形の面積を求める-1">問題4：正方形の面積を求める</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> squareArea <span class="synStatement">=</span> <span class="synSpecial">(</span>side<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>side <span class="synStatement">*</span> side<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synIdentifier">squareArea</span><span class="synSpecial">(</span><span class="synConstant">4</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題5偶数かどうか判定する-1">問題5：偶数かどうか判定する</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> checkEven <span class="synStatement">=</span> <span class="synSpecial">(</span>num<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>num <span class="synStatement">%</span> <span class="synConstant">2</span> <span class="synStatement">===</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`偶数です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`奇数です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synIdentifier">checkEven</span><span class="synSpecial">(</span><span class="synConstant">10</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">checkEven</span><span class="synSpecial">(</span><span class="synConstant">7</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【017】return を使う関数.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【017】return を使う関数</span></a><a href="【019】現在の日付日時をコンソールに表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【019】現在の日付日時をコンソールに表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

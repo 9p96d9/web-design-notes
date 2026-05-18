@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML - ブラウザでプレビュー - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>HTML - ブラウザでプレビュー</span>
+  </div>
+  <div class="article-head">
+    <h1>HTML - ブラウザでプレビュー</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2026/01/19</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="HTML---ブラウザでプレビュー">HTML - ブラウザでプレビュー</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260214212304.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLをブラウザでプレビューするポイントを解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="-HTMLをブラウザでプレビューするポイント">✅ HTMLをブラウザでプレビューするポイント</h4>
+    
+<div class="section">
+    <h5 id="-ファイルの保存形式に注意する">① ファイルの保存形式に注意する</h5>
+    <p>HTMLは .html または .htm で保存します。</p><p></p><h6 id="正しい例">正しい例</h6><p></p>
+<pre class="code lang-diff" data-lang="diff" data-unlink="">index.html
+about.html
+</pre><p></p><h6 id="よくあるミス">よくあるミス</h6><p></p>
+<pre class="code lang-diff" data-lang="diff" data-unlink="">index.html.txt   ← 実はテキストファイル
+</pre><p>👉 拡張子が.htmlになっているか必ず確認</p>
+
+</div>
+<div class="section">
+    <h5 id="-文字コードはUTF-8で保存">② 文字コードはUTF-8で保存</h5>
+    <p>日本語を使う場合は UTF-8 で保存しないと文字化けします。</p><p></p><h6 id="推奨設定">推奨設定</h6><p></p>
+
+<ul>
+<li>UTF-8（BOMなし）</li>
+</ul><p>またHTML側にも以下を記述します：</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-基本のHTML構造を守る">③ 基本のHTML構造を守る</h5>
+    <p>最低限、以下の形になっているか確認しましょう。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>テスト<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>Hello HTML<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-ブラウザで開く方法">④ ブラウザで開く方法</h5>
+    <p></p><h6 id="方法ダブルクリック">方法①：ダブルクリック</h6><p></p>
+
+<ul>
+<li>.html ファイルをダブルクリック → 既定のブラウザで表示</li>
+</ul><p></p><h6 id="方法ドラッグドロップ">方法②：ドラッグ＆ドロップ</h6><p></p>
+
+<ul>
+<li>ブラウザに .html ファイルをドラッグ</li>
+</ul><p></p><h6 id="方法右クリック--プログラムから開く">方法③：右クリック → プログラムから開く</h6><p></p>
+
+<ul>
+<li>Chrome / Edge / Firefox などを指定</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-更新時は再読み込みを忘れない">⑤ 更新時は「再読み込み」を忘れない</h5>
+    <p>HTMLを修正 → Ctrl + R / F5（Mac：Cmd + R）<br>
+【キャッシュが効いている場合】</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">Ctrl <span class="synSpecial">+</span> Shift <span class="synSpecial">+</span> R
+</pre><p>で<strong>強制リロード</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-相対パスの指定ミスに注意">⑥ 相対パスの指定ミスに注意</h5>
+    <p></p><h6 id="よくあるNG">よくあるNG</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"/img/test.png"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="正しい例-1">正しい例</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/test.png"</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 HTMLファイルからの相対位置で指定</p>
+
+</div>
+<div class="section">
+    <h5 id="-開発者ツールでエラー確認超重要">⑦ 開発者ツールでエラー確認（超重要）</h5>
+    
+<ul>
+<li>表示がおかしいときは F12キー で開発者ツールを表示。</li>
+</ul><p></p><h6 id="見るポイント">見るポイント</h6><p></p>
+
+<ul>
+<li>Console（エラー表示）</li>
+<li>Network（ファイル読み込み状況）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-ライブプレビュー超おすすめ">⑧ ライブプレビュー（超おすすめ）</h5>
+    
+<ul>
+<li>VS Codeを使っている場合</li>
+</ul><p></p><h6 id="拡張機能Live-Server">拡張機能：Live Server</h6><p></p>
+
+<ul>
+<li>自動更新</li>
+<li>保存 → 即反映</li>
+<li>簡易ローカルサーバ環境で確認可能</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20211225092603.jpg" width="640" height="141" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>👉 最も快適な開発方法<p></p>
+
+</div>
+<div class="section">
+    <h5 id="-よくあるトラブル--対処">🎯 よくあるトラブル &amp; 対処</h5>
+    
+<table>
+    <tbody><tr>
+    <th>症状</th>
+    <th>原因</th>
+    <th>対処</th>
+    </tr>
+    <tr>
+    <td> 文字化け       </td>
+    <td> 文字コード不一致      </td>
+    <td> UTF-8指定  </td>
+    </tr>
+    <tr>
+    <td> CSSが反映されない </td>
+    <td> パス間違い         </td>
+    <td> 相対パス見直し  </td>
+    </tr>
+    <tr>
+    <td> 画像が表示されない  </td>
+    <td> パス or ファイル名ミス </td>
+    <td> 大文字小文字確認 </td>
+    </tr>
+    <tr>
+    <td> 変更が反映されない  </td>
+    <td> キャッシュ         </td>
+    <td> 強制リロード   </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="規定のブラウザ">規定のブラウザ</h4>
+    <p>「HTML 規定ブラウザ」は、通常 HTMLファイルを開くときに自動的に使われる“既定（デフォルト）のブラウザ” のことを指します。</p>
+
+<div class="section">
+    <h5 id="基本の考え方">基本の考え方</h5>
+    
+<ul>
+<li>HTML には「このブラウザで開く」という規定はありません。</li>
+<li>OS側で設定された既定のブラウザ が使われます。</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="OSごとの既定ブラウザ初期状態">OSごとの既定ブラウザ（初期状態）</h5>
+    
+<ul>
+<li>Windows：Microsoft Edge</li>
+<li>macOS：Safari</li>
+<li>Linux：ディストリビューションにより異なる（Firefox が多い）</li>
+<li>Android：Chrome</li>
+<li>iPhone (iOS)：Safari</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="開発者向け補足">開発者向け補足</h5>
+    <p>HTMLファイルを 特定のブラウザで開きたい場合は、Live Server / Open in Browser 機能を使うのが一般的です。</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="Google-Chrome">Google Chrome</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260214212653.jpg" width="400" height="251" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>PCに入っていない場合は、ダウンロードしてインストールします</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.google.com%2Fintl%2Fja_jp%2Fchrome%2Fdr%2Fdownload%2F%3Fbrand%3DFKPE%26ds_kid%3D43700081544017055%26gclsrc%3Daw.ds%26gad_source%3D1%26gclid%3DCj0KCQjwhMq-BhCFARIsAGvo0Kcb3POup7q_6Yv8pVXJLhlPVPG0imnKExeKt9wpI84-uPIoxzByMVYaAq2KEALw_wcB" title="Google Chrome - Google の高速で安全なブラウザをダウンロード" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://www.google.com/intl/ja_jp/chrome/dr/download/?brand=FKPE&amp;ds_kid=43700081544017055&amp;gclsrc=aw.ds&amp;gad_source=1&amp;gclid=Cj0KCQjwhMq-BhCFARIsAGvo0Kcb3POup7q_6Yv8pVXJLhlPVPG0imnKExeKt9wpI84-uPIoxzByMVYaAq2KEALw_wcB">www.google.com</a></cite></p><p></p><h6 id="Chromeを規定ブラウザに指定">Chromeを規定ブラウザに指定</h6><p></p>
+
+<ul>
+<li>「設定」→「規定ブラウザ」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313173914.jpg" width="600" height="362" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ページタイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>メインタイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">ホーム</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">About</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">お問い合わせ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>記事タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ここに本文を書きます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span><span class="synSpecial">&amp;copy;</span> 2025 あなたの名前またはサイト名<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Live-Server拡張機能でプレビュー">Live Server（拡張機能）でプレビュー</h5>
+    
+<ul>
+<li>基本的な文書構造を、Google Chromeでプレビュー</li>
+</ul><p></p><h6 id="Live-Server拡張機能でプレビュー-1">Live Server（拡張機能）でプレビュー</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260214211613.jpg" width="400" height="762" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313174319.jpg" width="600" height="303" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="コンテンツを区切る・レイアウト.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">コンテンツを区切る・レイアウト</span></a><a href="CSSとは.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">CSSとは</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

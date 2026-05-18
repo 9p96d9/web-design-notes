@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>配列 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>配列</span>
+  </div>
+  <div class="article-head">
+    <h1>配列</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/16</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="配列">配列</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260211165333.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptの配列について解説して</p>
+
+    </blockquote>
+
+<ul>
+<li>配列は複数の値を1つの変数でまとめて管理するためのデータ構造です。</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> fruits <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'りんご'</span><span class="synStatement">,</span> <span class="synConstant">'みかん'</span><span class="synStatement">,</span> <span class="synConstant">'バナナ'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>fruits[0] → 'りんご'</li>
+<li>fruits[1] → 'みかん'</li>
+<li>fruits[2] → 'バナナ'</li>
+</ul><p>👉️ インデックスは0から始まるのが重要ポイントです。<br>
+<br>
+</p>
+
+<div class="section">
+    <h5 id="配列の作り方">配列の作り方</h5>
+    <p></p><h6 id="-リテラル構文推奨">① リテラル構文（推奨）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> arr <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">4</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="-Arrayコンストラクタ">② Arrayコンストラクタ</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> arr <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Array</span><span class="synSpecial">(</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>※ 通常は①の書き方が使われます。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="要素の取得変更">要素の取得・変更</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> nums <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">10</span><span class="synStatement">,</span> <span class="synConstant">20</span><span class="synStatement">,</span> <span class="synConstant">30</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>nums<span class="synSpecial">[</span><span class="synConstant">1</span><span class="synSpecial">])</span><span class="synStatement">;</span> <span class="synComment">// 20</span>
+
+nums<span class="synSpecial">[</span><span class="synConstant">1</span><span class="synSpecial">]</span> = <span class="synConstant">99</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>nums<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// [10, 99, 30]</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="要素の追加削除">要素の追加・削除</h5>
+    <p></p><h6 id="末尾に追加push">末尾に追加（push）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">arr<span class="synStatement">.</span><span class="synIdentifier">push</span><span class="synSpecial">(</span><span class="synConstant">4</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="末尾を削除pop">末尾を削除（pop）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">arr<span class="synStatement">.</span><span class="synIdentifier">pop</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="先頭に追加unshift">先頭に追加（unshift）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">arr<span class="synStatement">.</span><span class="synIdentifier">unshift</span><span class="synSpecial">(</span><span class="synConstant">0</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6>先頭を削除（shift）c<p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">arr<span class="synStatement">.</span><span class="synIdentifier">shift</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre>
+</h6></div>
+<div class="section">
+    <h5 id="配列の長さ">配列の長さ</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">arr<span class="synStatement">.</span>length<span class="synStatement">;</span>
+</pre><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> a <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a<span class="synStatement">.</span>length<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// 3</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="ループ処理超重要">ループ処理（超重要）</h5>
+    <p></p><h6 id="for文">for文</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span> i <span class="synStatement">&lt;</span> arr<span class="synStatement">.</span>length<span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>arr<span class="synSpecial">[</span>i<span class="synSpecial">])</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><h6 id="forofおすすめ">for...of（おすすめ）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">const</span> value <span class="synStatement">of</span> arr<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>value<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><h6 id="forEach">forEach</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">arr<span class="synStatement">.</span><span class="synIdentifier">forEach</span><span class="synSpecial">((</span>value<span class="synStatement">,</span> index<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>index<span class="synStatement">,</span> value<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="超重要な配列メソッド5選-">超重要な配列メソッド5選 🔥</h5>
+    <p></p><h6 id="-map変換">① map（変換）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> nums <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span> doubled <span class="synStatement">=</span> nums<span class="synStatement">.</span><span class="synIdentifier">map</span><span class="synSpecial">(</span>n <span class="synStatement">=&gt;</span> n <span class="synStatement">*</span> <span class="synConstant">2</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synComment">// [2, 4, 6]</span>
+</pre><p></p><h6 id="-filter絞り込み">② filter（絞り込み）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> nums <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">4</span><span class="synStatement">,</span> <span class="synConstant">5</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span> even <span class="synStatement">=</span> nums<span class="synStatement">.</span><span class="synIdentifier">filter</span><span class="synSpecial">(</span>n <span class="synStatement">=&gt;</span> n <span class="synStatement">%</span> <span class="synConstant">2</span> <span class="synStatement">===</span> <span class="synConstant">0</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synComment">// [2, 4]</span>
+</pre><p></p><h6 id="-find1件取得">③ find（1件取得）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> nums <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">5</span><span class="synStatement">,</span> <span class="synConstant">8</span><span class="synStatement">,</span> <span class="synConstant">12</span><span class="synStatement">,</span> <span class="synConstant">20</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span> found <span class="synStatement">=</span> nums<span class="synStatement">.</span><span class="synIdentifier">find</span><span class="synSpecial">(</span>n <span class="synStatement">=&gt;</span> n <span class="synStatement">&gt;</span> <span class="synConstant">10</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synComment">// 12</span>
+</pre><p></p><h6 id="-includes存在確認">④ includes（存在確認）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synSpecial">]</span><span class="synStatement">.</span><span class="synIdentifier">includes</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// true</span>
+</pre><p>c⑤ reduce（集計・変換の神）c<br>
+const sum = [1, 2, 3, 4].reduce((a, b) =&gt; a + b, 0);<br>
+// 10<br>
+|</p>
+
+</div>
+<div class="section">
+    <h5 id="配列のコピー超重要ポイント">配列のコピー（超重要ポイント）</h5>
+    <p></p><h6 id="-間違い参照コピー">❌ 間違い（参照コピー）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> a <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span> b <span class="synStatement">=</span> a<span class="synStatement">;</span>
+b<span class="synSpecial">[</span><span class="synConstant">0</span><span class="synSpecial">]</span> = <span class="synConstant">99</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// [99, 2, 3]</span>
+</pre><p>→ 同じ配列を参照している</p><p></p><h6>✅ 正しいコピー（シャローコピー）c<p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> b <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synStatement">...</span>a<span class="synSpecial">]</span><span class="synStatement">;</span>
+</pre><p>または</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> b <span class="synStatement">=</span> a<span class="synStatement">.</span><span class="synIdentifier">slice</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre>
+</h6></div>
+<div class="section">
+    <h5 id="多次元配列2次元配列">多次元配列（2次元配列）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> table <span class="synStatement">=</span> <span class="synSpecial">[</span>
+  <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synSpecial">]</span><span class="synStatement">,</span>
+  <span class="synSpecial">[</span><span class="synConstant">4</span><span class="synStatement">,</span> <span class="synConstant">5</span><span class="synStatement">,</span> <span class="synConstant">6</span><span class="synSpecial">]</span><span class="synStatement">,</span>
+  <span class="synSpecial">[</span><span class="synConstant">7</span><span class="synStatement">,</span> <span class="synConstant">8</span><span class="synStatement">,</span> <span class="synConstant">9</span><span class="synSpecial">]</span>
+<span class="synSpecial">]</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>table<span class="synSpecial">[</span><span class="synConstant">1</span><span class="synSpecial">][</span><span class="synConstant">2</span><span class="synSpecial">])</span><span class="synStatement">;</span> <span class="synComment">// 6</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="よくある実用例">よくある実用例</h5>
+    <p></p><h6 id="合計を求める">合計を求める</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> total <span class="synStatement">=</span> prices<span class="synStatement">.</span><span class="synIdentifier">reduce</span><span class="synSpecial">((</span>sum<span class="synStatement">,</span> p<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> sum <span class="synStatement">+</span> p<span class="synStatement">,</span> <span class="synConstant">0</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="オブジェクト配列の処理">オブジェクト配列の処理</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> users <span class="synStatement">=</span> <span class="synSpecial">[</span>
+  <span class="synSpecial">{</span> <span class="synIdentifier">name</span><span class="synStatement">:</span> <span class="synConstant">'太郎'</span><span class="synStatement">,</span> <span class="synIdentifier">age</span><span class="synStatement">:</span> <span class="synConstant">20</span> <span class="synSpecial">}</span><span class="synStatement">,</span>
+  <span class="synSpecial">{</span> <span class="synIdentifier">name</span><span class="synStatement">:</span> <span class="synConstant">'花子'</span><span class="synStatement">,</span> <span class="synIdentifier">age</span><span class="synStatement">:</span> <span class="synConstant">25</span> <span class="synSpecial">}</span>
+<span class="synSpecial">]</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> names <span class="synStatement">=</span> users<span class="synStatement">.</span><span class="synIdentifier">map</span><span class="synSpecial">(</span>u <span class="synStatement">=&gt;</span> u<span class="synStatement">.</span>name<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synComment">// ['太郎', '花子']</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="配列をマスターするとできること">配列をマスターするとできること</h5>
+    
+<ul>
+<li>データ処理</li>
+<li>フロントエンド（DOM操作）</li>
+<li>APIレスポンスの加工</li>
+<li>React / Vue の状態管理</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="反復（ループ）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">反復（ループ）</span></a><a href="配列を利用する理由.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">配列を利用する理由</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

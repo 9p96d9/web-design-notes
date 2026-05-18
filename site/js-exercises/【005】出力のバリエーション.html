@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【005】出力のバリエーション - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【005】出力のバリエーション</span>
+  </div>
+  <div class="article-head">
+    <h1>【005】出力のバリエーション</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">変数の型</span>
+      <span class="date">2026/01/05</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="005出力のバリエーション">【005】出力のバリエーション</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227084858.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptでtypeofを使って型の判定するバリエーションを作って</p>
+
+    </blockquote>
+<p>型の判定には、typeofという演算子を使います</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">typeof</span> 値
+</pre>
+</div>
+<div class="section">
+    <h4 id="1️⃣-基本的な型チェック">1️⃣ 基本的な型チェック</h4>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">typeof</span> <span class="synConstant">123</span>           <span class="synComment">// "number"</span>
+<span class="synStatement">typeof</span> <span class="synConstant">'hello'</span>       <span class="synComment">// "string"</span>
+<span class="synStatement">typeof</span> <span class="synConstant">true</span>          <span class="synComment">// "boolean"</span>
+<span class="synStatement">typeof</span> <span class="synConstant">undefined</span>     <span class="synComment">// "undefined"</span>
+<span class="synStatement">typeof</span> <span class="synConstant">null</span>          <span class="synComment">// "object" ⚠️注意</span>
+<span class="synStatement">typeof</span> <span class="synSpecial">{}</span>            <span class="synComment">// "object"</span>
+<span class="synStatement">typeof</span> <span class="synSpecial">[]</span>            <span class="synComment">// "object"</span>
+<span class="synStatement">typeof</span> <span class="synStatement">function</span><span class="synSpecial">(){}</span>  <span class="synComment">// "function"</span>
+<span class="synStatement">typeof</span> <span class="synIdentifier">Symbol</span><span class="synSpecial">()</span>      <span class="synComment">// "symbol"</span>
+<span class="synStatement">typeof</span> <span class="synConstant">10</span>n           <span class="synComment">// "bigint"</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="2️⃣-よく使う判定パターン集">2️⃣ よく使う判定パターン集</h4>
+    
+<div class="section">
+    <h5 id="数値チェック">数値チェック</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synStatement">typeof</span> x <span class="synStatement">===</span> <span class="synConstant">'number'</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'数値です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="文字列チェック">文字列チェック</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synStatement">typeof</span> x <span class="synStatement">===</span> <span class="synConstant">'string'</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'文字列です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="真偽値チェック">真偽値チェック</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synStatement">typeof</span> x <span class="synStatement">===</span> <span class="synConstant">'boolean'</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'boolean型です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="関数チェック">関数チェック</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synStatement">typeof</span> fn <span class="synStatement">===</span> <span class="synConstant">'function'</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">fn</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="undefinedチェック">undefinedチェック</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synStatement">typeof</span> x <span class="synStatement">===</span> <span class="synConstant">'undefined'</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'未定義です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="3️⃣-null--配列--オブジェクトの正しい判定">3️⃣ null / 配列 / オブジェクトの正しい判定</h4>
+    <p>⚠️ 注意：typeof null === 'object' は有名なJSのバグ</p>
+
+<div class="section">
+    <h5 id="null判定">null判定</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span>x <span class="synStatement">===</span> <span class="synConstant">null</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'nullです'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="配列判定">配列判定</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synType">Array</span><span class="synStatement">.</span><span class="synIdentifier">isArray</span><span class="synSpecial">(</span>x<span class="synSpecial">))</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'配列です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="オブジェクト判定純オブジェクト">オブジェクト判定（純オブジェクト）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synStatement">typeof</span> x <span class="synStatement">===</span> <span class="synConstant">'object'</span> <span class="synStatement">&amp;&amp;</span> x <span class="synStatement">!</span>== <span class="synConstant">null</span> <span class="synStatement">&amp;&amp;</span> <span class="synStatement">!</span><span class="synType">Array</span><span class="synStatement">.</span><span class="synIdentifier">isArray</span><span class="synSpecial">(</span>x<span class="synSpecial">))</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'オブジェクトです'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="4️⃣-よくある罠まとめ">4️⃣ よくある罠まとめ</h4>
+    
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>typeof結果</th>
+    </tr>
+    <tr>
+    <td> null </td>
+    <td> "object" ⚠️ </td>
+    </tr>
+    <tr>
+    <td> []   </td>
+    <td> "object" ⚠️ </td>
+    </tr>
+    <tr>
+    <td> {}   </td>
+    <td> "object"    </td>
+    </tr>
+    <tr>
+    <td> NaN  </td>
+    <td> "number" ⚠️ </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h4 id="練習問題">練習問題</h4>
+    
+<ul>
+<li>以下の変数の型を出力する</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">//文字列'テキスト'を変数 a に代入して変数の型を出力</span>
+
+<span class="synComment">//数値 2026 を変数 b に代入して変数の型を出力</span>
+
+<span class="synComment">//真偽値 false を変数 c に代入して変数の型を出力</span>
+
+<span class="synComment">//undefined を変数 d に代入して変数の型を出力</span>
+
+<span class="synComment">//null を変数 e に代入して変数の型を出力</span>
+
+<span class="synComment">//配列 ['配列'] を変数 f に代入して変数の型を出力</span>
+
+<span class="synComment">//関数を変数 g に代入して変数の型を出力</span>
+</pre><p></p><h6 id="解答例">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">//文字列'テキスト'を変数 a に代入して変数の型を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span><span class="synSpecial">(</span>a <span class="synStatement">=</span> <span class="synConstant">'テキスト'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synComment">//数値 2025 を変数 b に代入して変数の型を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span><span class="synSpecial">(</span>b <span class="synStatement">=</span> <span class="synConstant">2026</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synComment">//真偽値 false を変数 c に代入して変数の型を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span><span class="synSpecial">(</span>c <span class="synStatement">=</span> <span class="synConstant">false</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synComment">//undefined を変数 d に代入して変数の型を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span><span class="synSpecial">(</span>d <span class="synStatement">=</span> <span class="synConstant">undefined</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synComment">//null を変数 e に代入して変数の型を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span><span class="synSpecial">(</span>e <span class="synStatement">=</span> <span class="synConstant">null</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synComment">//配列 ['配列'] を変数 f に代入して変数の型を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span><span class="synSpecial">(</span>f <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'配列'</span><span class="synSpecial">]))</span><span class="synStatement">;</span>
+<span class="synComment">//関数を変数 g に代入して変数の型を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span><span class="synSpecial">(</span>g <span class="synStatement">=</span> <span class="synStatement">function</span><span class="synSpecial">(){}))</span><span class="synStatement">;</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【004】変数を使った四則演算結果をコンソールに表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【004】変数を使った四則演算結果をコンソールに表示</span></a><a href="【006】警告ダイアログに表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【006】警告ダイアログに表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

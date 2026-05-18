@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ダイアログボックスを利用する - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>ダイアログボックスを利用する</span>
+  </div>
+  <div class="article-head">
+    <h1>ダイアログボックスを利用する</h1>
+    <div class="meta">
+      
+      <span class="date">2026/01/13</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="ダイアログボックスを利用する">ダイアログボックスを利用する</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260209054258.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptでダイアログボックスを利用する場合</p>
+
+    </blockquote>
+
+<ul>
+<li>JavaScriptでダイアログボックスを利用する場合、主に以下の 3種類の標準ダイアログ がよく使われます。</li>
+</ul>
+<div class="section">
+    <h5 id="３種類のダイアログボックス">３種類のダイアログボックス</h5>
+    
+<table>
+    <tbody><tr>
+    <th>項目</th>
+    <th>コード</th>
+    </tr>
+    <tr>
+    <td>警告</td>
+    <td>alert()</td>
+    </tr>
+    <tr>
+    <td>確認</td>
+    <td>confirm()</td>
+    </tr>
+    <tr>
+    <td>入力</td>
+    <td>prompt()</td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="alert警告ダイアログ">alert（警告ダイアログ）</h4>
+    
+<ul>
+<li>メッセージを表示し、OKボタンのみ のシンプルなダイアログです。</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">alert</span><span class="synSpecial">(</span><span class="synConstant">'処理が完了しました'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="用途例">用途例</h6><p></p>
+
+<ul>
+<li>完了通知</li>
+<li>エラーメッセージ表示</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="confirm確認ダイアログ">confirm（確認ダイアログ）</h4>
+    
+<ul>
+<li>OK / キャンセル の2つの選択肢を表示し、結果を true / false で受け取れます。</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synIdentifier">confirm</span><span class="synSpecial">(</span><span class="synConstant">'削除しますか？'</span><span class="synSpecial">))</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'削除しました'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'キャンセルしました'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>【戻り値】</p>
+
+<ul>
+<li>OK → true</li>
+<li>キャンセル → false</li>
+</ul><p></p><h6 id="用途例-1">用途例</h6><p></p>
+
+<ul>
+<li>削除確認</li>
+<li>実行確認</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="prompt入力ダイアログ">prompt（入力ダイアログ）</h4>
+    
+<ul>
+<li>文字入力欄付き ダイアログです。</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> name <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'名前を入力してください'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>name <span class="synStatement">!</span>== <span class="synConstant">null</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`こんにちは </span><span class="synSpecial">${</span>name<span class="synSpecial">}</span><span class="synConstant"> さん`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>【戻り値】</p>
+
+<ul>
+<li>入力 → 入力文字列</li>
+<li>キャンセル → null</li>
+</ul><p></p><h6 id="用途例-2">用途例</h6><p></p>
+
+<ul>
+<li>簡易入力フォーム</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="実務でよく使われるカスタムダイアログ">実務でよく使われるカスタムダイアログ</h4>
+    
+<ul>
+<li>最近のWeb開発では、見た目や操作性を良くするため、標準ダイアログではなくHTML+CSS+JSでモーダルダイアログを作成 することが多いです。</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dialog</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"myDialog"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>本当に削除しますか？<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">ok</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>OK<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">cancel</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>キャンセル<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dialog</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>dialog<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'myDialog'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">openDialog</span><span class="synSpecial">() {</span>
+  dialog<span class="synStatement">.</span><span class="synIdentifier">showModal</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">ok</span><span class="synSpecial">() {</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'OK'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  dialog<span class="synStatement">.</span><span class="synIdentifier">close</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">cancel</span><span class="synSpecial">() {</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'キャンセル'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  dialog<span class="synStatement">.</span><span class="synIdentifier">close</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="どれを使うべき">どれを使うべき？</h5>
+    
+<table>
+    <tbody><tr>
+    <th>用途</th>
+    <th>推奨</th>
+    </tr>
+    <tr>
+    <td>簡易な通知</td>
+    <td>alert()</td>
+    </tr>
+    <tr>
+    <td>確認処理</td>
+    <td>confirm()</td>
+    </tr>
+    <tr>
+    <td>簡易入力</td>
+    <td>prompt()</td>
+    </tr>
+    <tr>
+    <td>デザイン重視</td>
+    <td>カスタムモーダル</td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="prompt で入力された値を受け取って計算する方法.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">prompt で入力された値を受け取って計算する方法</span></a><a href="初心者向け 練習問題（計算 × prompt）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">初心者向け 練習問題（計算 × prompt）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

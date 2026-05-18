@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1カラム固定幅レイアウト - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>1カラム固定幅レイアウト</span>
+  </div>
+  <div class="article-head">
+    <h1>1カラム固定幅レイアウト</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング演習</span>
+      <span class="date">2025/12/15</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="1カラム固定幅レイアウト">1カラム固定幅レイアウト</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260305031634.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTML＋CSS完成形を作成して</p>
+
+<ul>
+<li>幅：800px</li>
+<li>中央寄せ（margin: 0 auto;）</li>
+<li>背景色：bodyは薄いグレー</li>
+<li>mainは白</li>
+<li>headerは濃い色＋白文字</li>
+<li>sectionごとに padding を設定</li>
+<li>h2 と p の間に margin</li>
+<li>footer は中央揃え</li>
+</ul>
+    </blockquote>
+
+<div class="section">
+    <h5 id="完成例">完成例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260305025942.jpg" width="680" height="883" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="-このコードで学べること">🎯 このコードで学べること</h5>
+    <p>✔ 1カラム固定幅レイアウト<br>
+✔ 中央寄せ（margin: 0 auto;）<br>
+✔ header / main / footer の構造<br>
+✔ sectionごとの余白設計<br>
+✔ 補色アクセントの使い方<br>
+✔ ボタンデザイン</p><p></p><h6 id="設計方針">設計方針</h6><p></p>
+
+<ul>
+<li>1カラム（800px固定）</li>
+<li>ベース：ナチュラルグリーン</li>
+<li>ダークトーン：深緑（ヘッダー・フッター）</li>
+<li>アクセント：やや明るいリーフグリーン</li>
+<li>背景：薄いグレー</li>
+<li>main：白</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-色の構成解説">🎨 色の構成解説</h5>
+    
+<table>
+    <tbody><tr>
+    <th>役割</th>
+    <th>色</th>
+    <th>目的</th>
+    </tr>
+    <tr>
+    <td> ヘッダー・フッター </td>
+    <td> #1b4332 </td>
+    <td> 安定感・高級感  </td>
+    </tr>
+    <tr>
+    <td> 見出しライン    </td>
+    <td> #2d6a4f </td>
+    <td> 統一感      </td>
+    </tr>
+    <tr>
+    <td> ボタン       </td>
+    <td> #40916c </td>
+    <td> アクセント    </td>
+    </tr>
+    <tr>
+    <td> 外背景       </td>
+    <td> #f2f2f2 </td>
+    <td> コントラスト確保 </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="背景画像を設定">背景画像を設定</h5>
+    
+<ul>
+<li>画像の上に暗めのオーバーレイ（文字を読みやすくする）</li>
+<li>高さを固定</li>
+<li>背景は cover で全面表示</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="テキスト">テキスト</h5>
+    <pre class="code" data-lang="" data-unlink="">Green Leaf Cafe
+自然を感じる癒しのカフェ
+
+コンセプト
+Green Leaf Cafeは、自然をテーマにした落ち着いた空間を提供するカフェです。
+有機栽培の豆を使用したコーヒーと、手作りスイーツをお楽しみいただけます。
+
+メニュー
+商品名	価格（税込）
+オーガニックブレンド	¥480
+抹茶ラテ	¥520
+バナナケーキ	¥500
+季節のグリーンタルト	¥550
+
+アクセス
+東京都豊島区〇〇1-2-3
+JR池袋駅から徒歩5分
+営業時間：10:00〜20:00
+
+© 2026 Green Leaf Cafe</pre>
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>Green Leaf Cafe<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synComment">&lt;!-- header --&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>Green Leaf Cafe<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>自然を感じる癒しのカフェ<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+  <span class="synComment">&lt;!-- /header --&gt;</span>
+
+  <span class="synComment">&lt;!-- main --&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>  
+    <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>コンセプト<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+        Green Leaf Cafeは、自然をテーマにした落ち着いた空間を提供するカフェです。<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>
+        有機栽培の豆を使用したコーヒーと、手作りスイーツをお楽しみいただけます。
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /section --&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>メニュー<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">thead</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>商品名<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>価格（税込）<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">thead</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">tbody</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>オーガニックブレンド<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>¥480<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>抹茶ラテ<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>¥520<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>バナナケーキ<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>¥500<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>季節のグリーンタルト<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+            <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>¥550<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">tbody</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /section --&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>アクセス<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>東京都豊島区〇〇1-2-3<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>JR池袋駅から徒歩5分<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>営業時間：10:00〜20:00<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /section --&gt;</span>
+
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synComment">&lt;!-- main --&gt;</span>
+
+  <span class="synComment">&lt;!-- footer --&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span><span class="synSpecial">&amp;copy;</span> 2026 Green Leaf Cafe<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+  <span class="synComment">&lt;!-- /footer --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  body（全体設定）</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#f2f2f2</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">800px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ffffff</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  header（背景画像付き）</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synStatement">header</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">height</span>: <span class="synConstant">320px</span>;
+  <span class="synType">background-image</span>: <span class="synIdentifier">url(</span><span class="synConstant">"https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&amp;w=1600&amp;auto=format&amp;fit=crop"</span><span class="synIdentifier">)</span>;
+  <span class="synType">background-size</span>: <span class="synConstant">cover</span>;
+  <span class="synType">background-position</span>: <span class="synConstant">center</span>;
+  <span class="synType">background-repeat</span>: <span class="synConstant">no-repeat</span>;
+  <span class="synType">color</span>: <span class="synConstant">#ffffff</span>;
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* オーバーレイ */</span>
+<span class="synStatement">header</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">""</span>;
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  inset: <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synIdentifier">rgba(</span><span class="synConstant">27</span><span class="synIdentifier">,</span><span class="synConstant"> 67</span><span class="synIdentifier">,</span><span class="synConstant"> 50</span><span class="synIdentifier">,</span><span class="synConstant"> 0.6</span><span class="synIdentifier">)</span>; <span class="synComment">/* 深緑の半透明 */</span>
+<span class="synIdentifier">}</span>
+  <span class="synStatement">header</span> <span class="synStatement">h1</span><span class="synSpecial">,</span>
+  <span class="synStatement">header</span> <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+    <span class="synType">position</span>: <span class="synConstant">relative</span>; <span class="synComment">/* オーバーレイより前に出す */</span>
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">header</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">36px</span>;
+    <span class="synType">margin-bottom</span>: <span class="synConstant">10px</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ------------------------------</span>
+<span class="synComment">   main</span>
+<span class="synComment">------------------------------ */</span>
+<span class="synStatement">main</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">40px</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">section</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">60px</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">section</span> <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+    <span class="synType">border-bottom</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#2d6a4f</span>;
+    <span class="synType">padding-bottom</span>: <span class="synConstant">10px</span>;
+    <span class="synType">color</span>: <span class="synConstant">#1b4332</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">section</span> <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+    <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+    <span class="synType">margin-bottom</span>: <span class="synConstant">15px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding-left</span>: <span class="synConstant">20px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">li</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">10px</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">.button</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#40916c</span>;
+  <span class="synType">color</span>: <span class="synConstant">#ffffff</span>;
+  <span class="synType">padding</span>: <span class="synConstant">10px</span> <span class="synConstant">20px</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">5px</span>;
+  <span class="synType">transition</span>: <span class="synConstant">0.3s</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.button</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+    <span class="synType">background-color</span>: <span class="synConstant">#2d6a4f</span>;
+  <span class="synIdentifier">}</span>
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  table（メニュー）</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synStatement">table</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">border-collapse</span>: <span class="synConstant">collapse</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">thead</span> <span class="synIdentifier">{</span>
+    <span class="synType">background-color</span>: <span class="synConstant">#2d6a4f</span>;
+    <span class="synType">color</span>: <span class="synConstant">#ffffff</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">th</span><span class="synSpecial">,</span> <span class="synStatement">td</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">15px</span>;
+    <span class="synType">border-bottom</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#dddddd</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">th</span> <span class="synIdentifier">{</span>
+    <span class="synType">text-align</span>: <span class="synPreProc">left</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">td</span>:<span class="synPreProc">last-child</span> <span class="synIdentifier">{</span>
+    <span class="synType">text-align</span>: <span class="synPreProc">right</span>; <span class="synComment">/* 価格右寄せ */</span>
+  <span class="synIdentifier">}</span>
+
+  <span class="synComment">/* ホバー効果 */</span>
+  <span class="synStatement">tbody</span> <span class="synStatement">tr</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+    <span class="synType">background-color</span>: <span class="synConstant">#f1f8f4</span>;
+  <span class="synIdentifier">}</span>
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synStatement">footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#1b4332</span>;
+  <span class="synType">color</span>: <span class="synConstant">#ffffff</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="背景色 - 1カラムレイアウト.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">背景色 - 1カラムレイアウト</span></a><a href="背景画像- スペイン観光.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">背景画像- スペイン観光</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

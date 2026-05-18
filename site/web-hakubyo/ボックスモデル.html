@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ボックスモデル - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>ボックスモデル</span>
+  </div>
+  <div class="article-head">
+    <h1>ボックスモデル</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">CSS</span>
+      <span class="date">2026/01/21</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="ボックスモデル">ボックスモデル</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260215132753.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSのボックスモデルを詳しく解説して</p>
+
+    </blockquote>
+
+<ul>
+<li>CSSの<strong>ボックスモデル（Box Model）</strong>は、Webレイアウトの基礎となる超重要概念です。</li>
+<li>しっかり理解すると、レイアウト崩れの原因が一気に分かるようになります。</li>
+</ul>
+<div class="section">
+    <h5 id="CSS-ボックスモデルとは">CSS ボックスモデルとは？</h5>
+    
+<ul>
+<li>HTMLのすべての要素は、<strong>長方形の箱（ボックス）</strong>として扱われます。</li>
+<li>この箱の構造を定義したものが ボックスモデル です。</li>
+<li>ボックスモデルは、立体的に捉えると理解しやすい</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20240919004835.jpg" width="460" height="369" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ol>
+<li>空間（余白）</li>
+<li>背景（色→画像）</li>
+<li>枠線</li>
+<li>コンテンツ（文字）</li>
+</ol><p>の順に記述していくと、破綻しにくい記述が可能です</p><p></p><h6 id="-margin外側余白">① margin（外側余白）</h6><p></p>
+
+<ul>
+<li>他要素との距離</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">div</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>→ <strong>要素と要素の距離</strong></p><p></p><h6 id="-padding内側余白">② padding（内側余白）</h6><p></p>
+
+<ul>
+<li>内容と枠線の間の余白</li>
+<li>文字を読みやすくする役割</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">div</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">10px</span> <span class="synConstant">20px</span> <span class="synConstant">30px</span> <span class="synConstant">40px</span>;
+  <span class="synComment">/* 上 右 下 左 */</span>
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="-border枠線">③ border（枠線）</h6><p></p>
+
+<ul>
+<li>境界線</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">div</span> <span class="synIdentifier">{</span>
+  <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">black</span>;
+<span class="synIdentifier">}</span>
+</pre><p>→ paddingの外側に枠線が付く</p><p></p><h6 id="-content内容">④ content（内容）</h6><p></p>
+
+<ul>
+<li>テキスト・画像など、実際の中身</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">div</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;
+  <span class="synType">height</span>: <span class="synConstant">100px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>→ この width / height は content のサイズ</p>
+
+</div>
+<div class="section">
+    <h5 id="実サイズの計算超重要">実サイズの計算（超重要）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">border</span>: <span class="synConstant">5px</span> <span class="synConstant">solid</span> <span class="synConstant">black</span>;
+  <span class="synType">margin</span>: <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="実際に占有するサイズ">実際に占有するサイズ</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>要素</th>
+    <th>横幅</th>
+    </tr>
+    <tr>
+    <td> content </td>
+    <td> 200px         </td>
+    </tr>
+    <tr>
+    <td> padding </td>
+    <td> 20 × 2 = 40px </td>
+    </tr>
+    <tr>
+    <td> border  </td>
+    <td> 5 × 2 = 10px  </td>
+    </tr>
+    <tr>
+    <td> <strong>合計</strong>  </td>
+    <td> <strong>250px</strong>     </td>
+    </tr>
+</tbody></table>
+<ul>
+<li><strong>margin含めると → 270px</strong></li>
+</ul><p>👉 これが レイアウト崩れ最大の原因</p>
+
+</div>
+<div class="section">
+    <h5 id="box-sizing-の違い最重要">box-sizing の違い（最重要）</h5>
+    <p>CSSには サイズ計算方法を変えるプロパティ があります。</p><p></p><h6 id="デフォルトcontent-box">デフォルト：content-box</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">box-sizing: content-box;
+</pre>
+    <blockquote>
+        <p>width = contentのみ</p>
+
+    </blockquote>
+<p>→ padding + border でサイズが増える</p><p></p><h6 id="推奨border-box">推奨：border-box</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">box-sizing: border-box;
+</pre>
+    <blockquote>
+        <p>width = content + padding + border</p>
+
+    </blockquote>
+<p>【例】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">border</span>: <span class="synConstant">5px</span> <span class="synConstant">solid</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 実サイズは200pxのまま！</p>
+
+</div>
+<div class="section">
+    <h5 id="実務ではこれがほぼ必須">実務ではこれがほぼ必須</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+</pre><p>または</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉️ <strong>レイアウト計算が直感的になる</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="marginの相殺margin-collapse">marginの相殺（margin collapse）</h5>
+    <p>以下の場合、上下マージンが合体します<br>
+【html】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>見出し<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文章<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>【css】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">h1</span> <span class="synIdentifier">{</span> <span class="synType">margin-bottom</span>: <span class="synConstant">40px</span>; <span class="synIdentifier">}</span>
+<span class="synStatement">p</span>  <span class="synIdentifier">{</span> <span class="synType">margin-top</span>: <span class="synConstant">30px</span>; <span class="synIdentifier">}</span>
+</pre><p>→ 合計 70px にならず、40px だけになる<br>
+👉 大きい方が優先</p><p></p><h6 id="️-起きる条件">⚠️ 起きる条件：</h6><p></p>
+
+<ul>
+<li>縦方向のみ</li>
+<li>ブロック要素のみ</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="図で理解する実例">図で理解する実例</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">div</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">300px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">border</span>: <span class="synConstant">5px</span> <span class="synConstant">solid</span> <span class="synConstant">red</span>;
+  <span class="synType">margin</span>: <span class="synConstant">30px</span>;
+<span class="synIdentifier">}</span>
+</pre><pre class="code less" data-lang="less" data-unlink="">margin: 30
+ ┌─────────────────────────────┐
+ │  border:5                   │
+ │  ┌───────────────────────┐  │
+ │  │ padding:20            │  │
+ │  │ ┌─────────────────┐   │  │
+ │  │ │ content:300     │   │  │
+ │  │ └─────────────────┘   │  │
+ │  └───────────────────────┘  │
+ └─────────────────────────────┘</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="よくあるバグ原因TOP3">よくあるバグ原因TOP3</h4>
+    
+<div class="section">
+    <h5 id="-width超過で横スクロール">① width超過で横スクロール</h5>
+    <p>→ box-sizing: border-box; で解決</p>
+
+</div>
+<div class="section">
+    <h5 id="-marginが効かない">② marginが効かない</h5>
+    <p>→ <strong>インライン要素（spanなど）には上下marginが効かない</strong></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">span</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-top</span>: <span class="synConstant">20px</span>; <span class="synComment">/* 効かない */</span>
+<span class="synIdentifier">}</span>
+</pre><p>→ display: inline-block に変更</p>
+
+</div>
+<div class="section">
+    <h5 id="-margin-collapse-の誤解">③ margin collapse の誤解</h5>
+    <p>→ padding or border を親に入れると防げる</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">1px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="Flexbox--Grid-とボックスモデルの関係">Flexbox / Grid とボックスモデルの関係</h4>
+    <p><strong>Flexbox・Gridでも 各要素は必ずボックスモデルで計算</strong><br>
+→ つまり ボックスモデル理解 ＝ CSS理解</p>
+
+</div>
+<div class="section">
+    <h4 id="まとめここだけ覚えればOK">まとめ（ここだけ覚えればOK）</h4>
+    
+<table>
+    <tbody><tr>
+    <th>項目</th>
+    <th>覚えること</th>
+    </tr>
+    <tr>
+    <td> 構造   </td>
+    <td> content → padding → border → margin </td>
+    </tr>
+    <tr>
+    <td> 実サイズ </td>
+    <td> width + padding + border            </td>
+    </tr>
+    <tr>
+    <td> 推奨設定 </td>
+    <td> <strong>box-sizing: border-box</strong>            </td>
+    </tr>
+    <tr>
+    <td> 罠    </td>
+    <td> margin collapse                     </td>
+    </tr>
+</tbody></table>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="CSSとは.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">CSSとは</span></a><a href="リセットCSSの記述.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">リセットCSSの記述</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

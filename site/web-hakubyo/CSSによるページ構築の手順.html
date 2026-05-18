@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSSによるページ構築の手順 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>CSSによるページ構築の手順</span>
+  </div>
+  <div class="article-head">
+    <h1>CSSによるページ構築の手順</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/01/31</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="CSSによるページ構築の手順">CSSによるページ構築の手順</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315033025.jpg" width="600" height="440" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSによるページ構築の手順を解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="CSSによるページ構築の手順-1">CSSによるページ構築の手順</h4>
+    
+<div class="section">
+    <h5 id="-全体構成を設計する設計フェーズ">① 全体構成を設計する（設計フェーズ）</h5>
+    <p>まず、<strong>どんなページを作るかを整理</strong>します。</p><p></p><h6 id="決めること">決めること</h6><p></p>
+
+<ul>
+<li>レイアウト構成
+<ul>
+<li>【例】ヘッダー / ナビ / メイン / サイドバー / フッター</li>
+</ul></li>
+<li>配色（ベースカラー、アクセントカラー）</li>
+<li>フォント</li>
+<li>レスポンシブ対応の有無（スマホ対応）</li>
+</ul><p>【例：ページ構成案】</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">&lt;<span class="synStatement">header</span><span class="synSpecial">&gt;</span>
+&lt;<span class="synStatement">nav</span><span class="synSpecial">&gt;</span>
+&lt;<span class="synStatement">main</span><span class="synSpecial">&gt;</span>
+&lt;<span class="synStatement">aside</span><span class="synSpecial">&gt;</span>
+&lt;<span class="synStatement">footer</span><span class="synSpecial">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-HTMLで骨組みを作る構造フェーズ">② HTMLで骨組みを作る（構造フェーズ）</h5>
+    <p>CSSを当てる前に、<strong>HTMLで意味のある構造を作る</strong>ことが重要です。</p><p></p><h6 id="サンプルHTML構造">サンプルHTML構造</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>サンプルページ<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>ヘッダー<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>ナビゲーション<span class="synIdentifier">&lt;/</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>メインコンテンツ<span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>フッター<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ポイント">ポイント</h6><p></p>
+
+<ul>
+<li>semanticタグ（header, main, nav, footer）を使う</li>
+<li>CSSは外部ファイル化（保守性UP）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-CSSリセット初期設定初期化フェーズ">③ CSSリセット・初期設定（初期化フェーズ）</h5>
+    <p>ブラウザごとの差異をなくします。</p><p></p><h6 id="CSS初期化例">CSS初期化例</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.6</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="理由">理由</h6><p></p>
+
+<ul>
+<li>余白のズレを防ぐ</li>
+<li>サイズ計算を楽にする</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-レイアウト構築レイアウトフェーズ">④ レイアウト構築（レイアウトフェーズ）</h5>
+    <p></p><h6 id="現代的な方法Flexbox--Grid">現代的な方法：Flexbox / Grid</h6>【Flexbox例】<p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>;
+  <span class="synType">min-height</span>: <span class="synConstant">100vh</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">main</span> <span class="synIdentifier">{</span>
+  <span class="synType">flex</span>: <span class="synConstant">1</span>;
+<span class="synIdentifier">}</span>
+</pre><p>【Gridレイアウト例】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-rows</span>: <span class="synConstant">auto</span> <span class="synConstant">auto</span> <span class="synConstant">1fr</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 <strong>おすすめ</strong></p>
+
+<ul>
+<li>単純 → Flexbox</li>
+<li>複雑 → Grid</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-デザイン装飾デザインフェーズ">⑤ デザイン装飾（デザインフェーズ）</h5>
+    <p>色・余白・文字サイズを調整します。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">header</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synConstant">#333</span>;
+  <span class="synType">color</span>: <span class="synConstant">white</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">nav</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synConstant">#555</span>;
+  <span class="synType">color</span>: <span class="synConstant">white</span>;
+  <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">main</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synConstant">#222</span>;
+  <span class="synType">color</span>: <span class="synConstant">white</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">padding</span>: <span class="synConstant">15px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-レスポンシブ対応スマホ最適化">⑥ レスポンシブ対応（スマホ最適化）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@media (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">768px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synStatement">nav</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">14px</span>;
+  <span class="synIdentifier">}</span>
+
+  <span class="synStatement">header</span> <span class="synIdentifier">{</span>
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+</pre><p>👉 <strong>重要ポイント</strong></p>
+
+<ul>
+<li>px固定 → % や rem を意識</li>
+<li>モバイルファースト設計推奨</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-実機テスト--デバッグ">⑦ 実機テスト &amp; デバッグ</h5>
+    <p></p><h6 id="チェック項目">チェック項目</h6><p></p>
+
+<ul>
+<li>Chrome / Safari / Firefox 表示確認</li>
+<li>スマホ / タブレット対応</li>
+<li>文字崩れ / レイアウト崩れ</li>
+</ul><p></p><h6 id="-便利ツール">👉 便利ツール</h6><p></p>
+
+<ul>
+<li>Chrome DevTools（F12）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="よくある失敗例">よくある失敗例</h5>
+    
+<ul>
+<li>❌ divだらけ → 意味的HTMLを意識</li>
+<li>❌ px固定 → レスポンシブ崩壊</li>
+<li>❌ class命名が適当 → 保守不能</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="グループ化する">グループ化する</h4>
+    
+<ul>
+<li>レイアウト用のグループ化をして名前を付ける</li>
+<li>基本的には「class名」（JavaScriptのトリガー用に「id名」）</li>
+</ul>
+<div class="section">
+    <h5 id="class名の命名規則">class名の命名規則</h5>
+    
+<ul>
+<li>ブロックの役割の名前を付ける</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>「パーツ名」を追記（ネストや子孫セレクタで記述するときに見づらくなるため「ブロック-パーツ」程度にします）</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">nav</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"gnav"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"link-btn"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンク</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="レイアウト用のclass名">レイアウト用のclass名</h6><table width="400">
+<tbody><tr><th>単語</th><td>意味</td></tr>
+<tr><th>container</th><td>全体を囲むもの</td></tr>
+<tr><th>wrapper</th><td>囲むもの</td></tr>
+<tr><th>content</th><td>内容</td></tr>
+<tr><th>area</th><td>領域</td></tr>
+<tr><th>outer</th><td>外側</td></tr>
+<tr><th>inner</th><td>内側</td></tr>
+</tbody></table><p></p><p></p><h6 id="パーツ用のclass名">パーツ用のclass名</h6><table width="400">
+<tbody><tr><th>単語</th><td>意味</td></tr>
+<tr><th>title</th><td>タイトル</td></tr>
+<tr><th>heading</th><td> 見出し</td></tr>
+<tr><th>lead</th><td>リード文</td></tr>
+<tr><th>list</th><td>リスト</td></tr>
+<tr><th>item</th><td>項目</td></tr>
+<tr><th>copy</th><td>（キャッチ・ボディ）コピー</td></tr>
+<tr><th>img</th><td>写真・画像</td></tr>
+<tr><th>logo</th><td>ロゴ</td></tr>
+<tr><th>news</th><td>新着情報</td></tr>
+<tr><th>info</th><td>情報</td></tr>
+<tr><th>announce</th><td>お知らせ</td></tr>
+<tr><th>topics</th><td>話題</td></tr>
+<tr><th>detail</th><td>詳細</td></tr>
+<tr><th>summary</th><td>要約</td></tr>
+<tr><th>text</th><td>本文</td></tr>
+<tr><th>thumb</th><td>サムネイル</td></tr>
+<tr><th>date</th><td>日付</td></tr>
+<tr><th>time</th><td>日時</td></tr>
+<tr><th>category</th><td>分類・カテゴリー</td></tr>
+<tr><th>link</th><td>ハイパーリンク</td></tr>
+<tr><th>label</th><td>項目名</td></tr>
+<tr><th>btn</th><td>ボタン</td></tr>
+<tr><th>chart</th><td>グラフ</td></tr>
+<tr><th>form</th><td>フォーム</td></tr>
+<tr><th>part</th><td>パーツ</td></tr>
+<tr><th>card</th><td>カード型</td></tr>
+<tr><th>table</th><td>表</td></tr>
+<tr><th>history</th><td>履歴・沿革</td></tr>
+<tr><th>contact</th><td>問い合わせ</td></tr>
+</tbody></table><p></p><p></p><h6 id="形容用のclass名">形容用のclass名</h6><table width="400">
+<tbody><tr><th>単語</th><td>意味</td></tr>
+<tr><th>main</th><td>主要な</td></tr>
+<tr><th>sub</th><td>副次的な</td></tr>
+<tr><th>global</th><td>全体の</td></tr>
+<tr><th>local</th><td>局所的な</td></tr>
+<tr><th>primary</th><td>最優先の</td></tr>
+<tr><th>secondary</th><td>副次的な</td></tr>
+<tr><th>bg</th><td>背景</td></tr>
+</tbody></table><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="より高度な命名規則">より高度な命名規則</h5>
+    <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fqiita.com%2Ftakahirocook%2Fitems%2F01fd723b934e3b38cbbc" title="【命名規則】BEMを使った書き方についてまとめてみた【CSS】 - Qiita" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://qiita.com/takahirocook/items/01fd723b934e3b38cbbc">qiita.com</a></cite></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="入力VS-Code">入力（VS Code）</h5>
+    
+<ul>
+<li>コンテンツがある場合（テキストと画像がある場合）</li>
+</ul><p></p><h6 id="htmltagwrap拡張機能">htmltagwrap（拡張機能）</h6><p></p>
+
+<ul>
+<li>「Alt + W」で、選択したテキストを「開始タグ」と「終了タグ」で囲むことができます（初期値は「p」タグ）</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315035518.jpg" width="600" height="157" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="Auto-Rename-Tag拡張機能">Auto Rename Tag（拡張機能）</h6><p></p>
+
+<ul>
+<li>「htmltagwrap」で「p」タグに入力されたタグを入力しなおします</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315040212.jpg" width="600" height="157" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="HTML・CSSの検証.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">HTML・CSSの検証</span></a><a href="HTML構造 練習問題10問.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">HTML構造 練習問題10問</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

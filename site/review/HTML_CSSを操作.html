@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML/CSSを操作 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>HTML/CSSを操作</span>
+  </div>
+  <div class="article-head">
+    <h1>HTML/CSSを操作</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">jQuery</span>
+      <span class="date">2025/10/17</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="HTMLCSSを操作">HTML/<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>を操作</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029232130.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ol>
+<li>どのHTMLの要素を操作するか指定する（<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>ー）</li>
+<li>操作する内容（命令）</li>
+</ol>
+<div class="section">
+    <h5 id="jQueryの命令"><a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>の命令</h5>
+    
+<ol>
+<li>テキストの変更と取得</li>
+<li>HTMLの変更と取得</li>
+<li>HTMLの挿入</li>
+<li>HTMLの移動</li>
+<li>他の要素で包む</li>
+<li>親要素を取り除く</li>
+<li>要素の置き換え</li>
+<li>要素の削除</li>
+<li>属性値の変更の取得</li>
+<li>class属性の追加と削除</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>の制御</li>
+</ol>
+</div>
+</div>
+<div class="section">
+    <h4 id="記述">記述</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synComment">//この中に処理を記述</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="テキストの変更と取得">テキストの変更と取得</h4>
+    
+<ul>
+<li>text()メソッドで命令</li>
+</ul>
+<div class="section">
+    <h5 id="テキストの変更">テキストの変更</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：テキストの変更<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;</span>変更前<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p#first'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">text</span><span class="synSpecial">(</span> <span class="synConstant">'変更後'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="テキストの取得">テキストの取得</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：テキストの取得<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;</span>取得する文字列<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"second"</span><span class="synIdentifier">&gt;</span>変更前<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p#second'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">text</span><span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p#first'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">text</span><span class="synSpecial">()</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="HTMLの変更と取得">HTMLの変更と取得</h4>
+    
+<ul>
+<li>html()メソッドで命令</li>
+</ul><p></p><h6 id="HTMLの変更">HTMLの変更</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTMLの変更<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;</span>変更前<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p#first'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">html</span><span class="synSpecial">(</span> <span class="synConstant">'&lt;strong&gt;変更後&lt;/strong&gt;'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="HTMLの取得">HTMLの取得</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTMLの取得<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>変更後<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"second"</span><span class="synIdentifier">&gt;</span>変更前<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p#second'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">html</span><span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p#first'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">html</span><span class="synSpecial">()</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="HTMLの挿入">HTMLの挿入</h4>
+    
+<ul>
+<li>prepend()、append()、befor()、after()メソッドで命令</li>
+</ul><p></p><h6 id="HTML要素内の先頭に挿入">HTML要素内の先頭に挿入</h6><p></p>
+
+<ul>
+<li>prepend()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTML要素内の先頭に挿入<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p#first'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">prepend</span><span class="synSpecial">(</span> <span class="synConstant">'&lt;strong&gt;先頭に挿入&lt;/strong&gt;'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="HTML要素内の最後に挿入">HTML要素内の最後に挿入</h6><p></p>
+
+<ul>
+<li>append()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTML要素内の最後に挿入<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p#first'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">append</span><span class="synSpecial">(</span> <span class="synConstant">'&lt;strong&gt;最後に挿入&lt;/strong&gt;'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p><br>
+</p><h6 id="HTML要素内の前に挿入">HTML要素内の前に挿入</h6><p></p>
+
+<ul>
+<li>before()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTML要素内の前に挿入<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span> <span class="synSpecial">(</span><span class="synConstant">'p#first'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">before</span><span class="synSpecial">(</span> <span class="synConstant">'&lt;h1&gt;前に挿入&lt;/h1&gt;'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="HTML要素内の後ろに挿入">HTML要素内の後ろに挿入</h6><p></p>
+
+<ul>
+<li>after()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTML要素内の後ろに挿入<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span> <span class="synSpecial">(</span><span class="synConstant">'p#first'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">after</span><span class="synSpecial">(</span> <span class="synConstant">'&lt;h1&gt;前に挿入&lt;/h1&gt;'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="HTMLの移動">HTMLの移動</h4>
+    
+<ul>
+<li>HTMLの要素を文書内に新たに追加するのではなく、もともと存在していた要素の文書内の位置を変更する</li>
+</ul><p></p><h6 id="HTML要素内の先頭に移動">HTML要素内の先頭に移動</h6><p></p>
+
+<ul>
+<li>prependTo()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTML要素内の先頭に移動<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>先頭に移動<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'strong'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">prependTo</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="HTML要素内の最後に移動">HTML要素内の最後に移動</h6><p></p>
+
+<ul>
+<li>appendTo()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTML要素内の最後に移動<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"first"</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>最後に移動<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'strong'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">appendTo</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="HTML要素内の前に移動">HTML要素内の前に移動</h6><p></p>
+
+<ul>
+<li>insertBefore()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTML要素内の前に移動<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>前に移動<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'h1'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">insertBefore</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="HTML要素内の後ろに移動">HTML要素内の後ろに移動</h6><p></p>
+
+<ul>
+<li>insertAfter()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：HTML要素内の後ろに移動<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>後ろに移動<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'h1'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">insertAfter</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="他の要素で包む">他の要素で包む</h4>
+    
+<ul>
+<li>指定した要素を追加するのではなく、特定の要素で包む</li>
+</ul><p></p><h6 id="各要素を指定した要素で包む">各要素を指定した要素で包む</h6><p></p>
+
+<ul>
+<li>wrap()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：各要素を指定した要素で包む<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'strong'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">wrap</span><span class="synSpecial">(</span> <span class="synConstant">'&lt;h2&gt;&lt;/h2&gt;'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="全要素を別の要素で包む">全要素を別の要素で包む</h6><p></p>
+
+<ul>
+<li>wrapAll()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：全要素を別の要素で包む<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'strong'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">wrapAll</span><span class="synSpecial">(</span> <span class="synConstant">'&lt;h2&gt;&lt;/h2&gt;'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="指定した要素の子要素を別の要素で包む">指定した要素の子要素を別の要素で包む</h6><p></p>
+
+<ul>
+<li>wrapInner()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：指定した要素の子要素を別の要素で包む<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">wrapInner</span><span class="synSpecial">(</span> <span class="synConstant">'&lt;strong&gt;&lt;/strong&gt;'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="親要素を取り除く">親要素を取り除く</h4>
+    
+<ul>
+<li>指定した要素の親要素を取り除く</li>
+<li>unwrap()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：親要素を取り除く<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>テキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'strong'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">unwrap</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="要素の置き換え">要素の置き換え</h4>
+    
+<ul>
+<li>指定した要素を他の要素に置き換える</li>
+<li>replaceWith()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：要素の置き換え<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>置き換え前<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">replaceWith</span><span class="synSpecial">(</span> <span class="synConstant">'&lt;h1&gt;置き換え後&lt;/h1&gt;'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="要素の削除">要素の削除</h4>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>ーで指定した要素を削除する</li>
+<li>remove()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：要素の削除<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>削除する要素<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>テキストテキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p strong'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">remove</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="属性値の変更と取得">属性値の変更と取得</h4>
+    
+<div class="section">
+    <h5 id="属性値の変更">属性値の変更</h5>
+    
+<ul>
+<li>attr()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：属性値の変更<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"http://yahoo.co.jp/"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンク先</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'a'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">attr</span><span class="synSpecial">(</span> <span class="synConstant">'href'</span><span class="synStatement">,</span> <span class="synConstant">'http://google.co.jp/'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="属性値の取得">属性値の取得</h5>
+    
+<ul>
+<li>attr()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：属性値の取得<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"http://google.co.jp/"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンク先</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'a'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">text</span><span class="synSpecial">(</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'a'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">attr</span><span class="synSpecial">(</span> <span class="synConstant">'href'</span> <span class="synSpecial">)</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="属性値の削除">属性値の削除</h5>
+    
+<ul>
+<li>removeAttr()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：属性値の削除<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"http://google.co.jp/"</span><span class="synIdentifier"> </span><span class="synType">target</span><span class="synIdentifier">=</span><span class="synConstant">"_blank"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンク先</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'a'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">removeAttr</span><span class="synSpecial">(</span> <span class="synConstant">'target'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="class属性値の追加と削除">class属性値の追加と削除</h4>
+    
+<div class="section">
+    <h5 id="class属性値の追加">class属性値の追加</h5>
+    
+<ul>
+<li>addClass()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：class属性値の追加<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.red</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>:<span class="synConstant">red</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストテキストテキストテキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addClass</span><span class="synSpecial">(</span> <span class="synConstant">'red'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="class属性値の削除">class属性値の削除</h5>
+    
+<ul>
+<li>removeClass()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：class属性値の削除<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.red</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>:<span class="synConstant">red</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"red"</span><span class="synIdentifier">&gt;</span>テキストテキストテキストテキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">removeClass</span><span class="synSpecial">(</span> <span class="synConstant">'red'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="CSSの制御"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>の制御</h4>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>では簡単な記述で<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>のプロパティの値を設定したり、取得したりできる</li>
+</ul>
+<div class="section">
+    <h5 id="CSSプロパティの設定"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>プロパティの設定</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a>()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：CSSプロパティの設定<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストテキストテキストテキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span> <span class="synSpecial">(</span><span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">css</span><span class="synSpecial">(</span> <span class="synConstant">'color'</span><span class="synStatement">,</span> <span class="synConstant">'red'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="一括して設定する場合">《一括して設定する場合》</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'p'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">css</span><span class="synSpecial">({</span> 
+      <span class="synIdentifier">backgroundColor</span><span class="synStatement">:</span> <span class="synConstant">'skyblue'</span><span class="synStatement">,</span> 
+      <span class="synIdentifier">fontWeight</span><span class="synStatement">:</span> <span class="synConstant">'bold'</span><span class="synStatement">,</span>
+      <span class="synIdentifier">color</span><span class="synStatement">:</span> <span class="synConstant">'yellow'</span> 
+    <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="CSSプロパティの値の取得"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>プロパティの値の取得</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a>()メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>メソッド：CSSプロパティの値の取得<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストテキストテキストテキストテキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">text</span><span class="synSpecial">(</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'p'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">css</span><span class="synSpecial">(</span> <span class="synConstant">'color'</span> <span class="synSpecial">)</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="メソッドチェーン">メソッドチェーン</h4>
+    
+<ul>
+<li>命令と命令を、ドットでつなげて記述する</li>
+<li>１つの<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>ーに対して、２つ以上の命令を連続して実行する</li>
+</ul>
+    <blockquote>
+        <p>$('<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>').メソッド().メソッド().メソッド().…</p>
+
+    </blockquote>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="jQueryとは.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">jQueryとは</span></a><a href="実践的なメソッド.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">実践的なメソッド</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

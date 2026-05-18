@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML・CSSの検証 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>HTML・CSSの検証</span>
+  </div>
+  <div class="article-head">
+    <h1>HTML・CSSの検証</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span><span class="tag" style="background:#eff6ff;color:#2563eb">CSS</span>
+      <span class="date">2026/01/30</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="検証サイト">検証サイト</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20240930212620.jpg" width="300" height="300" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLとCSSの検証の方法について解説して</p>
+
+    </blockquote>
+
+<ul>
+<li>「CSS」の記述に入る前に「HTML」の文法チェックを行います（必須）</li>
+<li>「エラー」が表示された場合の、対処法にも慣れていきましょう</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="-HTMLとCSSの検証バリデーションの方法">✅ HTMLとCSSの検証（バリデーション）の方法</h4>
+    
+<div class="section">
+    <h5 id="1-なぜ検証が必要">1. なぜ検証が必要？</h5>
+    <p>検証を行うことで次のようなメリットがあります。</p>
+
+<ul>
+<li>表示崩れの原因を特定できる</li>
+<li>ブラウザ間の互換性が向上する</li>
+<li>アクセシビリティが改善される</li>
+<li>SEOに有利</li>
+<li>保守性・品質の向上</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="-HTMLの検証方法">🔎 HTMLの検証方法</h4>
+    
+<div class="section">
+    <h5 id="W3C-Markup-Validation-Service">W3C Markup Validation Service</h5>
+    <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fvalidator.w3.org%2F%23validate_by_input" title="The W3C Markup Validation Service" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://validator.w3.org/#validate_by_input">validator.w3.org</a></cite></p>
+
+<ul>
+<li>HTML文法チェック</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20240930212520.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="-URLで検証">① URLで検証</h6><p></p>
+
+<ul>
+<li>公開されているWebページをそのまま検証</li>
+</ul><p>👉️ URLを入力 → Check</p><p></p><h6 id="-ファイルをアップロード">② ファイルをアップロード</h6><p></p>
+
+<ul>
+<li>ローカルのHTMLファイルを直接検証</li>
+</ul><p></p><h6 id="-直接コードを貼り付け">③ 直接コードを貼り付け</h6><p></p>
+
+<ul>
+<li>HTMLコードをコピペして検証</li>
+</ul><p></p><h6 id="チェックされる内容">チェックされる内容</h6><p></p>
+
+<ul>
+<li>タグの閉じ忘れ</li>
+<li>属性ミス</li>
+<li>不正な構文</li>
+<li>HTML仕様違反</li>
+</ul><p></p><h6 id="W3C-Web-Validator">W3C Web Validator</h6><p></p>
+
+<ul>
+<li>簡易的には「VS Code」内の拡張機能でもチェック可能</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315004321.jpg" width="500" height="131" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="よくあるHTMLエラー例">よくあるHTMLエラー例</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"test.png"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文章
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>コンテンツ<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>❌ &lt;p&gt;の閉じタグ忘れ</li>
+<li>❌ &lt;p&gt;の中に&lt;div&gt;は入れられない</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="-CSSの検証方法">🎨 CSSの検証方法</h4>
+    
+<div class="section">
+    <h5 id="CSS-Validation-Service">CSS Validation Service</h5>
+    <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fjigsaw.w3.org%2Fcss-validator%2F" title="The W3C CSS Validation Service" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://jigsaw.w3.org/css-validator/">jigsaw.w3.org</a></cite></p>
+
+<ul>
+<li>CSS文法チェック</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20240930212205.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="使い方">使い方</h6>HTMLとほぼ同じです。<p></p>
+
+<ul>
+<li>URL指定</li>
+<li>ファイルアップロード</li>
+<li>直接入力</li>
+</ul><p></p><h6 id="よくあるCSSエラー例">よくあるCSSエラー例</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  widht: <span class="synConstant">100px</span>;
+  <span class="synType">color</span> <span class="synConstant">red</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<ul>
+<li>❌ widht → width のスペルミス</li>
+<li>❌ : が抜けている</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="️-開発者ツールを使った検証超重要">🛠️ 開発者ツールを使った検証（超重要）</h4>
+    <p>ブラウザの<strong>開発者ツール（DevTools）</strong>は実務で最も使います。</p><p></p><h6 id="開き方">開き方</h6><p></p>
+
+<ul>
+<li>Windows / Linux: F12 or Ctrl + Shift + I</li>
+<li>Mac: Cmd + Option + I</li>
+</ul><p></p><h6 id="HTMLの確認">HTMLの確認</h6><p></p>
+
+<ul>
+<li>Elementsタブ → DOM構造確認</li>
+<li>赤表示 → エラー箇所</li>
+</ul><p></p><h6 id="CSSの確認">CSSの確認</h6><p></p>
+
+<ul>
+<li>Styles → 打ち消されているCSS</li>
+<li>無効なプロパティは警告マーク</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="-VS-Codeでの自動検証おすすめ">🧠 VS Codeでの自動検証（おすすめ）</h4>
+    <p>Visual Studio Codeを使っているなら拡張機能でリアルタイム検証が可能です。</p>
+
+<table>
+    <tbody><tr>
+    <th>用途</th>
+    <th>拡張名</th>
+    </tr>
+    <tr>
+    <td> HTML </td>
+    <td> HTMLHint  </td>
+    </tr>
+    <tr>
+    <td> CSS  </td>
+    <td> Stylelint </td>
+    </tr>
+    <tr>
+    <td> 全般   </td>
+    <td> Webhint   </td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="-実務で使うおすすめ検証フロー">🚀 実務で使うおすすめ検証フロー</h5>
+    <p>① VS Code + 拡張でリアルタイム検証<br>
+↓<br>
+② W3C Validatorで最終チェック<br>
+↓<br>
+③ ブラウザ開発者ツールで表示確認<br>
+👉 この流れが一番効率的です。</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="Outliner">Outliner</h4>
+    
+<ul>
+<li>HTMLのツリー構造のチェック</li>
+<li>Chromeの拡張機能</li>
+</ul>
+<div class="section">
+    <h5 id="HeadingsMap">HeadingsMap</h5>
+    
+<ul>
+<li>ツリー構造の表示が「h1」→「h2」→「h3」として明示されて見えます</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fchromewebstore.google.com%2Fdetail%2Fheadingsmap%2Fflbjommegcjonpdmenkdiocclhjacmbi" title="HeadingsMap - Chrome Web Store" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi">chromewebstore.google.com</a></cite><br>
+</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315020623.jpg" width="500" height="617" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="border - 枠線.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">border - 枠線</span></a><a href="CSSによるページ構築の手順.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">CSSによるページ構築の手順</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>リンクを記述 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>リンクを記述</span>
+  </div>
+  <div class="article-head">
+    <h1>リンクを記述</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2025/12/11</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="リンクを記述">リンクを記述</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260221080533.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLのリンクについて解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="リンクとは">リンクとは？</h4>
+    
+<ul>
+<li>HTMLのリンクは、別のページや場所へ移動するための仕組み</li>
+<li>クリックすると、指定したURLやページにジャンプできる</li>
+</ul>
+<div class="section">
+    <h5 id="基本構文aタグ">基本構文（aタグ）</h5>
+    
+<ul>
+<li>リンクは &lt;a&gt;（アンカータグ） を使う</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">ここをクリック</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="各部分の意味">各部分の意味</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>部分</th>
+    <th>説明</th>
+    </tr>
+    <tr>
+    <td> &lt;a&gt; </td>
+    <td> リンクを作るタグ </td>
+    </tr>
+    <tr>
+    <td> href </td>
+    <td> リンク先のURL（必須）</td>
+    </tr>
+    <tr>
+    <td> ここをクリック </td>
+    <td> 画面に表示される文字 </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="別ページへのリンク">別ページへのリンク</h4>
+    
+<div class="section">
+    <h5 id="-外部サイトへのリンク">🌐 外部サイトへのリンク</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://www.google.com"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">Google</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 クリックすると Google が開きます。</p>
+
+</div>
+<div class="section">
+    <h5 id="-同じサイト内のページへのリンク">📁 同じサイト内のページへのリンク</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"about.html"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">会社概要</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="フォルダ指定">フォルダ指定</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"pages/contact.html"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">お問い合わせ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-ページ内リンクアンカーリンク">🎯 ページ内リンク（アンカーリンク）</h4>
+    <p>同じページ内の特定位置へ移動できます。</p><p></p><h6 id="移動先">移動先</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"section1"</span><span class="synIdentifier">&gt;</span>サービス内容<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="リンク">リンク</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#section1"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">サービス内容へ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="-新しいタブで開くtarget_blank">🆕 新しいタブで開く（target="_blank"）</h4>
+    
+<ul>
+<li>属性「target="_blank"」を指定する</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com"</span><span class="synIdentifier"> </span><span class="synType">target</span><span class="synIdentifier">=</span><span class="synConstant">"_blank"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">新しいタブで開く</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="よく使う組み合わせセキュリティ対策">よく使う組み合わせ（セキュリティ対策）</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com"</span><span class="synIdentifier"> </span><span class="synType">target</span><span class="synIdentifier">=</span><span class="synConstant">"_blank"</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"noopener noreferrer"</span><span class="synIdentifier">&gt;</span>
+  <span class="synUnderlined">外部サイト</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="-メールリンク">📧 メールリンク</h5>
+    
+<ul>
+<li>メールを起動</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"mailto:test@example.com"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">メールを送る</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-電話リンクスマホ向け">📞 電話リンク（スマホ向け）</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"tel:09012345678"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">電話をかける</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-画像をリンクにする">🖼 画像をリンクにする</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"logo.png"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"ロゴ"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="よくある注意点">よくある注意点</h5>
+    
+<ul>
+<li>href がないとリンクにならない</li>
+<li>URLのタイプミスに注意</li>
+<li>外部リンクは _blank + rel が無難</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="CSSで見た目を変える">CSSで見た目を変える</h4>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">blue</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-decoration</span>: <span class="synConstant">underline</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="-よく使う属性まとめ">🔥 よく使う属性まとめ</h4>
+    
+<table>
+    <tbody><tr>
+    <th>属性</th>
+    <th>説明</th>
+    </tr>
+    <tr>
+    <td> href     </td>
+    <td> リンク先URL  </td>
+    </tr>
+    <tr>
+    <td> target   </td>
+    <td> 開き方      </td>
+    </tr>
+    <tr>
+    <td> rel      </td>
+    <td> セキュリティ指定 </td>
+    </tr>
+    <tr>
+    <td> download </td>
+    <td> ファイルDL   </td>
+    </tr>
+    <tr>
+    <td> title    </td>
+    <td> ツールチップ表示 </td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="-ダウンロードリンク">📌 ダウンロードリンク</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"file.pdf"</span><span class="synIdentifier"> </span><span class="synType">download</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">PDFをダウンロード</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-実践サンプル">🎓 実践サンプル</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>リンクの例<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://google.com"</span><span class="synIdentifier"> </span><span class="synType">target</span><span class="synIdentifier">=</span><span class="synConstant">"_blank"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">Google</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#bottom"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">ページ下へ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">style</span><span class="synIdentifier">=</span><span class="synConstant">"margin-top:1000px;"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"bottom"</span><span class="synIdentifier">&gt;</span>ここがページの下<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="-よくあるミス">💡 よくあるミス</h5>
+    <p></p><h6 id="-閉じタグ忘れ">❌ 閉じタグ忘れ</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"page.html"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンク</span>
+</pre><p></p><h6 id="-正解">⭕ 正解</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"page.html"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンク</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="表組みを表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">表組みを表示</span></a><a href="🔰 未経験者向け Webコーディングルール.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">🔰 未経験者向け Webコーディングルール</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

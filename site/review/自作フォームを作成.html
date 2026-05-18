@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自作フォームを作成 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>自作フォームを作成</span>
+  </div>
+  <div class="article-head">
+    <h1>自作フォームを作成</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">フォーム</span>
+      <span class="date">2026/03/01</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="自作フォームを作成">自作フォームを作成</h4>
+    
+<ol>
+<li>Googleフォームと連携</li>
+<li>PHPで実装</li>
+</ol><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.kanzaki.com%2Fdocs%2Fhtml%2Fhtminfo31.html" title="基本的なフォーム -- ごく簡単なHTMLの説明" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://www.kanzaki.com/docs/html/htminfo31.html">www.kanzaki.com</a></cite><br>
+</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250723125456.png" width="400" height="810" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="indexhtml">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>お問い合わせ<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"formSec"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"form"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>お問い合わせ<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">form</span><span class="synIdentifier"> </span><span class="synType">action</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> </span><span class="synType">method</span><span class="synIdentifier">=</span><span class="synConstant">"post"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>お名前<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> </span><span class="synType">required</span><span class="synIdentifier"> </span><span class="synType">autofocus</span><span class="synIdentifier"> </span><span class="synType">placeholder</span><span class="synIdentifier">=</span><span class="synConstant">"お名前"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>メールアドレス<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"email"</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> </span><span class="synType">required</span><span class="synIdentifier"> </span><span class="synType">placeholder</span><span class="synIdentifier">=</span><span class="synConstant">"メールアドレス"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"msg"</span><span class="synIdentifier">&gt;</span>メッセージ<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">textarea</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> </span><span class="synType">cols</span><span class="synIdentifier">=</span><span class="synConstant">"30"</span><span class="synIdentifier"> </span><span class="synType">rows</span><span class="synIdentifier">=</span><span class="synConstant">"10"</span><span class="synIdentifier"> </span><span class="synType">placeholder</span><span class="synIdentifier">=</span><span class="synConstant">"メッセージ"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">textarea</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"submit"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">"送信"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">form</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="stylecss">style.css</h6><p></p>
+
+<ul>
+<li>ボタンの大きさは「44px」以上にする</li>
+<li>マルチデバイス対応は、「min()」で設定</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* ---------------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">--------------------------------------------- */</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span> ;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">62.5%</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ---------------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">--------------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">1.6rem</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ---------------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">--------------------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+    <span class="synType">width</span>: min(<span class="synConstant">86%</span><span class="synSpecial">,</span> <span class="synConstant">1024px</span>);
+    <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ---------------------------------------------</span>
+<span class="synComment">  .form</span>
+<span class="synComment">--------------------------------------------- */</span>
+<span class="synIdentifier">.form</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">640px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">60px</span> <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.form</span> <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">30px</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">2.8rem</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.form</span> <span class="synStatement">table</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">text-align</span>: <span class="synPreProc">left</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.form</span> <span class="synStatement">th</span><span class="synSpecial">,</span> <span class="synIdentifier">.form</span> <span class="synStatement">td</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">block</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.form</span> <span class="synStatement">th</span> <span class="synIdentifier">{</span>
+    <span class="synType">width</span>: <span class="synConstant">fit-content</span>;
+    <span class="synType">margin-bottom</span>: <span class="synConstant">6px</span>;
+    <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.form</span> <span class="synStatement">th</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+      <span class="synType">content</span>: <span class="synConstant">'必須'</span>;
+      <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+      <span class="synType">top</span>: <span class="synConstant">-2px</span>;
+      <span class="synType">right</span>: <span class="synConstant">-4.0rem</span>;
+      <span class="synType">padding</span>: <span class="synConstant">4px</span> <span class="synConstant">6px</span>;
+      <span class="synType">background</span>: <span class="synConstant">#f00</span>;
+      <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+      <span class="synType">font-size</span>: <span class="synConstant">0.6rem</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.form</span> <span class="synStatement">th</span><span class="synIdentifier">.msg</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+      <span class="synType">display</span>: <span class="synConstant">none</span>;
+    <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.form</span> <span class="synStatement">td</span> <span class="synIdentifier">{</span>
+    <span class="synType">width</span>: <span class="synConstant">100%</span>;
+    <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.form</span> <span class="synStatement">td</span> <span class="synStatement">label</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding-right</span>: <span class="synConstant">20px</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">.form</span> <span class="synStatement">input</span><span class="synSpecial">[</span><span class="synConstant">type</span><span class="synSpecial">=</span><span class="synConstant">"text"</span><span class="synSpecial">],</span> <span class="synIdentifier">.form</span> <span class="synStatement">input</span><span class="synSpecial">[</span><span class="synConstant">type</span><span class="synSpecial">=</span><span class="synConstant">"email"</span><span class="synSpecial">]</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">7px</span> <span class="synConstant">9px</span>;
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.form</span> <span class="synStatement">textarea</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">7px</span> <span class="synConstant">9px</span>;
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.7</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ---------- 送信ボタン ---------- */</span>
+  <span class="synIdentifier">.btn</span> <span class="synIdentifier">{</span>
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">input</span><span class="synSpecial">[</span><span class="synConstant">type</span><span class="synSpecial">=</span><span class="synConstant">"submit"</span><span class="synSpecial">]</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">60px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#0163ba</span>;
+    <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">2.0rem</span>;
+    <span class="synType">border</span>: <span class="synConstant">none</span>;
+    <span class="synType">border-radius</span>: <span class="synConstant">10px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">input</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+    <span class="synType">background-color</span>: <span class="synConstant">#ea4504</span>;
+  <span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="CSSネスト.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">CSSネスト</span></a><a href="自作フォームとGoogleフォームを連携.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">自作フォームとGoogleフォームを連携</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

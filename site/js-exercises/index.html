@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript 演習プロンプト - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <span>JavaScript 演習プロンプト</span>
+  </div>
+  <div class="blog-hero">
+    <div class="blog-hero-inner">
+      <div class="blog-hero-emoji">🎯</div>
+      <div>
+        <h1>JavaScript 演習プロンプト</h1>
+        <p>JavaScriptの演習問題と実践課題</p>
+        <div class="blog-hero-meta">
+          <span id="article-count">28</span>記事 &nbsp;·&nbsp; 2026-01 ~ 2026-01
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filter-bar">
+    <span class="filter-label">カテゴリ:</span>
+    <button class="filter-btn active" data-cat="all" style="--accent:#2563eb">すべて</button>
+<button class="filter-btn" data-cat="DOM" style="--accent:#2563eb">DOM <small>(5)</small></button>
+<button class="filter-btn" data-cat="ダイアログボックス" style="--accent:#2563eb">ダイアログボックス <small>(4)</small></button>
+<button class="filter-btn" data-cat="イベント" style="--accent:#2563eb">イベント <small>(3)</small></button>
+<button class="filter-btn" data-cat="条件分岐" style="--accent:#2563eb">条件分岐 <small>(3)</small></button>
+<button class="filter-btn" data-cat="反復" style="--accent:#2563eb">反復 <small>(2)</small></button>
+<button class="filter-btn" data-cat="日付" style="--accent:#2563eb">日付 <small>(2)</small></button>
+<button class="filter-btn" data-cat="配列" style="--accent:#2563eb">配列 <small>(2)</small></button>
+<button class="filter-btn" data-cat="四則演算" style="--accent:#2563eb">四則演算 <small>(2)</small></button>
+<button class="filter-btn" data-cat="アロー関数" style="--accent:#2563eb">アロー関数 <small>(1)</small></button>
+<button class="filter-btn" data-cat="return" style="--accent:#2563eb">return <small>(1)</small></button>
+<button class="filter-btn" data-cat="関数" style="--accent:#2563eb">関数 <small>(1)</small></button>
+<button class="filter-btn" data-cat="Math" style="--accent:#2563eb">Math <small>(1)</small></button>
+<button class="filter-btn" data-cat="変数の型" style="--accent:#2563eb">変数の型 <small>(1)</small></button>
+<button class="filter-btn" data-cat="console" style="--accent:#2563eb">console <small>(1)</small></button>
+<button class="filter-btn" data-cat="必須" style="--accent:#2563eb">必須 <small>(1)</small></button>
+
+  </div>
+  <div class="article-grid">
+<a href="【028】入力された数字までの合計.html" class="article-card" data-cats="反復">
+  <div class="ac-title">【028】入力された数字までの合計</div>
+  <div class="ac-meta">
+    <span class="tag">反復</span>
+    <span class="ac-date">2026/01/28</span>
+  </div>
+</a>
+<a href="【027】入力された文字を表示.html" class="article-card" data-cats="DOM">
+  <div class="ac-title">【027】入力された文字を表示</div>
+  <div class="ac-meta">
+    <span class="tag">DOM</span>
+    <span class="ac-date">2026/01/27</span>
+  </div>
+</a>
+<a href="【026】入力された計算結果をブラウザに表示.html" class="article-card" data-cats="DOM">
+  <div class="ac-title">【026】入力された計算結果をブラウザに表示</div>
+  <div class="ac-meta">
+    <span class="tag">DOM</span>
+    <span class="ac-date">2026/01/26</span>
+  </div>
+</a>
+<a href="【025】ボタンイベントでid要素の値を書き換える.html" class="article-card" data-cats="イベント,DOM">
+  <div class="ac-title">【025】ボタンイベントでid要素の値を書き換える</div>
+  <div class="ac-meta">
+    <span class="tag">イベント</span><span class="tag">DOM</span>
+    <span class="ac-date">2026/01/25</span>
+  </div>
+</a>
+<a href="【024】ボタンイベントで処理を実行.html" class="article-card" data-cats="イベント">
+  <div class="ac-title">【024】ボタンイベントで処理を実行</div>
+  <div class="ac-meta">
+    <span class="tag">イベント</span>
+    <span class="ac-date">2026/01/24</span>
+  </div>
+</a>
+<a href="【023】ボタンイベントで要素の値を取得.html" class="article-card" data-cats="イベント">
+  <div class="ac-title">【023】ボタンイベントで要素の値を取得</div>
+  <div class="ac-meta">
+    <span class="tag">イベント</span>
+    <span class="ac-date">2026/01/23</span>
+  </div>
+</a>
+<a href="【022】変数の値をブラウザに表示（id）.html" class="article-card" data-cats="DOM">
+  <div class="ac-title">【022】変数の値をブラウザに表示（id）</div>
+  <div class="ac-meta">
+    <span class="tag">DOM</span>
+    <span class="ac-date">2026/01/22</span>
+  </div>
+</a>
+<a href="【021】変数の値をブラウザに表示（要素）.html" class="article-card" data-cats="DOM">
+  <div class="ac-title">【021】変数の値をブラウザに表示（要素）</div>
+  <div class="ac-meta">
+    <span class="tag">DOM</span>
+    <span class="ac-date">2026/01/21</span>
+  </div>
+</a>
+<a href="【020】今日の日付と曜日を日本語でコンソールに表示.html" class="article-card" data-cats="日付,配列">
+  <div class="ac-title">【020】今日の日付と曜日を日本語でコンソールに表示</div>
+  <div class="ac-meta">
+    <span class="tag">日付</span><span class="tag">配列</span>
+    <span class="ac-date">2026/01/20</span>
+  </div>
+</a>
+<a href="【019】現在の日付日時をコンソールに表示.html" class="article-card" data-cats="日付">
+  <div class="ac-title">【019】現在の日付日時をコンソールに表示</div>
+  <div class="ac-meta">
+    <span class="tag">日付</span>
+    <span class="ac-date">2026/01/19</span>
+  </div>
+</a>
+<a href="【018】アロー関数を使った計算結果をコンソールに表示.html" class="article-card" data-cats="アロー関数">
+  <div class="ac-title">【018】アロー関数を使った計算結果をコンソールに表示</div>
+  <div class="ac-meta">
+    <span class="tag">アロー関数</span>
+    <span class="ac-date">2026/01/18</span>
+  </div>
+</a>
+<a href="【017】return を使う関数.html" class="article-card" data-cats="return">
+  <div class="ac-title">【017】return を使う関数</div>
+  <div class="ac-meta">
+    <span class="tag">return</span>
+    <span class="ac-date">2026/01/17</span>
+  </div>
+</a>
+<a href="【016】関数を使った計算結果をコンソールに表示.html" class="article-card" data-cats="関数">
+  <div class="ac-title">【016】関数を使った計算結果をコンソールに表示</div>
+  <div class="ac-meta">
+    <span class="tag">関数</span>
+    <span class="ac-date">2026/01/16</span>
+  </div>
+</a>
+<a href="【015】配列の値を取得してコンソールに表示.html" class="article-card" data-cats="配列">
+  <div class="ac-title">【015】配列の値を取得してコンソールに表示</div>
+  <div class="ac-meta">
+    <span class="tag">配列</span>
+    <span class="ac-date">2026/01/15</span>
+  </div>
+</a>
+<a href="【014】繰り返しをコンソールに表示.html" class="article-card" data-cats="反復">
+  <div class="ac-title">【014】繰り返しをコンソールに表示</div>
+  <div class="ac-meta">
+    <span class="tag">反復</span>
+    <span class="ac-date">2026/01/14</span>
+  </div>
+</a>
+<a href="【013】switch文で条件分岐.html" class="article-card" data-cats="条件分岐">
+  <div class="ac-title">【013】switch文で条件分岐</div>
+  <div class="ac-meta">
+    <span class="tag">条件分岐</span>
+    <span class="ac-date">2026/01/13</span>
+  </div>
+</a>
+<a href="【012】入力された数字が偶数か奇数かを判別して表示.html" class="article-card" data-cats="条件分岐">
+  <div class="ac-title">【012】入力された数字が偶数か奇数かを判別して表示</div>
+  <div class="ac-meta">
+    <span class="tag">条件分岐</span>
+    <span class="ac-date">2026/01/12</span>
+  </div>
+</a>
+<a href="【011】入力された値を条件処理で表示.html" class="article-card" data-cats="条件分岐">
+  <div class="ac-title">【011】入力された値を条件処理で表示</div>
+  <div class="ac-meta">
+    <span class="tag">条件分岐</span>
+    <span class="ac-date">2026/01/11</span>
+  </div>
+</a>
+<a href="【010】ダイアログに入力された値を計算して表示.html" class="article-card" data-cats="ダイアログボックス">
+  <div class="ac-title">【010】ダイアログに入力された値を計算して表示</div>
+  <div class="ac-meta">
+    <span class="tag">ダイアログボックス</span>
+    <span class="ac-date">2026/01/10</span>
+  </div>
+</a>
+<a href="【009】値を四捨五入した結果を表示.html" class="article-card" data-cats="Math">
+  <div class="ac-title">【009】値を四捨五入した結果を表示</div>
+  <div class="ac-meta">
+    <span class="tag">Math</span>
+    <span class="ac-date">2026/01/09</span>
+  </div>
+</a>
+<a href="【008】ダイアログに入力した値を表示.html" class="article-card" data-cats="ダイアログボックス">
+  <div class="ac-title">【008】ダイアログに入力した値を表示</div>
+  <div class="ac-meta">
+    <span class="tag">ダイアログボックス</span>
+    <span class="ac-date">2026/01/08</span>
+  </div>
+</a>
+<a href="【007】確認結果をダイアログに表示.html" class="article-card" data-cats="ダイアログボックス">
+  <div class="ac-title">【007】確認結果をダイアログに表示</div>
+  <div class="ac-meta">
+    <span class="tag">ダイアログボックス</span>
+    <span class="ac-date">2026/01/07</span>
+  </div>
+</a>
+<a href="【006】警告ダイアログに表示.html" class="article-card" data-cats="ダイアログボックス">
+  <div class="ac-title">【006】警告ダイアログに表示</div>
+  <div class="ac-meta">
+    <span class="tag">ダイアログボックス</span>
+    <span class="ac-date">2026/01/06</span>
+  </div>
+</a>
+<a href="【005】出力のバリエーション.html" class="article-card" data-cats="変数の型">
+  <div class="ac-title">【005】出力のバリエーション</div>
+  <div class="ac-meta">
+    <span class="tag">変数の型</span>
+    <span class="ac-date">2026/01/05</span>
+  </div>
+</a>
+<a href="【004】変数を使った四則演算結果をコンソールに表示.html" class="article-card" data-cats="四則演算">
+  <div class="ac-title">【004】変数を使った四則演算結果をコンソールに表示</div>
+  <div class="ac-meta">
+    <span class="tag">四則演算</span>
+    <span class="ac-date">2026/01/04</span>
+  </div>
+</a>
+<a href="【003】計算結果をコンソールに表示.html" class="article-card" data-cats="四則演算">
+  <div class="ac-title">【003】計算結果をコンソールに表示</div>
+  <div class="ac-meta">
+    <span class="tag">四則演算</span>
+    <span class="ac-date">2026/01/03</span>
+  </div>
+</a>
+<a href="【002】コンソールに表示.html" class="article-card" data-cats="console">
+  <div class="ac-title">【002】コンソールに表示</div>
+  <div class="ac-meta">
+    <span class="tag">console</span>
+    <span class="ac-date">2026/01/02</span>
+  </div>
+</a>
+<a href="【001】JavaScript用語確認問題.html" class="article-card" data-cats="必須">
+  <div class="ac-title">【001】JavaScript用語確認問題</div>
+  <div class="ac-meta">
+    <span class="tag">必須</span>
+    <span class="ac-date">2026/01/01</span>
+  </div>
+</a></div>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+<script>
+
+// Category filter for blog index pages
+document.addEventListener('DOMContentLoaded', function() {
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.article-card');
+  let active = 'all';
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      active = this.dataset.cat;
+      btns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      let visible = 0;
+      cards.forEach(card => {
+        const cats = card.dataset.cats ? card.dataset.cats.split(',') : [];
+        const show = active === 'all' || cats.includes(active);
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      const counter = document.getElementById('article-count');
+      if (counter) counter.textContent = visible;
+    });
+  });
+});
+
+</script>
+</body>
+</html>

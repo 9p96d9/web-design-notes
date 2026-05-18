@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>レスポンシブ対応のモックアップ作成 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>レスポンシブ対応のモックアップ作成</span>
+  </div>
+  <div class="article-head">
+    <h1>レスポンシブ対応のモックアップ作成</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">課題サイト</span>
+      <span class="date">2025/11/16</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="レスポンシブ対応の記述とモックアップ作成">レスポンシブ対応の記述と<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%E2%A5%C3%A5%AF%A5%A2%A5%C3%A5%D7">モックアップ</a>作成</h4>
+    
+<div class="section">
+    <h5 id="ブレイクポイント">ブレイクポイント</h5>
+    
+<ul>
+<li>ブレイクポイントを基準に表示を変化させます</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241114192935.jpg" width="500" height="486" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="すでにPC用の記述がある場合">すでにPC用の記述がある場合</h6><p></p>
+
+<ul>
+<li>横幅の最大値767px（767px以下の場合）</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink="">　　<span class="synComment">/* すでにあるPC用の記述 */</span>
+
+<span class="synPreProc">@media </span><span class="synSpecial">screen</span><span class="synPreProc"> </span><span class="synStatement">and</span><span class="synPreProc"> (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">767px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+　　<span class="synComment">/* ここにスマートフォンの記述 */</span>
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="スマートフォンでプレビュー"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%DE%A1%BC%A5%C8%A5%D5%A5%A9%A5%F3">スマートフォン</a>でプレビュー</h5>
+    
+<ul>
+<li>ここでは、<a class="keyword" href="https://d.hatena.ne.jp/keyword/Chrome">Chrome</a>の<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B3%C8%C4%A5%B5%A1%C7%BD">拡張機能</a>を利用</li>
+</ul><p></p><h6 id="モバイルシミュレーター---レスポンシブテストツール">モバイルシミュレーター - レスポンシブテストツール</h6><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Chrome">Chrome</a>「<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B3%C8%C4%A5%B5%A1%C7%BD">拡張機能</a>」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241105022416.jpg" width="500" height="434" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="モバイルの選択iPhone-14-Plus">モバイルの選択（<a class="keyword" href="https://d.hatena.ne.jp/keyword/iPhone">iPhone</a> 14 Plus）</h6><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241111073532.jpg" width="680" height="717" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+<p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241111074824.jpg" width="600" height="673" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="PCの選択Macbook-Air">PCの選択（<a class="keyword" href="https://d.hatena.ne.jp/keyword/Macbook%20Air">Macbook Air</a>）</h6><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241111074306.jpg" width="680" height="577" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+<p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241111075022.jpg" width="600" height="343" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="モックアップの作り方"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%E2%A5%C3%A5%AF%A5%A2%A5%C3%A5%D7">モックアップ</a>の作り方</h5>
+    
+<ul>
+<li>PCとモバイルの<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%EA%A1%BC%A5%F3%A5%B7%A5%E7%A5%C3%A5%C8">スクリーンショット</a>をそれぞれ「PSD」データとして保存する</li>
+<li>「pc.psd」「sp.psd」の各ファイルのレイヤーは、「スマートオブジェクトに変換」をしておく（必須）</li>
+<li>「pc.psd」のカンバスサイズを変更して、「sp.psd」と合成後の準備をしておく</li>
+</ul><p>※このサイズは、<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%EA%A1%BC%A5%F3%A5%B7%A5%E7%A5%C3%A5%C8">スクリーンショット</a>を撮った解像度によって違いが出るため、少し下の余白を多めに取るぐらいの変更にする</p><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241111080213.jpg" width="400" height="357" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241111080451.jpg" width="400" height="395" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241113000036.jpg" width="680" height="407" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+</p>
+
+<ul>
+<li>「pc.psd」ファイルに「sp.psd」を「埋め込み配置」をします</li>
+</ul><p>※この時、各レイヤーが「スマートオブジェクト」になっていることが重要</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241115151024.jpg" width="300" height="552" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="各レイヤーのスマートオブジェクト内">各レイヤーのスマートオブジェクト内</h6><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241114192457.jpg" width="680" height="1157" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="レスポンシブWebデザインのための画面サイズ.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">レスポンシブWebデザインのための画面サイズ</span></a><a href="HTMLコーディングルール.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">HTMLコーディングルール</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dl：description list のレイアウト - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>dl：description list のレイアウト</span>
+  </div>
+  <div class="article-head">
+    <h1>dl：description list のレイアウト</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">CSS</span>
+      <span class="date">2026/01/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="dldescription-list">dl：description list</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260215031353.jpg" width="200" height="175" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSでdescription listの見栄えを作るときの注意点</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="CSSでdescription-listをスタイリングするときの注意点">CSSでdescription listをスタイリングするときの注意点</h4>
+    
+<div class="section">
+    <h5 id="1-HTML構造は崩さないdiv化しない">1. HTML構造は崩さない（div化しない）</h5>
+    
+<ul>
+<li>&lt;dlgt; は <strong>意味論的に「用語と説明」</strong> を表す要素です。</li>
+<li>レイアウト目的で div に置き換えるのはNG。</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink="">&lt;<span class="synStatement">dl</span><span class="synSpecial">&gt;</span>
+  &lt;<span class="synStatement">dt</span><span class="synSpecial">&gt;</span>名前&lt;/<span class="synStatement">dt</span><span class="synSpecial">&gt;</span>
+  &lt;<span class="synStatement">dd</span><span class="synSpecial">&gt;</span>山田 太郎&lt;/<span class="synStatement">dd</span><span class="synSpecial">&gt;</span>
+&lt;/<span class="synStatement">dl</span><span class="synSpecial">&gt;</span>
+</pre><p>→ <strong>CSSだけで見た目を調整</strong> するのが正解。</p>
+
+</div>
+<div class="section">
+    <h5 id="2-display-flex--grid-の使い分け">2. display: flex / grid の使い分け</h5>
+    <p><strong>シンプルな2カラム → flex</strong></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dl</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-wrap</span>: <span class="synConstant">wrap</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">dt</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">30%</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">dd</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">70%</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="注意点">注意点</h6><p></p>
+
+<ul>
+<li>dt と dd の 数がズレると崩れる</li>
+<li>複数行ddで 縦位置がズレやすい</li>
+</ul><p></p><h6 id="安定レイアウト--grid推奨">安定レイアウト → grid（推奨）</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dl</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>: <span class="synConstant">150px</span> <span class="synConstant">1fr</span>;
+  gap: <span class="synConstant">8px</span> <span class="synConstant">16px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="メリット">メリット</h6><p></p>
+
+<ul>
+<li>複数行でも 高さが自動揃え</li>
+<li>レスポンシブ対応が楽</li>
+<li>実務では gridが最適解</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="3-margin-の初期値に注意ブラウザ差">3. margin の初期値に注意（ブラウザ差）</h5>
+    <p>dl, dt, dd は <strong>ブラウザデフォルトの余白がバラバラ</strong></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dl</span><span class="synSpecial">,</span> <span class="synStatement">dt</span><span class="synSpecial">,</span> <span class="synStatement">dd</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+</pre><p>→ <strong>まずリセットが鉄則</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="4-dt-の-font-weight-に注意">4. dt の font-weight に注意</h5>
+    <p>多くのブラウザで dt { font-weight: bold; } がデフォルト。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dt</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-weight</span>: <span class="synConstant">600</span>; <span class="synComment">/* or normal */</span>
+<span class="synIdentifier">}</span>
+</pre><p>→ デザイン指定に合わせて <strong>明示指定する</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="5-モバイル対応を最初から考える">5. モバイル対応を最初から考える</h5>
+    <p><strong>PC → 横並び / SP → 縦積み（王道）</strong></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dl</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>: <span class="synConstant">150px</span> <span class="synConstant">1fr</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synPreProc">@media (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">600px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synStatement">dl</span> <span class="synIdentifier">{</span>
+    <span class="synType">grid-template-columns</span>: <span class="synConstant">1fr</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+</pre><p>→ <strong>スマホで可読性が爆上がり</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="6-境界線区切り線の付け方">6. 境界線（区切り線）の付け方</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dt</span><span class="synSpecial">,</span> <span class="synStatement">dd</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">8px</span> <span class="synConstant">0</span>;
+  <span class="synType">border-bottom</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#eee</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<ul>
+<li>dt と dd 両方に引くと二重線になる</li>
+</ul><p></p><h6 id="安全な方法">安全な方法</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dl</span> <span class="synSpecial">&gt;</span> <span class="synStatement">div</span> <span class="synIdentifier">{</span>
+  <span class="synType">border-bottom</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#eee</span>;
+<span class="synIdentifier">}</span>
+</pre><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>会社名<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>株式会社〇〇<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre><p>※ HTML的に厳密さが必要なら ::after 擬似要素方式が◎</p>
+
+</div>
+<div class="section">
+    <h5 id="7-dt-が長文になるケースを想定する">7. dt が長文になるケースを想定する</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dt</span> <span class="synIdentifier">{</span>
+  <span class="synType">white-space</span>: <span class="synConstant">nowrap</span>;
+<span class="synIdentifier">}</span>
+</pre><p>⚠ 長すぎるとレイアウト崩壊</p><p></p><h6 id="おすすめ">おすすめ</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dt</span> <span class="synIdentifier">{</span>
+  <span class="synType">word-break</span>: <span class="synConstant">break-word</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="8-tableの代替にしない">8. tableの代替にしない</h5>
+    <p></p><h6 id="-NG用途">❌ NG用途</h6><p></p>
+
+<ul>
+<li>表形式データ</li>
+<li>数値比較表</li>
+</ul><p>→ これは table を使うべき</p><p></p><h6 id="dl-の正しい用途">dl の正しい用途</h6><p></p>
+
+<ul>
+<li>プロフィール</li>
+<li>用語と説明</li>
+<li>フォーム確認画面</li>
+<li>設定項目 + 内容</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="実務で使える鉄板CSSテンプレ">実務で使える鉄板CSSテンプレ</h4>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dl</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>: <span class="synConstant">160px</span> <span class="synConstant">1fr</span>;
+  gap: <span class="synConstant">8px</span> <span class="synConstant">16px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">dt</span><span class="synSpecial">,</span> <span class="synStatement">dd</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">8px</span> <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">dt</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-weight</span>: <span class="synConstant">600</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synPreProc">@media (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">600px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synStatement">dl</span> <span class="synIdentifier">{</span>
+    <span class="synType">grid-template-columns</span>: <span class="synConstant">1fr</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="よくある失敗まとめ">よくある失敗まとめ</h4>
+    
+<table>
+    <tbody><tr>
+    <th>失敗</th>
+    <th>原因</th>
+    </tr>
+    <tr>
+    <td> レイアウトが崩れる </td>
+    <td> flex使用 + dd複数行   </td>
+    </tr>
+    <tr>
+    <td> 余白がズレる    </td>
+    <td> デフォルトmargin未リセット </td>
+    </tr>
+    <tr>
+    <td> SPで読めない   </td>
+    <td> レスポンシブ未考慮        </td>
+    </tr>
+    <tr>
+    <td> 意味構造破壊    </td>
+    <td> div化             </td>
+    </tr>
+</tbody></table>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="背景画像.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">背景画像</span></a><a href="border - 枠線.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">border - 枠線</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOMとは - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>DOMとは</span>
+  </div>
+  <div class="article-head">
+    <h1>DOMとは</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">DOM</span>
+      <span class="date">2025/10/12</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="DOMDocument-Object-Model">DOM（<a class="keyword" href="https://d.hatena.ne.jp/keyword/Document%20Object%20Model">Document Object Model</a>）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029233825.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>でWebページを扱う仕組み
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Web%A5%D6%A5%E9%A5%A6%A5%B6">Webブラウザ</a>がHTMLを読み込むと、<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EC%A5%F3%A5%C0%A5%EA%A5%F3%A5%B0">レンダリング</a>エンジンという機能が解釈してWebページを表示します</li>
+<li>Webページの中の各部品を「要素（element）」といい、この要素を<a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>で操作します</li>
+</ul></li>
+</ul>
+<div class="section">
+    <h5 id="オブジェクトを利用してHTMLを操作する">オブジェクトを利用してHTMLを操作する</h5>
+    
+<ul>
+<li>ツリー構造とも呼ばれる階層構造を取る</li>
+<li>それぞれ「ノード」という言葉で説明される</li>
+<li>Webページの各要素を表すElementオブジェクトにアクセスできます
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Web%A5%D6%A5%E9%A5%A6%A5%B6">Webブラウザ</a>のウインドウを表すwindowオブジェクト</li>
+<li>HTMLが<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EC%A5%F3%A5%C0%A5%EA%A5%F3%A5%B0">レンダリング</a>されたものを表すdocumentオブジェクト</li>
+</ul></li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241019005831.jpg" width="500" height="291" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>Elementオブジェクトを追加・削除したり、Elementオブジェクトがもつ情報を変更したりすることで、<a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>でWebページを操作できます</li>
+<li>このようにオブジェクトを使ってHTMLを操作する仕組みを「DOM（<a class="keyword" href="https://d.hatena.ne.jp/keyword/Document%20Object%20Model">Document Object Model</a>）」と呼びます</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241019011345.png" width="500" height="276" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="Locationオブジェクト">Locationオブジェクト</h6><p></p>
+
+<ul>
+<li>現在表示されているページのロケーションに関する情報を提供する</li>
+<li>現在の表示URLアドレスに関する情報を取得できる</li>
+</ul><p></p><h6 id="Historyオブジェクト"><a class="keyword" href="https://d.hatena.ne.jp/keyword/History">History</a>オブジェクト</h6><p></p>
+
+<ul>
+<li>ブラウザの履歴の操作</li>
+<li>画面上に表示しているページの移動などの操作</li>
+</ul><p></p><h6 id="Navigatorオブジェクト">Navigatorオブジェクト</h6><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D6%A5%E9%A5%A6%A5%B6%A1%BC">ブラウザー</a>名やバージョンなど、ブラウザ固有の情報を提供する</li>
+</ul><p></p><h6 id="Screenオブジェクト">Screenオブジェクト</h6><p></p>
+
+<ul>
+<li>ディスプレイに関する情報を提供する</li>
+</ul><p></p><h6 id="Formオブジェクト">Formオブジェクト</h6><p></p>
+
+<ul>
+<li>Formに関する情報を提供する</li>
+<li>Formの操作</li>
+</ul><p></p><h6 id="Anchorオブジェクト">Anchorオブジェクト</h6><p></p>
+
+<ul>
+<li>ページ上のアンカーに関する情報を扱う</li>
+</ul><p></p><h6 id="Imagesオブジェクト">Imagesオブジェクト</h6><p></p>
+
+<ul>
+<li>画像に関する情報を提供する</li>
+<li>画像を操作する機能を提供する</li>
+</ul><p></p><h6 id="Elementオブジェクト">Elementオブジェクト</h6><p></p>
+
+<ul>
+<li>ページ上のアンカーに関する情報を扱う</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="Webページの文字を変更する">Webページの文字を変更する</h4>
+    
+<ul>
+<li>HTMLドキュメントや<a class="keyword" href="https://d.hatena.ne.jp/keyword/XML">XML</a>ドキュメントにおける、要素（タグ）のこと</li>
+</ul>
+<div class="section">
+    <h5 id="querySelectorメソッド">querySelectorメソッド</h5>
+    
+<ul>
+<li>documentオブジェクト</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>でHTML要素を指定することが可能</li>
+<li>「document.getElementById()」のほうが処理速度は速い</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synStatement">window</span>.<span class="synStatement">document</span>.querySelector
+</pre><p></p><h6 id="セレクターとは"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>ーとは</h6><p></p>
+
+<ul>
+<li>要素を選び出すときの「指示」になる文字列のこと</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span> <span class="synConstant">'文字列'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>「window」は、省略します</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="textContentで要素の中のテキストにアクセスする">textContentで要素の中のテキストにアクセスする</h5>
+    
+<ul>
+<li>テキストにHTMLを含まないのであれば、textContentプロパティのほうが innerHTMLプロパティより高速で、セキュリティ面でも安全</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>ここに表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>str<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">'JavaScriptで表示'</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>element<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span> <span class="synConstant">'h1'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+element<span class="synStatement">.</span>textContent<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>str<span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="getElementByIdメソッドid名をキーに要素を取得">getElementByIdメソッド（id名をキーに要素を取得）</h5>
+    
+<ul>
+<li>指定した id名を持つ要素を１つ取得するメソッド</li>
+<li>指定した id名を持つ要素がなければ、nullを返す</li>
+</ul><p></p><h6 id="ES6の場合">ES6の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"result"</span><span class="synIdentifier">&gt;</span>JavaScriptで表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"showButton"</span><span class="synIdentifier">&gt;</span>取得した値を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>show<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> () </span><span class="synStatement">=&gt;</span><span class="synSpecial"> {</span>
+    <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#result'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>element<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// 'result' 要素を表示</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>element<span class="synStatement">.</span>textContent<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// 要素のテキスト内容を表示</span>
+  <span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synStatement">document</span><span class="synSpecial">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#showButton'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> show<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ES5の場合">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"result"</span><span class="synIdentifier">&gt;</span>JavaScriptで表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">show</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>取得した値を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">show</span><span class="synSpecial">() {</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span> <span class="synConstant">'#result'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span> result <span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span> element<span class="synStatement">.</span>textContent <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="配列.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">配列</span></a><a href="イベント.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">イベント</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

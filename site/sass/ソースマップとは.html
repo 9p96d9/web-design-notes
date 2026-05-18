@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ソースマップとは - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Sass入門</a>
+    <span class="sep">›</span>
+    <span>ソースマップとは</span>
+  </div>
+  <div class="article-head">
+    <h1>ソースマップとは</h1>
+    <div class="meta">
+      <span class="tag" style="background:#fdf2f8;color:#cc6699">Sass基礎</span>
+      <span class="date">2026/04/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+  <h4 id="ソースマップとは">ソースマップ（.css.map）とは？</h4>
+  <p><code>sass</code> でコンパイルすると、<code>style.css</code> と一緒に <code>style.css.map</code> が自動生成されます。</p>
+  <p>このファイルは、<strong>「コンパイル後のCSSの各行が、元のSCSSのどこに対応するか」を記録した対応表</strong>です。</p>
+  <pre class="code" data-lang="text">scss/style.scss（あなたが書くファイル）
+    ↓ コンパイル
+css/style.css  ＋  css/style.css.map  ← ← ← 対応表</pre>
+</div>
+
+<div class="section">
+  <h4 id="devtools">ブラウザのDevToolsで何が変わるか</h4>
+  <p>ブラウザの「要素を検査」でスタイルを確認したとき、表示が変わります。</p>
+  <table>
+    <tbody>
+      <tr><th>状態</th><th>DevToolsに表示されるファイル</th></tr>
+      <tr><td>ソースマップあり</td><td><code>style.scss:42</code>（SCSSの元の行）</td></tr>
+      <tr><td>ソースマップなし</td><td><code>style.css:187</code>（コンパイル後の行）</td></tr>
+    </tbody>
+  </table>
+  <p>SCSSの行が表示されると、「このスタイルはどこで書いたか」がすぐ特定できます。デバッグ効率が大幅に上がります。</p>
+</div>
+
+<div class="section">
+  <h4 id="ファイルの中身">ファイルの中身（参考）</h4>
+  <p>JSONで書かれています。直接編集する必要はありません。</p>
+  <pre class="code" data-lang="json">{
+  "version": 3,
+  "sources": ["../scss/style.scss"],  // 元ファイルのパス
+  "mappings": "...",                  // 位置の対応表（エンコードされた文字列）
+  "file": "style.css"
+}</pre>
+  <ul>
+    <li><code>sources</code>：元のSCSSファイルのパス</li>
+    <li><code>mappings</code>：CSSの各行がSCSSのどの行に対応するかの対応表（Base64エンコード）</li>
+    <li><code>file</code>：このソースマップが対応するCSSファイル名</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h4 id="本番環境">本番環境では不要な場合がある</h4>
+  <p>ソースマップはデバッグ用ファイルです。本番環境（公開サイト）では：</p>
+  <ul>
+    <li>ソースマップがあると内部構造が見えやすくなる（セキュリティ面の懸念）</li>
+    <li>ファイルサイズが増える</li>
+  </ul>
+  <p>本番ビルドでは生成しないこともあります。</p>
+  <pre class="code" data-lang="bash"># ソースマップを生成しない
+sass --no-source-map scss/style.scss css/style.css</pre>
+
+  <h5 id="使い分け">使い分けの目安</h5>
+  <table>
+    <tbody>
+      <tr><th>環境</th><th>ソースマップ</th></tr>
+      <tr><td>開発中（ローカル）</td><td>あり（デフォルト）</td></tr>
+      <tr><td>本番環境</td><td>状況による（なしにすることも多い）</td></tr>
+      <tr><td>学習・練習</td><td>あってもなくても問題なし</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h4 id="まとめ">まとめ</h4>
+  <ul>
+    <li><code>.css.map</code> は Sass のコンパイル時に自動生成されるデバッグ用ファイル</li>
+    <li>ブラウザの DevTools で「SCSSの元の行」が見えるようになる</li>
+    <li>直接編集する必要はない</li>
+    <li>本番環境では <code>--no-source-map</code> で生成を抑制できる</li>
+  </ul>
+</div>
+
+  </div>
+  <nav class="article-nav">
+    <a href="Sass環境構築.html" class="nav-prev">
+      <span class="nav-label">← 前の記事</span>
+      <span class="nav-title">Sass環境構築</span>
+    </a>
+    <a href="Sass総復習.html" class="nav-next" style="text-align:right">
+      <span class="nav-label">次の記事 →</span>
+      <span class="nav-title">Sass総復習</span>
+    </a>
+  </nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+</body>
+</html>

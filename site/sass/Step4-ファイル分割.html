@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 4：ファイル分割で完成形 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Sass入門</a>
+    <span class="sep">›</span>
+    <span>Step 4：ファイル分割で完成形</span>
+  </div>
+  <div class="article-head">
+    <h1>Step 4：ファイル分割で完成形</h1>
+    <div class="meta">
+      <span class="tag" style="background:#fdf2f8;color:#cc6699">ステップ演習</span>
+      <span class="date">2026/04/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+  <h4 id="ファイル分割とは">ファイル分割とは？</h4>
+  <p>これまでのStep 1〜3では、1つの <code>style.scss</code> にすべてを書いてきました。</p>
+  <p>Step 4では、<strong>役割ごとにファイルを分割</strong>して管理します。これが実務で使われる完成形です。</p>
+</div>
+
+<div class="section">
+  <h4 id="フォルダ構成">フォルダ構成</h4>
+  <pre class="code" data-lang="text">scss/
+├── style.scss       ← @use で読み込むだけ。スタイルは書かない
+├── _variables.scss  ← 変数の定義
+├── _mixin.scss      ← mixinの定義
+├── _base.scss       ← リセットCSSなど基本スタイル
+├── _header.scss     ← ヘッダーのスタイル
+└── _card.scss       ← ヒーロー・メニュー・カード・フッターのスタイル</pre>
+</div>
+
+<div class="section">
+  <h4 id="パーシャル">パーシャル（部分ファイル）とは</h4>
+  <p>ファイル名の先頭に <code>_</code>（アンダースコア）を付けたファイルを<strong>パーシャル</strong>といいます。</p>
+  <ul>
+    <li>パーシャル単体では <strong>CSSに変換されない</strong></li>
+    <li><code>@use</code> で読み込まれたときだけ出力される</li>
+    <li><code>@use</code> で読み込むとき、ファイル名の <code>_</code> と拡張子は省略できる</li>
+  </ul>
+  <pre class="code" data-lang="scss">/* style.scss */
+@use 'variables';   /* _variables.scss を読み込む */
+@use 'mixin';       /* _mixin.scss を読み込む */
+@use 'base';        /* _base.scss を読み込む */
+@use 'header';      /* _header.scss を読み込む */
+@use 'card';        /* _card.scss を読み込む */
+
+/* style.scss にはスタイルを書かない。読み込みのみ。 */</pre>
+</div>
+
+<div class="section">
+  <h4 id="各ファイルの中身">各ファイルの中身</h4>
+
+  <h5 id="variables">_variables.scss</h5>
+  <pre class="code" data-lang="scss">/* _variables.scss */
+$brand-color:    #6F4E37;
+$white:          #ffffff;
+$text-color:     #333333;
+$bg-color:       #faf6f2;
+$font-size-base: 16px;
+$spacing-sm:     12px;
+$spacing-md:     24px;
+$spacing-lg:     48px;
+$border-radius:  8px;</pre>
+
+  <h5 id="mixin">_mixin.scss</h5>
+  <pre class="code" data-lang="scss">/* _mixin.scss */
+@use 'variables' as v;   /* 変数ファイルを読み込む */
+
+@mixin flex-row($justify: flex-start) {
+  display: flex;
+  justify-content: $justify;
+}
+
+@mixin cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@mixin button($bg: v.$brand-color, $color: v.$white) {
+  background-color: $bg;
+  color: $color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: v.$border-radius;
+  cursor: pointer;
+}</pre>
+
+  <h5 id="base">_base.scss</h5>
+  <pre class="code" data-lang="scss">/* _base.scss */
+@use 'variables' as v;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: v.$font-size-base;
+  color: v.$text-color;
+  background-color: v.$bg-color;
+  line-height: 1.7;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}</pre>
+
+  <h5 id="header">_header.scss</h5>
+  <pre class="code" data-lang="scss">/* _header.scss */
+@use 'variables' as v;
+@use 'mixin' as m;
+
+.header {
+  background-color: v.$brand-color;
+  padding: v.$spacing-sm v.$spacing-md;
+
+  &__inner {
+    @include m.flex-row(space-between);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    color: v.$white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &__nav {
+    @include m.flex-row;
+    gap: v.$spacing-md;
+
+    a {
+      color: v.$white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}</pre>
+</div>
+
+<div class="section">
+  <h4 id="use-vs-import">@use と @import の違い</h4>
+  <p><code>@import</code> は古い方法で、現在は<strong>非推奨</strong>です。</p>
+  <table>
+    <tbody>
+      <tr><th></th><th>@import（古い）</th><th>@use（新しい）</th></tr>
+      <tr><td>名前空間</td><td>なし（全変数がグローバル）</td><td>あり（ファイル名が名前空間になる）</td></tr>
+      <tr><td>変数の参照</td><td><code>$brand-color</code></td><td><code>v.$brand-color</code>（as v の場合）</td></tr>
+      <tr><td>読み込み回数</td><td>複数回読み込まれることがある</td><td>1回だけ読み込まれる</td></tr>
+      <tr><td>推奨</td><td>非推奨（将来削除予定）</td><td>推奨</td></tr>
+    </tbody>
+  </table>
+
+  <h5 id="as-wildcard">名前空間を省略する書き方</h5>
+  <pre class="code" data-lang="scss">@use 'variables' as *;   /* as * で名前空間なし（@import に近い書き方） */
+
+.header {
+  background-color: $brand-color;   /* v.$brand-color ではなく $brand-color で使える */
+}</pre>
+  <p>小規模なプロジェクトや学習用途では <code>as *</code> も使われますが、大規模プロジェクトでは名前空間を明示する方が安全です。</p>
+</div>
+
+<div class="section">
+  <h4 id="step4まとめ">Step 4のまとめ</h4>
+  <p>ファイル分割の利点：</p>
+  <ul>
+    <li>役割ごとにファイルが分かれて<strong>探しやすい</strong></li>
+    <li>チームで作業するとき<strong>担当範囲が明確</strong>になる</li>
+    <li>コンポーネント単位で管理できる</li>
+    <li><code>_variables.scss</code> を変えれば全体のデザインが変わる</li>
+  </ul>
+  <blockquote>
+    <p>新しいセクション「スタッフ紹介」を追加するなら、<code>_staff.scss</code> というパーシャルを作り、<code>style.scss</code> に <code>@use 'staff';</code> を1行追加するだけです。</p>
+  </blockquote>
+</div>
+
+  </div>
+  <nav class="article-nav">
+    <a href="Step3-mixin.html" class="nav-prev">
+      <span class="nav-label">← 前の記事</span>
+      <span class="nav-title">Step 3：mixinを導入</span>
+    </a>
+    <a href="Sass環境構築.html" class="nav-next" style="text-align:right">
+      <span class="nav-label">次の記事 →</span>
+      <span class="nav-title">Sass環境構築</span>
+    </a>
+  </nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+</body>
+</html>

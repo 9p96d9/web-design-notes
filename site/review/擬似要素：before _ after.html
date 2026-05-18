@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>擬似要素：before / after - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>擬似要素：before / after</span>
+  </div>
+  <div class="article-head">
+    <h1>擬似要素：before / after</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/11/13</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="擬似要素">擬似要素</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250513001010.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>HTMLに記述せず<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>で擬似的に作成される要素であるため、「擬似要素」と呼ばれています</li>
+<li>擬似要素には多くの種類がありますが、その中でもよく使用される擬似要素はbeforeとafterです</li>
+</ul>
+<div class="section">
+    <h5 id="before--afterとは">before / afterとは</h5>
+    
+<ul>
+<li>要素の前後に擬似要素を作成する指定方法です</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="before--afterの使い方">before / afterの使い方</h5>
+    
+<ul>
+<li>要素やclass名、id名などのあとに::before、::afterと記述します</li>
+<li>beforeとafterの前にはコロン(:)の記述が2つ必要です</li>
+<li>スタイルの中には「content」の指定が必要です</li>
+<li>content: ""; の中身は空白でも大丈夫ですが、記号やテキストを表示したいときにはcontentのクオーテーションの中に表示したい内容を記述します</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">p</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">""</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">p</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">""</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="before--afterの違い">before / afterの違い</h5>
+    
+<ul>
+<li>beforeは要素の直前、afterは要素の直後に表示されます</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""> <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキスト<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">p</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">"要素の直前に表示されます"</span>;
+  <span class="synType">color</span>: <span class="synConstant">red</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">p</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">"要素の直後に表示されます"</span>;
+  <span class="synType">color</span>: <span class="synConstant">blue</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20221030183245.jpg" width="600" height="65" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="例-A">例 A</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20221106181609.gif" width="500" height="169" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"new"</span><span class="synIdentifier">&gt;</span>ジャケット - 10,000円<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>Yシャツ - 4,800円<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>Tシャツ - 2,800円<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"new"</span><span class="synIdentifier">&gt;</span>バッグ - 8,000円<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+    <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+    <span class="synType">line-height</span>: <span class="synConstant">2.0</span>;
+    <span class="synType">padding</span>: <span class="synConstant">2rem</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.new</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">"NEW!"</span>;
+  <span class="synType">margin-left</span>: <span class="synConstant">5px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">5px</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">3px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#f99</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">14px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="例-B">例 B</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20221030182843.jpg" width="600" height="241" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>カギカッコを使った引用文 デモ<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"wrapper"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">blockquote</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      「天は人の上に人を造らず人の下に人を造らず」と言えり。
+      されば天より人を生ずるには、万人は万人みな同じ位にして、生まれながら貴賤上下の差別なく、
+      万物の霊たる身と心との働きをもって天地の間にあるよろずの物を資り、
+      もって衣食住の用を達し、自由自在、互いに人の妨げをなさずしておのおの安楽にこの世を渡らしめ給うの趣意なり。
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">blockquote</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.wrapper --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">2</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synIdentifier">.wrapper</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">600px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">20px</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">blockquote</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">padding</span>: <span class="synConstant">2em</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">blockquote</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span>
+  <span class="synStatement">blockquote</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+      <span class="synType">content</span>: <span class="synConstant">''</span>;
+      <span class="synType">width</span>: <span class="synConstant">40px</span>;
+      <span class="synType">height</span>: <span class="synConstant">40px</span>;
+      <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">blockquote</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+      <span class="synType">border-top</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#ccc</span>;
+      <span class="synType">border-left</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#ccc</span>;
+      <span class="synType">top</span>: <span class="synConstant">0</span>;
+      <span class="synType">left</span>: <span class="synConstant">0</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">blockquote</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+      <span class="synType">border-bottom</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#ccc</span>;
+      <span class="synType">border-right</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#ccc</span>;
+      <span class="synType">bottom</span>: <span class="synConstant">0</span>;
+      <span class="synType">right</span>: <span class="synConstant">0</span>;
+  <span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="AOS.js - 実践.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">AOS.js - 実践</span></a><a href="レスポンシブWebデザイン.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">レスポンシブWebデザイン</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

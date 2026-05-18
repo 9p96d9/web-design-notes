@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初心者向け 練習問題（if文 × 時間・曜日判別） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>初心者向け 練習問題（if文 × 時間・曜日判別）</span>
+  </div>
+  <div class="article-head">
+    <h1>初心者向け 練習問題（if文 × 時間・曜日判別）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/21</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="初心者向け-練習問題if文--時間曜日判別">初心者向け 練習問題（if文 × 時間・曜日判別）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260211081009.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで時間判別と曜日判別の問題を作成して </p>
+
+<ul>
+<li>結果は、consoleに表示</li>
+</ul>
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="時間判別曜日判別-問題">時間判別＆曜日判別 問題</h4>
+    
+<div class="section">
+    <h5 id="問題時間によって挨拶を表示しよう">問題①：時間によって挨拶を表示しよう</h5>
+    <p></p><h6 id="仕様">仕様</h6>現在の時刻を取得し、時間帯に応じて以下のメッセージを表示するプログラムを作成してください。<p></p>
+
+<table>
+    <tbody><tr>
+    <th>時間帯</th>
+    <th>表示する結果</th>
+    </tr>
+    <tr>
+    <td> 5時〜10時  </td>
+    <td> おはようございます </td>
+    </tr>
+    <tr>
+    <td> 11時〜16時 </td>
+    <td> こんにちは     </td>
+    </tr>
+    <tr>
+    <td> 17時〜22時 </td>
+    <td> こんばんは     </td>
+    </tr>
+    <tr>
+    <td> 23時〜4時  </td>
+    <td> おやすみなさい   </td>
+    </tr>
+</tbody></table><p></p><h6 id="条件">条件</h6><p></p>
+
+<ul>
+<li>Date オブジェクトを使って現在の時間を取得すること</li>
+<li>if文 または switch文 を使うこと</li>
+</ul><p></p><h6 id="結果例">結果例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">こんにちは
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題曜日を日本語で表示しよう">問題②：曜日を日本語で表示しよう</h5>
+    <p></p><h6 id="仕様-1">仕様</h6>今日の曜日を取得し、日本語で表示するプログラムを作成してください。<p></p>
+
+<table>
+    <tbody><tr>
+    <th>数値</th>
+    <th>曜日</th>
+    </tr>
+    <tr>
+    <td> 0  </td>
+    <td> 日曜日 </td>
+    </tr>
+    <tr>
+    <td> 1  </td>
+    <td> 月曜日 </td>
+    </tr>
+    <tr>
+    <td> 2  </td>
+    <td> 火曜日 </td>
+    </tr>
+    <tr>
+    <td> 3  </td>
+    <td> 水曜日 </td>
+    </tr>
+    <tr>
+    <td> 4  </td>
+    <td> 木曜日 </td>
+    </tr>
+    <tr>
+    <td> 5  </td>
+    <td> 金曜日 </td>
+    </tr>
+    <tr>
+    <td> 6  </td>
+    <td> 土曜日 </td>
+    </tr>
+</tbody></table><p></p><h6 id="条件-1">条件</h6><p></p>
+
+<ul>
+<li>getDay() を使用すること</li>
+<li>switch文 または 配列を使って判別すること</li>
+</ul><p></p><h6 id="結果例-1">結果例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">今日は金曜日です
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題応用時間曜日の組み合わせ判定">問題③（応用）：時間＋曜日の組み合わせ判定</h5>
+    <p></p><h6 id="仕様-2">仕様</h6>現在の「時間」と「曜日」を使って、次のように表示を切り替えてください。<p></p>
+
+<table>
+    <tbody><tr>
+    <th>条件</th>
+    <th>表示</th>
+    </tr>
+    <tr>
+    <td> 平日の9時〜17時 </td>
+    <td> 勤務時間中です </td>
+    </tr>
+    <tr>
+    <td> 平日のそれ以外   </td>
+    <td> 業務時間外です </td>
+    </tr>
+    <tr>
+    <td> 土日        </td>
+    <td> 休日です    </td>
+    </tr>
+</tbody></table><p></p><h6 id="結果例-2">結果例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">勤務時間中です
+</pre>
+</div>
+<div class="section">
+    <h5 id="サンプルコード">サンプルコード</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> now <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> hour <span class="synStatement">=</span> now<span class="synStatement">.</span><span class="synIdentifier">getHours</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> day <span class="synStatement">=</span> now<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synComment">// 時間判別</span>
+<span class="synStatement">if</span> <span class="synSpecial">(</span>hour <span class="synStatement">&gt;=</span> <span class="synConstant">5</span> <span class="synStatement">&amp;&amp;</span> hour <span class="synStatement">&lt;=</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`おはようございます`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>hour <span class="synStatement">&gt;=</span> <span class="synConstant">11</span> <span class="synStatement">&amp;&amp;</span> hour <span class="synStatement">&lt;=</span> <span class="synConstant">16</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`こんにちは`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>hour <span class="synStatement">&gt;=</span> <span class="synConstant">17</span> <span class="synStatement">&amp;&amp;</span> hour <span class="synStatement">&lt;=</span> <span class="synConstant">22</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`こんばんは`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`おやすみなさい`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synComment">// 曜日判別</span>
+<span class="synType">const</span> days <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'日'</span><span class="synStatement">,</span> <span class="synConstant">'月'</span><span class="synStatement">,</span> <span class="synConstant">'火'</span><span class="synStatement">,</span> <span class="synConstant">'水'</span><span class="synStatement">,</span> <span class="synConstant">'木'</span><span class="synStatement">,</span> <span class="synConstant">'金'</span><span class="synStatement">,</span> <span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`今日は </span><span class="synSpecial">${</span>days<span class="synSpecial">[</span>day<span class="synSpecial">]}</span><span class="synConstant"> 曜日です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="論理演算子.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">論理演算子</span></a><a href="見本を真似して入力する.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">見本を真似して入力する</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

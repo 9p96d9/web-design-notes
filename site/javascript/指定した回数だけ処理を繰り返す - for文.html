@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>指定した回数だけ処理を繰り返す - for文 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>指定した回数だけ処理を繰り返す - for文</span>
+  </div>
+  <div class="article-head">
+    <h1>指定した回数だけ処理を繰り返す - for文</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">反復</span>
+      <span class="date">2025/10/16</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="反復">反復</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029233919.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>処理を繰り返す</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="for文">for文</h4>
+    
+<ul>
+<li>繰り返し文</li>
+<li>英語で輪を意味する「loop（ループ）」とも呼ばれます</li>
+<li>指定した回数だけ処理を繰り返す（回数が決まった繰り返し）</li>
+<li>変数「i」の初期値（「i」は、indexの意）</li>
+<li>処理を１回実行するたびに、変数「i」の値をどのように変更するか</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220911132621.jpg" width="500" height="137" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="変数の値を１ずつ増やす演算子">変数の値を１ずつ増やす<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></h5>
+    
+<ul>
+<li>「++」</li>
+<li>「i++」は、「i = i + 1;」と同じ</li>
+</ul><p><br>
+《for文の利用》</p>
+
+<ul>
+<li>カウンタ変数名は「i」（indexの意）とすることが慣例です</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"utf-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>for文の利用<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">for</span><span class="synSpecial"> (</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span> <span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span> <span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">) {</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span> <span class="synConstant">`</span><span class="synSpecial">${</span>i<span class="synSpecial">}</span><span class="synConstant">回目`</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p>《実行結果》</p><p><span itemscope="" itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/web-javascript/20130523163117" class="hatena-fotolife" itemprop="url"><img src="../images/web-javascript_20130523163117.jpg" width="530" height="160" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></a></span><br>
+</p>
+
+<ol>
+<li>変数 i に１が代入される（初期化式）</li>
+<li>i が５以下かどうか検証される（継続条件式）</li>
+<li>i の値がコンソールに表示される</li>
+<li>i に１加算される（増減式）</li>
+<li>継続条件式の結果がfalseになるまで（2～4）を繰り返す</li>
+</ol>
+</div>
+</div>
+<div class="section">
+    <h4 id="例題数字の合計を求めて表示">例題（数字の合計を求めて表示）</h4>
+    
+<ul>
+<li>DOMの操作でブラウザ上に表示</li>
+<li>1以下の数字の時と全角が入力されたときには、「計算できません」と表示</li>
+</ul><p></p><h6 id="ES6の場合">ES6の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>for文を繰り返し<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>数字の合計を求めるプログラム<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ボタンを押して数字を入力してください。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"calculateButton"</span><span class="synIdentifier">&gt;</span>合計を求める<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>result<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> () </span><span class="synStatement">=&gt;</span><span class="synSpecial"> {</span>
+  <span class="synType">let</span> maxNum <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'1以上の整数を半角数字で入力してください。'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  maxNum <span class="synStatement">=</span> <span class="synStatement">parseInt</span><span class="synSpecial">(</span>maxNum<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synType">let</span> total <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>maxNum <span class="synStatement">&lt;</span> <span class="synConstant">1</span> <span class="synStatement">||</span> <span class="synStatement">isNaN</span><span class="synSpecial">(</span>maxNum<span class="synSpecial">))</span> <span class="synSpecial">{</span>
+    element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'計算できません。'</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+    <span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> maxNum<span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+      total <span class="synStatement">+=</span> i<span class="synStatement">;</span>
+    <span class="synSpecial">}</span>
+    element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`0に入力された数字「</span><span class="synSpecial">${</span>maxNum<span class="synSpecial">}</span><span class="synConstant">」までを1から加算した合計は「</span><span class="synSpecial">${</span>total<span class="synSpecial">}</span><span class="synConstant">」です。`</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synStatement">document</span><span class="synSpecial">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#calculateButton'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> result<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ES5の場合">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>for文を繰り返し<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>数字の合計を求めるプログラム<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ボタンを押して数字を入力してください。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">result</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>合計を求める<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">result</span><span class="synSpecial">() {</span>
+  <span class="synType">let</span> maxNum <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'1以上の整数を半角数字で入力してください。'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  maxNum <span class="synStatement">=</span> <span class="synStatement">parseInt</span><span class="synSpecial">(</span>maxNum<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synType">let</span> total <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>maxNum <span class="synStatement">&lt;</span> <span class="synConstant">1</span> <span class="synStatement">||</span> <span class="synStatement">isNaN</span><span class="synSpecial">(</span>maxNum<span class="synSpecial">))</span> <span class="synSpecial">{</span>
+    element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'計算できません。'</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+    <span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i<span class="synStatement">=</span><span class="synConstant">1</span><span class="synStatement">;</span> i<span class="synStatement">&lt;=</span>maxNum<span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+      total <span class="synStatement">=</span> total <span class="synStatement">+</span> i<span class="synStatement">;</span>
+    <span class="synSpecial">}</span>
+    element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`0に入力された数字「</span><span class="synSpecial">${</span>maxNum<span class="synSpecial">}</span><span class="synConstant">」までを1から加算した合計は「</span><span class="synSpecial">${</span>total<span class="synSpecial">}</span><span class="synConstant">」です。`</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="関数.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">関数</span></a><a href="オブジェクト.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">オブジェクト</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

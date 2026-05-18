@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MixItUp フィルター実装 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>MixItUp フィルター実装</span>
+  </div>
+  <div class="article-head">
+    <h1>MixItUp フィルター実装</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">レスポンシブ実践</span>
+      <span class="date">2026/01/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="MixItUp-フィルター実装">MixItUp フィルター実装</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20260218232441.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>MixItupでフィルターを実装したい </p>
+
+<ul>
+<li>MixItUp CDN </li>
+<li>「春の花」「夏の花」「秋の花」「冬の花」のフィルター</li>
+</ul>
+    </blockquote>
+<p></p><h6 id="完成イメージ">完成イメージ</h6><p></p>
+
+<ul>
+<li>ボタンで 季節別に絞り込み</li>
+<li>アニメーション付きで表示切替</li>
+</ul>
+<div class="section">
+    <h5 id="-MixItUp-CDN-読み込み">① MixItUp CDN 読み込み</h5>
+    <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fcdnjs.com%2Flibraries%2Fmixitup" title="mixitup - Libraries - cdnjs - The #1 free and open source CDN built to make life easier for developers" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://cdnjs.com/libraries/mixitup">cdnjs.com</a></cite></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-HTML構造フィルターボタン--アイテム">② HTML構造（フィルターボタン + アイテム）</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"filter-controls"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-filter=</span><span class="synConstant">"all"</span><span class="synIdentifier">&gt;</span>すべて<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-filter=</span><span class="synConstant">".spring"</span><span class="synIdentifier">&gt;</span>春の花<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-filter=</span><span class="synConstant">".summer"</span><span class="synIdentifier">&gt;</span>夏の花<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-filter=</span><span class="synConstant">".autumn"</span><span class="synIdentifier">&gt;</span>秋の花<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-filter=</span><span class="synConstant">".winter"</span><span class="synIdentifier">&gt;</span>冬の花<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"mix spring"</span><span class="synIdentifier">&gt;</span>🌸 桜<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"mix spring"</span><span class="synIdentifier">&gt;</span>🌷 チューリップ<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"mix summer"</span><span class="synIdentifier">&gt;</span>🌻 ひまわり<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"mix summer"</span><span class="synIdentifier">&gt;</span>🌺 ハイビスカス<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"mix autumn"</span><span class="synIdentifier">&gt;</span>🍁 もみじ<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"mix autumn"</span><span class="synIdentifier">&gt;</span>🌼 菊<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"mix winter"</span><span class="synIdentifier">&gt;</span>❄️ 椿<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"mix winter"</span><span class="synIdentifier">&gt;</span>🎍 松<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-CSSグリッドレイアウト--デザイン">③ CSS（グリッドレイアウト + デザイン）</h5>
+    <p>※ ユーザー好みの CSS Grid 構成にしています。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.filter-controls{</span>
+  <span class="synType">text-align</span>:<span class="synConstant">center</span>;
+  <span class="synType">margin-bottom</span>:<span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.filter-controls</span> <span class="synStatement">button</span><span class="synIdentifier">{</span>
+  <span class="synType">padding</span>:<span class="synConstant">8px</span> <span class="synConstant">16px</span>;
+  <span class="synType">margin</span>:<span class="synConstant">4px</span>;
+  <span class="synType">border</span>:<span class="synConstant">none</span>;
+  <span class="synType">background</span>:<span class="synConstant">#333</span>;
+  <span class="synType">color</span>:<span class="synConstant">#fff</span>;
+  <span class="synType">border-radius</span>:<span class="synConstant">4px</span>;
+  <span class="synType">cursor</span>:<span class="synConstant">pointer</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.filter-controls</span> <span class="synStatement">button</span>:<span class="synPreProc">hover</span><span class="synIdentifier">{</span>
+  <span class="synType">background</span>:<span class="synConstant">#555</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.container{</span>
+  <span class="synType">display</span>:<span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>:<span class="synConstant">repeat</span>(<span class="synConstant">auto</span>-fit<span class="synSpecial">,</span> minmax(<span class="synConstant">140px</span><span class="synSpecial">,</span> <span class="synConstant">1fr</span>));
+  gap:<span class="synConstant">15px</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.mix{</span>
+  <span class="synType">padding</span>:<span class="synConstant">20px</span>;
+  <span class="synType">background</span>:<span class="synConstant">#f2f2f2</span>;
+  <span class="synType">text-align</span>:<span class="synConstant">center</span>;
+  <span class="synType">border-radius</span>:<span class="synConstant">8px</span>;
+  <span class="synType">font-size</span>:<span class="synConstant">16px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-JavaScriptMixItUp-初期化">④ JavaScript（MixItUp 初期化）</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">var</span><span class="synSpecial"> </span>mixer<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synIdentifier">mixitup</span><span class="synSpecial">(</span><span class="synConstant">'.container'</span><span class="synStatement">,</span> <span class="synSpecial">{</span>
+    <span class="synIdentifier">animation</span><span class="synStatement">:</span> <span class="synSpecial">{</span>
+      <span class="synIdentifier">duration</span><span class="synStatement">:</span> <span class="synConstant">300</span>
+    <span class="synSpecial">}</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-仕組み解説重要">⑤ 仕組み解説（重要）</h5>
+    
+<table>
+    <tbody><tr>
+    <th>部分</th>
+    <th>役割</th>
+    </tr>
+    <tr>
+    <td> .mix                 </td>
+    <td> MixItUpで操作される要素 </td>
+    </tr>
+    <tr>
+    <td> .spring 等             </td>
+    <td> カテゴリ識別用クラス      </td>
+    </tr>
+    <tr>
+    <td> data-filter=".spring" </td>
+    <td> 対象クラスを指定       </td>
+    </tr>
+    <tr>
+    <td> .container          </td>
+    <td> 全体ラッパー          </td>
+    </tr>
+</tbody></table><p>【例】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-filter=</span><span class="synConstant">".spring"</span><span class="synIdentifier">&gt;</span>春の花<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+</pre><p>→ .spring クラスを持つ .mix 要素だけ表示</p>
+
+</div>
+<div class="section">
+    <h5 id="-実務でよく使う拡張アクティブボタン">⑥ 実務でよく使う拡張（アクティブボタン）</h5>
+    <p>【javascript】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> buttons <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelectorAll</span><span class="synSpecial">(</span><span class="synConstant">'.filter-controls button'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+buttons<span class="synStatement">.</span><span class="synIdentifier">forEach</span><span class="synSpecial">(</span>btn <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+    buttons<span class="synStatement">.</span><span class="synIdentifier">forEach</span><span class="synSpecial">(</span>b <span class="synStatement">=&gt;</span> b<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">remove</span><span class="synSpecial">(</span><span class="synConstant">'active'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+    btn<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">'active'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p>【css】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.filter-controls</span> <span class="synStatement">button</span><span class="synIdentifier">.active{</span>
+  <span class="synType">background</span>:<span class="synConstant">#ff7b00</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="Webサイトをモバイル対応する際の注意点.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">Webサイトをモバイル対応する際の注意点</span></a><a href="OGPの作成時の注意点.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">OGPの作成時の注意点</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自作フォームとGoogleフォームを連携 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>自作フォームとGoogleフォームを連携</span>
+  </div>
+  <div class="article-head">
+    <h1>自作フォームとGoogleフォームを連携</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">フォーム</span>
+      <span class="date">2026/03/02</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="自作フォームとGoogleフォームを連携">自作フォームとGoogleフォームを連携</h4>
+    
+<ol>
+<li>作成したGoogleフォームを「公開」</li>
+</ol><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250723131513.png" width="600" height="89" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>「回答者へのリンクをコピー」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250723134341.png" width="600" height="238" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>「別ページ」で表示</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250723134655.png" width="600" height="794" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="検証で必要な値を取得">「検証」で必要な値を取得</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250723134955.png" width="300" height="444" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250723135655.png" width="680" height="290" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="自作フォームに設定">自作フォームに設定</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>お問い合わせ<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"formSec"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"form"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>お問い合わせ<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">form</span><span class="synIdentifier"> </span><span class="synType">action</span><span class="synIdentifier">=</span><span class="synConstant">"https://docs.google.com/forms/u/0/d/e/1FAIpQLSd6TDXhgNmAU7Yj9exgpm4k4RJPUntaf5PkF5MOtiwy7cucHQ/formResponse"</span><span class="synIdentifier"> </span><span class="synType">method</span><span class="synIdentifier">=</span><span class="synConstant">"post"</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"mG61Hd"</span><span class="synIdentifier"> </span><span class="synType">target</span><span class="synIdentifier">=</span><span class="synConstant">"hidden_iframe"</span><span class="synIdentifier"> </span><span class="synSpecial">onsubmit="</span>submitted<span class="synStatement">=</span><span class="synConstant">true</span><span class="synStatement">;</span><span class="synSpecial">"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>お名前<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"entry.428305758"</span><span class="synIdentifier"> </span><span class="synType">required</span><span class="synIdentifier"> </span><span class="synType">autofocus</span><span class="synIdentifier"> </span><span class="synType">placeholder</span><span class="synIdentifier">=</span><span class="synConstant">"お名前"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>メールアドレス<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"email"</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"entry.411145523"</span><span class="synIdentifier"> </span><span class="synType">required</span><span class="synIdentifier"> </span><span class="synType">placeholder</span><span class="synIdentifier">=</span><span class="synConstant">"メールアドレス"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"msg"</span><span class="synIdentifier">&gt;</span>メッセージ<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">textarea</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"entry.1613225171"</span><span class="synIdentifier"> </span><span class="synType">cols</span><span class="synIdentifier">=</span><span class="synConstant">"30"</span><span class="synIdentifier"> </span><span class="synType">rows</span><span class="synIdentifier">=</span><span class="synConstant">"10"</span><span class="synIdentifier"> </span><span class="synType">placeholder</span><span class="synIdentifier">=</span><span class="synConstant">"メッセージ"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">textarea</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"submit"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">"送信"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">form</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="自作フォームを作成.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">自作フォームを作成</span></a><a href="自動返信機能を追加（メール通知）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">自動返信機能を追加（メール通知）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

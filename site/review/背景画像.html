@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>背景画像 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>背景画像</span>
+  </div>
+  <div class="article-head">
+    <h1>背景画像</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/10/07</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="背景画像">背景画像</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241006003433.png" width="200" height="186" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ol>
+<li>画像解説が必要な場合：img要素</li>
+<li>画像解説が不要な場合：backgroundプロパティ</li>
+</ol><p><br>
+</p><table>
+<tbody><tr><th>プロパティ</th><th>意味</th><th>値</th><th>初期値</th></tr>
+<tr><td>background-color</td><td>背景色</td><td>カラーコード｜カラーネーム｜transparent</td><td>transparent（透明）</td></tr>
+<tr><td>background-image</td><td>背景画像</td><td>url（ファイルパス）｜none</td><td>none（画像なし）</td></tr>
+<tr><td>background-repeat</td><td>背景画像の繰り返し方向</td><td>repeat｜repeat-x｜epeat-y｜no-repeate</td><td>repeat（縦横に繰り返し）</td></tr>
+<tr><td>background-position</td><td>背景画像の表示開始位置</td><td>位置を表すキーワード｜%｜数値（px）</td><td>左上（left top｜0% 0%｜0px 0px）</td></tr>
+<tr><td>background-attachment</td><td>背景画像の固定・移動</td><td>fixed｜scroll</td><td>scroll</td></tr>
+<tr><td>background-size</td><td>背景画像の表示サイズ</td><td>auto｜cover｜contain｜幅 高さ（単位付き数値指定）</td><td>auto（原寸）</td></tr>
+</tbody></table><br><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Illustrator">Illustrator</a>（生成<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D9%A5%AF%A5%BF%A1%BC">ベクター</a>）で作成したイラストを「.<a class="keyword" href="https://d.hatena.ne.jp/keyword/png">png</a>」で保存</li>
+</ul><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241006001949.jpg" width="300" height="270" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241006002000.png" width="300" height="278" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>中央に配置</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.content</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">600px</span>;
+  <span class="synType">height</span>: <span class="synConstant">300px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">auto</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ebebeb</span>;
+  <span class="synType">background-image</span>: <span class="synIdentifier">url(</span><span class="synConstant">img/rose.png</span><span class="synIdentifier">)</span>;
+  <span class="synType">background-repeat</span>: <span class="synConstant">no-repeat</span>;
+  <span class="synType">background-position</span>: <span class="synConstant">center</span> <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315022607.jpg" width="600" height="298" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="背景をショートハンドで記述">背景をショートハンドで記述</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.content</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">600px</span>;
+  <span class="synType">height</span>: <span class="synConstant">300px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">auto</span>;
+  <span class="synType">background</span>: <span class="synConstant">#ebebeb</span> <span class="synIdentifier">url(</span><span class="synConstant">img/rose.png</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synConstant">30px</span> <span class="synConstant">30px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315022848.jpg" width="600" height="300" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="background-size">background-size</h4>
+    
+<ul>
+<li>背景画像の表示サイズを指定するためのプロパティです</li>
+<li>初期値の「auto」は原寸表示となり、それ以外に「cover」「contain」「横 縦」が指定できます</li>
+<li>「cover」「contain」は、元画像横比率を保ったまま配置しますが、横・縦を数値指定すれば比率を変更することができます</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Funsplash.com%2Fja%2F%E5%86%99%E7%9C%9F%2F%E6%B0%B4%E4%B8%AD%E3%81%AE%E9%9D%92%E3%81%A8%E7%99%BD%E3%81%AE%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%83%91%E3%83%B3%E3%83%84%E3%81%AE%E4%BA%BA-rAn25CLlyLE" title="UnsplashのBrian Matangeloが撮影した写真" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://unsplash.com/ja/写真/水中の青と白のショートパンツの人-rAn25CLlyLE">unsplash.com</a></cite></p><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241005233635.jpg" width="680" height="453" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"bgsize"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"bgsize01"</span><span class="synIdentifier">&gt;</span>auto<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"bgsize02"</span><span class="synIdentifier">&gt;</span>cover<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"bgsize03"</span><span class="synIdentifier">&gt;</span>contain<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"bgsize04"</span><span class="synIdentifier">&gt;</span>%<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"bgsize05"</span><span class="synIdentifier">&gt;</span>px<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="auto">auto</h5>
+    
+<ul>
+<li>初期値の「auto」は原寸表示</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241005234600.jpg" width="500" height="355" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">  <span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.bgsize01</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">500px</span>;
+  <span class="synType">height</span>: <span class="synConstant">360px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+  <span class="synType">border</span>: <span class="synConstant">10px</span> <span class="synConstant">solid</span> <span class="synConstant">#FFF</span>;
+  <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">4px</span> <span class="synConstant">#666</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">img/swimming.jpg</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span>;
+  <span class="synType">background-size</span>: <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="cover">cover</h5>
+    
+<ul>
+<li>写真の比率を保ちつつ、背景画像は常に縦または横の一辺に100％ふぃっとして要素全体を覆う状態となります</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241005235549.jpg" width="500" height="355" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.bgsize02</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">500px</span>;
+  <span class="synType">height</span>: <span class="synConstant">360px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+  <span class="synType">border</span>: <span class="synConstant">10px</span> <span class="synConstant">solid</span> <span class="synConstant">#FFF</span>;
+  <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">4px</span> <span class="synConstant">#666</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">img/swimming.jpg</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span>;
+  <span class="synType">background-size</span>: <span class="synConstant">cover</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="contain">contain</h5>
+    
+<ul>
+<li>写真の比率を保ちつつ、常に背景画像全体が要素の中に全て表示される状態となります</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241005235726.jpg" width="500" height="355" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.bgsize03</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">500px</span>;
+  <span class="synType">height</span>: <span class="synConstant">360px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+  <span class="synType">border</span>: <span class="synConstant">10px</span> <span class="synConstant">solid</span> <span class="synConstant">#FFF</span>;
+  <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">4px</span> <span class="synConstant">#666</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">img/swimming.jpg</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span>;
+  <span class="synType">background-size</span>: <span class="synConstant">contain</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="">%</h5>
+    
+<ul>
+<li>「横 縦」ともに 100%を指定すると、写真の比率を無視して常にその背景画像で要素全体を覆う状態となります</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241006000115.jpg" width="500" height="355" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.bgsize04</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">500px</span>;
+  <span class="synType">height</span>: <span class="synConstant">360px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+  <span class="synType">border</span>: <span class="synConstant">10px</span> <span class="synConstant">solid</span> <span class="synConstant">#FFF</span>;
+  <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">4px</span> <span class="synConstant">#666</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">img/swimming.jpg</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synPreProc">left</span> <span class="synConstant">bottom</span>;
+  <span class="synType">background-size</span>: <span class="synConstant">100%</span> <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="px">px</h5>
+    
+<ul>
+<li>「横 縦」ともに pxを指定すると、指定したサイズに拡大・縮小させて固定サイズで背景画像を表示できます</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241006000424.jpg" width="500" height="355" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="multiple-background">multiple-background</h4>
+    
+<ul>
+<li>CSS3からは、１つの要素に複数の背景画像を指定できるようになりました</li>
+<li>従来通り１枚背景画像を指定した後、カンマで区切って２枚目の背景画像を指定します</li>
+<li>後から指定した画像は、一番下に配置されます</li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds">複数の背景画像の利用</a></li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FWeb%2FCSS%2FCSS_Backgrounds_and_Borders%2FUsing_multiple_backgrounds" title="複数の背景画像の利用 - CSS: カスケーディングスタイルシート | MDN" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds">developer.mozilla.org</a></cite></p><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Illustrator">Illustrator</a>（生成<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D9%A5%AF%A5%BF%A1%BC">ベクター</a>）で作成したイラストを「.<a class="keyword" href="https://d.hatena.ne.jp/keyword/png">png</a>」で保存</li>
+</ul><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241006001949.jpg" width="300" height="270" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241006002000.png" width="300" height="278" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Funsplash.com%2Fja%2F%25E5%2586%2599%25E7%259C%259F%2F%25E7%25B7%2591%25E3%2581%25AE%25E8%2591%2589%25E3%2581%25AE%25E6%25A4%258D%25E7%2589%25A9-1kIyfRdLMxI" title="UnsplashのRunze Shiが撮影した写真" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%B7%91%E3%81%AE%E8%91%89%E3%81%AE%E6%A4%8D%E7%89%A9-1kIyfRdLMxI">unsplash.com</a></cite><br>
+</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"multi-bg"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.multi-bg</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">680px</span>;
+  <span class="synType">height</span>: <span class="synConstant">400px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+  <span class="synType">background</span>: 
+    <span class="synIdentifier">url(</span><span class="synConstant">img/rose.png</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synConstant">90%</span> <span class="synConstant">30%</span><span class="synSpecial">,</span> 
+    <span class="synIdentifier">url(</span><span class="synConstant">img/bg.jpg</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span>;
+  <span class="synType">background-size</span>: <span class="synConstant">30%</span><span class="synSpecial">,</span> <span class="synConstant">cover</span>;
+<span class="synIdentifier">}</span>
+</pre><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241006003142.jpg" width="680" height="403" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ワンカラムレイアウト（1）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ワンカラムレイアウト（1）</span></a><a href="flexboxで横並び.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">flexboxで横並び</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

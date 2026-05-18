@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>タブパネル - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>タブパネル</span>
+  </div>
+  <div class="article-head">
+    <h1>タブパネル</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">jQuery</span>
+      <span class="date">2025/11/03</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="タブパネルとは">タブパネルとは</h4>
+    
+<ul>
+<li>タブの切替は複数のコンテンツの表示・非表示を操作してコンテンツが変わっているように見せる</li>
+<li>要素を非表示にするには hideメソッドを使い、表示には showメソッドを使う</li>
+<li>パネルの順番とコンテンツの順番が比例している場合は、indexメソッドで何番目の要素が選択されているかを取得して、その番号のコンテンツを表示させる</li>
+</ul>
+<div class="section">
+    <h5 id="一般的なタブパネル用のHTML">一般的なタブパネル用のHTML</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tab"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"menu"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">おすすめ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">イベント</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">お知らせ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tabBox"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ここにおすすめの内容が入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tabBox"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ここにイベントの内容が入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tabBox"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ここにお知らせの内容が入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p>セマンティックな<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%DE%A1%BC%A5%AF%A5%A2%A5%C3%A5%D7">マークアップ</a>の視点から見ると正しくはありません。<br>
+しかし、パネルとコンテツがこの並びにすると作成しやすいため、<a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>を使ってこの並びにしていきます。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="正しいマークアップ">正しい<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%DE%A1%BC%A5%AF%A5%A2%A5%C3%A5%D7">マークアップ</a></h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tab"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tabBox"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h4</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tabMenu"</span><span class="synIdentifier">&gt;</span>おすすめ<span class="synIdentifier">&lt;/</span><span class="synStatement">h4</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ここにおすすめの内容が入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.tabBox --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tabBox"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h4</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tabMenu"</span><span class="synIdentifier">&gt;</span>イベント<span class="synIdentifier">&lt;/</span><span class="synStatement">h4</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ここにイベントの内容が入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.tabBox --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tabBox"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h4</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tabMenu"</span><span class="synIdentifier">&gt;</span>お知らせ<span class="synIdentifier">&lt;/</span><span class="synStatement">h4</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ここにお知らせの内容が入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.tabBox --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.tab --&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="タブパネルを作成">タブパネルを作成</h4>
+    
+<div class="section">
+    <h5 id="タブパネルのグループを作成">タブパネルのグループを作成</h5>
+    
+<ul>
+<li>「.tab」がしてされた要素内の先頭に、「.menu」が指定されたdiv要素作成します</li>
+<li>prepend( )メソッドは、要素内の先頭にコンテンツを作成します</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">prepend</span><span class="synSpecial">(</span><span class="synConstant">'&lt;div class="menu"&gt;&lt;/div&gt;'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>つまり、</p>
+
+    <blockquote>
+        <p>$('.tab')の１番めの子要素として次のコンテンツを作成する「</p><div class="menu"></div>」<p></p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="タブパネルのグループの中に要素を移動">タブパネルのグループの中に要素を移動</h5>
+    
+<ul>
+<li>「.menu」の中に「.tabMenu」が設定された要素を移動する</li>
+<li>prepend( )メソッド</li>
+<li>要素を作成する場合は、「$(作成する場所) .prepend( 作成する要素)」</li>
+<li>要素を移動する場合は、「$(移動させる場所) .prepend( 移動させる要素を参照)」</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.menu'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">prepend</span><span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tabMenu'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="指定された要素の子要素を-a要素で囲む">指定された要素の子要素を a要素で囲む</h5>
+    
+<ul>
+<li>「.tabMenu」が指定された要素の子要素を a要素で囲みます</li>
+<li>wrapInner( )メソッドは、参照した要素の子要素を指定した要素で囲みます</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tabMenu'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">wrapInner</span><span class="synSpecial">(</span><span class="synConstant">'&lt;a href="javascript: void(0);"&gt;&lt;/a&gt;'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>まとめると、以下のようになります。</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">prepend</span><span class="synSpecial">(</span><span class="synConstant">'&lt;div class="menu"&gt;&lt;/div&gt;'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.menu'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">prepend</span><span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tabMenu'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tabMenu'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">wrapInner</span><span class="synSpecial">(</span><span class="synConstant">'&lt;a href="javascript: void(0);"&gt;&lt;/a&gt;'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p>consoleで確認すると以下のようになります</p><p></p><p align="center"><a href="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-design-lesson/20160524/20160524053952.jpg" class="http-image"><img src="../images/web-design-lesson_20160524053952.jpg" class="http-image" alt="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-design-lesson/20160524/20160524053952.jpg"></a></p><p></p><p> </p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="はじめに表示されるコンテンツを設定">はじめに表示されるコンテンツを設定</h4>
+    
+    <blockquote>
+        <p>$( '.tab .tabBox' ) .の中で次の条件にあう要素を除外して<br>
+($( '.tab .tabBox' ) .の１つ目) .非表示にする</p>
+
+    </blockquote>
+
+<ul>
+<li>notメソッドを使い、「current」の設定されている要素以外を、hideメソッドで非表示にしています</li>
+<li>「current」の値が「0」となっているため、１つ目の「.tabBox」が取得されています</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synType">var</span> current <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span>
+  <span class="synType">var</span> show <span class="synStatement">=</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab .tabBox'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">eq</span><span class="synSpecial">(</span>current<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab .tabBox'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">not</span><span class="synSpecial">(</span>show<span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab .tabMenu'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">eq</span><span class="synSpecial">(</span>current<span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">find</span><span class="synSpecial">(</span><span class="synConstant">'a'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addClass</span><span class="synSpecial">(</span><span class="synConstant">'current'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>notメソッドは、要素参照から指定した条件の要素を除外します</li>
+<li>eqメソッドは、要素参照の中から指定した順番にある要素を指定します</li>
+<li>「.tabBox」に該当する要素が３つある場合は、「0」と指定すると１つ目の要素だけを参照します</li>
+<li>hideメソッドは、参照した要素を非表示にします</li>
+<li>表示されているコンテンツに対応した「.tabMenu」に「.current」を指定します</li>
+<li>addClassメソッドは、参照した要素に指定したクラスを追加します</li>
+<li>そのクラスを削除したい場合は、removeClassメソッドを指定します</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="コンテンツを切り替える">コンテンツを切り替える</h4>
+    
+<ul>
+<li>クリックイベントを使用しナビゲーションパネルを選択したとき、対応したコンテンツが表示されるようにする</li>
+</ul>
+<div class="section">
+    <h5 id="コンテンツの表示非表示">コンテンツの表示・非表示</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab .tabBox'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">.</span><span class="synIdentifier">eq</span><span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.menu a'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">index</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">))</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synError">})</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>「.tabBox」が指定された要素を１度すべて表示にします</li>
+<li>その後、選択したナビゲーションパネルの順番に応じたコンテンツを、showメソッドで表示します</li>
+<li>選択されたナビゲーションパネルの順番を決めるには、indexメソッドを使用します</li>
+<li>「$('.menu a').index(this)」は、「this」が「clickイベントを発生させた要素」とい意味になります</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="クラスの切り替え">クラスの切り替え</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab .tabMenu a'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">removeClass</span><span class="synSpecial">(</span><span class="synConstant">'current'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addClass</span><span class="synSpecial">(</span><span class="synConstant">'current'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synError">})</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>一度すべての「.current」を削除して、選択されたナビゲーションパネルのみに「.current」を追加しています</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.menu a'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">(){</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab .tabBox'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">.</span><span class="synIdentifier">eq</span><span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.menu a'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">index</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">))</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab .tabMenu a'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">removeClass</span><span class="synSpecial">(</span><span class="synConstant">'current'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addClass</span><span class="synSpecial">(</span><span class="synConstant">'current'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synStatement">return</span> <span class="synConstant">false</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>「return false;」は、a要素がクリックされた際の動作をキャンセルしています</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="タブパネル---実践">タブパネル - 実践</h4>
+    
+<ul>
+<li>地図は、<a class="keyword" href="https://d.hatena.ne.jp/keyword/SVG">SVG</a>形式で挿入</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-0220_20190214113404.png" width="600" height="972" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>タブパネル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700</span><span class="synSpecial">&amp;amp;</span><span class="synConstant">subset=japanese"</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"tab2.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"tab"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#tab1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"current"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">Googole Map</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#tab2"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">地図</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#tab3"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">関連情報</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"panel"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"tab1"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">iframe</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"googleMap"</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.0099798528263!2d139.71353570170646!3d35.72597308350004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6be1f480b5%3A0x727a3472e73742fe!2z44OX44Oq44Oi44OX44Op44O844OI!5e0!3m2!1sja!2sjp!4v1550022110118"</span><span class="synIdentifier"> </span><span class="synType">frameborder</span><span class="synIdentifier">=</span><span class="synConstant">"0"</span><span class="synIdentifier"> </span><span class="synType">style</span><span class="synIdentifier">=</span><span class="synConstant">"border:0"</span><span class="synIdentifier"> </span><span class="synType">allowfullscreen</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">iframe</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"tab2"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"map0213.svg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"svgImg"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"tab3"</span><span class="synIdentifier">&gt;</span>ここに関連情報が入る<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="jQueryの記述"><a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>の記述</h5>
+    
+<ul>
+<li>テキスト内容とは別の記述</li>
+</ul><p></p><h6 id="タブパネルの初期表示状態の設定">タブパネルの初期表示状態の設定</h6><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>の記述まででは、すべてのパネルが展開した状態ですから、選択状態のパネル（a要素）のclass属性が「selected」のタブに対応するパネル以外を「hide()」で非表示にします</li>
+<li>li要素の後に、否定擬似クラスの「:not()」がついているので、この場合はid属性に「#tab1」がついたパネル以外が「hide()」で非表示になります</li>
+</ul><p><br>
+書き換えると、</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'.panel li:not(#tab1)'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="タブがクリックされたときのイベントの設定">タブがクリックされたときのイベントの設定</h6><p></p>
+
+<ul>
+<li>a要素に設定する場合は、「return false;」を忘れずに記述する</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'.tab li a'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span> <span class="synSpecial">(</span> <span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">(){</span>
+
+  <span class="synStatement">return</span> <span class="synConstant">false</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>タブがクリックされたとき、class属性「selected」がついていたところから削除し、クリックされたところに追加します</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">    <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'.tab li a'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">removeClass</span><span class="synSpecial">(</span> <span class="synConstant">'selected'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addClass</span><span class="synSpecial">(</span> <span class="synConstant">'selected'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>すべてのぱねるを非表示にします</li>
+<li>「$(this).attr( 'href' )」でクリックされたa要素のhref属性の値を取得して、値と同じ名前のid属性をもつパネルをshow()で表指示ます</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">    <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'.panel li'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">attr</span><span class="synSpecial">(</span> <span class="synConstant">'href'</span> <span class="synSpecial">)</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="body終了タグの前にembed">body終了タグの前にembed</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.panel&gt;li:not(:first)'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.tab a'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">(){</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'a'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">removeClass</span><span class="synSpecial">(</span><span class="synConstant">'current'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.panel&gt;li'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addClass</span><span class="synSpecial">(</span><span class="synConstant">'current'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">attr</span><span class="synSpecial">(</span><span class="synConstant">'href'</span><span class="synSpecial">))</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="lightgallery.js（モーダルウィンドウ）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">lightgallery.js（モーダルウィンドウ）</span></a><a href="要素の絶対位置を指定する position_ absolute;.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">要素の絶対位置を指定する position: absolute;</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

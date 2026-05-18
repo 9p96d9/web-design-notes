@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ペンツール - 直線の描画 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #7c3aed; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Illustrator 基礎</a>
+    <span class="sep">›</span>
+    <span>ペンツール - 直線の描画</span>
+  </div>
+  <div class="article-head">
+    <h1>ペンツール - 直線の描画</h1>
+    <div class="meta">
+      <span class="tag" style="background:#f5f3ff;color:#7c3aed">ペンツール</span>
+      <span class="date">2025/08/18</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="ペンツールで線を描くということ">ペンツールで線を描くということ</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313023607.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>クリックは座標点（アンカーポイント）をつなぐ</li>
+</ul><p>　　　※クリックされた位置を直線でつなぐようにプログラムされています。<br>
+　　　※アンカー（anchor）：錨(いかり), 力となるもの</p>
+
+<ul>
+<li>クリックを継続していくと「直線」が描かれます</li>
+<li>アンカーポイントに「力」が加わると「ベクトル（力の大きさ・力の方向）」の概念が適用されて曲がって「曲線」になります</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="パスとは">パスとは</h4>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Illustrator">Illustrator</a>で描かれたものは、すべて「パス（セグメント）」から成り立っています</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A1%D6%A5%D1%A5%B9%A1%D7">「パス」</a>とは、２点間をつないだ線のことです</li>
+</ul>
+<div class="section">
+    <h5 id="オープンパス">オープンパス</h5>
+    
+<ul>
+<li>起点と終点が閉じられていない状態を「オープンパス」と呼びます</li>
+</ul><p>塗りが設定されている場合、自動的に直線的に結ばれた面ができます。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241004001546.jpg" width="300" height="254" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p>　※「初期設定」は、塗「白」線「黒」です</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313024256.jpg" width="100" height="95" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="クローズドパス">クローズドパス</h5>
+    
+<ul>
+<li>起点が終点として閉じられた状態を「クローズドパス」と呼びます</li>
+</ul><p>塗りが設定されていてもいなくても、線で結ばれた一筆書きの状態ができます。</p><p align="center"><img src="../images/web-0220_20210822234841.jpg" alt="f:id:web-0220:20210822234841j:plain" width="300" height="256" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="直線を描く">直線を描く</h4>
+    
+<ul>
+<li>ペンツールで直線の「始点」をクリックして、次の点をクリックすると直線でつながる</li>
+<li>クリックする度にその点と、前にクリックした点が直線で繋がるようにプログラムされています</li>
+</ul>
+<div class="section">
+    <h5 id="線の設定">線の設定</h5>
+    
+<ul>
+<li>新規ドキュメントが「Web」の場合、カラーモードは「RGB」</li>
+<li>新規ドキュメントが「印刷」の場合、カラーモードは「<a class="keyword" href="https://d.hatena.ne.jp/keyword/CMYK">CMYK</a>」</li>
+<li>練習としては、塗「なし」線「黒」が選択できていればカラーモードにかかわらず進めましょう</li>
+<li>「Web」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313033644.jpg" width="500" height="253" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>「印刷」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313033234.jpg" width="500" height="253" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313031451.jpg" width="500" height="204" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313031654.jpg" width="680" height="226" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><p></p><p></p><h6 id="直線だけのオープンパスを描く">直線だけのオープンパスを描く</h6><p></p>
+
+<ul>
+<li>描画を終了しないでクリックを続けると、連続した直線セグメントが描画できます</li>
+<li>慌ててクリックすると、方向線付きのアンカーポイントが作成されてしまいます。ゆっくりクリックして確実に描画しましょう。</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="描き終わる">描き終わる</h5>
+    
+<ul>
+<li>描き終わるには、Ctrlキー（コマンドキー）を押しながら余白をクリックします</li>
+<li>「Ctrlキー（コマンドキー）」を押すことにより、「ペンツール」は一時的に「選択ツール」に変更されます</li>
+<li>「選択ツール」で余白をクリックすると「選択解除」になります</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="戻る">戻る</h5>
+    
+<ul>
+<li>Undo（Ctrl ＋ Z）</li>
+<li>ミスした時は、戻りながら（Undoは、メモリの限界まで戻ることができます）描き続けます</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="垂直水平45度線を描く">垂直・水平・45度線を描く</h5>
+    
+<ol>
+<li>画面上の任意の位置にクリックします</li>
+<li>次の点を少し離れた位置にクリックします</li>
+<li>以上の繰り返しで、繋がった直線が描きあがります</li>
+</ol><p>※［Shift］キーを押しながら描くと、水平・垂直・45°に制限される。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313040744.jpg" width="600" height="417" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="直線だけのクローズパスを描く">直線だけのクローズパスを描く</h5>
+    
+<ul>
+<li>始点と終点を同意地で連結するとクローズパスになります</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313042600.jpg" width="600" height="454" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="線の修正">線の修正</h4>
+    
+<ul>
+<li>ダイレクト選択ツールを使う</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20211017073544.jpg" width="86" height="185" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>「アンカーポイント」の位置を移動する</li>
+<li>「Ctrl（コマンド）」キーを押しながら移動します（アンカーポイントの上にマウスを乗せると「ダイレクト選択ツール」に変更されます）</li>
+<li>続きを継続するときは、最後のアンカーポイントをクリックして続けます</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20211017074016.jpg" width="600" height="389" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ペンツール - ベジェ曲線.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ペンツール - ベジェ曲線</span></a><a href="ペンツール - 曲線・コーナー.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">ペンツール - 曲線・コーナー</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

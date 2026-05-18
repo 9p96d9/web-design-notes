@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【009】値を四捨五入した結果を表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【009】値を四捨五入した結果を表示</span>
+  </div>
+  <div class="article-head">
+    <h1>【009】値を四捨五入した結果を表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">Math</span>
+      <span class="date">2026/01/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="009値を四捨五入した結果を表示">【009】値を四捨五入した結果を表示</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227085747.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで値を四捨五入した結果を表示する問題を５問作成して</p>
+
+    </blockquote>
+
+<ul>
+<li>数値の値を四捨五入するには、数学関数「Math.round( )」を使います</li>
+</ul>
+    <blockquote>
+        <p>Math.round(数値の値)</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="Mathround-とは">Math.round() とは</h4>
+    <p>Math.round() は、<strong>数値を「四捨五入」して整数にする関数です</strong>。<br>
+👉 小数点以下が</p>
+
+<ul>
+<li>0.5以上 → 切り上げ</li>
+<li>0.5未満 → 切り捨て</li>
+</ul><p>になります。</p>
+
+<div class="section">
+    <h5 id="基本の使い方">基本の使い方</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>数値<span class="synSpecial">)</span>
+</pre><p>【例】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synSpecial">.</span><span class="synConstant">2</span><span class="synSpecial">))</span><span class="synStatement">;</span>   <span class="synComment">// 3</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synSpecial">.</span><span class="synConstant">5</span><span class="synSpecial">))</span><span class="synStatement">;</span>   <span class="synComment">// 4</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synSpecial">.</span><span class="synConstant">8</span><span class="synSpecial">))</span><span class="synStatement">;</span>   <span class="synComment">// 4</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>元の数</th>
+    <th>結果</th>
+    </tr>
+    <tr>
+    <td> 3.2 </td>
+    <td> 3  </td>
+    </tr>
+    <tr>
+    <td> 3.5 </td>
+    <td> 4  </td>
+    </tr>
+    <tr>
+    <td> 3.8 </td>
+    <td> 4  </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="マイナスの数の四捨五入">マイナスの数の四捨五入</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">-2</span><span class="synSpecial">.</span><span class="synConstant">3</span><span class="synSpecial">))</span><span class="synStatement">;</span>   <span class="synComment">// -2</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">-2</span><span class="synSpecial">.</span><span class="synConstant">5</span><span class="synSpecial">))</span><span class="synStatement">;</span>   <span class="synComment">// -2</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">-2</span><span class="synSpecial">.</span><span class="synConstant">7</span><span class="synSpecial">))</span><span class="synStatement">;</span>   <span class="synComment">// -3</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>元の数</th>
+    <th>結果</th>
+    </tr>
+    <tr>
+    <td> -2.3 </td>
+    <td> -2 </td>
+    </tr>
+    <tr>
+    <td> -2.5 </td>
+    <td> -2 </td>
+    </tr>
+    <tr>
+    <td> -2.7 </td>
+    <td> -3 </td>
+    </tr>
+</tbody></table><p></p><h6 id="-注意ポイント">⚠ 注意ポイント</h6><p></p>
+
+<ul>
+<li>2.5 は -3 ではなく -2 になる のがポイントです。</li>
+</ul><p>→ 0 に近い方へ丸められる</p>
+
+</div>
+<div class="section">
+    <h5 id="小数第2位で四捨五入する方法">小数第2位で四捨五入する方法</h5>
+    <p><strong>例：小数第2位で四捨五入（＝小数第1位まで表示）</strong></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synConstant">3</span><span class="synSpecial">.</span><span class="synConstant">14159</span><span class="synStatement">;</span>
+<span class="synType">let</span> result <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>num <span class="synStatement">*</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>result<span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// 3.1</span>
+</pre><p></p><h6 id="仕組み">仕組み</h6><p></p>
+
+<ol>
+<li>×10 → 31.4159</li>
+<li>Math.round() → 31</li>
+<li>÷10 → 3.1</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="よく使うパターンまとめ">よく使うパターンまとめ</h5>
+    <p></p><h6 id="-整数に四捨五入">① 整数に四捨五入</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>数値<span class="synSpecial">)</span>
+</pre><p></p><h6 id="-小数第1位で四捨五入">② 小数第1位で四捨五入</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>数値 <span class="synStatement">*</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">10</span>
+</pre><p></p><h6 id="-小数第2位で四捨五入">③ 小数第2位で四捨五入</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>数値 <span class="synStatement">*</span> <span class="synConstant">100</span><span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">100</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Mathfloor--Mathceil-との違い">Math.floor / Math.ceil との違い</h5>
+    
+<table>
+    <tbody><tr>
+    <th>関数</th>
+    <th>意味</th>
+    <th>例: 3.7</th>
+    </tr>
+    <tr>
+    <td> Math.round </td>
+    <td> 四捨五入 </td>
+    <td> 4      </td>
+    </tr>
+    <tr>
+    <td> Math.floor </td>
+    <td> 切り捨て </td>
+    <td> 3      </td>
+    </tr>
+    <tr>
+    <td> Math.ceil  </td>
+    <td> 切り上げ </td>
+    <td> 4      </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="-練習問題">🔸 練習問題</h4>
+    
+<div class="section">
+    <h5 id="問題1">問題1</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synSpecial">.</span><span class="synConstant">4</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題2">問題2</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synSpecial">.</span><span class="synConstant">5</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題3">問題3</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">9</span><span class="synSpecial">.</span><span class="synConstant">9</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題4">問題4</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">-3</span><span class="synSpecial">.</span><span class="synConstant">2</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題5">問題5</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">-3</span><span class="synSpecial">.</span><span class="synConstant">5</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-練習問題小数点の桁数">🔸 練習問題（小数点の桁数）</h4>
+    
+<div class="section">
+    <h5 id="問題6">問題6</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synConstant">3</span><span class="synSpecial">.</span><span class="synConstant">46</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>num <span class="synStatement">*</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">10</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題7">問題7</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synConstant">8</span><span class="synSpecial">.</span><span class="synConstant">444</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>num <span class="synStatement">*</span> <span class="synConstant">100</span><span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">100</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題8">問題8</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synSpecial">.</span><span class="synConstant">995</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>num <span class="synStatement">*</span> <span class="synConstant">100</span><span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">100</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-練習問題応用">🔹 練習問題（応用）</h4>
+    
+<div class="section">
+    <h5 id="問題9">問題9</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> price <span class="synStatement">=</span> <span class="synConstant">1280</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>price <span class="synStatement">*</span> <span class="synConstant">1</span><span class="synSpecial">.</span><span class="synConstant">1</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題10">問題10</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> score <span class="synStatement">=</span> <span class="synConstant">79</span><span class="synSpecial">.</span><span class="synConstant">49</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>score <span class="synStatement">/</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synStatement">*</span> <span class="synConstant">10</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-解答例">🔰 解答例</h4>
+    
+<div class="section">
+    <h5 id="問題1-1">問題1</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synSpecial">.</span><span class="synConstant">4</span><span class="synSpecial">)</span>
+</pre><p><strong>答え</strong>：2<br>
+👉 小数部分は 0.4 → 0.5未満 → 切り捨て</p>
+
+</div>
+<div class="section">
+    <h5 id="問題2-1">問題2</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synSpecial">.</span><span class="synConstant">5</span><span class="synSpecial">)</span>
+</pre><p><strong>答え</strong>：3<br>
+👉 0.5以上 → 切り上げ</p>
+
+</div>
+<div class="section">
+    <h5 id="問題3-1">問題3</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">9</span><span class="synSpecial">.</span><span class="synConstant">9</span><span class="synSpecial">)</span>
+</pre><p><strong>答え</strong>：10<br>
+👉 0.9 → 切り上げ</p>
+
+</div>
+<div class="section">
+    <h5 id="問題4-1">問題4</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">-3</span><span class="synSpecial">.</span><span class="synConstant">2</span><span class="synSpecial">)</span>
+</pre><p><strong>答え</strong>：-3<br>
+👉 -3.2 は -3 に近い → 0 に近い方へ丸める</p>
+
+</div>
+<div class="section">
+    <h5 id="問題5-1">問題5</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span><span class="synConstant">-3</span><span class="synSpecial">.</span><span class="synConstant">5</span><span class="synSpecial">)</span>
+</pre><p><strong>答え</strong>：-3<br>
+👉 -3.5 は -4 と -3 の真ん中<br>
+👉 0 に近い方 → -3<br>
+⚠️ ここは超重要ポイント！</p>
+
+</div>
+<div class="section">
+    <h5 id="問題6-1">問題6</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synConstant">3</span><span class="synSpecial">.</span><span class="synConstant">46</span><span class="synStatement">;</span>
+<span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>num <span class="synStatement">*</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">10</span>
+</pre><p><strong>答え</strong>：3.5</p><p></p><h6 id="計算手順">計算手順</h6><p></p>
+
+<ol>
+<li>3.46 × 10 → 34.6</li>
+<li>Math.round(34.6) → 35</li>
+<li>35 ÷ 10 → 3.5</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="問題7-1">問題7</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synConstant">8</span><span class="synSpecial">.</span><span class="synConstant">444</span><span class="synStatement">;</span>
+<span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>num <span class="synStatement">*</span> <span class="synConstant">100</span><span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">100</span>
+</pre><p><strong>答え</strong>：8.44</p><p></p><h6 id="計算手順-1">計算手順</h6><p></p>
+
+<ol>
+<li>8.444 × 100 → 844.4</li>
+<li>Math.round(844.4) → 844</li>
+<li>844 ÷ 100 → 8.44</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="問題8-1">問題8</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synSpecial">.</span><span class="synConstant">995</span><span class="synStatement">;</span>
+<span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>num <span class="synStatement">*</span> <span class="synConstant">100</span><span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">100</span>
+</pre><p><strong>答え</strong>：2.0</p><p></p><h6 id="計算手順-2">計算手順</h6><p></p>
+
+<ol>
+<li>1.995 × 100 → 199.5</li>
+<li>Math.round(199.5) → 200</li>
+<li>200 ÷ 100 → 2.0</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="問題9-1">問題9</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> price <span class="synStatement">=</span> <span class="synConstant">1280</span><span class="synStatement">;</span>
+<span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>price <span class="synStatement">*</span> <span class="synConstant">1</span><span class="synSpecial">.</span><span class="synConstant">1</span><span class="synSpecial">)</span>
+</pre><p><strong>答え</strong>：1408<br>
+👉 消費税10%を加算</p><p></p><h6 id="計算手順-3">計算手順</h6><p></p>
+
+<ol>
+<li>1280 × 1.1 → 1408</li>
+<li>Math.round(1408) → 1408</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="問題10-1">問題10</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> score <span class="synStatement">=</span> <span class="synConstant">79</span><span class="synSpecial">.</span><span class="synConstant">49</span><span class="synStatement">;</span>
+<span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>score <span class="synStatement">/</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synStatement">*</span> <span class="synConstant">10</span>
+</pre><p><strong>答え</strong>：80</p><p></p><h6 id="計算手順-4">計算手順</h6><p></p>
+
+<ol>
+<li>79.49 ÷ 10 → 7.949</li>
+<li>Math.round(7.949) → 8</li>
+<li>8 × 10 → 80</li>
+</ol><p>👉 10の位で四捨五入するテクニック</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-完全理解のためのまとめ">🎯 完全理解のためのまとめ</h4>
+    
+<table>
+    <tbody><tr>
+    <th>やりたいこと</th>
+    <th>書き方</th>
+    </tr>
+    <tr>
+    <td> 整数に四捨五入    </td>
+    <td> Math.round(x)             </td>
+    </tr>
+    <tr>
+    <td> 小数第1位      </td>
+    <td> Math.round(x * 10) / 10   </td>
+    </tr>
+    <tr>
+    <td> 小数第2位      </td>
+    <td> Math.round(x * 100) / 100 </td>
+    </tr>
+    <tr>
+    <td> 10の位で四捨五入  </td>
+    <td> Math.round(x / 10) * 10   </td>
+    </tr>
+    <tr>
+    <td> 100の位で四捨五入 </td>
+    <td> Math.round(x / 100) * 100 </td>
+    </tr>
+</tbody></table>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【008】ダイアログに入力した値を表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【008】ダイアログに入力した値を表示</span></a><a href="【010】ダイアログに入力された値を計算して表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【010】ダイアログに入力された値を計算して表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

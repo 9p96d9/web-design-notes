@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTAを数秒後に表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>CTAを数秒後に表示</span>
+  </div>
+  <div class="article-head">
+    <h1>CTAを数秒後に表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">jQuery</span>
+      <span class="date">2025/10/22</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="CTAを数秒後に表示">CTAを数秒後に表示</h4>
+    
+<ul>
+<li>CTA（Call To Action）</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20250618171711.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="完成例">完成例</h5>
+    
+<ul>
+<li>２秒後に表示</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20250618180503.jpg" width="600" height="353" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    
+<ul>
+<li>id名「cta」は、オーバレイのグレー背景を指定するため</li>
+</ul><p></p><h6 id="indexhtml">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>CTA<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"cta"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"pr"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"close"</span><span class="synIdentifier">&gt;</span>閉じる<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>Call To Action<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>Webサイトの訪問者を具体的な行動に誘導すること。もしくは、具体的な行動を喚起する、Webサイト上に設置されたイメージやテキストのことをいう。
+          個人情報を獲得するフォームへとユーザーを誘導するボタンやテキストリンクがこれにあたる。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"http://www.google.com"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"pr_btn"</span><span class="synIdentifier"> </span><span class="synType">target</span><span class="synIdentifier">=</span><span class="synConstant">"blunk"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">お申し込みはこちらから</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>            
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.pr --&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.cta --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="stylecss">style.<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a></h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/*-------------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------------------*/</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/*-------------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------------------*/</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+    <span class="synType">line-height</span>: <span class="synConstant">1.5</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/*-------------------------------------------</span>
+<span class="synComment">  CTA</span>
+<span class="synComment">-------------------------------------------*/</span>
+<span class="synIdentifier">#cta</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">fixed</span>;
+  <span class="synType">top</span>: <span class="synConstant">0</span>;
+  <span class="synType">left</span>: <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synIdentifier">rgba(</span><span class="synConstant">40</span><span class="synIdentifier">,</span><span class="synConstant"> 40</span><span class="synIdentifier">,</span><span class="synConstant"> 40</span><span class="synIdentifier">,</span><span class="synConstant"> 0.5</span><span class="synIdentifier">)</span>; 
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">height</span>: <span class="synConstant">100vh</span>;
+  <span class="synType">display</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">#cta</span> <span class="synSpecial">&gt;</span> <span class="synIdentifier">.pr</span> <span class="synIdentifier">{</span>
+    <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+    <span class="synType">top</span>: <span class="synConstant">0</span>;
+    <span class="synType">left</span>: <span class="synConstant">0</span>;
+    <span class="synType">right</span>: <span class="synConstant">0</span>;
+    <span class="synType">bottom</span>: <span class="synConstant">0</span>;
+    <span class="synType">width</span>: min(<span class="synConstant">80%</span><span class="synSpecial">,</span> <span class="synConstant">500px</span>);
+    <span class="synType">height</span>: <span class="synConstant">fit-content</span>;
+    <span class="synType">margin</span>: <span class="synConstant">auto</span>;
+    <span class="synType">padding</span>: <span class="synConstant">30px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">#cta</span> <span class="synSpecial">&gt;</span> <span class="synIdentifier">.pr</span> <span class="synIdentifier">.close</span> <span class="synIdentifier">{</span>
+    <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+    <span class="synType">top</span>: <span class="synConstant">30px</span>;
+    <span class="synType">right</span>: <span class="synConstant">30px</span>;
+    <span class="synType">padding</span>: <span class="synConstant">5px</span> <span class="synConstant">15px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">#cta</span> <span class="synSpecial">&gt;</span> <span class="synIdentifier">.pr</span> <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-top</span>: <span class="synConstant">20px</span>;
+    <span class="synType">text-align</span>: <span class="synConstant">justify</span>;
+    <span class="synType">line-height</span>: <span class="synConstant">1.7</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">#cta</span> <span class="synIdentifier">.pr_btn</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">block</span>;
+    <span class="synType">width</span>: <span class="synConstant">80%</span>;
+    <span class="synType">margin</span>: <span class="synConstant">40px</span> <span class="synConstant">auto</span> <span class="synConstant">0</span>;
+    <span class="synType">padding</span>: <span class="synConstant">15px</span> <span class="synConstant">0</span>;
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#666</span>;
+    <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">18px</span>;
+    <span class="synType">letter-spacing</span>: <span class="synConstant">0.08em</span>;
+  <span class="synIdentifier">}</span>
+
+<span class="synPreProc">@media </span><span class="synSpecial">screen</span><span class="synPreProc"> </span><span class="synStatement">and</span><span class="synPreProc"> (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">767px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synIdentifier">#cta</span> &gt; <span class="synIdentifier">.pr</span> <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">0.9rem</span>;
+    <span class="synType">line-height</span>: <span class="synConstant">1.6</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="scriptjs">script.js</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span> <span class="synSpecial">()</span> <span class="synSpecial">{</span>
+
+<span class="synComment">/* =================================================</span>
+<span class="synComment">  Call To Actionを、一定時間後に発動させる設定   </span>
+<span class="synComment">================================================= */</span> 
+  <span class="synComment">// id名「cta」の値を取得</span>
+  <span class="synType">const</span> cta <span class="synStatement">=</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#cta'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+  <span class="synComment">// ctaを、最初は非表示にしておく</span>
+  cta<span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+  <span class="synStatement">function</span> <span class="synIdentifier">call</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+    cta<span class="synStatement">.</span><span class="synIdentifier">fadeIn</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+  <span class="synComment">// 一定時間後に発動させる内容を関数にしておく</span>
+
+  <span class="synIdentifier">setTimeout</span><span class="synSpecial">(</span>call<span class="synStatement">,</span> <span class="synConstant">2000</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synComment">// setTimeoutで、2秒後に関数callを呼び出している</span>
+
+  <span class="synType">const</span> pr_close <span class="synStatement">=</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#cta .close'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  pr_close<span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span> <span class="synSpecial">()</span> <span class="synSpecial">{</span>
+      cta<span class="synStatement">.</span><span class="synIdentifier">fadeOut</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+  <span class="synComment">// 閉じるボタンを押すと、ctaがフェードアウトする</span>
+
+  cta<span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span> <span class="synSpecial">()</span> <span class="synSpecial">{</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">this</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">fadeOut</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+  <span class="synComment">// cta自身をクリックすると自身がフェードアウトする</span>
+
+
+  <span class="synType">const</span> pr <span class="synStatement">=</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#cta .pr'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  pr<span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span> <span class="synSpecial">(</span>e<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+
+      e<span class="synStatement">.</span><span class="synIdentifier">stopPropagation</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">// クリックイベントの伝播を防ぐ</span>
+
+      <span class="synSpecial">})</span>
+  <span class="synComment">// 厳密には、pr上のどこを押しても親要素に場所までイベントが伝播してしまうので</span>
+  <span class="synComment">// その伝播を防ぐ必要がある</span>
+
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="アコーディオンパネル.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">アコーディオンパネル</span></a><a href="画像置換.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">画像置換</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

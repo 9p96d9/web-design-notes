@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AOS.js - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>AOS.js</span>
+  </div>
+  <div class="article-head">
+    <h1>AOS.js</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">JavaScript</span>
+      <span class="date">2025/11/11</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="AOSjs">AOS.js</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241214045506.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>AOS.jsとは「Animation On Scroll library」</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Javascript">Javascript</a>で実装されていて<a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>には依存していませんので、<a class="keyword" href="https://d.hatena.ne.jp/keyword/jQuery">jQuery</a>を読み込む必要はありません！</li>
+</ul>
+<div class="section">
+    <h5 id="AOSjsの使い方">AOS.jsの使い方</h5>
+    
+<ol>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D7%A5%E9%A5%B0%A5%A4%A5%F3">プラグイン</a>を読み込む</li>
+<li>HTMLでアニメーションを設定したい要素に属性を追加する</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Javascript">Javascript</a>でAOS.jsを動作させるためのプログラムを記述する</li>
+</ol><p></p><h6 id="プラグインを読み込む"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D7%A5%E9%A5%B0%A5%A4%A5%F3">プラグイン</a>を読み込む</h6><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fmichalsnik.github.io%2Faos%2F" title="AOS - Animate on scroll library" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://michalsnik.github.io/aos/">michalsnik.github.io</a></cite><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/CDN">CDN</a>を利用する</li>
+</ul><p>《<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a>》</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!-- CSSを読み込む --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://unpkg.com/aos@2.3.1/dist/aos.css"</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier">&gt;</span>
+</pre><p>《JS》</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!-- jsファイルを読み込む --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://unpkg.com/aos@2.3.1/dist/aos.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="HTMLでアニメーションを設定したい要素に属性を追加する">HTMLでアニメーションを設定したい要素に属性を追加する</h6><p></p>
+
+<ul>
+<li>アニメーションの種類</li>
+</ul><p></p><table>
+<tbody><tr><th>Fade</th><td>フェードインします</td></tr>
+<tr><th>Flip</th><td>くるんと回転して表示します</td></tr>
+<tr><th>Slide</th><td>スライドしながら表示します</td></tr>
+<tr><th>Zoom</th><td>ズームします</td></tr>
+</tbody></table>また、この４種類のアニメーションもさらに細かく分類されます。<br>
+<br>
+<p></p>
+
+</div>
+<div class="section">
+    <h5 id="AOSのオプションについて">AOSのオプションについて</h5>
+    
+<ul>
+<li>HTMLで動かしたい要素に指定のオプションを記入する</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-aos=</span><span class="synConstant">”fade-up”</span><span class="synIdentifier">&gt;</span>
+この文字をフェードアップ
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="Fade-animationsフェード">Fade animations　フェード</h6><table>
+<tbody><tr><th>動き</th><th>オプション</th></tr>
+<tr><td>フェード</td><td><strong>data-aos=”fade”</strong></td></tr><tr>
+</tr><tr><td>フェードアップ</td><td><strong>data-aos=”fade-up”</strong></td></tr><tr>
+</tr><tr><td>フェードダウン</td><td><strong>data-aos=”fade-up”</strong></td></tr><tr>
+</tr><tr><td>左から右にフェードイン</td><td><strong>data-aos=”fade-right”</strong></td></tr><tr>
+</tr><tr><td>右から左にフェードイン</td><td><strong>data-aos=”fade-left”</strong></td></tr><tr>
+</tr><tr><td>左から右にフェードアップ</td><td><strong>data-aos=”fade-up-right”</strong></td></tr><tr>
+</tr><tr><td>右から左にフェードアップ</td><td><strong>data-aos=”fade-up-left”</strong></td></tr><tr>
+</tr><tr><td>左から右にフェードダウン</td><td><strong>data-aos=”fade-down-right”</strong></td></tr><tr>
+</tr><tr><td>右から左にフェードダウン</td><td><strong>data-aos=”fade-down-left”</strong></td></tr><tr>
+</tr></tbody></table>
+
+<h6 id="Flip-animationsフリップ">Flip animations　フリップ</h6>
+<table>
+<tbody><tr><th>動き</th><th>オプション</th></tr>
+<tr><td>上から回転</td><td><strong>data-aos=”flip-up”</strong></td></tr><tr>
+</tr><tr><td>下から回転</td><td><strong>data-aos=”flip-down”</strong></td></tr><tr>
+</tr><tr><td>左から回転</td><td><strong>data-aos=”flip-left”</strong></td></tr><tr>
+</tr><tr><td>右から回転</td><td><strong>data-aos=”flip-right”</strong></td></tr><tr>
+</tr></tbody></table>
+
+<h6 id="Zoom-animationsズーム">Zoom animations　ズーム</h6>
+<table>
+<tbody><tr><th>項目</th><th>オプション</th></tr>
+<tr><td>ズームイン</td><td><strong>data-aos=”zoom-in”</strong></td></tr><tr>
+</tr><tr><td>下から上にズームイン</td><td><strong>data-aos=”zoom-in-up”</strong></td></tr><tr>
+</tr><tr><td>上から下にズームイン</td><td><strong>data-aos=”zoom-in-down”</strong></td></tr><tr>
+</tr><tr><td>右から左にズームイン</td><td><strong>data-aos=”zoom-in-left”</strong></td></tr><tr>
+</tr><tr><td>左から右にズームイン</td><td><strong>data-aos=”zoom-in-right”</strong></td></tr><tr>
+</tr><tr><td>ズームアウト</td><td><strong>data-aos=”zoom-out”</strong></td></tr><tr>
+</tr><tr><td>下から上にズームアウト</td><td><strong>data-aos=”zoom-out-up”</strong></td></tr><tr>
+</tr><tr><td>上から下にズームアウト</td><td><strong>data-aos=”zoom-out-down”</strong></td></tr><tr>
+</tr><tr><td>左から右にズームアウト</td><td><strong>data-aos=”zoom-out-right”</strong></td></tr><tr>
+</tr><tr><td>右から左にズームアウト</td><td><strong>data-aos=”zoom-out-left”</strong></td></tr><tr>
+</tr></tbody></table>
+
+<h6 id="Slide-animationsスライド">Slide animations　スライド</h6>
+<table>
+<tbody><tr><th>動き</th><th>オプション</th></tr>
+<tr><td>下から上へスライド</td><td><strong>data-aos=”slide-up”</strong></td></tr><tr>
+</tr><tr><td>上から下へスライド</td><td><strong>data-aos=”slide-down”</strong></td></tr><tr>
+</tr><tr><td>右から左へスライド</td><td><strong>data-aos=”slide-left”</strong></td></tr><tr>
+</tr><tr><td>左から右へスライド</td><td><strong>data-aos=”slide-right”</strong></td></tr><tr>
+</tr></tbody></table>
+<p></p>
+
+</div>
+<div class="section">
+    <h5 id="JavascriptでAOSjsを動作させるためのプログラムを記述する"><a class="keyword" href="https://d.hatena.ne.jp/keyword/Javascript">Javascript</a>でAOS.jsを動作させるためのプログラムを記述する</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">data</span><span class="synIdentifier">-aos=</span><span class="synConstant">”fade-up”</span><span class="synIdentifier">&gt;</span>
+この文字をフェードアップ
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="初期設定">初期設定</h6><p></p>
+
+<ul>
+<li>「duration: 1000」程度がゆっくり上がってくるように見える値</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+AOS<span class="synStatement">.</span><span class="synIdentifier">init</span><span class="synSpecial">({</span>
+  <span class="synIdentifier">duration</span><span class="synStatement">:</span> <span class="synConstant">1000</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="課題サイト（main部）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">課題サイト（main部）</span></a><a href="AOS.js - 実践.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">AOS.js - 実践</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

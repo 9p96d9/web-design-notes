@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTMLとは - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>HTMLとは</span>
+  </div>
+  <div class="article-head">
+    <h1>HTMLとは</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2026/01/11</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="HTMLHyperText-Markup-Language">HTML：HyperText Markup Language</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260213092130.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLとは何かわかりやすく解説して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="HTMLを一言で言うと">HTMLを一言で言うと</h5>
+    
+    <blockquote>
+        <p><strong>Webページの構造を作るための言語</strong></p>
+
+    </blockquote>
+
+<ul>
+<li>Webページを記述するためのマークアップ言語</li>
+<li>Webサイトの作成において、コンピューターが理解できる言語を用いて伝える必要があります</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="HTMLの目的">HTMLの目的</h5>
+    <p>HTMLは、次のような「ページの中身」を決めるために使います。</p>
+
+<ul>
+<li>見出し（タイトル）</li>
+<li>文章</li>
+<li>画像</li>
+<li>リンク</li>
+<li>表</li>
+<li>ボタン など</li>
+</ul><p>つまり、ページに何をどこに表示するかを指定します。</p><p></p><h6 id="ハイパーテキスト">ハイパーテキスト</h6><p></p>
+
+<ul>
+<li>HTMLはネットワークでつながった世界中の文書を関連づけ、それを有益な情報としてコンピュータで分析できるようにする役割を持っています</li>
+<li>コンピュータのプログラムが「リンク」をたどって世界の文書を収集し、その「構造」を分析・管理することを可能にします</li>
+</ul><p>HTMLは、「<strong>ハイパーテキストのための、文書に目印を付ける方法を定めた文法上の約束</strong>」ということになります。</p><p>ある文章の中にある言葉から、関連のあるページのその言葉にリンクしてあること。<br>
+それが「ハイパーテキスト」という概念です。</p><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/lesson3_20170917224804.png" width="473" height="329" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="HTMLでできることできないこと">HTMLでできること・できないこと</h5>
+    <p></p><h6 id="できること">できること</h6><p></p>
+
+<ul>
+<li>ページの構造を作る</li>
+<li>文章・画像・リンクを配置する</li>
+</ul><p></p><h6 id="できないこと">できないこと</h6><p></p>
+
+<ul>
+<li>デザイン（→ CSSで行う）</li>
+<li>動きのある処理（→ JavaScriptで行う）</li>
+</ul><p>👉 Web制作では<br>
+HTML + CSS + JavaScript の3つを組み合わせます。</p>
+
+</div>
+<div class="section">
+    <h5 id="超かんたんまとめ">超かんたんまとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>項目</th>
+    <th>役割</th>
+    </tr>
+    <tr>
+    <td> HTML       </td>
+    <td> 骨組み・構造   </td>
+    </tr>
+    <tr>
+    <td> CSS        </td>
+    <td> デザイン・見た目 </td>
+    </tr>
+    <tr>
+    <td> JavaScript </td>
+    <td> 動き・機能    </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="HTMLの基本ルール">HTMLの基本ルール</h4>
+    
+<ul>
+<li>日本語で入力した文字はそのまま表示されない（他国語も同様）</li>
+<li>マークアップという意味付けをすると表示できる</li>
+</ul>
+<div class="section">
+    <h5 id="Markupとは">Markupとは</h5>
+    
+<ul>
+<li>文章に、目印（荷札：タグ）をつけていくこと</li>
+<li>「開始タグ」と「終了タグ」で囲む</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文章<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>&lt;p&gt; → 文章のはじまり</li>
+<li>&lt;p&gt; → 文章のおわり</li>
+</ul><p>このように はさむ形 で意味を指定します。</p><p></p><h6 id="記述する内容は3つ">記述する内容は3つ</h6><p></p>
+
+<ul>
+<li>どこから = 開始タグ</li>
+<li>どこまで = 終了タグ</li>
+<li>要素の種類 = 要素タイプ</li>
+</ul><p></p><h6 id="開始タグ">開始タグ</h6><p></p>
+
+<ul>
+<li>「&lt;」と「&gt;」の間に「要素名」を書く。</li>
+</ul><p></p><h6 id="終了タグ">終了タグ</h6><p></p>
+
+<ul>
+<li>「<!--」と「-->」の間に「要素名」を書く。</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/lesson3_20170917225831.png" width="412" height="136" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="一般的なカッコの呼び方">一般的な「カッコ」の呼び方</h6><p></p>
+
+<ul>
+<li>「 &lt; 」「 &gt; 」：アングルブラケット</li>
+<li>「 [ 」「 [ 」：ブラケット</li>
+<li>「 { 」「 } 」：カールブラケット（ブレース）</li>
+<li>「 ( 」「 ) 」：パーレン</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="HTMLの入力の仕方">HTMLの入力の仕方</h5>
+    <p>「&lt;html&gt;」の入力の仕方を順序で説明すると以下のようになります。</p><p>まず、開始タグを入力。</p>
+
+<ol>
+<li>「&lt;」左アングル・ブラケット：小なり（less than）</li>
+<li>「html」と入力</li>
+<li>「&gt;」右アングル・ブラケット：大なり（greater than）</li>
+</ol><p>続いて、</p>
+
+<ol>
+<li>「enter(return)」キーを１回押し改行</li>
+</ol><p>続いて、終了タグを入力。</p>
+
+<ol>
+<li>「&lt;」左アングル・ブラケット：小なり（less than）</li>
+<li>「/」スラッシュを入力</li>
+<li>「html」と入力</li>
+<li>「&gt;」右アングル・ブラケット：大なり（greater than）</li>
+</ol><p>その結果、以下のような「開始タグと終了タグ」のセットができます。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p><br>
+使用するキーは、</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/lesson3_20170917233907.png" width="317" height="79" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="-属性attributeとは">🧩 属性（attribute）とは？</h5>
+    <p>タグに追加情報を与えるものです。</p>
+
+<table>
+    <tbody><tr>
+    <th>属性</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> href  </td>
+    <td> 移動先URL   </td>
+    </tr>
+    <tr>
+    <td> src   </td>
+    <td> 画像・動画の場所 </td>
+    </tr>
+    <tr>
+    <td> alt   </td>
+    <td> 画像の説明    </td>
+    </tr>
+    <tr>
+    <td> class </td>
+    <td> CSS用の分類  </td>
+    </tr>
+    <tr>
+    <td> id    </td>
+    <td> 一意の識別名   </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="文書構造とは">文書構造とは</h4>
+    
+<ul>
+<li>「文書構造」つまり、ページ内容のツリー構造を指します</li>
+<li>この文書構造を理解するには「<a href="http://shouronbun.com/paragraph.html">パラグラフの概念</a>」を理解する必要があります</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fshouronbun.com%2Freport1.html" title="小論文のコツは論文の構造にある（小論文の書き方）" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://shouronbun.com/report1.html">shouronbun.com</a></cite></p>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="セマンティックWeb（Semantic Web）とは.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">セマンティックWeb（Semantic Web）とは</span></a><a href="HTMLの記述内容.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">HTMLの記述内容</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

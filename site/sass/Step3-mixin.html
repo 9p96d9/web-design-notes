@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 3：mixinを導入 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Sass入門</a>
+    <span class="sep">›</span>
+    <span>Step 3：mixinを導入</span>
+  </div>
+  <div class="article-head">
+    <h1>Step 3：mixinを導入</h1>
+    <div class="meta">
+      <span class="tag" style="background:#fdf2f8;color:#cc6699">ステップ演習</span>
+      <span class="date">2026/04/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+  <h4 id="mixinとは">mixinとは？</h4>
+  <p><strong>mixin（ミックスイン）</strong>は、<strong>「スタイルのかたまりに名前をつけて再利用する」</strong>機能です。</p>
+  <ul>
+    <li><code>@mixin 名前 { }</code> で定義する</li>
+    <li><code>@include 名前;</code> で呼び出す</li>
+    <li>引数（パラメータ）を使ってカスタマイズもできる</li>
+  </ul>
+  <p>変数が「値の再利用」なら、mixinは「スタイルブロックの再利用」です。</p>
+</div>
+
+<div class="section">
+  <h4 id="基本的な使い方">基本的な使い方</h4>
+  <pre class="code" data-lang="scss">/* ① mixin の定義 */
+@mixin flex-row($justify: flex-start) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: $justify;
+      -ms-flex-pack: $justify;
+          justify-content: $justify;
+}
+
+/* ② mixin の使用（@include で呼び出す） */
+.header__inner {
+  @include flex-row(space-between);  /* justify-content: space-between */
+}
+
+.hero__content {
+  @include flex-row(center);         /* justify-content: center */
+}
+
+.menu-grid {
+  @include flex-row(flex-start);     /* 引数省略時のデフォルト値 */
+}</pre>
+  <p><code>$justify: flex-start</code> の <code>: flex-start</code> 部分はデフォルト値です。引数を省略したときに使われます。</p>
+</div>
+
+<div class="section">
+  <h4 id="コンパイル後">コンパイル後のCSS</h4>
+  <pre class="code" data-lang="css">/* コンパイル後 */
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}</pre>
+  <p>毎回コピペしていたベンダープレフィックスが、<code>@include</code> の1行に集約されました。</p>
+</div>
+
+<div class="section">
+  <h4 id="引数なしmixin">引数なしのmixin</h4>
+  <p>引数が不要なケースでもmixinは便利です。</p>
+  <pre class="code" data-lang="scss">/* 画像をカードに収める共通スタイル */
+@mixin cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* リセットリスト（デフォルトスタイルを消す） */
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 使用例 */
+.menu-card__image {
+  @include cover-image;
+}
+
+.nav__list {
+  @include reset-list;
+  display: flex;
+  gap: 16px;
+}</pre>
+</div>
+
+<div class="section">
+  <h4 id="複数引数">複数の引数を使うmixin</h4>
+  <pre class="code" data-lang="scss">/* ボタンのバリエーションを引数で制御 */
+@mixin button($bg: $brand-color, $color: $white, $size: 14px) {
+  background-color: $bg;
+  color: $color;
+  font-size: $size;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+/* 使用例 */
+.btn--primary {
+  @include button;                           /* デフォルト値を使う */
+}
+
+.btn--large {
+  @include button($size: 18px);              /* サイズだけ変える */
+}
+
+.btn--outline {
+  @include button($bg: transparent, $color: $brand-color);
+  border: 2px solid $brand-color;
+}</pre>
+</div>
+
+<div class="section">
+  <h4 id="step3まとめ">Step 3のまとめ</h4>
+  <table>
+    <tbody>
+      <tr><th>機能</th><th>役割</th><th>構文</th></tr>
+      <tr><td>定義</td><td>スタイルブロックに名前をつける</td><td><code>@mixin 名前 { }</code></td></tr>
+      <tr><td>呼び出し</td><td>定義したスタイルを展開する</td><td><code>@include 名前;</code></td></tr>
+      <tr><td>引数</td><td>呼び出すたびに値を変える</td><td><code>@mixin 名前($引数: デフォルト値)</code></td></tr>
+    </tbody>
+  </table>
+  <p>mixinを使うと「同じスタイルのコピペ」がなくなり、変更が一箇所で済むようになります。</p>
+</div>
+
+  </div>
+  <nav class="article-nav">
+    <a href="Step2-ネスト.html" class="nav-prev">
+      <span class="nav-label">← 前の記事</span>
+      <span class="nav-title">Step 2：ネストを導入</span>
+    </a>
+    <a href="Step4-ファイル分割.html" class="nav-next" style="text-align:right">
+      <span class="nav-label">次の記事 →</span>
+      <span class="nav-title">Step 4：ファイル分割で完成形</span>
+    </a>
+  </nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+</body>
+</html>

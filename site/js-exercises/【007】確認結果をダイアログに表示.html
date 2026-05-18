@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【007】確認結果をダイアログに表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【007】確認結果をダイアログに表示</span>
+  </div>
+  <div class="article-head">
+    <h1>【007】確認結果をダイアログに表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">ダイアログボックス</span>
+      <span class="date">2026/01/07</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="007確認結果をダイアログに表示">【007】確認結果をダイアログに表示</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227085154.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで確認結果をダイアログに表示</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="confirm-とは">confirm() とは？</h4>
+    
+<ul>
+<li>「window.confirm()」はブラウザーへ任意のメッセージ付きのダイアログを表示し、ユーザーがダイアログを承認またはキャンセルするまで待機します</li>
+<li>一般的には「window.」は、省略されます</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">confirm</span><span class="synSpecial">(</span><span class="synConstant">'メッセージ'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>→ 「<strong>OK / キャンセル」付きの確認ダイアログを表示し、<br>
+　　押された結果を true / false で返す関数です。</strong><br>
+</p>
+
+<div class="section">
+    <h5 id="戻り値の仕組み">戻り値の仕組み</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> result <span class="synStatement">=</span> <span class="synIdentifier">confirm</span><span class="synSpecial">(</span><span class="synConstant">'削除しますか？'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>result<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>押したボタン</th>
+    <th>戻り値</th>
+    </tr>
+    <tr>
+    <td> OK     </td>
+    <td> true  </td>
+    </tr>
+    <tr>
+    <td> キャンセル  </td>
+    <td> false </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="問題">問題</h5>
+    
+<ul>
+<li>男女を確認するダイアログを表示</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> result <span class="synStatement">=</span> <span class="synIdentifier">confirm</span><span class="synSpecial">(</span><span class="synConstant">'あなたは男性ですか？（OK = 男性、キャンセル = 女性)'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>result<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20250420030032.jpg" width="400" height="131" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="基本的な使い方">基本的な使い方</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synIdentifier">confirm</span><span class="synSpecial">(</span><span class="synConstant">'削除しますか？'</span><span class="synSpecial">))</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">'削除しました'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">'キャンセルされました'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="変数に入れて処理するおすすめ">変数に入れて処理する（おすすめ）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> isOK <span class="synStatement">=</span> <span class="synIdentifier">confirm</span><span class="synSpecial">(</span><span class="synConstant">'送信しますか？'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>isOK <span class="synStatement">===</span> <span class="synConstant">true</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'OK'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'キャンセル'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p> ※ if (isOK) でもOKですが、明示的に書くと可読性が上がります。</p>
+
+</div>
+<div class="section">
+    <h5 id="フォーム送信前の確認超よく使う">フォーム送信前の確認（超よく使う）</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">form</span><span class="synIdentifier"> </span><span class="synSpecial">onsubmit="</span><span class="synStatement">return</span><span class="synSpecial"> </span><span class="synIdentifier">confirm</span><span class="synSpecial">(</span><span class="synConstant">'送信してよろしいですか？'</span><span class="synSpecial">)</span><span class="synStatement">;</span><span class="synSpecial">"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"submit"</span><span class="synIdentifier">&gt;</span>送信<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">form</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="仕組み">仕組み</h6><p></p>
+
+<ul>
+<li><strong>OK → true → 送信される</strong></li>
+<li><strong>キャンセル → false → 送信中止</strong></li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="削除ボタンでの利用定番">削除ボタンでの利用（定番）</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synStatement">return</span><span class="synSpecial"> </span><span class="synIdentifier">confirm</span><span class="synSpecial">(</span><span class="synConstant">'本当に削除しますか？'</span><span class="synSpecial">)</span><span class="synStatement">;</span><span class="synSpecial">"</span><span class="synIdentifier">&gt;</span>
+  削除
+<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="confirm-の注意点">confirm() の注意点</h5>
+    <p></p><h6 id="-デザイン変更不可">❌ デザイン変更不可</h6><p></p>
+
+<ul>
+<li>ブラウザ標準UIのため 色・大きさ・デザインは変更不可</li>
+</ul><p></p><h6 id="-非同期処理不可">❌ 非同期処理不可</h6><p></p>
+
+<ul>
+<li>処理が 完全に停止 する（ブロッキング）</li>
+</ul><p></p><h6 id="-モバイルでは表示が異なる">⚠ モバイルでは表示が異なる</h6><p></p>
+
+<ul>
+<li>iOS / Android で見た目が変わる</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【006】警告ダイアログに表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【006】警告ダイアログに表示</span></a><a href="【008】ダイアログに入力した値を表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【008】ダイアログに入力した値を表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

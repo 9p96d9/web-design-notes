@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>条件分岐 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>条件分岐</span>
+  </div>
+  <div class="article-head">
+    <h1>条件分岐</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/11</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="条件分岐">条件分岐</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260209050649.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで分岐の解説をして</p>
+
+    </blockquote>
+
+<ul>
+<li>分岐とは、条件によって処理を変えることです。</li>
+<li>「もし〇〇なら△△する、そうでなければ□□する」という処理を作れます。</li>
+</ul>
+<div class="section">
+    <h5 id="if文基本">if文（基本）</h5>
+    <p></p><h6 id="書き方">書き方</h6><p></p>
+
+    <blockquote>
+        <p>if (条件) {<br>
+  　処理;<br>
+}</p>
+
+    </blockquote>
+<p></p><h6 id="例">例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> age <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>age <span class="synStatement">&gt;=</span> <span class="synConstant">18</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`成人です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>👉 ageが18以上なら「成人です」と表示されます。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="if--elseそうでなければ">if 〜 else（そうでなければ）</h5>
+    <p></p><h6 id="書き方-1">書き方</h6><p></p>
+
+    <blockquote>
+        <p>if (条件) {<br>
+  　処理A;<br>
+} else {<br>
+  　処理B;<br>
+}</p>
+
+    </blockquote>
+<p></p><h6 id="例-1">例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> score <span class="synStatement">=</span> <span class="synConstant">50</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>score <span class="synStatement">&gt;=</span> <span class="synConstant">60</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`合格`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`不合格`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>👉 60点以上 → 合格<br>
+👉 60点未満 → 不合格<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="if--else-if--else複数条件">if 〜 else if 〜 else（複数条件）</h5>
+    <p></p><h6 id="書き方-2">書き方</h6><p></p>
+
+    <blockquote>
+        <p>if (条件1) {<br>
+  　処理1;<br>
+} else if (条件2) {<br>
+  　処理2;<br>
+} else {<br>
+  　処理3;<br>
+}</p>
+
+    </blockquote>
+<p></p><h6 id="例-2">例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> score <span class="synStatement">=</span> <span class="synConstant">85</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>score <span class="synStatement">&gt;=</span> <span class="synConstant">90</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`A評価`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>score <span class="synStatement">&gt;=</span> <span class="synConstant">70</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`B評価`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`C評価`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>👉 90以上 → A<br>
+👉 70以上 → B<br>
+👉 それ以外 → C<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="switch文値で分岐">switch文（値で分岐）</h5>
+    
+<ul>
+<li>「値が何か」で分岐するときに便利です。</li>
+</ul><p></p><h6 id="書き方-3">書き方</h6><p></p>
+
+    <blockquote>
+        <p>switch (値) {<br>
+  case 値1:<br>
+    　処理1;<br>
+   　 break;<br>
+  case 値2:<br>
+    　処理2;<br>
+    　break;<br>
+  default:<br>
+    　処理;<br>
+}</p>
+
+    </blockquote>
+<p></p><h6 id="例-3">例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> fruit <span class="synStatement">=</span> <span class="synConstant">'りんご'</span><span class="synStatement">;</span>
+
+<span class="synStatement">switch</span> <span class="synSpecial">(</span>fruit<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">case</span> <span class="synConstant">'りんご'</span><span class="synStatement">:</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`赤い果物`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synStatement">break;</span>
+  <span class="synStatement">case</span> <span class="synConstant">'バナナ'</span><span class="synStatement">:</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`黄色い果物`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synStatement">break;</span>
+  <span class="synStatement">default:</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`その他の果物`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="三項演算子短く書ける分岐">三項演算子（短く書ける分岐）</h5>
+    <p></p><h6 id="書き方-4">書き方</h6><p></p>
+
+    <blockquote>
+        <p>条件 ? 真の処理 : 偽の処理;</p>
+
+    </blockquote>
+<p></p><h6 id="例-4">例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> age <span class="synStatement">=</span> <span class="synConstant">17</span><span class="synStatement">;</span>
+<span class="synType">let</span> result <span class="synStatement">=</span> age <span class="synStatement">&gt;=</span> <span class="synConstant">18</span> <span class="synStatement">?</span> <span class="synConstant">'大人'</span> <span class="synStatement">:</span> <span class="synConstant">'子供'</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>result<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>👉 シンプルな分岐に便利<br>
+<br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="比較演算子条件でよく使う">比較演算子（条件でよく使う）</h4>
+    
+<table>
+    <tbody><tr>
+    <th>演算子</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td>　==　</td>
+    <td>等しい（型変換あり）</td>
+    </tr>
+    <tr>
+    <td>　===　</td>
+    <td>厳密に等しい（型も一致）</td>
+    </tr>
+    <tr>
+    <td>　!=　</td>
+    <td>等しくない</td>
+    </tr>
+    <tr>
+    <td>　!==　</td>
+    <td>厳密に等しくない</td>
+    </tr>
+    <tr>
+    <td>　&gt;　</td>
+    <td>より大きい</td>
+    </tr>
+    <tr>
+    <td>　&lt;　</td>
+    <td>より小さい</td>
+    </tr>
+    <tr>
+    <td>　&gt;=　</td>
+    <td>以上</td>
+    </tr>
+    <tr>
+    <td>　&lt;=　</td>
+    <td>以下</td>
+    </tr>
+</tbody></table><p>⚠ JavaScriptでは === を使うのが基本です。</p>
+
+</div>
+<div class="section">
+    <h4 id="論理演算子条件の組み合わせ">論理演算子（条件の組み合わせ）</h4>
+    
+<table>
+    <tbody><tr>
+    <th>演算子</th>
+    <th>意味</th>
+    <th>例</th>
+    </tr>
+    <tr>
+    <td>　&amp;&amp;　</td>
+    <td>かつ（AND）</td>
+    <td>A &amp;&amp; B</td>
+    </tr>
+    <tr>
+    <td>　!　</td>
+    <td>否定（NOT）</td>
+    <td>!A</td>
+    </tr>
+</tbody></table><p></p><h6 id="例-5">例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> age <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+<span class="synType">let</span> isStudent <span class="synStatement">=</span> <span class="synConstant">true</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>age <span class="synStatement">&gt;=</span> <span class="synConstant">18</span> <span class="synStatement">&amp;&amp;</span> isStudent<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`成人学生です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="テンプレートリテラルで出力.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">テンプレートリテラルで出力</span></a><a href="prompt で入力された値を受け取って計算する方法.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">prompt で入力された値を受け取って計算する方法</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

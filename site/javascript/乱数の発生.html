@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乱数の発生 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>乱数の発生</span>
+  </div>
+  <div class="article-head">
+    <h1>乱数の発生</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">乱数</span>
+      <span class="date">2025/10/19</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="乱数の発生---random関数">乱数の発生 - random関数</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029232713.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>Math.random() 関数は、 0 以上 1 未満 (0 は含むが、 1 は含まない) の範囲で<a class="keyword" href="https://d.hatena.ne.jp/keyword/%C9%E2%C6%B0%BE%AE%BF%F4">浮動小数</a>点の<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B5%BC%BB%F7%CD%F0%BF%F4">擬似乱数</a>を返します</li>
+</ul>
+<div class="section">
+    <h5 id="乱数の発生">乱数の発生</h5>
+    
+<ul>
+<li>「random()」は、「0以上１未満の乱数を生成する」メソッド</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">for</span><span class="synSpecial"> (</span><span class="synType">let</span> i<span class="synStatement">=</span><span class="synConstant">1</span><span class="synStatement">;</span> i<span class="synStatement">&lt;=</span><span class="synConstant">5</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">) {</span>
+  <span class="synType">let</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>rnd<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="実行結果">実行結果</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241020220822.jpg" width="500" height="177" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="ランダムな整数を生成する">ランダムな「整数」を生成する</h5>
+    
+<ul>
+<li>「floor()」は、「小数点以下を切り捨てる」メソッド</li>
+</ul>
+    <blockquote>
+        <p>rnd = Math.floor(Math.random() * MAX + 1);</p>
+
+    </blockquote>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>乱数を整数化して表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"generate"</span><span class="synIdentifier">&gt;</span>乱数を生成<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>maxNum<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">6</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>element<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>button<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'generate'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+button<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  element<span class="synStatement">.</span>innerHTML <span class="synStatement">=</span> <span class="synConstant">''</span><span class="synStatement">;</span> <span class="synComment">// 以前の結果をクリア</span>
+  <span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;</span> maxNum<span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    <span class="synType">const</span> num <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span> <span class="synStatement">*</span> maxNum <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    element<span class="synStatement">.</span>innerHTML <span class="synStatement">+=</span> <span class="synConstant">`&lt;p&gt;</span><span class="synSpecial">${</span>num<span class="synSpecial">}</span><span class="synConstant">&lt;/p&gt;`</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ES5の場合">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>乱数を整数化して表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">result</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>乱数を生成<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">result</span><span class="synSpecial">() {</span>
+  <span class="synType">const</span> maxNum <span class="synStatement">=</span> <span class="synConstant">6</span><span class="synStatement">;</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+  <span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;</span> maxNum<span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    <span class="synType">const</span> num <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span> <span class="synStatement">*</span> maxNum <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    element<span class="synStatement">.</span>innerHTML <span class="synStatement">+=</span> <span class="synConstant">`&lt;p&gt;</span><span class="synSpecial">${</span>num<span class="synSpecial">}</span><span class="synConstant">&lt;/p&gt;`</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="おみくじ">おみくじ</h4>
+    <p></p><h6 id="ES6の場合">ES6の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>おみくじの結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ボタンを押すと結果が表示されます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>おみくじを引く<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>result<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> () </span><span class="synStatement">=&gt;</span><span class="synSpecial"> {</span>
+  <span class="synType">const</span> omikuji <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'大吉'</span><span class="synStatement">,</span> <span class="synConstant">'吉'</span><span class="synStatement">,</span> <span class="synConstant">'中吉'</span><span class="synStatement">,</span> <span class="synConstant">'小吉'</span><span class="synStatement">,</span> <span class="synConstant">'凶'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+  <span class="synType">const</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span> <span class="synStatement">*</span> omikuji<span class="synStatement">.</span>length<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> omikuji<span class="synSpecial">[</span>rnd<span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synStatement">document</span><span class="synSpecial">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#btn'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> result<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ES5の場合-1">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>おみくじの結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ボタンを押すと結果が表示されます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">result</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">result</span><span class="synSpecial">() {</span>
+  <span class="synType">const</span> omikuji <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'大吉'</span><span class="synStatement">,</span> <span class="synConstant">'吉'</span><span class="synStatement">,</span> <span class="synConstant">'中吉'</span><span class="synStatement">,</span> <span class="synConstant">'小吉'</span><span class="synStatement">,</span> <span class="synConstant">'凶'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+  <span class="synType">const</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span> <span class="synStatement">*</span> omikuji<span class="synStatement">.</span>length<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> omikuji<span class="synSpecial">[</span>rnd<span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="サイコロ">サイコロ</h4>
+    
+<ul>
+<li>画像をランダムに表示</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/web-0127/20140408114247" class="hatena-fotolife" itemprop="url"><img src="../images/web-0127_20140408114247.jpg" width="61" height="61" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></a></span>　　　<span itemscope="" itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/web-0127/20140408114246" class="hatena-fotolife" itemprop="url"><img src="../images/web-0127_20140408114246.jpg" width="61" height="61" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></a></span>　　　<span itemscope="" itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/web-0127/20140408114245" class="hatena-fotolife" itemprop="url"><img src="../images/web-0127_20140408114245.jpg" width="61" height="61" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></a></span>　　　<span itemscope="" itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/web-0127/20140408114244" class="hatena-fotolife" itemprop="url"><img src="../images/web-0127_20140408114244.jpg" width="61" height="61" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></a></span>　　　<span itemscope="" itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/web-0127/20140408114243" class="hatena-fotolife" itemprop="url"><img src="../images/web-0127_20140408114243.jpg" width="61" height="61" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></a></span>　　　<span itemscope="" itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/web-0127/20140408114242" class="hatena-fotolife" itemprop="url"><img src="../images/web-0127_20140408114242.jpg" width="61" height="61" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></a></span></p><p></p><p></p><h6 id="ES6の場合-1">ES6の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>サイコロの目を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ボタンを押すとサイコロの目が変わります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">result</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>サイコロを振る<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/1.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>result<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> () </span><span class="synStatement">=&gt;</span><span class="synSpecial"> {</span>
+  <span class="synType">const</span> num <span class="synStatement">=</span> <span class="synConstant">6</span><span class="synStatement">;</span>
+  <span class="synType">const</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span> <span class="synStatement">*</span> num <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"ans"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  element<span class="synStatement">.</span>innerHTML <span class="synStatement">=</span> <span class="synConstant">`&lt;img src="img/</span><span class="synSpecial">${</span>rnd<span class="synSpecial">}</span><span class="synConstant">.jpg" alt="</span><span class="synSpecial">${</span>rnd<span class="synSpecial">}</span><span class="synConstant">"&gt;`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span> 
+</pre><p></p><h6 id="ES5の場合-2">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>サイコロの目を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ボタンを押すとサイコロの目が変わります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">result</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>サイコロを振る<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/1.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">result</span><span class="synSpecial">() {</span>
+  <span class="synType">const</span> num <span class="synStatement">=</span> <span class="synConstant">6</span><span class="synStatement">;</span>
+  <span class="synType">const</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span> <span class="synStatement">*</span> num <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"ans"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  element<span class="synStatement">.</span>innerHTML <span class="synStatement">=</span> <span class="synConstant">`&lt;img src="img/</span><span class="synSpecial">${</span>rnd<span class="synSpecial">}</span><span class="synConstant">.jpg" alt="</span><span class="synSpecial">${</span>rnd<span class="synSpecial">}</span><span class="synConstant">"&gt;`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="EventListener.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">EventListener</span></a><a href="プログラムとは？.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">プログラムとは？</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>画像を表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>画像を表示</span>
+  </div>
+  <div class="article-head">
+    <h1>画像を表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2025/12/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="画像を表示">画像を表示</h4>
+    
+<ul>
+<li>画像を作成（Nano Banana）</li>
+</ul>
+    <blockquote>
+        <p>水色の椅子の写真を正方形で</p>
+
+    </blockquote>
+<p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260125235558.jpg" width="300" height="300" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="画像を表示-1">画像を表示</h4>
+    
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLで画像を表示する方法を解説して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="HTMLで画像を表示する方法">HTMLで画像を表示する方法</h5>
+    <p>HTMLで画像を表示するには、<img> タグを使います。</p><p></p><h6 id="基本構文">基本構文</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"画像のURLまたはパス"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"代替テキスト"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="各属性の意味">各属性の意味</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>属性</th>
+    <th>説明</th>
+    </tr>
+    <tr>
+    <td> src </td>
+    <td> 表示したい画像のURLやファイルパス       </td>
+    </tr>
+    <tr>
+    <td> alt </td>
+    <td> 画像が表示できないときの代替テキスト（必須推奨） </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="例同じフォルダの画像を表示">例①：同じフォルダの画像を表示</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"sample.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"サンプル画像"</span><span class="synIdentifier">&gt;</span>
+</pre><p>【フォルダ構成例】</p>
+<pre class="code" data-lang="" data-unlink="">index.html
+sample.jpg</pre>
+</div>
+<div class="section">
+    <h5 id="例別フォルダの画像を表示">例②：別フォルダの画像を表示</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"images/photo.png"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"写真"</span><span class="synIdentifier">&gt;</span>
+</pre><p>【フォルダ構成例】</p>
+<pre class="code" data-lang="" data-unlink="">index.html
+images/
+  photo.png</pre>
+</div>
+<div class="section">
+    <h5 id="例Web上の画像を表示">例③：Web上の画像を表示</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com/image.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"外部画像"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="img-タグ画像表示の基本">&lt;img&gt; タグ（画像表示の基本）</h4>
+    
+<div class="section">
+    <h5 id="主な属性超重要">主な属性（超重要）</h5>
+    <p></p><h6 id="1-src必須">1. src（必須）</h6><p></p>
+
+<ul>
+<li>画像ファイルの **場所（URLやパス）** を指定する</li>
+</ul><p></p><h6 id="2-alt必須レベルで重要">2. alt（必須レベルで重要）</h6><p></p>
+
+<ul>
+<li>画像が表示されないときや、スクリーンリーダー用の代替テキスト</li>
+<li>画像が壊れたときに表示される</li>
+<li>SEOにも影響あり</li>
+<li>装飾目的だけなら alt="" でもOK</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="サイズ指定">サイズ指定</h5>
+    
+<ul>
+<li>どちらか一方だけ指定すると縦横比を保ったまま自動調整されます。</li>
+</ul><p></p><h6 id="HTML属性で指定簡単">HTML属性で指定（簡単）</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"image.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"画像"</span><span class="synIdentifier"> </span><span class="synType">width</span><span class="synIdentifier">=</span><span class="synConstant">"300"</span><span class="synIdentifier"> </span><span class="synType">height</span><span class="synIdentifier">=</span><span class="synConstant">"200"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSSで指定おすすめ">CSSで指定（おすすめ）</h6><p></p>
+
+<ul>
+<li>CSS指定の方が柔軟＆モダン</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"image.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"画像"</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">300px</span>;
+  <span class="synType">height</span>: <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="よくあるミス">よくあるミス</h5>
+    
+<ul>
+<li>❌ 閉じタグを書く</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">img</span><span class="synIdentifier">&gt;</span>  ← ダメ
+</pre><p></p><h6 id="画像が表示されない原因">画像が表示されない原因</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>原因</th>
+    <th>対策</th>
+    </tr>
+    <tr>
+    <td> パス間違い   </td>
+    <td> フォルダ構成を確認                  </td>
+    </tr>
+    <tr>
+    <td> 拡張子違い   </td>
+    <td> `.jpg` と `.JPG` の大文字小文字に注意 </td>
+    </tr>
+    <tr>
+    <td> ファイル未配置 </td>
+    <td> 正しい場所に保存                   </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="よく使う便利属性">よく使う便利属性</h5>
+    
+<ul>
+<li>loading="lazy"（遅延読み込み）</li>
+</ul><p>→ スクロールされるまで読み込まない（高速化◎）</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"image.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"画像"</span><span class="synIdentifier"> loading=</span><span class="synConstant">"lazy"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="相対パスと絶対パス">相対パスと絶対パス</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!-- 同じフォルダ --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"image.jpg"</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- imagesフォルダ内 --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/image.jpg"</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- ひとつ上の階層 --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"../image.jpg"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="語句の解説箇条書き.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">語句の解説箇条書き</span></a><a href="表組みを表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">表組みを表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

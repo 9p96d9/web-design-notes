@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分割レイアウト型（最近多い） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>分割レイアウト型（最近多い）</span>
+  </div>
+  <div class="article-head">
+    <h1>分割レイアウト型（最近多い）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/20</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="分割レイアウト型最近多い">分割レイアウト型（最近多い）</h4>
+    
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>分割レイアウト型の事例を作成して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="完成イメージ">完成イメージ</h5>
+    
+<ul>
+<li>左：写真</li>
+<li>右：テキスト</li>
+<li>高さ：画面いっぱい</li>
+<li>横並び：Flexbox</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="レイアウトのポイント">レイアウトのポイント</h5>
+    <p></p><h6 id="-Flexboxで横分割">① Flexboxで横分割</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.split{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+<span class="synIdentifier">}</span>
+</pre><p>これで、<strong>左右のブロックが横並び</strong>になります。</p><p></p><h6 id="-幅50で均等分割">② 幅50%で均等分割</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">width: 50%;
+</pre><p>これで</p>
+
+<ul>
+<li>左 50%</li>
+<li>右 50%</li>
+</ul><p>になります。</p><p></p><h6 id="-高さを画面いっぱい">③ 高さを画面いっぱい</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">height: 100vh;
+</pre>
+<ul>
+<li><strong>vhは 画面の高さ基準</strong>です。</li>
+</ul>
+    <blockquote>
+        <p>100vh = 画面いっぱい</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="よくあるLPの分割デザイン">よくあるLPの分割デザイン</h5>
+    <p></p><h6 id="-写真--キャッチコピー">① 写真 × キャッチコピー</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">| 画像 | テキスト |</pre><p></p><h6 id="-商品説明">② 商品説明</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">| 商品写真 | 説明 |</pre><p></p><h6 id="-交互レイアウトLP王道">③ 交互レイアウト（LP王道）</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">| 画像 | 説明 |
+| 説明 | 画像 |
+| 画像 | 説明 |</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="事例１">事例１</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260316012644.png" width="680" height="624" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<div class="section">
+    <h5 id="テキスト">テキスト</h5>
+    <pre class="code" data-lang="" data-unlink="">心地よいカフェ時間
+自然光と花に包まれた空間で、 ゆったりとしたひとときをお過ごしください。 丁寧に淹れたコーヒーと季節のスイーツを ご用意しています。
+
+MENUを見る</pre>
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>Split Layout<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"split"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"split-image"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"split-text"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>心地よいカフェ時間<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>自然光と花に包まれた空間で、
+      ゆったりとしたひとときをお過ごしください。
+      丁寧に淹れたコーヒーと季節のスイーツを
+      ご用意しています。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">MENUを見る</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* ------------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">------------------------------------------ */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ------------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">------------------------------------------ */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ------------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">------------------------------------------ */</span>
+<span class="synIdentifier">.split</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>:<span class="synConstant">flex</span>;
+  <span class="synType">height</span>:<span class="synConstant">100vh</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* 左側 */</span>
+<span class="synIdentifier">.split-image</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>:<span class="synConstant">50%</span>;
+  <span class="synType">background-image</span>:<span class="synIdentifier">url(</span><span class="synConstant">"https://images.unsplash.com/photo-1509042239860-f550ce710b93"</span><span class="synIdentifier">)</span>;
+  <span class="synType">background-size</span>:<span class="synConstant">cover</span>;
+  <span class="synType">background-position</span>:<span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* 右側 */</span>
+<span class="synIdentifier">.split-text</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">50%</span>;
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">padding</span>: <span class="synConstant">60px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#f7f7f7</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.split-text</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">36px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.split-text</span> <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">30px</span>;
+    <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">.btn{</span>
+  <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+  <span class="synType">padding</span>: <span class="synConstant">12px</span> <span class="synConstant">24px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#333</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="事例２">事例２</h4>
+    
+<ul>
+<li>右：写真</li>
+<li>左：テキスト</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260316001642.png" width="680" height="568" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<div class="section">
+    <h5 id="テキスト-1">テキスト</h5>
+    <pre class="code" data-lang="" data-unlink="">Fresh Bakery
+焼きたてパンのある暮らし</pre>
+</div>
+<div class="section">
+    <h5 id="記述例-1">記述例</h5>
+    <p></p><h6 id="HTML-1">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>分割レイアウト型（左右50%）<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"hero"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"hero-text"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>Fresh Bakery<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>焼きたてパンのある暮らし<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"hero-image"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS-1">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.hero</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">height</span>: <span class="synConstant">100vh</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.hero-text</span> <span class="synIdentifier">{</span>
+    <span class="synType">width</span>: <span class="synConstant">50%</span>;
+    <span class="synType">display</span>: <span class="synConstant">flex</span>;
+    <span class="synType">flex-direction</span>: <span class="synConstant">column</span>;
+    <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+    <span class="synType">padding</span>: <span class="synConstant">60px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.hero-text</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">48px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.hero-image</span> <span class="synIdentifier">{</span>
+    <span class="synType">width</span>: <span class="synConstant">50%</span>;
+    <span class="synType">background</span>:<span class="synIdentifier">url(</span><span class="synConstant">"https://images.unsplash.com/photo-1509440159596-0249088772ff"</span><span class="synIdentifier">)</span> <span class="synConstant">center</span>/<span class="synConstant">cover</span>;
+  <span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="Flexbox Froggy - Lv. 1〜24.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">Flexbox Froggy - Lv. 1〜24</span></a><a href="Google Fonts 利用.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">Google Fonts 利用</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

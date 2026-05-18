@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>表組みを表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>表組みを表示</span>
+  </div>
+  <div class="article-head">
+    <h1>表組みを表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2025/12/10</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="表組みを表示">表組みを表示</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260221080839.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLの表組みについて解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="HTMLの表組みテーブルとは">HTMLの表組み（テーブル）とは？</h4>
+    <p>HTMLの<strong>表組み（table）</strong>は、行と列を使ってデータを整理して表示するための仕組みです。</p>
+
+<div class="section">
+    <h5 id="基本構造">基本構造</h5>
+    
+<ul>
+<li>&lt;th&gt;は見出し。文字が太字＋中央揃えになる（ブラウザ標準）</li>
+<li>&lt;tr&gt;の中に &lt;th&gt; や &lt;td&gt; を並べる</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>名前<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>年齢<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>田中<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>25<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>佐藤<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>30<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="タグの意味">タグの意味</h6><p></p>
+
+<ul>
+<li>HTMLの表は、主にこのタグで構成されます</li>
+</ul>
+<table>
+    <tbody><tr>
+    <th>タグ</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> &lt;table&gt; </td>
+    <td> 表全体                 </td>
+    </tr>
+    <tr>
+    <td> &lt;tr&gt;    </td>
+    <td> 行（table row）        </td>
+    </tr>
+    <tr>
+    <td> &lt;th&gt;    </td>
+    <td> 見出しセル（table header） </td>
+    </tr>
+    <tr>
+    <td> &lt;td&gt;    </td>
+    <td> データセル（table data）   </td>
+    </tr>
+</tbody></table><p></p><h6 id="行列の考え方">行・列の考え方</h6><p></p>
+
+    <blockquote>
+        <p>&lt;tr&gt; ← 行<br>
+  &lt;td&gt; ← 列（セル）</p>
+
+    </blockquote>
+
+<ul>
+<li>この場合、1行3列</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>A<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>B<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>C<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="セルを結合する重要">セルを結合する（重要）</h5>
+    <p></p><h6 id="列を結合横に広げる">列を結合（横に広げる）</h6><p></p>
+
+<ul>
+<li>横方向の結合（colspan）</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier"> </span><span class="synType">colspan</span><span class="synIdentifier">=</span><span class="synConstant">"2"</span><span class="synIdentifier">&gt;</span>2列分<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="行を結合縦に広げる">行を結合（縦に広げる）</h6><p></p>
+
+<ul>
+<li>縦方向の結合（rowspan）</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier"> </span><span class="synType">rowspan</span><span class="synIdentifier">=</span><span class="synConstant">"2"</span><span class="synIdentifier">&gt;</span>2行分<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">table</span><span class="synIdentifier"> </span><span class="synType">border</span><span class="synIdentifier">=</span><span class="synConstant">"1"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>名前<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier"> </span><span class="synType">colspan</span><span class="synIdentifier">=</span><span class="synConstant">"2"</span><span class="synIdentifier">&gt;</span>連絡先<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>田中<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>電話<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>メール<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="意味を持たせるタグ少しレベルアップ">意味を持たせるタグ（少しレベルアップ）</h5>
+    
+<ul>
+<li>アクセシビリティ &amp; 可読性アップ</li>
+</ul><p></p><h6 id="表の論理構造thead-tbody-tfoot">表の論理構造（thead, tbody, tfoot）</h6><table width="400">
+<tbody><tr><th>タグ</th><th>役割</th></tr>
+<tr><th>&lt;thead&gt;</th><td>見出し部分</td></tr>
+<tr><th>&lt;tbody&gt;</th><td>データ部分</td></tr>
+<tr><th>&lt;foot&gt;</th><td>合計・注釈など</td></tr>
+</tbody></table>→ アクセシビリティと保守性が向上<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">table</span><span class="synIdentifier"> </span><span class="synType">border</span><span class="synIdentifier">=</span><span class="synConstant">"1"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">thead</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>商品<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>価格<span class="synIdentifier">&lt;/</span><span class="synStatement">th</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">thead</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">tbody</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>りんご<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>100円<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>みかん<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>80円<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">tbody</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">tfoot</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>合計<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>180円<span class="synIdentifier">&lt;/</span><span class="synStatement">td</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">tr</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">tfoot</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">table</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="border1-は使っていい">border="1" は使っていい？</h6>→ <strong>学習用OK / 実務NG</strong><br>
+→ 実務では <strong>CSSで制御</strong><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="見た目を整えるCSSと一緒に使う">見た目を整える（CSSと一緒に使う）</h5>
+    
+<ul>
+<li>HTMLだけだと線が出ないので、CSSで装飾するのが一般的</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+  <span class="synStatement">table</span> <span class="synIdentifier">{</span>
+    <span class="synType">border-collapse</span>: <span class="synConstant">collapse</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">th</span><span class="synSpecial">,</span> <span class="synStatement">td</span> <span class="synIdentifier">{</span>
+    <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#333</span>;
+    <span class="synType">padding</span>: <span class="synConstant">8px</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="border-collapse-collapse">border-collapse: collapse;</h6><p></p>
+
+<ul>
+<li>罫線が二重にならず、きれいに表示される</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="表組みを使うときの注意点-️">表組みを使うときの注意点 ⚠️</h5>
+    
+<ul>
+<li>❌ divだけで表を作ってはいけない</li>
+<li>❌ レイアウト目的で table を使う</li>
+<li>⭕ データ表現のみに使う</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="よくある使いどころ">よくある使いどころ</h5>
+    
+<ul>
+<li>成績表・一覧表</li>
+<li>管理画面のデータ一覧</li>
+<li>CSVデータの表示</li>
+<li>スケジュール表</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="まとめ">まとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>要素</th>
+    <th>ポイント</th>
+    </tr>
+    <tr>
+    <td> table                 </td>
+    <td> 表全体  </td>
+    </tr>
+    <tr>
+    <td> tr                    </td>
+    <td> 行    </td>
+    </tr>
+    <tr>
+    <td> th                    </td>
+    <td> 見出し  </td>
+    </tr>
+    <tr>
+    <td> td                    </td>
+    <td> データ  </td>
+    </tr>
+    <tr>
+    <td> colspan / rowspan     </td>
+    <td> セル結合 </td>
+    </tr>
+    <tr>
+    <td> thead / tbody / tfoot </td>
+    <td> 意味構造 </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="画像を表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">画像を表示</span></a><a href="リンクを記述.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">リンクを記述</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

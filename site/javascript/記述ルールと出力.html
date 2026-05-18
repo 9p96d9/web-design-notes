@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>記述ルールと出力 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>記述ルールと出力</span>
+  </div>
+  <div class="article-head">
+    <h1>記述ルールと出力</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">console</span>
+      <span class="date">2025/10/02</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="JavaScriptの記述"><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>の記述</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029234647.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%C6%A5%AD%A5%B9%A5%C8%A5%A8%A5%C7%A5%A3%A5%BF">テキストエディタ</a>ー「<a class="keyword" href="https://d.hatena.ne.jp/keyword/VS%20Code">VS Code</a>」を使用します</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="書き方のルール">書き方のルール</h4>
+    
+<ol>
+<li>基本的に「半角英数字と記号のみ」を使う</li>
+<li>文字列を扱う場合は「シングルクォート」か「ダブルクォート」で囲む</li>
+<li>大文字と小文字は区別される</li>
+<li>命令文の末尾には「<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%DF">セミ</a>コロン」をつける</li>
+<li>複数行にわたるまとまりの命令文は「{}波括弧」で囲む（囲まれた範囲をブロックと呼ぶ）</li>
+</ol><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fcou929.nu%2Fdata%2Fgoogle_javascript_style_guide%2F" title="Google JavaScript Style Guide 和訳 — Google JavaScript Style Guide 和訳" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://cou929.nu/data/google_javascript_style_guide/">cou929.nu</a></cite></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="記述する場所">記述する場所</h4>
+    
+<ul>
+<li>&lt;/head&gt;の前（内部参照）</li>
+<li>&lt;/body&gt;の前（内部参照）</li>
+<li>外部<a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>ファイル（外部参照）</li>
+</ul>
+<div class="section">
+    <h5 id="scriptタグ内に記述内部参照の場合">scriptタグ内に記述（内部参照の場合）</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>JavaScript<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>　
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="文字列を出力">文字列を出力</h4>
+    
+<ul>
+<li>プログラムに直接記述した値のことを「<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EA%A5%C6%A5%E9%A5%EB">リテラル</a>」と呼びます
+<ol>
+<li>文字列<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EA%A5%C6%A5%E9%A5%EB">リテラル</a>：（いち、に、さん）という文字列</li>
+<li>整数<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EA%A5%C6%A5%E9%A5%EB">リテラル</a>：（456）という整数値</li>
+<li>少数<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EA%A5%C6%A5%E9%A5%EB">リテラル</a>：（78.9）という小数値</li>
+</ol></li>
+</ul>
+<div class="section">
+    <h5 id="Hello-World"><a class="keyword" href="https://d.hatena.ne.jp/keyword/Hello%20World">Hello World</a></h5>
+    
+<ul>
+<li>文字列の出力</li>
+<li>コンソールに出力（ console.log(); ）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="Google-JavaScript-Style-Guide-和訳"><a href="http://cou929.nu/data/google_javascript_style_guide/">Google JavaScript Style Guide 和訳</a></h5>
+    <p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20180503230647.png" width="686" height="138" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="文字コード"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%CA%B8%BB%FA%A5%B3%A1%BC%A5%C9">文字コード</a></h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%CA%B8%BB%FA%A5%B3%A1%BC%A5%C9">文字コード</a>は、<a class="keyword" href="https://d.hatena.ne.jp/keyword/UTF-8">UTF-8</a>を使用する</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/UTF-8">UTF-8</a>は、定義される<a class="keyword" href="https://d.hatena.ne.jp/keyword/%CA%B8%BB%FA%BD%B8%B9%E7">文字集合</a>を用いて記述された文字列をバイト列（数値の列）に変換する方式の一つ</li>
+</ul><p><br>
+《hello.html》</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>Hello World!<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'Hello World!'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>　
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="外部ファイル参照">外部ファイル参照</h5>
+    <p>《myscript.js》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'Hello World!from myscript.js'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>《hello.html》</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>Hello World!<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"myscript.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'Hello World!'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>　
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20180504045355.png" width="686" height="163" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="コメント">コメント</h4>
+    
+<ul>
+<li>コード自体を消さずに、一時的に無効にする</li>
+<li>用途
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%C7%A5%D0%A5%C3%A5%B0">デバッグ</a>（バグの発見と修正）</li>
+<li>プログラムに説明を書く</li>
+</ul></li>
+</ul>
+<div class="section">
+    <h5 id="コメント文１行--複数行">コメント文（１行 / 複数行）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// １行だけコメントアウト</span>
+
+<span class="synComment">/*</span>
+<span class="synComment">複数行</span>
+<span class="synComment">コメントアウト</span>
+<span class="synComment">したいとき</span>
+<span class="synComment">*/</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="Chromeのconsoleを使う"><a class="keyword" href="https://d.hatena.ne.jp/keyword/Chrome">Chrome</a>のconsoleを使う</h4>
+    
+<ul>
+<li>console.log()</li>
+<li>コンソールに出力（ console.log(); ）</li>
+</ul>
+<div class="section">
+    <h5 id="コンソールの使い方">コンソールの使い方</h5>
+    
+<ul>
+<li>「検証」→「Console」を選択</li>
+<li>記述されているコードをクリアにする</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-0220_20181124202800.png" width="562" height="97" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="電卓代わりの数値計算">電卓代わりの<a class="keyword" href="https://d.hatena.ne.jp/keyword/%BF%F4%C3%CD%B7%D7%BB%BB">数値計算</a></h4>
+    
+<ul>
+<li>１行、式を入力して「return(Enter)」キーを押すと「実行」され結果が次の行に表示されます</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-design-lesson_20160505084243.png" width="600" height="225" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<ul>
+<li>四則演算を「Console」の中で試してみましょう</li>
+</ul>
+<div class="section">
+    <h5 id="コンソールへのいろいろな出力方法">コンソールへのいろいろな出力方法</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// メッセージを出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'メッセージを出力'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 情報として出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">info</span><span class="synSpecial">(</span><span class="synConstant">'情報です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 警告として出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">warn</span><span class="synSpecial">(</span><span class="synConstant">'警告です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// エラーとして出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">error</span><span class="synSpecial">(</span><span class="synConstant">'エラーです'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><table>
+<tbody><tr><th>画面構成</th><th>説明</th></tr>
+<tr><td>HTML表示</td><td>現在表示してるページのHTMLが表示される</td></tr>
+<tr><td><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>表示</td><td>現在表示してるページの<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>が表示される</td></tr>
+<tr><td>コンソール</td><td>簡単なプログラムを記述し、実行できる場所</td></tr>
+</tbody></table><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="出力例">出力例</h4>
+    
+<div class="section">
+    <h5 id="四則演算">四則演算</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>（operator）の前後は「半角スペース」を空ける</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// 5と3を足した値を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">5</span> <span class="synStatement">+</span> <span class="synConstant">3</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 20から8を引いた値を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">20</span> <span class="synStatement">-</span> <span class="synConstant">8</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// "4 + 5" を文字列として出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'4 + 5'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 8と4をかけた結果を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">8</span> <span class="synStatement">*</span> <span class="synConstant">4</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 24を4で割った結果を出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">24</span> <span class="synStatement">/</span> <span class="synConstant">4</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 7を2で割った余りを出力</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">7</span> <span class="synStatement">%</span> <span class="synConstant">2</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="consoleを表示">consoleを表示</h5>
+    
+<ul>
+<li>Win（ ctrl + shif + c ）</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Mac">Mac</a>（ command + option + i ）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="consoleの内容をクリア">consoleの内容をクリア</h5>
+    
+<ul>
+<li>Win（ ctrl + l ）</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/Mac">Mac</a>（ command +k ）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="consoleに出力">consoleに出力</h5>
+    
+<ul>
+<li>console.log()</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="コンソールで複数行のプログラムを書く">コンソールで複数行のプログラムを書く</h5>
+    
+<ul>
+<li>コンソール内で「改行」するためには、「Shift+Enter」を行う</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="プログラミング言語 _ JavaScriptとは.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">プログラミング言語 / JavaScriptとは</span></a><a href="変数・定数.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">変数・定数</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

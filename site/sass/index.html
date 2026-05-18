@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sass入門 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <span>Sass入門</span>
+  </div>
+  <div class="blog-hero">
+    <div class="blog-hero-inner">
+      <div class="blog-hero-emoji">💅</div>
+      <div>
+        <h1>Sass入門</h1>
+        <p>カフェサイトで学ぶSass。変数・ネスト・mixinからファイル分割まで</p>
+        <div class="blog-hero-meta">
+          <span id="article-count">9</span>記事 &nbsp;·&nbsp; 2026-04
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filter-bar">
+    <span class="filter-label">カテゴリ:</span>
+    <button class="filter-btn active" data-cat="all" style="--accent:#cc6699">すべて</button>
+    <button class="filter-btn" data-cat="Sass基礎" style="--accent:#cc6699">Sass基礎 <small>(3)</small></button>
+    <button class="filter-btn" data-cat="ステップ演習" style="--accent:#cc6699">ステップ演習 <small>(5)</small></button>
+    <button class="filter-btn" data-cat="環境構築" style="--accent:#cc6699">環境構築 <small>(1)</small></button>
+  </div>
+  <div class="article-grid">
+
+<a href="Sassとは.html" class="article-card" data-cats="Sass基礎">
+  <div class="ac-title">Sassとは</div>
+  <div class="ac-meta">
+    <span class="tag">Sass基礎</span>
+    <span class="ac-date">2026/04/09</span>
+  </div>
+</a>
+
+<a href="Step0-CSSのみ版.html" class="article-card" data-cats="ステップ演習">
+  <div class="ac-title">Step 0：CSSのみ版でつらさを体験</div>
+  <div class="ac-meta">
+    <span class="tag">ステップ演習</span>
+    <span class="ac-date">2026/04/09</span>
+  </div>
+</a>
+
+<a href="Step1-変数.html" class="article-card" data-cats="ステップ演習">
+  <div class="ac-title">Step 1：変数を導入</div>
+  <div class="ac-meta">
+    <span class="tag">ステップ演習</span>
+    <span class="ac-date">2026/04/09</span>
+  </div>
+</a>
+
+<a href="Step2-ネスト.html" class="article-card" data-cats="ステップ演習">
+  <div class="ac-title">Step 2：ネストを導入</div>
+  <div class="ac-meta">
+    <span class="tag">ステップ演習</span>
+    <span class="ac-date">2026/04/09</span>
+  </div>
+</a>
+
+<a href="Step3-mixin.html" class="article-card" data-cats="ステップ演習">
+  <div class="ac-title">Step 3：mixinを導入</div>
+  <div class="ac-meta">
+    <span class="tag">ステップ演習</span>
+    <span class="ac-date">2026/04/09</span>
+  </div>
+</a>
+
+<a href="Step4-ファイル分割.html" class="article-card" data-cats="ステップ演習">
+  <div class="ac-title">Step 4：ファイル分割で完成形</div>
+  <div class="ac-meta">
+    <span class="tag">ステップ演習</span>
+    <span class="ac-date">2026/04/09</span>
+  </div>
+</a>
+
+<a href="Sass環境構築.html" class="article-card" data-cats="環境構築">
+  <div class="ac-title">Sass環境構築</div>
+  <div class="ac-meta">
+    <span class="tag">環境構築</span>
+    <span class="ac-date">2026/04/09</span>
+  </div>
+</a>
+
+<a href="ソースマップとは.html" class="article-card" data-cats="Sass基礎">
+  <div class="ac-title">ソースマップとは</div>
+  <div class="ac-meta">
+    <span class="tag">Sass基礎</span>
+    <span class="ac-date">2026/04/09</span>
+  </div>
+</a>
+
+<a href="Sass総復習.html" class="article-card" data-cats="Sass基礎">
+  <div class="ac-title">Sass総復習</div>
+  <div class="ac-meta">
+    <span class="tag">Sass基礎</span>
+    <span class="ac-date">2026/04/09</span>
+  </div>
+</a>
+
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+<script>
+// カテゴリフィルター
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.article-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cats.includes(cat)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

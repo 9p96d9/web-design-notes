@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日の年月日を表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>今日の年月日を表示</span>
+  </div>
+  <div class="article-head">
+    <h1>今日の年月日を表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/18</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="今日の年月日を表示">今日の年月日を表示</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260211185236.png" width="193" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaSciprで今日の年月日を表示する記述を解説して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="基本今日の日付を取得する">基本：今日の日付を取得する</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p>これで 現在の日時 が today に入ります。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="年月日をそれぞれ取得する">年・月・日をそれぞれ取得する</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> year <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>   <span class="synComment">// 年（例: 2026）</span>
+<span class="synType">const</span> month <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span> <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synStatement">;</span> <span class="synComment">// 月（0～11なので +1 する）</span>
+<span class="synType">const</span> day <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()</span><span class="synStatement">;</span>        <span class="synComment">// 日（1～31）</span>
+</pre><p></p><h6 id="ポイント">ポイント</h6><p></p>
+
+<ul>
+<li>getMonth() は 0が1月、11が12月 なので、+1 が必須です。</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="年月日を表示するコンソール">年月日を表示する（コンソール）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">年</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>day<span class="synSpecial">}</span><span class="synConstant">日`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Webページに表示する場合HTML--JavaScript">Webページに表示する場合（HTML + JavaScript）</h5>
+    <p></p><h6 id="HTML">HTML</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"today"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="JavaScript">JavaScript</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> year <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> month <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span> <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synType">const</span> day <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synStatement">document</span>.<span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"today"</span><span class="synSpecial">)</span><span class="synStatement">.</span>textContent <span class="synStatement">=</span>
+  <span class="synConstant">`</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">年</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>day<span class="synSpecial">}</span><span class="synConstant">日`</span><span class="synStatement">;</span>
+</pre><p>画面に 2026年2月9日 のように表示されます。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="よく使う短縮版1行">よく使う短縮版（1行）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>
+  <span class="synConstant">`</span><span class="synSpecial">${</span>today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()}</span><span class="synConstant">年</span><span class="synSpecial">${</span>today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span><span class="synStatement">+</span><span class="synConstant">1</span><span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()}</span><span class="synConstant">日`</span>
+<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="0埋め02月09日などしたい場合">0埋め（02月・09日など）したい場合</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> year <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> month <span class="synStatement">=</span> <span class="synIdentifier">String</span><span class="synSpecial">(</span>today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span> <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">padStart</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">'0'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> day <span class="synStatement">=</span> <span class="synIdentifier">String</span><span class="synSpecial">(</span>today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">())</span><span class="synStatement">.</span><span class="synIdentifier">padStart</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">'0'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">/</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">/</span><span class="synSpecial">${</span>day<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>【出力例】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">2026</span><span class="synStatement">/</span><span class="synConstant">02</span><span class="synStatement">/</span><span class="synConstant">09</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="今日の年月日曜日を表示">「今日の年月日＋曜日」を表示</h4>
+    
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>曜日も表示したい</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="基本コード日本語の曜日つき">基本コード（日本語の曜日つき）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> year <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> month <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span> <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synType">const</span> day <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> week <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'日'</span><span class="synStatement">,</span> <span class="synConstant">'月'</span><span class="synStatement">,</span> <span class="synConstant">'火'</span><span class="synStatement">,</span> <span class="synConstant">'水'</span><span class="synStatement">,</span> <span class="synConstant">'木'</span><span class="synStatement">,</span> <span class="synConstant">'金'</span><span class="synStatement">,</span> <span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span> weekday <span class="synStatement">=</span> week<span class="synSpecial">[</span>today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()]</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">年</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>day<span class="synSpecial">}</span><span class="synConstant">日（</span><span class="synSpecial">${</span>weekday<span class="synSpecial">}</span><span class="synConstant">）`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>【出力例】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">2026</span>年2月9日（水）
+</pre>
+</div>
+<div class="section">
+    <h5 id="曜日の仕組みを解説">曜日の仕組みを解説</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()</span>
+</pre><p>これは 曜日を数字で返します。</p>
+
+<table>
+    <tbody><tr>
+    <th>数値</th>
+    <th>曜日</th>
+    </tr>
+    <tr>
+    <td> 0  </td>
+    <td> 日  </td>
+    </tr>
+    <tr>
+    <td> 1  </td>
+    <td> 月  </td>
+    </tr>
+    <tr>
+    <td> 2  </td>
+    <td> 火  </td>
+    </tr>
+    <tr>
+    <td> 3  </td>
+    <td> 水  </td>
+    </tr>
+    <tr>
+    <td> 4  </td>
+    <td> 木  </td>
+    </tr>
+    <tr>
+    <td> 5  </td>
+    <td> 金  </td>
+    </tr>
+    <tr>
+    <td> 6  </td>
+    <td> 土  </td>
+    </tr>
+</tbody></table><p>これを配列で変換しています。</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> week <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'日'</span><span class="synStatement">,</span> <span class="synConstant">'月'</span><span class="synStatement">,</span> <span class="synConstant">'火'</span><span class="synStatement">,</span> <span class="synConstant">'水'</span><span class="synStatement">,</span> <span class="synConstant">'木'</span><span class="synStatement">,</span> <span class="synConstant">'金'</span><span class="synStatement">,</span> <span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Webページに表示する場合">Webページに表示する場合</h5>
+    <p></p><h6 id="HTML-1">HTML</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"today"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="JavaScript-1">JavaScript</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> year <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> month <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span> <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synType">const</span> day <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> week <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'日'</span><span class="synStatement">,</span> <span class="synConstant">'月'</span><span class="synStatement">,</span> <span class="synConstant">'火'</span><span class="synStatement">,</span> <span class="synConstant">'水'</span><span class="synStatement">,</span> <span class="synConstant">'木'</span><span class="synStatement">,</span> <span class="synConstant">'金'</span><span class="synStatement">,</span> <span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span> weekday <span class="synStatement">=</span> week<span class="synSpecial">[</span>today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()]</span><span class="synStatement">;</span>
+
+<span class="synStatement">document</span>.<span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"today"</span><span class="synSpecial">)</span><span class="synStatement">.</span>textContent <span class="synStatement">=</span>
+  <span class="synConstant">`</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">年</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>day<span class="synSpecial">}</span><span class="synConstant">日（</span><span class="synSpecial">${</span>weekday<span class="synSpecial">}</span><span class="synConstant">）`</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="0埋め--曜日実務でよく使う形">0埋め + 曜日（実務でよく使う形）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> today <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> y <span class="synStatement">=</span> today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> m <span class="synStatement">=</span> <span class="synIdentifier">String</span><span class="synSpecial">(</span>today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">()</span> <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">padStart</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">"0"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> d <span class="synStatement">=</span> <span class="synIdentifier">String</span><span class="synSpecial">(</span>today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">())</span><span class="synStatement">.</span><span class="synIdentifier">padStart</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">"0"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> week <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'日'</span><span class="synStatement">,</span> <span class="synConstant">'月'</span><span class="synStatement">,</span> <span class="synConstant">'火'</span><span class="synStatement">,</span> <span class="synConstant">'水'</span><span class="synStatement">,</span> <span class="synConstant">'木'</span><span class="synStatement">,</span> <span class="synConstant">'金'</span><span class="synStatement">,</span> <span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span> w <span class="synStatement">=</span> week<span class="synSpecial">[</span>today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()]</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`</span><span class="synSpecial">${</span>y<span class="synSpecial">}</span><span class="synConstant">/</span><span class="synSpecial">${</span>m<span class="synSpecial">}</span><span class="synConstant">/</span><span class="synSpecial">${</span>d<span class="synSpecial">}</span><span class="synConstant"> (</span><span class="synSpecial">${</span>w<span class="synSpecial">}</span><span class="synConstant">)`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>【出力例】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">2026</span><span class="synStatement">/</span><span class="synConstant">02</span><span class="synStatement">/</span><span class="synConstant">09</span> <span class="synSpecial">(</span>水<span class="synSpecial">)</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="配列を利用する理由.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">配列を利用する理由</span></a><a href="「営業中 _ 時間外」を判別.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">「営業中 / 時間外」を判別</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

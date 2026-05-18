@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 復習 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <span>The 復習</span>
+  </div>
+  <div class="blog-hero">
+    <div class="blog-hero-inner">
+      <div class="blog-hero-emoji">📚</div>
+      <div>
+        <h1>The 復習</h1>
+        <p>Web制作・デザイン全般の総復習</p>
+        <div class="blog-hero-meta">
+          <span id="article-count">98</span>記事 &nbsp;·&nbsp; 2025-09 ~ 2026-03
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filter-bar">
+    <span class="filter-label">カテゴリ:</span>
+    <button class="filter-btn active" data-cat="all" style="--accent:#059669">すべて</button>
+<button class="filter-btn" data-cat="jQuery" style="--accent:#059669">jQuery <small>(20)</small></button>
+<button class="filter-btn" data-cat="CSS" style="--accent:#059669">CSS <small>(16)</small></button>
+<button class="filter-btn" data-cat="HTML" style="--accent:#059669">HTML <small>(8)</small></button>
+<button class="filter-btn" data-cat="課題サイト" style="--accent:#059669">課題サイト <small>(7)</small></button>
+<button class="filter-btn" data-cat="WordPress" style="--accent:#059669">WordPress <small>(6)</small></button>
+<button class="filter-btn" data-cat="レスポンシブ実践" style="--accent:#059669">レスポンシブ実践 <small>(5)</small></button>
+<button class="filter-btn" data-cat="アニメーション" style="--accent:#059669">アニメーション <small>(5)</small></button>
+<button class="filter-btn" data-cat="Webリテラシー" style="--accent:#059669">Webリテラシー <small>(4)</small></button>
+<button class="filter-btn" data-cat="VSCode" style="--accent:#059669">VSCode <small>(4)</small></button>
+<button class="filter-btn" data-cat="フォーム" style="--accent:#059669">フォーム <small>(3)</small></button>
+<button class="filter-btn" data-cat="縦書き" style="--accent:#059669">縦書き <small>(3)</small></button>
+<button class="filter-btn" data-cat="JavaScript" style="--accent:#059669">JavaScript <small>(3)</small></button>
+<button class="filter-btn" data-cat="レスポンシブ" style="--accent:#059669">レスポンシブ <small>(2)</small></button>
+<button class="filter-btn" data-cat="GoogleSearchConsole" style="--accent:#059669">GoogleSearchConsole <small>(1)</small></button>
+<button class="filter-btn" data-cat="OGP" style="--accent:#059669">OGP <small>(1)</small></button>
+<button class="filter-btn" data-cat="カスタムフォント" style="--accent:#059669">カスタムフォント <small>(1)</small></button>
+<button class="filter-btn" data-cat="Photoshop" style="--accent:#059669">Photoshop <small>(1)</small></button>
+<button class="filter-btn" data-cat="PHP" style="--accent:#059669">PHP <small>(1)</small></button>
+<button class="filter-btn" data-cat="解析" style="--accent:#059669">解析 <small>(1)</small></button>
+<button class="filter-btn" data-cat="コーディングルール" style="--accent:#059669">コーディングルール <small>(1)</small></button>
+<button class="filter-btn" data-cat="Illustrator" style="--accent:#059669">Illustrator <small>(1)</small></button>
+<button class="filter-btn" data-cat="コーディング" style="--accent:#059669">コーディング <small>(1)</small></button>
+<button class="filter-btn" data-cat="実践演習" style="--accent:#059669">実践演習 <small>(1)</small></button>
+<button class="filter-btn" data-cat="入力" style="--accent:#059669">入力 <small>(1)</small></button>
+
+  </div>
+  <div class="article-grid">
+<a href="自動返信機能を追加（メール通知）.html" class="article-card" data-cats="フォーム">
+  <div class="ac-title">自動返信機能を追加（メール通知）</div>
+  <div class="ac-meta">
+    <span class="tag">フォーム</span>
+    <span class="ac-date">2026/03/03</span>
+  </div>
+</a>
+<a href="自作フォームとGoogleフォームを連携.html" class="article-card" data-cats="フォーム">
+  <div class="ac-title">自作フォームとGoogleフォームを連携</div>
+  <div class="ac-meta">
+    <span class="tag">フォーム</span>
+    <span class="ac-date">2026/03/02</span>
+  </div>
+</a>
+<a href="自作フォームを作成.html" class="article-card" data-cats="フォーム">
+  <div class="ac-title">自作フォームを作成</div>
+  <div class="ac-meta">
+    <span class="tag">フォーム</span>
+    <span class="ac-date">2026/03/01</span>
+  </div>
+</a>
+<a href="CSSネスト.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">CSSネスト</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2026/01/14</span>
+  </div>
+</a>
+<a href="色彩計画とレイアウト.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">色彩計画とレイアウト</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2026/01/13</span>
+  </div>
+</a>
+<a href="カスタムプロパティ（CSS変数）.html" class="article-card" data-cats="レスポンシブ">
+  <div class="ac-title">カスタムプロパティ（CSS変数）</div>
+  <div class="ac-meta">
+    <span class="tag">レスポンシブ</span>
+    <span class="ac-date">2026/01/12</span>
+  </div>
+</a>
+<a href="Google Search Console（GSC）を設定.html" class="article-card" data-cats="GoogleSearchConsole">
+  <div class="ac-title">Google Search Console（GSC）を設定</div>
+  <div class="ac-meta">
+    <span class="tag">GoogleSearchConsole</span>
+    <span class="ac-date">2026/01/11</span>
+  </div>
+</a>
+<a href="OGPの作成時の注意点.html" class="article-card" data-cats="OGP">
+  <div class="ac-title">OGPの作成時の注意点</div>
+  <div class="ac-meta">
+    <span class="tag">OGP</span>
+    <span class="ac-date">2026/01/10</span>
+  </div>
+</a>
+<a href="MixItUp フィルター実装.html" class="article-card" data-cats="レスポンシブ実践">
+  <div class="ac-title">MixItUp フィルター実装</div>
+  <div class="ac-meta">
+    <span class="tag">レスポンシブ実践</span>
+    <span class="ac-date">2026/01/09</span>
+  </div>
+</a>
+<a href="Webサイトをモバイル対応する際の注意点.html" class="article-card" data-cats="レスポンシブ実践">
+  <div class="ac-title">Webサイトをモバイル対応する際の注意点</div>
+  <div class="ac-meta">
+    <span class="tag">レスポンシブ実践</span>
+    <span class="ac-date">2026/01/08</span>
+  </div>
+</a>
+<a href="CSS カスタムフォント.html" class="article-card" data-cats="カスタムフォント">
+  <div class="ac-title">CSS カスタムフォント</div>
+  <div class="ac-meta">
+    <span class="tag">カスタムフォント</span>
+    <span class="ac-date">2026/01/07</span>
+  </div>
+</a>
+<a href="CSSで縦書き.html" class="article-card" data-cats="縦書き">
+  <div class="ac-title">CSSで縦書き</div>
+  <div class="ac-meta">
+    <span class="tag">縦書き</span>
+    <span class="ac-date">2026/01/06</span>
+  </div>
+</a>
+<a href="ファビコンとOGP.html" class="article-card" data-cats="課題サイト">
+  <div class="ac-title">ファビコンとOGP</div>
+  <div class="ac-meta">
+    <span class="tag">課題サイト</span>
+    <span class="ac-date">2026/01/05</span>
+  </div>
+</a>
+<a href="フィルター - MixItUp.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">フィルター - MixItUp</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2026/01/04</span>
+  </div>
+</a>
+<a href="ポラロイド風画像を作成.html" class="article-card" data-cats="Photoshop">
+  <div class="ac-title">ポラロイド風画像を作成</div>
+  <div class="ac-meta">
+    <span class="tag">Photoshop</span>
+    <span class="ac-date">2026/01/03</span>
+  </div>
+</a>
+<a href="縦書き - レイアウト.html" class="article-card" data-cats="縦書き">
+  <div class="ac-title">縦書き - レイアウト</div>
+  <div class="ac-meta">
+    <span class="tag">縦書き</span>
+    <span class="ac-date">2026/01/02</span>
+  </div>
+</a>
+<a href="縦書き - 小倉百人一首.html" class="article-card" data-cats="縦書き">
+  <div class="ac-title">縦書き - 小倉百人一首</div>
+  <div class="ac-meta">
+    <span class="tag">縦書き</span>
+    <span class="ac-date">2026/01/01</span>
+  </div>
+</a>
+<a href="課題サイト - フォルダー構成.html" class="article-card" data-cats="課題サイト">
+  <div class="ac-title">課題サイト - フォルダー構成</div>
+  <div class="ac-meta">
+    <span class="tag">課題サイト</span>
+    <span class="ac-date">2025/12/31</span>
+  </div>
+</a>
+<a href="WordPress - プラグイン.html" class="article-card" data-cats="WordPress">
+  <div class="ac-title">WordPress - プラグイン</div>
+  <div class="ac-meta">
+    <span class="tag">WordPress</span>
+    <span class="ac-date">2025/12/05</span>
+  </div>
+</a>
+<a href="WordPress - 初期設定.html" class="article-card" data-cats="WordPress">
+  <div class="ac-title">WordPress - 初期設定</div>
+  <div class="ac-meta">
+    <span class="tag">WordPress</span>
+    <span class="ac-date">2025/12/04</span>
+  </div>
+</a>
+<a href="WordPress - ファイル構成.html" class="article-card" data-cats="WordPress">
+  <div class="ac-title">WordPress - ファイル構成</div>
+  <div class="ac-meta">
+    <span class="tag">WordPress</span>
+    <span class="ac-date">2025/12/03</span>
+  </div>
+</a>
+<a href="WordPress - サイトを表示.html" class="article-card" data-cats="WordPress">
+  <div class="ac-title">WordPress - サイトを表示</div>
+  <div class="ac-meta">
+    <span class="tag">WordPress</span>
+    <span class="ac-date">2025/12/02</span>
+  </div>
+</a>
+<a href="WordPressサイト制作の準備.html" class="article-card" data-cats="WordPress">
+  <div class="ac-title">WordPressサイト制作の準備</div>
+  <div class="ac-meta">
+    <span class="tag">WordPress</span>
+    <span class="ac-date">2025/12/01</span>
+  </div>
+</a>
+<a href="MAMPにWordPressを設置.html" class="article-card" data-cats="WordPress">
+  <div class="ac-title">MAMPにWordPressを設置</div>
+  <div class="ac-meta">
+    <span class="tag">WordPress</span>
+    <span class="ac-date">2025/11/30</span>
+  </div>
+</a>
+<a href="MAMP.html" class="article-card" data-cats="PHP">
+  <div class="ac-title">MAMP</div>
+  <div class="ac-meta">
+    <span class="tag">PHP</span>
+    <span class="ac-date">2025/11/29</span>
+  </div>
+</a>
+<a href="CMS以外のサイトを上位表示.html" class="article-card" data-cats="解析">
+  <div class="ac-title">CMS以外のサイトを上位表示</div>
+  <div class="ac-meta">
+    <span class="tag">解析</span>
+    <span class="ac-date">2025/11/28</span>
+  </div>
+</a>
+<a href="グラデーションを使ったデザイン.html" class="article-card" data-cats="課題サイト">
+  <div class="ac-title">グラデーションを使ったデザイン</div>
+  <div class="ac-meta">
+    <span class="tag">課題サイト</span>
+    <span class="ac-date">2025/11/27</span>
+  </div>
+</a>
+<a href="透明とグラデーション.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">透明とグラデーション</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/11/26</span>
+  </div>
+</a>
+<a href="SVG ARTISTA.html" class="article-card" data-cats="アニメーション">
+  <div class="ac-title">SVG ARTISTA</div>
+  <div class="ac-meta">
+    <span class="tag">アニメーション</span>
+    <span class="ac-date">2025/11/25</span>
+  </div>
+</a>
+<a href="Vivus Instant.html" class="article-card" data-cats="アニメーション">
+  <div class="ac-title">Vivus Instant</div>
+  <div class="ac-meta">
+    <span class="tag">アニメーション</span>
+    <span class="ac-date">2025/11/24</span>
+  </div>
+</a>
+<a href="サイン - GIFアニメ.html" class="article-card" data-cats="アニメーション">
+  <div class="ac-title">サイン - GIFアニメ</div>
+  <div class="ac-meta">
+    <span class="tag">アニメーション</span>
+    <span class="ac-date">2025/11/23</span>
+  </div>
+</a>
+<a href="Animation Tools.html" class="article-card" data-cats="アニメーション">
+  <div class="ac-title">Animation Tools</div>
+  <div class="ac-meta">
+    <span class="tag">アニメーション</span>
+    <span class="ac-date">2025/11/22</span>
+  </div>
+</a>
+<a href="Girly Style（ヒーローヘッダー）.html" class="article-card" data-cats="レスポンシブ実践">
+  <div class="ac-title">Girly Style（ヒーローヘッダー）</div>
+  <div class="ac-meta">
+    <span class="tag">レスポンシブ実践</span>
+    <span class="ac-date">2025/11/21</span>
+  </div>
+</a>
+<a href="タコス・レシピ.html" class="article-card" data-cats="課題サイト">
+  <div class="ac-title">タコス・レシピ</div>
+  <div class="ac-meta">
+    <span class="tag">課題サイト</span>
+    <span class="ac-date">2025/11/20</span>
+  </div>
+</a>
+<a href="Recipe Diary.html" class="article-card" data-cats="レスポンシブ実践">
+  <div class="ac-title">Recipe Diary</div>
+  <div class="ac-meta">
+    <span class="tag">レスポンシブ実践</span>
+    <span class="ac-date">2025/11/19</span>
+  </div>
+</a>
+<a href="１カラムレイアウト.html" class="article-card" data-cats="レスポンシブ実践">
+  <div class="ac-title">１カラムレイアウト</div>
+  <div class="ac-meta">
+    <span class="tag">レスポンシブ実践</span>
+    <span class="ac-date">2025/11/18</span>
+  </div>
+</a>
+<a href="HTMLコーディングルール.html" class="article-card" data-cats="コーディングルール">
+  <div class="ac-title">HTMLコーディングルール</div>
+  <div class="ac-meta">
+    <span class="tag">コーディングルール</span>
+    <span class="ac-date">2025/11/17</span>
+  </div>
+</a>
+<a href="レスポンシブ対応のモックアップ作成.html" class="article-card" data-cats="課題サイト">
+  <div class="ac-title">レスポンシブ対応のモックアップ作成</div>
+  <div class="ac-meta">
+    <span class="tag">課題サイト</span>
+    <span class="ac-date">2025/11/16</span>
+  </div>
+</a>
+<a href="レスポンシブWebデザインのための画面サイズ.html" class="article-card" data-cats="">
+  <div class="ac-title">レスポンシブWebデザインのための画面サイズ</div>
+  <div class="ac-meta">
+    
+    <span class="ac-date">2025/11/15</span>
+  </div>
+</a>
+<a href="レスポンシブWebデザイン.html" class="article-card" data-cats="レスポンシブ">
+  <div class="ac-title">レスポンシブWebデザイン</div>
+  <div class="ac-meta">
+    <span class="tag">レスポンシブ</span>
+    <span class="ac-date">2025/11/14</span>
+  </div>
+</a>
+<a href="擬似要素：before _ after.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">擬似要素：before / after</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/11/13</span>
+  </div>
+</a>
+<a href="AOS.js - 実践.html" class="article-card" data-cats="JavaScript">
+  <div class="ac-title">AOS.js - 実践</div>
+  <div class="ac-meta">
+    <span class="tag">JavaScript</span>
+    <span class="ac-date">2025/11/12</span>
+  </div>
+</a>
+<a href="AOS.js.html" class="article-card" data-cats="JavaScript">
+  <div class="ac-title">AOS.js</div>
+  <div class="ac-meta">
+    <span class="tag">JavaScript</span>
+    <span class="ac-date">2025/11/11</span>
+  </div>
+</a>
+<a href="課題サイト（main部）.html" class="article-card" data-cats="課題サイト">
+  <div class="ac-title">課題サイト（main部）</div>
+  <div class="ac-meta">
+    <span class="tag">課題サイト</span>
+    <span class="ac-date">2025/11/10</span>
+  </div>
+</a>
+<a href="課題サイト - header部.html" class="article-card" data-cats="課題サイト">
+  <div class="ac-title">課題サイト - header部</div>
+  <div class="ac-meta">
+    <span class="tag">課題サイト</span>
+    <span class="ac-date">2025/11/09</span>
+  </div>
+</a>
+<a href="中心から外に線が伸びる（下部）.html" class="article-card" data-cats="アニメーション">
+  <div class="ac-title">中心から外に線が伸びる（下部）</div>
+  <div class="ac-meta">
+    <span class="tag">アニメーション</span>
+    <span class="ac-date">2025/11/08</span>
+  </div>
+</a>
+<a href="Transform［トランスフォームアニメーション］.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">Transform［トランスフォームアニメーション］</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/11/07</span>
+  </div>
+</a>
+<a href="相対位置を指定する position_ relative;.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">相対位置を指定する position: relative;</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/11/05</span>
+  </div>
+</a>
+<a href="要素の絶対位置を指定する position_ absolute;.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">要素の絶対位置を指定する position: absolute;</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/11/04</span>
+  </div>
+</a>
+<a href="タブパネル.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">タブパネル</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/11/03</span>
+  </div>
+</a>
+<a href="lightgallery.js（モーダルウィンドウ）.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">lightgallery.js（モーダルウィンドウ）</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/11/02</span>
+  </div>
+</a>
+<a href="カルーセルスライダー.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">カルーセルスライダー</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/11/01</span>
+  </div>
+</a>
+<a href="カルーセルスライダー.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">カルーセルスライダー</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/31</span>
+  </div>
+</a>
+<a href="slick（Carousel）.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">slick（Carousel）</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/30</span>
+  </div>
+</a>
+<a href="slick.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">slick</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/29</span>
+  </div>
+</a>
+<a href="bxSlider（Carousel）.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">bxSlider（Carousel）</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/28</span>
+  </div>
+</a>
+<a href="bxSlider（幅100%表示）.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">bxSlider（幅100%表示）</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/27</span>
+  </div>
+</a>
+<a href="スライダー - bxSlider.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">スライダー - bxSlider</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/26</span>
+  </div>
+</a>
+<a href="スライダー - bxslider（CDN）.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">スライダー - bxslider（CDN）</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/25</span>
+  </div>
+</a>
+<a href="Lightbox2（モーダルウィンドウ）.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">Lightbox2（モーダルウィンドウ）</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/24</span>
+  </div>
+</a>
+<a href="画像置換.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">画像置換</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/23</span>
+  </div>
+</a>
+<a href="CTAを数秒後に表示.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">CTAを数秒後に表示</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/22</span>
+  </div>
+</a>
+<a href="アコーディオンパネル.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">アコーディオンパネル</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/21</span>
+  </div>
+</a>
+<a href="thisキーワード.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">thisキーワード</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/20</span>
+  </div>
+</a>
+<a href="イベント.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">イベント</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/19</span>
+  </div>
+</a>
+<a href="実践的なメソッド.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">実践的なメソッド</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/18</span>
+  </div>
+</a>
+<a href="HTML_CSSを操作.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">HTML/CSSを操作</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/17</span>
+  </div>
+</a>
+<a href="jQueryとは.html" class="article-card" data-cats="jQuery">
+  <div class="ac-title">jQueryとは</div>
+  <div class="ac-meta">
+    <span class="tag">jQuery</span>
+    <span class="ac-date">2025/10/16</span>
+  </div>
+</a>
+<a href="選択オブジェクトのみを書き出し.html" class="article-card" data-cats="Illustrator">
+  <div class="ac-title">選択オブジェクトのみを書き出し</div>
+  <div class="ac-meta">
+    <span class="tag">Illustrator</span>
+    <span class="ac-date">2025/10/15</span>
+  </div>
+</a>
+<a href="JavaScriptまとめ.html" class="article-card" data-cats="JavaScript">
+  <div class="ac-title">JavaScriptまとめ</div>
+  <div class="ac-meta">
+    <span class="tag">JavaScript</span>
+    <span class="ac-date">2025/10/14</span>
+  </div>
+</a>
+<a href="Webページを表示する仕組み.html" class="article-card" data-cats="Webリテラシー">
+  <div class="ac-title">Webページを表示する仕組み</div>
+  <div class="ac-meta">
+    <span class="tag">Webリテラシー</span>
+    <span class="ac-date">2025/10/13</span>
+  </div>
+</a>
+<a href="Flexboxでナビゲーション.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">Flexboxでナビゲーション</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/10/11</span>
+  </div>
+</a>
+<a href="Flexboxで横並び.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">Flexboxで横並び</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/10/10</span>
+  </div>
+</a>
+<a href="Flexbox Froggy - Lv. 1〜24.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">Flexbox Froggy - Lv. 1〜24</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/10/09</span>
+  </div>
+</a>
+<a href="flexboxで横並び.html" class="article-card" data-cats="コーディング">
+  <div class="ac-title">flexboxで横並び</div>
+  <div class="ac-meta">
+    <span class="tag">コーディング</span>
+    <span class="ac-date">2025/10/08</span>
+  </div>
+</a>
+<a href="背景画像.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">背景画像</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/10/07</span>
+  </div>
+</a>
+<a href="ワンカラムレイアウト（1）.html" class="article-card" data-cats="実践演習">
+  <div class="ac-title">ワンカラムレイアウト（1）</div>
+  <div class="ac-meta">
+    <span class="tag">実践演習</span>
+    <span class="ac-date">2025/10/06</span>
+  </div>
+</a>
+<a href="border - 枠線.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">border - 枠線</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/10/05</span>
+  </div>
+</a>
+<a href="text-align - 行揃え.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">text-align - 行揃え</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/10/04</span>
+  </div>
+</a>
+<a href="ページ全体の文字指定（初期値作成）.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">ページ全体の文字指定（初期値作成）</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/10/03</span>
+  </div>
+</a>
+<a href="リセットCSSの記述.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">リセットCSSの記述</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/10/02</span>
+  </div>
+</a>
+<a href="CSSとは.html" class="article-card" data-cats="CSS">
+  <div class="ac-title">CSSとは</div>
+  <div class="ac-meta">
+    <span class="tag">CSS</span>
+    <span class="ac-date">2025/10/01</span>
+  </div>
+</a>
+<a href="コンテンツを区切る・レイアウト.html" class="article-card" data-cats="HTML">
+  <div class="ac-title">コンテンツを区切る・レイアウト</div>
+  <div class="ac-meta">
+    <span class="tag">HTML</span>
+    <span class="ac-date">2025/09/30</span>
+  </div>
+</a>
+<a href="コメントの書き方.html" class="article-card" data-cats="HTML">
+  <div class="ac-title">コメントの書き方</div>
+  <div class="ac-meta">
+    <span class="tag">HTML</span>
+    <span class="ac-date">2025/09/29</span>
+  </div>
+</a>
+<a href="画像挿入、リンク.html" class="article-card" data-cats="HTML">
+  <div class="ac-title">画像挿入、リンク</div>
+  <div class="ac-meta">
+    <span class="tag">HTML</span>
+    <span class="ac-date">2025/09/28</span>
+  </div>
+</a>
+<a href="見出し・段落・リスト・表.html" class="article-card" data-cats="HTML">
+  <div class="ac-title">見出し・段落・リスト・表</div>
+  <div class="ac-meta">
+    <span class="tag">HTML</span>
+    <span class="ac-date">2025/09/27</span>
+  </div>
+</a>
+<a href="HTML - プレビュー.html" class="article-card" data-cats="HTML">
+  <div class="ac-title">HTML - プレビュー</div>
+  <div class="ac-meta">
+    <span class="tag">HTML</span>
+    <span class="ac-date">2025/09/26</span>
+  </div>
+</a>
+<a href="Emmetの基本的な使い方.html" class="article-card" data-cats="VSCode">
+  <div class="ac-title">Emmetの基本的な使い方</div>
+  <div class="ac-meta">
+    <span class="tag">VSCode</span>
+    <span class="ac-date">2025/09/25</span>
+  </div>
+</a>
+<a href="HTML入力の効率化.html" class="article-card" data-cats="HTML">
+  <div class="ac-title">HTML入力の効率化</div>
+  <div class="ac-meta">
+    <span class="tag">HTML</span>
+    <span class="ac-date">2025/09/24</span>
+  </div>
+</a>
+<a href="初めてのHTML.html" class="article-card" data-cats="HTML">
+  <div class="ac-title">初めてのHTML</div>
+  <div class="ac-meta">
+    <span class="tag">HTML</span>
+    <span class="ac-date">2025/09/23</span>
+  </div>
+</a>
+<a href="HTMLとは.html" class="article-card" data-cats="HTML">
+  <div class="ac-title">HTMLとは</div>
+  <div class="ac-meta">
+    <span class="tag">HTML</span>
+    <span class="ac-date">2025/09/22</span>
+  </div>
+</a>
+<a href="コーディングを学ぶべき.html" class="article-card" data-cats="Webリテラシー">
+  <div class="ac-title">コーディングを学ぶべき</div>
+  <div class="ac-meta">
+    <span class="tag">Webリテラシー</span>
+    <span class="ac-date">2025/09/21</span>
+  </div>
+</a>
+<a href="VS Code - 拡張機能.html" class="article-card" data-cats="VSCode">
+  <div class="ac-title">VS Code - 拡張機能</div>
+  <div class="ac-meta">
+    <span class="tag">VSCode</span>
+    <span class="ac-date">2025/09/20</span>
+  </div>
+</a>
+<a href="VS Code - 初期設定.html" class="article-card" data-cats="VSCode">
+  <div class="ac-title">VS Code - 初期設定</div>
+  <div class="ac-meta">
+    <span class="tag">VSCode</span>
+    <span class="ac-date">2025/09/19</span>
+  </div>
+</a>
+<a href="Visual Studio Code インストール.html" class="article-card" data-cats="VSCode">
+  <div class="ac-title">Visual Studio Code インストール</div>
+  <div class="ac-meta">
+    <span class="tag">VSCode</span>
+    <span class="ac-date">2025/09/18</span>
+  </div>
+</a>
+<a href="Codedrill.html" class="article-card" data-cats="入力">
+  <div class="ac-title">Codedrill</div>
+  <div class="ac-meta">
+    <span class="tag">入力</span>
+    <span class="ac-date">2025/09/17</span>
+  </div>
+</a>
+<a href="パソコンを使う.html" class="article-card" data-cats="Webリテラシー">
+  <div class="ac-title">パソコンを使う</div>
+  <div class="ac-meta">
+    <span class="tag">Webリテラシー</span>
+    <span class="ac-date">2025/09/16</span>
+  </div>
+</a>
+<a href="コンピューターとは.html" class="article-card" data-cats="Webリテラシー">
+  <div class="ac-title">コンピューターとは</div>
+  <div class="ac-meta">
+    <span class="tag">Webリテラシー</span>
+    <span class="ac-date">2025/09/15</span>
+  </div>
+</a></div>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+<script>
+
+// Category filter for blog index pages
+document.addEventListener('DOMContentLoaded', function() {
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.article-card');
+  let active = 'all';
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      active = this.dataset.cat;
+      btns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      let visible = 0;
+      cards.forEach(card => {
+        const cats = card.dataset.cats ? card.dataset.cats.split(',') : [];
+        const show = active === 'all' || cats.includes(active);
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      const counter = document.getElementById('article-count');
+      if (counter) counter.textContent = visible;
+    });
+  });
+});
+
+</script>
+</body>
+</html>

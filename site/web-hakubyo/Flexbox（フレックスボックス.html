@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox（フレックスボックス - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>Flexbox（フレックスボックス</span>
+  </div>
+  <div class="article-head">
+    <h1>Flexbox（フレックスボックス</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/16</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="Flexboxフレックスボックス">Flexbox（フレックスボックス</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260312122850.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSのFlexboxについて詳しく解説して</p>
+
+    </blockquote>
+
+<ul>
+<li>CSSの Flexbox（フレックスボックス） は、要素を横並びや縦並びに柔軟に配置するためのレイアウト方法です。</li>
+<li>特に ナビゲーション・カードレイアウト・中央配置 などでよく使われます。</li>
+</ul>
+<div class="section">
+    <h5 id="Flexboxとは">Flexboxとは</h5>
+    <p>Flexboxは 親要素に display:flex を指定すると子要素の並び方を制御できるレイアウトです。</p><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>BOX1<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>BOX2<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>BOX3<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="結果">結果</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">BOX1  BOX2  BOX3</pre>
+<ul>
+<li>通常のHTMLは <strong>縦に並びます</strong>が、Flexboxを使うと <strong>横並びになります</strong>。</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="Flexboxの重要な概念">Flexboxの重要な概念</h5>
+    <p>Flexboxには2つの役割があります。</p>
+
+<table>
+    <tbody><tr>
+    <th>名前</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> Flex Container </td>
+    <td> 親要素 </td>
+    </tr>
+    <tr>
+    <td> Flex Item      </td>
+    <td> 子要素 </td>
+    </tr>
+</tbody></table><p>【例】</p>
+<pre class="code" data-lang="" data-unlink="">container（親）
+ ├ item
+ ├ item
+ └ item</pre>
+</div>
+<div class="section">
+    <h5 id="並ぶ方向flex-direction">並ぶ方向（flex-direction）</h5>
+    <p>要素の並ぶ方向を決めます。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ <span class="synType">flex-direction</span>: <span class="synConstant">row</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> row            </td>
+    <td> 横並び（左→右） </td>
+    </tr>
+    <tr>
+    <td> row-reverse    </td>
+    <td> 横並び（右→左） </td>
+    </tr>
+    <tr>
+    <td> column         </td>
+    <td> 縦並び      </td>
+    </tr>
+    <tr>
+    <td> column-reverse </td>
+    <td> 縦逆       </td>
+    </tr>
+</tbody></table><p>【例】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ <span class="synType">flex-direction</span>: <span class="synConstant">column</span>;
+<span class="synIdentifier">}</span>
+</pre><p>【例】</p>
+<pre class="code" data-lang="" data-unlink="">BOX1
+BOX2
+BOX3</pre>
+</div>
+<div class="section">
+    <h5 id="横方向の位置justify-content">横方向の位置（justify-content）</h5>
+    <p>横方向の配置を決めます。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> flex-start    </td>
+    <td> 左寄せ    </td>
+    </tr>
+    <tr>
+    <td> center        </td>
+    <td> 中央     </td>
+    </tr>
+    <tr>
+    <td> flex-end      </td>
+    <td> 右寄せ    </td>
+    </tr>
+    <tr>
+    <td> space-between </td>
+    <td> 均等配置   </td>
+    </tr>
+    <tr>
+    <td> space-around  </td>
+    <td> 余白付き均等 </td>
+    </tr>
+    <tr>
+    <td> space-evenly  </td>
+    <td> 完全均等   </td>
+    </tr>
+</tbody></table><p>【例】</p>
+<pre class="code" data-lang="" data-unlink="">space-between</pre><pre class="code" data-lang="" data-unlink="">BOX1      BOX2      BOX3</pre>
+</div>
+<div class="section">
+    <h5 id="縦方向の位置align-items">縦方向の位置（align-items）</h5>
+    <p>縦方向の位置を調整します。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+ <span class="synType">height</span>: <span class="synConstant">300px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> flex-start </td>
+    <td> 上      </td>
+    </tr>
+    <tr>
+    <td> center     </td>
+    <td> 中央     </td>
+    </tr>
+    <tr>
+    <td> flex-end   </td>
+    <td> 下      </td>
+    </tr>
+    <tr>
+    <td> stretch    </td>
+    <td> 高さを伸ばす </td>
+    </tr>
+</tbody></table><p>【例】</p>
+<pre class="code" data-lang="" data-unlink="">    BOX1
+    BOX2
+    BOX3</pre>
+</div>
+<div class="section">
+    <h5 id="要素を折り返すflex-wrap">要素を折り返す（flex-wrap）</h5>
+    <p>横並びが多くなったとき改行します。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ <span class="synType">flex-wrap</span>: <span class="synConstant">wrap</span>;
+<span class="synIdentifier">}</span>
+</pre><p>【結果】</p>
+<pre class="code" data-lang="" data-unlink="">BOX1 BOX2 BOX3
+BOX4 BOX5 BOX6</pre>
+</div>
+<div class="section">
+    <h5 id="Flexアイテムの幅flex">Flexアイテムの幅（flex）</h5>
+    <p>子要素のサイズを調整できます。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.item</span> <span class="synIdentifier">{</span>
+ <span class="synType">flex</span>: <span class="synConstant">1</span>;
+<span class="synIdentifier">}</span>
+</pre><p>【例】</p>
+<pre class="code" data-lang="" data-unlink="">| BOX1 | BOX2 | BOX3 |</pre><p>すべて同じ幅になります。</p>
+
+</div>
+<div class="section">
+    <h5 id="よく使うFlexboxパターン">よく使うFlexboxパターン</h5>
+    <p></p><h6 id="ナビゲーション横並び">ナビゲーション横並び</h6>【CSS】<p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">nav</span> <span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ gap: <span class="synConstant">20px</span>;
+ <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+</pre><p>【HTML】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>Home<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>About<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>Blog<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>Contact<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="カード横並び">カード横並び</h6>【CSS】<p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.cards</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ gap: <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>【HTML】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"cards"</span><span class="synIdentifier">&gt;</span>
+   <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"card"</span><span class="synIdentifier">&gt;</span>Card<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+   <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"card"</span><span class="synIdentifier">&gt;</span>Card<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+   <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"card"</span><span class="synIdentifier">&gt;</span>Card<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="完全中央配置超重要">完全中央配置（超重要）</h6>【CSS】<p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+ <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+ <span class="synType">height</span>: <span class="synConstant">100vh</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexboxを理解するコツ">Flexboxを理解するコツ</h5>
+    <p>覚える順番はこの5つです。</p><p>① display:flex<br>
+② justify-content（横方向）<br>
+③ align-items（縦方向）<br>
+④ flex-direction（並ぶ方向）<br>
+⑤ flex-wrap（折り返し）</p><p>この5つで 90%のレイアウトが作れます。</p>
+
+</div>
+<div class="section">
+    <h5 id="FlexboxとGridの違い">FlexboxとGridの違い</h5>
+    
+<table>
+    <tbody><tr>
+    <th>Flexbox</th>
+    <th>Grid</th>
+    </tr>
+    <tr>
+    <td> 1方向レイアウト </td>
+    <td> 2次元レイアウト   </td>
+    </tr>
+    <tr>
+    <td> 横 or 縦   </td>
+    <td> 行＋列        </td>
+    </tr>
+    <tr>
+    <td> ナビ・UI向き  </td>
+    <td> ページレイアウト向き </td>
+    </tr>
+</tbody></table><p>【例】</p>
+
+<ul>
+<li>Flexbox（横並び）</li>
+<li>Grid（表のようなレイアウト）</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ヒーローヘッダー（フルスクリーン）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ヒーローヘッダー（フルスクリーン）</span></a><a href="横並びのナビゲーション.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">横並びのナビゲーション</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

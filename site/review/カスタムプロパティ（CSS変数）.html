@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カスタムプロパティ（CSS変数） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>カスタムプロパティ（CSS変数）</span>
+  </div>
+  <div class="article-head">
+    <h1>カスタムプロパティ（CSS変数）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">レスポンシブ</span>
+      <span class="date">2026/01/12</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="カスタムプロパティCSS変数">カスタムプロパティ（CSS変数）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241103160103.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>CSS custom properties for cascading variables</li>
+<li>CSSカスタムプロパティ（CSS変数）とも呼ばれています</li>
+</ul><p>※バナー詳細ページの「header」「footer」の色指定変更は、この変数の値を変更するだけで可能</p><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/p/pbhfq/20221205/20221205004133.png" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="カスタムプロパティを定義する">カスタムプロパティを定義する</h5>
+    <p></p><h6 id="利用できる範囲を設定">利用できる範囲を設定</h6><p></p>
+
+<ul>
+<li>html全ての文書で適応したいことの方が多いので「:root」の擬似クラスで定義します</li>
+</ul><p></p><h6 class="none"><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">:<span class="synPreProc">root</span><span class="synIdentifier">{</span>
+  <span class="synComment">/*  この中に変数を定義  */</span>
+<span class="synIdentifier">}</span>
+</pre><p></p></h6><h6 id="変数名を決める">変数名を決める</h6><p></p>
+
+<ul>
+<li>変数名は「--」ハイフンを2つ使って定義します</li>
+</ul><p></p><h6 class="none"><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* 基本色 */</span>
+:<span class="synPreProc">root</span> <span class="synIdentifier">{</span>
+  <span class="synSpecial">--main-color</span>: <span class="synConstant">#5D9AB2</span>;
+  <span class="synSpecial">--accent-color</span>: <span class="synConstant">#BF6A7A</span>;
+  <span class="synSpecial">--dark-main-color</span>: <span class="synConstant">#2B5566</span>;
+  <span class="synSpecial">--text-bright-color</span>: <span class="synConstant">#fff</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p></h6><p></p>
+
+</div>
+<div class="section">
+    <h5 id="カスタムプロパティを呼び出す">カスタムプロパティを呼び出す</h5>
+    
+<ul>
+<li>呼び出したい箇所で「var(変数名)」を使って呼び出すことができます</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>CSS変数（カスタムプロパティ）<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>1<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>2<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>3<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+:<span class="synPreProc">root</span> <span class="synIdentifier">{</span>
+  <span class="synSpecial">--main-color</span>: <span class="synConstant">#93edff</span>;
+  <span class="synSpecial">--accent-color</span>: <span class="synConstant">#f0cb50</span>;
+  <span class="synSpecial">--dark-main-color</span>: <span class="synConstant">#1abdc2</span>;
+  <span class="synSpecial">--text-bright-color</span>: <span class="synConstant">#fff</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+  <span class="synType">width</span>: <span class="synConstant">400px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  place-items: <span class="synConstant">center</span>;
+  <span class="synType">height</span>: <span class="synConstant">100px</span>;
+  <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+  <span class="synType">background-color</span>: <span class="synIdentifier">var(</span><span class="synSpecial">--main-color</span><span class="synIdentifier">)</span>; 
+  <span class="synType">color</span>: <span class="synIdentifier">var(</span><span class="synSpecial">--text-bright-color</span><span class="synIdentifier">)</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">2em</span>;
+  <span class="synType">font-weight</span>: <span class="synConstant">bold</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span>:<span class="synIdentifier">nth-child(</span>1<span class="synIdentifier">)</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synIdentifier">var(</span><span class="synSpecial">--accent-color</span><span class="synIdentifier">)</span>; 
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span>:<span class="synIdentifier">nth-child(</span>2<span class="synIdentifier">)</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synIdentifier">var(</span><span class="synSpecial">--dark-main-color</span><span class="synIdentifier">)</span>; 
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241103160223.jpg" width="400" height="314" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="calcと組み合わせる">calc()と組み合わせる</h5>
+    
+<ul>
+<li>「var()」の後には単位を設定できない</li>
+<li>「calc()」の中で「1pxをかける」処理を行うと、計算結果の最後に単位をつけることができます</li>
+<li>「%」の単位を付与したいときは「1%をかける」処理を行ないます</li>
+</ul><p></p><h6 class="none"><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.sample</span> <span class="synIdentifier">{</span>
+  <span class="synSpecial">--sample-size</span>: <span class="synConstant">24</span>;
+  <span class="synType">font-size</span>: <span class="synIdentifier">calc(var(</span><span class="synSpecial">--sample-size</span><span class="synIdentifier">)</span><span class="synConstant"> * 1px</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p></h6><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="Google Search Console（GSC）を設定.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">Google Search Console（GSC）を設定</span></a><a href="色彩計画とレイアウト.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">色彩計画とレイアウト</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

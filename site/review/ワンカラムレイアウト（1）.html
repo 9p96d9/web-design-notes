@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ワンカラムレイアウト（1） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>ワンカラムレイアウト（1）</span>
+  </div>
+  <div class="article-head">
+    <h1>ワンカラムレイアウト（1）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">実践演習</span>
+      <span class="date">2025/10/06</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="はじめてのワンカラムレイアウト">はじめてのワンカラムレイアウト</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20251013225957.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20251017161628.jpg" width="500" height="754" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20251017161710.jpg" width="300" height="608" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="テキスト">テキスト</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink="">ワンカラムレイアウト
+
+セクション1：はじめに
+ここは最初のセクションです。ワンカラムレイアウトは、シンプルで読みやすく、モバイルデバイスにも最適なデザインです。コンテンツが縦に並ぶため、ユーザーは自然な流れで情報を読み進めることができます。
+
+セクション2：特徴
+ワンカラムレイアウトの主な特徴は、そのシンプルさと明確さです。訪問者の注意を散らすことなく、重要な情報に集中させることができます。レスポンシブデザインとの相性も抜群で、あらゆるデバイスで美しく表示されます。
+
+セクション3：まとめ
+このレイアウトは、ブログ、ポートフォリオ、ランディングページなど、様々な用途に適しています。視覚的な階層を保ちながら、必要な情報を効果的に伝えることができる優れたデザインパターンです。
+
+© 2025 ワンカラムレイアウト
+</pre>
+</div>
+<div class="section">
+    <h5 id="記述ポイント">記述ポイント</h5>
+    
+<ul>
+<li>この段階では、id名・class名を指定しないで進めます</li>
+<li>指定する項目は、
+<ul>
+<li>文書構造（header、main、footer）</li>
+<li>文字要素の空間（margin、padding）</li>
+<li>背景色</li>
+<li>文字色</li>
+<li>文字サイズ</li>
+<li>行揃え</li>
+<li>line-height</li>
+<li>枠線</li>
+<li>影</li>
+</ul></li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="indexhtml">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ワンカラムレイアウト<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>ワンカラムレイアウト<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>セクション1：はじめに<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ここは最初のセクションです。ワンカラムレイアウトは、シンプルで読みやすく、モバイルデバイスにも最適なデザインです。コンテンツが縦に並ぶため、ユーザーは自然な流れで情報を読み進めることができます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>セクション2：特徴<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ワンカラムレイアウトの主な特徴は、そのシンプルさと明確さです。訪問者の注意を散らすことなく、重要な情報に集中させることができます。レスポンシブデザインとの相性も抜群で、あらゆるデバイスで美しく表示されます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>セクション3：まとめ<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>このレイアウトは、ブログ、ポートフォリオ、ランディングページなど、様々な用途に適しています。視覚的な階層を保ちながら、必要な情報を効果的に伝えることができる優れたデザインパターンです。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">small</span><span class="synIdentifier">&gt;</span><span class="synSpecial">&amp;copy;</span> 2025 ワンカラムレイアウト<span class="synIdentifier">&lt;/</span><span class="synStatement">small</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="stylecss">style.<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a></h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* ---------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">--------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ---------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">--------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ---------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">--------------------------------- */</span>
+<span class="synStatement">header</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">36px</span> <span class="synConstant">0</span> <span class="synConstant">30px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#667eea</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">header</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">32px</span>;
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ---------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">--------------------------------- */</span>
+<span class="synStatement">main</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">760px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">60px</span> <span class="synConstant">32px</span> <span class="synConstant">24px</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">section</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">50px</span>;
+    <span class="synType">padding</span>: <span class="synConstant">32px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">border-radius</span>: <span class="synConstant">10px</span>;
+    <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">3px</span> <span class="synConstant">#a8a8a8</span>;  <span class="synComment">/* X:0, Y:0, ぼかし:3px */</span>
+  <span class="synIdentifier">}</span>
+    <span class="synStatement">section</span> <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+      <span class="synType">margin-bottom</span>: <span class="synConstant">16px</span>;
+      <span class="synType">padding-bottom</span>: <span class="synConstant">8px</span>;  <span class="synComment">/* 文字と下線との隙間を設定 */</span>
+      <span class="synType">border-bottom</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#667eea</span>;
+      <span class="synType">color</span>: <span class="synConstant">#667eea</span>;
+      <span class="synType">font-size</span>: <span class="synConstant">26px</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synStatement">section</span> <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+      <span class="synType">color</span>: <span class="synConstant">#555</span>;
+      <span class="synType">line-height</span>: <span class="synConstant">1.7</span>;
+      <span class="synType">text-align</span>: <span class="synConstant">justify</span>;
+    <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ---------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">--------------------------------- */</span>
+<span class="synStatement">footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">30px</span> <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#2c3e50</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="border - 枠線.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">border - 枠線</span></a><a href="背景画像.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">背景画像</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

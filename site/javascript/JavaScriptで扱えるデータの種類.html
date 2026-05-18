@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScriptで扱えるデータの種類 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>JavaScriptで扱えるデータの種類</span>
+  </div>
+  <div class="article-head">
+    <h1>JavaScriptで扱えるデータの種類</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">データ型</span>
+      <span class="date">2025/10/08</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="JavaScriptで扱えるデータの種類"><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>で扱えるデータの種類</h4>
+    
+<ul>
+<li>変数の型</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029234243.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="データ型">データ型</h4>
+    
+<ol>
+<li>primitive型（基本型）</li>
+<li>object型（参照型）</li>
+</ol>
+<div class="section">
+    <h5 id="primitive型基本型">primitive型（基本型）</h5>
+    
+<ul>
+<li><strong>文字列（String）</strong></li>
+<li><strong>数値（Number）</strong></li>
+<li><strong>真偽値（Boolean）</strong></li>
+<li><strong>undefined</strong></li>
+<li><strong>null</strong></li>
+</ul><p></p><table>
+<tbody><tr><th>項目</th><th>項目の意味</th><th>説明</th></tr>
+<tr><td>number</td><td>数値</td><td>整数、少数、正負などの数値を扱う</td></tr>
+<tr><td>string</td><td>文字列</td><td>ダブルクォート、もしくはシングルクォートで囲まれた値</td></tr>
+<tr><td>Boolean</td><td>論理値</td><td>真偽値ともいわれ、真=true、偽=falseの値を扱う</td></tr>
+<tr><td>Symbol</td><td>シンボル型</td><td>最近登場した新しいデータ型の一つで、普遍の値として扱う</td></tr>
+<tr><td>null</td><td>空</td><td>空の値を扱う</td></tr>
+<tr><td>undefined</td><td>未定義</td><td>まだ、値が代入されていないもの</td></tr>
+</tbody></table><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="object型参照型">object型（参照型）</h5>
+    
+<ul>
+<li><strong>オブジェクト（Object）</strong></li>
+<li><strong>配列（Array）</strong></li>
+<li><strong>関数（Function）</strong></li>
+<li><strong>日付（Date）</strong></li>
+<li><strong><a class="keyword" href="https://d.hatena.ne.jp/keyword/%C0%B5%B5%AC%C9%BD%B8%BD">正規表現</a>（<a class="keyword" href="https://d.hatena.ne.jp/keyword/RegExp">RegExp</a>）</strong></li>
+<li><strong><a class="keyword" href="https://d.hatena.ne.jp/keyword/JSON">JSON</a>オブジェクト</strong></li>
+</ul><p></p><table>
+    <tbody><tr><th>項目</th><th>項目の意味</th><th>説明</th></tr>
+    <tr><td>object</td><td>オブジェクト</td><td>名前と値の集合体</td></tr>
+</tbody></table><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="よく使用するプリミティブ型のデータ５つ">よく使用するプリミティブ型のデータ５つ</h4>
+    
+<div class="section">
+    <h5 id="数値Number">数値（Number）</h5>
+    
+<ul>
+<li>数値（Number）は、計算を行う数値を扱うデータ型となります</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// 数値なので計算できる</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">10</span> <span class="synStatement">+</span> <span class="synConstant">10</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="文字列">文字列</h5>
+    
+<ul>
+<li>文字列（String）は、テキストのデータ型となります</li>
+<li>「シングルクォート」で囲む（HTML属性を記述する場合に、「ダブルクォート」を使用する）</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// 文字列なので計算できない</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'10 + 10'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="真偽値Boolean">真偽値（Boolean）</h5>
+    
+<ul>
+<li>真偽値（Boolean）は、「true」と「false」という２つの値があります</li>
+<li>単体で「false」になるデータ</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">true</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// =&gt; 'true'</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// =&gt; 'false'</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="undefined">undefined</h5>
+    
+<ul>
+<li>undefinedは、未定義という意味を持った値です</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// 変数の中身は何も定義していない</span>
+<span class="synType">let</span> sample<span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>sample<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// =&gt; "undefined"</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="null">null</h5>
+    
+<ul>
+<li>nullは、特別なデータになります。 意図的にオブジェクトの値が存在していないことを表すために用いられます</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// 変数の中身は何も定義していない</span>
+<span class="synType">let</span> sample<span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>sample<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// =&gt; "undefined"</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="データ型を判断する">データ型を判断する</h5>
+    
+<ul>
+<li>console.log()の引数にtypeof<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>を使用することで、データ型を調べることができます</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">//文字列</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span> <span class="synConstant">'テキスト'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// =&gt; 'string'</span>
+
+<span class="synComment">//数値</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span> <span class="synConstant">2022</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// =&gt; 'number'</span>
+
+<span class="synComment">//真偽値</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// =&gt; 'boolean'</span>
+
+<span class="synComment">//undefined</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span> <span class="synConstant">undefined</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// =&gt; 'undefined'</span>
+
+<span class="synComment">//null</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span> <span class="synConstant">null</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// =&gt; 'object'</span>
+
+<span class="synComment">//配列</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span> <span class="synSpecial">[</span><span class="synConstant">'配列'</span><span class="synSpecial">])</span><span class="synStatement">;</span>  <span class="synComment">// =&gt; 'object'</span>
+
+<span class="synComment">//関数</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{})</span><span class="synStatement">;</span>  <span class="synComment">// =&gt; 'function'</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="演算子（operator）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">演算子（operator）</span></a><a href="条件分岐 - if文.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">条件分岐 - if文</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

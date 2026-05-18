@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTMLの記述内容 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>HTMLの記述内容</span>
+  </div>
+  <div class="article-head">
+    <h1>HTMLの記述内容</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2026/01/12</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="HTMLの記述内容">HTMLの記述内容</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260213230346.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLの詳細を解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="-HTMLの基本構造">🧱 HTMLの基本構造</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220816214149.jpg" width="600" height="333" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>&lt;!DOCTYPE html&gt;でHTMLの宣言をする</li>
+<li>htmlタグで「headタグ」と「bodyタグ」を囲む　</li>
+</ul><p></p><h6 id="headタグ内にWebサイトの内部情報を書く">headタグ内にWebサイトの内部情報を書く</h6><p></p>
+
+<ul>
+<li>headタグの中に記述するものは、主にWebサイトの内部情報となります
+<ul>
+<li>文字コードの設定</li>
+<li>レスポンシブ対応（モバイル対応）の設定</li>
+<li>CSSファイルの読み込み</li>
+<li>タイトルの設定</li>
+</ul></li>
+</ul><p></p><h6 id="bodyタグ内にWebサイトの構造を記述する">bodyタグ内にWebサイトの構造を記述する</h6><p></p>
+
+<ul>
+<li>bodyタグの中に記述するものは、主にWebサイトの目に見える部分となります</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ページタイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>こんにちは<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これはHTMLの例です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="各要素の意味">各要素の意味</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>要素</th>
+    <th>説明 </th>
+    </tr>
+    <tr>
+    <td> &lt;!DOCTYPE html&gt;        </td>
+    <td> HTML5で書く宣言       </td>
+    </tr>
+    <tr>
+    <td> &lt;html&gt;                </td>
+    <td> HTML全体           </td>
+    </tr>
+    <tr>
+    <td> &lt;head&gt;                 </td>
+    <td> 設定情報（画面には表示されない） </td>
+    </tr>
+    <tr>
+    <td> &lt;body&gt;                </td>
+    <td> 実際に表示される内容       </td>
+    </tr>
+    <tr>
+    <td> &lt;title&gt;                </td>
+    <td> タブに表示されるタイトル     </td>
+    </tr>
+    <tr>
+    <td> &lt;meta charset="UTF-8"&gt; </td>
+    <td> 文字化け防止（日本語必須）    </td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="DOCTYPE宣言文書型宣言">DOCTYPE宣言（文書型宣言）</h5>
+    
+<ul>
+<li>現在の標準規格HTML5</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="html要素">html要素</h5>
+    
+<ul>
+<li>HTML文書の最上位の要素であり、文書全体を包括する要素となります</li>
+<li>一般的に「lang属性（文書の言語コード）」を記述するのが慣例となっています</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="head要素">head要素</h4>
+    
+<ul>
+<li>ブラウザーが表示のために必要な情報や文書の補足情報を記載します</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="文字コードの指定">文字コードの指定</h5>
+    
+<ul>
+<li>head要素の中で必ず文字コードの指定を行う必要があります</li>
+<li>title要素が文字化けをしないように、title要素の前に記述します</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="title要素">title要素</h5>
+    
+<ul>
+<li>ブラウザーのタブ部分に表示される情報です</li>
+<li>そのページの内容を適切に表す文言を記述します</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ページタイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="meta要素">meta要素</h5>
+    
+<ul>
+<li>metaphor</li>
+<li>ブラウザー画面には表示されないけれど、文書の情報として必要なものを記述します</li>
+<li>charset属性のみ、日本語の表示が文字化けしないようにtitle要素の上に記述子ます</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ページタイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"description"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"文書の概要が入ります"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="よく使うタグだけ覚えるまずは10個">よく使うタグだけ覚える（まずは10個）</h4>
+    
+<table>
+    <tbody><tr>
+    <th>タグ</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> h1〜h6  </td>
+    <td> 見出し   </td>
+    </tr>
+    <tr>
+    <td> p      </td>
+    <td> 文章    </td>
+    </tr>
+    <tr>
+    <td> a      </td>
+    <td> リンク   </td>
+    </tr>
+    <tr>
+    <td> img    </td>
+    <td> 画像    </td>
+    </tr>
+    <tr>
+    <td> div    </td>
+    <td> ブロック  </td>
+    </tr>
+    <tr>
+    <td> span   </td>
+    <td> 文章の一部 </td>
+    </tr>
+    <tr>
+    <td> ul, li </td>
+    <td> 箇条書き  </td>
+    </tr>
+    <tr>
+    <td> br     </td>
+    <td> 改行    </td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="ごく簡単なHTMLの説明HTML仕様書の日本語要約"><a href="http://ごく簡単なHTMLの説明（HTML仕様書の日本語要約）">ごく簡単なHTMLの説明（HTML仕様書の日本語要約）</a></h5>
+    
+<ul>
+<li><a href="http://www.kanzaki.com/docs/htminfo.html">ごく簡単なHTMLの説明（HTML仕様書の日本語要約）</a></li>
+<li><a href="https://momdo.github.io/html/">「HTML（WHATWG Living Standard）」の日本語訳</a></li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="HTMLとは.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">HTMLとは</span></a><a href="見出しタグの役割.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">見出しタグの役割</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

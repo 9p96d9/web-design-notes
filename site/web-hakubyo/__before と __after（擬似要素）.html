@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>::before と ::after（擬似要素） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>::before と ::after（擬似要素）</span>
+  </div>
+  <div class="article-head">
+    <h1>::before と ::after（擬似要素）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/23</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="before-と-after擬似要素">::before と ::after（擬似要素）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260319012742.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSの::beforeと::afterについて詳しく解説して</p>
+
+    </blockquote>
+<p>CSSの::beforeと::afterは、<strong>要素の中に“仮想的なコンテンツ”を追加できる疑似要素</strong>です。</p>
+
+<div class="section">
+    <h5 id="基本の考え方">基本の考え方</h5>
+    
+<ul>
+<li>::before → 要素の最初に追加</li>
+<li>::after → 要素の最後に追加</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.selector</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span> <span class="synIdentifier">}</span>
+<span class="synIdentifier">.selector</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span> <span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="最重要ポイントこれ知らないと動かない">最重要ポイント（これ知らないと動かない）</h5>
+    <p>👉 <strong>必ず content が必要</strong></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">""</span>;
+<span class="synIdentifier">}</span>
+</pre><p>※これがないと表示されません</p>
+
+</div>
+<div class="section">
+    <h5 id="基本例まずはこれ">基本例（まずはこれ）</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier">&gt;</span>こんにちは<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.text</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">"★"</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.text</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">"★"</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 表示</p>
+<pre class="code" data-lang="" data-unlink="">★こんにちは★</pre>
+</div>
+<div class="section">
+    <h5 id="よく使うパターン装飾アイコン">よく使うパターン①：装飾アイコン</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.title</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">"☕"</span>;
+  <span class="synType">margin-right</span>: <span class="synConstant">8px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 見出しの前にアイコンを付ける</p>
+
+</div>
+<div class="section">
+    <h5 id="よく使うパターン線ボーダー代わり">よく使うパターン②：線（ボーダー代わり）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.title</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">""</span>;
+  <span class="synType">display</span>: <span class="synConstant">block</span>;
+  <span class="synType">width</span>: <span class="synConstant">50px</span>;
+  <span class="synType">height</span>: <span class="synConstant">2px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#333</span>;
+  <span class="synType">margin-top</span>: <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 おしゃれな見出し下線</p>
+
+</div>
+<div class="section">
+    <h5 id="よく使うパターンオーバーレイ超重要">よく使うパターン③：オーバーレイ（超重要）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.card</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.card</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">""</span>;
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  inset: <span class="synConstant">0</span>;
+  <span class="synType">background</span>: <span class="synIdentifier">rgba(</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0.5</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 画像の上に黒いフィルターを乗せる</p>
+
+</div>
+<div class="section">
+    <h5 id="よく使うパターンボタンのアニメーション">よく使うパターン④：ボタンのアニメーション</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.btn</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">overflow</span>: <span class="synConstant">hidden</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.btn</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">""</span>;
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">height</span>: <span class="synConstant">100%</span>;
+  <span class="synType">background</span>: <span class="synConstant">#000</span>;
+  <span class="synType">left</span>: <span class="synConstant">-100%</span>;
+  <span class="synType">transition</span>: <span class="synConstant">0.3s</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.btn</span>:<span class="synPreProc">hover</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">left</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 ホバーでスライドする背景</p>
+
+</div>
+<div class="section">
+    <h5 id="よく使うパターン三角形CSSだけで作る">よく使うパターン⑤：三角形（CSSだけで作る）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">""</span>;
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">border</span>: <span class="synConstant">10px</span> <span class="synConstant">solid</span> <span class="synConstant">transparent</span>;
+  <span class="synType">border-top-color</span>: <span class="synConstant">#333</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 吹き出しの矢印など</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="positionとの関係超重要">positionとの関係（超重要）</h4>
+    <p>疑似要素は<strong>ほぼ100% positionとセットで使う</strong></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.parent</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 <strong>基準になる親に relative</strong><br>
+</p>
+
+<div class="section">
+    <h5 id="z-indexの注意点">z-indexの注意点</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">z-index</span>: <span class="synConstant">100</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">z-index</span>: <span class="synConstant">-100</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 背景に回すことも可能</p>
+
+</div>
+<div class="section">
+    <h5 id="displayの初期値">displayの初期値</h5>
+    <p>疑似要素はデフォルトで：</p>
+
+    <blockquote>
+        <p>👉 inline</p>
+
+    </blockquote>
+<p>なので、サイズ指定したいときは：</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">display: block;
+</pre>
+</div>
+<div class="section">
+    <h5 id="よくあるミス">よくあるミス</h5>
+    <p>❌ contentを書いてない<br>
+❌ positionを設定してない<br>
+❌ 親に position: relative がない<br>
+❌ z-indexで消えてる</p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="position を設定.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">position を設定</span></a><a href="main内のブロック構造.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">main内のブロック構造</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ダークモードに対応 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>ダークモードに対応</span>
+  </div>
+  <div class="article-head">
+    <h1>ダークモードに対応</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">演習課題</span>
+      <span class="date">2026/03/02</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="ダークモードに対応">ダークモードに対応</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109153326.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<div class="section">
+    <h5 id="ライトモードとダークモードを切り替える">ライトモードとダークモードを切り替える</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20260308233603.png" width="500" height="498" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="テキスト">テキスト</h5>
+    <pre class="code" data-lang="" data-unlink="">ダークモードにする
+ダークモードに対応させよう
+スマートフォンでダークモードを使用するメリットをいくつか説明します。
+
+1. バッテリー寿命の向上
+有機EL（OLED）ディスプレイを搭載したスマートフォンでは、黒い部分のピクセルが完全にオフになるため、消費電力が大幅に削減されます。液晶ディスプレイでも、バックライトの負荷が軽減されるため、ある程度の省電力効果があります。
+
+2. 目の疲労軽減
+暗い環境でスマートフォンを使用する際、ダークモードは画面からの強い光を抑制し、目への負担を軽減します。特に夜間や薄暗い場所での使用時に効果的です。
+
+3. 睡眠への影響軽減
+ブルーライトの放出量が減少するため、就寝前にスマートフォンを使用しても、睡眠リズムへの悪影響が比較的少なくなるとされています。
+
+4. 画面の見やすさ向上
+明るい環境では逆効果になることもありますが、暗い場所や夜間では、コントラストが改善され文字が読みやすくなります。
+
+5. スタイリッシュな外観
+多くのユーザーが、ダークモードの洗練された見た目を好む傾向があり、アプリやインターフェースがより現代的に感じられます。
+ただし、明るい屋外などでは通常のライトモードの方が見やすい場合もあるため、環境に応じて使い分けることが重要です。</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="JavaScript-記述ポイント">JavaScript 記述ポイント</h4>
+    <p></p><h6 id="scriptjs">script.js</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> btn <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#btn'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> body <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span>body<span class="synStatement">;</span>
+
+btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  body<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">toggle</span><span class="synSpecial">(</span><span class="synConstant">'dark-theme'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  
+  <span class="synComment">// もしボタンのテキストが「ダークモードにする」になっているなら</span>
+  <span class="synStatement">if</span><span class="synSpecial">(</span>btn<span class="synStatement">.</span>textContent <span class="synStatement">===</span> <span class="synConstant">'ダークモードにする'</span><span class="synSpecial">){</span>
+    <span class="synComment">// クリックされた時に「ライトモードにする」に変更</span>
+    btn<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'ライトモードにする'</span><span class="synStatement">;</span>
+  
+  <span class="synComment">// そうでないなら（「ライトモードにする」と表示されているなら）</span>
+  <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+    <span class="synComment">// クリックされた時に「ダークモードにする」に戻す</span>
+    btn<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'ダークモードにする'</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+<div class="section">
+    <h5 id="-ボタンの要素を取得">① ボタンの要素を取得</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> btn <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#btn'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="意味">意味</h6>HTMLの中にある <strong>id="btn" の要素を取得</strong>しています。<p></p><p></p><h6 id="例HTML">例（HTML）</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>ダークモードにする<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ポイント">ポイント</h6><p></p>
+
+<ul>
+<li>document → HTML全体</li>
+<li>querySelector() → 指定した要素を探す</li>
+<li>#btn → id="btn"</li>
+</ul><p>つまり</p>
+
+    <blockquote>
+        <p>btnという変数にボタン要素を入れる</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="-body要素を取得">② body要素を取得</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> body <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span>body<span class="synStatement">;</span>
+</pre><p></p><h6 id="意味-1">意味</h6><p></p>
+
+<ul>
+<li>HTMLの <strong>bodyタグを取得</strong>しています。</li>
+</ul><p></p><h6 id="ポイント-1">ポイント</h6><p></p>
+
+<ul>
+<li>後で bodyにクラスを追加してテーマを変更します。</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-クリックイベントを設定">③ クリックイベントを設定</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+</pre><p></p><h6 id="意味-2">意味</h6><p></p>
+
+<ul>
+<li><strong>ボタンがクリックされた時に処理を実行する</strong></li>
+</ul>
+<table>
+    <tbody><tr>
+    <th>コード</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> addEventListener </td>
+    <td> イベントを登録  </td>
+    </tr>
+    <tr>
+    <td> 'click'          </td>
+    <td> クリックされた時 </td>
+    </tr>
+    <tr>
+    <td> ()=&gt;{}           </td>
+    <td> 実行する処理   </td>
+    </tr>
+</tbody></table><p>つまり</p>
+
+    <blockquote>
+        <p>ボタンをクリックしたらこの中の処理を実行</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="-ダークモードを切り替える">④ ダークモードを切り替える</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">body<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">toggle</span><span class="synSpecial">(</span><span class="synConstant">'dark-theme'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="意味-3">意味</h6><p></p>
+
+<ul>
+<li>bodyに <strong>dark-themeクラスを付けたり外したりする</strong></li>
+</ul><p></p><h6 id="toggleの動き">toggleの動き</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>状態</th>
+    <th>結果</th>
+    </tr>
+    <tr>
+    <td> クラスなし </td>
+    <td> 追加 </td>
+    </tr>
+    <tr>
+    <td> クラスあり </td>
+    <td> 削除 </td>
+    </tr>
+</tbody></table><p></p><h6 id="例">【例】</h6><p></p>
+
+<ul>
+<li>クリック前</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>クリック後</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"dark-theme"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-if文条件分岐">⑤ if文（条件分岐）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span><span class="synSpecial">(</span>btn<span class="synStatement">.</span>textContent <span class="synStatement">===</span> <span class="synConstant">'ダークモードにする'</span><span class="synSpecial">){</span>
+</pre><p></p><h6 id="意味-4">意味</h6>ボタンの文字が<p></p>
+
+    <blockquote>
+        <p>ダークモードにする</p>
+
+    </blockquote>
+<p>なら処理を実行する。</p><p></p><h6 id="textContent">textContent</h6>要素の <strong>文字を取得するプロパティ</strong><br>
+【例】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>ダークモードにする<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+</pre><p>　　↓</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">btn<span class="synStatement">.</span>textContent
+</pre><p>【結果】</p>
+<pre class="code" data-lang="" data-unlink="">ダークモードにする</pre>
+</div>
+<div class="section">
+    <h5 id="-ボタンの文字を変更">⑥ ボタンの文字を変更</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">btn<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'ライトモードにする'</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="意味-5">意味</h6>ボタンの文字を<p></p>
+
+    <blockquote>
+        <p>ライトモードにする</p>
+
+    </blockquote>
+<p>に変更する。</p><p></p><h6 id="クリック前">クリック前</h6><p></p>
+
+    <blockquote>
+        <p>ダークモードにする</p>
+
+    </blockquote>
+<p></p><h6 id="クリック後">クリック後</h6><p></p>
+
+    <blockquote>
+        <p>ライトモードにする</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="-elseそれ以外">⑦ else（それ以外）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synError">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+</pre><p></p><h6 id="意味-6">意味</h6>もし<p></p>
+
+    <blockquote>
+        <p>ダークモードにする</p>
+
+    </blockquote>
+<p>じゃないなら<br>
+つまり</p>
+
+    <blockquote>
+        <p>ライトモードにする</p>
+
+    </blockquote>
+<p>の場合。</p>
+
+</div>
+<div class="section">
+    <h5 id="-ボタン文字を元に戻す">⑧ ボタン文字を元に戻す</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">btn<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'ダークモードにする'</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="意味-7">意味</h6>ボタンの文字を<p></p>
+
+    <blockquote>
+        <p>ダークモードにする</p>
+
+    </blockquote>
+<p>に戻す。</p>
+
+</div>
+<div class="section">
+    <h5 id="-イベント処理終了">⑨ イベント処理終了</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synError">})</span><span class="synStatement">;</span>
+</pre><p>ここで</p>
+
+    <blockquote>
+        <p>クリックされた時の処理</p>
+
+    </blockquote>
+<p>が終わります。</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="このコードの全体イメージ">このコードの全体イメージ</h4>
+    
+    <blockquote>
+        <p>クリック<br>
+   ↓<br>
+ダークテーマON/OFF<br>
+   ↓<br>
+ボタン文字変更</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="indexhtml">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ダークモードとライトモード<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>JavaScript<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>ダークモードとライトモード<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"../index.html"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">トップへ戻る</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>ダークモードにする<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>ダークモードに対応させよう<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>スマートフォンでダークモードを使用するメリットをいくつか説明します。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>1. バッテリー寿命の向上<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>有機EL（OLED）ディスプレイを搭載したスマートフォンでは、黒い部分のピクセルが完全にオフになるため、消費電力が大幅に削減されます。液晶ディスプレイでも、バックライトの負荷が軽減されるため、ある程度の省電力効果があります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>2. 目の疲労軽減<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>暗い環境でスマートフォンを使用する際、ダークモードは画面からの強い光を抑制し、目への負担を軽減します。特に夜間や薄暗い場所での使用時に効果的です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>3. 睡眠への影響軽減<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ブルーライトの放出量が減少するため、就寝前にスマートフォンを使用しても、睡眠リズムへの悪影響が比較的少なくなるとされています。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>4. 画面の見やすさ向上<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>明るい環境では逆効果になることもありますが、暗い場所や夜間では、コントラストが改善され文字が読みやすくなります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>5. スタイリッシュな外観<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>多くのユーザーが、ダークモードの洗練された見た目を好む傾向があり、アプリやインターフェースがより現代的に感じられます。<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>
+      ただし、明るい屋外などでは通常のライトモードの方が見やすい場合もあるため、環境に応じて使い分けることが重要です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"footer"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"update"</span><span class="synIdentifier">&gt;</span>更新日：xxxx年x月x日<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="stylecss">style.css</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-rows</span>: <span class="synConstant">auto</span> <span class="synConstant">1fr</span> <span class="synConstant">auto</span>;
+  <span class="synType">min-height</span>: <span class="synConstant">100vh</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">1.0rem</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ece18b</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.5rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synSpecial">&gt;</span> <span class="synStatement">h1</span>::<span class="synPreProc">first-line</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.125rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+    <span class="synType">width</span>: <span class="synConstant">100%</span>;
+    <span class="synType">margin-top</span>: <span class="synConstant">10px</span>;
+    <span class="synType">border</span>: <span class="synConstant">#fff</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#8f8851</span>;
+    <span class="synType">color</span>: <span class="synConstant">#8f8851</span>;
+    <span class="synType">font-weight</span>: <span class="synConstant">700</span>;
+    <span class="synType">transition</span>: <span class="synType">all</span> .<span class="synConstant">3s</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">color</span>: <span class="synConstant">#8f8851</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ece18b</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: min(<span class="synConstant">90%</span><span class="synSpecial">,</span> <span class="synConstant">960px</span>);
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">2rem</span> <span class="synConstant">0.5rem</span>;
+  <span class="synType">transition</span>: .<span class="synConstant">5s</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.3</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.main_content</span> <span class="synSpecial">&gt;</span> <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synConstant">justify</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ---------------------------------</span>
+<span class="synComment">  theme</span>
+<span class="synComment">--------------------------------- */</span>
+<span class="synIdentifier">.dark-theme</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#000</span>;
+  <span class="synType">color</span>: <span class="synConstant">#ddd</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">#btn</span> <span class="synIdentifier">{</span>
+    <span class="synType">background</span>: <span class="synConstant">#0bd</span>;
+    <span class="synType">padding</span>: <span class="synConstant">1rem</span>;
+    <span class="synType">margin-bottom</span>: <span class="synConstant">2rem</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">1rem</span>;
+    <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">border-radius</span>: <span class="synConstant">8px</span>;
+    <span class="synType">border</span>: <span class="synConstant">0</span>;
+    <span class="synType">cursor</span>: <span class="synConstant">pointer</span>;
+  <span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="演習課題 - テンプレート.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">演習課題 - テンプレート</span></a><a href="おみくじ.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">おみくじ</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

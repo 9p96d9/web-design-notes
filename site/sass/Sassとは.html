@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sassとは - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Sass入門</a>
+    <span class="sep">›</span>
+    <span>Sassとは</span>
+  </div>
+  <div class="article-head">
+    <h1>Sassとは</h1>
+    <div class="meta">
+      <span class="tag" style="background:#fdf2f8;color:#cc6699">Sass基礎</span>
+      <span class="date">2026/04/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+  <h4 id="Sassとは">Sassとは？</h4>
+  <p><strong>Sass（サス）</strong> とは、CSSを拡張した言語です。</p>
+  <ul>
+    <li>変数・ネスト・関数など便利な機能を加えて書ける</li>
+    <li>最終的に通常のCSSに変換（コンパイル）して使う</li>
+    <li>拡張子は <code>.scss</code>（SCSS記法）または <code>.sass</code>（インデント記法）</li>
+    <li>現在の主流は <code>.scss</code> 記法</li>
+  </ul>
+  <p>CSSが苦手な「繰り返し」「管理のしにくさ」を解決してくれるツールです。</p>
+</div>
+
+<div class="section">
+  <h4 id="コンパイルフロー">コンパイルフロー</h4>
+  <p>Sassで書いたファイルは、ブラウザが直接読めません。<strong>コンパイル</strong>（変換）してCSSにする必要があります。</p>
+  <pre class="code" data-lang="text">あなたが書くファイル          ブラウザが読むファイル
+┌─────────────────┐          ┌─────────────────┐
+│  style.scss      │  sass    │  style.css       │
+│  （Sass記法）    │ ──────→ │  （通常のCSS）   │
+└─────────────────┘  コンパイル └─────────────────┘</pre>
+
+  <h5 id="分割構成">ファイルを分割する場合</h5>
+  <p>大きなプロジェクトでは、役割ごとにファイルを分割して管理します。</p>
+  <pre class="code" data-lang="text">┌──────────────────┐
+│ _variables.scss  │ ─┐
+│ _mixin.scss      │  │  @use で読み込み
+│ _header.scss     │  ├──→ style.scss ──→ style.css
+│ _card.scss       │  │
+│ _base.scss       │ ─┘
+└──────────────────┘</pre>
+  <ul>
+    <li><code>_</code> で始まるファイルを<strong>パーシャル（部分ファイル）</strong>という</li>
+    <li>パーシャル単体ではCSSに変換されない</li>
+    <li><code>@use</code> で読み込まれたときだけ出力される</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h4 id="学習の進め方">学習の進め方</h4>
+  <p>この教材では、架空のカフェサイトを題材にしてSassを段階的に学びます。</p>
+  <table>
+    <tbody>
+      <tr><th>ステップ</th><th>記事</th><th>学ぶこと</th></tr>
+      <tr><td>Step 0</td><td><a href="Step0-CSSのみ版.html">CSSのみ版でつらさを体験</a></td><td>CSSだけで書くと何が大変か</td></tr>
+      <tr><td>Step 1</td><td><a href="Step1-変数.html">変数を導入</a></td><td>$変数名で繰り返す値をまとめる</td></tr>
+      <tr><td>Step 2</td><td><a href="Step2-ネスト.html">ネストを導入</a></td><td>セレクタの入れ子構造</td></tr>
+      <tr><td>Step 3</td><td><a href="Step3-mixin.html">mixinを導入</a></td><td>スタイルのかたまりを再利用</td></tr>
+      <tr><td>Step 4</td><td><a href="Step4-ファイル分割.html">ファイル分割で完成形</a></td><td>パーシャルで役割ごとに整理</td></tr>
+    </tbody>
+  </table>
+  <p>各ステップを順番に読み進めることで、CSSの「つらさ」がSassによってどう解消されるかを体感できます。</p>
+</div>
+
+<div class="section">
+  <h4 id="CSSとの違い">CSSとの主な違い</h4>
+  <table>
+    <tbody>
+      <tr><th>機能</th><th>CSS</th><th>Sass（SCSS）</th></tr>
+      <tr><td>変数</td><td>--変数名（カスタムプロパティ）</td><td>$変数名（直感的に使える）</td></tr>
+      <tr><td>ネスト</td><td>できない（毎回セレクタを書く）</td><td>セレクタを入れ子にできる</td></tr>
+      <tr><td>再利用</td><td>コピペしかない</td><td>@mixin / @include で定義・呼び出し</td></tr>
+      <tr><td>ファイル分割</td><td>@import（本番では非推奨）</td><td>@use で安全に分割管理</td></tr>
+      <tr><td>ブラウザ対応</td><td>手動でベンダープレフィックスを書く</td><td>mixinにまとめて1行で呼び出す</td></tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>
+  <nav class="article-nav">
+    <a href="Step0-CSSのみ版.html" class="nav-next" style="text-align:right">
+      <span class="nav-label">次の記事 →</span>
+      <span class="nav-title">Step 0：CSSのみ版でつらさを体験</span>
+    </a>
+  </nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+</body>
+</html>

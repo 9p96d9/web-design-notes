@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>横並びのナビゲーション - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>横並びのナビゲーション</span>
+  </div>
+  <div class="article-head">
+    <h1>横並びのナビゲーション</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/17</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="横並びのナビゲーション">横並びのナビゲーション</h4>
+    
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSで横並びのナビゲーション例を作って </p>
+
+<ul>
+<li>header内にnavで </li>
+<li>headerの背景色は白</li>
+</ul>
+    </blockquote>
+
+<div class="section">
+    <h5 id="完成例">完成例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260308180212.png" width="500" height="79" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="横並びナビの設計ポイント重要">横並びナビの設計ポイント（重要）</h5>
+    <p></p><h6 id="-Flexboxを使う">① Flexboxを使う</h6>今のWeb制作の基本<p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">display: flex;
+</pre><p></p><h6 id="-liを横並びの単位にする">② liを横並びの単位にする</h6>ul → li → a<p></p><p></p><h6 id="-aタグをブロックにする">③ aタグをブロックにする</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">display: block;
+</pre><p></p><h6 id="-hoverを必ず作る">④ hoverを必ず作る</h6>ユーザーが操作していることを伝える<p></p><p></p><h6 id="-ナビ幅を決める">⑤ ナビ幅を決める</h6>【例】<p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">width: 960px;
+margin: 0 auto;
+</pre>
+</div>
+<div class="section">
+    <h5 id="初心者がよくやるミス">初心者がよくやるミス</h5>
+    <p>❌ liを横並びにしない<br>
+❌ aタグをinlineのまま<br>
+❌ ulの余白を消さない</p>
+
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>横並びナビゲーション例<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"nav-list"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"current"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">HOME</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">ABOUT</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">SERVICE</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">BLOG</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">CONTACT</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* -----------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">----------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -----------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">----------------------------------- */</span>
+<span class="synStatement">body</span><span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#666</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* -----------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">----------------------------------- */</span>
+
+<span class="synComment">/* header */</span>
+<span class="synStatement">header</span><span class="synIdentifier">{</span>
+  <span class="synType">background</span>:<span class="synConstant">#ffffff</span>;
+  <span class="synType">padding</span>:<span class="synConstant">20px</span> <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* navのリスト */</span>
+<span class="synIdentifier">.nav-list{</span>
+  <span class="synType">display</span>:<span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>:<span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* リンク */</span>
+<span class="synIdentifier">.nav-list</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">block</span>;
+  <span class="synType">padding</span>: <span class="synConstant">12px</span> <span class="synConstant">20px</span>;
+  <span class="synType">font-weight</span>:<span class="synConstant">bold</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ホバー */</span>
+<span class="synIdentifier">.nav-list</span> <span class="synStatement">a</span>:<span class="synPreProc">hover</span><span class="synSpecial">,</span> <span class="synStatement">a</span><span class="synIdentifier">.current</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#e67e22</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="Flexbox（フレックスボックス.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">Flexbox（フレックスボックス</span></a><a href="headerにh1とnavを横並び.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">headerにh1とnavを横並び</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

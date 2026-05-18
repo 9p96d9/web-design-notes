@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ページを操作 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>ページを操作</span>
+  </div>
+  <div class="article-head">
+    <h1>ページを操作</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">DOM</span><span class="tag" style="background:#eff6ff;color:#2563eb">イベント</span>
+      <span class="date">2025/10/14</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="JavaScriptでページを操作"><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>でページを操作</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029233659.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<div class="section">
+    <h5 id="DOMツリーを操作する">DOMツリーを操作する</h5>
+    
+<ul>
+<li>HTMLはツリー構造になっていて、階層化されています</li>
+<li>HTMLに相当する要素を「document」というオブジェクトで参照できます</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241019005831.jpg" width="500" height="291" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="idで要素を特定する">idで要素を特定する</h5>
+    
+<ul>
+<li>子要素の順番をたどるのはわかりにくい</li>
+<li>id属性を指定して変更する</li>
+<li>例：id名：ボタン「btn」、書き換える要素「msg」</li>
+<li>「textContent」は、HTMLを解釈せずにそのまま文字として出力する</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>ボタンのクリックでメッセージを表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>押してください<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"msg"</span><span class="synIdentifier">&gt;</span>ここを書き換える<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>btn<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#btn'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>msg<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#msg'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>btnClick<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> () </span><span class="synStatement">=&gt;</span><span class="synSpecial"> {</span>
+    msg<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'押されました。'</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span>btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> btnClick<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span> 
+</pre><p><br>
+</p><h6 id="実行結果">実行結果</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241019014020.jpg" width="600" height="393" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="文字を入力">文字を入力</h4>
+    
+<ul>
+<li>テキストボックスに入力された文字を取得する</li>
+<li>「<a class="keyword" href="https://d.hatena.ne.jp/keyword/value">value</a>属性」で、入力された文字を取得できる</li>
+</ul><p></p><h6 id="変数に代入">変数に代入</h6><p></p>
+
+<ul>
+<li>処理の途中の値や計算結果、ユーザーが入力したデータなどさまざまな値を一時的にメモリに保存する</li>
+<li>変数には、変数宣言が必須（let）</li>
+<li>変数の値を何度も利用する場合は、実行速度が速くなります</li>
+</ul><p>let message = document.getElementById('mytext').<a class="keyword" href="https://d.hatena.ne.jp/keyword/value">value</a>;</p><br>
+<p></p><h6 id="実行結果-1">実行結果</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241019020401.jpg" width="500" height="320" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="イベント.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">イベント</span></a><a href="関数.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">関数</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

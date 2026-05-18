@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヘッダーとヒーローイメージ - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>ヘッダーとヒーローイメージ</span>
+  </div>
+  <div class="article-head">
+    <h1>ヘッダーとヒーローイメージ</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/25</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="ヘッダーとヒーローイメージ">ヘッダーとヒーローイメージ</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260319005311.jpg" width="680" height="593" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLでheaderブロックを作成したい </p>
+
+<ul>
+<li>header内は、h1とnavを横並び </li>
+<li>h1は「Bloom Café」というロゴ </li>
+<li>header幅 960px、padding: 20px 0; </li>
+<li>navは「ホーム」「ホーム」「メニュー」「ギャラリー」 </li>
+<li>headerブロックの前後にコメントを挿入「&lt;!-- header --&gt;」「&lt;!-- /header --&gt;」</li>
+</ul>
+    </blockquote>
+<p> ChatGPT（画像）で作成→　<span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260318231453.jpg" width="200" height="105" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+</p>
+
+<div class="section">
+    <h5 id="ワイヤーフレーム">ワイヤーフレーム</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260319003712.jpg" width="500" height="416" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="画像サイズ">画像サイズ</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260319001748.jpg" width="300" height="227" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>100vhで表示するときヘッダーの高さを引き算する方法</p>
+
+    </blockquote>
+<p>👉 「<strong>画面全体の高さ（100vh）− ヘッダーの高さ（125px）</strong>」</p>
+
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ロゴとナビゲーションを横並び<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/logo.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"Bloom Café"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">nav</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"gnav"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"current"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">ホーム</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">コンセプト</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">メニュー</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">ギャラリー</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"hero"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>心地よいカフェ時間<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>自然光と花に包まれた癒しの空間<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- hero --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p><br>
+</p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* -------------------------------</span>
+<span class="synComment">  reset </span>
+<span class="synComment">------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.6</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">960px</span>;
+  <span class="synType">height</span>: <span class="synConstant">125px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;  <span class="synComment">/* ブラウザ幅の中央配置 */</span>
+  <span class="synType">padding</span>: <span class="synConstant">10px</span> <span class="synConstant">0</span>;  <span class="synComment">/* header内の文字を読みやすく */</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;  <span class="synComment">/* 子要素を横並び */</span>
+  <span class="synType">justify-content</span>: <span class="synConstant">space-between</span>;  <span class="synComment">/* h1とnavを左右配置 */</span>
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;  <span class="synComment">/* headerの高さの中央に配置 */</span>
+<span class="synIdentifier">}</span>
+<span class="synStatement">h1</span> <span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;
+  <span class="synType">height</span>: <span class="synConstant">105px</span>;
+  <span class="synStatement">object</span>-fit: <span class="synConstant">cover</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.gnav</span> <span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;  <span class="synComment">/* 親要素 ul 内の子要素 li を横並び */</span>
+  gap: <span class="synConstant">3px</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.gnav</span> <span class="synStatement">li</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">block</span>;
+    <span class="synType">padding</span>: <span class="synConstant">10px</span> <span class="synConstant">30px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#ded0b4</span>;
+    <span class="synType">transition</span>: .<span class="synConstant">3s</span>;
+  <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.gnav</span> <span class="synStatement">li</span> <span class="synStatement">a</span>:<span class="synPreProc">hover</span><span class="synSpecial">,</span> <span class="synStatement">li</span> <span class="synStatement">a</span><span class="synIdentifier">.current</span> <span class="synIdentifier">{</span>
+      <span class="synType">background-color</span>: <span class="synConstant">#6b614c</span>;
+      <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+    <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------</span>
+<span class="synComment">  hero</span>
+<span class="synComment">------------------------------- */</span>
+<span class="synIdentifier">.hero</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">height</span>: <span class="synIdentifier">calc(</span><span class="synConstant">100vh - 125px</span><span class="synIdentifier">)</span>; <span class="synComment">/* view height デバイスの高さ */</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">"../img/hero.jpg"</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synConstant">center</span> / <span class="synConstant">cover</span>;
+  <span class="synComment">/* ブラウザ内のコンテンツを上下左右の中央配置 */</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.hero-content</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">text-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">6px</span> <span class="synConstant">#302c23</span><span class="synSpecial">,</span> <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">10px</span> <span class="synConstant">#302c23</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.hero-content</span> <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">10px</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">44px</span>;
+    <span class="synType">font-family</span>: <span class="synConstant">serif</span>;
+  <span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="文字を読みやすく画像の輝度を落とす">文字を読みやすく（画像の輝度を落とす）</h5>
+    
+<ul>
+<li>オーバレイを設定</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260319010642.jpg" width="680" height="593" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="CSS-1">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* -------------------------------</span>
+<span class="synComment">  reset </span>
+<span class="synComment">------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.6</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">960px</span>;
+  <span class="synType">height</span>: <span class="synConstant">125px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;  <span class="synComment">/* ブラウザ幅の中央配置 */</span>
+  <span class="synType">padding</span>: <span class="synConstant">10px</span> <span class="synConstant">0</span>;  <span class="synComment">/* header内の文字を読みやすく */</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;  <span class="synComment">/* 子要素を横並び */</span>
+  <span class="synType">justify-content</span>: <span class="synConstant">space-between</span>;  <span class="synComment">/* h1とnavを左右配置 */</span>
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;  <span class="synComment">/* headerの高さの中央に配置 */</span>
+<span class="synIdentifier">}</span>
+<span class="synStatement">h1</span> <span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;
+  <span class="synType">height</span>: <span class="synConstant">105px</span>;
+  <span class="synStatement">object</span>-fit: <span class="synConstant">cover</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.gnav</span> <span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;  <span class="synComment">/* 親要素 ul 内の子要素 li を横並び */</span>
+  gap: <span class="synConstant">3px</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.gnav</span> <span class="synStatement">li</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">block</span>;
+    <span class="synType">padding</span>: <span class="synConstant">10px</span> <span class="synConstant">30px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#ded0b4</span>;
+    <span class="synType">transition</span>: .<span class="synConstant">3s</span>;
+  <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.gnav</span> <span class="synStatement">li</span> <span class="synStatement">a</span>:<span class="synPreProc">hover</span><span class="synSpecial">,</span> <span class="synStatement">li</span> <span class="synStatement">a</span><span class="synIdentifier">.current</span> <span class="synIdentifier">{</span>
+      <span class="synType">background-color</span>: <span class="synConstant">#6b614c</span>;
+      <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+    <span class="synIdentifier">}</span>
+
+<span class="synComment">/* -------------------------------</span>
+<span class="synComment">  hero</span>
+<span class="synComment">------------------------------- */</span>
+<span class="synIdentifier">.hero</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">height</span>: <span class="synIdentifier">calc(</span><span class="synConstant">100vh - 125px</span><span class="synIdentifier">)</span>; <span class="synComment">/* view height デバイスの高さ */</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">"../img/hero.jpg"</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synConstant">center</span> / <span class="synConstant">cover</span>;
+  <span class="synComment">/* ブラウザ内のコンテンツを上下左右の中央配置 */</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.hero-content</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">text-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">6px</span> <span class="synConstant">#302c23</span><span class="synSpecial">,</span> <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">10px</span> <span class="synConstant">#302c23</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.hero-content</span> <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">10px</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">44px</span>;
+    <span class="synType">font-family</span>: <span class="synConstant">serif</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------</span>
+<span class="synComment">  オーバーレイ（重要）</span>
+<span class="synComment">------------------------------- */</span>
+<span class="synIdentifier">.hero</span>::<span class="synPreProc">before</span> <span class="synIdentifier">{</span>
+  <span class="synType">content</span>: <span class="synConstant">""</span>;
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  inset: <span class="synConstant">0</span>;
+  <span class="synType">background</span>: <span class="synIdentifier">rgba(</span><span class="synConstant">68</span><span class="synIdentifier">,</span><span class="synConstant"> 61</span><span class="synIdentifier">,</span><span class="synConstant"> 47</span><span class="synIdentifier">,</span><span class="synConstant"> 0.5</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="main内のブロック構造.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">main内のブロック構造</span></a><a href="左右2分割＋交互レイアウト.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">左右2分割＋交互レイアウト</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

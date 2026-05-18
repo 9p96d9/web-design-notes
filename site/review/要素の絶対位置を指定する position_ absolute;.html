@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>要素の絶対位置を指定する position: absolute; - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>要素の絶対位置を指定する position: absolute;</span>
+  </div>
+  <div class="article-head">
+    <h1>要素の絶対位置を指定する position: absolute;</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/11/04</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="要素の絶対位置を指定する-position-absolute">要素の絶対位置を指定する position: absolute;</h4>
+    <p></p><p align="center"></p><p></p><p></p>
+
+<ul>
+<li>position: absolute; は、要素の配置を自由に設定することができます</li>
+<li>position: absolute; は単体で使用せず、position: relative; とセットで使います</li>
+<li>positionプロパティはabsoluteの他にも下記の4つがあります
+<ul>
+<li>fixed</li>
+<li>relative</li>
+<li>static</li>
+<li>sticky</li>
+</ul></li>
+</ul>
+<div class="section">
+    <h5 id="position-absoluteの使い方">position: absolute;の使い方</h5>
+    
+<ul>
+<li>positionプロパティは、要素の配置を指定するプロパティです</li>
+<li>positionプロパティの初期値はstaticで、absoluteは要素の絶対配置を指定することができます</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink="">セレクタ <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: 値;
+  <span class="synType">right</span>: 値;
+  <span class="synType">bottom</span>: 値;
+  <span class="synType">left</span>: 値;
+<span class="synIdentifier">}</span>
+</pre>
+<ul>
+<li>positionプロパティは「top」「right」「bottom」「left」の4つのプロパティと合わせて要素の配置を指定します</li>
+<li>要素の位置を確定させるため、最低でも2つは適用するようにします</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="positon-relative-とセットで使用する">positon: relative; とセットで使用する</h5>
+    
+<ul>
+<li>position: absolute; は、基本的に単体で使用することは少ないで</li>
+<li>position: absolute; を使う場合は、その親要素に対してposition: relative; を適用してセットで使用します</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"parent"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">width</span>: <span class="synConstant">500px</span>;
+  <span class="synType">height</span>: <span class="synConstant">500px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#87ceeb</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: <span class="synConstant">50px</span>;
+  <span class="synType">left</span>: <span class="synConstant">50px</span>;
+  <span class="synType">width</span>: <span class="synConstant">200px</span>;
+  <span class="synType">height</span>: <span class="synConstant">200px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#ffe100</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220821075632.jpg" width="500" height="282" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<ul>
+<li>positonプロパティを適用した要素にz-indexを適用していなくても、positionプロパティを適用していない要素に対しては上側にくるように配置されます</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="事例">事例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20251126212814.jpg" width="500" height="473" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>positionの設定<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  place-<span class="synType">content</span>: <span class="synConstant">center</span>;
+  <span class="synType">min-height</span>: <span class="synConstant">100vh</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.content</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">width</span>: <span class="synConstant">400px</span>;
+  <span class="synType">height</span>: <span class="synConstant">400px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#bfe2ff</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100px</span>;
+  <span class="synType">height</span>: <span class="synConstant">100px</span>
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.boxA</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">left</span>: <span class="synConstant">-50px</span>;
+  <span class="synType">top</span>: <span class="synConstant">-50px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#65cb62</span>;
+  <span class="synType">z-index</span>: <span class="synConstant">100</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.boxB</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">right</span>: <span class="synConstant">-50px</span>;
+  <span class="synType">bottom</span>: <span class="synConstant">-50px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ea9191</span>;
+  <span class="synType">z-index</span>: <span class="synConstant">100</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.boxC</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">left</span>: <span class="synConstant">50%</span>;
+  <span class="synType">top</span>: <span class="synConstant">50%</span>;
+  <span class="synType">transform</span>: <span class="synIdentifier">translate(</span><span class="synConstant">-50%</span><span class="synIdentifier">,</span><span class="synConstant"> -50%</span><span class="synIdentifier">)</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">z-index</span>: <span class="synConstant">100</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box boxA"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box boxB"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box boxC"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="タブパネル.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">タブパネル</span></a><a href="相対位置を指定する position_ relative;.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">相対位置を指定する position: relative;</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>段落タグ - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>段落タグ</span>
+  </div>
+  <div class="article-head">
+    <h1>段落タグ</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2026/01/14</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="段落タグ">段落タグ</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260214091704.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLの段落について解説して</p>
+
+    </blockquote>
+
+<ul>
+<li>pタグはparagraph（パラグラフ）の頭文字です</li>
+<li>HTMLで文章の<strong>ひとまとまり（段落）</strong>を表す</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これは段落です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>ブラウザでは、前後に余白（マージン）が付いて表示され、文章の区切りとして見やすくなります。</p>
+
+<div class="section">
+    <h5 id="基本構文">基本構文</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ここに文章を書きます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>&lt;pc → 段落の開始</li>
+<li>&lt;/p&gt; → 段落の終了</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="表示の例">表示の例</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これは1つ目の段落です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これは2つ目の段落です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>【表示結果】</p>
+<pre class="code lang-html" data-lang="html" data-unlink="">これは1つ目の段落です。
+これは2つ目の段落です。
+</pre><p>👉 自動的に改行＋余白が入ります。</p>
+
+</div>
+<div class="section">
+    <h5 id="改行との違いbrとの比較">改行との違い（&lt;br&gt;との比較）</h5>
+    <p></p><h6 id="-よくある誤解">❌ よくある誤解</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink="">これは1行目です。<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>
+これは2行目です。
+</pre><p>👉️ 改行はされるが段落にはならない</p><p></p><h6 id="-正しい段落">✅ 正しい段落</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これは1行目です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これは2行目です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>タグ</th>
+    <th>役割</th>
+    </tr>
+    <tr>
+    <td> &lt;p&gt;  </td>
+    <td> 文章のまとまり（意味のある段落） </td>
+    </tr>
+    <tr>
+    <td> &lt;br&gt; </td>
+    <td> 単なる改行            </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="段落内に入れられるタグ">段落内に入れられるタグ</h5>
+    
+<ul>
+<li>&lt;p&gt; の中にはインライン要素を入れられます。</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これは<span class="synIdentifier">&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>重要<span class="synIdentifier">&lt;/</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>な文章です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="よく使うもの">よく使うもの</h6><p></p>
+
+<ul>
+<li>&lt;strong&gt;（強調）</li>
+<li>&lt;em&gt;（斜体・強調）</li>
+<li>&lt;a&gt;（リンク）</li>
+<li>&lt;span&gt;（装飾用）</li>
+</ul><p></p><h6 id="-入れられないもの">❌ 入れられないもの</h6><p></p>
+
+<ul>
+<li>&lt;div&gt;</li>
+<li>&lt;h1&gt;～&lt;h6&gt;</li>
+<li>&lt;ul&gt;&gt;&gt;, &lt;ol&gt;</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="CSSでの装飾">CSSでの装飾</h5>
+    <p>【css】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+<span class="synIdentifier">}</span>
+</pre><p>【html】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>読みやすい文章になります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>【よく調整するプロパティ】</p>
+
+<ul>
+<li>font-size → 文字サイズ</li>
+<li>line-height → 行間</li>
+<li>margin → 段落の間隔</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="よくあるミス">よくあるミス</h5>
+    <p></p><h6 id="-閉じタグ忘れ">❌ 閉じタグ忘れ</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文章
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>次の文章
+</pre><p>👉️ レイアウト崩れの原因</p><p></p><h6 id="-段落の入れ子">❌ 段落の入れ子</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これはNG<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉️ HTML仕様違反</p>
+
+</div>
+<div class="section">
+    <h5 id="実践的な使い方例">実践的な使い方例</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">article</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>HTMLとは<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>HTMLはWebページを作るための言語です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>見出し、段落、画像などを構造化できます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">article</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="まとめ">まとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>項目</th>
+    <th>内容          </th>
+    </tr>
+    <tr>
+    <td> タグ </td>
+    <td> &lt;p&gt;       </td>
+    </tr>
+    <tr>
+    <td> 意味 </td>
+    <td> 段落（文章のまとまり） </td>
+    </tr>
+    <tr>
+    <td> 特徴 </td>
+    <td> 自動で余白と改行    </td>
+    </tr>
+    <tr>
+    <td> 用途 </td>
+    <td> 文章、説明文、本文   </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="見出しタグの役割.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">見出しタグの役割</span></a><a href="箇条書き.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">箇条書き</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

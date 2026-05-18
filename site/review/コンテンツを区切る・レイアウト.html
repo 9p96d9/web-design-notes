@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コンテンツを区切る・レイアウト - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>コンテンツを区切る・レイアウト</span>
+  </div>
+  <div class="article-head">
+    <h1>コンテンツを区切る・レイアウト</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">HTML</span>
+      <span class="date">2025/09/30</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="コンテンツを区切るタグ">コンテンツを区切るタグ</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241003180000.jpg" width="250" height="206" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>コンテンツを区切るsectionタグ：「章・節・項」などひとまとまりを示す</li>
+<li>コンテンツを区切るarticleタグ：独立したコンテンツのかたまりを示す（基本的には、ブログのような記事のかたまりに使用します）</li>
+</ul>
+<div class="section">
+    <h5 id="section">section</h5>
+    
+<ul>
+<li>文章やコンテンツなどひとまとまりになるものに使用します</li>
+<li>囲んだ要素が「章・節・項」などであることを示します</li>
+<li>h2タグを含むことが推奨されています</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストが入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストが入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="article">article</h5>
+    
+<ul>
+<li>サイト内で自己完結した、独立しているコンテンツの要素に対して使用します</li>
+<li>articleには「記事・論説」という意味があります</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span> <span class="synStatement">article</span><span class="synIdentifier"> &gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストが入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">article</span><span class="synIdentifier"> &gt;</span>
+
+<span class="synIdentifier">&lt;</span> <span class="synStatement">article</span><span class="synIdentifier"> &gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>テキストが入ります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">article</span><span class="synIdentifier"> &gt;</span>
+</pre><p></p><h6 id="sectionとarticleの違い">sectionとarticleの違い</h6><p></p>
+
+<ul>
+<li>sectionタグを使用することで、sectionタグで囲った部分が文章のまとまりであることを明確に示すことができます</li>
+<li>articleタグは、例えばブログ記事のような独立したコンテンツに対して使用されます</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="グループ化のためのタグ">グループ化のためのタグ</h4>
+    
+<div class="section">
+    <h5 id="divタグ">divタグ</h5>
+    
+<ul>
+<li>「div」は、「division（ディビジョン）」の略</li>
+<li>文書構造としての特別な意味はなく、要素をグループ化する際に使用します</li>
+<li>レイアウト用のタグとしては、最も使用頻度の高いタグです</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>あいうえお<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>かきくけこ<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="spanタグ">spanタグ</h6><p></p>
+
+<ul>
+<li>「span」タグは、divタグと同様に特別な意味はなく、要素を選択する際に使用します</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink="">  <span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>あいうえお<span class="synIdentifier">&lt;/</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>かきくけこ<span class="synIdentifier">&lt;/</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="コメントの書き方.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">コメントの書き方</span></a><a href="CSSとは.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">CSSとは</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

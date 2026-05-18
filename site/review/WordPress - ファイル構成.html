@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WordPress - ファイル構成 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>WordPress - ファイル構成</span>
+  </div>
+  <div class="article-head">
+    <h1>WordPress - ファイル構成</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">WordPress</span>
+      <span class="date">2025/12/03</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="WordPress---ファイル構成"><a class="keyword" href="https://d.hatena.ne.jp/keyword/WordPress">WordPress</a> - ファイル構成</h4>
+    
+<ul>
+<li>Local by Flywheel のローカル環境では、「Local sites/サイト名/app/public/」がホーム<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%C7%A5%A3%A5%EC%A5%AF%A5%C8">ディレクト</a>リとなる</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20241227230653.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="ファイルの設置場所を確認する">ファイルの設置場所を確認する</h5>
+    <p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20241227230524.jpg" width="500" height="103" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+<span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20241227231113.jpg" width="680" height="369" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="ファイル構成">ファイル構成</h5>
+    
+<ul>
+<li>「Local sites/サイト名/app/public/」を開くと、構成するファイルを確認できます</li>
+</ul><p></p><h6 id="indexphp">index.<a class="keyword" href="https://d.hatena.ne.jp/keyword/php">php</a></h6><p></p>
+
+<ul>
+<li>ブラウザから<a class="keyword" href="https://d.hatena.ne.jp/keyword/WordPress">WordPress</a>サイトにアクセスした際に、最初に読み出されるファイル</li>
+</ul><p></p><h6 id="wp-configphp">wp-config.<a class="keyword" href="https://d.hatena.ne.jp/keyword/php">php</a></h6><p></p>
+
+<ul>
+<li>インストール完了時に自動的に作成される「初期設定ファイル」</li>
+</ul><p></p><h6 id="wp-includes">/wp-includes</h6><p></p>
+
+<ul>
+<li>関数をしている<a class="keyword" href="https://d.hatena.ne.jp/keyword/PHP">PHP</a>ファイルを格納</li>
+</ul><p></p><h6 id="wp-admin">/wp-admin</h6><p></p>
+
+<ul>
+<li>「管理画面」で呼び出されるファイルを格納</li>
+</ul><p></p><h6 id="htaccess"><a class="keyword" href="https://d.hatena.ne.jp/keyword/.htaccess">.htaccess</a></h6><p></p>
+
+<ul>
+<li>「Weサーバーの設定」を上書きするための設定ファイル</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D1%A1%BC%A5%DE%A5%EA%A5%F3%A5%AF">パーマリンク</a>の設定を変更したときに生成されるファイル</li>
+</ul><p></p><h6 id="wp-contentlanguages">/wp-content/languages</h6><p></p>
+
+<ul>
+<li>「翻訳ファイル」を格納</li>
+</ul><p></p><h6 id="wp-contentuploads">/wp-content/uploads</h6><p></p>
+
+<ul>
+<li>投稿から「アップロードした画像ファイル」を保存</li>
+</ul><p></p><h6 id="wp-contentplugins">/wp-content/plugins</h6><p></p>
+
+<ul>
+<li>「<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D7%A5%E9%A5%B0%A5%A4%A5%F3">プラグイン</a>」を格納</li>
+</ul><p></p><h6 id="wp-contentthemes">/wp-content/themes</h6><p></p>
+
+<ul>
+<li>「テーマファイル」を保存</li>
+</ul><p></p><h6 id="wp-contentupgrade">/wp-content/upgrade</h6><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/WordPress">WordPress</a>本体やテーマ・<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D7%A5%E9%A5%B0%A5%A4%A5%F3">プラグイン</a>を管理画面からアップデートする際に一時的に格納する「<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%C7%A5%A3%A5%EC%A5%AF%A5%C8">ディレクト</a>リ」</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="WordPress - サイトを表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">WordPress - サイトを表示</span></a><a href="WordPress - 初期設定.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">WordPress - 初期設定</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

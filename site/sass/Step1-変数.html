@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 1：変数を導入 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Sass入門</a>
+    <span class="sep">›</span>
+    <span>Step 1：変数を導入</span>
+  </div>
+  <div class="article-head">
+    <h1>Step 1：変数を導入</h1>
+    <div class="meta">
+      <span class="tag" style="background:#fdf2f8;color:#cc6699">ステップ演習</span>
+      <span class="date">2026/04/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+  <h4 id="変数とは">変数とは？</h4>
+  <p>Sassの変数は、<strong>「繰り返す値に名前をつけて1箇所にまとめる」</strong>機能です。</p>
+  <pre class="code" data-lang="scss">$brand-color: #6F4E37;  /* ← この1行を変えるだけで全体に反映！ */</pre>
+  <p>Sassの変数は <code>$変数名: 値;</code> の形で定義します。</p>
+</div>
+
+<div class="section">
+  <h4 id="書き方">変数の定義と使い方</h4>
+  <pre class="code" data-lang="scss">/* 変数の定義（ファイルの上部にまとめて書く） */
+$brand-color:   #6F4E37;   /* ブランドカラー（コーヒーブラウン） */
+$white:         #ffffff;
+$text-color:    #333333;
+$font-size-base: 16px;
+$spacing-md:    24px;
+
+/* 変数の使用 */
+.header {
+  background-color: $brand-color;  /* 変数を参照 */
+  color: $white;
+  font-size: $font-size-base;
+}
+
+.hero__btn {
+  background-color: $brand-color;  /* 同じ変数 */
+  padding: $spacing-md;
+}
+
+.footer {
+  background-color: $brand-color;  /* 同じ変数 */
+}</pre>
+</div>
+
+<div class="section">
+  <h4 id="step0との比較">Step 0との比較</h4>
+  <table>
+    <tbody>
+      <tr><th></th><th>Step 0（CSSのみ）</th><th>Step 1（変数あり）</th></tr>
+      <tr><td>ブランドカラー変更</td><td>7箇所を手動修正</td><td>$brand-color の1行だけ修正</td></tr>
+      <tr><td>フォントサイズ変更</td><td>全箇所を検索・置換</td><td>$font-size-base の1行だけ</td></tr>
+      <tr><td>修正漏れのリスク</td><td>高い</td><td>ほぼない</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h4 id="変数の命名ルール">変数の命名ルール</h4>
+  <ul>
+    <li><code>$</code> で始める</li>
+    <li>英数字・ハイフン・アンダースコアが使える</li>
+    <li>大文字・小文字は区別される（<code>$Color</code> と <code>$color</code> は別の変数）</li>
+    <li>ハイフン区切りが一般的（<code>$brand-color</code>）</li>
+  </ul>
+
+  <h5 id="よく使う変数">よく変数にするもの</h5>
+  <table>
+    <tbody>
+      <tr><th>カテゴリ</th><th>例</th></tr>
+      <tr><td>色</td><td>$brand-color, $text-color, $bg-color</td></tr>
+      <tr><td>フォント</td><td>$font-size-base, $font-size-sm, $font-family</td></tr>
+      <tr><td>余白</td><td>$spacing-sm, $spacing-md, $spacing-lg</td></tr>
+      <tr><td>ブレークポイント</td><td>$bp-tablet, $bp-desktop</td></tr>
+      <tr><td>ボーダー</td><td>$border-radius, $border-color</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h4 id="コンパイル後のCSS">コンパイルすると？</h4>
+  <p>変数はコンパイル時に実際の値に置き換えられます。ブラウザが受け取るCSSはこうなります。</p>
+  <pre class="code" data-lang="css">/* コンパイル後の style.css */
+.header {
+  background-color: #6F4E37;   /* $brand-color が展開された */
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.hero__btn {
+  background-color: #6F4E37;
+  padding: 24px;
+}
+
+.footer {
+  background-color: #6F4E37;
+}</pre>
+  <p>変数という概念はブラウザには届かず、コンパイル時点でただの値に変換されます。</p>
+</div>
+
+  </div>
+  <nav class="article-nav">
+    <a href="Step0-CSSのみ版.html" class="nav-prev">
+      <span class="nav-label">← 前の記事</span>
+      <span class="nav-title">Step 0：CSSのみ版でつらさを体験</span>
+    </a>
+    <a href="Step2-ネスト.html" class="nav-next" style="text-align:right">
+      <span class="nav-label">次の記事 →</span>
+      <span class="nav-title">Step 2：ネストを導入</span>
+    </a>
+  </nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+</body>
+</html>

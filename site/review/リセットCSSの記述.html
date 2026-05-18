@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>リセットCSSの記述 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>リセットCSSの記述</span>
+  </div>
+  <div class="article-head">
+    <h1>リセットCSSの記述</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/10/02</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="VS-Codeでの作業"><a class="keyword" href="https://d.hatena.ne.jp/keyword/VS%20Code">VS Code</a>での作業</h4>
+    
+<ul>
+<li>link要素を記述（この段階で<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>を記述していなくてもOK）</li>
+<li>link要素を記述後、<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>ファイルのパスを「Ctrl (cmd)」+ クリック</li>
+</ul><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20240919011311.png" width="600" height="65" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+</p>
+
+<ul>
+<li>作成するかどうかを聞かれるので、「作成」を押す</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20240919011539.png" width="400" height="336" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="リセットCSS">リセット<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a></h4>
+    
+<ul>
+<li>ブラウザのデフォルトスタイル（初期値）を解除するための<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>は「リセット<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>」と呼ばれ、世界中でいろいろな手法が試されています。</li>
+<li>目的は、各ブラウザが持つ「ボックスモデルの値」を初期化すること</li>
+<li>以下の例は、最小記述の resetCSS の例になります</li>
+</ul>
+<div class="section">
+    <h5 id="全称セレクタユニバーサルセレクタ">全称<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>（ユニバーサル<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>）</h5>
+    
+<ul>
+<li>「*（<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A2%A5%B9%A5%BF%A5%EA%A5%B9%A5%AF">アスタリスク</a>）」</li>
+<li>HTML内のすべての要素を対象に適用できる<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a></li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="余白をなくす">余白をなくす</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="要素の幅と高さの計算方法を指定する">要素の幅と高さの計算方法を指定する</h5>
+    
+<ul>
+<li>box-sizing（要素の幅と高さをどのように計算するかを設定）</li>
+<li>content-box（初期値）</li>
+<li>border-box（paddingとborderを含めて幅のサイズとする）</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="要素の幅と高さの計算方法">要素の幅と高さの計算方法</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>ボックスモデルで定義している</li>
+<li>初期値は、要素の大きさは「width / heightの値」＋「paddingの値」＋「borderの太さ」の値を足した数値で算出</li>
+</ul><p></p><h6 id="border-box">border-box</h6><p></p>
+
+<ul>
+<li>初期値である「content-box」を「border-box」変更することにより、paddingとborderの値を含めずに「width / heightの値」のみで計算するようになる</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="リストの行頭スタイルを非表示にする">リストの行頭スタイルを非表示にする</h5>
+    
+<ul>
+<li>「ul」の行頭「●」を非表示にする</li>
+<li>「list-style」は、「list-style-image」「list-style-position」「list-style-type」をまとめて指定</li>
+<li>「li」を含めると「ol」指定時の「数字」が見えなくなります</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="リンクの文字色と下線の設定">リンクの文字色と下線の設定</h5>
+    
+<ul>
+<li>文字色「inherit」は、親要素の文字色を継承する</li>
+<li>下線の有無は、「text-decoration」で設定</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="ベースになるスタイルを指定">ベースになるスタイルを指定</h5>
+    
+<ul>
+<li>文字色・文字サイズ・書体・行間を指定</li>
+<li>背景色も指定</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="img要素の最大幅を指定する">img要素の最大幅を指定する</h5>
+    
+<ul>
+<li>サイト制作の実務では、画像のサイズを２倍の大きさで用意するため、親要素内に収まるように指定します</li>
+<li>「vertical-align: bottom;」文字の小文字の下部に当たる部分の空き（ディセンダ）をとる指定</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20221119180850.jpg" width="640" height="138" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="まとめ">まとめ</h4>
+    
+<ul>
+<li>初心者のサイト制作では、以下の最低限のリセットにとどめます</li>
+<li>必要に応じて追加記述します</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>Document<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>ページテーマの最優先見出し<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンク1</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンク2</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンク3</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">nav</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- 見出しのないブロック：div要素 --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"key-visual"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- h2から始まる場合：section要素 --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>章の最優先見出し<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>段落<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">箇条書き</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">箇条書き</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">箇条書き</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"footer"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">small</span><span class="synIdentifier">&gt;</span><span class="synSpecial">&amp;copy;</span> 2025 Webデザイン<span class="synIdentifier">&lt;/</span><span class="synStatement">small</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">---------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">#f00</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">30px</span>;
+  <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#cdffee</span>;
+  <span class="synType">color</span>: <span class="synConstant">#00f</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<div class="section">
+    <h5 id="疑似要素も加える">疑似要素も加える</h5>
+    
+<ul>
+<li>::beforeと::afterは疑似要素といい、対象の要素に擬似的に要素を追加するための<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>です。</li>
+<li>疑似要素は、全称<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>ではカバーしきれない場合があるため、この2つの<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>も追加しています。</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synStatement">*</span><span class="synSpecial">,</span><span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span><span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="CSSとは.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">CSSとは</span></a><a href="ページ全体の文字指定（初期値作成）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">ページ全体の文字指定（初期値作成）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

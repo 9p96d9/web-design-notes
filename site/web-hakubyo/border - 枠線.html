@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>border - 枠線 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>border - 枠線</span>
+  </div>
+  <div class="article-head">
+    <h1>border - 枠線</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">CSS</span>
+      <span class="date">2026/01/29</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="文字の囲み">文字の囲み</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315002733.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+    <blockquote>
+        <p>CSSのborderについて解説して</p>
+
+    </blockquote>
+
+<ul>
+<li>border は、要素の外枠線を指定するプロパティです。</li>
+</ul>
+<div class="section">
+    <h5 id="CSSのborderとは">CSSのborderとは？</h5>
+    
+<ul>
+<li>borderを使用して、要素に枠線をつける</li>
+<li>borderプロパティの値を指定する</li>
+</ul>
+    <blockquote>
+        <p>セレクタ {<br>
+    boder: 線の太さ, 線の種類, 線の色 ;<br>
+}</p>
+
+    </blockquote>
+<p>【例】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">h3</span> <span class="synIdentifier">{</span>
+  <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#4087ea</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉️ 2pxの黒い実線の枠</p>
+
+</div>
+<div class="section">
+    <h5 id="基本構文">基本構文</h5>
+    
+<ul>
+<li>「border」と記述することで、<strong>上→右→下→左</strong>をショートハンドで記述したことになります</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink="">border: 1px solid red;
+</pre>
+<table>
+    <tbody><tr>
+    <th>指定</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> 1px   </td>
+    <td> 線の太さ </td>
+    </tr>
+    <tr>
+    <td> solid </td>
+    <td> 線の種類 </td>
+    </tr>
+    <tr>
+    <td> red   </td>
+    <td> 線の色  </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="線の種類border-style">線の種類（border-style）</h5>
+    
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>表示</th>
+    </tr>
+    <tr>
+    <td> solid  </td>
+    <td> 実線     </td>
+    </tr>
+    <tr>
+    <td> dashed </td>
+    <td> 破線     </td>
+    </tr>
+    <tr>
+    <td> dotted </td>
+    <td> 点線     </td>
+    </tr>
+    <tr>
+    <td> double </td>
+    <td> 二重線    </td>
+    </tr>
+    <tr>
+    <td> groove </td>
+    <td> 立体的（凹） </td>
+    </tr>
+    <tr>
+    <td> ridge  </td>
+    <td> 立体的（凸） </td>
+    </tr>
+    <tr>
+    <td> none   </td>
+    <td> なし     </td>
+    </tr>
+</tbody></table><pre class="code lang-css" data-lang="css" data-unlink="">border: 3px dashed blue;
+</pre>
+</div>
+<div class="section">
+    <h5 id="上下左右の枠線を個別に指定する">上下左右の枠線を個別に指定する</h5>
+    
+<ul>
+<li>「border」と記述することにより、上→右→下→左をショートハンドで記述したことになります</li>
+</ul>
+<table>
+    <tbody><tr>
+    <th>プロパティー</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> border-top </td>
+    <td> 要素の上の線 </td>
+    </tr>
+    <tr>
+    <td> border-right </td>
+    <td> 要素の右の線 </td>
+    </tr>
+    <tr>
+    <td> border-bottom </td>
+    <td> 要素の下の線 </td>
+    </tr>
+    <tr>
+    <td> border-left </td>
+    <td> 要素の左の線 </td>
+    </tr>
+</tbody></table><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">h3</span> <span class="synIdentifier">{</span>
+  <span class="synType">border-top</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#ea3b3b</span>;
+  <span class="synType">border-right</span>: <span class="synConstant">4px</span> <span class="synConstant">dotted</span> <span class="synConstant">#0073ff</span>;
+  <span class="synType">border-bottom</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#f8f247</span>;
+  <span class="synType">border-left</span>: <span class="synConstant">5px</span> <span class="synConstant">double</span> <span class="synConstant">#05ac05</span>;
+<span class="synIdentifier">}</span>
+</pre><p> </p>
+
+</div>
+<div class="section">
+    <h5 id="線の種類">線の種類</h5>
+    
+<ul>
+<li>double（二重線）は、3px以上が必要</li>
+</ul>
+<table>
+    <tbody><tr>
+    <th>キーワード</th>
+    <th>形状</th>
+    </tr>
+    <tr>
+    <td> dotted </td>
+    <td> 点線で表示する </td>
+    </tr>
+    <tr>
+    <td> dashed </td>
+    <td> 破線で表示する </td>
+    </tr>
+    <tr>
+    <td> solid </td>
+    <td> 実線で表示する </td>
+    </tr>
+    <tr>
+    <td> double </td>
+    <td> 二重線で表示する </td>
+    </tr>
+    <tr>
+    <td> groove </td>
+    <td> 線が窪んで見えるような線で表示する </td>
+    </tr>
+    <tr>
+    <td> ridge </td>
+    <td> 線が突起して見えるような線で表示する </td>
+    </tr>
+    <tr>
+    <td> inset </td>
+    <td> 領域全体が窪んで見えるような線で表示する </td>
+    </tr>
+    <tr>
+    <td> outset </td>
+    <td> 領域全体が突起して見えるような線で表示する </td>
+    </tr>
+    <tr>
+    <td> none </td>
+    <td> 線をなしにする </td>
+    </tr>
+    <tr>
+    <td> hidden </td>
+    <td> 線の非表示 </td>
+    </tr>
+</tbody></table><p>👉️ 文字と囲みとの空きは、paddingプロパティの値を指定する</p><p><span itemscope="" itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/webmaster-web/20120506042444" class="hatena-fotolife" itemprop="url"><img src="../images/webmaster-web_20120506042444.jpg" width="502" height="397" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></a></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="作例">作例</h5>
+    
+<ul>
+<li>border で見出しを修飾</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241003193454.jpg" width="600" height="51" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">h3</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">10px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">8px</span> <span class="synConstant">0</span> <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#c3e3ff</span>;
+  <span class="synType">border-left</span>: <span class="synConstant">12px</span> <span class="synConstant">solid</span> <span class="synConstant">#74a6d1</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">18px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="よく使う実用例">よく使う実用例</h5>
+    <p></p><h6 id="-カード風デザイン">① カード風デザイン</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.card</span> <span class="synIdentifier">{</span>
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#ccc</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">8px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">16px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="-ボタンの枠線">② ボタンの枠線</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">button</span> <span class="synIdentifier">{</span>
+  <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#3498db</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">5px</span>;
+  <span class="synType">background</span>: <span class="synConstant">white</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="-下線だけのデザイン">③ 下線だけのデザイン</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">border-bottom: 2px solid #000;
+</pre>
+</div>
+<div class="section">
+    <h5 id="border-と-box-sizing-の関係重要">border と box-sizing の関係（重要）</h5>
+    <p>通常、borderは要素のサイズに加算されます。</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">width: 200px;
+border: 10px solid black;
+</pre><p>👉️  実際の横幅 220px</p><p></p><h6 id="box-sizingを使うと">box-sizingを使うと</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">box-sizing: border-box;
+</pre><p>👉️  枠線込みで200pxになる</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="表に枠線をつける">表に枠線をつける</h4>
+    
+<ul>
+<li>table要素に枠線を付ける場合は、borderプロパティを「table, th, td」要素それぞれに記述します</li>
+</ul>
+<div class="section">
+    <h5 id="表に重ねた枠線をつける">表に重ねた枠線をつける</h5>
+    
+<ul>
+<li>table要素に対してborder-collapseプロパティの値を「collapse」と指定すると、重ねて表示されます</li>
+<li>初期値は「separate」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/web-0818/20160130214339" class="hatena-fotolife" itemprop="url"><img src="../images/web-0818_20160130214339.png" width="538" height="104" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></a></span></p><p></p><p></p><h6 id="コラプシングcollapsing">コラプシング【collapsing】</h6><p></p>
+
+<ul>
+<li>ラグビーでは、スクラムなどを故意に崩し重なってしまうこと。反則となり、相手にペナルティーキックが与えられる</li>
+<li>ちなみに、ショッピングモールの「モール」は、ラグビーのスクラムを組んだ形を指します</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="よくあるミス">よくあるミス</h5>
+    <p></p><h6 id="-これでは表示されない">❌ これでは表示されない</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">border: 1px red;
+</pre><p>→ style（種類）がないため</p><p></p><h6 id="-正解">⭕ 正解</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">border: 1px solid red;
+</pre>
+</div>
+<div class="section">
+    <h5 id="まとめ">まとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>項目</th>
+    <th>内容</th>
+    </tr>
+    <tr>
+    <td> border        </td>
+    <td> 枠線全体   </td>
+    </tr>
+    <tr>
+    <td> border-top 等  </td>
+    <td> 辺ごとの指定 </td>
+    </tr>
+    <tr>
+    <td> border-radius </td>
+    <td> 角丸     </td>
+    </tr>
+    <tr>
+    <td> border-style  </td>
+    <td> 線の種類   </td>
+    </tr>
+    <tr>
+    <td> border-width  </td>
+    <td> 太さ     </td>
+    </tr>
+    <tr>
+    <td> border-color  </td>
+    <td> 色      </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="-デザイン上達のコツ">🧠 デザイン上達のコツ</h4>
+    <p><strong>borderは「目立たせる」より「なじませる」</strong>が重要です。</p>
+
+<ul>
+<li>太すぎ ❌</li>
+<li>黒すぎ ❌</li>
+<li>主張しすぎ ❌</li>
+</ul><p>→ 薄く、控えめ、さりげなく</p>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="dl：description list のレイアウト.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">dl：description list のレイアウト</span></a><a href="HTML・CSSの検証.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">HTML・CSSの検証</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

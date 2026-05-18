@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>display（ディスプレイ） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>display（ディスプレイ）</span>
+  </div>
+  <div class="article-head">
+    <h1>display（ディスプレイ）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">CSS</span>
+      <span class="date">2026/01/25</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="displayディスプレイプロパティ">display（ディスプレイ）プロパティ</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260222202853.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSのdesiplayについて解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="CSSの-display-とは">CSSの display とは？</h4>
+    <p>要素が「どのように並ぶか」「幅・高さがどう扱われるか」 を決めます。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">div</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">block</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="代表的な-display-の種類">代表的な display の種類</h4>
+    
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> block        </td>
+    <td> ブロック要素     </td>
+    </tr>
+    <tr>
+    <td> inline       </td>
+    <td> インライン要素    </td>
+    </tr>
+    <tr>
+    <td> inline-block </td>
+    <td> インライン＋ブロック </td>
+    </tr>
+    <tr>
+    <td> none         </td>
+    <td> 非表示        </td>
+    </tr>
+    <tr>
+    <td> flex         </td>
+    <td> フレックスレイアウト </td>
+    </tr>
+    <tr>
+    <td> grid         </td>
+    <td> グリッドレイアウト  </td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="-blockブロック">① block（ブロック）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink="">display: block;
+</pre><p></p><h6 id="特徴">特徴</h6><p></p>
+
+<ul>
+<li>横幅いっぱいに広がる</li>
+<li>改行される</li>
+<li>width / height が効く</li>
+</ul><p></p><h6 id="代表例">代表例</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>, <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>, <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>, <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+</pre><p>【イメージ】</p>
+<pre class="code" data-lang="" data-unlink="">[   ブロック   ]
+[   ブロック   ]
+[   ブロック   ]</pre>
+</div>
+<div class="section">
+    <h5 id="-inlineインライン">② inline（インライン）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink="">display: inline;
+</pre><p></p><h6 id="特徴-1">特徴</h6><p></p>
+
+<ul>
+<li>横に並ぶ</li>
+<li>幅・高さ指定できない</li>
+<li>内容の大きさだけ</li>
+</ul><p></p><h6 id="代表例-1">代表例</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>, <span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>, <span class="synIdentifier">&lt;</span><span class="synStatement">strong</span><span class="synIdentifier">&gt;</span>
+</pre><p>【イメージ】</p>
+<pre class="code" data-lang="" data-unlink="">文字 文字 文字</pre>
+</div>
+<div class="section">
+    <h5 id="-inline-block超重要">③ inline-block（超重要）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink="">display: inline-block;
+</pre><p></p><h6 id="特徴-2">特徴</h6><p></p>
+
+<ul>
+<li>横に並ぶ</li>
+<li>width / height が効く</li>
+</ul><p></p><h6 id="実務で超頻出">実務で超頻出！</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.button</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+  <span class="synType">width</span>: <span class="synConstant">150px</span>;
+  <span class="synType">height</span>: <span class="synConstant">50px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>【イメージ】</p>
+<pre class="code" data-lang="" data-unlink="">[  ] [  ] [  ]</pre>
+</div>
+<div class="section">
+    <h5 id="-none非表示">④ none（非表示）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink="">display: none;
+</pre><p></p><h6 id="特徴-3">特徴</h6><p></p>
+
+<ul>
+<li>完全に消える（存在しない扱い）</li>
+<li>レイアウトからも消える</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.modal</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+</pre><p>⚠ visibility: hidden; との違い</p>
+
+<table>
+    <tbody><tr>
+    <th></th>
+    <th>display:none</th>
+    <th>visibility:hidden</th>
+    </tr>
+    <tr>
+    <td> 見える？   </td>
+    <td> ❌            </td>
+    <td> ❌                 </td>
+    </tr>
+    <tr>
+    <td> 場所を保持？ </td>
+    <td> ❌            </td>
+    <td> ⭕                 </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="-flex超重要">⑤ flex（超重要）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink="">display: flex;
+</pre><p></p><h6 id="モダンCSSで最重要レイアウト">モダンCSSで最重要レイアウト</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="特徴-4">特徴</h6><p></p>
+
+<ul>
+<li>横並びが簡単</li>
+<li>中央揃えが爆速</li>
+<li>レスポンシブに強い</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre><p>📌 <strong>現代Web開発のメイン</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-grid高機能">⑥ grid（高機能）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink="">display: grid;
+</pre><p>2次元レイアウト（縦×横）</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>: <span class="synConstant">1fr</span> <span class="synConstant">1fr</span> <span class="synConstant">1fr</span>;
+<span class="synIdentifier">}</span>
+</pre><p>【イメージ】</p>
+<pre class="code" data-lang="" data-unlink="">[ ][ ][ ]
+[ ][ ][ ]</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="display-まとめ超重要">display まとめ（超重要）</h4>
+    
+<table>
+    <tbody><tr>
+    <th>レイアウト目的</th>
+    <th>推奨</th>
+    </tr>
+    <tr>
+    <td> 縦並び     </td>
+    <td> block        </td>
+    </tr>
+    <tr>
+    <td> 横並び     </td>
+    <td> flex         </td>
+    </tr>
+    <tr>
+    <td> ボタン     </td>
+    <td> inline-block </td>
+    </tr>
+    <tr>
+    <td> 非表示     </td>
+    <td> none         </td>
+    </tr>
+    <tr>
+    <td> 表組      </td>
+    <td> grid         </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h4 id="実務でよく使う-display-パターン">実務でよく使う display パターン</h4>
+    
+<div class="section">
+    <h5 id="横並び中央寄せ最頻出">横並び中央寄せ（最頻出）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="横並び均等配置">横並び均等配置</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">space-between</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="カードレイアウト">カードレイアウト</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>: <span class="synConstant">repeat</span>(<span class="synConstant">3</span><span class="synSpecial">,</span> <span class="synConstant">1fr</span>);
+  gap: <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="displayで詰まりやすいポイント">displayで詰まりやすいポイント</h4>
+    
+<ul>
+<li>❌ <strong>inline に width が効かない</strong></li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">span</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100px</span>; <span class="synComment">/* 効かない */</span>
+<span class="synIdentifier">}</span>
+</pre><p>→ inline-block にする</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">span</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+  <span class="synType">width</span>: <span class="synConstant">100px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<div class="section">
+    <h5 id="インラインレベル要素">インラインレベル要素</h5>
+    
+<ul>
+<li>主にブロックレベル要素の中で使用される要素</li>
+<li>リンク（a要素）、画像（img要素）など</li>
+<li>汎用要素：特別な意味を持たない（span要素）</li>
+<li>インライン要素の幅は、そのタグ付けされた要素のみで、前後で改行されません</li>
+<li>ソースコード上の空白文字類は、ブラウザでは１つ分の空白文字列に置き換えられて表示される（改行を削除するとこの隙間はなくなります）</li>
+<li>高さや上下マージンなどの指定ができない</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="text-align - 行揃え.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">text-align - 行揃え</span></a><a href="要素を中央寄せ.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">要素を中央寄せ</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

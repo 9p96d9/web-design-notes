@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScriptの「演算」 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>JavaScriptの「演算」</span>
+  </div>
+  <div class="article-head">
+    <h1>JavaScriptの「演算」</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/05</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="JavaScriptの演算">JavaScriptの「演算」</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260208201941.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>JavaScriptの役割は、メモリ上で計算結果を計算する「演算」と結果をブラウザに表示する「DOM」に別れます</li>
+</ul>
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptでの演算とDOMを詳しく解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="JavaScriptの演算Operators">JavaScriptの演算（Operators）</h4>
+    
+<div class="section">
+    <h5 id="1-算術演算子">1. 算術演算子</h5>
+    
+<ul>
+<li>数値の計算（四則演算）</li>
+</ul>
+<table>
+    <tbody><tr>
+    <th>演算子</th>
+    <th>意味</th>
+    <th>例</th>
+    <th>結果</th>
+    </tr>
+    <tr>
+    <td> + </td>
+    <td>足し算</td>
+    <td>5 + 3</td>
+    <td>8</td>
+    </tr>
+    <tr>
+    <td> - </td>
+    <td>引き算</td>
+    <td>5 - 3</td>
+    <td>2</td>
+    </tr>
+    <tr>
+    <td> * </td>
+    <td>掛け算</td>
+    <td>5 * 3</td>
+    <td>15</td>
+    </tr>
+    <tr>
+    <td> / </td>
+    <td>割り算</td>
+    <td>6 / 3</td>
+    <td>2</td>
+    </tr>
+    <tr>
+    <td> % </td>
+    <td>余り（剰余算）</td>
+    <td>7 % 3</td>
+    <td>1</td>
+    </tr>
+    <tr>
+    <td> ** </td>
+    <td>べき乗</td>
+    <td>2 ** 3</td>
+    <td>8</td>
+    </tr>
+</tbody></table><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> a <span class="synStatement">=</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+<span class="synType">let</span> b <span class="synStatement">=</span> <span class="synConstant">3</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a <span class="synStatement">+</span> b<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// 13</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a <span class="synStatement">%</span> b<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// 1</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="2-代入演算子">2. 代入演算子</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> x <span class="synStatement">=</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+x <span class="synStatement">+=</span> <span class="synConstant">5</span><span class="synStatement">;</span>   <span class="synComment">// x = x + 5 → 15</span>
+x <span class="synStatement">-=</span> <span class="synConstant">3</span><span class="synStatement">;</span>   <span class="synComment">// x = x - 3 → 12</span>
+x <span class="synStatement">*=</span> <span class="synConstant">2</span><span class="synStatement">;</span>   <span class="synComment">// x = x * 2 → 24</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="3-比較演算子true--false-を返す">3. 比較演算子（true / false を返す）</h5>
+    
+<table>
+    <tbody><tr>
+    <th>演算子</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> == </td>
+    <td>等しい（型変換あり）</td>
+    </tr>
+    <tr>
+    <td> === </td>
+    <td>厳密に等しい（型も比較）</td>
+    </tr>
+    <tr>
+    <td> != </td>
+    <td>等しくない</td>
+    </tr>
+    <tr>
+    <td> !== </td>
+    <td>厳密に等しくない</td>
+    </tr>
+    <tr>
+    <td> &gt; </td>
+    <td>より大きい</td>
+    </tr>
+    <tr>
+    <td> &lt; </td>
+    <td>以上</td>
+    </tr>
+    <tr>
+    <td> &lt;= </td>
+    <td>以下</td>
+    </tr>
+</tbody></table><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">5</span> <span class="synStatement">==</span> <span class="synConstant">"5"</span><span class="synSpecial">)</span><span class="synStatement">;</span>   <span class="synComment">// true</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">5</span> <span class="synStatement">===</span> <span class="synConstant">"5"</span><span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// false</span>
+</pre><p>👉 実務では必ず === を使う のが基本！<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="4-論理演算子">4. 論理演算子</h5>
+    
+<table>
+    <tbody><tr>
+    <th>演算子</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td>　&amp;&amp;　</td>
+    <td>　AND　</td>
+    </tr>
+    <tr>
+    <td>　!　</td>
+    <td>　NOT　</td>
+    </tr>
+</tbody></table><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> age <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>age <span class="synStatement">&gt;=</span> <span class="synConstant">18</span> <span class="synStatement">&amp;&amp;</span> age <span class="synStatement">&lt;</span> <span class="synConstant">30</span><span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// true</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="🔰 アルゴリズムとは？.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">🔰 アルゴリズムとは？</span></a><a href="演算を「メモリ」を基準に徹底解説.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">演算を「メモリ」を基準に徹底解説</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

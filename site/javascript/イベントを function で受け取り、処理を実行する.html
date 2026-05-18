@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>イベントを function で受け取り、処理を実行する - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>イベントを function で受け取り、処理を実行する</span>
+  </div>
+  <div class="article-head">
+    <h1>イベントを function で受け取り、処理を実行する</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/24</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="イベントを-function-で受け取り処理を実行する">イベントを function で受け取り、処理を実行する</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260225203350.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptでイベントをfunctionで受け取って実行する例を作って</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="イベントとDOM操作超重要">イベントとDOM操作（超重要）</h5>
+    <p>【html】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>クリック<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"msg"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>【js】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> btn <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#btn'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> msg <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#msg'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  msg<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">"押されました！"</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p>👉 Webアプリの基本構造<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="演算--DOM-の実用例超重要">演算 × DOM の実用例（超重要）</h5>
+    <p></p><h6 id="カウンターアプリ">カウンターアプリ</h6>【html】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"minus"</span><span class="synIdentifier">&gt;</span>-<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"count"</span><span class="synIdentifier">&gt;</span>0<span class="synIdentifier">&lt;/</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"plus"</span><span class="synIdentifier">&gt;</span>+<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+</pre><p>【js】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> count <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> minus <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#minus'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> plus <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#plus'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> display <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#count'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+plus<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  count<span class="synStatement">++;</span>
+  display<span class="synStatement">.</span>textContent <span class="synStatement">=</span> count<span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+
+minus<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  count<span class="synStatement">--;</span>
+  display<span class="synStatement">.</span>textContent <span class="synStatement">=</span> count<span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p>👉 演算 + DOM + イベント = Webアプリ開発の基礎<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="よくあるミス">よくあるミス</h5>
+    <p></p><h6 id="-DOM取得前に操作">❌ DOM取得前に操作</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#text'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+el<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'変更'</span><span class="synStatement">;</span> <span class="synComment">// ← HTMLがまだ読み込まれていないとエラー</span>
+</pre><p></p><h6 id="-対策">✔ 対策</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">document</span>.<span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'DOMContentLoaded'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#text'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  el<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'変更'</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="DOM.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">DOM</span></a><a href="イベント.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">イベント</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

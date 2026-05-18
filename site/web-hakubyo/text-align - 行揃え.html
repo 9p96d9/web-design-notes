@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>text-align - 行揃え - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>text-align - 行揃え</span>
+  </div>
+  <div class="article-head">
+    <h1>text-align - 行揃え</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">CSS</span>
+      <span class="date">2026/01/24</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="CSSで行揃え">CSSで行揃え</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250314151910.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSでの行揃えについて解説して</p>
+
+    </blockquote>
+<p>CSSでの行揃え（テキストや要素の整列）は、レイアウトや可読性に大きく影響します。</p>
+
+</div>
+<div class="section">
+    <h4 id="CSSでの行揃えtext-alignの基本">CSSでの行揃え（text-align）の基本</h4>
+    <p>行揃えには主に次の4種類があります。</p>
+
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> left    </td>
+    <td> 左揃え（デフォルト） </td>
+    </tr>
+    <tr>
+    <td> center  </td>
+    <td> 中央揃え       </td>
+    </tr>
+    <tr>
+    <td> right   </td>
+    <td> 右揃え        </td>
+    </tr>
+    <tr>
+    <td> justify </td>
+    <td> 両端揃え       </td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="-テキストの行揃えtext-align">① テキストの行揃え：text-align</h5>
+    <p><strong>文章の横方向の整列</strong>に使用します。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synConstant">justify</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="各値の挙動">各値の挙動</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synType">text-align</span>: left;    <span class="synComment">/* 左揃え */</span>
+<span class="synType">text-align</span>: center;  <span class="synComment">/* 中央揃え */</span>
+<span class="synType">text-align</span>: right;   <span class="synComment">/* 右揃え */</span>
+<span class="synType">text-align</span>: justify; <span class="synComment">/* 両端揃え */</span>
+</pre><p>💡 **両端揃え（justify）**は日本語サイトでは特に有効です。</p>
+
+</div>
+<div class="section">
+    <h5 id="-縦方向の行揃えvertical-align">② 縦方向の行揃え：vertical-align</h5>
+    <p><strong>インライン要素やテーブルセル内での縦位置調整</strong></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">span</span> <span class="synIdentifier">{</span>
+  <span class="synType">vertical-align</span>: <span class="synConstant">middle</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>内容</th>
+    </tr>
+    <tr>
+    <td> baseline </td>
+    <td> 基準線揃え（初期） </td>
+    </tr>
+    <tr>
+    <td> middle   </td>
+    <td> 中央        </td>
+    </tr>
+    <tr>
+    <td> top      </td>
+    <td> 上         </td>
+    </tr>
+    <tr>
+    <td> bottom   </td>
+    <td> 下         </td>
+    </tr>
+</tbody></table><p>※ div の縦中央揃えには使えません（後述）</p>
+
+</div>
+<div class="section">
+    <h5 id="-ブロック要素の中央揃えmargin-auto">③ ブロック要素の中央揃え：margin: auto</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">div</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">300px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+</pre><p>→ 横方向の中央揃え（幅指定必須）</p>
+
+</div>
+<div class="section">
+    <h5 id="-Flexboxによる行揃え最重要">④ Flexboxによる行揃え（最重要）</h5>
+    <p><strong>現代CSSで最も使われる方法</strong></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>プロパティ</th>
+    <th>役割</th>
+    </tr>
+    <tr>
+    <td> justify-content </td>
+    <td> 横方向揃え </td>
+    </tr>
+    <tr>
+    <td> align-items     </td>
+    <td> 縦方向揃え </td>
+    </tr>
+</tbody></table><p></p><h6 id="値一覧">値一覧</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">justify-content: flex-start; <span class="synComment">/* 左 */</span>
+justify-content: center;     <span class="synComment">/* 中央 */</span>
+justify-content: flex-end;   <span class="synComment">/* 右 */</span>
+justify-content: space-between;
+justify-content: space-around;
+</pre><pre class="code lang-css" data-lang="css" data-unlink="">align-items: flex-start;
+align-items: center;
+align-items: flex-end;
+</pre>
+</div>
+<div class="section">
+    <h5 id="-Gridによる行揃え高度">⑤ Gridによる行揃え（高度）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  place-items: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre><p>→ <strong>縦横ともに中央揃え</strong><br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="よくある行揃えパターンまとめ">よくある行揃えパターンまとめ</h4>
+    
+<table>
+    <tbody><tr>
+    <th>やりたいこと</th>
+    <th>方法</th>
+    </tr>
+    <tr>
+    <td> テキスト中央揃え </td>
+    <td> text-align: center  </td>
+    </tr>
+    <tr>
+    <td> divを中央配置 </td>
+    <td> margin: 0 auto      </td>
+    </tr>
+    <tr>
+    <td> 縦横中央揃え   </td>
+    <td> flex + center       </td>
+    </tr>
+    <tr>
+    <td> 行の両端揃え   </td>
+    <td> text-align: justify </td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="実用例縦横完全中央揃え">実用例：縦横完全中央揃え</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">height</span>: <span class="synConstant">100vh</span>;
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="補足日本語の両端揃え最適化">補足：日本語の両端揃え最適化</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synConstant">justify</span>;
+  <span class="synType">text-justify</span>: inter-ideograph;
+<span class="synIdentifier">}</span>
+</pre><p>→ <strong>日本語向けに最適な両端揃え</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="まとめ">まとめ</h5>
+    <p>CSSでの行揃えは主に：</p>
+
+<ul>
+<li>テキスト → text-align</li>
+<li>配置 → Flex / Grid</li>
+</ul><p>を使えばほぼ全ケースに対応できます。</p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ページ全体の文字指定（初期値作成）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ページ全体の文字指定（初期値作成）</span></a><a href="display（ディスプレイ）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">display（ディスプレイ）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

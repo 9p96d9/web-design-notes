@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>関数 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>関数</span>
+  </div>
+  <div class="article-head">
+    <h1>関数</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/26</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="関数">関数</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260225191304.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptの関数についてわかりやすく解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="JavaScriptの関数とは">JavaScriptの関数とは？</h4>
+    <p>関数は、<strong>一連の処理をまとめて名前を付けたもの</strong>です。</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">sayHello</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>これは、</p>
+
+    <blockquote>
+        <p>「sayHello という名前の処理セット」</p>
+
+    </blockquote>
+<p>を作った、という意味です。<br>
+実行するには：</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">sayHello</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p>👉 <strong>() を付けると実行</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h4 id="なぜ関数を使うのか">なぜ関数を使うのか？</h4>
+    
+<div class="section">
+    <h5 id="-同じ処理を何度も書かなくていい">① 同じ処理を何度も書かなくていい</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>⬇ 関数にすると：</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">sayHello</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synIdentifier">sayHello</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synIdentifier">sayHello</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synIdentifier">sayHello</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p>👉 短く・読みやすく・修正もしやすい</p>
+
+</div>
+<div class="section">
+    <h5 id="-処理の意味がわかりやすくなる">② 処理の意味がわかりやすくなる</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">calcTax</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synIdentifier">openMenu</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synIdentifier">closeModal</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p>👉 名前を見るだけで<strong>何をしているか直感的に分かる</strong><br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="基本構文超重要">基本構文（超重要）</h4>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">関数名</span><span class="synSpecial">(</span>引数<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  処理<span class="synStatement">;</span>
+  <span class="synStatement">return</span> 戻り値<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>【例】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">add</span><span class="synSpecial">(</span>a<span class="synStatement">,</span> b<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> a <span class="synStatement">+</span> b<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synType">const</span> result <span class="synStatement">=</span> <span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">5</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>result<span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// 8</span>
+</pre>
+<div class="section">
+    <h5 id="引数ひきすうとは">引数（ひきすう）とは？</h5>
+    <p></p><h6 id="関数に渡すデータ">関数に渡すデータ</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">greet</span><span class="synSpecial">(</span>name<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは "</span> <span class="synStatement">+</span> name<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synIdentifier">greet</span><span class="synSpecial">(</span><span class="synConstant">"花子"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">greet</span><span class="synSpecial">(</span><span class="synConstant">"太郎"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>【出力】</p>
+<pre class="code" data-lang="" data-unlink="">こんにちは 花子
+こんにちは 太郎</pre><p>👉 name は<strong>変数のような役割</strong><br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="return戻り値とは">return（戻り値）とは？</h4>
+    <p></p><h6 id="関数の処理結果を外に返す">関数の処理結果を外に返す</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">square</span><span class="synSpecial">(</span>num<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> num <span class="synStatement">*</span> num<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synType">const</span> result <span class="synStatement">=</span> <span class="synIdentifier">square</span><span class="synSpecial">(</span><span class="synConstant">4</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>result<span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// 16</span>
+</pre><p>👉 return がない関数は <strong>値を返さない</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h4 id="関数の3つの書き方重要">関数の3つの書き方（重要）</h4>
+    
+<div class="section">
+    <h5 id="-function文基本">① function文（基本）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">test</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"OK"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-関数式">② 関数式</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> test <span class="synStatement">=</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"OK"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p>👉 変数に関数を代入</p>
+
+</div>
+<div class="section">
+    <h5 id="-アロー関数現代JSで超重要">③ アロー関数（現代JSで超重要）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> test <span class="synStatement">=</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"OK"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre><p>【短縮形】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> add <span class="synStatement">=</span> <span class="synSpecial">(</span>a<span class="synStatement">,</span> b<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> a <span class="synStatement">+</span> b<span class="synStatement">;</span>
+</pre><p>👉 <strong>イベント処理・配列処理で頻出</strong><br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="実務でよく使う関数例">実務でよく使う関数例</h4>
+    
+<div class="section">
+    <h5 id="ボタンをクリックしたら処理を実行">ボタンをクリックしたら処理を実行</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> btn <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'button'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">"クリックされました"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p>👉 <strong>イベント処理はほぼ関数で書く</strong><br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="関数を理解するための重要ポイント">関数を理解するための重要ポイント</h4>
+    
+<table>
+    <tbody><tr>
+    <th>項目</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> function </td>
+    <td> 関数を作る     </td>
+    </tr>
+    <tr>
+    <td> ()       </td>
+    <td> 実行する      </td>
+    </tr>
+    <tr>
+    <td> 引数       </td>
+    <td> 関数に渡す値    </td>
+    </tr>
+    <tr>
+    <td> return   </td>
+    <td> 結果を返す     </td>
+    </tr>
+    <tr>
+    <td> アロー関数    </td>
+    <td> 現代JSの主流構文 </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h4 id="初学者がつまずくポイント">初学者がつまずくポイント</h4>
+    
+<div class="section">
+    <h5 id="--を忘れて実行されない">① () を忘れて実行されない</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">test<span class="synStatement">;</span>   <span class="synComment">// 実行されない</span>
+<span class="synIdentifier">test</span><span class="synSpecial">()</span><span class="synStatement">;</span> <span class="synComment">// 実行される</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-return-の意味が分からない">② return の意味が分からない</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">test</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synType">const</span> x <span class="synStatement">=</span> <span class="synIdentifier">test</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">// x = 10</span>
+</pre><p>👉 <strong>関数 = 値を生み出す装置</strong><br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="超重要な考え方">超重要な考え方</h4>
+    
+    <blockquote>
+        <p><strong>関数 = 処理の自動販売機</strong></p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">vending</span><span class="synSpecial">(</span>money<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> money <span class="synStatement">&gt;=</span> <span class="synConstant">120</span> <span class="synStatement">?</span> <span class="synConstant">"ジュース"</span> <span class="synStatement">:</span> <span class="synConstant">"買えません"</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">vending</span><span class="synSpecial">(</span><span class="synConstant">100</span><span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// 買えません</span>
+<span class="synIdentifier">vending</span><span class="synSpecial">(</span><span class="synConstant">150</span><span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// ジュース</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="イベント.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">イベント</span></a><a href="シングルクォートかダブルクォートどっち？.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">シングルクォートかダブルクォートどっち？</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

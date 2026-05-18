@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScriptにおける let と const の違い - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>JavaScriptにおける let と const の違い</span>
+  </div>
+  <div class="article-head">
+    <h1>JavaScriptにおける let と const の違い</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/07</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="JavaScriptにおける-let-と-const-の違い">JavaScriptにおける let と const の違い</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260208191534.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptでletとconstの違いは？</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="結論一番大きな違い">結論（一番大きな違い）</h5>
+    
+<table>
+    <tbody><tr>
+    <th>項目</th>
+    <th>let</th>
+    <th>const</th>
+    </tr>
+    <tr>
+    <td>再代入</td>
+    <td>できる</td>
+    <td>できない</td>
+    </tr>
+    <tr>
+    <td>再宣言</td>
+    <td>できない</td>
+    <td>できない</td>
+    </tr>
+    <tr>
+    <td>スコープ</td>
+    <td>ブロックスコープ</td>
+    <td>ブロックスコープ</td>
+    </tr>
+    <tr>
+    <td>使いどころ</td>
+    <td>値が変わる変数</td>
+    <td>値が変わらない定数</td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="基本の違い再代入できるか">基本の違い：再代入できるか</h5>
+    <p></p><h6 id="let再代入できる">let（再代入できる）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> count <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+count <span class="synStatement">=</span> <span class="synConstant">2</span><span class="synStatement">;</span>   <span class="synComment">// OK</span>
+</pre><p></p><h6 id="const再代入できない">const（再代入できない）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> count <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+count <span class="synStatement">=</span> <span class="synConstant">2</span><span class="synStatement">;</span>   <span class="synComment">// ❌ エラー</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="const-でも中身は変えられる場合がある">const でも「中身」は変えられる場合がある</h5>
+    
+<ul>
+<li>const は 変数の参照を固定 するだけなので、オブジェクトや配列の中身は変更できます</li>
+</ul><p></p><h6 id="c配列">c配列</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> arr <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+arr<span class="synStatement">.</span><span class="synIdentifier">push</span><span class="synSpecial">(</span><span class="synConstant">4</span><span class="synSpecial">)</span><span class="synStatement">;</span>   <span class="synComment">// OK</span>
+</pre><p></p><h6 id="オブジェクト">オブジェクト</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> user <span class="synStatement">=</span> <span class="synSpecial">{</span> <span class="synIdentifier">name</span><span class="synStatement">:</span> <span class="synConstant">"Taro"</span> <span class="synSpecial">}</span><span class="synStatement">;</span>
+user<span class="synStatement">.</span>name <span class="synStatement">=</span> <span class="synConstant">"Hanako"</span><span class="synStatement">;</span>   <span class="synComment">// OK</span>
+</pre><p>ただし、再代入は不可</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> arr <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span><span class="synConstant">2</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+arr <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">3</span><span class="synStatement">,</span><span class="synConstant">4</span><span class="synSpecial">]</span><span class="synStatement">;</span>   <span class="synComment">// ❌ エラー</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="スコープの違いlet--const-共通">スコープの違い（let / const 共通）</h5>
+    
+<ul>
+<li>どちらも ブロックスコープ です</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synType">let</span> x <span class="synStatement">=</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+  <span class="synType">const</span> y <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+<span class="synError">}</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>x<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// ❌ エラー</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>y<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// ❌ エラー</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="使い分けのベストプラクティス実務で重要">使い分けのベストプラクティス（実務で重要）</h5>
+    <p>👉 基本は const を使う<br>
+👉 値が変わる場合のみ let を使う</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> TAX <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synSpecial">.</span><span class="synConstant">1</span><span class="synStatement">;</span>     <span class="synComment">// 変わらない → const</span>
+<span class="synType">let</span> total <span class="synStatement">=</span> <span class="synConstant">100</span><span class="synStatement">;</span>    <span class="synComment">// 途中で変わる → let</span>
+
+total <span class="synStatement">+=</span> total <span class="synStatement">*</span> TAX<span class="synStatement">;</span>
+</pre><p></p><h6 id="なぜ-const-を優先">なぜ const を優先？</h6><p></p>
+
+<ul>
+<li>バグを防げる</li>
+<li>コードの意図が明確になる</li>
+<li>可読性が上がる</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="参考var-との違い知っておくと">参考：var との違い（知っておくと◎）</h5>
+    
+<table>
+    <tbody><tr>
+    <th></th>
+    <th>var</th>
+    <th>let / const</th>
+    </tr>
+    <tr>
+    <td>スコープ</td>
+    <td>関数</td>
+    <td>ブロック</td>
+    </tr>
+    <tr>
+    <td>巻き上げ</td>
+    <td>あり（危険）</td>
+    <td>あり（安全）</td>
+    </tr>
+    <tr>
+    <td>再宣言</td>
+    <td>可能</td>
+    <td>不可</td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="演算を「メモリ」を基準に徹底解説.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">演算を「メモリ」を基準に徹底解説</span></a><a href="JavaScriptを実装する方法.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">JavaScriptを実装する方法</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

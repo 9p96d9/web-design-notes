@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オブジェクト - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>オブジェクト</span>
+  </div>
+  <div class="article-head">
+    <h1>オブジェクト</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">オブジェクト</span>
+      <span class="date">2025/10/17</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="オブジェクトobject">オブジェクト（object）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029233312.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="オブジェクトとは">オブジェクトとは</h5>
+    
+<ul>
+<li>次の３つをひとまとめにした概念です</li>
+</ul>
+<ol>
+<li>データ</li>
+<li>オブジェクトを操作するメソッド（method）</li>
+<li>オブジェクトの状態を示すプロパティ（property）</li>
+</ol><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241019161300.jpg" width="400" height="201" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+    <blockquote>
+        <p>document.getElementById('id名').プロパティ</p>
+
+    </blockquote>
+<p>「documentオブジェクト」の「getElementByIdメソッド」の値をプロパティ（実行）する</p><p></p><h6 id="メソッドとプロパティの違い">メソッドとプロパティの違い</h6><p></p>
+
+<ul>
+<li>最後にカッコを指定しているのがメソッド</li>
+<li>そうでないのがプロパティ</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="文字列は-String-オブジェクト">文字列は String オブジェクト</h5>
+    
+<ul>
+<li>「lengthプロパティ」文字列の長さを示す</li>
+</ul><p></p><h6 id="ES6の場合">ES6の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>入力された文字を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文字を入力してください。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"mytext"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"sendButton"</span><span class="synIdentifier">&gt;</span>送信<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"msg"</span><span class="synIdentifier">&gt;</span>ここを書き換える<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>btnClick<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> () </span><span class="synStatement">=&gt;</span><span class="synSpecial"> {</span>
+    <span class="synType">const</span> msg <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'mytext'</span><span class="synSpecial">)</span><span class="synStatement">.</span>value<span class="synStatement">;</span>
+    <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'msg'</span><span class="synSpecial">)</span><span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`入力された文字の数は、「</span><span class="synSpecial">${</span>msg<span class="synStatement">.</span>length<span class="synSpecial">}</span><span class="synConstant">」です。`</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synStatement">document</span><span class="synSpecial">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'sendButton'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> btnClick<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ES5の場合">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>入力された文字を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文字を入力してください。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"mytext"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">btnClick</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>送信<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"msg"</span><span class="synIdentifier">&gt;</span>ここを書き換える<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">btnClick</span><span class="synSpecial">() {</span>
+    <span class="synType">let</span> msg <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'mytext'</span><span class="synSpecial">)</span><span class="synStatement">.</span>value<span class="synStatement">;</span>
+    <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'msg'</span><span class="synSpecial">)</span><span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`入力された文字の数は、「</span><span class="synSpecial">${</span>msg<span class="synStatement">.</span>length<span class="synSpecial">}</span><span class="synConstant">」です。`</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="変数と文字列の連結">変数と文字列の連結</h5>
+    
+<ul>
+<li>文字列と変数を続けて記述し、「バックテック（バッククォート）」で囲む</li>
+<li>変数は「${}」で囲む</li>
+</ul><p><br>
+</p><h6 id="実行結果">実行結果</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241019163513.jpg" width="500" height="272" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="大文字を小文字に変換">大文字を小文字に変換</h5>
+    
+<ul>
+<li>toLowerCase()メソッドを実行</li>
+</ul><p></p><h6 id="ES6の場合-1">ES6の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>大文字を小文字に変換する<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文字を入力してください。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"mytext"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"sendButton"</span><span class="synIdentifier">&gt;</span>送信<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"msg"</span><span class="synIdentifier">&gt;</span>ここを書き換える<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>btnClick<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> () </span><span class="synStatement">=&gt;</span><span class="synSpecial"> {</span>
+    <span class="synType">const</span> msg <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'mytext'</span><span class="synSpecial">)</span><span class="synStatement">.</span>value<span class="synStatement">;</span>
+    <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'msg'</span><span class="synSpecial">)</span><span class="synStatement">.</span>textContent <span class="synStatement">=</span> msg<span class="synStatement">.</span><span class="synIdentifier">toLowerCase</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synStatement">document</span><span class="synSpecial">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'sendButton'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> btnClick<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ES5の場合-1">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>大文字を小文字に変換する<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文字を入力してください。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"mytext"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">btnClick</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>送信<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"msg"</span><span class="synIdentifier">&gt;</span>ここを書き換える<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">btnClick</span><span class="synSpecial">() {</span>
+    <span class="synType">let</span> msg <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'mytext'</span><span class="synSpecial">)</span><span class="synStatement">.</span>value<span class="synStatement">;</span>
+    <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'msg'</span><span class="synSpecial">)</span><span class="synStatement">.</span>textContent <span class="synStatement">=</span> msg<span class="synStatement">.</span><span class="synIdentifier">toLowerCase</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="実行結果-1">実行結果</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241019164953.jpg" width="500" height="271" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="指定した回数だけ処理を繰り返す - for文.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">指定した回数だけ処理を繰り返す - for文</span></a><a href="EventListener.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">EventListener</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

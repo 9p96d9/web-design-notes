@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>text-align - 行揃え - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>text-align - 行揃え</span>
+  </div>
+  <div class="article-head">
+    <h1>text-align - 行揃え</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/10/04</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="CSSで行揃え"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>で行揃え</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250314151910.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>text-align: left;</li>
+<li>text-align: center;</li>
+<li>text-align: right;</li>
+<li>text-align: justify;</li>
+</ul>
+<div class="section">
+    <h5 id="要素テキストを左寄せ">要素（テキスト）を左寄せ</h5>
+    
+<ul>
+<li>テキスト（行）をブロック内の左央に配置</li>
+<li>すべての要素の初期値</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="要素テキストを中央寄せ">要素（テキスト）を中央寄せ</h5>
+    
+<ul>
+<li>テキスト（行）をブロック内の中央に配置</li>
+<li>２行以上の段落的な表現ではなく、１行で完結する文章に向いている行揃え</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="要素テキストを右寄せ">要素（テキスト）を右寄せ</h5>
+    
+<ul>
+<li>テキスト（行）をブロック内の右に配置</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="text-alignプロパティで文章を右寄せ">text-alignプロパティで文章を右寄せ</h5>
+    
+<ul>
+<li>text-alignは、ブロック要素などの水平方向に対して配置を決めることができます
+<ol>
+<li>text-align: right;を指定する</li>
+<li>inline要素の場合はdisplay: block;でブロックレベル要素に変更する</li>
+</ol></li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>text-alignで右寄せします！<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>インライン要素を、text-alignで右寄せします！<span class="synIdentifier">&lt;/</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* text-alignで右寄せします。 */</span>
+<span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synPreProc">right</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* インラインの場合 */</span>
+<span class="synStatement">span</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synPreProc">right</span>;
+  <span class="synType">display</span>: <span class="synConstant">block</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="margin-leftmargin-rightプロパティで文章を右寄せ">margin-left、margin-rightプロパティで文章を右寄せ</h5>
+    
+<ul>
+<li>margin-leftは、要素の左側に余白を指定します。対してmargin-rightは要素の右側に余白を指定します
+<ol>
+<li>margin-right: 0;を指定する</li>
+<li>margin-left: auto;を指定する</li>
+<li>widthの値を設定する</li>
+<li>inline要素の場合はdisplay: block;でブロックレベル要素に変更する</li>
+</ol></li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>marginで右寄せします！<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>インライン要素を、marginで右寄せします！<span class="synIdentifier">&lt;/</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* margin で右寄せします。 */</span>
+<span class="synStatement">p</span> <span class="synIdentifier">{</span>
+ <span class="synType">margin-right</span>: <span class="synConstant">0</span>;
+ <span class="synType">margin-left</span>: <span class="synConstant">auto</span>;
+ <span class="synType">width</span>: <span class="synConstant">30%</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">span</span> <span class="synIdentifier">{</span>
+ <span class="synType">margin-right</span>: <span class="synConstant">0</span>;
+ <span class="synType">margin-left</span>: <span class="synConstant">auto</span>;
+ <span class="synType">width</span>: <span class="synConstant">30%</span>;
+ <span class="synType">display</span>: <span class="synConstant">block</span>;
+<span class="synIdentifier">}</span>
+</pre><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20240922041436.jpg" width="680" height="77" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="flexプロパティで文章を右寄せ"><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>プロパティで文章を右寄せ</h5>
+    
+<ul>
+<li>flexboxのプロパティの一つ、<a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>-endで右寄せにすることができます
+<ol>
+<li>display: <a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>;を指定する</li>
+<li>justify-content: <a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>-end;を指定する</li>
+</ol></li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>flex-endで右寄せします！<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>インライン要素を、flex-endで右寄せします！<span class="synIdentifier">&lt;/</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* flex で右寄せします。 */</span>
+<span class="synStatement">p</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ <span class="synType">justify-content</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">span</span> <span class="synIdentifier">{</span>
+ <span class="synType">display</span>: <span class="synConstant">flex</span>;
+ <span class="synType">justify-content</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20240922041635.jpg" width="680" height="77" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="ブロックレベル要素とインラインレベル要素">ブロックレベル要素とインラインレベル要素</h4>
+    
+<ul>
+<li>現在、「HTML Living Standard」にはこの呼び方と概念は存在しませんが、ブラウザは表示するときの<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>の解釈はこの２つを基準にして表示します</li>
+</ul>
+<div class="section">
+    <h5 id="ブロックレベル要素">ブロックレベル要素</h5>
+    
+<ul>
+<li>見出し（h1〜h6要素）、段落（p要素）、表（table要素）、リスト（ul、ol、dl要素）などが該当します</li>
+<li>ブロックレベル要素は、その前後で改行表示されます</li>
+<li>ブロックレベル要素は、デフォルト状態で親要素と同じ幅を持っています</li>
+<li>親要素より小さい幅を指定しても前後で開業され、横並びに配置できません</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"utf-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ブロックレベル要素<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#BAD6EF</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#EDF5AC</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>見出し<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>段落<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p><br>
+<span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/lesson3_20170827051546.png" width="686" height="92" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="インラインレベル要素">インラインレベル要素</h5>
+    
+<ul>
+<li>主にブロックレベル要素の中で使用される要素</li>
+<li>リンク（a要素）、画像（img要素）など</li>
+<li>汎用要素：特別な意味を持たない（span要素）</li>
+<li>インライン要素の幅は、そのタグ付けされた要素のみで、前後で改行されません</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BD%A1%BC%A5%B9%A5%B3%A1%BC%A5%C9">ソースコード</a>上の空白文字類は、ブラウザでは１つ分の空白文字列に置き換えられて表示される（改行を削除するとこの隙間はなくなります）</li>
+<li>高さや上下マージンなどの指定ができない</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="displayプロパティ">displayプロパティ</h4>
+    
+<ul>
+<li>ブロックレベル要素をインラインレベル要素のように扱う</li>
+<li>インラインレベル要素をブロックレベル要素のように扱う</li>
+</ul>
+<div class="section">
+    <h5 id="ブロックレベル要素をインラインレベル要素のように扱う">ブロックレベル要素をインラインレベル要素のように扱う</h5>
+    
+<ul>
+<li>リストを横に並べる</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">li</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">inline</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="インラインレベル要素をブロックレベル要素のように扱う">インラインレベル要素をブロックレベル要素のように扱う</h5>
+    
+<ul>
+<li>a要素をブロックレベル要素として表示し、クリック可能な領域を広げる</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+  <span class="synType">display</span>: <span class="synConstant">block</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="便利な値display-inline-block">便利な値（display: inline-block;）</h5>
+    
+<ul>
+<li>インラインレベル要素のように前後で改行せずに配置しつつ、ブロックレベル要素のように高さと上下マージン・上下パディングを指定できます</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"utf-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>display:inline-block<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">300px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#D2F4FE</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">li</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+  <span class="synType">width</span>: <span class="synConstant">100px</span>;
+  <span class="synType">height</span>: <span class="synConstant">50px</span>; <span class="synComment">/* 高さ 50px */</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">10px</span>; <span class="synComment">/* 下マージン 10px */</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#DFB9E5</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>リスト項目1<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>リスト項目2<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>リスト項目3<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>インラインレベル要素と同様に、<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BD%A1%BC%A5%B9%A5%B3%A1%BC%A5%C9">ソースコード</a>上の改行やインデントは空白１文字分に置き換わります</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/lesson3_20170827141816.png" width="303" height="124" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>リスト項目1<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>リスト項目2<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>リスト項目3<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>改行をとると、空きがなくなりすべて横並びになります</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/lesson3_20170827142150.png" width="304" height="64" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ページ全体の文字指定（初期値作成）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ページ全体の文字指定（初期値作成）</span></a><a href="border - 枠線.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">border - 枠線</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

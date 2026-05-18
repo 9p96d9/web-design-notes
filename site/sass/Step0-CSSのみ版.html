@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 0：CSSのみ版でつらさを体験 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Sass入門</a>
+    <span class="sep">›</span>
+    <span>Step 0：CSSのみ版でつらさを体験</span>
+  </div>
+  <div class="article-head">
+    <h1>Step 0：CSSのみ版でつらさを体験</h1>
+    <div class="meta">
+      <span class="tag" style="background:#fdf2f8;color:#cc6699">ステップ演習</span>
+      <span class="date">2026/04/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+  <h4 id="step0-overview">このステップでやること</h4>
+  <p>まずSassを使わず、CSSだけでカフェサイトを書いてみます。</p>
+  <p>目的は「Sassがないと何が大変か」を体感することです。一見うまく書けていても、<strong>変更・保守のしにくさ</strong>に気づいてもらいます。</p>
+</div>
+
+<div class="section">
+  <h4 id="問いかけ">問いかけ：ブランドカラーを変えると何箇所直す？</h4>
+  <blockquote>
+    <p>「ブランドカラー（<code>#6F4E37</code>）を別の色に変えるとしたら、何箇所直す必要がありますか？」</p>
+  </blockquote>
+  <p>以下のCSS例を見てください。ブランドカラーが複数箇所に散らばっています。</p>
+  <pre class="code" data-lang="css">/* style.css （CSSのみ版） */
+
+/* ヘッダー */
+.header {
+  background-color: #6F4E37;
+}
+
+/* ヒーローセクション */
+.hero__btn {
+  background-color: #6F4E37;
+  border-color: #6F4E37;
+}
+
+/* メニューカード */
+.menu-card__title {
+  color: #6F4E37;
+}
+
+/* フッター */
+.footer {
+  background-color: #6F4E37;
+}
+
+/* ボタンホバー */
+.btn:hover {
+  background-color: #6F4E37;
+}
+
+/* 見出し装飾 */
+.section-title::before {
+  background-color: #6F4E37;
+}
+
+/* リンク色 */
+a {
+  color: #6F4E37;
+}</pre>
+  <p>数えると <strong>7箇所</strong> あります。ブランドカラーが変わるたびに7箇所修正するのは大変です。修正漏れが起きやすく、バグの温床になります。</p>
+</div>
+
+<div class="section">
+  <h4 id="ベンダープレフィックス問題">ベンダープレフィックスのコピペ問題</h4>
+  <p><strong>ベンダープレフィックス</strong>とは、ブラウザ対応のために書く接頭辞です（<code>-webkit-</code>、<code>-ms-</code> など）。</p>
+  <p>flexboxを使うとき、完全なブラウザ対応のために次のように書く必要があります。</p>
+  <pre class="code" data-lang="css">/* flexboxを使うたびにこれをコピペする必要がある */
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}</pre>
+  <p>同じコードが3箇所以上に散らばっています。</p>
+  <ul>
+    <li>1箇所直し忘れると、そのブラウザだけ崩れる</li>
+    <li>プロパティを追加するたびにすべてのコピーを修正しなければならない</li>
+    <li>コードが長くなって読みにくい</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h4 id="step0-まとめ">Step 0のまとめ：CSSだけの「つらさ」</h4>
+  <table>
+    <tbody>
+      <tr><th>問題</th><th>何が起きるか</th></tr>
+      <tr><td>色を変えたい</td><td>同じ色コードを何箇所も直す</td></tr>
+      <tr><td>共通スタイルを直したい</td><td>コピペした全箇所を直す</td></tr>
+      <tr><td>ベンダープレフィックス</td><td>コピペが増え、修正漏れが起きやすい</td></tr>
+      <tr><td>ファイルが大きくなる</td><td>どこに何が書いてあるか分からなくなる</td></tr>
+    </tbody>
+  </table>
+  <p>次のStep 1から、Sassの変数でこの問題を解決していきます。</p>
+</div>
+
+  </div>
+  <nav class="article-nav">
+    <a href="Sassとは.html" class="nav-prev">
+      <span class="nav-label">← 前の記事</span>
+      <span class="nav-title">Sassとは</span>
+    </a>
+    <a href="Step1-変数.html" class="nav-next" style="text-align:right">
+      <span class="nav-label">次の記事 →</span>
+      <span class="nav-title">Step 1：変数を導入</span>
+    </a>
+  </nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+</body>
+</html>

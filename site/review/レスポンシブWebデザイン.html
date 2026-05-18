@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>レスポンシブWebデザイン - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>レスポンシブWebデザイン</span>
+  </div>
+  <div class="article-head">
+    <h1>レスポンシブWebデザイン</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">レスポンシブ</span>
+      <span class="date">2025/11/14</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="レスポンシブWebデザインの誕生">レスポンシブWebデザインの誕生</h4>
+    
+<ul>
+<li>Responsive Web Design は、2010年イーサン・マルコッテ氏が提唱した制作手法です</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=http%3A%2F%2Falistapart.com%2Farticle%2Fresponsive-web-design%2F" title="Responsive Web Design" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="http://alistapart.com/article/responsive-web-design/">alistapart.com</a></cite></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="レスポンシブWebデザイン">レスポンシブWebデザイン</h4>
+    
+<ul>
+<li>レスポンシブWebデザインとは、<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D6%A5%E9%A5%A6%A5%B6%A1%BC">ブラウザー</a>のウィンドウ幅に合わせて<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>でWebページのレイアウトを変更する手法のこと</li>
+<li>技術的には
+<ol>
+<li>Fluid Grid（フルードグリッド）</li>
+<li>Fluid Image（フルードイメージ）</li>
+<li>Media Queries（メディアクエリ）</li>
+</ol></li>
+</ul><p>　　　という3つのテクニックを用いて実現する</p>
+
+</div>
+<div class="section">
+    <h4 id="レスポンシブWebデザインの基本設定">レスポンシブWebデザインの基本設定</h4>
+    
+<div class="section">
+    <h5 id="ビューポート">ビューポート</h5>
+    
+<ul>
+<li>ビューポートは、デ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>のスクリーンを幅：何px、高さ：何pxとして扱うかを設定して作成されます</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/iOS">iOS</a>や<a class="keyword" href="https://d.hatena.ne.jp/keyword/Android">Android</a>に標準で搭載されたモバイル用ブラウザは、ビューポートの横幅をデフォルトで980pxに設定します</li>
+<li>デスクトップ環境では、ブラウザ画面がビューポートとして扱われます</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="デバイスの画面解像度に設定したビューポート">デ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>の画面解像度に設定したビューポート</h5>
+    
+<ul>
+<li>ビューポートの幅は、以下の記述で指定できます</li>
+</ul><p></p><h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"パラメータ値"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p></h6><p></p><p></p><table width="640">
+<tbody><tr>
+<th>設定</th>
+<th>パラメータ</th>
+<th>指定できる値</th>
+</tr>
+<tr>
+<td><br>
+<p>ビューポートの横幅</p></td>
+<td>width</td>
+<td>数値(<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D4%A5%AF%A5%BB%A5%EB">ピクセル</a>)/device-width</td>
+</tr>
+<tr>
+<td>ビューポートの高さ</td>
+<td>height</td>
+<td>数値(<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D4%A5%AF%A5%BB%A5%EB">ピクセル</a>)/device-height</td>
+</tr>
+<tr>
+<td>ページの拡大率</td>
+<td>initial-scale</td>
+<td>拡大率</td>
+</tr>
+<tr>
+<td>拡大率の最小値</td>
+<td>minimum-scale</td>
+<td>拡大率</td>
+</tr>
+<tr>
+<td>拡大率の最大値</td>
+<td>maximum-scale</td>
+<td>拡大率</td>
+</tr>
+<tr>
+<td>ユーザーによる拡大・縮小の可否</td>
+<td>user-scalable</td>
+<td>yes/no</td>
+</tr>
+<tr>
+<td>ターゲットdensity</td>
+<td>target-densitydpi</td>
+<td>数値(dpi)/device-dpi/low-dpi/<br>medium-dpi/high-dpi</td>
+</tr>
+</tbody></table><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="ビューポートの横幅指定">ビューポートの横幅指定</h5>
+    
+<ul>
+<li>何も設定をしないとデフォルトの「980px」に設定されます</li>
+<li>「meta name="viewport"」を追加する</li>
+<li>「content="width=device-width"」を指定する</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ビューポートの横幅指定<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+	
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p><br>
+もしページロード時の初期の縮小をコン<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%C8%A5%ED%A1%BC%A5%EB">トロール</a>したければ、initial-scaleの指定を利用できます。<br>
+例えば、下記の記載ではページロード後の自動拡縮を行いません。</p><h6 class="none"><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p></h6><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="densityに基づいたビューポート">densityに基づいたビューポート</h5>
+    
+<ul>
+<li>ビューポートをデ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>の解像度とdensityに基づいた横幅に設定すると、異なるデ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>の幅でもコンテンツが同じ大きさで見えるようにすることができます</li>
+<li>レスポンシブWebデザインでは、この横幅を利用します</li>
+</ul>
+    <blockquote>
+        <p>densityに基づいたビューポートの解像度 = デ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>の解像度 ÷ デ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>に設定されたdensityの値</p>
+
+    </blockquote>
+<p></p><h6 id="densityとは">densityとは</h6><p></p>
+
+<ul>
+<li>ディスプレイサイズや画面解像度が異なるデ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>において、同じコンテンツが同じ大きさで見えるように考えられた仕組み</li>
+<li>各デ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>でdpiに応じてdensityの幅が設定されます</li>
+<li>dpiはデ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>のディスプレイサイズと画像解像度から算出されます</li>
+<li>densityが「１」のデ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>を基準とし、コンテンツが同じ大きさで見えるように処理が行われる</li>
+</ul><p></p><table width="500">
+<tbody><tr>
+<th><a class="keyword" href="http://d.hatena.ne.jp/keyword/ppi">ppi</a>によるデ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%A4">バイ</a>スの分類</th>
+<th align="center">基準となるdpi</th>
+<th align="center">density<br>(device pixel ratio)</th>
+</tr>
+<tr>
+<th>low</th>
+<td align="center">120</td>
+<td align="center">0.75</td>
+</tr>
+<tr>
+<th>medium</th>
+<td align="center">160</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<th>high</th>
+<td align="center">240</td>
+<td align="center">1.5</td>
+</tr>
+<tr>
+<th>extra high</th>
+<td align="center">320</td>
+<td align="center">2</td>
+</tr>
+</tbody></table><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="widthとdevice-widthの違い">widthとdevice-widthの違い</h4>
+    
+<ul>
+<li>CSS3の規格では「width」はビューポートの横幅、「device-width」はスクリーンの横幅を指定するものと定義されています</li>
+<li>デ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>により処理が変わります</li>
+</ul>
+<div class="section">
+    <h5 id="デスクトップの場合">デスクトップの場合</h5>
+    
+<ul>
+<li>「width」はブラウザの横幅</li>
+<li>「device-width」はモニタの画面解像度</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="スマートフォンやタブレットの場合"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%DE%A1%BC%A5%C8%A5%D5%A5%A9%A5%F3">スマートフォン</a>や<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BF%A5%D6%A5%EC%A5%C3%A5%C8">タブレット</a>の場合</h5>
+    
+<ul>
+<li>「width」はビューポートの横幅</li>
+<li>「device-width」はOSによって処理が変わります</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="orientationで画面の向きを判別する">orientationで画面の向きを判別する</h5>
+    
+<ul>
+<li>特定の「orientation」を利用すると画面の向きを判別することができます</li>
+</ul><p></p><h6 id="幅指定の特性">幅指定の特性</h6><table width="530">
+<tbody><tr>
+<th>主な特性</th>
+<th>閲覧環境の特性</th>
+<th>値</th>
+</tr>
+<tr>
+<td>width</td>
+<td>画面（ビューポート）の横幅</td>
+<td>数値</td>
+</tr>
+<tr>
+<td>mini-width</td>
+<td>画面（ビューポート）の横幅の最小値</td>
+<td>数値</td>
+</tr>
+<tr>
+<td>max-width</td>
+<td>画面（ビューポート）の横幅の最大値</td>
+<td>数値</td>
+</tr>
+<tr>
+<td>orientation</td>
+<td>デ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A5%A4">バイ</a>スの向き（横/縦）</td>
+<td>landscape<br>portrait</td>
+</tr>
+</tbody></table><p></p><p></p><h6 class="none"><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* メディアクエリ(orientation)の設定 */</span>
+
+<span class="synPreProc">@media (</span><span class="synType">orientation</span><span class="synPreProc">: </span><span class="synConstant">portrait</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synStatement">body</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#ADCD7D</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+
+<span class="synPreProc">@media (</span><span class="synType">orientation</span><span class="synPreProc">: </span><span class="synConstant">landscape</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synStatement">body</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E6AB13</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+</pre><p></p></h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220918234525.jpg" width="600" height="360" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="デザインを切り替えるための横幅の決定">デザインを切り替えるための横幅の決定</h4>
+    
+<ul>
+<li>画面サイズをいくつかの範囲に切り分け、範囲ごとにWebページのデザインを切り替えることになります</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220322192146.png" width="664" height="285" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="レスポンシブ主要レイアウトパターン">レスポンシブ主要レイアウトパターン</h4>
+    
+<div class="section">
+    <h5 id="可変レイアウト">可変レイアウト</h5>
+    
+<ul>
+<li>可変レイアウトによるレスポンシブWebデザイン</li>
+<li>最も利用頻度の高いレイアウトパターン</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="固定レイアウト">固定レイアウト</h5>
+    
+<ul>
+<li>各画面サイズで固定レイアウトをおこなう</li>
+<li>画面サイズに応じて4段組、2段組、1段組とレイアウトを変える</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="可変レイアウト固定レイアウト">可変レイアウト+固定レイアウト</h5>
+    
+<ul>
+<li>広告のように横幅を変えることができないパーツがある場合に有効</li>
+<li>サイドバーの横幅を固定したレイアウト</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="Flexible-imagesFluid-images">Flexible images（Fluid images）</h4>
+    
+<ul>
+<li>画像は、挿入されたスペースの左上から100%の大きさで読み込まれることが基本です</li>
+<li>PCで閲覧用の画像は、そのままの大きさでは<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%DE%A1%BC%A5%C8%A5%D5%A5%A9%A5%F3">スマートフォン</a>の中でははみ出た状態になってしまいます</li>
+<li>表示をデ<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%B9">バイス</a>幅にあわせて最大100%にするまでを可変させる指定</li>
+</ul><p></p><h6 class="none"><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">height</span>: <span class="synConstant">auto</span>;  <span class="synComment">/* 高さは省略 */</span>
+<span class="synIdentifier">}</span>
+</pre><p></p></h6><p></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="メディアクエリを使ったCSSの記述">メディアクエリを使った<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>の記述</h4>
+    
+<ul>
+<li>768pxの「<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D6%A5%EC%A1%BC%A5%AF%A5%DD%A5%A4%A5%F3%A5%C8">ブレークポイント</a>」で<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>を切り替える</li>
+</ul><p></p><h6 class="none"><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@media (</span><span class="synType">width</span><span class="synPreProc"> &lt; </span><span class="synConstant">768px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+　　<span class="synComment">/* モバイル用のCSSの設定を記述 */</span>
+<span class="synIdentifier">}</span>
+<span class="synPreProc">@media (</span><span class="synType">width</span><span class="synPreProc"> &gt; </span><span class="synConstant">767px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+　　<span class="synComment">/* PC用のCSSの設定を記述 */</span>
+<span class="synIdentifier">}</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@media (</span><span class="synType">orientation</span><span class="synPreProc">: </span><span class="synConstant">landscape</span><span class="synPreProc">) </span><span class="synStatement">and</span><span class="synPreProc"> (</span><span class="synType">min-width</span><span class="synPreProc">: </span><span class="synConstant">768px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synComment">/* 画面が横向きで、幅が768px以上の場合に適用されるスタイル */</span>
+  <span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+</pre><p></p></h6><p></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="ゼロから始めるレスポンシブWebデザイン入門">ゼロから始めるレスポンシブWebデザイン入門</h4>
+    <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fascii.jp%2Fserialarticles%2F700611%2F" title="ゼロから始めるレスポンシブWebデザイン入門" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://ascii.jp/serialarticles/700611/">ascii.jp</a></cite></p>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="擬似要素：before _ after.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">擬似要素：before / after</span></a><a href="レスポンシブWebデザインのための画面サイズ.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">レスポンシブWebデザインのための画面サイズ</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

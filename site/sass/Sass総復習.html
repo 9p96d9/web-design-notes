@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sass総復習 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Sass入門</a>
+    <span class="sep">›</span>
+    <span>Sass総復習</span>
+  </div>
+  <div class="article-head">
+    <h1>Sass総復習</h1>
+    <div class="meta">
+      <span class="tag" style="background:#fdf2f8;color:#cc6699">復習</span>
+      <span class="date">2026/04/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+  <h4 id="学んだこと">ここまで学んだこと</h4>
+  <table>
+    <tbody>
+      <tr><th>機能</th><th>書き方</th><th>何が解決されるか</th></tr>
+      <tr><td>変数</td><td><code>$brand-color: #6F4E37;</code></td><td>同じ値の繰り返し・修正漏れ</td></tr>
+      <tr><td>ネスト</td><td><code>.header { &amp;__logo { } }</code></td><td>セレクタの見通し・BEMとの相性</td></tr>
+      <tr><td>mixin</td><td><code>@mixin flex-row { } / @include flex-row;</code></td><td>スタイルブロックのコピペ・ベンダープレフィックス</td></tr>
+      <tr><td>ファイル分割</td><td><code>@use 'variables';</code></td><td>1ファイルへの肥大化・役割の不明確さ</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h4 id="最終問いかけ">最終問いかけ</h4>
+  <p>理解度を確かめるための問いかけです。答えを考えてみてください。</p>
+
+  <h5 id="q1">Q1. Step 0のCSSで「ヘッダーとフッターの背景色を変えたい」場合</h5>
+  <blockquote>
+    <p>何箇所修正する必要がありますか？</p>
+  </blockquote>
+  <p>Step 0のCSSには <code>#6F4E37</code> が7箇所あります。ヘッダーとフッターだけ変えたくても、検索して1つずつ確認・修正が必要です。</p>
+
+  <h5 id="q2">Q2. Step 4で同じことをするには？</h5>
+  <blockquote>
+    <p><code>_variables.scss</code> の <code>$brand-color</code> を1行変えるだけです。</p>
+  </blockquote>
+  <pre class="code" data-lang="scss">/* _variables.scss */
+$brand-color: #3b82f6;  /* ← ここだけ変えれば全体に反映 */</pre>
+
+  <h5 id="q3">Q3. 新しいセクション「スタッフ紹介」を追加するなら？</h5>
+  <blockquote>
+    <p>どのパーシャルを作りますか？</p>
+  </blockquote>
+  <p><code>_staff.scss</code> を作成し、<code>style.scss</code> に1行追加します。</p>
+  <pre class="code" data-lang="scss">/* style.scss */
+@use 'variables';
+@use 'mixin';
+@use 'base';
+@use 'header';
+@use 'card';
+@use 'staff';    /* ← 追加するだけ */</pre>
+  <pre class="code" data-lang="scss">/* _staff.scss（新規作成） */
+@use 'variables' as v;
+@use 'mixin' as m;
+
+.staff {
+  padding: v.$spacing-lg 0;
+
+  &__grid {
+    @include m.flex-row(space-between);
+    flex-wrap: wrap;
+    gap: v.$spacing-md;
+  }
+
+  &__card {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  &__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-weight: bold;
+    color: v.$brand-color;
+    margin-top: v.$spacing-sm;
+  }
+}</pre>
+</div>
+
+<div class="section">
+  <h4 id="実力チェック">実力チェック</h4>
+  <p>以下を自分で書けるか確認しましょう。</p>
+  <ul>
+    <li>[ ] <code>$変数名: 値;</code> で変数を定義できる</li>
+    <li>[ ] 変数を使って色・サイズ・余白を管理できる</li>
+    <li>[ ] <code>&amp;__element</code> でBEMのセレクタをネストできる</li>
+    <li>[ ] <code>&amp;:hover</code> でホバースタイルをネストできる</li>
+    <li>[ ] <code>@mixin 名前 { }</code> でmixinを定義できる</li>
+    <li>[ ] <code>@include 名前;</code> でmixinを呼び出せる</li>
+    <li>[ ] 引数付きのmixinを定義・呼び出しできる</li>
+    <li>[ ] パーシャルを作って <code>@use</code> で読み込める</li>
+    <li>[ ] <code>sass --watch</code> で自動コンパイルできる</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h4 id="次のステップ">次のステップ</h4>
+  <p>Sassの基礎を習得したら、次に学ぶとよいトピックです。</p>
+  <table>
+    <tbody>
+      <tr><th>トピック</th><th>概要</th></tr>
+      <tr><td><code>@function</code></td><td>計算を関数化する（例：px → rem 変換）</td></tr>
+      <tr><td><code>@each</code> / <code>@for</code></td><td>ループでセレクタを自動生成</td></tr>
+      <tr><td><code>@extend</code></td><td>スタイルの継承（mixinとの使い分けを学ぶ）</td></tr>
+      <tr><td>メディアクエリのmixin化</td><td>ブレークポイントをmixinで管理</td></tr>
+      <tr><td>Vite / webpack との連携</td><td>実務でのビルドツール統合</td></tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>
+  <nav class="article-nav">
+    <a href="ソースマップとは.html" class="nav-prev">
+      <span class="nav-label">← 前の記事</span>
+      <span class="nav-title">ソースマップとは</span>
+    </a>
+  </nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+</body>
+</html>

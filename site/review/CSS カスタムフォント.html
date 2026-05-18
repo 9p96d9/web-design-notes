@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS カスタムフォント - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>CSS カスタムフォント</span>
+  </div>
+  <div class="article-head">
+    <h1>CSS カスタムフォント</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">カスタムフォント</span>
+      <span class="date">2026/01/07</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="CSS-カスタムフォント">CSS カスタムフォント</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20260217215947.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSでカスタムフォントの事例を作って</p>
+
+    </blockquote>
+
+<ol>
+<li>ローカルフォント</li>
+<li>Webフォント（Google Fonts）</li>
+<li>自前フォント（@font-face）</li>
+</ol>
+<div class="section">
+    <h5 id="-Google-Fonts-を使う基本パターン最も一般的">① Google Fonts を使う基本パターン（最も一般的）</h5>
+    <p>【html】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"preconnect"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://fonts.googleapis.com"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"preconnect"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://fonts.gstatic.com"</span><span class="synIdentifier"> </span><span class="synType">crossorigin</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap"</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+</pre><p>【css】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">"Noto Sans JP"</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="ポイント">ポイント</h6><p></p>
+
+<ul>
+<li>日本語対応</li>
+<li>読み込みが高速</li>
+<li>商用利用OK</li>
+<li>実務で 最も使われる方式</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-font-face-を使う自前フォント読み込み">② @font-face を使う（自前フォント読み込み）</h5>
+    <p></p><h6 id="フォルダ構成例">フォルダ構成例</h6><p></p>
+<pre class="code lang-markdown" data-lang="markdown" data-unlink="">project/
+ ├ css/
+ │  └ style.css
+ └ fonts/
+    ├ myfont.woff2
+    └ myfont.woff
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@font-face</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">"MyFont"</span>;
+  <span class="synType">src</span>: <span class="synIdentifier">url(</span><span class="synConstant">"../fonts/myfont.woff2"</span><span class="synIdentifier">)</span> <span class="synIdentifier">format(</span><span class="synConstant">"woff2"</span><span class="synIdentifier">)</span><span class="synSpecial">,</span>
+       <span class="synIdentifier">url(</span><span class="synConstant">"../fonts/myfont.woff"</span><span class="synIdentifier">)</span> <span class="synIdentifier">format(</span><span class="synConstant">"woff"</span><span class="synIdentifier">)</span>;
+  <span class="synType">font</span>-<span class="synType">display</span>: swap;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">"MyFont"</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="ポイント-1">ポイント</h6><p></p>
+
+<ul>
+<li>完全に自由なフォントを使用可能</li>
+<li>オフラインでも表示OK</li>
+<li>ブランドサイト・LP・ロゴ系でよく使う</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-太字細字を切り替える実践構成実務向け">③ 太字・細字を切り替える実践構成（実務向け）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@font-face</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">"MyFont"</span>;
+  <span class="synType">src</span>: <span class="synIdentifier">url(</span><span class="synConstant">"../fonts/myfont-regular.woff2"</span><span class="synIdentifier">)</span> <span class="synIdentifier">format(</span><span class="synConstant">"woff2"</span><span class="synIdentifier">)</span>;
+  <span class="synType">font-weight</span>: <span class="synConstant">400</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synPreProc">@font-face</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">"MyFont"</span>;
+  <span class="synType">src</span>: <span class="synIdentifier">url(</span><span class="synConstant">"../fonts/myfont-bold.woff2"</span><span class="synIdentifier">)</span> <span class="synIdentifier">format(</span><span class="synConstant">"woff2"</span><span class="synIdentifier">)</span>;
+  <span class="synType">font-weight</span>: <span class="synConstant">700</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">"MyFont"</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-weight</span>: <span class="synConstant">700</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-weight</span>: <span class="synConstant">400</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="ポイント-2">ポイント</h6><p></p>
+
+<ul>
+<li>font-weight による 自然な切り替え</li>
+<li>プロの実務構成</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-日本語Web制作でよく使う実践フォント指定例">④ 日本語Web制作でよく使う実践フォント指定例</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>:
+    <span class="synConstant">"Noto Sans JP"</span><span class="synSpecial">,</span>
+    <span class="synConstant">"Hiragino Kaku Gothic ProN"</span><span class="synSpecial">,</span>
+    <span class="synConstant">"Hiragino Sans"</span><span class="synSpecial">,</span>
+    Meiryo<span class="synSpecial">,</span>
+    <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="ポイント-3">ポイント</h6><p></p>
+
+<ul>
+<li>日本語表示の安定化</li>
+<li>Mac / Windows / Android / iOS 対応</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-デザイン性重視英字--日本語-組み合わせ例">⑤ デザイン性重視：英字 × 日本語 組み合わせ例</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">"Montserrat"</span><span class="synSpecial">,</span> <span class="synConstant">"Noto Sans JP"</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+</pre><p>→ 英字：Montserrat / 日本語：Noto Sans JP</p>
+
+</div>
+<div class="section">
+    <h5 id="実務でのおすすめ構成最適解">実務でのおすすめ構成（最適解）</h5>
+    <p></p><h6 id="Google-Fonts--フォールバック指定">Google Fonts ＋ フォールバック指定</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>:
+    <span class="synConstant">"Noto Sans JP"</span><span class="synSpecial">,</span>
+    <span class="synConstant">"Hiragino Kaku Gothic ProN"</span><span class="synSpecial">,</span>
+    <span class="synConstant">"Hiragino Sans"</span><span class="synSpecial">,</span>
+    Meiryo<span class="synSpecial">,</span>
+    <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+</pre><p>✔ 高速<br>
+✔ 安定<br>
+✔ 日本語最適<br>
+✔ 商用可</p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="CSSで縦書き.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">CSSで縦書き</span></a><a href="Webサイトをモバイル対応する際の注意点.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">Webサイトをモバイル対応する際の注意点</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OGPの作成時の注意点 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>OGPの作成時の注意点</span>
+  </div>
+  <div class="article-head">
+    <h1>OGPの作成時の注意点</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">OGP</span>
+      <span class="date">2026/01/10</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="OGPの作成時の注意点">OGPの作成時の注意点</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20260218220926.png" width="200" height="198" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>OGPの作成時の注意点</p>
+
+    </blockquote>
+<p>OGPは、Webページが SNSでシェアされた際の表示（タイトル・説明・画像など）を制御する仕組みです。<br>
+主に Facebook / X（旧Twitter） / LINE などで利用されます。</p>
+
+</div>
+<div class="section">
+    <h4 id="OGP作成時の重要ポイント">OGP作成時の重要ポイント</h4>
+    
+<div class="section">
+    <h5 id="1-必須タグを正しく設定する最重要">1. 必須タグを正しく設定する（最重要）</h5>
+    <p>最低限、以下の4つは必須です。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:title"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"ページタイトル"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:description"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"ページの説明文"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:type"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"website"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:url"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com/"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:image"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com/ogp.jpg"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="注意点">注意点</h6><p></p>
+
+<ul>
+<li>絶対パス（https://〜）で指定</li>
+<li>相対パス（/images/ogp.jpg）はNG</li>
+<li>URLの末尾の「/」の有無を正規URLと統一</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="2-ogimage画像の仕様に注意">2. og:image（画像）の仕様に注意</h5>
+    <p><strong>推奨サイズ</strong></p>
+
+    <blockquote>
+        <p>1200 × 630px（アスペクト比 1.91:1）</p>
+
+    </blockquote>
+<p></p><h6 id="最低条件">最低条件</h6><p></p>
+
+<ul>
+<li>幅：600px以上</li>
+<li>ファイルサイズ：8MB以下</li>
+<li>形式：jpg / png / webp</li>
+</ul><p></p><h6 id="注意点-1">注意点</h6><p></p>
+
+<ul>
+<li>小さすぎるとトリミング・ぼやける</li>
+<li>文字は中央寄せ + 余白多め</li>
+<li>端ギリギリに文字を置かない</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="3-タイトルと説明文はSNS用に最適化">3. タイトルと説明文はSNS用に最適化</h5>
+    <p></p><h6 id="ogtitle">og:title</h6><p></p>
+
+<ul>
+<li>20〜30文字前後</li>
+<li>内容が一瞬で伝わる文言</li>
+</ul><p></p><h6 id="ogdescription">og:description</h6><p></p>
+
+<ul>
+<li>60〜90文字前後</li>
+<li>ページ内容 + メリット</li>
+</ul><p>【例】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:title"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"初心者向けHTML入門｜ゼロから学ぶWeb制作"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:description"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"HTMLを基礎から分かりやすく解説。初学者がつまずきやすいポイントも丁寧に説明します。"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="4-ページごとにOGPを個別設定する">4. ページごとにOGPを個別設定する</h5>
+    <p></p><h6 id="NG例">NG例</h6><p></p>
+
+<ul>
+<li>全ページで同一OGP → SNS流入率が激減</li>
+</ul><p></p><h6 id="OK">OK</h6><p></p>
+
+<ul>
+<li>トップページ</li>
+<li>記事ページ</li>
+<li>商品ページ</li>
+</ul><p>→ すべて個別設定</p><p></p><h6 id="WordPressの場合">WordPressの場合</h6><p></p>
+
+<ul>
+<li>SEOプラグイン（Yoast / RankMath / All in One SEO）で自動管理</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="5-TwitterX用タグも必ず追加">5. Twitter（X）用タグも必ず追加</h5>
+    <p>OGPだけだと Xでの表示が不完全 になる場合あり。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"twitter:card"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"summary_large_image"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"twitter:title"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"ページタイトル"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"twitter:description"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"ページ説明"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"twitter:image"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com/ogp.jpg"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="twittercard-の種類">twitter:card の種類</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>表示</th>
+    </tr>
+    <tr>
+    <td> summary             </td>
+    <td> 小さい画像     </td>
+    </tr>
+    <tr>
+    <td> summary_large_image </td>
+    <td> 大きい画像（推奨） </td>
+    </tr>
+</tbody></table><p>→ 基本は summary_large_image</p>
+
+</div>
+<div class="section">
+    <h5 id="6-キャッシュ対策反映されない最大の原因">6. キャッシュ対策（反映されない最大の原因）</h5>
+    <p>OGPは SNS側にキャッシュされる ため、修正してもすぐ反映されません。</p><p></p><h6 id="デバッグツール必須">デバッグツール必須</h6><p></p>
+
+<ul>
+<li>Facebook：Sharing Debugger</li>
+<li>X：Card Validator</li>
+<li>LINE：OGP Debugger</li>
+</ul><p>→ 再スクレイピング（再取得）必須</p>
+
+</div>
+<div class="section">
+    <h5 id="7-canonical-と-ogurl-を必ず一致させる">7. canonical と og:url を必ず一致させる</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"canonical"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com/"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:url"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com/"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="注意点-2">注意点</h6><p></p>
+
+<ul>
+<li>http / https 混在 → SEO評価分散</li>
+<li>www 有無 → SNSで別ページ扱い</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="実務用OGPテンプレート">実務用OGPテンプレート</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!-- OGP --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:title"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"ページタイトル"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:description"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"ページ説明"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:type"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"website"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:url"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com/"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:image"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com/ogp.jpg"</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- Twitter Card --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"twitter:card"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"summary_large_image"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"twitter:title"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"ページタイトル"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"twitter:description"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"ページ説明"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"twitter:image"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com/ogp.jpg"</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="よくある失敗例実務で頻出">よくある失敗例（実務で頻出）</h5>
+    
+<table>
+    <tbody><tr>
+    <th>ミス</th>
+    <th>影響</th>
+    </tr>
+    <tr>
+    <td> 画像サイズが小さい </td>
+    <td> トリミング・画質劣化  </td>
+    </tr>
+    <tr>
+    <td> 相対パス指定    </td>
+    <td> 画像が表示されない   </td>
+    </tr>
+    <tr>
+    <td> OGP未設定    </td>
+    <td> SNSで意図しない表示 </td>
+    </tr>
+    <tr>
+    <td> 全ページ共通OGP </td>
+    <td> CTR低下       </td>
+    </tr>
+    <tr>
+    <td> キャッシュ未更新  </td>
+    <td> 変更が反映されない   </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="さらに効果を高める応用設定">さらに効果を高める応用設定</h5>
+    
+<ul>
+<li>og:site_name（サイト名表示）</li>
+<li>article:published_time（記事公開日）</li>
+<li>article:author（著者情報）</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"og:site_name"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"サイト名"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> property=</span><span class="synConstant">"article:published_time"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"2026-02-18"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="MixItUp フィルター実装.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">MixItUp フィルター実装</span></a><a href="Google Search Console（GSC）を設定.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">Google Search Console（GSC）を設定</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

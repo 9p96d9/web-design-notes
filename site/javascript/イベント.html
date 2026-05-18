@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>イベント - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>イベント</span>
+  </div>
+  <div class="article-head">
+    <h1>イベント</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/25</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="イベント">イベント</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260225184808.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptのイベントとは？</p>
+
+    </blockquote>
+<p>JavaScriptの<strong>イベント（event）</strong>とは、ユーザーの操作やブラウザ上で起こる出来事のことです。</p>
+
+<div class="section">
+    <h5 id="-イベントの代表例">🔹 イベントの代表例</h5>
+    
+<table>
+    <tbody><tr>
+    <th>イベント</th>
+    <th>発生するタイミング</th>
+    </tr>
+    <tr>
+    <td> <strong>click</strong>    </td>
+    <td> 要素がクリックされたとき   </td>
+    </tr>
+    <tr>
+    <td> <strong>mouseover</strong> </td>
+    <td> マウスが要素に乗ったとき   </td>
+    </tr>
+    <tr>
+    <td> <strong>keydown</strong>   </td>
+    <td> キーが押されたとき      </td>
+    </tr>
+    <tr>
+    <td> <strong>submit</strong>    </td>
+    <td> フォームが送信されたとき   </td>
+    </tr>
+    <tr>
+    <td> <strong>load</strong>      </td>
+    <td> ページや画像の読み込み完了時 </td>
+    </tr>
+    <tr>
+    <td> <strong>change</strong>    </td>
+    <td> 入力値が変更されたとき    </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="-イベントの基本構文">🔹 イベントの基本構文</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">要素<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"イベント名"</span><span class="synStatement">,</span> 関数<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>c例：ボタンをクリックしたらアラート表示</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>クリック<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>btn<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"btn"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span>btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+    <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">"クリックされました！"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 ボタンがクリックされると イベントが発生 → 処理が実行 されます。</p>
+
+</div>
+<div class="section">
+    <h5 id="-イベントの流れ重要">🔹 イベントの流れ（重要）</h5>
+    
+    <blockquote>
+        <p><strong>イベント発生 → イベントリスナーが検知 → 関数（処理）実行</strong></p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="-よく使うイベントジャンル">🔹 よく使うイベントジャンル</h5>
+    <p></p><h6 id="-マウス系">🖱 マウス系</h6><p></p>
+
+<ul>
+<li>click</li>
+<li>dblclick</li>
+<li>mouseenter</li>
+<li>mouseleave</li>
+</ul><p></p><h6 id="-キーボード系">⌨ キーボード系</h6><p></p>
+
+<ul>
+<li>keydown</li>
+<li>keyup</li>
+</ul><p></p><h6 id="-フォーム系">📝 フォーム系</h6><p></p>
+
+<ul>
+<li>submit</li>
+<li>input</li>
+<li>change</li>
+<li>focus</li>
+<li>blur</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-イベントオブジェクト">🔹 イベントオブジェクト</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">(</span>e<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>e<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p>→ クリック位置、対象要素などが取得できます。</p>
+
+</div>
+<div class="section">
+    <h5 id="-初心者向け一言まとめ">🔹 初心者向け一言まとめ</h5>
+    
+    <blockquote>
+        <p><strong>イベントとは「ユーザーの行動に反応して処理を実行する仕組み」</strong></p>
+
+    </blockquote>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-functionを使ったイベント処理の基本例">🔹 functionを使ったイベント処理の基本例</h4>
+    
+<div class="section">
+    <h5 id="ボタンをクリックしたらメッセージ表示">ボタンをクリックしたらメッセージ表示</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>クリック<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>btn<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"btn"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">showMessage</span><span class="synSpecial">() {</span>
+    <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">"クリックされました！"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+
+<span class="synSpecial">  </span>btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> showMessage<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ポイント解説">ポイント解説</h6><p></p>
+
+<ul>
+<li>function showMessage() {} → <strong>実行したい処理を関数として定義</strong></li>
+<li>addEventListener("click", showMessage)</li>
+</ul><p>→ <strong>クリック時に関数を呼び出す</strong></p><p>※ showMessage() と <strong>()を付けない</strong> のが重要です。</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-引数ありのfunction--イベント">🔹 引数ありのfunction + イベント</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>クリック<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>btn<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"btn"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">showMessage</span><span class="synSpecial">(</span>message<span class="synSpecial">) {</span>
+    <span class="synIdentifier">alert</span><span class="synSpecial">(</span>message<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+
+<span class="synSpecial">  </span>btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+    <span class="synIdentifier">showMessage</span><span class="synSpecial">(</span><span class="synConstant">"ボタンが押されました！"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 イベント + 自作引数 を一緒に使うパターンです。</p>
+
+</div>
+<div class="section">
+    <h4 id="-イベントオブジェクトを使う例">🔹 イベントオブジェクトを使う例</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>クリック<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>btn<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">"btn"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">showInfo</span><span class="synSpecial">(</span>event<span class="synSpecial">) {</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>event<span class="synStatement">.</span>target<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+
+<span class="synSpecial">  </span>btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> showInfo<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 event.target → 実際にクリックされた要素</p>
+
+</div>
+<div class="section">
+    <h4 id="-this-を使ったfunction例">🔹 this を使ったfunction例</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>赤<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>青<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>緑<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>buttons<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelectorAll</span><span class="synSpecial">(</span><span class="synConstant">"button"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synStatement">function</span><span class="synSpecial"> </span><span class="synIdentifier">changeColor</span><span class="synSpecial">() {</span>
+    <span class="synStatement">this.</span>style<span class="synStatement">.</span>background <span class="synStatement">=</span> <span class="synStatement">this.</span>textContent<span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+
+<span class="synSpecial">  </span>buttons<span class="synStatement">.</span><span class="synIdentifier">forEach</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(</span>btn<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> changeColor<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 クリックしたボタンの色に背景が変わります。</p><p>※ <strong>function を使うと this は「イベント元の要素」になる</strong><br>
+（※ アロー関数だと this の挙動が変わります）</p>
+
+</div>
+<div class="section">
+    <h4 id="-function-と-アロー関数の違いイベント時">🔹 function と アロー関数の違い（イベント時）</h4>
+    
+<table>
+    <tbody><tr>
+    <th>書き方</th>
+    <th>this の指すもの</th>
+    </tr>
+    <tr>
+    <td> `function () {}` </td>
+    <td> イベント元の要素   </td>
+    </tr>
+    <tr>
+    <td> `() =&gt; {}`       </td>
+    <td> 外側のスコープ    </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h4 id="-よくあるミス-">🔹 よくあるミス ❌</h4>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> <span class="synIdentifier">showMessage</span><span class="synSpecial">())</span><span class="synStatement">;</span>
+</pre><p>❌ 即実行されてしまう</p><p>⭕ 正解：</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> showMessage<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="-実務でよく使う書き方まとめ">🔹 実務でよく使う書き方（まとめ）</h4>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">handleClick</span><span class="synSpecial">(</span>e<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"クリック:"</span><span class="synStatement">,</span> e<span class="synStatement">.</span>target<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,</span> handleClick<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="イベントを function で受け取り、処理を実行する.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">イベントを function で受け取り、処理を実行する</span></a><a href="関数.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">関数</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

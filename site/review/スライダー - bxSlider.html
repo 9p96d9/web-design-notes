@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スライダー - bxSlider - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>スライダー - bxSlider</span>
+  </div>
+  <div class="article-head">
+    <h1>スライダー - bxSlider</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">jQuery</span>
+      <span class="date">2025/10/26</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="スライダー---bxSlider">スライダー - bxSlider</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109100733.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbxslider.com" title="jQuery Slider | Responsive jQuery Slider | bxSlider" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://bxslider.com">bxslider.com</a></cite><p></p><p></p>
+
+<div class="section">
+    <h5 id="導入">導入</h5>
+    
+<ul>
+<li>「<a class="keyword" href="https://d.hatena.ne.jp/keyword/Github">Github</a>」から<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D7%A5%E9%A5%B0%A5%A4%A5%F3">プラグイン</a>データをダウンロード</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109104138.jpg" width="500" height="95" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109104601.jpg" width="500" height="253" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="フォルダー構成">フォルダー構成</h5>
+    
+<ol>
+<li>フォルダー名「bxslider」を作成</li>
+<li>ダウンロードしたフォルダーも見える位置に置いておきます</li>
+</ol><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109105538.jpg" width="400" height="166" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="自作bxslider内">自作「bxslider」内</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109105911.jpg" width="400" height="187" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="ダウンロードデータbxslider-4-master内srcを開く">ダウンロードデータ「bxslider-4-master」内「src」を開く</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109110400.jpg" width="500" height="170" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="srcの必要なデータを自作bxslider内に移動コピー">「src」の必要なデータを、自作「bxslider」内に移動（コピー）</h6><p></p>
+
+<ul>
+<li>「<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a>」フォルダー内「<a class="keyword" href="https://d.hatena.ne.jp/keyword/jquery">jquery</a>.bxslider.<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a>」</li>
+<li>「js」フォルダー内「<a class="keyword" href="https://d.hatena.ne.jp/keyword/jquery">jquery</a>.bxslider.js」</li>
+<li>「images」フォルダー内「bx_loader.gif」と「controls.<a class="keyword" href="https://d.hatena.ne.jp/keyword/png">png</a>」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109112251.jpg" width="400" height="677" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="画像の準備">画像の準備</h5>
+    
+<ul>
+<li>横幅「1920px」高さ「なりゆき」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109114333.jpg" width="500" height="242" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109114429.jpg" width="300" height="501" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>書き出した画像を自作「bxslider」内の「img」フォルダーに移動</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109115759.jpg" width="500" height="588" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="コーディング">コーディング</h5>
+    
+<ul>
+<li>フォルダー「bxslider」を管理</li>
+</ul><p></p><h6 id="indexhtml">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>bxSlider<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/jquery.bxslider.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/jquery.bxslider.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"bxslider"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/01.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/02.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/03.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/04.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/05.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="stylecss">style.<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a></h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">"Noto Sans JP"</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: min(<span class="synConstant">90%</span><span class="synSpecial">,</span> <span class="synConstant">1240px</span>);
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span> <span class="synConstant">30px</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">   jquery.bxslider.cssを上書き</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synComment">/* ------- loader / arrow------- */</span>
+
+<span class="synComment">/* LOADER */</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-loading</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/bx_loader.gif'</span><span class="synIdentifier">)</span> <span class="synConstant">center</span> <span class="synConstant">center</span> <span class="synConstant">no-repeat</span> <span class="synConstant">#ffffff</span>;
+<span class="synIdentifier">}</span>
+<span class="synComment">/* DIRECTION CONTROLS (NEXT / PREV) */</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-prev</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/controls.png'</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synConstant">0</span> <span class="synConstant">-32px</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-next</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/controls.png'</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synConstant">-43px</span> <span class="synConstant">-32px</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-controls-auto</span> <span class="synIdentifier">.bx-start</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/controls.png'</span><span class="synIdentifier">)</span> <span class="synConstant">-86px</span> <span class="synConstant">-11px</span> <span class="synConstant">no-repeat</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-controls-auto</span> <span class="synIdentifier">.bx-stop</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/controls.png'</span><span class="synIdentifier">)</span> <span class="synConstant">-86px</span> <span class="synConstant">-44px</span> <span class="synConstant">no-repeat</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="scriptjs">script.js</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.bxslider'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">bxSlider</span><span class="synSpecial">({</span>
+    <span class="synIdentifier">mode</span><span class="synStatement">:</span> <span class="synConstant">'horizontal'</span><span class="synStatement">,</span> 
+    <span class="synIdentifier">auto</span><span class="synStatement">:</span> <span class="synConstant">true</span><span class="synStatement">,</span>
+    <span class="synIdentifier">pager</span><span class="synStatement">:</span> <span class="synConstant">true</span><span class="synStatement">,</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>この段階は「水平移動」「自動再生」「<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%DA%A1%BC%A5%B8%A5%E3%A1%BC">ページャー</a>表示」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109122346.jpg" width="600" height="402" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="カスタマイズ">カスタマイズ</h5>
+    
+<ul>
+<li>「bxSlider」の「options」を参照</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbxslider.com%2Foptions" title="jQuery Slider | Responsive jQuery Slider | bxSlider" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://bxslider.com/options">bxslider.com</a></cite><br>
+</p>
+
+<ul>
+<li>画像が<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%AF%A5%ED%A5%B9%A5%D5%A5%A7%A1%BC%A5%C9">クロスフェード</a></li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">mode</span><span class="synStatement">:</span> <span class="synConstant">'fade'</span>,
+</pre>
+<ul>
+<li>変化する時間</li>
+</ul><p>※２秒の場合</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">speed</span><span class="synStatement">:</span> <span class="synConstant">2000</span>, 
+</pre>
+<ul>
+<li>画像を停止する時間</li>
+</ul><p>※６秒停止する場合</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">pause</span><span class="synStatement">:</span> <span class="synConstant">6000</span>, 
+</pre>
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%DA%A1%BC%A5%B8%A5%E3%A1%BC">ページャー</a>をなしにする（ドット）</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">pager</span><span class="synStatement">:</span> <span class="synConstant">false</span>, 
+</pre><p></p><h6 id="枠線の影をなくす">枠線の影をなくす</h6><p></p>
+
+<ul>
+<li>「style.<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a>」に追記</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">.bx<span class="synStatement">-</span>wrapper <span class="synSpecial">{</span>
+  <span class="synStatement">-</span>moz<span class="synStatement">-</span>box<span class="synStatement">-</span>shadow: <span class="synConstant">0</span><span class="synStatement">;</span>
+  <span class="synStatement">-</span>webkit<span class="synStatement">-</span>box<span class="synStatement">-</span>shadow: <span class="synConstant">0</span><span class="synStatement">;</span>
+  box<span class="synStatement">-</span>shadow: <span class="synConstant">0</span><span class="synStatement">;</span>
+  <span class="synIdentifier">border</span><span class="synStatement">:</span> <span class="synConstant">0</span><span class="synStatement">;</span>
+  <span class="synIdentifier">background</span><span class="synStatement">:</span> #fff<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="課題提出記述例">課題提出記述例</h5>
+    <p></p><h6 id="indexhtml-1">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>bxSlider<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/jquery.bxslider.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/jquery.bxslider.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- ▼header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>jQuery<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>スライダー：bxSlider<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"../"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">トップへ戻る</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- ▲header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>和食日記<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"slider"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"bxslider"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/01.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/02.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/03.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/04.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/05.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- ▼footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"footer"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"update"</span><span class="synIdentifier">&gt;</span>制作日：xxxx年x月x日<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- ▲footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="stylecss-1">style.<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a></h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-rows</span>: <span class="synConstant">auto</span> <span class="synConstant">1fr</span> <span class="synConstant">auto</span>;
+  <span class="synType">min-height</span>: <span class="synConstant">100vh</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">1.0rem</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+  <span class="synType">overflow</span>: <span class="synConstant">scroll</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#d0e6c2</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.5rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synSpecial">&gt;</span> <span class="synStatement">h1</span>::<span class="synPreProc">first-line</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.125rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+    <span class="synType">width</span>: <span class="synConstant">100%</span>;
+    <span class="synType">margin-top</span>: <span class="synConstant">10px</span>;
+    <span class="synType">border</span>: <span class="synConstant">#fff</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#5b8143</span>;
+    <span class="synType">color</span>: <span class="synConstant">#5b8143</span>;
+    <span class="synType">font-weight</span>: <span class="synConstant">700</span>;
+    <span class="synType">transition</span>: <span class="synType">all</span> .<span class="synConstant">3s</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">color</span>: <span class="synConstant">#5b8143</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#d0e6c2</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: min(<span class="synConstant">94%</span><span class="synSpecial">,</span> <span class="synConstant">960px</span>);
+  <span class="synType">margin</span>: <span class="synConstant">30px</span> <span class="synConstant">auto</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+    <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  slider</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.slider</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">margin</span>: <span class="synConstant">30px</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* ------- jquery.bxslider.cssを上書き ------- */</span>
+<span class="synComment">/* LOADER */</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-loading</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/bx_loader.gif'</span><span class="synIdentifier">)</span> <span class="synConstant">center</span> <span class="synConstant">center</span> <span class="synConstant">no-repeat</span> <span class="synConstant">#ffffff</span>;
+<span class="synIdentifier">}</span>
+<span class="synComment">/* DIRECTION CONTROLS (NEXT / PREV) */</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-prev</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/controls.png'</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synConstant">0</span> <span class="synConstant">-32px</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-next</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/controls.png'</span><span class="synIdentifier">)</span> <span class="synConstant">no-repeat</span> <span class="synConstant">-43px</span> <span class="synConstant">-32px</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-controls-auto</span> <span class="synIdentifier">.bx-start</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/controls.png'</span><span class="synIdentifier">)</span> <span class="synConstant">-86px</span> <span class="synConstant">-11px</span> <span class="synConstant">no-repeat</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.bx-wrapper</span> <span class="synIdentifier">.bx-controls-auto</span> <span class="synIdentifier">.bx-stop</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synIdentifier">url(</span><span class="synConstant">'../img/controls.png'</span><span class="synIdentifier">)</span> <span class="synConstant">-86px</span> <span class="synConstant">-44px</span> <span class="synConstant">no-repeat</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="scriptjs-1">script.js</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'.bxslider'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">bxSlider</span><span class="synSpecial">({</span>
+    <span class="synIdentifier">mode</span><span class="synStatement">:</span> <span class="synConstant">'fade'</span><span class="synStatement">,</span>
+    <span class="synIdentifier">auto</span><span class="synStatement">:</span> <span class="synConstant">true</span><span class="synStatement">,</span>
+    <span class="synIdentifier">pager</span><span class="synStatement">:</span> <span class="synConstant">true</span><span class="synStatement">,</span>
+    <span class="synIdentifier">speed</span><span class="synStatement">:</span> <span class="synConstant">2000</span><span class="synStatement">,</span>
+    <span class="synIdentifier">pause</span><span class="synStatement">:</span> <span class="synConstant">6000</span><span class="synStatement">,</span>
+    <span class="synIdentifier">pager</span><span class="synStatement">:</span> <span class="synConstant">false</span><span class="synStatement">,</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109155601.jpg" width="680" height="633" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109155613.jpg" width="400" height="812" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="スライダー - bxslider（CDN）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">スライダー - bxslider（CDN）</span></a><a href="bxSlider（幅100%表示）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">bxSlider（幅100%表示）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

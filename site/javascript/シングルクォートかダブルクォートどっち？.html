@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シングルクォートかダブルクォートどっち？ - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>シングルクォートかダブルクォートどっち？</span>
+  </div>
+  <div class="article-head">
+    <h1>シングルクォートかダブルクォートどっち？</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/27</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="シングルクォートかダブルクォートどっち">シングルクォートかダブルクォートどっち？</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260226220954.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで文字列を利用するときにシングルクォートかダブルクォートどっち？</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="-どっちを使うべき">🔍 どっちを使うべき？</h4>
+    
+<div class="section">
+    <h5 id="結論プロジェクトで統一されている方を使う">結論：プロジェクトで統一されている方を使う</h5>
+    
+<ul>
+<li>JavaScript の仕様としては違いはありません</li>
+<li>ESLint や Prettier で 自動統一するのが一般的</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-よく使われるのは-シングルクォート">✔ よく使われるのは シングルクォート（'）</h5>
+    
+<ul>
+<li>理由はシンプルで、</li>
+<li>タイピングが楽</li>
+<li>JSON と区別しやすい（JSON はダブルクォート必須）</li>
+<li>多くのスタイルガイド（Airbnb など）が ' を推奨</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-ダブルクォートを使う場面">✔ ダブルクォート（"）を使う場面</h5>
+    
+<ul>
+<li>HTML 属性を書くときに合わせたい場合</li>
+<li>他の言語（Python、Java など）と統一したい場合</li>
+<li>プロジェクトのルールが " の場合</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-テンプレート文字列を積極活用超おすすめ">✔ テンプレート文字列（`）を積極活用（超おすすめ）</h5>
+    
+<ul>
+<li>変数埋め込み・複数行 → <strong>バッククォート（テンプレートリテラル）</strong></li>
+</ul><p>✔ 可読性<br>
+✔ 改行OK<br>
+✔ 文字列連結が不要</p>
+
+</div>
+<div class="section">
+    <h5 id="現代JavaScriptでの主流">現代JavaScriptでの主流</h5>
+    <p>多くの現場では：</p>
+
+    <blockquote>
+        <p><strong>シングルクォート ' + テンプレートリテラル `</strong></p>
+
+    </blockquote>
+<p>の組み合わせが主流です。</p>
+
+</div>
+<div class="section">
+    <h5 id="結論まとめ">結論まとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>ケース</th>
+    <th>おすすめ</th>
+    </tr>
+    <tr>
+    <td> 通常の文字列     </td>
+    <td> 'シングルクォート'      </td>
+    </tr>
+    <tr>
+    <td> 変数埋め込み     </td>
+    <td> `テンプレートリテラル` </td>
+    </tr>
+    <tr>
+    <td> 中に「'」を含む </td>
+    <td> "ダブルクォート"        </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="-JavaScript-console出力-練習問題5問">📝 JavaScript console出力 練習問題（5問）</h4>
+    
+<div class="section">
+    <h5 id="問題1基本の出力">問題1：基本の出力</h5>
+    
+    <blockquote>
+        <p>「こんにちは」と console に表示してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// ここにコードを書く</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題2変数を使った出力">問題2：変数を使った出力</h5>
+    
+    <blockquote>
+        <p>変数 name に「Taro」を代入し、<br>
+「私の名前は Taro です」と console に表示してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> <span class="synConstant">'Taro'</span><span class="synStatement">;</span>
+<span class="synComment">// ここにコードを書く</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題3文字列連結">問題3：文字列連結</h5>
+    
+    <blockquote>
+        <p>変数 food に「りんご」を代入し、<br>
+「好きな食べ物は りんご です」と console に表示してください。</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> food <span class="synStatement">=</span> <span class="synConstant">'りんご'</span><span class="synStatement">;</span>
+<span class="synComment">// ここにコードを書く</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題4テンプレートリテラル">問題4：テンプレートリテラル</h5>
+    
+    <blockquote>
+        <p>変数 age に 20 を代入し、<br>
+「年齢は 20 歳です」と console に表示してください。<br>
+※ テンプレートリテラル（`）を使うこと</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> age <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+<span class="synComment">// ここにコードを書く</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題5複数行の出力">問題5：複数行の出力</h5>
+    
+    <blockquote>
+        <p>以下のように 2行で console に表示してください。</p>
+
+    </blockquote>
+<pre class="code" data-lang="" data-unlink="">おはようございます
+今日もがんばりましょう</pre><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// ここにコードを書く</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="console出力-練習問題-解答">console出力 練習問題 解答</h4>
+    <p></p><h6 id="問題1テンプレートリテラル">問題1（テンプレートリテラル）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`こんにちは`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="問題2テンプレートリテラル">問題2（テンプレートリテラル）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> <span class="synConstant">"Taro"</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`私の名前は </span><span class="synSpecial">${</span>name<span class="synSpecial">}</span><span class="synConstant"> です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="問題3テンプレートリテラル">問題3（テンプレートリテラル）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> food <span class="synStatement">=</span> <span class="synConstant">'りんご'</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`好きな食べ物は </span><span class="synSpecial">${</span>food<span class="synSpecial">}</span><span class="synConstant"> です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="問題4テンプレートリテラル-1">問題4（テンプレートリテラル）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> food <span class="synStatement">=</span> <span class="synConstant">'りんご'</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`好きな食べ物は </span><span class="synSpecial">${</span>food<span class="synSpecial">}</span><span class="synConstant"> です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="問題5複数行">問題5（複数行）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`おはようございます</span>
+<span class="synConstant">今日もがんばりましょう`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="関数.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">関数</span></a><a href="演習課題 - テンプレート.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">演習課題 - テンプレート</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

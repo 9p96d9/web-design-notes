@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日付を取得して表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>日付を取得して表示</span>
+  </div>
+  <div class="article-head">
+    <h1>日付を取得して表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">日付</span>
+      <span class="date">2025/10/10</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="Dateオブジェクト---状況に応じた処理">Dateオブジェクト - 状況に応じた処理</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20250429032221.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>日付を取得して表示</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="組み込みオブジェクト">組み込みオブジェクト</h4>
+    
+<ul>
+<li>関数と同じくオブジェクトの場合も、<a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>があらかじめ用意しているオブジェクトがあります</li>
+<li>これを「組み込みオブジェクト」と呼びます</li>
+</ul><p></p><h6 id="主な組み込みオブジェクト一覧">《主な組み込みオブジェクト一覧》</h6><p></p><p></p><div align="center"><br>
+  <table>
+  <tbody><tr><th>オブジェクト名</th><th>説明</th></tr>
+  <tr><th>Object</th><td>すべてのオブジェクトの元となるオブジェクト</td></tr>
+  <tr><th>Date</th><td>日時操作機能を持つオブジェクト</td></tr>
+  <tr><th>Math</th><td>計算機能を持つオブジェクト</td></tr>
+  <tr><th>Array</th><td>配列操作機能を持つオブジェクト</td></tr>
+  <tr><th>String</th><td>文字列操作機能を持つオブジェクト</td></tr>
+  </tbody></table></div><p></p><p></p>
+
+</div>
+<div class="section">
+    <h4 id="Objectオブジェクト">Objectオブジェクト</h4>
+    
+<ul>
+<li>波括弧で初期化したオブジェクトは、Objectオブジェクトになります</li>
+<li>よって、<a class="keyword" href="https://d.hatena.ne.jp/keyword/%CF%A2%C1%DB%C7%DB%CE%F3">連想配列</a>は「Objectオブジェクト」です</li>
+<li>すべてのオブジェクトは、この「Objectオブジェクト」を元にして作られています</li>
+<li>「Objectオブジェクト」が持つプロパティとメソッドはすべてのオブジェクトで利用することが可能です</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="Dateオブジェクト">Dateオブジェクト</h4>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>に用意されている組み込みオブジェクト</li>
+<li>Dateコンスト<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>タを引数なしで実行すると、現在の日付時刻を管理する「Dateオブジェクト」が生成される</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a> の日時は、<a class="keyword" href="https://d.hatena.ne.jp/keyword/UTC">UTC</a> の 1970 年 1 月 1 日 0 時からのミリ秒としてで計られます</li>
+<li>1 日は 86,400,000 ミリ秒です</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a> の Date オブジェクトの範囲は、<a class="keyword" href="https://d.hatena.ne.jp/keyword/UTC">UTC</a> の 1970 年 1 月 1 日に対して -100,000,000 日から 100,000,000 日です</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a> の Date オブジェクトは、地方時方式はもちろん、<a class="keyword" href="https://d.hatena.ne.jp/keyword/UTC">UTC</a> (世界時) 方式の値もサポートします</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B0%A5%EA%A5%CB%A5%C3%A5%B8%C9%B8%BD%E0%BB%FE">グリニッジ標準時</a> (<a class="keyword" href="https://d.hatena.ne.jp/keyword/GMT">GMT</a>) としても知られる <a class="keyword" href="https://d.hatena.ne.jp/keyword/UTC">UTC</a> は、世界時標準によって設定される時間を指します</li>
+<li>地方時は、<a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a> を実行しているコンピュータ（実行しているパソコン）からわかる時刻です</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a> Date をコンスト<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%E9%A5%AF">ラク</a>タではない状況 (すなわち new <a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>を伴わない) で呼び出すと、現在の日時を表す文字列が返ります</li>
+</ul>
+<div class="section">
+    <h5 id="現在の日付時刻を管理するDateオブジェクトを生成">現在の日付時刻を管理するDateオブジェクトを生成</h5>
+    
+<ul>
+<li>指定した時点で日付時刻を管理するDateオブジェクトを生成するには、年（西暦4桁）、月、日、時間、分、秒をそれぞれ別々の整数値として引渡します</li>
+<li>時間は24時間制で指定</li>
+<li>月は1月は「0」、2月は「1」と、月の数字から１を引いて指定する</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> now <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p><br>
+たとえば、2012年７月９日15時55分0秒のDateオブジェクトを生成するには</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> theDate <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">(</span><span class="synConstant">2012</span><span class="synStatement">,</span> <span class="synConstant">06</span><span class="synStatement">,</span> <span class="synConstant">09</span><span class="synStatement">,</span> <span class="synConstant">15</span><span class="synStatement">,</span> <span class="synConstant">55</span><span class="synStatement">,</span> <span class="synConstant">0</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>たとえば、2012年７月９日午前0時のDateオブジェクトを生成するには</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> myDate <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">(</span><span class="synConstant">2012</span><span class="synStatement">,</span> <span class="synConstant">06</span><span class="synStatement">,</span> <span class="synConstant">09</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Dateオブジェクトのメソッド">Dateオブジェクトのメソッド</h5>
+    
+<ul>
+<li>いったんDateオブジェクトを生成すると、あらかじめ用意されている日付時刻操作のメソッドが使用できる</li>
+</ul><p></p><p align="center"><a href="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-css-design/20120708/20120708143249.jpg" class="http-image"><img src="../images/web-css-design_20120708143249.jpg" class="http-image" alt="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-css-design/20120708/20120708143249.jpg"></a></p><p></p><p>たとえば、「time1」「time2」の２つのDateオブジェクトがあるとき、その時間差をミリ秒単位で求め、変数「theDiff」に格納する</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">theDiff <span class="synStatement">=</span> time1<span class="synStatement">.</span><span class="synIdentifier">getTime</span><span class="synSpecial">()</span> <span class="synStatement">-</span> time2<span class="synStatement">.</span><span class="synIdentifier">getTime</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="現在の日付日時を管理するDateオブジェクトを生成する">現在の日付日時を管理するDateオブジェクトを生成する</h5>
+    
+<ul>
+<li>Dateオブジェクトをそのまま document.write()メソッドに渡すと、toString()という「オブジェクトのデータを文字列形式に変換するメソッド」が自動的に呼び出される</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">&lt;script<span class="synStatement">&gt;</span>
+const now <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>now<span class="synSpecial">)</span><span class="synStatement">;</span>
+&lt;<span class="synSpecial">/</span><span class="synConstant">script&gt;</span>
+</pre><p></p><h6 id="Dateオブジェクトの主なメンバ">《Dateオブジェクトの主なメンバ》</h6><p></p><p></p><div align="center"><br>
+  <table>
+  <tbody><tr><th align="left">メンバ</th><th>説明</th></tr>
+  <tr><th align="left">getFullYear()</th><td>年を取得する</td></tr>
+  <tr><th align="left">getMonth()</th><td>月を取得する</td></tr>
+  <tr><th align="left">getDate()</th><td>日を取得する</td></tr>
+  <tr><th align="left">getDay()</th><td>曜日を取得する</td></tr>
+  <tr><th align="left">getHours()</th><td>時を取得する</td></tr>
+  <tr><th align="left">getMinutes()</th><td>分を取得する</td></tr>
+  <tr><th align="left">getSeconds()</th><td>秒を取得する</td></tr>
+  <tr><th align="left">getMilliseconds()</th><td>ミリ秒を取得する</td></tr>
+  <tr><th align="left">setFullYear()</th><td>年を設定する</td></tr>
+  <tr><th align="left">setMonth()</th><td>月を設定する</td></tr>
+  <tr><th align="left">setDate()</th><td>日を設定する</td></tr>
+  <tr><th align="left">setDay()</th><td>曜日を設定する</td></tr>
+  <tr><th align="left">setHours()</th><td>時を設定する</td></tr>
+  <tr><th align="left">setMinutes()</th><td>分を設定する</td></tr>
+  <tr><th align="left">setSeconds()</th><td>秒を設定する</td></tr>
+  <tr><th align="left">setMilliseconds()</th><td>ミリ秒を設定する</td></tr>
+  <tr><th align="left">toDateString()</th><td>日付文字列を取得する</td></tr>
+  <tr><th align="left">toTimeString()</th><td>時刻文字列を取得する</td></tr>
+  <tr><th align="left">toLocaleDateString()</th><td>ローカル日付文字列を取得する</td></tr>
+  <tr><th align="left">toLocaleTimeString()</th><td>ローカル時刻文字列を取得する</td></tr>
+  <tr><th align="left">toString()</th><td>文字列を取得する</td></tr>
+  </tbody></table></div><p></p>
+
+    <blockquote>
+        <p>・データ（プロパティ）の場合<br>
+　　　　オブジェクト.プロパティ<br>
+・機能（メソッド）の場合<br>
+　　　　オブジェクト.メソッド()</p>
+
+    </blockquote>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="例題今日の年月日現在の時刻曜日を表示">例題（今日の年月日、現在の時刻、曜日を表示）</h4>
+    
+<div class="section">
+    <h5 id="consoleに表示">consoleに表示</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>today<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">new</span><span class="synSpecial"> </span><span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>year<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>month<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">() </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>date<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>hour<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getHours</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>minute<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getMinutes</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>second<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getSeconds</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>day<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>week<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> [</span><span class="synConstant">'日'</span><span class="synStatement">,</span><span class="synConstant">'月'</span><span class="synStatement">,</span><span class="synConstant">'火'</span><span class="synStatement">,</span><span class="synConstant">'水'</span><span class="synStatement">,</span><span class="synConstant">'木'</span><span class="synStatement">,</span><span class="synConstant">'金'</span><span class="synStatement">,</span><span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+
+<span class="synType">const</span><span class="synSpecial"> </span>str<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">`今日は、</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">年</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>date<span class="synSpecial">}</span><span class="synConstant">日、</span><span class="synSpecial">${</span>week<span class="synSpecial">[</span>day<span class="synSpecial">]}</span><span class="synConstant">曜日です。`</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>str<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20230310095003.png" width="500" height="89" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="条件が成り立つ場合の処理とそれ以外の処理">条件が成り立つ場合の処理とそれ以外の処理</h4>
+    
+    <blockquote>
+        <p>if( 条件が真である場合 ) {<br>
+　　真の結果を表示する<br>
+} else {<br>
+　　偽を表示する<br>
+}</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="日時によって違う処理をする">日時によって違う処理をする</h5>
+    
+<ul>
+<li>状況に応じて処理をする</li>
+<li>午前と午後（12時前か後かを判別）</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに表示<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>today<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">new</span><span class="synSpecial"> </span><span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>hour<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getHours</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>element<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span><span class="synSpecial">(</span>hour <span class="synStatement">&lt;=</span> <span class="synConstant">12</span><span class="synSpecial">) {</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`AM`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synStatement">else</span><span class="synSpecial"> {</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`PM`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="時間によってメッセージを変更する">時間によってメッセージを変更する</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに表示<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>today<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">new</span><span class="synSpecial"> </span><span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>hour<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getHours</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>element<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span><span class="synSpecial"> (</span>hour <span class="synStatement">&lt;</span> <span class="synConstant">12</span><span class="synSpecial">) {</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`morning`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synStatement">else</span><span class="synSpecial"> </span><span class="synStatement">if</span><span class="synSpecial"> (</span>hour <span class="synStatement">&lt;</span> <span class="synConstant">18</span><span class="synSpecial">) {</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`afternoon`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synStatement">else</span><span class="synSpecial"> </span><span class="synStatement">if</span><span class="synSpecial"> (</span>hour <span class="synStatement">&lt;</span> <span class="synConstant">24</span><span class="synSpecial">) {</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`evening`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="土日と平日">土日と平日</h5>
+    
+<ul>
+<li>switch文の場合</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに表示<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>today<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">new</span><span class="synSpecial"> </span><span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>day<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>element<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synStatement">switch</span><span class="synSpecial">(</span>day<span class="synSpecial">){</span>
+  <span class="synStatement">case</span> <span class="synConstant">0</span><span class="synStatement">:</span>
+  <span class="synStatement">case</span> <span class="synConstant">6</span><span class="synStatement">:</span> 
+    element<span class="synStatement">.</span>innerHTML <span class="synStatement">=</span> <span class="synConstant">`&lt;img src="img/hday.jpg"&gt;`</span><span class="synStatement">;</span>
+    <span class="synStatement">break;</span>
+  <span class="synStatement">default:</span>
+  element<span class="synStatement">.</span>innerHTML <span class="synStatement">=</span> <span class="synConstant">`&lt;img src="img/wday.jpg"&gt;`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="オープンとクローズを区別して表示">オープンとクローズを区別して表示</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに表示<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>today<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">new</span><span class="synSpecial"> </span><span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>hour<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getHours</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>element<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span><span class="synSpecial">(</span>hour <span class="synStatement">&gt;=</span> <span class="synConstant">9</span> <span class="synStatement">&amp;&amp;</span> hour <span class="synStatement">&lt;</span> <span class="synConstant">17</span><span class="synSpecial">) {</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`OPEN`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synStatement">else</span><span class="synSpecial"> {</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">`CLOSED`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="現在の時刻と曜日を判別して営業中かどうかを表示">現在の時刻と曜日を判別して営業中かどうかを表示</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>today<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">new</span><span class="synSpecial"> </span><span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>year<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getFullYear</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>month<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getMonth</span><span class="synSpecial">() </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>date<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getDate</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>hour<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getHours</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>minute<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getMinutes</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>second<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getSeconds</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>day<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>today<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>week<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> [</span><span class="synConstant">'日'</span><span class="synStatement">,</span><span class="synConstant">'月'</span><span class="synStatement">,</span><span class="synConstant">'火'</span><span class="synStatement">,</span><span class="synConstant">'水'</span><span class="synStatement">,</span><span class="synConstant">'木'</span><span class="synStatement">,</span><span class="synConstant">'金'</span><span class="synStatement">,</span><span class="synConstant">'土'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>element<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synType">let</span><span class="synSpecial"> </span>biz<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">''</span><span class="synStatement">;</span>
+<span class="synStatement">if</span><span class="synSpecial"> (</span>day <span class="synStatement">===</span> <span class="synConstant">0</span> <span class="synStatement">||</span> day <span class="synStatement">===</span> <span class="synConstant">6</span><span class="synSpecial">) {</span>
+  biz <span class="synStatement">=</span> <span class="synConstant">'今日は、定休日です。'</span><span class="synStatement">;</span>
+<span class="synSpecial">} </span><span class="synStatement">else</span><span class="synSpecial"> {</span>
+  biz <span class="synStatement">=</span> <span class="synConstant">'今日は、営業日です。'</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synType">let</span><span class="synSpecial"> </span>time<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">''</span><span class="synStatement">;</span>
+<span class="synStatement">if</span><span class="synSpecial"> (</span>hour <span class="synStatement">&gt;=</span> <span class="synConstant">9</span> <span class="synStatement">&amp;&amp;</span> hour <span class="synStatement">&lt;=</span> <span class="synConstant">19</span><span class="synSpecial">) {</span>
+  time <span class="synStatement">=</span> <span class="synConstant">'営業中。'</span><span class="synStatement">;</span>
+<span class="synSpecial">} </span><span class="synStatement">else</span><span class="synSpecial"> {</span>
+  time <span class="synStatement">=</span> <span class="synConstant">'時間外。'</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synType">const</span><span class="synSpecial"> </span>str<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">`現在の時刻は、西暦</span><span class="synSpecial">${</span>year<span class="synSpecial">}</span><span class="synConstant">年</span><span class="synSpecial">${</span>month<span class="synSpecial">}</span><span class="synConstant">月</span><span class="synSpecial">${</span>date<span class="synSpecial">}</span><span class="synConstant">日</span><span class="synSpecial">${</span>week<span class="synSpecial">[</span>day<span class="synSpecial">]}</span><span class="synConstant">曜日。&lt;br&gt;</span><span class="synSpecial">${</span>biz<span class="synSpecial">}</span><span class="synConstant">&lt;br&gt;現在、</span><span class="synSpecial">${</span>time<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synStatement">;</span>
+
+element<span class="synStatement">.</span>innerHTML<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>str<span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="条件分岐 - if文.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">条件分岐 - if文</span></a><a href="配列.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">配列</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

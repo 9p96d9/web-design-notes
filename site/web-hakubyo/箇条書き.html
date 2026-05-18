@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箇条書き - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>箇条書き</span>
+  </div>
+  <div class="article-head">
+    <h1>箇条書き</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2026/01/15</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="箇条書き">箇条書き</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260214092229.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLの箇条書きを解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="HTMLの箇条書きリスト">HTMLの箇条書き（リスト）</h4>
+    
+<div class="section">
+    <h5 id="1-箇条書きの基本種類">1. 箇条書きの基本種類</h5>
+    <p>HTMLには主に 3種類のリスト があります。</p>
+
+<table>
+    <tbody><tr>
+    <th>種類</th>
+    <th>タグ</th>
+    <th>用途</th>
+    </tr>
+    <tr>
+    <td> 箇条書き（黒点） </td>
+    <td> &lt;ul&gt; </td>
+    <td> 順番が不要なリスト </td>
+    </tr>
+    <tr>
+    <td> 番号付きリスト  </td>
+    <td> &lt;ol&gt; </td>
+    <td> 順番が重要なリスト </td>
+    </tr>
+    <tr>
+    <td> 定義リスト    </td>
+    <td> &lt;dl&gt; </td>
+    <td> 用語と説明のセット </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="2-箇条書き黒丸リスト">2. 箇条書き（黒丸）リスト </h5>
+    <p>cul = unordered list（順序なしリスト）</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>りんご<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>みかん<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>バナナ<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="表示例">表示例</h6><p></p>
+
+<ul>
+<li>りんご</li>
+<li>みかん</li>
+<li>バナナ</li>
+</ul><p></p><h6 id="ポイント">ポイント</h6><p></p>
+
+<ul>
+<li>&lt;ul&gt; の中に </li><li> を書く</li>
+<li>&lt;li&gt; = list item（項目）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="3-番号付きリスト">3. 番号付きリスト </h5>
+    <p></p><h6 id="ol--ordered-list順序ありリスト">ol = ordered list（順序ありリスト）</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">ol</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>HTMLを書く<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>CSSでデザイン<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>公開する<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ol</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="表示例-1">表示例</h6><p></p>
+
+<ol>
+<li>HTMLを書く</li>
+<li>CSSでデザイン</li>
+<li>公開する</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="4-定義リスト">4. 定義リスト </h5>
+    
+<ul>
+<li>dl（description list）</li>
+</ul><p></p><h6 id="用語と説明をセットで書く">用語と説明をセットで書く</h6><p></p>
+
+<ul>
+<li>リスト全体に対する dl要素：description list</li>
+<li>名称(リスト項目)に対する dt要素：description term</li>
+<li>説明文(リスト内容)に対する dd要素：description details</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>HTML<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>Webページの構造を作る言語<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>CSS<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>デザインを指定する言語<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="5-箇条書きのネスト入れ子">5. 箇条書きのネスト（入れ子）</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>フルーツ
+    <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>りんご<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>みかん<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>野菜<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="表示例-2">表示例</h6><p></p>
+
+<ul>
+<li>フルーツ
+<ul>
+<li>りんご</li>
+<li>みかん</li>
+</ul></li>
+<li>野菜</li>
+</ul><p>以下のような場合にも、利用されます。<br>
+いわゆる日付で明示する更新情報の場合です。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>12月12日<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>定義型リストと表組みの練習<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>12月10日<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>HTMLの基本構造の入力練習<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>12月07日<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>Webサイト制作科開講<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="6-箇条書きのデザイン変更CSS">6. 箇条書きのデザイン変更（CSS）</h5>
+    <p></p><h6 id="-を変更する">● を変更する</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style-type</span>: <span class="synConstant">square</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>表示</th>
+    </tr>
+    <tr>
+    <td> disc   </td>
+    <td> ●（標準） </td>
+    </tr>
+    <tr>
+    <td> circle </td>
+    <td> ○     </td>
+    </tr>
+    <tr>
+    <td> square </td>
+    <td> ■     </td>
+    </tr>
+    <tr>
+    <td> none   </td>
+    <td> 非表示   </td>
+    </tr>
+</tbody></table><p></p><h6 id="番号の種類を変更">番号の種類を変更</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">ol</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style-type</span>: <span class="synConstant">upper-roman</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>表示</th>
+    </tr>
+    <tr>
+    <td> decimal     </td>
+    <td> 1,2,3    </td>
+    </tr>
+    <tr>
+    <td> lower-alpha </td>
+    <td> a,b,c    </td>
+    </tr>
+    <tr>
+    <td> upper-alpha </td>
+    <td> A,B,C    </td>
+    </tr>
+    <tr>
+    <td> lower-roman </td>
+    <td> i,ii,iii </td>
+    </tr>
+    <tr>
+    <td> upper-roman </td>
+    <td> I,II,III </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="7-実務でよく使う例ナビゲーション">7. 実務でよく使う例（ナビゲーション）</h5>
+    <p>【html】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"menu"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>Home<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>About<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>Contact<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+</pre><p>【css】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.menu</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  gap: <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉️ 横並びのメニューが作れます。</p>
+
+</div>
+<div class="section">
+    <h5 id="まとめ">まとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>目的</th>
+    <th>タグ</th>
+    </tr>
+    <tr>
+    <td> 普通の箇条書き </td>
+    <td> &lt;ul&gt;&lt;li&gt;    </td>
+    </tr>
+    <tr>
+    <td> 番号付き    </td>
+    <td> &lt;ol&gt;&lt;li&gt;    </td>
+    </tr>
+    <tr>
+    <td> 用語説明    </td>
+    <td> &lt;dl&gt;&lt;dt&gt;&lt;dd&gt;  </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="段落タグ.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">段落タグ</span></a><a href="表.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">表</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

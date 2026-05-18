@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【013】switch文で条件分岐 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【013】switch文で条件分岐</span>
+  </div>
+  <div class="article-head">
+    <h1>【013】switch文で条件分岐</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">条件分岐</span>
+      <span class="date">2026/01/13</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="013switch文で条件分岐">【013】switch文で条件分岐</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227085921.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptでswitch文を使った完全未経験者向けの問題を５問作成して </p>
+
+<ul>
+<li>出力は、consoleに</li>
+</ul>
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="-switch文ってなに">🔰 switch文ってなに？</h4>
+    <p><strong>switch文は「場合分け」をするための書き方です。</strong><br>
+たとえば、</p>
+
+<ul>
+<li>👉 数字によって表示を変えたい</li>
+<li>👉 文字によって処理を変えたい</li>
+</ul><p>そんな時に使います。</p><p><h&>🧠 イメージ</h&></p>
+<pre class="code" data-lang="" data-unlink="">もし 1 なら → A
+もし 2 なら → B
+もし 3 なら → C
+それ以外 → D</pre><p>これを switch文 で書くと、スッキリ書けます。</p>
+
+<div class="section">
+    <h5 id="-基本の形これだけ覚えればOK">✍ 基本の形（これだけ覚えればOK）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">switch</span> <span class="synSpecial">(</span>調べたい値<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">case</span> 条件1<span class="synStatement">:</span>
+    実行する処理<span class="synStatement">;</span>
+    <span class="synStatement">break;</span>
+  <span class="synStatement">case</span> 条件2<span class="synStatement">:</span>
+    実行する処理<span class="synStatement">;</span>
+    <span class="synStatement">break;</span>
+  <span class="synStatement">default:</span>
+    それ以外の時の処理<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>【例】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+
+<span class="synStatement">switch</span> <span class="synSpecial">(</span>num<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">case</span> <span class="synConstant">1</span><span class="synStatement">:</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'おはよう");</span>
+<span class="synConstant">    break;</span>
+<span class="synConstant">  case 2:</span>
+<span class="synConstant">    console.log('</span>こんにちは<span class="synConstant">');</span>
+<span class="synConstant">    break;</span>
+<span class="synConstant">  default:</span>
+<span class="synConstant">    console.log('</span>不正な値です<span class="synConstant">');</span>
+<span class="synConstant">}</span>
+</pre><p></p><h6 id="break-はストップ">break は「ストップ！」</h6>→ ここで処理を止める<br>
+⚠ これがないと、次の case も実行されるので超重要！<p></p><p></p><h6 id="default-はそれ以外">default は「それ以外」</h6>→ どれにも当てはまらない時<p></p><p></p><h6 id="-break-を忘れるとどうなる">🚨 break を忘れるとどうなる？</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">おはよう
+こんにちは</pre><p>😱 本当は「おはよう」だけなのに、<br>
+breakが無いせいで両方出る！</p>
+
+</div>
+<div class="section">
+    <h5 id="-switch文が得意なケース">🧩 switch文が得意なケース</h5>
+    
+<table>
+    <tbody><tr>
+    <th>使う場面</th>
+    <th>おすすめ</th>
+    </tr>
+    <tr>
+    <td> 数字で分岐       </td>
+    <td> ◎       </td>
+    </tr>
+    <tr>
+    <td> 文字で分岐       </td>
+    <td> ◎       </td>
+    </tr>
+    <tr>
+    <td> 条件がたくさん     </td>
+    <td> ◎       </td>
+    </tr>
+    <tr>
+    <td> 範囲（90点以上など） </td>
+    <td> △ → if文 </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="switch文-練習問題超初心者向け">switch文 練習問題（超初心者向け）</h4>
+    
+<div class="section">
+    <h5 id="問題1数字によるあいさつ表示">問題1：数字によるあいさつ表示</h5>
+    
+    <blockquote>
+        <p>変数 num の値によって、表示するあいさつを切り替えましょう。</p>
+
+    </blockquote>
+<p></p><h6 id="条件">条件</h6><p></p>
+
+<ul>
+<li>1 → 「おはよう」</li>
+<li>2 → 「こんにちは」</li>
+<li>3 → 「こんばんは」</li>
+<li>それ以外 → 「不正な値です」</li>
+</ul><p></p><h6 id="ひな形">ひな形</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+
+<span class="synStatement">switch</span> <span class="synSpecial">(</span>num<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synComment">// ここにコードを書く</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【012】入力された数字が偶数か奇数かを判別して表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【012】入力された数字が偶数か奇数かを判別して表示</span></a><a href="【014】繰り返しをコンソールに表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【014】繰り返しをコンソールに表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

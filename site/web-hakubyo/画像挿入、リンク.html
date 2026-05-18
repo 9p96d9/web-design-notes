@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>画像挿入、リンク - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>画像挿入、リンク</span>
+  </div>
+  <div class="article-head">
+    <h1>画像挿入、リンク</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2026/01/17</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="画像挿入">画像挿入</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260213140633.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLの画像表示について解説して</p>
+
+    </blockquote>
+
+<ul>
+<li>imgタグは文書内に画像を表示するタグです</li>
+<li>img：image</li>
+<li>src：source</li>
+<li>表示できる画像の形式は「.gif（GIF形式）」、「.jpg（JPEG形式）」、「.png（PNG形式）」「.webp（WebP形式）」などがあります</li>
+</ul>
+<div class="section">
+    <h5 id="-HTMLで画像を表示する方法">🖼 HTMLで画像を表示する方法</h5>
+    <p>HTMLで画像を表示するには &lt;img&gt; タグ を使います。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"image.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"説明文"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="属性の意味">属性の意味</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>属性</th>
+    <th>説明 </th>
+    </tr>
+    <tr>
+    <td> src </td>
+    <td> 画像ファイルのパス（必須）                        </td>
+    </tr>
+    <tr>
+    <td> alt </td>
+    <td> 画像が表示されない時の代替テキスト（必須・SEO・アクセシビリティ重要） </td>
+    </tr>
+</tbody></table>
+<ul>
+<li>src属性：画像の読み込み元を指定する属性</li>
+<li>alt属性：画像の代替となるテキスト情報</li>
+</ul><p></p><h6 id="その他の属性の意味">その他の属性の意味</h6><p></p>
+
+<ul>
+<li>title属性：補足情報をツールチップとして表示</li>
+<li>width属性とheight属性：画像の横幅と縦幅のサイズを指定</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">”画像ファイルのパス/</span><span class="synIdentifier"> ファイル名.(png, jpg, gif など拡張子)  ” </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">”代替テキスト”</span><span class="synIdentifier"> </span><span class="synType">title</span><span class="synIdentifier">=</span><span class="synConstant">”ツールチップで補足情報を記載”</span><span class="synIdentifier"> </span><span class="synType">width</span><span class="synIdentifier">=</span><span class="synConstant">”画像の横幅”</span><span class="synIdentifier"> hight=</span><span class="synConstant">”画像の高さ”</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="画像作成">画像作成</h5>
+    
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>正方形で水色の椅子の写真</p>
+
+    </blockquote>
+<p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260213140750.jpg" width="500" height="500" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>はじめてのHTML：画像を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>画像を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>HTML内に画像を挿入する記述<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"chair.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"椅子"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-HTMLのリンクaタグ">🔗 HTMLのリンク（&lt;a&gt;タグ）</h4>
+    
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLのリンクについて解説して</p>
+
+    </blockquote>
+<p>リンクには３つの使い方があります。</p>
+
+<ol>
+<li>テキストリンク</li>
+<li>画像リンク</li>
+<li>メールリンク（セキリュティ上の問題から現在使用されることはありません）</li>
+</ol>
+<ul>
+<li>aタグはページを移動するハイパーリンクを設定できます</li>
+<li>「a」はanchor（アンカー）の頭文字です</li>
+<li>「href」属性はhypertext reference（ハイパーテキスト リファレンス）の略称で、リンク先を指定することができます</li>
+<li>aタグに「target」属性を付与すると、新しいウインドウが開いて、そこに新しいページが表示されます</li>
+</ul>
+<div class="section">
+    <h5 id="-href属性とは">📌 href属性とは？</h5>
+    <p>「href」は リンク先のURL を指定します。</p>
+
+<table>
+    <tbody><tr>
+    <th>値</th>
+    <th>説明 </th>
+    </tr>
+    <tr>
+    <td> https://～    </td>
+    <td> 外部サイト         </td>
+    </tr>
+    <tr>
+    <td> page.html     </td>
+    <td> 同じフォルダ内の別ページ  </td>
+    </tr>
+    <tr>
+    <td> ../index.html </td>
+    <td> 1つ上の階層のページ    </td>
+    </tr>
+    <tr>
+    <td> #id名          </td>
+    <td> ページ内リンク（アンカー） </td>
+    </tr>
+    <tr>
+    <td> mailto:       </td>
+    <td> メール送信         </td>
+    </tr>
+    <tr>
+    <td> tel:          </td>
+    <td> 電話発信          </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="テキストリンク">テキストリンク</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"移動先の住所（パス）"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">リンクテキスト</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="外部サイトへのリンク">外部サイトへのリンク</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://www.yahoo.co.jp"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">Yahoo</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ページ内リンクアンカーリンク">ページ内リンク（アンカーリンク）</h6><strong>① 移動先にidを指定</strong><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"section1"</span><span class="synIdentifier">&gt;</span>概要<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+</pre><p><strong>② リンクを作成</strong></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#section1"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">概要へジャンプ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p>➡ 同じページ内をスクロール移動できます。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="画像リンク">画像リンク</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"移動先の住所（パス）"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"画像の置いてある場所"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"代替え文字"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="メールリンク">メールリンク</h5>
+    
+<ul>
+<li>セキュリティの問題でこの記述をする例は少ない</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"mailto:メールアドレス"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">お問い合わせ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="件名付き">件名付き</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"mailto:test@example.com?subject=お問い合わせ"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">お問い合わせ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-電話リンクスマートフォン向け">📞 電話リンク（スマートフォン向け）</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"tel:09012345678"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">電話する</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="新規ウィンドウで開く">新規ウィンドウで開く</h5>
+    
+<ul>
+<li>target="_blank"</li>
+<li>「_」アンダースコア</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier"> </span><span class="synType">target</span><span class="synIdentifier">=</span><span class="synConstant">"_blank"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">別ページを開く</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="セキュリティ対策推奨">セキュリティ対策（推奨）</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://www.google.com"</span><span class="synIdentifier"> </span><span class="synType">target</span><span class="synIdentifier">=</span><span class="synConstant">"_blank"</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"noopener noreferrer"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">Google</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-よく使う属性まとめ">⭐ よく使う属性まとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>属性</th>
+    <th>役割</th>
+    </tr>
+    <tr>
+    <td> href            </td>
+    <td> リンク先       </td>
+    </tr>
+    <tr>
+    <td> target="_blank" </td>
+    <td> 新規タブで開く    </td>
+    </tr>
+    <tr>
+    <td> rel             </td>
+    <td> セキュリティ指定   </td>
+    </tr>
+    <tr>
+    <td> download        </td>
+    <td> ファイルダウンロード </td>
+    </tr>
+    <tr>
+    <td> title           </td>
+    <td> ツールチップ表示   </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="-ダウンロードリンク">📥 ダウンロードリンク</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"file.pdf"</span><span class="synIdentifier"> </span><span class="synType">download</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">PDFをダウンロード</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-実務でよくある使用例">🧠 実務でよくある使用例</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://example.com"</span><span class="synIdentifier"> </span><span class="synType">target</span><span class="synIdentifier">=</span><span class="synConstant">"_blank"</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"noopener noreferrer"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"banner.png"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"公式サイト"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="表.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">表</span></a><a href="コンテンツを区切る・レイアウト.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">コンテンツを区切る・レイアウト</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

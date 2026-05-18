@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>イベント - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>イベント</span>
+  </div>
+  <div class="article-head">
+    <h1>イベント</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">jQuery</span>
+      <span class="date">2025/10/19</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="イベント">イベント</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029231842.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>ユーザーとWebサイトとの間でやりとりを行う処理を「イベント」と呼びます</li>
+<li>イベントには、「ユーザーイベント」と「ブラウザイベント」の２種類があります</li>
+<li>ユーザーイベントは、キーボードやマウスを操作することで実行されます</li>
+<li>ブラウザイベントは、おもに<a class="keyword" href="https://d.hatena.ne.jp/keyword/Web%A5%D6%A5%E9%A5%A6%A5%B6">Webブラウザ</a>に関連するイベントです</li>
+</ul>
+<div class="section">
+    <h5 id="イベントの設定">イベントの設定</h5>
+    
+<ul>
+<li>イベントを設定する構文はonメソッドを使用します</li>
+<li>「<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A4%A5%D9%A5%F3%A5%C8%A5%CF%A5%F3%A5%C9%A5%E9">イベントハンドラ</a>」とは、イベントが発生したタイミングで実行される関数です</li>
+</ul><p>《定義》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> セレクタ <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span> <span class="synConstant">'イベント名'</span><span class="synStatement">,</span> <span class="synConstant">'イベントハンドラ'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>《例》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> セレクタ <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span> <span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">(){</span> <span class="synIdentifier">alert</span><span class="synSpecial">(</span> <span class="synConstant">'クリックされました'</span> <span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synSpecial">}</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>《onメソッドを使用しない場合》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> セレクタ <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">イベント名</span><span class="synSpecial">(</span> <span class="synConstant">'イベントハンドラ'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>《例》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> セレクタ <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">click</span><span class="synSpecial">(</span> <span class="synStatement">function</span><span class="synSpecial">(){</span> <span class="synIdentifier">alert</span><span class="synSpecial">(</span> <span class="synConstant">'クリックされました'</span> <span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synSpecial">}</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="イベントデータ">イベントデータ</h5>
+    
+<ul>
+<li>onメソッドの構文は、次のような記述もできます</li>
+</ul><p>《定義》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> 親セレクタ <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span> <span class="synConstant">'イベント名'</span><span class="synStatement">,</span> <span class="synConstant">'子セレクタ'</span><span class="synStatement">,</span> <span class="synConstant">'イベントハンドラ'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>《定義》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> セレクタ <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span> <span class="synConstant">'イベント名'</span><span class="synStatement">,</span> <span class="synConstant">'イベントデータ'</span><span class="synStatement">,</span> <span class="synConstant">'イベントハンドラ'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>onメソッドを使用しない方法</li>
+</ul><p>《定義》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> 親セレクタ <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">イベント名</span><span class="synSpecial">(</span> <span class="synConstant">'イベントデータ'</span><span class="synStatement">,</span> <span class="synConstant">'イベントハンドラ'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>イベントデータは、オブジェクト型のデータです</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#btn'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">click</span><span class="synSpecial">(</span>  <span class="synComment">//clickイベントの設定</span>
+    <span class="synSpecial">{</span> <span class="synIdentifier">msg</span> <span class="synStatement">:</span> <span class="synConstant">'クリックされました'</span> <span class="synSpecial">}</span><span class="synStatement">,</span>  <span class="synComment">//イベントデータ</span>
+    <span class="synStatement">function</span><span class="synSpecial">(</span> e <span class="synSpecial">){</span> <span class="synIdentifier">alert</span><span class="synSpecial">(</span> e<span class="synStatement">.</span>data<span class="synStatement">.</span>msg <span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synSpecial">}</span>  <span class="synComment">//イベントハンドラ</span>
+  <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>イベントデータを<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A4%A5%D9%A5%F3%A5%C8%A5%CF%A5%F3%A5%C9%A5%E9">イベントハンドラ</a>内から参照する場合は、<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A4%A5%D9%A5%F3%A5%C8%A5%CF%A5%F3%A5%C9%A5%E9">イベントハンドラ</a>の引数eから参照することになります。</p>
+
+<ul>
+<li>イベントデータはオブジェクト型なので、次のような構文になります</li>
+</ul><p>《定義》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synSpecial">(</span> <span class="synConstant">'key'</span> : <span class="synConstant">'value'</span> <span class="synSpecial">)</span>  <span class="synComment">//イベントデータの中身の構造</span>
+</pre><p>複数ある場合は、<br>
+《定義》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synSpecial">(</span> <span class="synConstant">'keyA'</span> : <span class="synConstant">'valueA'</span><span class="synStatement">,</span> <span class="synConstant">'keyB'</span> : <span class="synConstant">'valueB'</span><span class="synStatement">,</span> <span class="synConstant">'keyC'</span> : <span class="synConstant">'valueC'</span> <span class="synSpecial">)</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="イベントハンドラ"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A4%A5%D9%A5%F3%A5%C8%A5%CF%A5%F3%A5%C9%A5%E9">イベントハンドラ</a></h5>
+    
+<ul>
+<li>イベントが発生したタイミングで実行される関数</li>
+</ul><p>《定義》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">イベントハンドラ</span><span class="synSpecial">(</span> handler <span class="synSpecial">)</span> = <span class="synStatement">function</span><span class="synSpecial">(</span> 'イベントオブジェクト' <span class="synSpecial">){</span> <span class="synSpecial">}</span><span class="synStatement">;</span>
+</pre>
+<ul>
+<li>イベントデータのコードで出てきた引数eが、イベントオブジェクトにあたりますが、使用しない場合は省略することもできます</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#btn'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">click</span><span class="synSpecial">(</span>  <span class="synComment">//clickイベントの設定</span>
+    <span class="synSpecial">{</span> <span class="synIdentifier">msg</span> <span class="synStatement">:</span> <span class="synConstant">'クリックされました'</span> <span class="synSpecial">}</span><span class="synStatement">,</span>  <span class="synComment">//イベントデータ</span>
+    <span class="synStatement">function</span><span class="synSpecial">(</span> e <span class="synSpecial">){</span> <span class="synIdentifier">alert</span><span class="synSpecial">(</span> e<span class="synStatement">.</span>data<span class="synStatement">.</span>msg <span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synSpecial">}</span>  <span class="synComment">//イベントハンドラ</span>
+  <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>id名画「btn」である要素にclickイベントを設定しています。<br>
+ユーザーがこの要素をクリックしたタイミングで、<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A4%A5%D9%A5%F3%A5%C8%A5%CF%A5%F3%A5%C9%A5%E9">イベントハンドラ</a>関数が実行されます。</p>
+
+<ul>
+<li>引数eは、dataオブジェクトをプロパティとして持っています</li>
+<li>このdataオブジェクトがイベントデータを参照しています</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  e<span class="synStatement">.</span>data <span class="synStatement">=</span> <span class="synSpecial">{</span> <span class="synIdentifier">msg</span> <span class="synStatement">:</span> <span class="synConstant">'クリックされました'</span> <span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="イベントオブジェクト">イベントオブジェクト</h5>
+    
+<ul>
+<li>組み込みオブジェクト</li>
+</ul><p>《例》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">document</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span> <span class="synConstant">'mousemove'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">(</span>e<span class="synSpecial">){</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'input'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">val</span><span class="synSpecial">(</span> <span class="synConstant">'e.pageX : '</span> <span class="synStatement">+</span> e<span class="synStatement">.</span>pageX <span class="synStatement">+</span> <span class="synConstant">', e.pageY'</span> <span class="synStatement">+</span> e<span class="synStatement">.</span>pageY <span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>この記述は、マウスを動かすとマウスの座標を取得し、input要素の<a class="keyword" href="https://d.hatena.ne.jp/keyword/value">value</a>属性に値を代入します。</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="イベントの設定登録">イベントの設定（登録）</h4>
+    
+<ul>
+<li>１つの<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>に対して複数のイベントを登録する場合は、次のような記述になります</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#btn'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">click</span><span class="synSpecial">(</span> <span class="synStatement">function</span><span class="synSpecial">(</span> <span class="synSpecial">){</span> <span class="synSpecial">}</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#btn'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">mouseover</span><span class="synSpecial">(</span> <span class="synStatement">function</span><span class="synSpecial">(</span> <span class="synSpecial">){</span> <span class="synSpecial">}</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#btn'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">mouseout</span><span class="synSpecial">(</span> <span class="synStatement">function</span><span class="synSpecial">(</span> <span class="synSpecial">){</span> <span class="synSpecial">}</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>onメソッドを使用して簡潔に記述をすると</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#btn'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span> <span class="synSpecial">{</span>
+    <span class="synConstant">'click'</span> <span class="synStatement">:</span> <span class="synStatement">function</span><span class="synSpecial">(</span> <span class="synSpecial">){</span> <span class="synSpecial">}</span><span class="synStatement">,</span>
+    <span class="synConstant">'mouseover'</span> <span class="synStatement">:</span> <span class="synSpecial">(</span> <span class="synStatement">function</span><span class="synSpecial">(</span> <span class="synSpecial">){</span> <span class="synSpecial">}</span><span class="synStatement">,</span>
+    <span class="synConstant">'mouseout'</span> : <span class="synStatement">function</span><span class="synSpecial">(</span> <span class="synSpecial">){</span> <span class="synSpecial">}</span>
+  } <span class="synSpecial">)</span>;
+</pre><p>もし、３つのイベントの<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A4%A5%D9%A5%F3%A5%C8%A5%CF%A5%F3%A5%C9%A5%E9">イベントハンドラ</a>が同じであれば、以下のように記述できます。</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#btn'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span> <span class="synConstant">'click mouseover mouseout'</span> : <span class="synStatement">function</span><span class="synSpecial">(</span> <span class="synSpecial">){</span> <span class="synSpecial">}</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>ショートカットメソッドを使用しても、onメソッドをしても処理的には同じです。<br>
+<br>
+</p>
+
+<div class="section">
+    <h5 id="ユーザーイベントとブラウザイベント">ユーザーイベントとブラウザイベント</h5>
+    
+<ul>
+<li>clickイベントやmousemoveイベントは、ユーザーの操作によって発生するイベントで、ユーザーイベントと呼ばれます</li>
+<li>ブラウザイベントは、<a class="keyword" href="https://d.hatena.ne.jp/keyword/Web%A5%D6%A5%E9%A5%A6%A5%B6">Webブラウザ</a>に関連するイベントになります</li>
+</ul><p></p><h6 id="resizeイベント">resizeイベント</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>ウィンドウリサイズの値を取得<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">window</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span> <span class="synConstant">'resize'</span><span class="synStatement">,</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'input'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">val</span><span class="synSpecial">(</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">window</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">width</span><span class="synSpecial">()</span> <span class="synStatement">+</span> <span class="synConstant">' : '</span> <span class="synStatement">+</span> <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">window</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">height</span><span class="synSpecial">()</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="clickイベントの設定">clickイベントの設定</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>clickイベントを設定<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span>ボタン<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier"> </span><span class="synType">value</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"input"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#btn'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">click</span><span class="synSpecial">(</span> <span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#input'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">val</span><span class="synSpecial">(</span> <span class="synConstant">'ボタンをクリックしました'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p>《定義》</p>
+<pre class="code lang-html" data-lang="html" data-unlink="">  $( セレクタ ).イベント名( ‘イベントハンドラ' );
+</pre><pre class="code lang-html" data-lang="html" data-unlink="">  $( セレクタ ).イベント名( ‘イベントデータ', ‘イベントハンドラ' );
+</pre><p>上の記述を書き換えてみると、以下のようになります。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#btn'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">click</span><span class="synSpecial">(</span>   <span class="synComment">//clickイベントを設定</span>
+    <span class="synSpecial">{</span> <span class="synIdentifier">msg</span> <span class="synStatement">:</span> <span class="synConstant">'ボタンをクリックしました'</span> <span class="synSpecial">}</span><span class="synStatement">,</span> <span class="synComment">//イベントデータを設定</span>
+    <span class="synStatement">function</span><span class="synSpecial">(</span> e <span class="synSpecial">)</span> <span class="synSpecial">{</span>  <span class="synComment">//イベントハンドラ関数を設定</span>
+      <span class="synIdentifier">$</span><span class="synSpecial">(</span> <span class="synConstant">'#input'</span> <span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">val</span><span class="synSpecial">(</span> e<span class="synStatement">.</span>data<span class="synStatement">.</span>msg <span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">//valメソッドでテキストを設定</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>イベントデータのオブジェクトにmsgプロパティを設定し、値に「ボタンをクリックしました」を設定しました</li>
+<li>このイベントデータが<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A4%A5%D9%A5%F3%A5%C8%A5%CF%A5%F3%A5%C9%A5%E9">イベントハンドラ</a>の引数eに渡され、dataオブジェクトに格納されます（引数名eは任意）</li>
+<li>e.data.msgで参照されます</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="実践的なメソッド.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">実践的なメソッド</span></a><a href="thisキーワード.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">thisキーワード</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

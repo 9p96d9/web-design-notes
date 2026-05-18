@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>条件分岐 - if文 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>条件分岐 - if文</span>
+  </div>
+  <div class="article-head">
+    <h1>条件分岐 - if文</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">条件分岐</span>
+      <span class="date">2025/10/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="JavaScriptの条件分岐"><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>の条件分岐</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029234020.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>条件分岐には、if 文と switch 文があります</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="if文とは">if文とは</h4>
+    
+<ul>
+<li>「if」の文字が表すように「もし〜だったら、〜を実行する」といった条件分岐を行う構文となります</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span>条件<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+ <span class="synComment">//条件がtrueだった場合に実行する処理</span>
+<span class="synSpecial">}</span>
+</pre>
+<div class="section">
+    <h5 id="ifの基本ルール">ifの基本ルール</h5>
+    
+<ul>
+<li>if文は、真偽値(true or false)を元に処理の振り分けを行いますので、「真偽値が返される条件式」を指定します</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> a <span class="synStatement">=</span> <span class="synConstant">5</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>a <span class="synStatement">&lt;</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'aは10より小さい'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+<ol>
+<li>数値型の変数 a を宣言し、初期値として 5 を入れる</li>
+<li>a が10より小さいとき、「{}」で囲まれたところが実行される</li>
+<li>結果を出力パネルに表示する</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="ifの処理の流れ">ifの処理の流れ</h5>
+    <p></p><p align="center"><a href="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-css-design/20111009/20111009192514.jpg" class="http-image"><img src="../images/web-css-design_20111009192514.jpg" class="http-image" alt="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-css-design/20111009/20111009192514.jpg"></a></p><p></p><p>もちろん、実際にこの文を使う場合、判定の結果はtrace文ではなく、もっと具体的な演出になります。</p>
+
+</div>
+<div class="section">
+    <h5 id="さまざまな条件">さまざまな条件</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> a<span class="synStatement">;</span>
+a <span class="synStatement">&lt;</span> <span class="synConstant">10</span>  <span class="synComment">// a が10より小さい</span>
+a <span class="synStatement">&gt;</span> <span class="synConstant">10</span>  <span class="synComment">// a が10より大きい</span>
+a <span class="synStatement">&lt;=</span> <span class="synConstant">10</span>  <span class="synComment">// a が10以下（10も含む）</span>
+a <span class="synStatement">&gt;=</span> <span class="synConstant">10</span>  <span class="synComment">// a が10以上（10も含む）</span>
+a <span class="synStatement">==</span> <span class="synConstant">10</span>  <span class="synComment">// a が10と一致</span>
+a <span class="synStatement">!</span>= <span class="synConstant">10</span>  <span class="synComment">// a が10ではない</span>
+</pre><p>この中で特に間違えやすいのは「==」という記号です。<br>
+等しいかどうか調べるときには必ず２つ必要です。</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span> password <span class="synStatement">!</span>= <span class="synConstant">'abc123'</span> <span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span> <span class="synConstant">'パスワードが間違っています。'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="else">else</h5>
+    
+<ul>
+<li>条件が成立しない場合に何かを実行したいときに、「そうではないとき」という処理を実行します</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span>条件<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+ <span class="synComment">// 条件がtrueだった場合に実行する処理</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+ <span class="synComment">// 条件がfalseだった場合に実行する処理</span>
+<span class="synSpecial">}</span>
+</pre><p>《<strong>else文の特徴</strong>》</p>
+
+<ul>
+<li>単体では利用できない</li>
+<li>同一if文内に一つのみ</li>
+<li>最後に記述する</li>
+<li>省略可</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> a <span class="synStatement">=</span> <span class="synConstant">15</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>a <span class="synStatement">&lt;</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'a は10より小さい'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'a は10より小さくはない'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><p align="center"><a href="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-css-design/20111009/20111009215402.jpg" class="http-image"><img src="../images/web-css-design_20111009215402.jpg" class="http-image" alt="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-css-design/20111009/20111009215402.jpg"></a></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="else-if">else if</h5>
+    
+<ul>
+<li>if と else の間に書く「else if」には、if 文と同じように条件を書くことができ、「そうでなくて、もし〜ならば」という処理をつくります</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span>条件A<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+ <span class="synComment">// 条件Aがtrueだった場合に実行する処理</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>条件B<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+ <span class="synComment">// 条件Aがfalseで、条件Bがtrueだった場合に実行する処理</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+ <span class="synComment">// 条件A、条件Bともにfalseだった場合に実行する処理</span>
+<span class="synSpecial">}</span>
+</pre><p>《<strong>else if文の特徴</strong>》</p>
+
+<ul>
+<li>単体では利用できない</li>
+<li>同一if文内に複数記述可</li>
+<li>if文より後に記述する</li>
+<li>省略可</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> a <span class="synStatement">=</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>a <span class="synStatement">&lt;</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'a は10より小さい'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>a <span class="synStatement">==</span> <span class="synConstant">10</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'a はずばり10'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'a は10以上'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><p align="center"><a href="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-css-design/20111009/20111009215422.jpg" class="http-image"><img src="../images/web-css-design_20111009215422.jpg" class="http-image" alt="https://cdn-ak.f.st-hatena.com/images/fotolife/w/web-css-design/20111009/20111009215422.jpg"></a></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="ANDで条件を組み合わせる">ANDで条件を組み合わせる</h5>
+    
+<ul>
+<li>if 文では、いくつかの条件を並べることができます</li>
+<li>条件を並べるときには「AND（&amp;&amp;）」か「OR（||）」を使って、条件どおしをつなぎます</li>
+<li>両方の条件が成立するときだけ処理を実行したいときには、AND（&amp;&amp;）を使います</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> a <span class="synStatement">=</span> <span class="synConstant">5</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span> a <span class="synStatement">&gt;</span> <span class="synConstant">0</span> <span class="synStatement">&amp;&amp;</span> a <span class="synStatement">&lt;</span> <span class="synConstant">10</span> <span class="synSpecial">)</span> <span class="synSpecial">{</span>
+   <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span> <span class="synConstant">'a は１から９までの数値です。'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+条件A：a <span class="synStatement">&gt;</span> <span class="synConstant">0</span>　　a が０より大きい
+条件B：a <span class="synStatement">&lt;</span> <span class="synConstant">10</span>　 a が10より小さい
+</pre><p>この例では条件A、Bの両方が成立する（true）ので、出力パネルには「a は１から９までの数値です。」と表示されます。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="ORで条件を組み合わせる">ORで条件を組み合わせる</h5>
+    
+<ul>
+<li>どちらかの条件が成立するだけで処理を実行したいときは、OR（||）記号を使います</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">cons a<span class="synStatement">=</span> <span class="synConstant">5</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span> a <span class="synStatement">&lt;</span> <span class="synConstant">0</span> <span class="synStatement">||</span> a <span class="synStatement">&gt;</span> <span class="synConstant">10</span> <span class="synSpecial">)</span> <span class="synSpecial">{</span>
+   <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span> <span class="synConstant">'a は０より小さいか、10より大きい数値です。'</span> <span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+条件A：a <span class="synStatement">&lt;</span> <span class="synConstant">0</span>　　a が０より小さい
+条件B：a <span class="synStatement">&gt;</span> <span class="synConstant">10</span>　 a が10より大きい
+</pre><p>この例では条件A、Bのどちらも成立しない（false）ので、出力パネルにはなにも表示されません。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="中括弧の省略">中括弧の省略</h5>
+    
+<ul>
+<li>各コードブロックに文がひとつしかないときには、次のように括弧を省略することもできます</li>
+<li>不用意に省略すると、うまくいかない原因にもなるため、常に中括弧を書くようにしましょう</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="swich文とは">swich文とは</h4>
+    
+<ul>
+<li>swich文で実行できる処理は、if文でも実行できるので、利用機会はあまり多くありません</li>
+<li>swich文は、一つ値を複数の値と比較し条件分岐を行う際に適しています</li>
+<li>swich(式){ }の式には、比較基準となる値を指定します</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synIdentifier">swich</span> <span class="synSpecial">(</span>式<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+ case <span class="synIdentifier">比較対象1</span><span class="synStatement">:</span>
+  <span class="synComment">//式が比較対象1と一致した場合に実行する処理</span>
+  <span class="synStatement">break;</span>
+
+ case <span class="synIdentifier">比較対象2</span><span class="synStatement">:</span>
+  <span class="synComment">//式が比較対象2と一致した場合に実行する処理</span>
+  <span class="synStatement">break;</span>
+
+ case <span class="synIdentifier">比較対象3</span><span class="synStatement">:</span>
+ case <span class="synIdentifier">比較対象4</span><span class="synStatement">:</span>
+  <span class="synComment">//式が比較対象3または比較対象4と一致した場合に実行する処理</span>
+  <span class="synStatement">break;</span>
+
+ <span class="synIdentifier">default</span><span class="synStatement">:</span>
+  <span class="synComment">//どのcaseにも一致しなかった場合に実行する処理</span>
+  <span class="synStatement">break;</span>
+<span class="synSpecial">}</span>
+</pre>
+<div class="section">
+    <h5 id="case">case</h5>
+    
+<ul>
+<li>caseには、式と比較する値を指定します</li>
+<li>式とcaseの値が一致した際にcase ~ breakまでの処理が実行されます</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="break">break</h5>
+    
+<ul>
+<li>swich文は「<strong>一致したcase ~ 次に現れるbreakまで</strong>」の処理が実行される仕組みとなっています</li>
+<li>breakを書き忘れると以降のcaseまで実行されてしまいますので注意してください</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="default">default</h5>
+    
+<ul>
+<li>defaultは、省略可能です。</li>
+<li>defaultに指定した処理は、どのcaseにも一致しなかった場合に実行されます</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> language <span class="synStatement">=</span> <span class="synConstant">'en'</span><span class="synStatement">;</span>
+
+<span class="synIdentifier">swich</span> <span class="synSpecial">(</span>language<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+ case <span class="synConstant">'jp'</span>:
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'こんにちは'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synStatement">break;</span>
+
+ case <span class="synConstant">'en'</span>:
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'Hello'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synStatement">break;</span>
+
+ <span class="synIdentifier">default</span><span class="synStatement">:</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'そのような言語は存在しません'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synStatement">break;</span>
+<span class="synSpecial">}</span>
+</pre>
+<ul>
+<li>定数languageがjpだった場合、「こんにちは」と表示する</li>
+<li>定数languageがenだった場合、「Hello」と表示する</li>
+<li>定数languageがjpでもenでもなかった場合、「そのような言語はありません」と表示する</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="JavaScriptで扱えるデータの種類.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">JavaScriptで扱えるデータの種類</span></a><a href="日付を取得して表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">日付を取得して表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

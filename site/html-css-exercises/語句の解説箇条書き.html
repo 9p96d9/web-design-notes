@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>語句の解説箇条書き - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>語句の解説箇条書き</span>
+  </div>
+  <div class="article-head">
+    <h1>語句の解説箇条書き</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2025/12/08</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="語句の解説箇条書き">語句の解説箇条書き</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260221082143.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLの定義型リストについて解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="HTMLの定義型リストdlとは">HTMLの定義型リスト（&lt;dl&gt;）とは？</h4>
+    
+<ul>
+<li>定義型リストは、用語とその説明をセットで表現するためのリストです。</li>
+<li>用語集、FAQ、仕様説明、辞書形式のデータなどに適しています。</li>
+</ul><p>使用する主なタグは次の3つです：</p>
+
+<table>
+    <tbody><tr>
+    <th>タグ</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> &lt;dl&gt; </td>
+    <td> 定義リスト全体（definition list）   </td>
+    </tr>
+    <tr>
+    <td> &lt;dt&gt; </td>
+    <td> 用語（definition term）        </td>
+    </tr>
+    <tr>
+    <td> &lt;dd&gt; </td>
+    <td> 説明（definition description） </td>
+    </tr>
+</tbody></table><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>HTML<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>Webページの構造を記述するためのマークアップ言語。<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>CSS<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>Webページの見た目（デザイン）を指定するための言語。<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>JavaScript<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>Webページに動きをつけるためのプログラミング言語。<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre><p>【表示イメージ】<br>
+<span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260222065635.jpg" width="500" height="144" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span><br>
+</p>
+
+</div>
+<div class="section">
+    <h4 id="特徴とポイント">特徴とポイント</h4>
+    
+<div class="section">
+    <h5 id="-用語と説明が1対1でなくてもよい">① 用語と説明が1対1でなくてもよい</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>HTTP<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>通信プロトコル<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>Webでのデータ転送に使われる<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre><p>→ 1つの用語に複数の説明が可能</p>
+
+</div>
+<div class="section">
+    <h5 id="-用語を複数まとめて1つの説明にできる">② 用語を複数まとめて1つの説明にできる</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>Chrome<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>Firefox<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>Edge<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>Webブラウザ<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre><p>→ 複数の用語 → 1つの説明も可能</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="よくある使用例">よくある使用例</h4>
+    
+<div class="section">
+    <h5 id="-用語集">① 用語集</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>フロントエンド<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>ユーザーが直接触れる画面部分<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>バックエンド<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>サーバー側の処理<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-FAQ質問と回答">② FAQ（質問と回答）</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>Q. 送料はいくらですか？<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>A. 全国一律500円です。<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>Q. 返品できますか？<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>A. 未使用品のみ可能です。<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-仕様スペック表">③ 仕様・スペック表</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>サイズ<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>横100px × 縦50px<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>重量<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>120g<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="CSSでのレイアウト例表風表示">CSSでのレイアウト例（表風表示）</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>商品名<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>ワイヤレスマウス<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>価格<span class="synIdentifier">&lt;/</span><span class="synStatement">dt</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>2,480円<span class="synIdentifier">&lt;/</span><span class="synStatement">dd</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">dl</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">dl</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>: <span class="synConstant">120px</span> <span class="synConstant">1fr</span>;
+  gap: <span class="synConstant">8px</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">dt</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-weight</span>: <span class="synConstant">bold</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">dd</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+</pre><p>→ 表（table）風のレイアウトが作れます。</p>
+
+</div>
+<div class="section">
+    <h4 id="ul--ol-との違い">&lt;ul&gt; / &lt;ol&gt; との違い</h4>
+    
+<table>
+    <tbody><tr>
+    <th>種類</th>
+    <th>用途</th>
+    </tr>
+    <tr>
+    <td> &lt;ul&gt; </td>
+    <td> 箇条書き（順序なし）     </td>
+    </tr>
+    <tr>
+    <td> &lt;ol&gt; </td>
+    <td> 手順・ランキング（順序あり） </td>
+    </tr>
+    <tr>
+    <td> &lt;dl&gt; </td>
+    <td> 用語＋説明のペア       </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h4 id="注意点ベストプラクティス">注意点（ベストプラクティス）</h4>
+    <p>❌ レイアウト目的だけで使わない<br>
+⭕ 意味的に「用語と説明」になっている場合に使う</p><p>→ SEO・アクセシビリティの観点でも重要</p>
+
+</div>
+<div class="section">
+    <h4 id="まとめ">まとめ</h4>
+    
+<ul>
+<li>&lt;dl&gt; は 用語と説明をセットで表現</li>
+<li>&lt;dt&gt; が用語、&lt;dd&gt; が説明</li>
+<li>FAQ、用語集、仕様表に最適</li>
+<li>表風レイアウトもCSSで簡単に可能</li>
+</ul>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="箇条書き.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">箇条書き</span></a><a href="画像を表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">画像を表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

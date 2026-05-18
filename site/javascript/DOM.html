@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>DOM</span>
+  </div>
+  <div class="article-head">
+    <h1>DOM</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/23</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="DOMDocument-Object-Model">DOM（Document Object Model）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260213131629.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptのDOMについてわかりやすく解説して</p>
+
+    </blockquote>
+<p>👉 HTMLをJavaScriptから操作するための仕組み（プログラミング用の表現）<br>
+WebページのHTMLは、ブラウザの中で 「ツリー構造」 に変換され、JavaScriptから自由にアクセス・変更できます。</p><p></p><h6 id="DOMを一言でいうと">DOMを一言でいうと</h6><p></p>
+
+    <blockquote>
+        <p>JavaScriptでHTMLを操作するための窓口</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="1-DOMのイメージ超重要">1. DOMのイメージ（超重要）</h5>
+    <p>【html】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文章<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>クリック<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p>これはDOMでは、次のようなツリー構造になります。</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">document
+ └─ <span class="synStatement">body</span>
+     ├─ <span class="synStatement">h1</span>
+     ├─ <span class="synStatement">p</span>
+     └─ <span class="synStatement">button</span>
+</pre><p>👉 HTMLの各要素が「<strong>ノード</strong>」として階層構造になる</p>
+
+</div>
+<div class="section">
+    <h5 id="2-なぜDOMが必要なのか">2. なぜDOMが必要なのか？</h5>
+    <p>DOMがあることで、JavaScriptから以下のような操作ができます：</p>
+
+<ul>
+<li>HTML要素の取得</li>
+<li>テキストの変更</li>
+<li>属性の変更</li>
+<li>要素の追加・削除</li>
+<li>スタイルの変更</li>
+</ul><p>つまり、</p>
+
+    <blockquote>
+        <p><strong>Webページを動的に変更できる</strong></p>
+
+    </blockquote>
+<p>というのがDOMの最大の役割です。</p>
+
+</div>
+<div class="section">
+    <h5 id="3-DOMの基本構造">3. DOMの基本構造</h5>
+    <p></p><h6 id="document-オブジェクト">document オブジェクト</h6><strong>JavaScriptでは、HTML全体を document オブジェクトとして扱います。</strong><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">document</span>
+</pre><p>これは DOMの入口 です。</p>
+
+</div>
+<div class="section">
+    <h5 id="4-要素の取得DOM操作の基本">4. 要素の取得（DOM操作の基本）</h5>
+    
+<ul>
+<li>DOMの取得（要素の取り方）</li>
+</ul><p></p><h6 id="1-idで取得最重要">1. idで取得（最重要）</h6>【html】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"title"</span><span class="synIdentifier">&gt;</span>見出し<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+</pre><p>【js】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'title'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>element<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="2-classで取得">2. classで取得</h6>【html】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"item"</span><span class="synIdentifier">&gt;</span>A<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"item"</span><span class="synIdentifier">&gt;</span>B<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>【js】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> items <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementsByClassName</span><span class="synSpecial">(</span><span class="synConstant">'item'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>items<span class="synSpecial">[</span><span class="synConstant">0</span><span class="synSpecial">])</span><span class="synStatement">;</span>
+</pre><p>👉 HTMLCollection（複数） が返る。</p><p></p><h6 id="3-querySelector超重要万能">3. querySelector（超重要・万能）</h6>【html】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"text"</span><span class="synIdentifier">&gt;</span>A<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"item"</span><span class="synIdentifier">&gt;</span>B<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"item"</span><span class="synIdentifier">&gt;</span>C<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>【js】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> el <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#text'</span><span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// id</span>
+<span class="synType">const</span> item <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'.item[1]'</span><span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// classの2番目</span>
+</pre><p>【js】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> all <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelectorAll</span><span class="synSpecial">(</span><span class="synConstant">'.item'</span><span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// classすべて</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>メソッド</th>
+    <th>内容</th>
+    </tr>
+    <tr>
+    <td> querySelector    </td>
+    <td> 最初の1つ </td>
+    </tr>
+    <tr>
+    <td> querySelectorAll </td>
+    <td> 全て    </td>
+    </tr>
+</tbody></table>
+<ul>
+<li>CSSと同じ書き方ができるため 最も柔軟。</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">document</span>.<span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">"#title"</span><span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// id</span>
+<span class="synStatement">document</span>.<span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">"ul li"</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// 子孫</span>
+</pre><p>👉 今はほぼ querySelector だけ覚えればOK</p>
+
+</div>
+<div class="section">
+    <h5 id="5-DOM要素の中身の取得変更">5. DOM要素の中身の取得・変更</h5>
+    <p></p><h6 id="-テキストの操作">① テキストの操作</h6>【js】<p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> h1 <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">"h1"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>h1<span class="synStatement">.</span>textContent<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+h1<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">"変更後のタイトル"</span><span class="synStatement">;</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>プロパティ</th>
+    <th>特徴</th>
+    </tr>
+    <tr>
+    <td> textContent </td>
+    <td> 純粋なテキスト   </td>
+    </tr>
+    <tr>
+    <td> innerText   </td>
+    <td> 表示されるテキスト </td>
+    </tr>
+</tbody></table><p>通常は textContent推奨。</p><p></p><h6 id="-HTMLを含めた操作">② HTMLを含めた操作</h6>【js】<p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">p<span class="synStatement">.</span>innerHTML <span class="synStatement">=</span> <span class="synConstant">'&lt;strong&gt;太字&lt;/strong&gt;'</span><span class="synStatement">;</span>
+</pre><p>⚠ XSS対策のため、外部入力を入れない</p>
+
+</div>
+<div class="section">
+    <h5 id="6-属性の操作">6. 属性の操作</h5>
+    <p></p><h6 id="-取得">① 取得</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">img<span class="synStatement">.</span><span class="synIdentifier">getAttribute</span><span class="synSpecial">(</span><span class="synConstant">'src'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="-変更">② 変更</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">img<span class="synStatement">.</span><span class="synIdentifier">setAttribute</span><span class="synSpecial">(</span><span class="synConstant">'src'</span><span class="synStatement">,</span> <span class="synConstant">'sample.png'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="-直接操作よく使う">③ 直接操作（よく使う）</h6>c<br>
+img.src = 'sample.png';<br>
+|<p></p>
+
+</div>
+<div class="section">
+    <h5 id="7-クラス操作超重要">7. クラス操作（超重要）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">element<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">'active'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+element<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">remove</span><span class="synSpecial">(</span><span class="synConstant">'active'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+element<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">toggle</span><span class="synSpecial">(</span><span class="synConstant">'active'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+element<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">contains</span><span class="synSpecial">(</span><span class="synConstant">'active'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>メソッド</th>
+    <th>内容</th>
+    </tr>
+    <tr>
+    <td> add      </td>
+    <td> 追加   </td>
+    </tr>
+    <tr>
+    <td> remove   </td>
+    <td> 削除   </td>
+    </tr>
+    <tr>
+    <td> toggle   </td>
+    <td> 付け外し </td>
+    </tr>
+    <tr>
+    <td> contains </td>
+    <td> 含むか  </td>
+    </tr>
+</tbody></table><p>👉 CSS連携の要</p>
+
+</div>
+<div class="section">
+    <h5 id="8-スタイル操作">8. スタイル操作</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">element<span class="synStatement">.</span>style<span class="synStatement">.</span>color <span class="synStatement">=</span> <span class="synConstant">'red'</span><span class="synStatement">;</span>
+element<span class="synStatement">.</span>style<span class="synStatement">.</span>fontSize <span class="synStatement">=</span> <span class="synConstant">'24px'</span><span class="synStatement">;</span>
+</pre><p>⚠ CSSはCSSで管理し、JSではclass操作推奨</p><p></p><h6 id="悪い例">悪い例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">element<span class="synStatement">.</span>style<span class="synStatement">.</span>display <span class="synStatement">=</span> <span class="synConstant">'none'</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="良い例">良い例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">element<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">'hidden'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="9-要素の作成追加">9. 要素の作成・追加</h5>
+    <p></p><h6 id="要素の生成">要素の生成</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> p <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">createElement</span><span class="synSpecial">(</span><span class="synConstant">'p'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+p<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">"新しい文章"</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="DOMに追加">DOMに追加</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">document</span>.body<span class="synStatement">.</span><span class="synIdentifier">appendChild</span><span class="synSpecial">(</span>p<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="指定位置に追加">指定位置に追加</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">parent</span>.<span class="synIdentifier">appendChild</span><span class="synSpecial">(</span>child<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synStatement">parent</span>.<span class="synIdentifier">prepend</span><span class="synSpecial">(</span>child<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="10-要素の削除">10. 要素の削除</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">element<span class="synStatement">.</span><span class="synIdentifier">remove</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p>または</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">parent</span>.<span class="synIdentifier">removeChild</span><span class="synSpecial">(</span>child<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="11-DOM操作の全体イメージ">11. DOM操作の全体イメージ</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> ul <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'ul'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synType">const</span> li <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">createElement</span><span class="synSpecial">(</span><span class="synConstant">'li'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+li<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'新しい項目'</span><span class="synStatement">;</span>
+
+ul<span class="synStatement">.</span><span class="synIdentifier">appendChild</span><span class="synSpecial">(</span>li<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>👉 「取得 → 作成 → 変更 → 追加」 がDOM操作の基本パターン。</p>
+
+</div>
+<div class="section">
+    <h5 id="12DOMとメモリの関係">12.DOMとメモリの関係</h5>
+    <p>【js】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> p <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#text'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><pre class="code lang-javascript" data-lang="javascript" data-unlink="">p → <span class="synSpecial">[</span>DOMオブジェクトのアドレス<span class="synSpecial">]</span>
+</pre><p>【js】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">p<span class="synStatement">.</span>textContent <span class="synStatement">=</span> <span class="synConstant">'変更'</span><span class="synStatement">;</span>
+</pre><p>👉 DOMのメモリを書き換えている → 画面に反映</p>
+
+</div>
+<div class="section">
+    <h5 id="13-DOMの処理の流れ理解が重要">13. DOMの処理の流れ（理解が重要）</h5>
+    
+<ul>
+<li>HTML読み込み</li>
+<li>DOMツリー構築</li>
+<li>JavaScript実行</li>
+<li>DOM操作反映 → 画面更新</li>
+</ul><p>👉 DOM操作は 画面表示に直結 するため、無駄な操作はパフォーマンス低下につながる。</p>
+
+</div>
+<div class="section">
+    <h5 id="DOMの超重要ポイントまとめ">DOMの超重要ポイントまとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>概念</th>
+    <th>内容</th>
+    </tr>
+    <tr>
+    <td> DOM              </td>
+    <td> HTMLをJavaScriptで操作する仕組み </td>
+    </tr>
+    <tr>
+    <td> document         </td>
+    <td> Webページ全体                </td>
+    </tr>
+    <tr>
+    <td> querySelector    </td>
+    <td> 要素取得の基本                 </td>
+    </tr>
+    <tr>
+    <td> textContent      </td>
+    <td> 文字変更                    </td>
+    </tr>
+    <tr>
+    <td> style            </td>
+    <td> CSS変更                   </td>
+    </tr>
+    <tr>
+    <td> classList	 </td>
+    <td> CSS連携の要                  </td>
+    </tr>
+    <tr>
+    <td> createElement	 </td>
+    <td> 要素生成                  </td>
+    </tr>
+    <tr>
+    <td> appendChild	 </td>
+    <td> 追加                  </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="見本を真似して入力する.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">見本を真似して入力する</span></a><a href="イベントを function で受け取り、処理を実行する.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">イベントを function で受け取り、処理を実行する</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

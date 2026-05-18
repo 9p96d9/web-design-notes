@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実践的なメソッド - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>実践的なメソッド</span>
+  </div>
+  <div class="article-head">
+    <h1>実践的なメソッド</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">jQuery</span>
+      <span class="date">2025/10/18</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="メソッド">メソッド</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029232013.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>オブジェクトに対してある操作を行うものがメソッドです</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="hideメソッド">hide()メソッド</h4>
+    
+<ul>
+<li>表示されている要素を非表示にする</li>
+<li>引数がない場合は、即座に非表示</li>
+<li>キーワードは、「slow」「normal」「fast」のいずれかを記述</li>
+<li>秒数で指定する場合は、「1000」が１秒</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>hide()メソッド<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span><span class="synType">width</span>: <span class="synConstant">300px</span>; <span class="synType">height</span>: <span class="synConstant">300px</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#hide1</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#FDF9A1</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#hide2</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E1C9F9</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#hide3</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#9BE074</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"hide1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>即座に非表示<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"hide2"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>スローで非表示<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"hide3"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>10秒かけて非表示<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide1'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に非表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide2'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで非表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide3'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">(</span><span class="synConstant">10000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//10秒かけて非表示</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="showメソッド">show()メソッド</h4>
+    
+<ul>
+<li>非表示されている要素を表示にする</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>show()メソッド<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span><span class="synType">width</span>: <span class="synConstant">300px</span>; <span class="synType">height</span>: <span class="synConstant">300px</span>; <span class="synType">display</span>: <span class="synConstant">none</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#show1</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#FDF9A1</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#show2</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E1C9F9</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#show3</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#9BE074</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"show1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>即座に表示<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"show2"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>スローで表示<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"show3"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>5秒かけて表示<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#show1'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#show2'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#show3'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">(</span><span class="synConstant">5000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//5秒かけて表示</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="showメソッドとhideメソッド">show()メソッドとhide()メソッド</h4>
+    
+<ul>
+<li>「表示・非表示」clickイベントで実装</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>show()メソッドとhide()メソッド<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span><span class="synType">float</span>: <span class="synPreProc">left</span>; <span class="synType">width</span>: <span class="synConstant">300px</span>; <span class="synType">height</span>: <span class="synConstant">300px</span>; <span class="synType">display</span>: <span class="synConstant">none</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#hide1</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#FDF9A1</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#hide2</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E1C9F9</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#hide3</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#9BE074</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"show_btn"</span><span class="synIdentifier">&gt;</span>表示<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>　<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"hide_btn"</span><span class="synIdentifier">&gt;</span>非表示<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"hide1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>即座に<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"hide2"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>スローで<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"hide3"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>３秒かけて<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synComment">//表示ボタンをクリックした場合</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#show_btn'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,function</span><span class="synSpecial">(){</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide1'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に表示</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide2'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで表示</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide3'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">show</span><span class="synSpecial">(</span><span class="synConstant">3000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//3秒かけて表示</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+  <span class="synComment">//非表示ボタンをクリックした場合</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide_btn'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,function</span><span class="synSpecial">(){</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide1'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に非表示</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide2'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで非表示</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#hide3'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">hide</span><span class="synSpecial">(</span><span class="synConstant">3000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//3秒かけて非表示</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="fadeOutメソッド">fadeOut()メソッド</h4>
+    
+<ul>
+<li>表示されている要素をフェードアウトする</li>
+<li>フェードアウト（透明になりながら消える）のアニメーションをしながら非表示にします</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>fadeOut()メソッド<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span><span class="synType">float</span>: <span class="synPreProc">left</span>; <span class="synType">width</span>: <span class="synConstant">300px</span>; <span class="synType">height</span>: <span class="synConstant">300px</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#fadeout1</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#FDF9A1</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#fadeout2</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E1C9F9</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#fadeout3</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#9BE074</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"fadeout1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>即座に<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"fadeout2"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>スローで<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"fadeout3"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>5秒かけて<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#fadeout1'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">fadeOut</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に非表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#fadeout2'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">fadeOut</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで非表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#fadeout3'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">fadeOut</span><span class="synSpecial">(</span><span class="synConstant">5000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//5秒かけて非表示</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="fadeInメソッド">fadeIn()メソッド</h4>
+    
+<ul>
+<li>非表示されている要素をフェードインする</li>
+<li>フェードイン（透明度０％から100％）のアニメーションをしながら表示にします</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>fadeIn()メソッド<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span><span class="synType">float</span>: <span class="synPreProc">left</span>; <span class="synType">width</span>: <span class="synConstant">300px</span>; <span class="synType">height</span>: <span class="synConstant">300px</span>; <span class="synType">display</span>: <span class="synConstant">none</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#fadein1</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#FDF9A1</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#fadein2</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E1C9F9</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#fadein3</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#9BE074</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"fadein1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>即座に<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"fadein2"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>スローで<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"fadein3"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>5秒かけて<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#fadein1'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">fadeIn</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に非表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#fadein2'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">fadeIn</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで非表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#fadein3'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">fadeIn</span><span class="synSpecial">(</span><span class="synConstant">5000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//5秒かけて非表示</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="slideDownメソッド">slideDown()メソッド</h4>
+    
+<ul>
+<li>非表示されている要素をスライドダウンで表示する</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>slideDown()メソッド<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span><span class="synType">float</span>: <span class="synPreProc">left</span>; <span class="synType">width</span>: <span class="synConstant">300px</span>; <span class="synType">height</span>: <span class="synConstant">300px</span>; <span class="synType">display</span>: <span class="synConstant">none</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slidedown1</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#FDF9A1</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slidedown2</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E1C9F9</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slidedown3</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#9BE074</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slidedown1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>即座に<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slidedown2"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>スローで<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slidedown3"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>5秒かけて<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#slidedown1'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideDown</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#slidedown2'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideDown</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#slidedown3'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideDown</span><span class="synSpecial">(</span><span class="synConstant">5000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//5秒かけて表示</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="slideUpメソッド">slideUp()メソッド</h4>
+    
+<ul>
+<li>表示されている要素をスライドアップで非表示にする</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>slideUp()メソッド<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span><span class="synType">float</span>: <span class="synPreProc">left</span>; <span class="synType">width</span>: <span class="synConstant">300px</span>; <span class="synType">height</span>: <span class="synConstant">300px</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slideup1</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#FDF9A1</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slideup2</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E1C9F9</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slideup3</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#9BE074</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slideup1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>即座に<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slideup2"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>スローで<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slideup3"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>5秒かけて<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#slideup1'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideUp</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に非表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#slideup2'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideUp</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで非表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">'#slideup3'</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideUp</span><span class="synSpecial">(</span><span class="synConstant">5000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//5秒かけて非表示</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="slideToggleメソッド">slideToggle()メソッド</h4>
+    
+<ul>
+<li>要素の表示・非表示を切り替える</li>
+<li>「display: none」のある・なしで表示・非表示を切り替える</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>slideToggle()メソッド<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span><span class="synType">float</span>: <span class="synPreProc">left</span>; <span class="synType">width</span>: <span class="synConstant">300px</span>; <span class="synType">height</span>: <span class="synConstant">300px</span>; <span class="synType">display</span>: <span class="synConstant">none</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slidetoggle1</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#FDF9A1</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slidetoggle2</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E1C9F9</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slidetoggle3</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#9BE074</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slidetoggle1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>即座に<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slidetoggle2"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>スローで<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slidetoggle3"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>5秒かけて<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">"#slidetoggle1"</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideToggle</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">"#slidetoggle2"</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideToggle</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで表示</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">"#slidetoggle3"</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideToggle</span><span class="synSpecial">(</span><span class="synConstant">5000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//5秒かけて表示</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="ボタンで切り替えるslideToggleメソッド">ボタンで切り替えるslideToggle()メソッド</h4>
+    
+<ul>
+<li>表示・非表示をボタンで切り替える</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-0220_20190214115752.gif" width="600" height="245" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>slideToggle()メソッド<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span><span class="synType">float</span>: <span class="synPreProc">left</span>; <span class="synType">width</span>: <span class="synConstant">300px</span>; <span class="synType">height</span>: <span class="synConstant">300px</span>; <span class="synType">display</span>: <span class="synConstant">none</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slidetoggle1</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#FDF9A1</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slidetoggle2</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#E1C9F9</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">#slidetoggle3</span> <span class="synIdentifier">{</span><span class="synType">background-color</span>: <span class="synConstant">#9BE074</span>;<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"toggle_btn"</span><span class="synIdentifier">&gt;</span>表示 or 非表示<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slidetoggle1"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>即座に<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slidetoggle2"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>スローで<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"slidetoggle3"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>2秒かけて<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(){</span>
+  <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">"#toggle_btn"</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">on</span><span class="synSpecial">(</span><span class="synConstant">"click"</span><span class="synStatement">,function</span><span class="synSpecial">(){</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">"#slidetoggle1"</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideToggle</span><span class="synSpecial">()</span><span class="synStatement">;</span>  <span class="synComment">//即座に表示・非表示</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">"#slidetoggle2"</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideToggle</span><span class="synSpecial">(</span><span class="synConstant">'slow'</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//スローで表示・非表示</span>
+    <span class="synIdentifier">$</span><span class="synSpecial">(</span><span class="synConstant">"#slidetoggle3"</span><span class="synSpecial">)</span><span class="synStatement">.</span><span class="synIdentifier">slideToggle</span><span class="synSpecial">(</span><span class="synConstant">2000</span><span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">//2秒かけて表示・非表示</span>
+  <span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="HTML_CSSを操作.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">HTML/CSSを操作</span></a><a href="イベント.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">イベント</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

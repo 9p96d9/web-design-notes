@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初めて作る -１カラムレイアウト - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>初めて作る -１カラムレイアウト</span>
+  </div>
+  <div class="article-head">
+    <h1>初めて作る -１カラムレイアウト</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/07</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="初めて作る--１カラムレイアウト">初めて作る -１カラムレイアウト</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260228024624.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>完全未経験者が１カラムWebページを、見出しと段落と箇条書きの組み合わせ作る問題を作成して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="完成例">完成例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260228021115.jpg" width="680" height="659" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-練習問題1カラムのWebページを作ろう">📝 練習問題：1カラムのWebページを作ろう</h4>
+    
+<div class="section">
+    <h5 id="-目的">🎯 目的</h5>
+    <p>見出し・段落・箇条書きを使って、縦に1列だけのシンプルなWebページを作れるようになる。</p>
+
+</div>
+<div class="section">
+    <h5 id="-作るページのテーマ">📌 作るページのテーマ</h5>
+    <p>「はじめてのプログラミング学習」</p>
+
+</div>
+<div class="section">
+    <h5 id="-ページ構成完成イメージ">📐 ページ構成（完成イメージ）</h5>
+    <p>ページには次の要素を上から順番に配置してください。</p><p></p><h6 id="-ページのタイトル大見出し">① ページのタイトル（大見出し）</h6><p></p>
+
+<ul>
+<li>はじめてのプログラミング学習</li>
+</ul><p></p><h6 id="-導入文段落">② 導入文（段落）</h6><p></p>
+
+<ul>
+<li>次の文章を段落として表示してください。</li>
+</ul>
+    <blockquote>
+        <p>このページでは、これからプログラミングを学ぶ人に向けて、学習のポイントを紹介します。<br>
+未経験者でも安心して始められる内容になっています。</p>
+
+    </blockquote>
+<p></p><h6 id="-セクション1学習するメリット中見出し箇条書き">③ セクション1：学習するメリット（中見出し＋箇条書き）</h6><strong>見出し</strong>：<br>
+プログラミングを学ぶメリット<br>
+<strong>箇条書き</strong>：<p></p>
+
+<ul>
+<li>論理的に考える力が身につく</li>
+<li>Webサイトを作れるようになる</li>
+<li>仕事の選択肢が広がる</li>
+</ul><p></p><h6 id="-セクション2おすすめの学習ステップ中見出し段落箇条書き">④ セクション2：おすすめの学習ステップ（中見出し＋段落＋箇条書き）</h6><strong>見出し</strong>：<p></p>
+
+<ul>
+<li>おすすめの学習ステップ</li>
+</ul><p><strong>段落</strong>：</p>
+
+<ul>
+<li>次の順番で学習すると、スムーズに理解できます。</li>
+</ul><p><strong>箇条書き</strong>：</p>
+
+<ul>
+<li>HTMLでページの構造を作る</li>
+<li>CSSでデザインを整える</li>
+<li>JavaScriptで動きをつける</li>
+</ul><p></p><h6 id="-フッター小さな文字">⑤ フッター（小さな文字）</h6><p></p>
+
+    <blockquote>
+        <p>© 2026 Programming Study</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="-作成ルール">📋 作成ルール</h5>
+    
+<ul>
+<li>1カラム（縦一列）レイアウト</li>
+<li>HTMLとCSSのみ使用（JavaScript不要）</li>
+<li>文字の中央寄せや背景色を自由につけてもOK</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-発展課題余裕があれば">💡 発展課題（余裕があれば）</h5>
+    
+<ul>
+<li>背景色を付ける</li>
+<li>ボックスを角丸にする</li>
+<li>全体の幅を600pxくらいにする</li>
+<li>フォントを読みやすくする</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-学習ポイント">🧠 学習ポイント</h5>
+    <p>この課題で次のことが身につきます。</p>
+
+<ul>
+<li>&lt;h1&gt;〜&lt;h3&gt;</li>
+<li>&lt;p&gt;</li>
+<li>&lt;ul&gt;&lt;li&gt;</li>
+<li>CSSによる余白・文字サイズ・中央寄せ</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="テキスト">テキスト</h4>
+    <pre class="code lang-html" data-lang="html" data-unlink="">はじめてのプログラミング学習
+このページでは、これからプログラミングを学ぶ人に向けて、学習のポイントを紹介します。 未経験者でも安心して始められる内容になっています。
+
+プログラミングを学ぶメリット
+論理的に考える力が身につく
+Webサイトを作れるようになる
+仕事の選択肢が広がる
+おすすめの学習ステップ
+次の順番で学習すると、スムーズに理解できます。
+
+HTMLでページの構造を作る
+CSSでデザインを整える
+JavaScriptで動きをつける
+© 2026 Programming Study
+</pre>
+</div>
+<div class="section">
+    <h4 id="-模範解答1カラムWebページHTMLCSS">🧩 模範解答：1カラムWebページ（HTML＋CSS）</h4>
+    
+<ul>
+<li>コーディングルールは、自前のルールで記述（AIのコーディング大筋のみ利用します。）</li>
+</ul><p></p><h6 id="HTML">HTML</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>はじめてのプログラミング学習<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+
+    <span class="synComment">&lt;!-- header --&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>はじめてのプログラミング学習<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>このページでは、これからプログラミングを学ぶ人に向けて、学習のポイントを紹介します。
+      未経験者でも安心して始められる内容になっています。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+    <span class="synComment">&lt;!-- /header --&gt;</span>
+
+    <span class="synComment">&lt;!-- main --&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>プログラミングを学ぶメリット<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>論理的に考える力が身につく<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>Webサイトを作れるようになる<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>仕事の選択肢が広がる<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>おすすめの学習ステップ<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>次の順番で学習すると、スムーズに理解できます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>HTMLでページの構造を作る<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>CSSでデザインを整える<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>JavaScriptで動きをつける<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+    <span class="synComment">&lt;!-- /main --&gt;</span>
+
+    <span class="synComment">&lt;!-- footer --&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+      © 2026 Programming Study
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+    <span class="synComment">&lt;!-- /footer --&gt;</span>
+
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>文法チェックでミスが無ければCSSの記述に入ります。</li>
+</ul><p></p><h6 id="CSS">CSS</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">------------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#f4f4f4</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">------------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">640px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">40px</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">30px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ffffff</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">8px</span>;
+  <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">10px</span> <span class="synIdentifier">rgba(</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0.2</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">------------------------------------- */</span>
+<span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding-bottom</span>: <span class="synConstant">16px</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">header</span> <span class="synSpecial">&gt;</span> <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+    <span class="synType">line-height</span>: <span class="synConstant">1.5</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">------------------------------------- */</span>
+<span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">30px</span> <span class="synConstant">0</span> <span class="synConstant">10px</span>;
+  <span class="synType">padding-bottom</span>: <span class="synConstant">5px</span>;
+  <span class="synType">border-bottom</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#4CAF50</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">12px</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.5</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding-left</span>: <span class="synConstant">20px</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.7</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">------------------------------------- */</span>
+<span class="synStatement">footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-top</span>: <span class="synConstant">40px</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">12px</span>;
+  <span class="synType">color</span>: <span class="synConstant">#777</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<div class="section">
+    <h5 id="-このコードで学べるポイント">🎯 このコードで学べるポイント</h5>
+    
+<table>
+    <tbody><tr>
+    <th>要素</th>
+    <th>学べること</th>
+    </tr>
+    <tr>
+    <td> h1, h2     </td>
+    <td> 見出しの使い分け  </td>
+    </tr>
+    <tr>
+    <td> p            </td>
+    <td> 段落        </td>
+    </tr>
+    <tr>
+    <td> ul, li     </td>
+    <td> 箇条書き      </td>
+    </tr>
+    <tr>
+    <td> .container   </td>
+    <td> 1カラムレイアウト </td>
+    </tr>
+    <tr>
+    <td> margin: auto </td>
+    <td> 中央寄せ      </td>
+    </tr>
+    <tr>
+    <td> max-width    </td>
+    <td> 横幅制御      </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="就職のためにWebページを作る.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">就職のためにWebページを作る</span></a><a href="写真 + 見出し +  段落.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">写真 + 見出し +  段落</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

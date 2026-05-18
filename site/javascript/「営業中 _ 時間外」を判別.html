@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「営業中 / 時間外」を判別 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>「営業中 / 時間外」を判別</span>
+  </div>
+  <div class="article-head">
+    <h1>「営業中 / 時間外」を判別</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/19</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="営業中--時間外を判別">「営業中 / 時間外」を判別</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260211234502.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで営業中か時間外かを判別 -営業中は、10時から21時まで</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="現在時刻で判定するシンプルな例">現在時刻で判定するシンプルな例</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> now <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> hour <span class="synStatement">=</span> now<span class="synStatement">.</span><span class="synIdentifier">getHours</span><span class="synSpecial">()</span><span class="synStatement">;</span> <span class="synComment">// 現在の「時刻」</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>hour <span class="synStatement">&gt;=</span> <span class="synConstant">10</span> <span class="synStatement">&amp;&amp;</span> hour <span class="synStatement">&lt;</span> <span class="synConstant">21</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'営業中です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'時間外です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><h6 id="判定ルール">判定ルール</h6><p></p>
+
+<ul>
+<li>「10:00」ちょうど → 営業中</li>
+<li>「20:59」→ 営業中</li>
+<li>「21:00」ちょうど → 時間外</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="分まで含めて正確に判定したい場合">分まで含めて正確に判定したい場合</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> now <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> minutes <span class="synStatement">=</span> now<span class="synStatement">.</span><span class="synIdentifier">getHours</span><span class="synSpecial">()</span> <span class="synStatement">*</span> <span class="synConstant">60</span> <span class="synStatement">+</span> now<span class="synStatement">.</span><span class="synIdentifier">getMinutes</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> open <span class="synStatement">=</span> <span class="synConstant">10</span> <span class="synStatement">*</span> <span class="synConstant">60</span><span class="synStatement">;</span>   <span class="synComment">// 10:00</span>
+<span class="synType">const</span> close <span class="synStatement">=</span> <span class="synConstant">21</span> <span class="synStatement">*</span> <span class="synConstant">60</span><span class="synStatement">;</span> <span class="synComment">// 21:00</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>minutes <span class="synStatement">&gt;=</span> open <span class="synStatement">&amp;&amp;</span> minutes <span class="synStatement">&lt;</span> close<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'営業中です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'時間外です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="曜日ごとに営業時間を変えて判定する">曜日ごとに営業時間を変えて判定する</h4>
+    
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>「曜日によって営業時間が違う」 </p>
+
+<ul>
+<li>通常9時から19時まで </li>
+<li>水曜日・土曜日は、9時から12時まで </li>
+<li>日曜日は、休業</li>
+</ul>
+    </blockquote>
+
+<div class="section">
+    <h5 id="曜日別-営業時間判定指定条件対応">曜日別 営業時間判定（指定条件対応）</h5>
+    <p></p><h6 id="条件まとめ">条件まとめ</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>曜日</th>
+    <th>営業時間</th>
+    </tr>
+    <tr>
+    <td> 月・火・木・金 </td>
+    <td> 9:00 〜 19:00    </td>
+    </tr>
+    <tr>
+    <td> <strong>水・土</strong> </td>
+    <td> <strong>9:00 〜 12:00</strong> </td>
+    </tr>
+    <tr>
+    <td> <strong>日</strong>   </td>
+    <td> <strong>休業</strong>          </td>
+    </tr>
+</tbody></table><p></p><h6 id="現在時刻で判定">現在時刻で判定</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> now <span class="synStatement">=</span> <span class="synStatement">new</span> <span class="synType">Date</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+<span class="synType">const</span> day <span class="synStatement">=</span> now<span class="synStatement">.</span><span class="synIdentifier">getDay</span><span class="synSpecial">()</span><span class="synStatement">;</span>   <span class="synComment">// 0=日,1=月,2=火,3=水,4=木,5=金,6=土</span>
+<span class="synType">const</span> hour <span class="synStatement">=</span> now<span class="synStatement">.</span><span class="synIdentifier">getHours</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> isOpen <span class="synStatement">=</span> <span class="synConstant">false</span><span class="synStatement">;</span>
+
+<span class="synComment">// 日曜は休業</span>
+<span class="synStatement">if</span> <span class="synSpecial">(</span>day <span class="synStatement">===</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  isOpen <span class="synStatement">=</span> <span class="synConstant">false</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synComment">// 水・土 → 9:00〜12:00</span>
+<span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>day <span class="synStatement">===</span> <span class="synConstant">3</span> <span class="synStatement">||</span> day <span class="synStatement">===</span> <span class="synConstant">6</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>hour <span class="synStatement">&gt;=</span> <span class="synConstant">9</span> <span class="synStatement">&amp;&amp;</span> hour <span class="synStatement">&lt;</span> <span class="synConstant">12</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    isOpen <span class="synStatement">=</span> <span class="synConstant">true</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">}</span>
+<span class="synComment">// 月・火・木・金 → 9:00〜19:00</span>
+<span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>hour <span class="synStatement">&gt;=</span> <span class="synConstant">9</span> <span class="synStatement">&amp;&amp;</span> hour <span class="synStatement">&lt;</span> <span class="synConstant">19</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    isOpen <span class="synStatement">=</span> <span class="synConstant">true</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">}</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>isOpen<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"営業中"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"時間外"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="今日の年月日を表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">今日の年月日を表示</span></a><a href="論理演算子.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">論理演算子</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTMLの構造を理解する - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>HTMLの構造を理解する</span>
+  </div>
+  <div class="article-head">
+    <h1>HTMLの構造を理解する</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/05</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="HTMLの構造を理解する">HTMLの構造を理解する</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260301082757.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>完全未経験者がHTMLの構造を理解するためにやるべきこと</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="HTMLの構造を理解するためのロードマップ">HTMLの構造を理解するためのロードマップ</h4>
+    
+<div class="section">
+    <h5 id="-HTMLは文章の骨組みだと理解する">① HTMLは「文章の骨組み」だと理解する</h5>
+    <p>まずは役割のイメージが大切です。</p>
+
+<ul>
+<li>HTML = Webページの構造（骨組み）</li>
+<li>CSS = 見た目（デザイン）</li>
+<li>JavaScript = 動き・操作</li>
+</ul><p>👉 <strong>HTMLは「見た目を作るものではない」</strong>という理解が超重要です。</p>
+
+</div>
+<div class="section">
+    <h5 id="-最小構成のHTMLを丸暗記レベルで理解する">② 最小構成のHTMLを丸暗記レベルで理解する</h5>
+    <p>まずこれだけ覚えましょう👇</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">    </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">    </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+    内容を書く
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ポイント">ポイント</h6><p></p>
+
+<ul>
+<li>html → 全体</li>
+<li>head → 設定・情報</li>
+<li>body → 画面に表示される中身</li>
+</ul><p>👉 <strong>「bodyの中身だけが画面に表示される」</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-タグの意味を役割で理解する">③ タグの意味を「役割」で理解する</h5>
+    <p>丸暗記ではなく 役割ベース で覚えると楽になります。</p>
+
+<table>
+    <tbody><tr>
+    <th>タグ</th>
+    <th>役割</th>
+    </tr>
+    <tr>
+    <td> h1       </td>
+    <td> 一番大きな見出し  </td>
+    </tr>
+    <tr>
+    <td> p        </td>
+    <td> 文章        </td>
+    </tr>
+    <tr>
+    <td> a        </td>
+    <td> リンク       </td>
+    </tr>
+    <tr>
+    <td> img      </td>
+    <td> 画像        </td>
+    </tr>
+    <tr>
+    <td> ul, li </td>
+    <td> 箇条書き      </td>
+    </tr>
+    <tr>
+    <td> div      </td>
+    <td> グループ化     </td>
+    </tr>
+    <tr>
+    <td> section  </td>
+    <td> 意味のあるまとまり </td>
+    </tr>
+</tbody></table><p>👉 <strong>「この文章は何？」→ タグを決める</strong> という思考が大事。</p>
+
+</div>
+<div class="section">
+    <h5 id="-木構造親子関係を理解する超重要">④ 木構造（親子関係）を理解する【超重要】</h5>
+    <p>HTMLは<strong>ツリー構造（入れ子）</strong>です。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文章<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p>【構造イメージ】</p>
+<pre class="code" data-lang="" data-unlink="">body
+ └ div
+    ├ h1
+    └ p</pre><p>👉 <strong>HTML理解の8割はこの構造理解</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-とにかく手を動かす写経--改造">⑤ とにかく手を動かす（写経 → 改造）</h5>
+    <p>最短ルートはこれです：</p><p></p><h6 id="Step1丸写し">Step1：丸写し</h6>簡単なHTMLをそのまま書く<p></p><p></p><h6 id="Step2いじる">Step2：いじる</h6><p></p>
+
+<ul>
+<li>文章を変える</li>
+<li>タグを変える</li>
+<li>追加する</li>
+<li>消す</li>
+</ul><p>👉 <strong>「壊して学ぶ」</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-自分の簡単なページを作る">⑥ 自分の簡単なページを作る</h5>
+    <p>以下レベルでOK：</p>
+
+<ul>
+<li>自己紹介ページ</li>
+<li>好きなもの紹介ページ</li>
+<li>架空の商品紹介ページ</li>
+</ul><p>【構成例】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>自己紹介<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>こんにちは。〇〇です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>好きなもの<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>映画<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>音楽<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>ゲーム<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+</pre><p>👉 <strong>作れた瞬間に理解が爆伸び</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="最短学習ルートおすすめ順">最短学習ルート（おすすめ順）</h5>
+    
+<ol>
+<li>HTMLの役割を理解</li>
+<li>最小構成を覚える</li>
+<li>基本タグを使う</li>
+<li>親子構造を理解</li>
+<li>自作ページ作成</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="よくある挫折ポイントと対策">よくある挫折ポイントと対策</h5>
+    <p>❌ タグを全部覚えようとする<br>
+→ ⭕ よく使う10個だけ覚える</p><p>❌ 理論ばかり<br>
+→ ⭕ とにかく書く</p><p>❌ 完璧を目指す<br>
+→ ⭕ 動けばOK精神</p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="Web制作 完全初心者カリキュラム × AI活用テンプレ.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">Web制作 完全初心者カリキュラム × AI活用テンプレ</span></a><a href="就職のためにWebページを作る.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">就職のためにWebページを作る</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

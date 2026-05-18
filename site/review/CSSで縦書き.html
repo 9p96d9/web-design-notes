@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSSで縦書き - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>CSSで縦書き</span>
+  </div>
+  <div class="article-head">
+    <h1>CSSで縦書き</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">縦書き</span>
+      <span class="date">2026/01/06</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="CSSで縦書き">CSSで縦書き</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20260217210509.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>日本語のコンテンツを縦書きの表現にしたい</p>
+
+    </blockquote>
+<p>日本語コンテンツを縦書き表示にする方法は、CSS の <strong>writing-mode </strong>を使うのが最も簡単で実用的です。<br>
+<br>
+</p>
+
+<div class="section">
+    <h5 id="基本CSSで縦書きにする">基本：CSSで縦書きにする</h5>
+    <p>【html】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"vertical"</span><span class="synIdentifier">&gt;</span>
+  これは縦書きの日本語コンテンツです。Webでも自然な縦組み表示ができます。
+<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><p>【css】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.vertical</span> <span class="synIdentifier">{</span>
+  writing-mode: <span class="synConstant">vertical</span>-rl;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="各プロパティの意味">各プロパティの意味</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th><strong>writing-mode: vertical-rl</strong></th>
+    <th><strong>vertical-lr</strong></th>
+    </tr>
+    <tr>
+    <td> 右から左へ進む縦書き（日本語の標準スタイル）</td>
+    <td> 左から右へ進む縦書き（特殊用途）</td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="実用向け読みやすい縦書きレイアウト">実用向け：読みやすい縦書きレイアウト</h5>
+    <p>【html】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"vertical"</span><span class="synIdentifier">&gt;</span>
+  日本語の縦書きは、文章のリズムや美しさを表現しやすく、和風デザインに非常に適しています。
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p>【css】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.vertical</span> <span class="synIdentifier">{</span>
+  writing-mode: <span class="synConstant">vertical</span>-rl;
+  <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+  <span class="synType">letter-spacing</span>: <span class="synConstant">0.05em</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">18px</span>;
+  <span class="synType">height</span>: <span class="synConstant">300px</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#ccc</span>;
+  <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="句読点記号の回転を自然にする">句読点・記号の回転を自然にする</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.vertical</span> <span class="synIdentifier">{</span>
+  <span class="synType">text</span>-<span class="synType">orientation</span>: mixed;
+<span class="synIdentifier">}</span>
+</pre>
+<ul>
+<li>漢字・かな → 縦</li>
+<li>英数字 → 横向き</li>
+</ul><p>➡ 日本語表示では ほぼ必須</p>
+
+</div>
+<div class="section">
+    <h5 id="縦書き--レスポンシブ対応スマホ切替">縦書き × レスポンシブ対応（スマホ切替）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.vertical</span> <span class="synIdentifier">{</span>
+  writing-mode: <span class="synConstant">vertical</span>-rl;
+<span class="synIdentifier">}</span>
+
+<span class="synPreProc">@media (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">768px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synIdentifier">.vertical</span> <span class="synIdentifier">{</span>
+    writing-mode: <span class="synConstant">horizontal</span>-tb;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+</pre><p>➡ PC：縦書き / スマホ：横書き の自然な切替</p>
+
+</div>
+<div class="section">
+    <h5 id="よくある用途">よくある用途</h5>
+    
+<ul>
+<li>和風デザインサイト</li>
+<li>俳句・短歌・詩</li>
+<li>小説・文章コンテンツ</li>
+<li>美術館・博物館系サイト</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="実用サンプル">実用サンプル</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>縦書きサンプル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">.vertical</span> <span class="synIdentifier">{</span>
+  writing-mode: <span class="synConstant">vertical</span>-rl;
+  <span class="synType">text</span>-<span class="synType">orientation</span>: mixed;
+  <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">18px</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#aaa</span>;
+  <span class="synType">padding</span>: <span class="synConstant">15px</span>;
+  <span class="synType">height</span>: <span class="synConstant">300px</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synPreProc">@media (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">768px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synIdentifier">.vertical</span> <span class="synIdentifier">{</span>
+    writing-mode: <span class="synConstant">horizontal</span>-tb;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"vertical"</span><span class="synIdentifier">&gt;</span>
+日本語の縦書き表現は、Webデザインに和の雰囲気と高級感を与えます。
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ファビコンとOGP.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ファビコンとOGP</span></a><a href="CSS カスタムフォント.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">CSS カスタムフォント</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

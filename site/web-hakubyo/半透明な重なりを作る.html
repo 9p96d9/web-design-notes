@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>半透明な重なりを作る - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>半透明な重なりを作る</span>
+  </div>
+  <div class="article-head">
+    <h1>半透明な重なりを作る</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="半透明な重なりを作る">半透明な重なりを作る</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260320142427.jpg" width="680" height="328" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p><br>
+</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260320144703.jpg" width="500" height="290" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p><br>
+</p>
+
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span><span class="synPreProc">  </span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>オーバーラップ<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"concept wrapper"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"concept-img"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/concept.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"concept-text"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"section-title"</span><span class="synIdentifier">&gt;</span>心がほどける、やさしいひととき<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>
+      何気ない毎日を、少しだけ特別に<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"description"</span><span class="synIdentifier">&gt;</span>やさしい時間に包まれるひととき。
+      毎日を心地よく過ごしたいあなたへ。
+      肌にも心にもやさしく寄り添うように、無添加にこだわったシンプルなやさしさ。
+      しっとりと満たされるうるおいが、いつもの日常を少しだけ美しく整えていきます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#444</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synIdentifier">.wrapper</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">1040px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span> <span class="synConstant">20px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/*-------------------------------------------</span>
+<span class="synComment">  concept</span>
+<span class="synComment">-------------------------------------------*/</span>
+<span class="synIdentifier">.concept</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding-top</span>: <span class="synConstant">130px</span>;
+  <span class="synType">padding-bottom</span>: <span class="synConstant">130px</span>;
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.concept-img</span> <span class="synIdentifier">{</span>
+    <span class="synType">max-width</span>: <span class="synConstant">720px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.concept-text</span> <span class="synIdentifier">{</span>
+    <span class="synType">max-width</span>: <span class="synConstant">600px</span>;
+    <span class="synType">background-color</span>: <span class="synIdentifier">rgba(</span><span class="synConstant">246</span><span class="synIdentifier">,</span><span class="synConstant"> 238</span><span class="synIdentifier">,</span><span class="synConstant"> 238</span><span class="synIdentifier">,</span><span class="synConstant"> 0.8</span><span class="synIdentifier">)</span>;
+    <span class="synType">padding</span>: <span class="synConstant">40px</span>;
+    <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+    <span class="synType">top</span>: <span class="synConstant">330px</span>;
+    <span class="synType">right</span>: <span class="synConstant">0</span>;
+  <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.concept-title</span> <span class="synIdentifier">{</span>
+      <span class="synType">font-family</span>: <span class="synConstant">serif</span>;
+      <span class="synType">font-size</span>: <span class="synConstant">30px</span>;
+      <span class="synType">font-weight</span>: <span class="synConstant">normal</span>;
+      <span class="synType">line-height</span>: <span class="synConstant">1.4</span>;
+      <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.description</span> <span class="synIdentifier">{</span>
+      <span class="synType">font-size</span>: <span class="synConstant">15px</span>;
+      <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+      <span class="synType">text-align</span>: <span class="synConstant">justify</span>;
+    <span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="例">例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260320152243.jpg" width="680" height="392" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p><br>
+【HTML】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"card"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/ice_coffee.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"overlay"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>香ばしく焙煎した豆を使用したアイスコーヒーは、すっきりとした苦味と爽やかな後味が魅力。外はカリッと中はふんわり焼き上げたホットサンドイッチは、具材の旨みがぎゅっと詰まった満足感のある一品です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+</pre><p>【CSS】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.card</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">width</span>: <span class="synConstant">600px</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.card</span> <span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">display</span>: <span class="synConstant">block</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.overlay</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">bottom</span>: <span class="synConstant">30px</span>;
+  <span class="synType">right</span>: <span class="synConstant">-180px</span>;
+  <span class="synType">width</span>: <span class="synConstant">360px</span>;
+  <span class="synType">background</span>: <span class="synIdentifier">rgba(</span><span class="synConstant">79</span><span class="synIdentifier">,</span><span class="synConstant"> 64</span><span class="synIdentifier">,</span><span class="synConstant"> 38</span><span class="synIdentifier">,</span><span class="synConstant"> 0.7</span><span class="synIdentifier">)</span>; <span class="synComment">/* 半透明 */</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">8px</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="２枚の画像の１枚を下にずらした状態.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">２枚の画像の１枚を下にずらした状態</span></a><a href="写真を重ねる.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">写真を重ねる</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

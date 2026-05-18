@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コンテンツ横並び - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>コンテンツ横並び</span>
+  </div>
+  <div class="article-head">
+    <h1>コンテンツ横並び</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="コンテンツ横並び">コンテンツ横並び</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260224081147.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>以下の条件でコンテンツを作成して </p>
+
+<ul>
+<li>15歳の少年（名前はタケル）の一人旅 </li>
+<li>沖縄旅行の感想文 </li>
+<li>500文字程度、２段落で</li>
+</ul>
+    </blockquote>
+<p>※「プロンプト」を実行するたびに結果は変化します。</p>
+
+<div class="section">
+    <h5 id="テキスト">テキスト</h5>
+    <pre class="code txt" data-lang="txt" data-unlink="">タイトル：はじめての沖縄、タケルの一人旅
+
+　十五歳の夏、僕タケルは初めて一人で沖縄へ旅に出た。那覇空港に降り立った瞬間、むっとした南国の空気と、どこか甘い海の香りが鼻をくすぐり、胸が高鳴った。首里城の石畳を歩き、青く澄んだ海を眺め、知らない街を自分の足で進むことが新鮮で、少し大人になった気がした。地元の人に教えてもらった沖縄そばの店では、温かい出汁と素朴な味に心までほぐれ、旅の不安がすっと消えていった。
+
+　夕方、海辺で沈む夕日を眺めながら、家族や友達の顔が浮かび、離れてみて初めて分かる大切さを感じた。夜の波音を聞きながら日記を書き、今日の出来事を一つ一つ思い返す時間は、何より贅沢だった。短い旅だったが、自分で考え、決め、行動する経験は大きな自信につながった。沖縄の空と海の広さは、僕の世界も同じくらい広いのだと教えてくれた。また必ずここへ戻って来ようと、心に強く誓った。</pre>
+</div>
+<div class="section">
+    <h5 id="ワイヤーフレーム">ワイヤーフレーム</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260301152109.jpg" width="600" height="374" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="タイトルを画像にする">タイトルを画像にする</h6><p></p>
+
+<ul>
+<li>タイトル画像は、nano banana で作成後 Photoshop で加工</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260224080821.png" width="600" height="126" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="完成例">完成例</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260224080528.png" width="680" height="274" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    
+<ul>
+<li>自分のコーディングルールで記述します。</li>
+</ul><p></p><h6 id="HTML">HTML</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>２カラム - はじめての沖縄<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/okinawa.png"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"はじめての沖縄"</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"subtitle"</span><span class="synIdentifier">&gt;</span>タケルの一人旅<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"wrapper"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>十五歳の夏、僕タケルは初めて一人で沖縄へ旅に出た。那覇空港に降り立った瞬間、むっとした南国の空気と、どこか甘い海の香りが鼻をくすぐり、胸が高鳴った。首里城の石畳を歩き、青く澄んだ海を眺め、知らない街を自分の足で進むことが新鮮で、少し大人になった気がした。地元の人に教えてもらった沖縄そばの店では、温かい出汁と素朴な味に心までほぐれ、旅の不安がすっと消えていった。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>夕方、海辺で沈む夕日を眺めながら、家族や友達の顔が浮かび、離れてみて初めて分かる大切さを感じた。夜の波音を聞きながら日記を書き、今日の出来事を一つ一つ思い返す時間は、何より贅沢だった。短い旅だったが、自分で考え、決め、行動する経験は大きな自信につながった。沖縄の空と海の広さは、僕の世界も同じくらい広いのだと教えてくれた。また必ずここへ戻って来ようと、心に強く誓った。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">CSS</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">"Helvetica"</span><span class="synSpecial">,</span> <span class="synConstant">"Arial"</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synIdentifier">.wrapper</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>: <span class="synConstant">repeat</span>(<span class="synConstant">2</span><span class="synSpecial">,</span> <span class="synConstant">1fr</span>);
+  gap: <span class="synConstant">30px</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">section</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">800px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synIdentifier">}</span>
+    <span class="synStatement">h2</span> <span class="synSpecial">&gt;</span> <span class="synStatement">img</span> <span class="synIdentifier">{</span>
+      <span class="synType">width</span>: <span class="synConstant">240px</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.subtitle</span> <span class="synIdentifier">{</span>
+          <span class="synType">margin-bottom</span>: <span class="synConstant">30px</span>;
+      <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+      <span class="synType">text-align</span>: <span class="synConstant">justify</span>;
+      <span class="synType">line-height</span>: <span class="synConstant">1.7</span>;
+      <span class="synType">text-indent</span>: <span class="synConstant">1em</span>;
+    <span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="写真 + 見出し +  段落.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">写真 + 見出し +  段落</span></a><a href="箇条書き横並び.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">箇条書き横並び</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

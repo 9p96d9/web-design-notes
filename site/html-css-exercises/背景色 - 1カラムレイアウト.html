@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>背景色 - 1カラムレイアウト - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>背景色 - 1カラムレイアウト</span>
+  </div>
+  <div class="article-head">
+    <h1>背景色 - 1カラムレイアウト</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング演習</span>
+      <span class="date">2025/12/14</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="背景色---1カラムレイアウト">背景色 - 1カラムレイアウト</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260305031855.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTML+CSSで初学者が最初に作るべき１カラムのコンテンツを作成して</p>
+
+    </blockquote>
+<p>以下、ChatGPTが提案してきた内容です。</p>
+
+<div class="section">
+    <h5 id="完成例">完成例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260223024731.jpg" width="680" height="471" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="-完成イメージ">🎯 完成イメージ</h5>
+    
+<ul>
+<li>ヘッダー</li>
+<li>メインコンテンツ</li>
+<li>フッター</li>
+</ul><p>という Webページの基本構造 を学べるシンプル構成です。</p>
+
+</div>
+<div class="section">
+    <h5 id="テキスト">テキスト</h5>
+    <pre class="code" data-lang="" data-unlink="">はじめてのWebサイト
+HTML &amp; CSS 入門
+
+このサイトについて
+
+このページは、HTMLとCSSの学習用に作成された1カラムレイアウトのサンプルです。
+
+学習ポイント
+
+HTMLの基本構造
+CSSの基本スタイル
+レイアウトの考え方
+
+次の目標
+
+次は2カラムレイアウトやレスポンシブデザインに挑戦しましょう！
+
+© 2026 My First Website</pre>
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    
+<ul>
+<li>AIの提案は、コンテンツ内容と色彩・文字サイズは採用</li>
+<li>それ以外は、CSSの記述ルールもカスタマイズしてあります。（AIには、このコーディングルールを認識させていません。）</li>
+</ul><p></p><h6 id="ワイヤーフレーム">ワイヤーフレーム</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260223192152.jpg" width="600" height="498" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>【html】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>はじめての1カラムサイト<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>はじめてのWebサイト<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>HTML <span class="synError">&amp;</span> CSS 入門<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>このサイトについて<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      このページは、HTMLとCSSの学習用に作成された1カラムレイアウトのサンプルです。
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>学習ポイント<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>HTMLの基本構造<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>CSSの基本スタイル<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>レイアウトの考え方<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>次の目標<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+      次は2カラムレイアウトやレスポンシブデザインに挑戦しましょう！
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span><span class="synSpecial">&amp;copy;</span> 2026 My First Website<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260222172936.jpg" width="600" height="399" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>【Markup Validation Serviceで文法チェック】<p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260223024428.jpg" width="600" height="462" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p>【css】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#f4f4f4</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">"Helvetica"</span><span class="synSpecial">,</span> <span class="synConstant">"Arial"</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">header</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">30px</span> <span class="synConstant">15px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#4caf50</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">main</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">800px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">30px</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">8px</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">section</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">50px</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+  <span class="synType">border-left</span>: <span class="synConstant">5px</span> <span class="synConstant">solid</span> <span class="synConstant">#4caf50</span>;
+  <span class="synType">padding-left</span>: <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding-left</span>: <span class="synConstant">20px</span>;
+  <span class="synType">list-style-type</span>: <span class="synConstant">disc</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">li</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">15px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#333</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-学習ポイント解説">🚀 学習ポイント解説</h4>
+    
+<div class="section">
+    <h5 id="-HTMLの基本構造">① HTMLの基本構造</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink="">header → main → footer
+</pre><p>→ <strong>Webページの王道構成</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-1カラムレイアウトの作り方">② 1カラムレイアウトの作り方</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">main</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">800px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+</pre><p>→ 横幅を制限＋中央寄せ</p>
+
+</div>
+<div class="section">
+    <h5 id="-最初に覚えるべきCSS">③ 最初に覚えるべきCSS</h5>
+    
+<ul>
+<li>margin</li>
+<li>padding</li>
+<li>background</li>
+<li>color</li>
+<li>font-family</li>
+<li>border-radius</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="HTML構造の練習（１カラムレイアウト理解）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">HTML構造の練習（１カラムレイアウト理解）</span></a><a href="1カラム固定幅レイアウト.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">1カラム固定幅レイアウト</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

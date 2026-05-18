@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexboxで横並び - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>Flexboxで横並び</span>
+  </div>
+  <div class="article-head">
+    <h1>Flexboxで横並び</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/10/10</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="Flexbox">Flexbox</h4>
+    
+<ul>
+<li>「display: <a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>;」で、要素を横並びにできます
+<ul>
+<li>「リストや画像を横並びにしたい」</li>
+<li>「要素間の余白を均等にして、はみ出たら折り返したい」</li>
+<li>「表示する順番を逆からにしたい」</li>
+<li>「画像とテキストを左右交互に配置したい」</li>
+</ul></li>
+</ul>
+<div class="section">
+    <h5 id="Flexboxの性質">Flexboxの性質</h5>
+    
+<ul>
+<li>以下の性質が<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>の記述によって柔軟に変更できます
+<ul>
+<li>横並びで表示される</li>
+<li>親要素に合わせて横幅・高さが伸縮する</li>
+<li>HTMLの記述が表示順に影響しない</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="Flexboxの使い方">Flexboxの使い方</h4>
+    
+<ul>
+<li>親要素に「display: <a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>;」を指定することで、子要素が横並びになります</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"flex-container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"flex-item"</span><span class="synIdentifier">&gt;</span>要素１（flex-item）<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"flex-item"</span><span class="synIdentifier">&gt;</span>要素２（flex-item）<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"flex-item"</span><span class="synIdentifier">&gt;</span>要素３（flex-item）<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.flex-item</span> <span class="synIdentifier">{</span>
+ <span class="synType">margin</span>: <span class="synConstant">10px</span>;
+ <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+ <span class="synType">background</span>: <span class="synConstant">#1e83ff</span>;
+ <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20221120024917.jpg" width="500" height="185" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="display-flex-で横に並べる">display: <a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>; で横に並べる</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20221120031207.jpg" width="500" height="152" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.flex-container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  gap: <span class="synConstant">20px</span>;  <span class="synComment">/* 要素間の空き */</span>
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.flex-item</span> <span class="synIdentifier">{</span>
+ <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+ <span class="synType">background</span>: <span class="synConstant">#1e83ff</span>;
+ <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20221120024956.jpg" width="600" height="55" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="flexコンテナ親要素に指定するプロパティ"><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>コンテナ（親要素）に指定するプロパティ</h4>
+    <p></p><br><table width="540">
+<tbody><tr><th align="left"><strong><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>-direction</strong></th><td><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>アイテムの並び方を指定する</td></tr>
+<tr><th align="left"><strong><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>-wrap</strong></th><td><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>アイテムの折り返しを指定する</td></tr>
+<tr><th align="left"><strong><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>-flow</strong></th><td><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>アイテムの並び方と折り返しを指定する</td></tr>
+<tr><th align="left"><strong>justify-content</strong></th><td><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>アイテムの横の配置を指定する</td></tr>
+<tr><th align="left"><strong>align-items</strong></th><td><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>アイテムの高さを揃える<br>
+</td></tr><tr><th align="left"><strong>align-content</strong></th><td><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>アイテムの縦の配置を指定する</td></tr>
+</tbody></table><p></p><p></p>
+
+<div class="section">
+    <h5 id="flex-direction---flexアイテムの並び方横並び縦並び"><a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>-direction - <a class="keyword" href="https://d.hatena.ne.jp/keyword/flex">flex</a>アイテムの並び方（横並び・縦並び）</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20221120034152.jpg" width="680" height="400" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="Flexbox Froggy - Lv. 1〜24.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">Flexbox Froggy - Lv. 1〜24</span></a><a href="Flexboxでナビゲーション.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">Flexboxでナビゲーション</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

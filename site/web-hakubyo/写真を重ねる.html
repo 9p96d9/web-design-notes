@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>写真を重ねる - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>写真を重ねる</span>
+  </div>
+  <div class="article-head">
+    <h1>写真を重ねる</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/03/01</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="写真を重ねる">写真を重ねる</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260320135055.jpg" width="680" height="866" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span><span class="synPreProc">  </span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>オーバーラップ<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"new-items"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"wrapper"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"img-group"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"img1"</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/item1.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"circle"</span><span class="synIdentifier">&gt;</span>NEW<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"img2"</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/item2.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"img3"</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/item3.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#444</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synIdentifier">.wrapper</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">1040px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span> <span class="synConstant">20px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/*-------------------------------------------</span>
+<span class="synComment">  new items</span>
+<span class="synComment">-------------------------------------------*/</span>
+<span class="synIdentifier">.new-items</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#f4eaea</span>;
+  <span class="synType">padding</span>: <span class="synConstant">130px</span> <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.img-group</span> <span class="synIdentifier">{</span>
+    <span class="synType">height</span>: <span class="synConstant">1120px</span>;
+    <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.new-items</span> <span class="synIdentifier">.img-group</span> <span class="synIdentifier">.img1</span> <span class="synIdentifier">{</span>
+      <span class="synType">max-width</span>: <span class="synConstant">500px</span>;
+      <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+      <span class="synType">top</span>: <span class="synConstant">0</span>;
+      <span class="synType">left</span>: <span class="synConstant">42%</span>;
+      <span class="synType">border</span>: <span class="synConstant">16px</span> <span class="synConstant">solid</span> <span class="synConstant">#fff</span>;
+      <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">3px</span> <span class="synConstant">4px</span> <span class="synConstant">#aaa</span>;
+      <span class="synType">z-index</span>: <span class="synConstant">100</span>;
+      <span class="synType">transform</span>: <span class="synIdentifier">rotate(</span><span class="synConstant">-2deg</span><span class="synIdentifier">)</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.new-items</span> <span class="synIdentifier">.img-group</span> <span class="synIdentifier">.img2</span> <span class="synIdentifier">{</span>
+      <span class="synType">max-width</span>: <span class="synConstant">640px</span>;
+      <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+      <span class="synType">top</span>: <span class="synConstant">300px</span>;
+      <span class="synType">left</span>: <span class="synConstant">8%</span>;
+      <span class="synType">border</span>: <span class="synConstant">16px</span> <span class="synConstant">solid</span> <span class="synConstant">#fff</span>;
+      <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">3px</span> <span class="synConstant">4px</span> <span class="synConstant">#aaa</span>;
+      <span class="synType">z-index</span>: <span class="synConstant">80</span>;
+      <span class="synType">transform</span>: <span class="synIdentifier">rotate(</span><span class="synConstant">3deg</span><span class="synIdentifier">)</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.new-items</span> <span class="synIdentifier">.img-group</span> <span class="synIdentifier">.img3</span> <span class="synIdentifier">{</span>
+      <span class="synType">max-width</span>: <span class="synConstant">640px</span>;
+      <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+      <span class="synType">top</span>: <span class="synConstant">740px</span>;
+      <span class="synType">left</span>: <span class="synConstant">40%</span>;
+      <span class="synType">border</span>: <span class="synConstant">16px</span> <span class="synConstant">solid</span> <span class="synConstant">#fff</span>;
+      <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">3px</span> <span class="synConstant">4px</span> <span class="synConstant">#aaa</span>;
+      <span class="synType">z-index</span>: <span class="synConstant">60</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.new-items</span> <span class="synIdentifier">.img-group</span> <span class="synIdentifier">.circle</span> <span class="synIdentifier">{</span>
+      <span class="synType">width</span>: <span class="synConstant">100px</span>;
+      <span class="synType">height</span>: <span class="synConstant">100px</span>;
+      <span class="synType">padding-top</span>: <span class="synConstant">8px</span>;
+      <span class="synType">background-color</span>: <span class="synConstant">#c30101</span>;
+      <span class="synType">border-radius</span>: <span class="synConstant">50%</span>;
+      <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+      <span class="synType">display</span>: <span class="synConstant">flex</span>;
+      <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+      <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+      <span class="synType">font-size</span>: <span class="synConstant">24px</span>;
+      <span class="synType">font-family</span>: <span class="synConstant">serif</span>;
+      <span class="synType">font-weight</span>: <span class="synConstant">bold</span>;
+      <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+      <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+      <span class="synType">top</span>: <span class="synConstant">-45px</span>;
+      <span class="synType">right</span>: <span class="synConstant">-13%</span>;
+      <span class="synType">z-index</span>: <span class="synConstant">40</span>;
+    <span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="半透明な重なりを作る.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">半透明な重なりを作る</span></a><a href="区切りの修飾.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">区切りの修飾</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

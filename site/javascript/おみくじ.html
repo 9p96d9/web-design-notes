@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>おみくじ - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>おみくじ</span>
+  </div>
+  <div class="article-head">
+    <h1>おみくじ</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">演習課題</span>
+      <span class="date">2026/03/03</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="おみくじ">おみくじ</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241109153234.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<div class="section">
+    <h5 id="おみくじの結果をブラウザに表示">おみくじの結果をブラウザに表示</h5>
+    
+<ul>
+<li>「大吉」のときに「文字色：赤、文字サイズ：大きく」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20250528215111.jpg" width="400" height="810" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="記述例ES6">記述例（ES6）</h5>
+    <p></p><h6 id="indexhtml">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>おみくじの結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>JavaScript<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>おみくじの結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"../../index.html"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">トップへ戻る</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"question"</span><span class="synIdentifier">&gt;</span>ボタンを押してください。
+      おみくじの結果が表示されます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">result</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"footer"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"update"</span><span class="synIdentifier">&gt;</span>制作日：xxxx年x月x日<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="scriptjs">script.js</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// /ボタン要素と表示要素を取得</span>
+<span class="synType">const</span> btn <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#btn'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> ans <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// おみくじの値を配列で設定</span>
+<span class="synType">const</span> luck <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'大吉'</span><span class="synStatement">,</span> <span class="synConstant">'吉'</span><span class="synStatement">,</span> <span class="synConstant">'中吉'</span><span class="synStatement">,</span> <span class="synConstant">'小吉'</span><span class="synStatement">,</span> <span class="synConstant">'凶'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+
+<span class="synComment">// クリックイベントが発生したとき処理される関数</span>
+btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synComment">// 配列の値をランダムに取得</span>
+  <span class="synType">const</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span> <span class="synStatement">*</span> luck<span class="synStatement">.</span>length<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+  ans<span class="synStatement">.</span>textContent <span class="synStatement">=</span> luck<span class="synSpecial">[</span>rnd<span class="synSpecial">]</span><span class="synStatement">;</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>rnd <span class="synStatement">==</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    ans<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+    ans<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">remove</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="stylecss">style.css</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-rows</span>: <span class="synConstant">auto</span> <span class="synConstant">1fr</span> <span class="synConstant">auto</span>;
+  <span class="synType">min-height</span>: <span class="synConstant">100vh</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">1.0rem</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ece18b</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synSpecial">&gt;</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.5rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synSpecial">&gt;</span> <span class="synStatement">h1</span>::<span class="synPreProc">first-line</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.125rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+    <span class="synType">width</span>: <span class="synConstant">100%</span>;
+    <span class="synType">margin-top</span>: <span class="synConstant">10px</span>;
+    <span class="synType">border</span>: <span class="synConstant">#fff</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#8f8851</span>;
+    <span class="synType">color</span>: <span class="synConstant">#8f8851</span>;
+    <span class="synType">font-weight</span>: <span class="synConstant">700</span>;
+    <span class="synType">transition</span>: <span class="synType">all</span> .<span class="synConstant">3s</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">color</span>: <span class="synConstant">#8f8851</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ece18b</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  gap: <span class="synConstant">10px</span>;
+  <span class="synType">width</span>: min(<span class="synConstant">80%</span><span class="synSpecial">,</span> <span class="synConstant">360px</span>);
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.question</span> <span class="synIdentifier">{</span>
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+    <span class="synType">white-space</span>: <span class="synConstant">pre-line</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">button</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin</span>: <span class="synConstant">10px</span> <span class="synConstant">auto</span>;
+    <span class="synType">padding</span>-inline: <span class="synConstant">10px</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">18px</span>;
+    <span class="synType">white-space</span>: <span class="synConstant">nowrap</span>;
+  <span class="synIdentifier">}</span>
+
+<span class="synComment">/* ---------- 大吉 ---------- */</span>
+<span class="synIdentifier">.good</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">#f00</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">2.0rem</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="記述例ES5">記述例（ES5）</h5>
+    <p></p><h6 id="indexhtml-1">index.html</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>おみくじの結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>JavaScript<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>おみくじの結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"../../index.html"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">トップへ戻る</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>おみくじの結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ボタンを押すと結果が表示されます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synSpecial">onclick="</span><span class="synIdentifier">result</span><span class="synSpecial">()"</span><span class="synIdentifier">&gt;</span>結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"ans"</span><span class="synIdentifier">&gt;</span>ここに結果を表示<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"footer"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"update"</span><span class="synIdentifier">&gt;</span>制作日：xxxx年x月x日<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="scriptjs-1">script.js</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">result</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+
+  <span class="synComment">// おみくじの値を配列で設定</span>
+  <span class="synType">const</span> omikuji <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'大吉'</span><span class="synStatement">,</span> <span class="synConstant">'吉'</span><span class="synStatement">,</span> <span class="synConstant">'中吉'</span><span class="synStatement">,</span> <span class="synConstant">'小吉'</span><span class="synStatement">,</span> <span class="synConstant">'凶'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+  <span class="synType">const</span> rnd <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">random</span><span class="synSpecial">()</span> <span class="synStatement">*</span> omikuji<span class="synStatement">.</span>length<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+  <span class="synComment">// 表示要素を取得</span>
+  <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">querySelector</span><span class="synSpecial">(</span><span class="synConstant">'#ans'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  element<span class="synStatement">.</span>textContent <span class="synStatement">=</span> omikuji<span class="synSpecial">[</span>rnd<span class="synSpecial">]</span><span class="synStatement">;</span>
+
+  <span class="synComment">// 配列[0]のときclass名を追加</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>rnd <span class="synStatement">==</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    element<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+    element<span class="synStatement">.</span>classList<span class="synStatement">.</span><span class="synIdentifier">remove</span><span class="synSpecial">(</span><span class="synConstant">'good'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+
+<span class="synSpecial">}</span>
+</pre><p></p><h6 id="stylecss-1">style.css</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-rows</span>: <span class="synConstant">auto</span> <span class="synConstant">1fr</span> <span class="synConstant">auto</span>;
+  <span class="synType">min-height</span>: <span class="synConstant">100vh</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">1.0rem</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ece18b</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synSpecial">&gt;</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.5rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synSpecial">&gt;</span> <span class="synStatement">h1</span>::<span class="synPreProc">first-line</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.125rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+    <span class="synType">width</span>: <span class="synConstant">100%</span>;
+    <span class="synType">margin-top</span>: <span class="synConstant">10px</span>;
+    <span class="synType">border</span>: <span class="synConstant">#fff</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#8f8851</span>;
+    <span class="synType">color</span>: <span class="synConstant">#8f8851</span>;
+    <span class="synType">font-weight</span>: <span class="synConstant">700</span>;
+    <span class="synType">transition</span>: <span class="synType">all</span> .<span class="synConstant">3s</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">color</span>: <span class="synConstant">#8f8851</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ece18b</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  gap: <span class="synConstant">10px</span>;
+  <span class="synType">width</span>: min(<span class="synConstant">80%</span><span class="synSpecial">,</span> <span class="synConstant">360px</span>);
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.question</span> <span class="synIdentifier">{</span>
+    <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+    <span class="synType">white-space</span>: <span class="synConstant">pre-line</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">button</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin</span>: <span class="synConstant">10px</span> <span class="synConstant">auto</span>;
+    <span class="synType">padding</span>-inline: <span class="synConstant">10px</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">18px</span>;
+    <span class="synType">white-space</span>: <span class="synConstant">nowrap</span>;
+  <span class="synIdentifier">}</span>
+
+<span class="synComment">/* ---------- 大吉 ---------- */</span>
+<span class="synIdentifier">.good</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">#f00</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">2.0rem</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ダークモードに対応.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ダークモードに対応</span></a><a href="偶数奇数の判別結果を表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">偶数奇数の判別結果を表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

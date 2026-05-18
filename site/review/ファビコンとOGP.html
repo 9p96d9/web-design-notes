@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ファビコンとOGP - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>ファビコンとOGP</span>
+  </div>
+  <div class="article-head">
+    <h1>ファビコンとOGP</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">課題サイト</span>
+      <span class="date">2026/01/05</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="ファビコン">ファビコン</h4>
+    
+<ul>
+<li>ファビコンとは、「favorite icon（お気に入りのアイコン）」の略称</li>
+<li>ファビコンは、Web画面のタブなどに小さく表示されるアイコン</li>
+<li>ブラウザの初期設定では、「ファビコン」は必須となっています</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250220184641.jpg" width="600" height="77" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="作り方">作り方</h5>
+    
+<ul>
+<li>ico形式（拡張子は「.ico」）</li>
+<li>「<a href="https://favicon-generator.mintsu-dev.com">Favicon ジェネレーター</a>」で作成</li>
+<li>「256px X 256px」でPNG作成し、タッチアイコンにも利用する</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Ffavicon-generator.mintsu-dev.com" title="Faviconジェネレーター" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://favicon-generator.mintsu-dev.com">favicon-generator.mintsu-dev.com</a></cite></p><p></p><h6 id="アップロード">アップロード</h6><p></p>
+
+<ul>
+<li>ルートにアップロード（index.htmlと同じ階層）</li>
+<li>index.htmlと同一階層にある場合は、ルートパス（スラッシュ/）は記述しなくてもOK</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"icon"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"/favicon.ico"</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"icon"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"favicon.ico"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="タッチアイコン">タッチアイコン</h5>
+    
+<ul>
+<li>「256px X 256px」のPNG画像をそのまま設定します</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"apple-touch-icon"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"apple-touch-icon.png"</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="OGPOpen-Graph-Protocol">OGP（Open Graph Protocol）</h4>
+    
+<ul>
+<li>WebページのURLがX（旧Twitter）やFacebookなどのSNSに投稿されたときに、「タイトル」「画像」「説明文」などの補足情報（リンクの埋め込み情報）を表示するための仕組み</li>
+</ul><p></p><h6 id="OGP画像">OGP画像</h6><p></p>
+
+<ul>
+<li>1200px X 630pxのサイズでOGP画像を作成</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fogimage.tsmallfield.com" title="OGP画像シミュレータ | og:image Simulator" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://ogimage.tsmallfield.com">ogimage.tsmallfield.com</a></cite><br>
+</p>
+
+<ul>
+<li>中央にWebサイトの必須情報を配置する</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250220204324.jpg" width="400" height="226" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="記述要素の自動作成">記述要素の自動作成</h6><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.heymeta.com" title="HEY META - Website Meta Tag Check" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://www.heymeta.com">www.heymeta.com</a></cite><p></p>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="フィルター - MixItUp.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">フィルター - MixItUp</span></a><a href="CSSで縦書き.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">CSSで縦書き</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

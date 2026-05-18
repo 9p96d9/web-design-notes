@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webサイトをモバイル対応する際の注意点 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>Webサイトをモバイル対応する際の注意点</span>
+  </div>
+  <div class="article-head">
+    <h1>Webサイトをモバイル対応する際の注意点</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">レスポンシブ実践</span>
+      <span class="date">2026/01/08</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="Webサイトをモバイル対応する際の注意点">Webサイトをモバイル対応する際の注意点</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20260218222908.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>Webサイトをモバイル対応ページに変更を加えるときの注意点</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="レイアウト設計の注意点">レイアウト設計の注意点</h5>
+    <p></p><h6 id="-モバイルファースト設計">① モバイルファースト設計</h6>PCデザインを縮小するのではなく、モバイルを起点に設計する方が破綻しにくい。<p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* モバイル基準 */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span> <span class="synType">font-size</span>: <span class="synConstant">16px</span>; <span class="synIdentifier">}</span>
+
+<span class="synComment">/* 768px以上でPC対応 */</span>
+<span class="synPreProc">@media (</span><span class="synType">min-width</span><span class="synPreProc">: </span><span class="synConstant">768px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synStatement">body</span> <span class="synIdentifier">{</span> <span class="synType">font-size</span>: <span class="synConstant">18px</span>; <span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="ポイント">ポイント</h6><p></p>
+
+<ul>
+<li>小画面 → 大画面の拡張</li>
+<li>情報の優先順位を明確化</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-横スクロールの完全排除">② 横スクロールの完全排除</h5>
+    <p>モバイルでは横スクロールは致命的UX劣化。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">img</span><span class="synSpecial">,</span> <span class="synStatement">video</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">height</span>: <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="チェック項目">チェック項目</h6><p></p>
+
+<ul>
+<li>width固定(px)の要素がないか</li>
+<li>overflow: hidden; で無理に隠していないか</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-1カラム構成が基本">③ 1カラム構成が基本</h5>
+    
+<ul>
+<li>PC：2～3カラム</li>
+<li>モバイル：1カラム縦積み</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@media (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">767px</span><span class="synPreProc">) </span><span class="synIdentifier">{</span>
+  <span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">block</span>;
+  <span class="synIdentifier">}</span>
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="操作性UIUXの注意点">操作性（UI/UX）の注意点</h4>
+    
+<div class="section">
+    <h5 id="-タップ領域の最適化">④ タップ領域の最適化</h5>
+    
+<ul>
+<li>最低44px四方（Apple推奨）</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">button</span><span class="synSpecial">,</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">min-height</span>: <span class="synConstant">44px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="注意">注意</h6><p></p>
+
+<ul>
+<li>リンクが密集 → 誤タップ増加</li>
+<li>hover前提UI → モバイルで破綻</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-ハンバーガーメニュー設計">⑤ ハンバーガーメニュー設計</h5>
+    
+<ul>
+<li>メニュー階層は最大2階層</li>
+<li>開閉アニメーションは軽量に</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">nav</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">fixed</span>;
+  <span class="synType">top</span>: <span class="synConstant">0</span>;
+  <span class="synType">right</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-フォントサイズと行間">⑥ フォントサイズと行間</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.7</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="目安">目安</h6><p></p>
+
+<ul>
+<li>最小16px</li>
+<li>行間 1.6〜1.8</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="パフォーマンスの注意点">パフォーマンスの注意点</h4>
+    
+</div>
+<div class="section">
+    <h4 id="-画像の軽量化最重要">⑦ 画像の軽量化（最重要）</h4>
+    
+<ul>
+<li>WebP / AVIF 使用</li>
+<li>適切なサイズ配信</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"image.webp"</span><span class="synIdentifier"> loading=</span><span class="synConstant">"lazy"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="-不要なJavaScriptの削減">⑧ 不要なJavaScriptの削減</h5>
+    
+<ul>
+<li>モバイル回線ではJS過多＝体感速度悪化</li>
+</ul><p></p><h6 id="対策">対策</h6><p></p>
+
+<ul>
+<li>jQuery依存を減らす</li>
+<li>IntersectionObserver で遅延読み込み</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="フォーム設計の注意点">フォーム設計の注意点</h4>
+    
+<div class="section">
+    <h5 id="-入力補助の活用">⑨ 入力補助の活用</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"email"</span><span class="synIdentifier"> </span><span class="synType">inputmode</span><span class="synIdentifier">=</span><span class="synConstant">"email"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">input</span><span class="synIdentifier"> </span><span class="synType">type</span><span class="synIdentifier">=</span><span class="synConstant">"tel"</span><span class="synIdentifier"> </span><span class="synType">inputmode</span><span class="synIdentifier">=</span><span class="synConstant">"tel"</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="効果">効果</h6><p></p>
+
+<ul>
+<li>スマホキーボード最適化</li>
+<li>入力ミス削減</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-フォーム項目の最小化">⑩ フォーム項目の最小化</h5>
+    
+<ul>
+<li>モバイルでは入力負荷＝離脱率</li>
+</ul><p></p><h6 id="原則">原則</h6><p></p>
+
+<ul>
+<li>必須項目のみ</li>
+<li>入力補助（自動入力・候補）</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="デザインの注意点">デザインの注意点</h4>
+    
+<div class="section">
+    <h5 id="-情報量を詰め込みすぎない">⑪ 情報量を詰め込みすぎない</h5>
+    
+<ul>
+<li>余白はPCより広め</li>
+<li>一画面一目的設計</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-ファーストビュー最適化">⑫ ファーストビュー最適化</h5>
+    
+<ul>
+<li>3秒以内に「何のサイトか」分かる</li>
+</ul><p></p><h6 id="構成例">構成例</h6>　キャッチコピー<br>
+　↓<br>
+　サービス概要<br>
+　↓<br>
+　行動導線（CTA）<p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="実務チェックリスト現場用">実務チェックリスト（現場用）</h4>
+    
+<ul>
+<li>viewport 設定済みか</li>
+<li>横スクロール発生していないか</li>
+<li>タップ領域44px確保</li>
+<li>画像サイズ適正か</li>
+<li>フォーム入力が楽か</li>
+<li>JSが過剰でないか</li>
+<li>3G回線で体感速度が許容範囲か</li>
+</ul>
+<div class="section">
+    <h5 id="現場でよくある失敗">現場でよくある失敗</h5>
+    
+<table>
+    <tbody><tr>
+    <th>失敗例</th>
+    <th>問題点</th>
+    </tr>
+    <tr>
+    <td> PCデザインを縮小 </td>
+    <td> 情報過多 </td>
+    </tr>
+    <tr>
+    <td> hover依存UI </td>
+    <td> 操作不能 </td>
+    </tr>
+    <tr>
+    <td> px固定レイアウト </td>
+    <td> 崩壊   </td>
+    </tr>
+    <tr>
+    <td> 画像未圧縮     </td>
+    <td> 表示遅延 </td>
+    </tr>
+    <tr>
+    <td> 小さなリンク    </td>
+    <td> 誤操作  </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="実務で使える基本ブレイクポイント">実務で使える基本ブレイクポイント</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* スマホ */</span>
+<span class="synPreProc">@media (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">767px</span><span class="synPreProc">) </span><span class="synIdentifier">{}</span>
+
+<span class="synComment">/* タブレット */</span>
+<span class="synPreProc">@media (</span><span class="synType">min-width</span><span class="synPreProc">: </span><span class="synConstant">768px</span><span class="synPreProc">) </span><span class="synStatement">and</span><span class="synPreProc"> (</span><span class="synType">max-width</span><span class="synPreProc">: </span><span class="synConstant">1023px</span><span class="synPreProc">) </span><span class="synIdentifier">{}</span>
+
+<span class="synComment">/* PC */</span>
+<span class="synPreProc">@media (</span><span class="synType">min-width</span><span class="synPreProc">: </span><span class="synConstant">1024px</span><span class="synPreProc">) </span><span class="synIdentifier">{}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="CSS カスタムフォント.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">CSS カスタムフォント</span></a><a href="MixItUp フィルター実装.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">MixItUp フィルター実装</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>配列を利用する理由 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>配列を利用する理由</span>
+  </div>
+  <div class="article-head">
+    <h1>配列を利用する理由</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/17</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="配列を利用する理由">配列を利用する理由</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260211183900.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで配列を利用する理由</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="1-複数のデータをまとめて管理できる">1. 複数のデータをまとめて管理できる</h5>
+    
+<ul>
+<li>配列を使うと、複数の値を1つの変数で管理できます。</li>
+</ul><p></p><h6 id="配列を使わない場合">配列を使わない場合</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> apple <span class="synStatement">=</span> <span class="synConstant">100</span><span class="synStatement">;</span>
+<span class="synType">let</span> banana <span class="synStatement">=</span> <span class="synConstant">200</span><span class="synStatement">;</span>
+<span class="synType">let</span> orange <span class="synStatement">=</span> <span class="synConstant">150</span><span class="synStatement">;</span>
+</pre><p>→ 変数が増えて管理が大変になります。</p><p></p><h6 id="配列を使う場合">配列を使う場合</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> prices <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">100</span><span class="synStatement">,</span> <span class="synConstant">200</span><span class="synStatement">,</span> <span class="synConstant">150</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+</pre><p>→ スッキリ管理できるようになります。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="2-ループ処理と相性が良い">2. ループ処理と相性が良い</h5>
+    
+<ul>
+<li>配列は for文やforEachなどの繰り返し処理 と組み合わせることで、同じ処理をまとめて実行できます。</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> scores <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">80</span><span class="synStatement">,</span> <span class="synConstant">90</span><span class="synStatement">,</span> <span class="synConstant">70</span><span class="synStatement">,</span> <span class="synConstant">85</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+
+<span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span> i <span class="synStatement">&lt;</span> scores<span class="synStatement">.</span>length<span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>scores<span class="synSpecial">[</span>i<span class="synSpecial">])</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>→ 大量データの処理が簡単<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="3-データの追加削除変更が簡単">3. データの追加・削除・変更が簡単</h5>
+    
+<ul>
+<li>配列は 要素の操作がとても便利 です。</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> fruits <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'りんご'</span><span class="synStatement">,</span> <span class="synConstant">'みかん'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+
+<span class="synComment">// 追加</span>
+fruits<span class="synStatement">.</span><span class="synIdentifier">push</span><span class="synSpecial">(</span><span class="synConstant">'バナナ'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 削除</span>
+fruits<span class="synStatement">.</span><span class="synIdentifier">pop</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+
+<span class="synComment">// 変更</span>
+fruits<span class="synSpecial">[</span><span class="synConstant">0</span><span class="synSpecial">]</span> = cいちご<span class="synConstant">';</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="4-実務で必須超重要">4. 実務で必須（超重要）</h5>
+    <p>実際の開発では、以下のような 大量データの処理 に必ず配列が使われます。</p>
+
+<ul>
+<li>商品一覧</li>
+<li>ユーザーリスト</li>
+<li>APIから取得したデー</li>
+<li>フォーム入力の集合</li>
+<li>検索結果一覧</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> users <span class="synStatement">=</span> <span class="synSpecial">[</span>
+  <span class="synSpecial">{</span> <span class="synIdentifier">name</span><span class="synStatement">:</span> <span class="synConstant">'Tanaka'</span><span class="synStatement">,</span> <span class="synIdentifier">age</span><span class="synStatement">:</span> <span class="synConstant">20</span> <span class="synSpecial">}</span><span class="synStatement">,</span>
+  <span class="synSpecial">{</span> <span class="synIdentifier">name</span><span class="synStatement">:</span> <span class="synConstant">'Suzuki'</span><span class="synStatement">,</span> <span class="synIdentifier">age</span><span class="synStatement">:</span> <span class="synConstant">25</span> <span class="synSpecial">}</span>
+<span class="synSpecial">]</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="5-配列を使わないと何が困る">5. 配列を使わないと何が困る？</h5>
+    
+<ul>
+<li>変数が増えすぎて管理不能</li>
+<li>同じ処理を何度も書くことになる</li>
+<li>プログラムが読みにくくなる</li>
+<li>バグが増える</li>
+</ul><p>→ 配列は「整理整頓」そのもの<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="まとめ">まとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>理由</th>
+    <th>内容</th>
+    </tr>
+    <tr>
+    <td> 管理 </td>
+    <td> 複数データをまとめて管理 </td>
+    </tr>
+    <tr>
+    <td> 効率 </td>
+    <td> ループ処理で一括操作   </td>
+    </tr>
+    <tr>
+    <td> 柔軟 </td>
+    <td> 追加・削除・変更が簡単  </td>
+    </tr>
+    <tr>
+    <td> 実用 </td>
+    <td> 実務で必須        </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="配列.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">配列</span></a><a href="今日の年月日を表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">今日の年月日を表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

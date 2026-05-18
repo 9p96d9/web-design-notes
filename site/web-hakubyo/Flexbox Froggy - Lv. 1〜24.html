@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Froggy - Lv. 1〜24 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>Flexbox Froggy - Lv. 1〜24</span>
+  </div>
+  <div class="article-head">
+    <h1>Flexbox Froggy - Lv. 1〜24</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">Flex</span>
+      <span class="date">2026/02/19</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="Flexbox-Froggy">Flexbox Froggy</h4>
+    
+<ul>
+<li>CSSコードを書くことで、フロギーを助けてください!</li>
+<li>このゲームでは、レイアウトを簡単にするモジュールであるCSSフレックスボックスをマスターすることができます。</li>
+<li>これにより、1行または2行のコードのみを使用して、Webページ上の要素の配置、間隔、およびラップを制御できます。</li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fflexboxfroggy.com%2F%23ja" title="Flexbox Froggy" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://flexboxfroggy.com/#ja">flexboxfroggy.com</a></cite></p><p></p>
+
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-124">Flexbox Froggy - Lv. 1/24</h5>
+    <p>Flexbox Froggyへようこそ!これはカエルたちを、CSSコードを書いて助けてあげるゲームです。<br>
+justify-contentを使って、このカエルを右の蓮の葉まで連れていってあげましょう。<br>
+このプロパティは、アイテムを水平方向に並べるものです。以下の値を取ります。</p>
+
+<ul>
+<li>flex-start: アイテムはコンテナーの左側に並びます。</li>
+<li>flex-end: アイテムはコンテナーの右側に並びます。</li>
+<li>center: アイテムはコンテナーの中央に並びます。</li>
+<li>space-between: アイテムはその間に等しい間隔を空けて表示されます。</li>
+<li>space-around: アイテムはその周囲に等しい間隔を空けて表示されます。</li>
+</ul><p>例えば、justify-content: flex-end;はカエルを右側へ動かします。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220205232006.jpg" width="600" height="599" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-224">Flexbox Froggy - Lv. 2/24</h5>
+    <p>もう一度justify-contentを使って、カエルたちを蓮の葉まで連れていきましょう。<br>
+覚えていますか、このCSSプロパティはアイテムを水平に並べるもので、次の値を取ります。</p>
+
+<ul>
+<li>flex-start: アイテムはコンテナーの左側に並びます。</li>
+<li>flex-end: アイテムはコンテナーの右側に並びます。</li>
+<li>center: アイテムはコンテナーの中央に並びます。</li>
+<li>space-between: アイテムはその間に等しい間隔を空けて表示されます。</li>
+<li>space-around: アイテムはその周囲に等しい間隔を空けて表示されます。</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220205232340.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-324">Flexbox Froggy - Lv. 3/24</h5>
+    <p>justify-contentだけを使って三匹のカエルを全て蓮の葉に乗せてあげましょう。<br>
+この蓮の葉は、それぞれの周囲にたくさんの隙間が空いています。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220205233029.jpg" width="600" height="578" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">space-around</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-424">Flexbox Froggy - Lv. 4/24</h5>
+    <p>蓮の葉は両岸まで流されてしまいました。間隔はさらに開いています。<br>
+justify-contentを使いましょう。蓮の葉は等間隔に並んでいます。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220205233300.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">space-between</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-524">Flexbox Froggy - Lv. 5/24</h5>
+    <p>今度はalign-itemsを使って池の下のほうへカエルを連れていきましょう。<br>
+このCSSプロパティーはアイテムを垂直に並べ、以下の値をとります。</p>
+
+<ul>
+<li>flex-start: アイテムはコンテナーの上部に並びます。</li>
+<li>flex-end: アイテムはコンテナーの下部に並びます。</li>
+<li>center: アイテムはコンテナーの垂直方向中央に並びます。</li>
+<li>baseline: アイテムはコンテナーのベースラインに表示されます。</li>
+<li>stretch: アイテムはコンテナーの大きさに合うよう広がります。</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220205233610.jpg" width="600" height="598" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-624">Flexbox Froggy - Lv. 6/24</h5>
+    <p>justify-contentとalign-itemsの組み合わせを使って、カエルを池の中央へ連れていきましょう。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220205233830.jpg" width="600" height="597" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-724">Flexbox Froggy - Lv. 7/24</h5>
+    <p>再びカエルが池を渡ろうとしています。今度の蓮の葉はずいぶん間隔が空いているようですね。<br>
+justify-contentとalign-itemsの組み合わせを使いましょう。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220205234312.jpg" width="600" height="599" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">space-around</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-824">Flexbox Froggy - Lv. 8/24</h5>
+    <p>flex-directionを使って、カエルたちをそれぞれの蓮の葉に乗せましょう。<br>
+このCSSプロパティーはコンテナー内でアイテムが配置される方向を決定します。<br>
+また以下の値を取ります。</p>
+
+<ul>
+<li>row: アイテムは文章と同じ方向に配置されます。</li>
+<li>row-reverse: アイテムは文章と逆の方向に配置されます。</li>
+<li>column: アイテムは上から下に向かって配置されます。</li>
+<li>column-reverse: アイテムは下から上に向かって配置されます。</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220205234712.jpg" width="600" height="601" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">row-reverse</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-924">Flexbox Froggy - Lv. 9/24</h5>
+    <p>flex-directionを使って、カエルたちが自分の蓮の葉を見つけるのを助けてあげましょう。<br>
+このCSSプロパティーはコンテナー内でアイテムが配置される方向を決定します。<br>
+また以下の値を取ります。</p>
+
+<ul>
+<li>row: アイテムは文章と同じ方向に配置されます。</li>
+<li>row-reverse: アイテムは文章と逆の方向に配置されます。</li>
+<li>column: アイテムは上から下に向かって配置されます。</li>
+<li>column-reverse: アイテムは下から上に向かって配置されます。</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220205235430.jpg" width="600" height="599" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1024">Flexbox Froggy - Lv. 10/24</h5>
+    <p>カエルたちがそれぞれの蓮の葉に乗るのを助けてあげましょう。<br>
+もうほとんど乗っているようにも見えますが、ちゃんと乗せるにはflex-directionとjustify-contentの両方を使う必要があります。<br>
+方向としてrow-reverseやcolumnを指定した場合、始点と終点もまた逆になることに気を付けてください。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206000427.jpg" width="600" height="599" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">row-reverse</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1124">Flexbox Froggy - Lv. 11/24</h5>
+    <p>flex-directionとjustify-contentを使って、カエルたちがそれぞれの蓮の葉を見つけるのを助けてあげてください。<br>
+flexの方向がcolumnのとき、justify-contentは垂直方向の、align-itemsは水平方向の並び方を変えるようになることに気を付けてください。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206000812.jpg" width="600" height="599" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1224">Flexbox Froggy - Lv. 12/24</h5>
+    <p>flex-directionとjustify-contentを使って、カエルたちがそれぞれの蓮の葉を見つけるのを助けてあげてください。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206002407.jpg" width="600" height="599" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>-<span class="synConstant">reverse</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">space-between</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1324">Flexbox Froggy - Lv. 13/24</h5>
+    <p>flex-directionとjustify-content、align-itemsを使って、カエルたちがそれぞれの蓮の葉を見つけるのを助けてあげてください。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206002859.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">row-reverse</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1424">Flexbox Froggy - Lv. 14/24</h5>
+    <p>コンテナーの行や列の順序を逆にするだけでは足りないこともままあります。そういった場合、個別のアイテムにorderプロパティーを適用することができます。アイテムはデフォルトでは0の値を取りますが、正や負の整数値を設定することもできます。<br>
+orderプロパティーを使って、蓮の葉に合うようカエルたちを並び替えてください。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206003524.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.yellow</span> <span class="synIdentifier">{</span>
+  <span class="synType">order</span>: <span class="synConstant">1</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1524">Flexbox Froggy - Lv. 15/24</h5>
+    <p>orderプロパティーを使って、赤いカエルを彼の蓮の葉へ送ってください。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206003751.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.red</span> <span class="synIdentifier">{</span>
+  <span class="synType">order</span>: <span class="synConstant">-1</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1624">Flexbox Froggy - Lv. 16/24</h5>
+    <p>他にも、個別のアイテムへ設定できるプロパティーとしてalign-selfがあります。<br>
+このプロパティーはalign-itemsと同じ値を受け付け、指定のアイテムの状態だけを変更します。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206004107.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">flex-start</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.yellow</span> <span class="synIdentifier">{</span>
+  <span class="synType">align-self</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1724">Flexbox Froggy - Lv. 17/24</h5>
+    <p>orderをalign-selfを組み合わせて、カエルたちを目的地へ連れて行ってあげましょう。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206004306.jpg" width="600" height="599" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">flex-start</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.yellow</span> <span class="synIdentifier">{</span>
+  <span class="synType">order</span>: <span class="synConstant">3</span>;
+  <span class="synType">align-self</span>:<span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1824">Flexbox Froggy - Lv. 18/24</h5>
+    <p>おやおや、カエルたちが一列の蓮の葉の上で窮屈そうにしていますね。<br>
+flex-wrapプロパティーを使って、彼らを広げてあげてください。<br>
+このプロパティーは以下の値を取ります。</p>
+
+<ul>
+<li>nowrap: 全てのアイテムは、ひとつの行にフィットします。</li>
+<li>wrap: アイテムは他の行へ折り返します。</li>
+<li>wrap-reverse: アイテムは逆順になって他の行へ折り返します。</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206004651.jpg" width="600" height="601" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-wrap</span>: <span class="synConstant">wrap</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-1924">Flexbox Froggy - Lv. 19/24</h5>
+    <p>flex-directionとflex-wrapを使って、このカエルの大群がきちんと三列に並ぶようにしてあげてください。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206005053.jpg" width="600" height="601" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>;
+  <span class="synType">flex-wrap</span>: <span class="synConstant">wrap</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-2024">Flexbox Froggy - Lv. 20/24</h5>
+    <p>flex-directionとflex-wrapの二つのプロパティーはよく一緒に使われます。<br>
+そこで、これらを統合するショートハンドプロパティーflex-flowが作られました。<br>
+このショートハンドプロパティーは空白文字で分割した二つのプロパティーの値を受け付けます。<br>
+例えば、flex-flow: row wrapとすることで、並び方と折り返し方を指定することができます。<br>
+試しに、flex-flowを使ってさっきの問題をやり直してみましょう。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206005325.jpg" width="600" height="601" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-flow</span>: <span class="synConstant">column</span> <span class="synConstant">wrap</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-2124">Flexbox Froggy - Lv. 21/24</h5>
+    <p>カエルたちが池いっぱいに広がっていますが、蓮の葉は上方に集まっています。<br>
+複数の行が他の行とどう距離を取り広がるのかを指定するのに、align-contentを使うことができます。<br>
+このプロパティーは以下の値を取ります。</p>
+
+<ul>
+<li>flex-start: 行はコンテナーの上側に詰められます。</li>
+<li>flex-end: 行はコンテナーの下側に詰められます。</li>
+<li>center: 行はコンテナーの中央に詰められます。</li>
+<li>space-between: 行はその間に等しい間隔を空けて表示されます。</li>
+<li>space-around: 行はその周囲に等しい間隔を空けて表示されます。</li>
+<li>stretch: 行はコンテナーに合うよう引き延ばされます。</li>
+</ul><p>混乱したかもしれませんが、align-contentは行間の余白を決めるもので、align-itemsはコンテナーに含まれるアイテム全体としての配置を決めるものです。一行だけの場合はalign-contentは何も効果がありません。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206005635.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-wrap</span>: <span class="synConstant">wrap</span>;
+  <span class="synType">align-content</span>: <span class="synConstant">flex-start</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-2224">Flexbox Froggy - Lv. 22/24</h5>
+    <p>さて今回は蓮の葉は下へ詰められています。align-contentを使って、カエルたちをそこまで導いてください。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206005841.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-wrap</span>: <span class="synConstant">wrap</span>;
+  <span class="synType">align-content</span>: <span class="synConstant">flex-end</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-2324">Flexbox Froggy - Lv. 23/24</h5>
+    <p>カエルたちはパーティーを開いていましたが、もう家に帰る時間です。<br>
+flex-directionとalign-contentの組み合わせを使って、彼らの蓮の葉まで連れて行ってあげましょう。</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206011037.jpg" width="600" height="598" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-wrap</span>: <span class="synConstant">wrap</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>-<span class="synConstant">reverse</span>;
+  <span class="synType">align-content</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="Flexbox-Froggy---Lv-2424">Flexbox Froggy - Lv. 24/24</h5>
+    <p>これまでに習ったCSSプロパティーを使って、もう一度だけカエルたちを家まで連れていってあげてください。</p>
+
+<ul>
+<li>justify-content</li>
+<li>align-items</li>
+<li>flex-direction</li>
+<li>order</li>
+<li>align-self</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>align-content</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220206011852.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">#pond</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>-<span class="synConstant">reverse</span>;
+  <span class="synType">flex-wrap</span>: <span class="synConstant">wrap-reverse</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-content</span>: <span class="synConstant">space-between</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="headerにh1とnavを横並び.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">headerにh1とnavを横並び</span></a><a href="分割レイアウト型（最近多い）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">分割レイアウト型（最近多い）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

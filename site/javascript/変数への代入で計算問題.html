@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>変数への代入で計算問題 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>変数への代入で計算問題</span>
+  </div>
+  <div class="article-head">
+    <h1>変数への代入で計算問題</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="変数への代入で計算問題">変数への代入で計算問題</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260209035951.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptをHTML内に、演算の問題を変数にシンプルな代入で計算の問題を１０問作成して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="問題例">問題例</h5>
+    
+<ul>
+<li>出力は、文字列と変数を「テンプレートリテラル」で表示</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>計算問題10問<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>計算問題（consoleに出力）<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>検証 → コンソール を開いて確認してください<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synComment">// 足し算</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q1<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">5</span><span class="synSpecial"> </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">3</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q2<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">12</span><span class="synSpecial"> </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">8</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synComment">// 引き算</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q3<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">15</span><span class="synSpecial"> </span><span class="synStatement">-</span><span class="synSpecial"> </span><span class="synConstant">6</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q4<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">20</span><span class="synSpecial"> </span><span class="synStatement">-</span><span class="synSpecial"> </span><span class="synConstant">9</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synComment">// 掛け算</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q5<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">4</span><span class="synSpecial"> </span><span class="synStatement">*</span><span class="synSpecial"> </span><span class="synConstant">7</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q6<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">9</span><span class="synSpecial"> </span><span class="synStatement">*</span><span class="synSpecial"> </span><span class="synConstant">6</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synComment">// 割り算</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q7<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">24</span><span class="synSpecial"> </span><span class="synStatement">/</span><span class="synSpecial"> </span><span class="synConstant">3</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q8<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">45</span><span class="synSpecial"> </span><span class="synStatement">/</span><span class="synSpecial"> </span><span class="synConstant">5</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synComment">// 複合計算</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q9<span class="synSpecial">  </span><span class="synStatement">=</span><span class="synSpecial"> (</span><span class="synConstant">3</span> <span class="synStatement">+</span> <span class="synConstant">7</span><span class="synSpecial">) </span><span class="synStatement">*</span><span class="synSpecial"> </span><span class="synConstant">2</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>q10<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> (</span><span class="synConstant">20</span> <span class="synStatement">-</span> <span class="synConstant">5</span><span class="synSpecial">) </span><span class="synStatement">/</span><span class="synSpecial"> </span><span class="synConstant">3</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'【足し算】'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`1. 5 + 3 = </span><span class="synSpecial">${</span>q1<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`2. 12 + 8 = </span><span class="synSpecial">${</span><span class="synConstant">2</span><span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'【引き算】'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`3. 15 - 6 = </span><span class="synSpecial">${</span>q3<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`4. 20 - 9 = </span><span class="synSpecial">${</span>q4<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'【掛け算】'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`5. 4 × 7 = </span><span class="synSpecial">${</span>q5<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`6. 9 × 6 = </span><span class="synSpecial">${</span>q6<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'【割り算】'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`7. 24 ÷ 3 = </span><span class="synSpecial">${</span>q7<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`8. 45 ÷ 5 = </span><span class="synSpecial">${</span>q8<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'【複合計算】'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`9. (3 + 7) × 2 = </span><span class="synSpecial">${</span>q9<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`10. (20 - 5) ÷ 3 = </span><span class="synSpecial">${</span>q10<span class="synSpecial">}</span><span class="synConstant">`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p>【実行例】</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260209033914.jpg" width="400" height="628" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="問題例-1">問題例</h5>
+    
+    <blockquote>
+        <p>JavaScriptで単価1000円の商品を１個買ったときに支払う金額を求める </p>
+
+<ul>
+<li>消費税率を10%で計算</li>
+<li>出力は、テンプレートリテラルでコンソールに</li>
+</ul>
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> price <span class="synStatement">=</span> <span class="synConstant">1000</span><span class="synStatement">;</span>   <span class="synComment">// 単価</span>
+<span class="synType">const</span> quantity <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span>  <span class="synComment">// 個数</span>
+<span class="synType">const</span> taxRate <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synSpecial">.</span><span class="synConstant">1</span><span class="synStatement">;</span> <span class="synComment">// 消費税率10%</span>
+
+<span class="synType">const</span> subtotal <span class="synStatement">=</span> price <span class="synStatement">*</span> quantity<span class="synStatement">;</span>
+<span class="synType">const</span> tax <span class="synStatement">=</span> subtotal <span class="synStatement">*</span> taxRate<span class="synStatement">;</span>
+<span class="synType">const</span> total <span class="synStatement">=</span> subtotal <span class="synStatement">+</span> tax<span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">`支払金額は</span><span class="synSpecial">${</span>total<span class="synSpecial">}</span><span class="synConstant">円です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="JavaScriptを実装する方法.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">JavaScriptを実装する方法</span></a><a href="テンプレートリテラルで出力.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">テンプレートリテラルで出力</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

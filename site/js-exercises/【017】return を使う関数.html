@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【017】return を使う関数 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【017】return を使う関数</span>
+  </div>
+  <div class="article-head">
+    <h1>【017】return を使う関数</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">return</span>
+      <span class="date">2026/01/17</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    <p>【017】return を使う関数</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227105430.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで関数のreturn を使う問題を５問作成して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="-return-の超かんたん解説">🔰 return の超かんたん解説</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">add</span><span class="synSpecial">(</span>a<span class="synStatement">,</span> b<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> a <span class="synStatement">+</span> b<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>👉 return は 関数の外に値を持ち帰る 命令です。</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> result <span class="synStatement">=</span> <span class="synIdentifier">add</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">5</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>result<span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// 8</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="return-を使う練習問題超初心者向け">return を使う練習問題【超初心者向け】</h4>
+    
+<div class="section">
+    <h5 id="問題1数字をそのまま返す関数">問題1：数字をそのまま返す関数</h5>
+    <p><strong>受け取った数字をそのまま返す関数</strong> を作ってください。</p><p></p><h6 id="仕様">仕様</h6><p></p>
+
+<ul>
+<li>関数名：returnNumber</li>
+<li>引数：num</li>
+<li>戻り値：num</li>
+</ul><p></p><h6 id="実行例">実行例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">returnNumber</span><span class="synSpecial">(</span><span class="synConstant">5</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="出力例">出力例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">5</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題22つの数を足して返す関数">問題2：2つの数を足して返す関数</h5>
+    <p><strong>2つの数を足した結果を返す関数</strong> を作ってください。</p><p></p><h6 id="仕様-1">仕様</h6><p></p>
+
+<ul>
+<li>関数名：sum</li>
+<li>引数：a, b</li>
+<li>戻り値：a + b</li>
+</ul><p></p><h6 id="実行例-1">実行例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">sum</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">7</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="出力例-1">出力例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">10</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題3名前の文章を作って返す関数">問題3：名前の文章を作って返す関数</h5>
+    <p><strong>名前を受け取り、自己紹介文を作って返す関数</strong> を作ってください。</p><p></p><h6 id="仕様-2">仕様</h6>関数名：createMessage<p></p>
+
+<ul>
+<li>引数：name</li>
+<li>戻り値：「私の名前は〇〇です」</li>
+</ul><p></p><h6 id="実行例-2">実行例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">createMessage</span><span class="synSpecial">(</span><span class="synConstant">`さくら`</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="出力例-2">出力例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">私の名前はさくらです
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題4数字を2倍にして返す関数">問題4：数字を2倍にして返す関数</h5>
+    <p><strong>数字を受け取り、2倍した値を返す関数</strong> を作ってください。</p><p></p><h6 id="仕様-3">仕様</h6><p></p>
+
+<ul>
+<li>関数名：double</li>
+<li>引数：num</li>
+</ul><p></p><h6 id="実行例-3">実行例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">double</span><span class="synSpecial">(</span><span class="synConstant">6</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="出力例-3">出力例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">12</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題5偶数か奇数かを判定して返す関数">問題5：偶数か奇数かを判定して返す関数</h5>
+    <p><strong>数字を受け取り、「偶数」または「奇数」を返す関数</strong> を作ってください。</p><p></p><h6 id="仕様-4">仕様</h6><p></p>
+
+<ul>
+<li>関数名：checkEvenOdd</li>
+<li>引数：num</li>
+<li>戻り値：
+<ul>
+<li>偶数 → "偶数"</li>
+<li>奇数 → "奇数"</li>
+</ul></li>
+</ul><p></p><h6 id="実行例-4">実行例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">checkEvenOdd</span><span class="synSpecial">(</span><span class="synConstant">8</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">checkEvenOdd</span><span class="synSpecial">(</span><span class="synConstant">5</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="出力例-4">出力例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">偶数
+奇数
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-解答例">✅ 解答例</h4>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// 問題1：数字をそのまま返す関数</span>
+<span class="synStatement">function</span> <span class="synIdentifier">returnNumber</span><span class="synSpecial">(</span>num<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> num<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">returnNumber</span><span class="synSpecial">(</span><span class="synConstant">5</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+
+<span class="synComment">// 問題2：2つの数を足して返す関数</span>
+<span class="synStatement">function</span> <span class="synIdentifier">sum</span><span class="synSpecial">(</span>a<span class="synStatement">,</span> b<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> a <span class="synStatement">+</span> b<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">sum</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">7</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+
+<span class="synComment">// 問題3：名前の文章を作って返す関数</span>
+<span class="synStatement">function</span> <span class="synIdentifier">createMessage</span><span class="synSpecial">(</span>name<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> <span class="synConstant">`私の名前は</span><span class="synSpecial">${</span>name<span class="synSpecial">}</span><span class="synConstant">です`</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">createMessage</span><span class="synSpecial">(</span><span class="synConstant">`さくら`</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+
+<span class="synComment">// 問題4：数字を2倍にして返す関数</span>
+<span class="synStatement">function</span> <span class="synIdentifier">double</span><span class="synSpecial">(</span>num<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> num <span class="synStatement">*</span> <span class="synConstant">2</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">double</span><span class="synSpecial">(</span><span class="synConstant">6</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+
+<span class="synComment">// 問題5：偶数か奇数かを判定して返す関数</span>
+<span class="synStatement">function</span> <span class="synIdentifier">checkEvenOdd</span><span class="synSpecial">(</span>num<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>num <span class="synStatement">%</span> <span class="synConstant">2</span> <span class="synStatement">===</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    <span class="synStatement">return</span> <span class="synConstant">`偶数`</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+    <span class="synStatement">return</span> <span class="synConstant">`奇数`</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">}</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">checkEvenOdd</span><span class="synSpecial">(</span><span class="synConstant">8</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">checkEvenOdd</span><span class="synSpecial">(</span><span class="synConstant">5</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="-超重要ポイント">🔰 超重要ポイント</h4>
+    
+<div class="section">
+    <h5 id="-consolelog-と-return-の違い">❌ console.log と return の違い</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">function</span> <span class="synIdentifier">sample1</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">10</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synStatement">function</span> <span class="synIdentifier">sample2</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synStatement">return</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><h6 id="実行結果の違い">実行結果の違い</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">sample1</span><span class="synSpecial">())</span><span class="synStatement">;</span>  <span class="synComment">// undefined</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synIdentifier">sample2</span><span class="synSpecial">())</span><span class="synStatement">;</span>  <span class="synComment">// 10</span>
+</pre><p>👉 return は「値を返す」<br>
+👉 console.log は「表示するだけ」</p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【016】関数を使った計算結果をコンソールに表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【016】関数を使った計算結果をコンソールに表示</span></a><a href="【018】アロー関数を使った計算結果をコンソールに表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【018】アロー関数を使った計算結果をコンソールに表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

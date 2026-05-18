@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出力（結果を表示） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>出力（結果を表示）</span>
+  </div>
+  <div class="article-head">
+    <h1>出力（結果を表示）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">出力</span>
+      <span class="date">2025/10/04</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="consoleに出力">consoleに出力</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029234331.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20221019101457.png" width="500" height="276" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+<div class="section">
+    <h5 id="コンソールに出力">コンソールに出力</h5>
+    
+<ul>
+<li>「数値の加算」と「文字列の連結」の違い</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"utf-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>+演算子の挙動の違い<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>x<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">123</span><span class="synSpecial"> </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">456</span><span class="synStatement">;</span><span class="synSpecial">  </span><span class="synComment">// 数値の加算</span>
+<span class="synType">const</span><span class="synSpecial"> </span>y<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">'123'</span><span class="synSpecial"> </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">'456'</span><span class="synStatement">;</span><span class="synSpecial">  </span><span class="synComment">// 文字列の連結（+は、連結演算子）</span>
+<span class="synType">const</span><span class="synSpecial"> </span>z<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">`123 + 456`</span><span class="synStatement">;</span><span class="synSpecial">  </span><span class="synComment">// バッククォートで囲む「テンプレートリテラル」</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>x<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>y<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>z<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220902062353.jpg" width="500" height="98" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="３種類のダイアログボックス">３種類のダイアログボックス</h4>
+    <p></p><table>
+<tbody><tr><th width="100">項目</th><th width="100">コード</th></tr>
+<tr><td>警告</td><td>alert()</td></tr>
+<tr><td>確認</td><td>confirm()</td></tr>
+<tr><td>入力</td><td>prompt()</td></tr>
+</tbody></table><p></p><p></p>
+
+<div class="section">
+    <h5 id="メッセージを表示するダイアログボックス">メッセージを表示するダイアログボックス</h5>
+    
+    <blockquote>
+        <p>alert( メッセージ );</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="ユーザーに確認を求めるダイアログボックス">ユーザーに確認を求めるダイアログボックス</h5>
+    
+    <blockquote>
+        <p>confirm( メッセージ );</p>
+
+    </blockquote>
+
+    <blockquote>
+        <p>変数 = confirm( メッセージ );</p>
+
+    </blockquote>
+
+<ul>
+<li>confirmメソッドは「戻り値を返す」</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%D6%A1%BC%A5%EA%A5%A2%A5%F3">ブーリアン</a>型「true（真）」または「false（偽）」</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="ユーザーにデータを入力してもらうダイアログボックス">ユーザーにデータを入力してもらうダイアログボックス</h5>
+    
+<ul>
+<li>promptから取得できた値は「文字列」です</li>
+</ul>
+    <blockquote>
+        <p>prompt( メッセージ );</p>
+
+    </blockquote>
+
+    <blockquote>
+        <p>変数 = prompt( メッセージ, デフォルトの値 );</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="警告ダイアログに出力">警告ダイアログに出力</h5>
+    
+<ul>
+<li>alert()で出力</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>警告ダイアログに出力<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>date<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">'2024年10月3日'</span><span class="synStatement">;</span>
+<span class="synStatement">alert</span><span class="synSpecial">(</span>date<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241006015906.jpg" width="500" height="240" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="警告ダイアログで確認">警告ダイアログで確認</h5>
+    
+<ul>
+<li>confirm()で確認</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>警告ダイアログで確認<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>today<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">'今日は、2024年10月3日ですか？'</span><span class="synStatement">;</span>
+<span class="synStatement">confirm</span><span class="synSpecial">(</span>today<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241006020321.jpg" width="500" height="245" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="入力ダイアログで文字列を取得">入力ダイアログで文字列を取得</h5>
+    
+<ul>
+<li>console()で出力</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>消費税合算後の支払金額を求めるプログラム（基本）<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">// 変数の値は「再代入」されるため「let」で宣言</span>
+<span class="synSpecial">  </span><span class="synType">let</span><span class="synSpecial"> </span>price<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'単価を100以上の半角数字を整数で入力してください'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synComment">// parseInt()関数で、小数点以下は切り捨てて「整数化」</span>
+<span class="synSpecial">  </span>price<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">parseInt</span><span class="synSpecial">(</span>price<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synType">let</span><span class="synSpecial"> </span>piece<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'個数を1以上の半角数字を整数で入力してください'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span>piece<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">parseInt</span><span class="synSpecial">(</span>piece<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synSpecial">  </span><span class="synType">const</span><span class="synSpecial"> </span>taxRate<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">0</span><span class="synSpecial">.</span><span class="synConstant">1</span><span class="synStatement">;</span><span class="synSpecial">  </span><span class="synComment">// 消費税率</span>
+<span class="synSpecial">  </span><span class="synType">let</span><span class="synSpecial"> </span>total<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">0</span><span class="synStatement">;</span><span class="synSpecial">  </span><span class="synComment">// 計算結果の初期値</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p>この段階は、お金の計算であることにより整数化しています。<br>
+ダイアログボックスに「0」が入力された場合、「全角」が入力された場合もしくは計算できない文字が入力された場合は、条件分岐の内容に入った段階で「if」文を使い判別していきます。</p><p></p><h6 id="元値と消費税額を加算">元値と消費税額を加算</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">total <span class="synStatement">=</span> <span class="synSpecial">(</span>price <span class="synStatement">*</span> piece<span class="synSpecial">)</span> <span class="synStatement">+</span> <span class="synSpecial">(</span>price <span class="synStatement">*</span> piece <span class="synStatement">*</span> taxRate<span class="synSpecial">)</span> 
+</pre><p></p><h6 id="consoleに出力-1">consoleに出力</h6><p></p>
+
+<ul>
+<li>出力を簡潔に記述するために、変数に代入します</li>
+<li>文字列と変数の値を同時に出力する場合は、テンプレート<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%EA%A5%C6%A5%E9%A5%EB">リテラル</a>で記述</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> str <span class="synStatement">=</span> <span class="synConstant">`購入単価「</span><span class="synSpecial">${</span>price<span class="synSpecial">}</span><span class="synConstant">」円の商品を</span><span class="synSpecial">${</span>piece<span class="synSpecial">}</span><span class="synConstant">個購入した時の消費税合算後の支払金額は、「</span><span class="synSpecial">${</span>total<span class="synSpecial">}</span><span class="synConstant">」円です。`</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>str<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="少数点以下の結果を四捨五入">少数点以下の結果を四捨五入</h6><p></p>
+
+<ul>
+<li>お金の計算のため、必ず「四捨五入」して結果を表示します</li>
+<li>数学オブジェクト「Math」と「round()」メソッドを利用します</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink="">total <span class="synStatement">=</span> <span class="synSpecial">(</span>price <span class="synStatement">*</span> piece<span class="synSpecial">)</span> <span class="synStatement">+</span> <span class="synSpecial">(</span>price <span class="synStatement">*</span> piece <span class="synStatement">*</span> taxRate<span class="synSpecial">)</span><span class="synStatement">;</span>
+total <span class="synStatement">=</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">(</span>total<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="まとめ">まとめ</h6><p></p>
+
+<ul>
+<li>変数の宣言「 price」と「piece」を const で宣言し、再代入がないことを明示しました</li>
+<li>「整数化」は、１行の中で記述した場合「let」に書き換えなくても進めることができます</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>消費税合算後の支払金額を求めるプログラム<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>消費税合算後の支払金額を求める<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">    </span><span class="synType">const</span><span class="synSpecial"> </span>price<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">parseInt</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'単価を100以上の半角数字を整数で入力してください'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synSpecial">    </span><span class="synType">const</span><span class="synSpecial"> </span>piece<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synStatement">parseInt</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'個数を1以上の半角数字を整数で入力してください'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synSpecial">    </span><span class="synType">const</span><span class="synSpecial"> </span>taxRate<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">0</span><span class="synSpecial">.</span><span class="synConstant">1</span><span class="synStatement">;</span><span class="synSpecial">  </span><span class="synComment">// 消費税率</span>
+<span class="synSpecial">    </span><span class="synType">const</span><span class="synSpecial"> </span>total<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">round</span><span class="synSpecial">((</span>price <span class="synStatement">*</span> piece<span class="synSpecial">)</span> <span class="synStatement">+</span> <span class="synSpecial">(</span>price <span class="synStatement">*</span> piece <span class="synStatement">*</span> taxRate<span class="synSpecial">)</span> <span class="synSpecial">)</span><span class="synStatement">;</span><span class="synSpecial">  </span><span class="synComment">// 四捨五入</span>
+
+<span class="synSpecial">    </span><span class="synType">const</span><span class="synSpecial"> </span>str<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">`購入単価「</span><span class="synSpecial">${</span>price<span class="synSpecial">}</span><span class="synConstant">」円の商品を</span><span class="synSpecial">${</span>piece<span class="synSpecial">}</span><span class="synConstant">個購入した時の消費税合算後の支払金額は、「</span><span class="synSpecial">${</span>total<span class="synSpecial">}</span><span class="synConstant">」円です。`</span><span class="synStatement">;</span>
+<span class="synSpecial">    </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>str<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220902071006.jpg" width="600" height="55" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="NaN">NaN</h6><p></p>
+
+<ul>
+<li>Not a Number（非数）</li>
+<li>ダイアログボックスに、何も入力しない場合に表示されます</li>
+</ul>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="変数・定数.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">変数・定数</span></a><a href="ダイアログボックスを使った記述.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">ダイアログボックスを使った記述</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

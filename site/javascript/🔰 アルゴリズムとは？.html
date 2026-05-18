@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔰 アルゴリズムとは？ - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>🔰 アルゴリズムとは？</span>
+  </div>
+  <div class="article-head">
+    <h1>🔰 アルゴリズムとは？</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/04</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="アルゴリズムとは">アルゴリズムとは？</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260208150237.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScript初学者に、アルゴリズムをわかりやすく解説して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="-アルゴリズムとは">🔰 アルゴリズムとは？</h5>
+    <p><strong>アルゴリズム = 問題を解決するための手順（やり方）</strong><br>
+もっと簡単に言うと</p>
+
+    <blockquote>
+        <p>「目的を達成するための順番どおりの作業リスト」</p>
+
+    </blockquote>
+<p>です。</p><p></p><h6 id="-料理で例えると">🍳 料理で例えると</h6>カレーを作るアルゴリズム<p></p>
+
+<ol>
+<li>野菜を切る</li>
+<li>肉を炒める</li>
+<li>野菜を入れる</li>
+<li>水を入れて煮る</li>
+<li>ルーを入れる</li>
+</ol><p>➡ この 手順の流れ = アルゴリズム</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="プログラミングでのアルゴリズム">プログラミングでのアルゴリズム</h4>
+    <p>プログラムは、</p>
+
+    <blockquote>
+        <p>コンピュータに「何を」「どの順番で」やるかを指示する</p>
+
+    </blockquote>
+<p>ため、アルゴリズムがとても重要です。</p>
+
+<div class="section">
+    <h5 id="例110までの合計を求める">例：1〜10までの合計を求める</h5>
+    <p></p><h6 id="考え方アルゴリズム">考え方（アルゴリズム）</h6><p></p>
+
+<ol>
+<li>合計を入れる箱を用意</li>
+<li>1〜10まで順番に足す</li>
+<li>結果を表示</li>
+</ol><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> sum <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span>
+
+<span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">10</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  sum <span class="synStatement">+=</span> i<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>sum<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="アルゴリズムの基本パターン3つ">アルゴリズムの基本パターン3つ</h4>
+    
+<ul>
+<li>ほとんどのプログラムは、この 3つの組み合わせ です</li>
+</ul>
+<div class="section">
+    <h5 id="順次じゅんじ">順次（じゅんじ）</h5>
+    
+<ul>
+<li>上から順番に実行</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"A"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"B"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"C"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>➡ A → B → C の順で実行<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="分岐ぶんき">分岐（ぶんき）</h5>
+    
+<ul>
+<li>条件によって処理を変える</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> age <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>age <span class="synStatement">&gt;=</span> <span class="synConstant">18</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"大人です"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"子供です"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="反復繰り返し">反復（繰り返し）</h5>
+    
+<ul>
+<li>同じ処理を何度も行う</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>➡ 1〜5を表示<br>
+<br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-よくあるアルゴリズム例超重要">🎯 よくあるアルゴリズム例（超重要）</h4>
+    
+<div class="section">
+    <h5 id="最大値を求める">最大値を求める</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> numbers <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">7</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">9</span><span class="synStatement">,</span> <span class="synConstant">5</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">let</span> max <span class="synStatement">=</span> numbers<span class="synSpecial">[</span><span class="synConstant">0</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+
+<span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;</span> numbers<span class="synStatement">.</span>length<span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>numbers<span class="synSpecial">[</span>i<span class="synSpecial">]</span> <span class="synStatement">&gt;</span> max<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    max <span class="synStatement">=</span> numbers<span class="synSpecial">[</span>i<span class="synSpecial">]</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">}</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>max<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// 9</span>
+</pre><p></p><h6 id="考え方">考え方</h6>最初の数を最大値とする<p></p>
+
+<ol>
+<li>1つずつ比べる</li>
+<li>大きければ更新</li>
+<li> </li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="配列の合計">配列の合計</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> numbers <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">4</span><span class="synStatement">,</span> <span class="synConstant">5</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">let</span> sum <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span>
+
+<span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> num <span class="synStatement">of</span> numbers<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  sum <span class="synStatement">+=</span> num<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>sum<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// 15</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-初心者が意識すべき考え方">🏆 初心者が意識すべき考え方</h4>
+    
+<div class="section">
+    <h5 id="いきなりコードを書かない">いきなりコードを書かない</h5>
+    <p>👉 日本語で手順を書く → それをコードにする<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="紙に書く図にする">紙に書く・図にする</h5>
+    <p>👉 日本語で手順を書く → それをコードにする<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="小さく分ける">小さく分ける</h5>
+    <p>❌ いきなり難しい問題<br>
+⭕ 小さな問題に分解<br>
+<br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="初心者におすすめの練習問題">初心者におすすめの練習問題</h4>
+    <p>⭐ Lv1</p>
+
+<ul>
+<li>1〜100までの合計を求める</li>
+</ul><p>⭐⭐ Lv2</p>
+
+<ul>
+<li>配列 [5, 8, 2, 9, 1] の最大値を求める</li>
+</ul><p>⭐⭐⭐ Lv3</p>
+
+<ul>
+<li>文字列 "javascript" を逆順にする</li>
+</ul>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="JavaScript 学習ロードマップ（初心者向け）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">JavaScript 学習ロードマップ（初心者向け）</span></a><a href="JavaScriptの「演算」.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">JavaScriptの「演算」</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

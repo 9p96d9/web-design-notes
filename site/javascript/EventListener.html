@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EventListener - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>EventListener</span>
+  </div>
+  <div class="article-head">
+    <h1>EventListener</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">イベント</span>
+      <span class="date">2025/10/18</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="イベントリスナーEventListener">イベントリスナー（EventListener）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029232543.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>DOMイベントリスナー</li>
+<li>ひとつのイベントに複数のイベント関数を指定できる</li>
+</ul>
+<div class="section">
+    <h5 id="addEventListenerでイベント関数を指定する">addEventListenerでイベント関数を指定する</h5>
+    
+<ul>
+<li>イベントを処理する関数</li>
+<li>「addEventListener」メソッドを使う</li>
+</ul>
+    <blockquote>
+        <p>DOMオブジェクト . addEventListener ('イベント名',　実行したい関数,　falseまたはtrue)</p>
+
+    </blockquote>
+<p>※最後に指定する「falseまたはtrue」は、イベントをどの時点で実行するかを指定する値です。</p>
+
+<ul>
+<li>ほとんどの場合は「false」を使います</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="読み込まれたときのイベント">読み込まれたときのイベント</h5>
+    
+<ul>
+<li>ウィンドウが表示されたとき「DOMContentLoaded」（onloadよりも早い処理）</li>
+<li>「window」オブジェクトに対して設定します</li>
+</ul><p></p><h6 id="ES6の場合">ES6の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">window</span><span class="synSpecial">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'DOMContentLoaded'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">"OK"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">,</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ES5の場合">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>読み込まれたときのイベント<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">window</span><span class="synSpecial">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'DOMContentLoaded'</span><span class="synStatement">,</span>
+<span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">"OK"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">,</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="ボタンのクリック処理">ボタンのクリック処理</h5>
+    <p></p><h6 id="ES6の場合-1">ES6の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>ボタンクリックイベント<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">'mybtn'</span><span class="synIdentifier">&gt;</span>クリックしてね<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">window</span><span class="synSpecial">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'load'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+  <span class="synType">const</span> btn <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'mybtn'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+    <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">'クリックされた'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span><span class="synStatement">,</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">,</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ES5の場合-1">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>ボタンクリックイベント<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">'mybtn'</span><span class="synIdentifier">&gt;</span>クリックしてね<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> &gt;</span>
+<span class="synStatement">window</span><span class="synSpecial">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'load'</span><span class="synStatement">,</span>
+<span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+  <span class="synType">var</span> btn <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'mybtn'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+  btn<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span>
+    <span class="synStatement">function</span> <span class="synSpecial">()</span> <span class="synSpecial">{</span>
+      <span class="synIdentifier">alert</span><span class="synSpecial">(</span><span class="synConstant">' クリックされた'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span><span class="synStatement">,</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">,</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="複数のボタンの場合">複数のボタンの場合</h5>
+    
+<ul>
+<li>イベントのプロパゲーション（イベントがDOMツリー上の子要素から親要素へ順に伝達すること）</li>
+<li>キャプチャーフェーズ（イベントが「どの要素に対して発生したのか」）</li>
+<li>ターゲットフェーズ（ターゲット要素が決まる、イベントの引数は「target」プロパティ）</li>
+<li>パブリングフェーズ（結びつけられているイベントを末端から処理）</li>
+</ul><p></p><h6 id="ES6の場合-2">ES6の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>クリックされたときにボタン名を表示する<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"buttongroup"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn1"</span><span class="synIdentifier">&gt;</span>1<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn2"</span><span class="synIdentifier">&gt;</span>2<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn3"</span><span class="synIdentifier">&gt;</span>3<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">window</span><span class="synSpecial">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'load'</span><span class="synStatement">,</span> <span class="synSpecial">()</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+    <span class="synType">const</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'buttongroup'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    element<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> <span class="synSpecial">(</span>event<span class="synSpecial">)</span> <span class="synStatement">=&gt;</span> <span class="synSpecial">{</span>
+      <span class="synIdentifier">alert</span><span class="synSpecial">(</span>event<span class="synStatement">.</span>target<span class="synStatement">.</span>innerHTML<span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span><span class="synStatement">,</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">,</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="ES5の場合-2">ES5の場合</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>クリックされたときにボタン名を表示する<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"buttongroup"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn1"</span><span class="synIdentifier">&gt;</span>1<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn2"</span><span class="synIdentifier">&gt;</span>2<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">button</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"btn3"</span><span class="synIdentifier">&gt;</span>3<span class="synIdentifier">&lt;/</span><span class="synStatement">button</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">window</span><span class="synSpecial">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'load'</span><span class="synStatement">,</span>
+<span class="synStatement">function</span><span class="synSpecial">()</span> <span class="synSpecial">{</span>
+    <span class="synType">let</span> element <span class="synStatement">=</span> <span class="synConstant">document</span><span class="synStatement">.</span><span class="synIdentifier">getElementById</span><span class="synSpecial">(</span><span class="synConstant">'buttongroup'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+    element<span class="synStatement">.</span><span class="synIdentifier">addEventListener</span><span class="synSpecial">(</span><span class="synConstant">'click'</span><span class="synStatement">,</span> 
+    <span class="synStatement">function</span> <span class="synIdentifier">btnclick</span><span class="synSpecial">(</span>event<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+      <span class="synIdentifier">alert</span><span class="synSpecial">(</span>event<span class="synStatement">.</span>target<span class="synStatement">.</span>innerHTML<span class="synSpecial">)</span><span class="synStatement">;</span>
+    <span class="synSpecial">}</span>
+    <span class="synStatement">,</span> <span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span><span class="synStatement">,</span>
+<span class="synConstant">false</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="オブジェクト.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">オブジェクト</span></a><a href="乱数の発生.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">乱数の発生</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

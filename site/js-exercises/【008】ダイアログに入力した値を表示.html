@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【008】ダイアログに入力した値を表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【008】ダイアログに入力した値を表示</span>
+  </div>
+  <div class="article-head">
+    <h1>【008】ダイアログに入力した値を表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">ダイアログボックス</span>
+      <span class="date">2026/01/08</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="008ダイアログに入力した値を表示">【008】ダイアログに入力した値を表示</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227085321.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptのprompt()について解説して</p>
+
+    </blockquote>
+
+<ul>
+<li>「window.prompt()」 は、ユーザーにテキストを入力するように促すダイアログをオプションのメッセージと共に表示し、ユーザーがテキストを送信するかダイアログをキャンセルするまで待機するようにブラウザーに指示します</li>
+<li>一般的には「window.」は、省略されます</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="-prompt-とは">🧩 prompt() とは？</h4>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">prompt</span><span class="synSpecial">(</span>message<span class="synStatement">,</span> default<span class="synSpecial">)</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>引数</th>
+    <th>説明</th>
+    </tr>
+    <tr>
+    <td> message </td>
+    <td> ダイアログに表示するメッセージ       </td>
+    </tr>
+    <tr>
+    <td> default </td>
+    <td> 入力欄に最初から表示される初期値（省略可） </td>
+    </tr>
+</tbody></table><p></p><h6 id="戻り値">戻り値</h6><p></p>
+
+<ul>
+<li>入力された文字列（string）</li>
+<li>キャンセルが押された場合 → null</li>
+</ul>
+<div class="section">
+    <h5 id="-基本例">📌 基本例</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> name <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'あなたの名前を入力してください'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>name<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>👉 ユーザーが「太郎」と入力 → name は "太郎"</p>
+
+</div>
+<div class="section">
+    <h5 id="-初期値つきの例">✏ 初期値つきの例</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> age <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'年齢を入力してください'</span><span class="synStatement">,</span> <span class="synConstant">'20'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>→ 入力欄に最初から「20」が表示されます。</p>
+
+</div>
+<div class="section">
+    <h5 id="-キャンセル時の挙動">❌ キャンセル時の挙動</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> result <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'何か入力してください'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>result <span class="synStatement">===</span> <span class="synConstant">null</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'キャンセルされました'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'入力:'</span><span class="synStatement">,</span> result<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-注意点重要">⚠ 注意点（重要）</h4>
+    
+<div class="section">
+    <h5 id="-常に-文字列-として返る">① 常に 文字列 として返る</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'数字を入力'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synStatement">typeof</span> num<span class="synSpecial">)</span><span class="synStatement">;</span>  <span class="synComment">// string</span>
+</pre><p>→ 数値として使う場合は 変換が必要</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'数字を入力'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-UIが古く実務ではほぼ使われない">② UIが古く、実務ではほぼ使われない</h5>
+    
+<ul>
+<li>デザインのカスタマイズ不可</li>
+<li>モバイルでは使いづらい</li>
+<li>ユーザー体験が悪い</li>
+</ul><p>👉 実務では HTMLフォーム + JavaScript が主流</p>
+
+</div>
+<div class="section">
+    <h5 id="-alert--confirm-との違い">🆚 alert / confirm との違い</h5>
+    
+<table>
+    <tbody><tr>
+    <th>関数</th>
+    <th>役割</th>
+    <th>戻り値 </th>
+    </tr>
+    <tr>
+    <td> alert()   </td>
+    <td> メッセージ表示    </td>
+    <td> なし           </td>
+    </tr>
+    <tr>
+    <td> confirm() </td>
+    <td> OK / キャンセル </td>
+    <td> true / false </td>
+    </tr>
+    <tr>
+    <td> prompt()  </td>
+    <td> 入力         </td>
+    <td> 文字列 / null   </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="-実践サンプル">🎯 実践サンプル</h4>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> a <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'1つ目の数字'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> b <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'2つ目の数字'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synStatement">alert</span><span class="synSpecial">(</span><span class="synConstant">`合計は (</span><span class="synSpecial">${</span>a<span class="synSpecial">}</span><span class="synConstant"> + </span><span class="synSpecial">${</span>b<span class="synSpecial">}</span><span class="synConstant">) です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<div class="section">
+    <h5 id="-まとめ">🧠 まとめ</h5>
+    
+<ul>
+<li>prompt() は 入力用のポップアップ</li>
+<li>戻り値は文字列</li>
+<li>学習用には便利、実務では非推奨</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題">問題</h5>
+    
+<ul>
+<li>現在の西暦を入力して表示</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20250420035240.jpg" width="400" height="177" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20250420035511.jpg" width="400" height="132" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【007】確認結果をダイアログに表示.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【007】確認結果をダイアログに表示</span></a><a href="【009】値を四捨五入した結果を表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【009】値を四捨五入した結果を表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

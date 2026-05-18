@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Fonts 利用 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>Google Fonts 利用</span>
+  </div>
+  <div class="article-head">
+    <h1>Google Fonts 利用</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/21</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="Google-Fonts-利用">Google Fonts 利用</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260316015031.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>Google Fontsを利用する事例を作って</p>
+
+    </blockquote>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Ffonts.google.com%2F%3Flang%3Dja_Jpan" title="Browse Fonts - Google Fonts" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://fonts.google.com/?lang=ja_Jpan">fonts.google.com</a></cite><br>
+</p>
+
+<div class="section">
+    <h5 id="Google-Fonts-からコードを取得">Google Fonts からコードを取得</h5>
+    
+<ol>
+<li>Google Fonts にアクセス</li>
+<li>フォントを選択</li>
+<li>表示された <link> をコピー</li>
+</ol>
+</div>
+<div class="section">
+    <h5 id="Google-Fontsの設定ポイント">Google Fontsの設定ポイント</h5>
+    <p></p><h6 id="-CSSで指定する">① CSSで指定する</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">  font-family: <span class="synConstant">'Noto Serif JP'</span><span class="synSpecial">,</span> serif;
+</pre><p></p><h6 id="-複数フォントを指定できる">② 複数フォントを指定できる</h6><p></p>
+
+<ul>
+<li>欧文→日本語→汎用 の順に記述</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink="">  font-family: <span class="synConstant">'Playfair Display'</span><span class="synSpecial">,</span> <span class="synConstant">'Noto Serif JP'</span><span class="synSpecial">,</span> serif;
+</pre>
+</div>
+<div class="section">
+    <h5 id="設定例">設定例</h5>
+    <p></p><h6 id="LanguageJapaneseを選択">Language（Japanese）を選択</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260316015219.png" width="500" height="376" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="Noto---Serif-明朝体を選択">Noto - Serif （明朝体）を選択</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260316015522.png" width="500" height="186" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="Embed-Code-をコピー">Embed Code をコピー</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260316015745.png" width="500" height="482" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260316022602.png" width="680" height="202" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- Google Fonts --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"preconnect"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://fonts.googleapis.com"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"preconnect"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://fonts.gstatic.com"</span><span class="synIdentifier"> </span><span class="synType">crossorigin</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&amp;family=Noto+Serif+JP:wght@200..900&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- Original CSS --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>心地よいカフェ時間<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>自然光が差し込むカフェで、
+  ゆったりとした時間を楽しみませんか。
+  香り高いコーヒーと焼きたてのスイーツが
+  あなたをお待ちしています。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#f5f5f5</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">'Noto Sans JP'</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* ----------------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">---------------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">800px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">50px</span> <span class="synConstant">auto</span>;
+  <span class="synType">background</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">padding</span>: <span class="synConstant">40px</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">h1</span><span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">30px</span>;
+    <span class="synType">font-size</span>:<span class="synConstant">32px</span>;
+    <span class="synType">font-family</span>: <span class="synConstant">'Playfair Display'</span><span class="synSpecial">,</span> <span class="synConstant">'Noto Serif JP'</span><span class="synSpecial">,</span> <span class="synConstant">serif</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">p</span><span class="synIdentifier">{</span>
+    <span class="synType">line-height</span>:<span class="synConstant">1.8</span>;
+  <span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="事例">事例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260316025217.png" width="680" height="322" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="HTML-1">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>Bloom Café<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>自然光と花に包まれたカフェ<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS-1">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">body</span><span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>:<span class="synConstant">'Noto Sans JP'</span><span class="synSpecial">,</span><span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.header{</span>
+  <span class="synType">text-align</span>:<span class="synConstant">center</span>;
+  <span class="synType">padding</span>: <span class="synConstant">300px</span> <span class="synConstant">20px</span>;
+  <span class="synType">background-image</span>:<span class="synIdentifier">url(</span><span class="synConstant">"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"</span><span class="synIdentifier">)</span>;
+  <span class="synType">background-size</span>:<span class="synConstant">cover</span>;
+  <span class="synType">background-position</span>:<span class="synConstant">center</span>;
+  <span class="synType">background-repeat</span>:<span class="synConstant">no-repeat</span>;
+  <span class="synType">color</span>:<span class="synConstant">#fff</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synStatement">h1</span><span class="synIdentifier">{</span>
+    <span class="synType">font-family</span>:<span class="synConstant">'Cormorant Garamond'</span><span class="synSpecial">,</span><span class="synConstant">serif</span>;
+    <span class="synType">font-size</span>:<span class="synConstant">68px</span>;
+    <span class="synType">letter-spacing</span>:<span class="synConstant">3px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synStatement">p</span><span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>:<span class="synConstant">18px</span>;
+  <span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="分割レイアウト型（最近多い）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">分割レイアウト型（最近多い）</span></a><a href="position を設定.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">position を設定</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

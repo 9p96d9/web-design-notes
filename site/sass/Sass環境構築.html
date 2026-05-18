@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sass環境構築 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Sass入門</a>
+    <span class="sep">›</span>
+    <span>Sass環境構築</span>
+  </div>
+  <div class="article-head">
+    <h1>Sass環境構築</h1>
+    <div class="meta">
+      <span class="tag" style="background:#fdf2f8;color:#cc6699">環境構築</span>
+      <span class="date">2026/04/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+  <h4 id="dart-sass">Dart Sass とは</h4>
+  <p>Sassの実装にはいくつか種類がありますが、現在の公式・推奨は <strong>Dart Sass</strong> です。</p>
+  <ul>
+    <li>Node.jsがあれば <code>npm</code> で簡単にインストールできる</li>
+    <li><code>npx sass</code> を使えばインストールなしでも試せる</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h4 id="インストール">インストール方法</h4>
+
+  <h5 id="npm-install">npm でグローバルインストール（推奨）</h5>
+  <pre class="code" data-lang="bash"># Node.jsがある場合（npm）
+npm install -g sass
+
+# インストール確認
+sass --version
+# → 1.xx.x compiled with dart2js x.x.x</pre>
+
+  <h5 id="npx">npxで直接使う（インストール不要）</h5>
+  <pre class="code" data-lang="bash"># インストールなしで試したいとき
+npx sass --version</pre>
+  <p>学習段階では <code>npx</code> でも十分です。チームで使うときはグローバルインストールかプロジェクトへの追加が推奨されます。</p>
+</div>
+
+<div class="section">
+  <h4 id="コンパイルコマンド">SCSSをCSSに変換するコマンド</h4>
+
+  <h5 id="one-shot">1回だけ変換</h5>
+  <pre class="code" data-lang="bash">sass scss/style.scss css/style.css
+#     ↑ 入力ファイル   ↑ 出力ファイル</pre>
+
+  <h5 id="watch">ファイルを監視して自動変換（--watch）</h5>
+  <pre class="code" data-lang="bash"># ファイル1つを監視
+sass --watch scss/style.scss:css/style.css
+
+# フォルダごと監視（scss/ 内の変更を css/ に自動出力）
+sass --watch scss/:css/</pre>
+  <p><code>--watch</code> オプションをつけると、SCSSファイルを保存するたびに自動でコンパイルされます。ファイルを更新するたびにコマンドを打つ必要がなくなります。</p>
+
+  <h5 id="no-source-map">ソースマップを生成しない</h5>
+  <pre class="code" data-lang="bash">sass --no-source-map scss/style.scss css/style.css</pre>
+  <p>ソースマップの詳細は<a href="ソースマップとは.html">ソースマップとは</a>を参照してください。</p>
+</div>
+
+<div class="section">
+  <h4 id="実際の手順">実際の作業手順（Step 1の例）</h4>
+  <pre class="code" data-lang="bash"># 1. プロジェクトフォルダに移動
+cd step1-variables
+
+# 2. フォルダ構成を確認
+ls scss/
+# → style.scss
+
+# 3. 監視開始
+sass --watch scss/style.scss:css/style.css
+
+# ターミナルに以下が表示されれば成功
+# → Sass is watching for changes. Press Ctrl-C to stop.
+
+# 4. scss/style.scss を編集して保存すると自動でコンパイルされる
+# → Compiled scss/style.scss to css/style.css.</pre>
+</div>
+
+<div class="section">
+  <h4 id="フォルダ構成">推奨フォルダ構成</h4>
+  <pre class="code" data-lang="text">project/
+├── index.html
+├── css/
+│   ├── style.css       ← sass が自動生成（手動編集しない）
+│   └── style.css.map   ← ソースマップ（自動生成）
+└── scss/
+    ├── style.scss      ← メインファイル（@use のみ書く）
+    ├── _variables.scss
+    ├── _mixin.scss
+    ├── _base.scss
+    └── _header.scss</pre>
+  <ul>
+    <li><code>css/style.css</code> は自動生成なので、<strong>直接編集しない</strong></li>
+    <li>編集するのは常に <code>scss/</code> 内のファイル</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h4 id="vscode-拡張機能">VS Code 拡張機能を使う方法</h4>
+  <p>コマンドラインを使わず、VS Codeの拡張機能でコンパイルする方法もあります。</p>
+  <table>
+    <tbody>
+      <tr><th>拡張機能名</th><th>特徴</th></tr>
+      <tr><td>Live Sass Compiler</td><td>保存時に自動コンパイル。設定が簡単</td></tr>
+      <tr><td>Sass</td><td>SCSSのシンタックスハイライト</td></tr>
+    </tbody>
+  </table>
+  <p>VS Codeの拡張機能を使う場合は、Dart Sassのインストールは不要です（拡張機能に同梱）。</p>
+
+  <h5 id="live-sass-設定">Live Sass Compiler の設定例</h5>
+  <pre class="code" data-lang="json">// .vscode/settings.json
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",       // コンパイル後の形式（expanded: 読みやすい形）
+      "extensionName": ".css",
+      "savePath": "/css"          // CSSの出力先
+    }
+  ]
+}</pre>
+</div>
+
+  </div>
+  <nav class="article-nav">
+    <a href="Step4-ファイル分割.html" class="nav-prev">
+      <span class="nav-label">← 前の記事</span>
+      <span class="nav-title">Step 4：ファイル分割で完成形</span>
+    </a>
+    <a href="ソースマップとは.html" class="nav-next" style="text-align:right">
+      <span class="nav-label">次の記事 →</span>
+      <span class="nav-title">ソースマップとは</span>
+    </a>
+  </nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+</body>
+</html>

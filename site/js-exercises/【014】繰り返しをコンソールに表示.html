@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【014】繰り返しをコンソールに表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【014】繰り返しをコンソールに表示</span>
+  </div>
+  <div class="article-head">
+    <h1>【014】繰り返しをコンソールに表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">反復</span>
+      <span class="date">2026/01/14</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="0145回の繰り返しをコンソールに表示">【014】5回の繰り返しをコンソールに表示</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227090051.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptでfor文を使った完全未経験者向けの問題を５問作成して </p>
+
+<ul>
+<li>出力は、consoleに</li>
+</ul>
+    </blockquote>
+
+<div class="section">
+    <h5 id="基本構文超初心者向け">基本構文（超初心者向け）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span>初期値<span class="synStatement">;</span> 条件<span class="synStatement">;</span> 増減<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>表示したい内容<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><h6 id="例">例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-for文の超重要ポイントまとめ">🧠 for文の超重要ポイントまとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>やりたいこと</th>
+    <th>書き方</th>
+    </tr>
+    <tr>
+    <td> 回数くり返す </td>
+    <td> i &lt;= 回数     </td>
+    </tr>
+    <tr>
+    <td> 数を増やす  </td>
+    <td> i++         </td>
+    </tr>
+    <tr>
+    <td> 数を減らす  </td>
+    <td> i--         </td>
+    </tr>
+    <tr>
+    <td> 偶数判定   </td>
+    <td> i % 2 === 0 </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+<div class="section">
+    <h4 id="for文-練習問題超初心者向け">for文 練習問題（超初心者向け）</h4>
+    
+<div class="section">
+    <h5 id="第1問15までの数字を表示しよう">【第1問】1〜5までの数字を表示しよう</h5>
+    <p></p><h6 id="問題">問題</h6><p></p>
+
+    <blockquote>
+        <p>for文を使って、1から5までの数字を順番にconsoleに表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="出力例">出力例</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">1
+2
+3
+4
+5</pre>
+</div>
+<div class="section">
+    <h5 id="第2問110までの数字を表示しよう">【第2問】1〜10までの数字を表示しよう</h5>
+    <p></p><h6 id="問題-1">問題</h6><p></p>
+
+    <blockquote>
+        <p>for文を使って、1から10までの数字をconsoleに表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="出力例-1">出力例</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre>
+</div>
+<div class="section">
+    <h5 id="第3問04までの数字を表示しよう">【第3問】0〜4までの数字を表示しよう</h5>
+    <p></p><h6 id="問題-2">問題</h6><p></p>
+
+    <blockquote>
+        <p>for文を使って、0から4までをconsoleに表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="出力例-2">出力例</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">1
+2
+3
+4
+5</pre>
+</div>
+<div class="section">
+    <h5 id="第4問5回こんにちはと表示しよう">【第4問】5回「こんにちは」と表示しよう</h5>
+    <p></p><h6 id="問題-3">問題</h6><p></p>
+
+    <blockquote>
+        <p>for文を使って、「こんにちは」 を 5回 consoleに表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="出力例-3">出力例</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">こんにちは
+こんにちは
+こんにちは
+こんにちは
+こんにちは</pre>
+</div>
+<div class="section">
+    <h5 id="第5問偶数だけ表示しよう">【第5問】偶数だけ表示しよう</h5>
+    <p></p><h6 id="問題-4">問題</h6><p></p>
+
+    <blockquote>
+        <p>for文を使って、1〜10の中の偶数だけをconsoleに表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="出力例-4">出力例</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">2
+4
+6
+8
+10</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="for文-練習問題解答例">for文 練習問題【解答例】</h4>
+    
+<div class="section">
+    <h5 id="第1問15まで表示">【第1問】1〜5まで表示</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="第2問110まで表示">【第2問】1〜10まで表示</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">10</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="第3問04まで表示">【第3問】0〜4まで表示</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">4</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="第4問こんにちはを5回表示">【第4問】「こんにちは」を5回表示</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"こんにちは"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="第5問110の偶数だけ表示">【第5問】1〜10の偶数だけ表示</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">10</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>i <span class="synStatement">%</span> <span class="synConstant">2</span> <span class="synStatement">===</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+    <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+  <span class="synSpecial">}</span>
+<span class="synSpecial">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-超かんたん解説">📝 超かんたん解説</h4>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>部分</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> let i = 1 </td>
+    <td> iを1からスタート   </td>
+    </tr>
+    <tr>
+    <td> i &lt;= 5    </td>
+    <td> iが5以下の間くり返す </td>
+    </tr>
+    <tr>
+    <td> i++       </td>
+    <td> 1回ごとに1ずつ増える </td>
+    </tr>
+</tbody></table><p></p><h6 id="注意">注意</h6><p></p>
+
+    <blockquote>
+        <p>配列の値をすべて取得して繰り返す場合は、<br>
+i = 0 になります。</p>
+
+    </blockquote>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【013】switch文で条件分岐.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【013】switch文で条件分岐</span></a><a href="【015】配列の値を取得してコンソールに表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【015】配列の値を取得してコンソールに表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

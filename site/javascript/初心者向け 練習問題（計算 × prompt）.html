@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初心者向け 練習問題（計算 × prompt） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>初心者向け 練習問題（計算 × prompt）</span>
+  </div>
+  <div class="article-head">
+    <h1>初心者向け 練習問題（計算 × prompt）</h1>
+    <div class="meta">
+      
+      <span class="date">2026/01/14</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="初心者向け-練習問題計算--prompt">初心者向け 練習問題（計算 × prompt）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260211081009.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScript初心者用の問題と解答例・解説を作成して<br>
+ -promptで入力された数字を使った計算問題を５問<br>
+ -出力は、consoleに</p>
+
+    </blockquote>
+
+<ul>
+<li>romptで入力された数字を使った計算問題</li>
+<li>すべて console.logで出力する形式にしています</li>
+</ul>
+<div class="section">
+    <h5 id="問題-12つの数字の足し算">問題 1：2つの数字の足し算</h5>
+    <p></p><h6 id="問題">問題</h6><p></p>
+
+<ul>
+<li>promptで2つの数字を入力し、その合計をconsoleに表示しなさい。</li>
+</ul><p></p><h6 id="解答例">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> a <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'1つ目の数字を入力してください'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">let</span> b <span class="synStatement">=</span> <span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'2つ目の数字を入力してください'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> result <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span>a<span class="synSpecial">)</span> <span class="synStatement">+</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span>b<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"合計は："</span> <span class="synStatement">+</span> result<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="解説">解説</h6><p></p>
+
+<ul>
+<li>prompt() → 文字列で入力される</li>
+<li>Number() → 数値に変換</li>
+<li>文字列のまま足すと '2' + '3' = '23' になるので注意！</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題-2引き算大きい数--小さい数">問題 2：引き算（大きい数 − 小さい数）</h5>
+    <p></p><h6 id="問題-1">問題</h6><p></p>
+
+<ul>
+<li>2つの数字を入力し、「大きい数 − 小さい数」の結果を表示しなさい。</li>
+</ul><p></p><h6 id="解答例-1">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> a <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'1つ目の数字'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> b <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'2つ目の数字'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> result<span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>a <span class="synStatement">&gt;</span> b<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  result <span class="synStatement">=</span> a <span class="synStatement">-</span> b<span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  result <span class="synStatement">=</span> b <span class="synStatement">-</span> a<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'引き算の結果：'</span> <span class="synStatement">+</span> result<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="解説-1">解説</h6><p></p>
+
+<ul>
+<li>if文で大小比較</li>
+<li>必ず正の数になる計算ロジック</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題-3掛け算">問題 3：掛け算</h5>
+    <p></p><h6 id="問題-2">問題</h6><p></p>
+
+<ul>
+<li>2つの数字を入力し、その掛け算結果を表示しなさい。</li>
+</ul><p></p><h6 id="解答例-2">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> a <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'1つ目の数字'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> b <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'2つ目の数字'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> result <span class="synStatement">=</span> a <span class="synStatement">*</span> b<span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'掛け算の結果：'</span> <span class="synStatement">+</span> result<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="解説-2">解説</h6><p></p>
+
+<ul>
+<li>* が掛け算演算子</li>
+<li>Number変換しないと計算バグの原因になる</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題-4割り算">問題 4：割り算</h5>
+    <p></p><h6 id="問題-3">問題</h6><p></p>
+
+<ul>
+<li>2つの数字を入力し、「1つ目 ÷ 2つ目」の結果を表示しなさい。</li>
+</ul><p></p><h6 id="解答例-3">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> a <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'割られる数'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> b <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'割る数'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> result <span class="synStatement">=</span> a <span class="synStatement">/</span> b<span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'割り算の結果：'</span> <span class="synStatement">+</span> result<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="解説-3">解説</h6><p></p>
+
+<ul>
+<li>/ が割り算</li>
+<li>b が 0 のときはエラーになる（発展問題で例外処理が必要）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="問題-5平均値の計算">問題 5：平均値の計算</h5>
+    <p></p><h6 id="問題-4">問題</h6><p></p>
+
+<ul>
+<li>3つの数字を入力して、平均値を表示しなさい。</li>
+</ul><p></p><h6 id="解答例-4">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> a <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'1つ目の数字'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> b <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'2つ目の数字'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> c <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'3つ目の数字'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> average <span class="synStatement">=</span> <span class="synSpecial">(</span>a <span class="synStatement">+</span> b <span class="synStatement">+</span> c<span class="synSpecial">)</span> <span class="synStatement">/</span> <span class="synConstant">3</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'平均値は：'</span> <span class="synStatement">+</span> average<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="解説-4">解説</h6><p></p>
+
+<ul>
+<li>合計 ÷ 個数 = 平均</li>
+<li>数式をそのままコードにする感覚を身につける</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="-学習ポイントまとめ">🎯 学習ポイントまとめ</h4>
+    
+<table>
+    <tbody><tr>
+    <th>概念</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td>prompt()</td>
+    <td>ユーザー入力</td>
+    </tr>
+    <tr>
+    <td>Number()</td>
+    <td>数値変換</td>
+    </tr>
+    <tr>
+    <td>console.log()</td>
+    <td>コンソール出力</td>
+    </tr>
+    <tr>
+    <td> + - * / </td>
+    <td>四則演算</td>
+    </tr>
+    <tr>
+    <td>if</td>
+    <td>条件分岐</td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h4 id="-レベルアップ練習おまけ">🔰 レベルアップ練習（おまけ）</h4>
+    <p>次のステップとしておすすめ：</p>
+
+<ul>
+<li>偶数・奇数判定</li>
+<li>消費税計算</li>
+<li>BMI計算</li>
+<li>合計金額＋割引率計算</li>
+<li>成績判定（if文）</li>
+</ul>
+<div class="section">
+    <h5 id="偶数奇数判定">偶数・奇数判定</h5>
+    <p></p><h6 id="問題-5">問題</h6><p></p>
+
+<ul>
+<li>数字を1つ入力し、偶数か奇数かを判定して表示しなさい。</li>
+</ul><p></p><h6 id="解答例-5">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> num <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'数字を入力してください'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>num <span class="synStatement">%</span> <span class="synConstant">2</span> <span class="synStatement">===</span> <span class="synConstant">0</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'偶数です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'奇数です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><h6 id="解説-5">解説</h6><p></p>
+
+<ul>
+<li>% → 余りを求める演算子</li>
+<li>偶数 → 2で割った余りが0</li>
+<li>=== → 厳密な比較（型も一致）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="消費税計算10">消費税計算（10%）</h5>
+    <p></p><h6 id="問題-6">問題</h6><p></p>
+
+<ul>
+<li>商品の税抜価格を入力し、消費税込価格（10%）を表示しなさい。</li>
+</ul><p></p><h6 id="解答例-6">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> price <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'税抜価格を入力してください'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> taxRate <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synSpecial">.</span><span class="synConstant">1</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> total <span class="synStatement">=</span> price <span class="synStatement">+</span> <span class="synSpecial">(</span>price <span class="synStatement">*</span> taxRate<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'税込価格：'</span> <span class="synStatement">+</span> <span class="synType">Math</span><span class="synStatement">.</span><span class="synIdentifier">floor</span><span class="synSpecial">(</span>total<span class="synSpecial">)</span> <span class="synStatement">+</span> <span class="synConstant">'円'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="解説-6">解説</h6><p></p>
+
+<ul>
+<li>消費税10% → ×1.1</li>
+<li>実務では Math.floor() で端数処理を行うことも多い</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="BMI計算">BMI計算</h5>
+    <p></p><h6 id="問題-7">問題</h6><p></p>
+
+<ul>
+<li>身長(cm)と体重(kg)を入力し、BMIを計算して表示しなさい。</li>
+<li>BMI = 体重 ÷ (身長(m) × 身長(m))</li>
+</ul><p></p><h6 id="解答例-7">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> height <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'身長(cm)を入力'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> weight <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'体重(kg)を入力'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+height <span class="synStatement">=</span> height <span class="synStatement">/</span> <span class="synConstant">100</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> bmi <span class="synStatement">=</span> weight <span class="synStatement">/</span> <span class="synSpecial">(</span>height <span class="synStatement">*</span> height<span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'BMI：'</span> <span class="synStatement">+</span> bmi<span class="synStatement">.</span><span class="synIdentifier">toFixed</span><span class="synSpecial">(</span><span class="synConstant">2</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="解説-7">解説</h6>cm → m に直すため ÷100<p></p>
+
+<ul>
+<li>計算式をそのままコード化</li>
+<li>小数点2桁まで表示</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="合計金額割引率計算">合計金額＋割引率計算</h5>
+    <p></p><h6 id="問題-8">問題</h6><p></p>
+
+<ul>
+<li>合計金額と割引率(%)を入力し、割引後の金額を表示しなさい。</li>
+</ul><p></p><h6 id="解答例-8">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> total <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'合計金額'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> discount <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'割引率(%)'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> result <span class="synStatement">=</span> total <span class="synStatement">*</span> <span class="synSpecial">(</span><span class="synConstant">1</span> <span class="synStatement">-</span> discount <span class="synStatement">/</span> <span class="synConstant">100</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'割引後金額：'</span> <span class="synStatement">+</span> result <span class="synStatement">+</span> <span class="synConstant">'円'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="解説-8">解説</h6><p></p>
+
+<ul>
+<li>割引率を 小数に変換 → /100</li>
+<li>10%引き → 1 - 0.1 = 0.9</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="成績判定if文">成績判定（if文）</h5>
+    <p></p><h6 id="問題-9">問題</h6><p></p>
+
+<ul>
+<li>点数を入力し、以下の条件で成績を表示しなさい。</li>
+</ul>
+<table>
+    <tbody><tr>
+    <th>点数</th>
+    <th>評価</th>
+    </tr>
+    <tr>
+    <td> 90以上 </td>
+    <td> A  </td>
+    </tr>
+    <tr>
+    <td> 80以上 </td>
+    <td> B  </td>
+    </tr>
+    <tr>
+    <td> 70以上 </td>
+    <td> C  </td>
+    </tr>
+    <tr>
+    <td> 60以上 </td>
+    <td> D  </td>
+    </tr>
+    <tr>
+    <td> 60未満 </td>
+    <td> F  </td>
+    </tr>
+</tbody></table><p></p><h6 id="解答例-9">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> score <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">'点数を入力'</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>score <span class="synStatement">&gt;=</span> <span class="synConstant">90</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'評価：A'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>score <span class="synStatement">&gt;=</span> <span class="synConstant">80</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'評価：B'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>score <span class="synStatement">&gt;=</span> <span class="synConstant">70</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'評価：C'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synStatement">if</span> <span class="synSpecial">(</span>score <span class="synStatement">&gt;=</span> <span class="synConstant">60</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'評価：D'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'評価：F'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><h6 id="解説-9">解説</h6><p></p>
+
+<ul>
+<li>上から順に判定するのが重要</li>
+<li>大きい条件から書くのが</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="総合練習発展">総合練習（発展）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> price <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"商品価格"</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> qty <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"個数"</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+<span class="synType">let</span> discount <span class="synStatement">=</span> <span class="synIdentifier">Number</span><span class="synSpecial">(</span><span class="synIdentifier">prompt</span><span class="synSpecial">(</span><span class="synConstant">"割引率"</span><span class="synSpecial">))</span><span class="synStatement">;</span>
+
+<span class="synType">let</span> total <span class="synStatement">=</span> price <span class="synStatement">*</span> qty<span class="synStatement">;</span>
+<span class="synType">let</span> result <span class="synStatement">=</span> total <span class="synStatement">*</span> <span class="synSpecial">(</span><span class="synConstant">1</span> <span class="synStatement">-</span> discount <span class="synStatement">/</span> <span class="synConstant">100</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"支払金額："</span> <span class="synStatement">+</span> result <span class="synStatement">+</span> <span class="synConstant">"円"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>👉 実務でもよく使うロジック！<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="-この問題セットで身につく力">🧠 この問題セットで身につく力</h5>
+    
+<table>
+    <tbody><tr>
+    <th>スキル</th>
+    <th>内容</th>
+    </tr>
+    <tr>
+    <td> 計算処理 </td>
+    <td> 四則演算</td>
+    </tr>
+    <tr>
+    <td> 条件分岐 </td>
+    <td> if / else if </td>
+    </tr>
+    <tr>
+    <td> 数値変換 </td>
+    <td> Number() </td>
+    </tr>
+    <tr>
+    <td> 入出力  </td>
+    <td> prompt / console.log </td>
+    </tr>
+    <tr>
+    <td> 実務感覚 </td>
+    <td> 金額計算・成績処理 </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="ダイアログボックスを利用する.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">ダイアログボックスを利用する</span></a><a href="反復（ループ）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">反復（ループ）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

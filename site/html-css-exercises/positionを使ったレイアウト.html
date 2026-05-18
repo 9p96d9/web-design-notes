@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>positionを使ったレイアウト - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>positionを使ったレイアウト</span>
+  </div>
+  <div class="article-head">
+    <h1>positionを使ったレイアウト</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング演習</span>
+      <span class="date">2025/12/22</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="positionを使ったレイアウト">positionを使ったレイアウト</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260315220457.jpg" width="680" height="691" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<div class="section">
+    <h5 id="テキスト">テキスト</h5>
+    <pre class="code" data-lang="" data-unlink="">簡単！肉じゃがの作り方
+
+煮崩れしにくい肉じゃがレシピです。
+
+完成した肉じゃがの写真
+
+材料
+
+牛肉
+じゃがいも
+玉ねぎ
+にんじん
+糸こんにゃく
+調味料
+水
+
+手順
+
+具材を食べやすい大きさにカットします。
+カットした具材を鍋に入れて炒めます。
+調味料と水を鍋に入れ、煮込みます。
+じゃがいもに味がしみたら完成です。
+ポイント：じゃがいもは煮物向きなメークインを使います
+
+キットのご購入はこちら
+
+レシピのお問い合わせはこちら</pre>
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>簡単！肉じゃがの作り方<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>簡単！肉じゃがの作り方<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>煮崩れしにくい肉じゃがレシピです。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"mainvisual"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/01.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"完成した肉じゃがの写真"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span> <span class="synComment">&lt;!-- /.mainvisual --&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"wrapper"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>材料<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>牛肉<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>じゃがいも<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>玉ねぎ<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>にんじん<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>糸こんにゃく<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>調味料<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>水<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">ul</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>手順<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">ol</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>具材を食べやすい大きさにカットします。<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>カットした具材を鍋に入れて炒めます。<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>調味料と水を鍋に入れ、煮込みます。<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>じゃがいもに味がしみたら完成です。<span class="synIdentifier">&lt;/</span><span class="synStatement">li</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;/</span><span class="synStatement">ol</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"point"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">b</span><span class="synIdentifier">&gt;</span>ポイント<span class="synIdentifier">&lt;/</span><span class="synStatement">b</span><span class="synIdentifier">&gt;</span>：じゃがいもは煮物向きなメークインを使います<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.wrapper --&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">キットのご購入はこちら</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">address</span><span class="synIdentifier">&gt;</span>レシピのお問い合わせは<span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">こちら</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">address</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/*--------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">--------------------------------*/</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/*--------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">--------------------------------*/</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synConstant">#f8d8bf</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/*--------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">--------------------------------*/</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">800px</span>;
+  <span class="synType">max-width</span>: <span class="synConstant">90%</span>;
+  <span class="synType">margin</span>: <span class="synConstant">20px</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.wrapper</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>: <span class="synConstant">35%</span> <span class="synConstant">60%</span>;
+  gap: <span class="synConstant">5%</span>;
+  <span class="synType">margin-bottom</span>: <span class="synConstant">60px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span> <span class="synConstant">50px</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/*--------------------------------</span>
+<span class="synComment">  haeder</span>
+<span class="synComment">--------------------------------*/</span>
+<span class="synStatement">header</span> <span class="synIdentifier">{</span>
+  <span class="synType">background</span>: <span class="synConstant">#f83</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">padding</span>: <span class="synConstant">12px</span> <span class="synConstant">16px</span>;
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: <span class="synConstant">40px</span>;
+  <span class="synType">left</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/*--------------------------------</span>
+<span class="synComment">  main</span>
+<span class="synComment">--------------------------------*/</span>
+<span class="synIdentifier">.mainvisual</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">40px</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">section</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">dotted</span> <span class="synConstant">#999</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">#f83</span>;
+  <span class="synType">margin-bottom</span>: <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding-left</span>: <span class="synConstant">20px</span>;
+  <span class="synType">list-style</span>: <span class="synConstant">disc</span>;
+<span class="synIdentifier">}</span>
+  <span class="synStatement">ol</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding-left</span>: <span class="synConstant">20px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synStatement">li</span> <span class="synIdentifier">{</span>
+    <span class="synType">line-height</span>: <span class="synConstant">1.6</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.point</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-top</span>: <span class="synConstant">10px</span>;
+    <span class="synType">padding-left</span>: <span class="synConstant">5em</span>;
+    <span class="synType">text-indent</span>: <span class="synConstant">-5em</span>;
+    <span class="synType">line-height</span>: <span class="synConstant">1.4</span>;
+  <span class="synIdentifier">}</span>
+
+<span class="synComment">/* btn */</span>
+<span class="synStatement">p</span><span class="synIdentifier">.btn</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">p</span><span class="synIdentifier">.btn</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span> <span class="synConstant">40px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">40px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#f83</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">8px</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">18px</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/*--------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">--------------------------------*/</span>
+<span class="synStatement">address</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="分割レイアウト型.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">分割レイアウト型</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

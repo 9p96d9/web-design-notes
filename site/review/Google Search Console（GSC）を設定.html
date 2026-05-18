@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Search Console（GSC）を設定 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>Google Search Console（GSC）を設定</span>
+  </div>
+  <div class="article-head">
+    <h1>Google Search Console（GSC）を設定</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">GoogleSearchConsole</span>
+      <span class="date">2026/01/11</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="Google-Search-ConsoleGSCを設定">Google Search Console（GSC）を設定</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20260218222651.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>Google Search Consoleの設定をするときの注意点</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="-初期設定時の注意点最重要">① 初期設定時の注意点（最重要）</h4>
+    
+<div class="section">
+    <h5 id="1-プロパティの種類はドメイン推奨">1. プロパティの種類は「ドメイン」推奨</h5>
+    <p>ドメインプロパティ：example.com 配下の</p>
+
+    <blockquote>
+        <p>http / https<br>
+www / non-ww</p>
+
+    </blockquote>
+
+<ul>
+<li>すべてを一括管理できる → 推奨</li>
+<li>URLプレフィックス：個別URL単位で管理 → 初心者は混乱しやすい</li>
+</ul><p>👉 原則：ドメインプロパティを選択</p>
+
+</div>
+<div class="section">
+    <h5 id="2-所有権確認はDNS設定が最も安定">2. 所有権確認は「DNS設定」が最も安定</h5>
+    <p>DNSレコードでの認証が恒久的・トラブルが少ない<br>
+HTMLファイル認証やmetaタグ認証は、</p>
+
+<ul>
+<li>サーバー移転</li>
+<li>テーマ変更</li>
+</ul><p>で 認証が外れるリスクあり</p>
+
+</div>
+<div class="section">
+    <h5 id="3-正規URLcanonicalと一致させる">3. 正規URL（canonical）と一致させる</h5>
+    
+<ul>
+<li>Search Console登録URL</li>
+<li>サイトの正規URL（canonical / 内部リンク）</li>
+<li>これらが 完全一致していないと評価が分散</li>
+</ul><p>【例】</p>
+
+    <blockquote>
+        <p><a href="https://example.com">https://example.com</a><br>
+<a href="https://www.example.com">https://www.example.com</a></p>
+
+    </blockquote>
+<p>→ どちらかに統一 + リダイレクト設定<br>
+<br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-設定後すぐやるべき重要設定">② 設定後すぐやるべき重要設定</h4>
+    
+<div class="section">
+    <h5 id="1-XMLサイトマップの送信">1. XMLサイトマップの送信</h5>
+    <p>【送信先】</p>
+
+    <blockquote>
+        <p>インデックス作成 → サイトマップ</p>
+
+    </blockquote>
+<p>【例】</p>
+
+    <blockquote>
+        <p><a href="https://example.com/sitemap.xml">https://example.com/sitemap.xml</a></p>
+
+    </blockquote>
+<p>【効果】</p>
+
+<ul>
+<li>クロール促進</li>
+<li>インデックス漏れ防止</li>
+<li>新規ページの早期認識</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="2-インデックス登録状況の確認">2. インデックス登録状況の確認</h5>
+    
+    <blockquote>
+        <p>インデックス作成 → ページ</p>
+
+    </blockquote>
+<p></p><h6 id="チェック項目">チェック項目</h6><p></p>
+
+<ul>
+<li>「登録済み」ページ数</li>
+<li>「クロール済み - 未登録」</li>
+<li>「検出 - インデックス未登録」</li>
+</ul><p>👉 低品質ページ・重複ページ・noindex誤設定がよく原因</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-技術面の注意点制作運用現場で重要">③ 技術面の注意点（制作・運用現場で重要）</h4>
+    
+<div class="section">
+    <h5 id="1-noindex--robotstxt-の誤設定">1. noindex / robots.txt の誤設定</h5>
+    <p>以下は非常に多いミス：</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"robots"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"noindex"</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code txt" data-lang="txt" data-unlink="">Disallow: /</pre><p>👉 公開後も残っていると、全ページ非表示になる<br>
+<strong>- 公開前チェック必須</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="2-モバイルユーザビリティ">2. モバイルユーザビリティ</h5>
+    <p><strong>GSCは モバイルファーストインデックス</strong></p><p></p><h6 id="チェック箇所">チェック箇所</h6><strong>エクスペリエンス → モバイルユーザビリティ</strong><p></p><p></p><h6 id="よくある問題">よくある問題</h6><p></p>
+
+<ul>
+<li>文字が小さすぎる</li>
+<li>クリック要素が近すぎる</li>
+<li>viewport未設定</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="3-Core-Web-Vitals表示速度">3. Core Web Vitals（表示速度）</h5>
+    <p><strong>エクスペリエンス → ウェブに関する主な指標</strong></p><p></p><h6 id="影響項目">影響項目</h6><p></p>
+
+<ul>
+<li>LCP（表示速度）</li>
+<li>CLS（レイアウトずれ）</li>
+<li>INP（操作遅延）</li>
+</ul><p>👉 PageSpeed Insights と併用チェック推奨</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-SEO観点での注意点運用フェーズ">④ SEO観点での注意点（運用フェーズ）</h4>
+    
+<div class="section">
+    <h5 id="1-検索パフォーマンスの正しい見方">1. 検索パフォーマンスの正しい見方</h5>
+    
+    <blockquote>
+        <p>検索結果 → 検索パフォーマンス</p>
+
+    </blockquote>
+<p></p><h6 id="見るべき指標">見るべき指標</h6><p></p>
+
+<ul>
+<li>表示回数</li>
+<li>クリック数</li>
+<li>CTR</li>
+<li>平均掲載順位</li>
+<li>順位だけで一喜一憂しない</li>
+</ul><p>→ CTR × 表示回数 を重視</p>
+
+</div>
+<div class="section">
+    <h5 id="2-クエリ--ページ分析">2. クエリ × ページ分析</h5>
+    <p>「どの検索語句で、どのページが評価されているか」<br>
+👉 <strong>リライト対象ページの特定に直結</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="3-インデックス未登録URLの精査">3. インデックス未登録URLの精査</h5>
+    <p></p><h6 id="理由例">理由例</h6>内容薄い<br>
+重複コンテンツ<br>
+パラメータ付きURL量産<br>
+ページネーション過多<p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-よくあるトラブル事例実務">⑤ よくあるトラブル事例（実務）</h4>
+    
+<table>
+    <tbody><tr>
+    <th>事例</th>
+    <th>原因</th>
+    </tr>
+    <tr>
+    <td> 全ページが検索に出ない </td>
+    <td> noindex / robots.txt / 認証未完了 </td>
+    </tr>
+    <tr>
+    <td> 急激に順位下落     </td>
+    <td> 重複増加 / 低品質大量生成               </td>
+    </tr>
+    <tr>
+    <td> インデックスされない  </td>
+    <td> クロール制限 / 内部リンク不足             </td>
+    </tr>
+    <tr>
+    <td> HTTPS後に評価下落 </td>
+    <td> リダイレクト・canonicalミス           </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h4 id="-Web制作現場向け-初期設定チェックリスト">⑥ Web制作現場向け 初期設定チェックリスト</h4>
+    <p></p><h6 id="公開時チェック用">公開時チェック用</h6><p></p>
+
+<ul>
+<li>ドメインプロパティで登録</li>
+<li>DNS認証完了</li>
+<li>XMLサイトマップ送信</li>
+<li>noindex削除確認</li>
+<li>robots.txt確認</li>
+<li>canonical設定確認</li>
+<li>301リダイレクト確認</li>
+<li>モバイル表示確認</li>
+</ul>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="OGPの作成時の注意点.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">OGPの作成時の注意点</span></a><a href="カスタムプロパティ（CSS変数）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">カスタムプロパティ（CSS変数）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

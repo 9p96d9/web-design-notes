@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>２枚の画像の１枚を下にずらした状態 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>２枚の画像の１枚を下にずらした状態</span>
+  </div>
+  <div class="article-head">
+    <h1>２枚の画像の１枚を下にずらした状態</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/27</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="２枚の画像の１枚を下にずらした状態">２枚の画像の１枚を下にずらした状態</h4>
+    <p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260320040805.jpg" width="680" height="396" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>
+
+<ul>
+<li>コンセプト例</li>
+</ul>
+    <blockquote>
+        <p>section内を画像と文字のスペースに２分割レイアウト </p>
+
+<ul>
+<li>sectionは、文字と画像の順に -コンテンツ内容は、カフェの「コンセプト」で </li>
+<li>画像は、２枚挿入で１枚は下にずらした状態で</li>
+</ul>
+    </blockquote>
+<p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260320062149.jpg" width="680" height="355" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>画像をずらしたレイアウト<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style2.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"concept"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"concept-text"</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>Concept<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>Bloom Café は、日常の喧騒から少し離れ、
+          心と体をやさしく整えるための場所です。
+          自然光が差し込む店内と、花に囲まれた空間で、
+          ゆったりとした時間をお過ごしいただけます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>厳選された食材を使った身体にやさしいメニューと、
+          丁寧に淹れたコーヒーが、あなたの一日を少しだけ特別にします。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"concept-image"</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/01.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"カフェ店内"</span><span class="synIdentifier">&gt;</span>
+          <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/02.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"カフェの様子"</span><span class="synIdentifier">&gt;</span>
+        <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">【CSS】</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  layout（共通項目）</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">960px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span> <span class="synConstant">auto</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------------------</span>
+<span class="synComment">  section</span>
+<span class="synComment">-------------------------------------------- */</span>
+<span class="synIdentifier">.concept</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+  gap: <span class="synConstant">40px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">60px</span> <span class="synConstant">60px</span> <span class="synConstant">100px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#f3f0ed</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* テキスト */</span>
+<span class="synIdentifier">.concept-text</span> <span class="synIdentifier">{</span>
+  <span class="synType">flex-basis</span>: <span class="synConstant">40%</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.concept-text</span> <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+    <span class="synType">color</span>: <span class="synConstant">#6b4f3b</span>;
+    <span class="synType">font-size</span>: <span class="synConstant">32px</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.concept-text</span> <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">16px</span>;
+    <span class="synType">color</span>: <span class="synConstant">#444</span>;
+    <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+    <span class="synType">text-align</span>: <span class="synConstant">justify</span>;
+  <span class="synIdentifier">}</span>
+
+<span class="synComment">/* 画像 */</span>
+<span class="synIdentifier">.concept-image</span> <span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">49%</span>;
+  <span class="synType">height</span>: <span class="synConstant">400px</span>;
+  <span class="synStatement">object</span>-fit: <span class="synConstant">cover</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* 2枚目をずらす */</span>
+<span class="synIdentifier">.concept-image</span> <span class="synStatement">img</span>:<span class="synIdentifier">nth-of-type(</span>2<span class="synIdentifier">)</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">translate(</span><span class="synConstant">14px</span><span class="synIdentifier">,</span><span class="synConstant"> 40px</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="画像をずらす方法">「画像をずらす」方法</h4>
+    
+<div class="section">
+    <h5 id="-transform一番おすすめ">① transform（←一番おすすめ🔥）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.concept-image</span> <span class="synStatement">img</span>:<span class="synIdentifier">nth-of-type(</span>2<span class="synIdentifier">)</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">translate(</span><span class="synConstant">14px</span><span class="synIdentifier">,</span><span class="synConstant"> 40px</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="-特徴">✔ 特徴</h6><p></p>
+
+<ul>
+<li>レイアウトを壊さない（超重要）</li>
+<li>アニメーションと相性◎</li>
+<li>hover演出も簡単</li>
+</ul><p></p><h6 id="-ポイント">✔ ポイント</h6><p></p>
+
+<ul>
+<li>transform: translate(X, Y);</li>
+<li>→ 右にX、下にYずれる</li>
+</ul><p>👉 プロはまずこれ使う</p>
+
+</div>
+<div class="section">
+    <h5 id="-position">② position</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/* 画像 */</span>
+<span class="synIdentifier">.concept-image</span> <span class="synIdentifier">{</span>
+  <span class="synType">flex</span>: <span class="synConstant">1</span>;
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.concept-image</span> <span class="synStatement">img</span> <span class="synIdentifier">{</span>
+    <span class="synType">width</span>: <span class="synConstant">48%</span>;
+    <span class="synType">height</span>: <span class="synConstant">400px</span>;
+    <span class="synStatement">object</span>-fit: <span class="synConstant">cover</span>;
+  <span class="synIdentifier">}</span>
+
+<span class="synComment">/* 2枚目をずらす */</span>
+<span class="synIdentifier">.concept-image</span> <span class="synStatement">img</span>:<span class="synIdentifier">nth-of-type(</span>2<span class="synIdentifier">)</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: <span class="synConstant">40px</span>;  <span class="synComment">/* 下にずらす */</span>
+  <span class="synType">right</span>: <span class="synConstant">0</span>;  <span class="synComment">/* 右端にずらす */</span>
+  <span class="synType">width</span>: <span class="synConstant">48%</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="-ポイント-1">✔ ポイント</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink="">  position: relative;  <span class="synComment">/* 親 */</span>
+  position: absolute;  <span class="synComment">/* 子 */</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-marginでずらす">③ marginでずらす</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.concept-image</span> <span class="synStatement">img</span>:<span class="synIdentifier">nth-of-type(</span>2<span class="synIdentifier">)</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-top</span>: <span class="synConstant">40px</span>;
+  <span class="synType">margin-left</span>: <span class="synConstant">40px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="-特徴-1">✔ 特徴</h6><p></p>
+
+<ul>
+<li>シンプルでわかりやすい</li>
+<li>初心者向け</li>
+</ul><p></p><h6 id="️-デメリット">⚠️ デメリット</h6><p></p>
+
+<ul>
+<li>他の要素も一緒に動く（レイアウトに影響あり）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-flex--align調整">④ flex + align調整</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.concept-image</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">flex-direction</span>: <span class="synConstant">column</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.concept-image</span> <span class="synStatement">img</span>:<span class="synIdentifier">nth-of-type(</span>2<span class="synIdentifier">)</span> <span class="synIdentifier">{</span>
+  <span class="synType">align-self</span>: <span class="synConstant">flex-end</span>;
+  <span class="synType">margin-top</span>: <span class="synConstant">40px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="-特徴-2">✔ 特徴</h6><p></p>
+
+<ul>
+<li>縦レイアウトで自然にズレる</li>
+<li>カードUIに向いてる</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-gridで配置ずらし">⑤ gridで配置ずらし</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.concept-image</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.concept-image</span> <span class="synStatement">img</span>:<span class="synIdentifier">nth-of-type(</span>1<span class="synIdentifier">)</span> <span class="synIdentifier">{</span>
+  <span class="synType">grid-area</span>: <span class="synConstant">1</span> / <span class="synConstant">1</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.concept-image</span> <span class="synStatement">img</span>:<span class="synIdentifier">nth-of-type(</span>2<span class="synIdentifier">)</span> <span class="synIdentifier">{</span>
+  <span class="synType">grid-area</span>: <span class="synConstant">1</span> / <span class="synConstant">1</span>;
+  <span class="synType">transform</span>: <span class="synIdentifier">translate(</span><span class="synConstant">40px</span><span class="synIdentifier">,</span><span class="synConstant"> 40px</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="-特徴-3">✔ 特徴</h6><p></p>
+
+<ul>
+<li>重ねレイアウトが超得意</li>
+<li>デザイン自由度高い</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-結局どれ使うべき">✅ 結局どれ使うべき？</h5>
+    
+<table>
+    <tbody><tr>
+    <th>方法</th>
+    <th>おすすめ度 </th>
+    <td> 理由</td>
+    </tr>
+    <tr>
+    <td> transform </td>
+    <td> ⭐⭐⭐⭐⭐ </td>
+    <td> レイアウト壊さない・最強 </td>
+    </tr>
+    <tr>
+    <td> position  </td>
+    <td> ⭐⭐⭐⭐  </td>
+    <td> 完全コントロールできる  </td>
+    </tr>
+    <tr>
+    <td> margin    </td>
+    <td> ⭐⭐    </td>
+    <td> 簡単だけど崩れやすい   </td>
+    </tr>
+    <tr>
+    <td> grid      </td>
+    <td> ⭐⭐⭐⭐  </td>
+    <td> モダンで強い       </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="左右2分割＋交互レイアウト.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">左右2分割＋交互レイアウト</span></a><a href="半透明な重なりを作る.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">半透明な重なりを作る</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

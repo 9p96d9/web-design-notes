@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【006】警告ダイアログに表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【006】警告ダイアログに表示</span>
+  </div>
+  <div class="article-head">
+    <h1>【006】警告ダイアログに表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">ダイアログボックス</span>
+      <span class="date">2026/01/06</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="006警告ダイアログに表示">【006】警告ダイアログに表示</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227085021.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで警告ダイアログに表示する事例を解説して</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h4 id="警告ダイアログを表示する">警告ダイアログを表示する</h4>
+    
+<ul>
+<li>JavaScriptでは、ブラウザ標準の alert() 関数 を使うことで、簡単に警告ダイアログを表示できます。</li>
+<li>「window.alert( )」 は、任意のメッセージを含むダイアログを表示し、ユーザーがそのダイアログを閉じるまで待機します。</li>
+<li>一般的には「window.」は、省略されます。</li>
+</ul>
+<div class="section">
+    <h5 id="確認ダイアログconfirmとの違い">確認ダイアログ（confirm）との違い</h5>
+    <p>警告系のダイアログには3種類あります。</p>
+
+<table>
+    <tbody><tr>
+    <th>種類</th>
+    <th>関数</th>
+    <th>用途</th>
+    </tr>
+    <tr>
+    <td> 警告 </td>
+    <td> alert()   </td>
+    <td> メッセージ表示のみ  </td>
+    </tr>
+    <tr>
+    <td> 確認 </td>
+    <td> confirm() </td>
+    <td> OK / キャンセル </td>
+    </tr>
+    <tr>
+    <td> 入力 </td>
+    <td> prompt()  </td>
+    <td> 文字入力       </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="基本構文">基本構文</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">alert</span><span class="synSpecial">(</span><span class="synConstant">`警告メッセージ`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>【実行結果】<br>
+→ 画面中央に <strong>OKボタン付きのダイアログ</strong> が表示されます。</p><p></p><h6 id="シンプルな例">シンプルな例</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>alertの例<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synStatement">alert</span><span class="synSpecial">(</span><span class="synConstant">`こんにちは！`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p>【解説】<br>
+👉 ページを開くと 「こんにちは！」というポップアップ が表示されます。</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-よくある使い方">📝 よくある使い方</h4>
+    <p></p><h6 id="-簡単なメッセージ表示">① 簡単なメッセージ表示</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">alert</span><span class="synSpecial">(</span><span class="synConstant">`処理が完了しました`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="-変数の中身を表示">② 変数の中身を表示</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> name <span class="synStatement">=</span> <span class="synConstant">'太郎'";</span>
+<span class="synConstant">alert(name);</span>
+</pre><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> age <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+<span class="synStatement">alert</span><span class="synSpecial">(</span><span class="synConstant">`年齢は </span><span class="synSpecial">${</span>age<span class="synSpecial">}</span><span class="synConstant"> 歳です`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<div class="section">
+    <h5 id="-デバッグ動作確認に便利">🧪 デバッグ（動作確認）に便利</h5>
+    <p>処理の途中で値を確認するのによく使われます。</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> total <span class="synStatement">=</span> <span class="synConstant">5</span> <span class="synStatement">+</span> <span class="synConstant">3</span><span class="synStatement">;</span>
+<span class="synStatement">alert</span><span class="synSpecial">(</span>total<span class="synSpecial">)</span><span class="synStatement">;</span>   <span class="synComment">// 8 と表示</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-注意点">⚠ 注意点</h5>
+    
+<ul>
+<li>OKボタンを押すまで処理が止まる</li>
+<li>多用するとユーザー体験が悪くなる</li>
+</ul><p>👉 実際の開発では、デバッグ用に一時的に使うことが多いです。</p>
+
+</div>
+<div class="section">
+    <h5 id="注意点重要">注意点（重要）</h5>
+    
+<ul>
+<li>alert() は 処理を完全に停止 させる</li>
+<li>多用すると UX（使い勝手）が悪化</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="練習問題">練習問題</h4>
+    
+<ul>
+<li>警告ダイアログボックスに「ありがとう！」と表示する</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20250420023711.jpg" width="400" height="131" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="解答例">解答例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">alert</span><span class="synSpecial">(</span><span class="synConstant">`ありがとう！`</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【005】出力のバリエーション.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【005】出力のバリエーション</span></a><a href="【007】確認結果をダイアログに表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【007】確認結果をダイアログに表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

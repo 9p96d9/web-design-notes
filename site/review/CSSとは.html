@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSSとは - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>CSSとは</span>
+  </div>
+  <div class="article-head">
+    <h1>CSSとは</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/10/01</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="CSSとは"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>とは</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313192538.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>（<a class="keyword" href="https://d.hatena.ne.jp/keyword/Cascading%20Style%20Sheets">Cascading Style Sheets</a>）の略</li>
+<li>ウェブページや<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A6%A5%A7%A5%D6%A5%A2%A5%D7%A5%EA%A5%B1%A1%BC%A5%B7%A5%E7%A5%F3">ウェブアプリケーション</a>のデザインやスタイルを指定する言語</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20240919004835.jpg" width="460" height="369" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ol>
+<li>空間（余白）</li>
+<li>背景（色→画像）</li>
+<li>枠線</li>
+<li>コンテンツ（文字）</li>
+</ol><p>の順に記述していくと、破綻しにくい記述が可能です<br>
+<br>
+</p>
+
+<div class="section">
+    <h5 id="CSSの役割"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>の役割</h5>
+    
+<ul>
+<li>HTML要素の修飾（見栄えを作る）</li>
+<li>ブラウザには初期値として、HTMLプレビュー時には「文字の区別」ができるような<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>が指定されています</li>
+</ul><p></p><h6 id="最も重要な役割">最も重要な役割</h6><p></p>
+
+<ul>
+<li>情報（特に文字）を読みやすくするために、以下の３つのポイントの見栄えを工夫します
+<ol>
+<li>文字サイズ</li>
+<li>文字色</li>
+<li>余白</li>
+</ol></li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="CSSの書く位置"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>の書く位置</h5>
+    
+<ul>
+<li>外部ファイルに記述し読み込む（最も頻度が高い）</li>
+<li>head内部に「styleタグ」で「埋め込む（embed）」（場合によっては必要）</li>
+<li>tag内に直接記述（ほぼこの記述はしない）</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="CSSの書き方"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>の書き方</h5>
+    
+<ul>
+<li>見やすく「{ }」の前後で「改行」を入れます</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313200336.jpg" width="500" height="261" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="文字色背景色">文字色・背景色</h4>
+    
+<ul>
+<li>16進数：hexadecimal number</li>
+<li>#：number</li>
+<li>「0123456789ABCDEF」（16個）</li>
+<li>RGBを2個ずつの数字を割り振る</li>
+<li>2個の左側の数字が明度(Brightness)、右側の数字が彩度(Saturation)</li>
+</ul><p></p><h6 id="CSSで定義されている147色について"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>で定義されている147色について</h6><p></p>
+
+<ul>
+<li>redやgreenといった、<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>で定義されている色は以下でも確認することができます。全部で147色あるようです。</li>
+<li><a href="https://147colors.com/">http://www.147colors.com/</a></li>
+</ul><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2F147colors.com%2F" title="147 Colors Grid - CSS Color Names" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://147colors.com/">147colors.com</a></cite></p><p></p>
+
+<div class="section">
+    <h5 id="16進数のRGBRedGreenBlueviolet">16進数のRGB(Red/Green/Blueviolet)</h5>
+    
+<ul>
+<li>色をあらわす16進数の表記は、先頭から2桁ずつ赤、緑、青の色の強さをあらわします</li>
+<li>#FFFF00 だったら 赤=FF / 緑=FF / 青=00 となります</li>
+</ul><p></p><h6 id="例">例</h6><p></p>
+
+<ul>
+<li>#000000（黒）</li>
+<li>#FFFFFF（白）</li>
+<li>Hue（色相）・Brightness（明度） ・Saturation（彩度）</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313201243.jpg" width="200" height="157" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313201312.jpg" width="680" height="243" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="16進数演習">16進数演習</h6><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fyizzle.com%2Fwhatthehex%2F" title="What the Hex?" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://yizzle.com/whatthehex/">yizzle.com</a></cite><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="RGBA不透明度あり">RGBA（不透明度あり）</h5>
+    
+<ul>
+<li>不透明度（alpha）</li>
+<li>完全透明：0　完全不透明：1 の間で指定します</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synIdentifier">rgba(</span><span class="synConstant">100</span><span class="synIdentifier">,</span><span class="synConstant"> 189</span><span class="synIdentifier">,</span><span class="synConstant"> 178</span><span class="synIdentifier">,</span><span class="synConstant"> 0.7</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="スタイルの継承inheritance">スタイルの継承（inheritance）</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>には親要素から子要素へとスタイルが継承される仕組みがあります</li>
+<li>この仕組のおかげで、同じ指定を繰り返さなくても効率よく指定ができます</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"utf-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>スタイルの継承<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+  <span class="synStatement">body</span> <span class="synIdentifier">{</span> <span class="synType">color</span>: <span class="synConstant">red</span>; <span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>bodyの子要素である見出し要素は、赤になります。<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>bodyの子要素である段落要素は、赤になります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313191741.png" width="686" height="96" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><h6 id="継承の有無">継承の有無</h6><p></p>
+
+<ul>
+<li>文字色、文字サイズなどの文字を装飾するプロパティ</li>
+<li>リストマーカーの種類、リストマーカーの画像などのリストを装飾するプロパティ</li>
+<li>テーブル枠の表示形式、テーブルの空セルの表示方法などのテーブル関連の一部プロパティ</li>
+<li>通常は継承しないプロパティであっても、強制的に継承させることのできる値「inherit」</li>
+</ul><p>以上以外は、継承されません。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="スタイル競合">スタイル競合</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>では複数のスタイルを指定できるため、スタイルの競合がおこります</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>は、１行づつ実行されます</li>
+<li>後に書かれたも値が、前に書かれた値を上書きします</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="セレクタ優先順位"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>優先順位</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%BB%A5%EC%A5%AF%A5%BF">セレクタ</a>には優先順位があり、点数計算して高得点のものが適用されます</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250313191931.jpg" width="530" height="276" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="コンテンツを区切る・レイアウト.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">コンテンツを区切る・レイアウト</span></a><a href="リセットCSSの記述.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">リセットCSSの記述</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

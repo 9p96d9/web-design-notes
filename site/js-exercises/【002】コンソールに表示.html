@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【002】コンソールに表示 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>【002】コンソールに表示</span>
+  </div>
+  <div class="article-head">
+    <h1>【002】コンソールに表示</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">console</span>
+      <span class="date">2026/01/02</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    <p>【002】コンソールに表示</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260227083613.png" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>完全未経験者がJavaScriptでconsoleに出力することを理解できる練習問題を５問作成して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h4 id="JavaScriptconsole出力-練習問題超入門">JavaScript：console出力 練習問題（超入門）</h4>
+    
+<div class="section">
+    <h5 id="問題1文字を表示してみよう">問題1：文字を表示してみよう</h5>
+    
+    <blockquote>
+        <p>「こんにちは」とコンソールに表示するプログラムを書いてください。</p>
+
+    </blockquote>
+<p></p><h6 id="ヒント">ヒント</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'文字'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題2数字を表示してみよう">問題2：数字を表示してみよう</h5>
+    
+    <blockquote>
+        <p>数字の「100」をコンソールに表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="ヒント-1">ヒント</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>数字<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題3計算結果を表示してみよう">問題3：計算結果を表示してみよう</h5>
+    
+    <blockquote>
+        <p>「10 + 5」の計算結果をコンソールに表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="ヒント-2">ヒント</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">10</span> <span class="synStatement">+</span> <span class="synConstant">5</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題4文字と数字を一緒に表示してみよう">問題4：文字と数字を一緒に表示してみよう</h5>
+    
+    <blockquote>
+        <p>「答えは：20」とコンソールに表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="ヒント-3">ヒント</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'文字'</span> <span class="synStatement">+</span> 数字<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="問題5自分の名前を表示してみよう">問題5：自分の名前を表示してみよう</h5>
+    
+    <blockquote>
+        <p>あなたの名前をコンソールに表示してください。</p>
+
+    </blockquote>
+<p></p><h6 id="ヒント-4">ヒント</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'山田太郎'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="お手本答え">お手本（答え）</h4>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// 問題1</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'こんにちは'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 問題2</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">100</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 問題3</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">10</span> <span class="synStatement">+</span> <span class="synConstant">5</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 問題4</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'答えは：'</span> <span class="synStatement">+</span> <span class="synConstant">20</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+
+<span class="synComment">// 問題5（例）</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'あなたの名前'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+<div class="section">
+    <h5 id="学習ポイントまとめ">学習ポイントまとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>書き方</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> '文字'          </td>
+    <td> 文字を表示       </td>
+    </tr>
+    <tr>
+    <td> 数字            </td>
+    <td> 数字を表示       </td>
+    </tr>
+    <tr>
+    <td> +            </td>
+    <td> 足し算 / 文字の連結 </td>
+    </tr>
+    <tr>
+    <td> console.log() </td>
+    <td> コンソールに表示    </td>
+    </tr>
+</tbody></table>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="【001】JavaScript用語確認問題.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">【001】JavaScript用語確認問題</span></a><a href="【003】計算結果をコンソールに表示.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">【003】計算結果をコンソールに表示</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

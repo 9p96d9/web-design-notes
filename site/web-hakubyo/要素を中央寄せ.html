@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>要素を中央寄せ - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>要素を中央寄せ</span>
+  </div>
+  <div class="article-head">
+    <h1>要素を中央寄せ</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">CSS</span>
+      <span class="date">2026/01/26</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="要素を中央寄せ">要素を中央寄せ</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315024443.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSで要素を画面の中央に配置する方法</p>
+
+    </blockquote>
+<p></p><h6 id="CSSで中央に寄せができるプロパティ4選">CSSで中央に寄せができるプロパティ4選</h6><p></p>
+
+<ol>
+<li>flexbox</li>
+<li>grid</li>
+<li>position</li>
+<li>text-align</li>
+</ol>
+<div class="section">
+    <h5 id="-方法Flexbox最もおすすめ簡単">✅ 方法①：Flexbox（最もおすすめ・簡単）</h5>
+    <p>【css】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>; <span class="synComment">/* 横中央 */</span>
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;     <span class="synComment">/* 縦中央 */</span>
+  <span class="synType">height</span>: <span class="synConstant">100vh</span>;           <span class="synComment">/* 画面の高さ */</span>
+<span class="synIdentifier">}</span>
+</pre><p>【html】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>中央<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="特徴">特徴</h6><p></p>
+
+<ul>
+<li>モダンCSSの定番</li>
+<li>レスポンシブ対応しやすい</li>
+<li>実務で一番使われる</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-方法Grid最もシンプル">✅ 方法②：Grid（最もシンプル）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  place-items: <span class="synConstant">center</span>;
+  <span class="synType">height</span>: <span class="synConstant">100vh</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="特徴-1">特徴</h6><p></p>
+
+<ul>
+<li>1行で中央寄せ可能</li>
+<li>レイアウトがシンプルな場合に最適</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-方法position--transform昔からの定番">✅ 方法③：position + transform（昔からの定番）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: <span class="synConstant">50%</span>;
+  <span class="synType">left</span>: <span class="synConstant">50%</span>;
+  <span class="synType">transform</span>: <span class="synIdentifier">translate(</span><span class="synConstant">-50%</span><span class="synIdentifier">,</span><span class="synConstant"> -50%</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="特徴-2">特徴</h6><p></p>
+
+<ul>
+<li>古いブラウザにも対応</li>
+<li>モーダル・ポップアップ表示で今もよく使う</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-方法text-align--line-height縦横中央-条件付き">✅ 方法④：text-align + line-height（縦横中央 ※条件付き）</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">300px</span>;
+  <span class="synType">height</span>: <span class="synConstant">300px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="特徴-3">特徴</h6><p></p>
+
+<ul>
+<li>テキストだけ中央にしたい時限定</li>
+<li>高さ固定が必要</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="-どれを使うべき">🎯 どれを使うべき？</h4>
+    
+<table>
+    <tbody><tr>
+    <th>用途</th>
+    <th>おすすめ</th>
+    </tr>
+    <tr>
+    <td> 通常レイアウト      </td>
+    <td> <strong>Flexbox</strong>             </td>
+    </tr>
+    <tr>
+    <td> 1要素を完璧に中央    </td>
+    <td> <strong>Grid</strong>                </td>
+    </tr>
+    <tr>
+    <td> モーダル / ダイアログ </td>
+    <td> <strong>position + transform</strong> </td>
+    </tr>
+    <tr>
+    <td> テキストのみ       </td>
+    <td> line-height              </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h4 id="-実務で一番使われる形コピペOK">🔥 実務で一番使われる形（コピペOK）</h4>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.center</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="記述例">記述例</h4>
+    
+<div class="section">
+    <h5 id="1flexboxプロパティで左右中央配置">1.【flexbox】プロパティで左右中央配置</h5>
+    <p></p><h6 id="flexboxで左右中央寄せする方法">flexboxで左右中央寄せする方法</h6><p></p>
+
+<ul>
+<li>「justify-content」は水平方向に対して揃え位置を指定することができます</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">margin</span>: <span class="synConstant">10px</span> <span class="synConstant">0</span>;
+  <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#0bb1d2</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220904225536.jpg" width="500" height="95" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="flexboxで上下中央寄せする方法">flexboxで上下中央寄せする方法</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"parent"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>インライン要素を中央に寄せます<span class="synIdentifier">&lt;/</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"parent"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ブロック要素を中央寄せます<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>「flexbox」での「align-items」は、高さ指定が必要になります</li>
+<li>「margin」で２つのブロックの間を開けています（マージンの相殺）</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">height</span>: <span class="synConstant">100px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">10px</span> <span class="synConstant">0</span>;
+  <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#0bb1d2</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250314234334.jpg" width="500" height="190" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="画像を上下中央寄せする方法">画像を上下中央寄せする方法</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"parent"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"ai.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">max-width</span>: <span class="synConstant">350px</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">flex</span>;
+  <span class="synType">justify-content</span>: <span class="synConstant">center</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">height</span>: <span class="synConstant">100vh</span>;   <span class="synComment">/* ブラウザーの高さ */</span>
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250315000032.jpg" width="600" height="600" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>※ブラウザーの表示上下中央に配置されています。<p></p>
+
+</div>
+<div class="section">
+    <h5 id="2gridプロパティで左右中央配置">2.【grid】プロパティで左右中央配置</h5>
+    
+<ul>
+<li>親要素「parent」に「display: grid;」を指定し、子要素を上下左右の中央に配置することができます</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"parent"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/ai.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>AIを有効活用することによりコンテンツ制作が楽しくなります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>「place-content: center;」で、子要素が複数あっても子要素のグループが上下左右の中央に配置されます</li>
+<li>「p」は、画像に合わせた幅指定をしました</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">align-items</span>: <span class="synConstant">center</span>;
+  place-<span class="synType">content</span>: <span class="synConstant">center</span>;
+  <span class="synType">width</span>: <span class="synConstant">600px</span>;
+  <span class="synType">height</span>: <span class="synConstant">50vh</span>;
+  <span class="synType">margin</span>: <span class="synConstant">auto</span>;
+  <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#0bb1d2</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">300px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250314235611.jpg" width="600" height="532" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="3positionプロパティで左右中央配置">3.【position】プロパティで左右中央配置</h5>
+    
+<ul>
+<li>親要素に「position: relative;」</li>
+<li>子要素に「position: absolute;」とmargin: auto; を設定</li>
+<li>widthとheightの値は必須</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"parent"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/ai.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>AIを有効活用することによりコンテンツ制作が楽しくなります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.content</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">width</span>: <span class="synConstant">600px</span>;
+  <span class="synType">height</span>: <span class="synConstant">600px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">auto</span>;
+  <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#0bb1d2</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: <span class="synConstant">0</span>;
+  <span class="synType">right</span>: <span class="synConstant">0</span>;
+  <span class="synType">bottom</span>: <span class="synConstant">0</span>;
+  <span class="synType">left</span>: <span class="synConstant">0</span>;
+  <span class="synType">margin</span>: <span class="synConstant">auto</span>;
+  <span class="synType">width</span>: <span class="synConstant">fit-content</span>;
+  <span class="synType">height</span>: <span class="synConstant">fit-content</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">p</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">300px</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250314235611.jpg" width="600" height="532" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="4text-alignプロパティで左右中央寄せ">4.【text-align】プロパティで左右中央寄せ</h5>
+    
+<ul>
+<li>text-alignでブロック要素などの水平方向に対して配置を決めることができます</li>
+<li>文字の上下の空きは「line-height」の初期値「1.5」が適用されているからです</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"parent"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>インライン要素を中央に寄せます<span class="synIdentifier">&lt;/</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"parent"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>ブロック要素内の文字が中央寄せ<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>「margin」で２つのブロックの間を開けています（マージンの相殺）</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">margin</span>: <span class="synConstant">10px</span> <span class="synConstant">0</span>;
+  <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#0bb1d2</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/pbhfq_20220904225536.jpg" width="500" height="95" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="display（ディスプレイ）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">display（ディスプレイ）</span></a><a href="背景画像.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">背景画像</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

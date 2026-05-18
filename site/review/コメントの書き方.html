@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コメントの書き方 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>コメントの書き方</span>
+  </div>
+  <div class="article-head">
+    <h1>コメントの書き方</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">HTML</span>
+      <span class="date">2025/09/29</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="コメント">コメント</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250314032436.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>コメントとは<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%C6%A5%AD%A5%B9%A5%C8%A5%A8%A5%C7%A5%A3%A5%BF">テキストエディタ</a>側（コード側）に書くメモのようなもので、ブラウザには表示されません</li>
+<li>AIが作成したHTMLの基本構造であっても「コメント」を入れることによってより読み解きやすい「コード」にすることができます</li>
+<li>「コメント」は、メモ</li>
+<li>「<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B3%A5%E1%A5%F3%A5%C8%A5%A2%A5%A6%A5%C8">コメントアウト</a>」は、見えない状態にする</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="HTMLのコメント">HTMLのコメント</h4>
+    
+<ul>
+<li>「」の間にコメント内容を書く</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!-- これは表示されません --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>これは表示されます<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これは表示されます<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+<div class="section">
+    <h5 id="コメント３つ使い方">コメント３つ使い方</h5>
+    
+<ol>
+<li>覚え書きやメモとして使用する</li>
+<li>タグの<a class="keyword" href="https://d.hatena.ne.jp/keyword/%C6%FE%A4%EC%BB%D2">入れ子</a>構造を見やすくする</li>
+<li>修正前後のコードを保存しておく</li>
+</ol><p></p><h6 id="記述例">記述例</h6><p></p>
+
+<ul>
+<li>class名・id名などの終了タグの後ろにそのまま続けて記述する</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"contaier"</span><span class="synIdentifier">&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!</span><span class="synError">– /.container –</span><span class="synComment">&gt;</span>
+</pre><p></p><h6 id="記述例-1">記述例</h6><p></p>
+
+<ul>
+<li>完全に削除するかわからないコードを<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B3%A5%E1%A5%F3%A5%C8%A5%A2%A5%A6%A5%C8">コメントアウト</a>で残しておく</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"contaier"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>コメントアウトの使い方<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これは修正後の内容です<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  
+  <span class="synComment">&lt;!-- </span>
+<span class="synComment">    &lt;h3&gt;コメントアウトの使い方&lt;/h3&gt;</span>
+<span class="synComment">    &lt;p&gt;これは修正前の内容です&lt;/p&gt;</span>
+<span class="synComment">  --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!</span><span class="synError">– /.container –</span><span class="synComment">&gt;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="CSSのコメント"><a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>のコメント</h4>
+    
+<ul>
+<li>「/* 〜 */」の間にコメント内容を書く</li>
+</ul>
+<div class="section">
+    <h5 id="セクションごとに見出しをつける">セクションごとに見出しをつける</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/*-----------------------------------------</span>
+<span class="synComment">  header </span>
+<span class="synComment">-----------------------------------------*/</span>
+
+<span class="synComment">/* ---------  メインビジュアル  ---------  */</span>
+
+<span class="synComment">/* アイテム */</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="具体的な処理内容を記述する">具体的な処理内容を記述する</h5>
+    
+<ul>
+<li>どんな目的で書いてあるのかわかりにくいものは補足事項を書いておく</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box{</span>
+  <span class="synType">margin</span>: <span class="synConstant">auto</span>;  <span class="synComment">/* 上下左右中央寄せ */</span>
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="一時的にcssの処理を無効化する">一時的に<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a>の処理を無効化する</h5>
+    
+<ul>
+<li>一部を無効化してブラウザ側で変化を確認する</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="まとめ">まとめ</h4>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a>とhtmlのコメントは違う</li>
+<li>全ての記号を使ってOK。英数字と日本語もOK</li>
+<li>セクションごとの見出しとして使う</li>
+<li>コメントでわかりにくいコードの補足をする</li>
+<li>一時的に<a class="keyword" href="https://d.hatena.ne.jp/keyword/css">css</a>のコードを消してそのコードの役割を確認したりする</li>
+</ul><p><br>
+コメントは勤める会社や個人によって書き方のルールが統一されていたりするので、基本を踏まえた上でそのルールに従うようにしましょう。</p>
+
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="画像挿入、リンク.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">画像挿入、リンク</span></a><a href="コンテンツを区切る・レイアウト.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">コンテンツを区切る・レイアウト</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

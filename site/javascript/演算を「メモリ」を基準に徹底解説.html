@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>演算を「メモリ」を基準に徹底解説 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>演算を「メモリ」を基準に徹底解説</span>
+  </div>
+  <div class="article-head">
+    <h1>演算を「メモリ」を基準に徹底解説</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/06</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="演算をメモリを基準に徹底解説">演算を「メモリ」を基準に徹底解説</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260208202946.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>「メモリを基準に考える」＝ JavaScriptを本質から理解する方法</li>
+</ul>
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptの演算をメモリを基準に解説して</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="JavaScriptはメモリ操作の言語">JavaScriptは「メモリ操作の言語」</h5>
+    <p>JavaScriptの演算はすべて、</p>
+
+    <blockquote>
+        <p>メモリにある値を取り出し → 計算 → 結果をメモリに戻す</p>
+
+    </blockquote>
+<p>という流れで動いています。<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="変数--メモリ上の箱">変数 = メモリ上の箱</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> a <span class="synStatement">=</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+<span class="synType">let</span> b <span class="synStatement">=</span> <span class="synConstant">3</span><span class="synStatement">;</span>
+</pre><p>これは👇こういう意味です。</p><p></p><h6 id="メモリ">メモリ</h6><p></p>
+
+    <blockquote>
+        <p> + ------ +<br>
+ |　 a 　| → 10<br>
+ + ------ +<br>
+ |　 b 　| → 3<br>
+ + ------ +</p>
+
+    </blockquote>
+<p>👉 変数 = メモリアドレスに付けた名前<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="演算の本当の流れ超重要">演算の本当の流れ（超重要）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> c <span class="synStatement">=</span> a <span class="synStatement">+</span> b<span class="synStatement">;</span>
+</pre><p></p><h6 id="メモリ内部で起きている流れ">メモリ内部で起きている流れ</h6>1️⃣ メモリから a の値を読み出す → 10<br>
+2️⃣ メモリから b の値を読み出す → 3<br>
+3️⃣ CPUが計算 → 10 + 3 = 13<br>
+4️⃣ 結果を c に保存<p></p>
+
+    <blockquote>
+        <p> + ------ +<br>
+ | 　a 　| → 10<br>
+ | 　b　  | → 3<br>
+ | 　c　  | → 13<br>
+ + ------ +</p>
+
+    </blockquote>
+<p>👉 演算 = メモリ → CPU → メモリ<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="代入演算子の正体">代入演算子の正体</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">a <span class="synStatement">+=</span> <span class="synConstant">5</span><span class="synStatement">;</span>
+</pre><p>これは省略形で、実際は：</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">a <span class="synStatement">=</span> a <span class="synStatement">+</span> <span class="synConstant">5</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="メモリ上の流れ">メモリ上の流れ</h6><p></p>
+
+    <blockquote>
+        <p>a → 10<br>
+   ↓ 読み出す<br>
+10 + 5 = 15<br>
+   ↓ 書き戻す<br>
+a → 15</p>
+
+    </blockquote>
+<p>👉 「同じ変数を左右で使う」＝ 取り出して更新<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="インクリメントのメモリ動作">インクリメントのメモリ動作</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">a<span class="synStatement">++;</span>
+</pre><p>これは：</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">a <span class="synStatement">=</span> a <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="メモリ動作">メモリ動作</h6><p></p>
+
+    <blockquote>
+        <p>a → 10 → 11</p>
+
+    </blockquote>
+
+</div>
+<div class="section">
+    <h5 id="比較演算もメモリ操作">比較演算もメモリ操作</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">a <span class="synStatement">&gt;</span> b<span class="synStatement">;</span>
+</pre><p></p><h6 id="内部処理">内部処理</h6><p></p>
+
+<ol>
+<li>a を読み出す</li>
+<li>b を読み出す</li>
+<li>CPUで比較</li>
+<li>true / false を生成</li>
+</ol>
+    <blockquote>
+        <p>結果 → true（これは一時的な値）</p>
+
+    </blockquote>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> result <span class="synStatement">=</span> a <span class="synStatement">&gt;</span> b<span class="synStatement">;</span>
+</pre><pre class="code lang-sql" data-lang="sql" data-unlink="">result → <span class="synSpecial">true</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="参照型と値型ここ超重要">参照型と値型（ここ超重要）</h5>
+    <p></p><h6 id="プリミティブ型値型">プリミティブ型（値型）</h6><p></p>
+
+<ul>
+<li>number</li>
+<li>string</li>
+<li>boolean</li>
+<li>null</li>
+<li>undefined</li>
+<li>symbol</li>
+<li>bigint</li>
+</ul><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> x <span class="synStatement">=</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+<span class="synType">let</span> y <span class="synStatement">=</span> x<span class="synStatement">;</span>
+</pre><p></p><h6 id="メモリ状態">メモリ状態</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">x → <span class="synConstant">10</span>
+y → <span class="synConstant">10</span>（コピー）
+</pre><pre class="code lang-javascript" data-lang="javascript" data-unlink="">y <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+</pre><pre class="code lang-javascript" data-lang="javascript" data-unlink="">x → <span class="synConstant">10</span>
+y → <span class="synConstant">20</span>
+</pre><p>👉 完全コピー</p><p></p><h6 id="参照型オブジェクト配列関数">参照型（オブジェクト・配列・関数）</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> obj1 <span class="synStatement">=</span> <span class="synSpecial">{</span> <span class="synIdentifier">a</span><span class="synStatement">:</span> <span class="synConstant">10</span> <span class="synSpecial">}</span><span class="synStatement">;</span>
+<span class="synType">let</span> obj2 <span class="synStatement">=</span> obj1<span class="synStatement">;</span>
+</pre><p></p><h6 id="メモリ構造">メモリ構造</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">obj1 → <span class="synSpecial">[</span>アドレス1000<span class="synSpecial">]</span>
+obj2 → <span class="synSpecial">[</span>アドレス1000<span class="synSpecial">]</span>
+
+<span class="synConstant">1000</span> → <span class="synSpecial">{</span> <span class="synIdentifier">a</span><span class="synStatement">:</span> <span class="synConstant">10</span> <span class="synSpecial">}</span>
+</pre><p>👉 アドレスを共有</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">obj2<span class="synStatement">.</span>a <span class="synStatement">=</span> <span class="synConstant">99</span><span class="synStatement">;</span>
+</pre><pre class="code lang-javascript" data-lang="javascript" data-unlink="">obj1<span class="synStatement">.</span>a → <span class="synConstant">99</span>
+obj2<span class="synStatement">.</span>a → <span class="synConstant">99</span>
+</pre><p>⚠ ここでバグが激増する<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="演算と参照の組み合わせ最重要">演算と参照の組み合わせ（最重要）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> arr <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">let</span> arr2 <span class="synStatement">=</span> arr<span class="synStatement">;</span>
+
+arr2<span class="synStatement">.</span><span class="synIdentifier">push</span><span class="synSpecial">(</span><span class="synConstant">4</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p></p><h6 id="メモリ-1">メモリ</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">arr → <span class="synSpecial">[</span><span class="synConstant">1000</span><span class="synSpecial">]</span>
+arr2 → <span class="synSpecial">[</span><span class="synConstant">1000</span><span class="synSpecial">]</span>
+
+<span class="synConstant">1000</span> → <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span> <span class="synConstant">2</span><span class="synStatement">,</span> <span class="synConstant">3</span><span class="synStatement">,</span> <span class="synConstant">4</span><span class="synSpecial">]</span>
+</pre><p>👉 同じ配列を操作している<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="正しくコピーするディープコピー">正しくコピーする（ディープコピー）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> arr2 <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synStatement">...</span>arr<span class="synSpecial">]</span><span class="synStatement">;</span>
+</pre><pre class="code lang-javascript" data-lang="javascript" data-unlink="">arr  → <span class="synSpecial">[</span><span class="synConstant">1000</span><span class="synSpecial">]</span>
+arr2 → <span class="synSpecial">[</span><span class="synConstant">2000</span><span class="synSpecial">]</span>
+
+<span class="synConstant">1000</span> → <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span><span class="synConstant">2</span><span class="synStatement">,</span><span class="synConstant">3</span><span class="synSpecial">]</span>
+<span class="synConstant">2000</span> → <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span><span class="synConstant">2</span><span class="synStatement">,</span><span class="synConstant">3</span><span class="synSpecial">]</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="なぜメモリ基準で考えるとバグが減るのか">なぜ「メモリ基準」で考えるとバグが減るのか</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> a <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">1</span><span class="synStatement">,</span><span class="synConstant">2</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">let</span> b <span class="synStatement">=</span> a<span class="synStatement">;</span>
+
+b<span class="synStatement">.</span><span class="synIdentifier">push</span><span class="synSpecial">(</span><span class="synConstant">3</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// [1,2,3] ← なぜ！？</span>
+</pre><p>👉 参照共有を理解していないと一生ハマる<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="プロが頭の中で見ている世界">プロが頭の中で見ている世界</h5>
+    <p>プロはコードを読む時、こういうメモリ図を頭に描いています👇</p>
+
+    <blockquote>
+        <p>変数 → アドレス → 実データ</p>
+
+    </blockquote>
+<p>これができると：<br>
+✅ バグ激減<br>
+✅ React / Vue の理解爆速<br>
+✅ 非同期処理も簡単<br>
+✅ オブジェクト操作が直感的<br>
+<br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="超重要まとめ">超重要まとめ</h5>
+    
+<table>
+    <tbody><tr>
+    <th>観点</th>
+    <th>本質</th>
+    </tr>
+    <tr>
+    <td> 変数 </td>
+    <td> メモリのラベル </td>
+    </tr>
+    <tr>
+    <td> 演算 </td>
+    <td> メモリ→CPU→メモリ </td>
+    </tr>
+    <tr>
+    <td> 代入 </td>
+    <td> メモリの書き換え </td>
+    </tr>
+    <tr>
+    <td> 比較 </td>
+    <td> 値を取り出して判定 </td>
+    </tr>
+    <tr>
+    <td> 参照 </td>
+    <td> アドレス共有 </td>
+    </tr>
+    <tr>
+    <td> バグ </td>
+    <td> 参照の誤解 </td>
+    </tr>
+</tbody></table><p>	</p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="JavaScriptの「演算」.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">JavaScriptの「演算」</span></a><a href="JavaScriptにおける let と const の違い.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">JavaScriptにおける let と const の違い</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

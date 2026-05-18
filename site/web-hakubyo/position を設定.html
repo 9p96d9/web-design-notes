@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>position を設定 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>position を設定</span>
+  </div>
+  <div class="article-head">
+    <h1>position を設定</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/22</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="position-を設定">position を設定</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260315200538.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>positionを設定するポイント</p>
+
+    </blockquote>
+<p>「<strong>どこを基準に配置するのか</strong>」を理解することです。</p>
+
+<div class="section">
+    <h5 id="-基準基点を理解する">① 基準（基点）を理解する</h5>
+    <p>position の種類によって 位置の基準が変わります。</p>
+
+<table>
+    <tbody><tr>
+    <th>position</th>
+    <th>基準</th>
+    </tr>
+    <tr>
+    <td> static   </td>
+    <td> 通常の配置    </td>
+    </tr>
+    <tr>
+    <td> relative </td>
+    <td> 自分の元の位置  </td>
+    </tr>
+    <tr>
+    <td> absolute </td>
+    <td> 親要素      </td>
+    </tr>
+    <tr>
+    <td> fixed    </td>
+    <td> 画面（ブラウザ） </td>
+    </tr>
+    <tr>
+    <td> sticky   </td>
+    <td> スクロール位置  </td>
+    </tr>
+</tbody></table><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">top</span>: <span class="synConstant">20px</span>;
+  <span class="synType">left</span>: <span class="synConstant">30px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 元の位置から 下20px / 右30px 移動</p>
+
+</div>
+<div class="section">
+    <h5 id="-absolute-を使う時は親に-relative">② absolute を使う時は「親に relative」</h5>
+    <p>これは CSSの超重要ルールです。</p>
+
+    <blockquote>
+        <p>親 → relative<br>
+子 → absolute</p>
+
+    </blockquote>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.parent</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.child</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: <span class="synConstant">0</span>;
+  <span class="synType">right</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+</pre><p>これをしない（親要素を基準にする指定）と、画面全体（body）が基準になってしまいます。</p>
+
+</div>
+<div class="section">
+    <h5 id="-移動は-top--right--bottom--left">③ 移動は top / right / bottom / left</h5>
+    <p>positionとセットで使います。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: <span class="synConstant">10px</span>;
+  <span class="synType">right</span>: <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>👉 右上に配置</p>
+
+</div>
+<div class="section">
+    <h5 id="-z-indexで重なり順を制御">④ z-indexで重なり順を制御</h5>
+    <p>positionを使うと 要素が重なることがあります。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">z-index</span>: <span class="synConstant">10</span>;
+<span class="synIdentifier">}</span>
+</pre><p>数値が大きいほど 前面に表示</p>
+
+</div>
+<div class="section">
+    <h5 id="-layoutには多用しない">⑤ layoutには多用しない</h5>
+    <p>昔は position でレイアウトしていましたが、現在は次を使います。</p>
+
+<table>
+    <tbody><tr>
+    <th>用途</th>
+    <th>使うもの</th>
+    </tr>
+    <tr>
+    <td> 横並び  </td>
+    <td> Flexbox  </td>
+    </tr>
+    <tr>
+    <td> グリッド </td>
+    <td> Grid     </td>
+    </tr>
+    <tr>
+    <td> 微調整  </td>
+    <td> position </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="まとめ重要">まとめ（重要）</h5>
+    <p>positionの理解の核心</p>
+
+    <blockquote>
+        <p>relative → 基準を作る<br>
+absolute → その基準で配置<br>
+fixed → 画面固定<br>
+sticky → スクロール固定</p>
+
+    </blockquote>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="position-練習問題">position 練習問題</h4>
+    
+<div class="section">
+    <h5 id="問題-NEWラベルを右上に表示">問題① NEWラベルを右上に表示</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260315202211.jpg" width="400" height="385" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>【HTML】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"card"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">span</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"label"</span><span class="synIdentifier">&gt;</span>NEW<span class="synIdentifier">&lt;/</span><span class="synStatement">span</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/cake.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p>【CSS】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.card</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+  <span class="synType">width</span>: <span class="synConstant">300px</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#aaa</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.card</span> <span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.label</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: <span class="synConstant">10px</span>;
+  <span class="synType">right</span>: <span class="synConstant">-10px</span>;
+  <span class="synType">background</span>: <span class="synConstant">red</span>;
+  <span class="synType">color</span>: <span class="synConstant">white</span>;
+  <span class="synType">padding</span>: <span class="synConstant">5px</span> <span class="synConstant">10px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-画像中央にテキスト">② 画像中央にテキスト</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260315203323.jpg" width="680" height="451" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>【HTML】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"hero"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/cafe.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>春のカフェ時間<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+</pre><p>【CSS】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.hero</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">relative</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.hero</span> <span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.hero</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+  <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+  <span class="synType">top</span>: <span class="synConstant">50%</span>;
+  <span class="synType">left</span>: <span class="synConstant">50%</span>;
+  <span class="synType">transform</span>: <span class="synIdentifier">translate(</span><span class="synConstant">-50%</span><span class="synIdentifier">,</span><span class="synConstant"> -50%</span><span class="synIdentifier">)</span>;
+  <span class="synType">color</span>: <span class="synConstant">white</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">serif</span>;
+  <span class="synType">text-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">4px</span> <span class="synConstant">#000</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-画像左下キャプション">③ 画像左下キャプション</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260315204611.jpg" width="680" height="451" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>【HTML】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"photo"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/montain.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"caption"</span><span class="synIdentifier">&gt;</span>アマ・ダブラム<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p>【CSS】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.photo{</span>
+  <span class="synType">position</span>:<span class="synConstant">relative</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.photo</span> <span class="synStatement">img</span><span class="synIdentifier">{</span>
+    <span class="synType">width</span>:<span class="synConstant">100%</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.caption{</span>
+    <span class="synType">position</span>: <span class="synConstant">absolute</span>;
+    <span class="synType">bottom</span>: <span class="synConstant">15px</span>;
+    <span class="synType">left</span>: <span class="synConstant">15px</span>;
+    <span class="synType">background</span>: <span class="synIdentifier">rgba(</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0.6</span><span class="synIdentifier">)</span>;
+    <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">padding</span>: <span class="synConstant">6px</span>;
+  <span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-右下TOPボタン">④ 右下TOPボタン</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260315205458.jpg" width="680" height="105" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>【HTML】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"top-btn"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">TOP</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+</pre><p>【CSS】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.top-btn{</span>
+  <span class="synType">position</span>: <span class="synConstant">fixed</span>;
+  <span class="synType">bottom</span>: <span class="synConstant">20px</span>;
+  <span class="synType">right</span>: <span class="synConstant">20px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#333</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">padding</span>: <span class="synConstant">16px</span> <span class="synConstant">12px</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">50%</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-バナー中央ボタン">⑤ バナー中央ボタン</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260315210634.jpg" width="300" height="300" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>【HTML】<p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"banner"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/banner.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">""</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">詳しく見る</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+</pre><p>【CSS】</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synIdentifier">.banner{</span>
+  <span class="synType">position</span>:<span class="synConstant">relative</span>;
+  <span class="synType">width</span>:<span class="synConstant">300px</span>;
+  <span class="synType">height</span>: <span class="synConstant">300px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#cbd683</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.btn{</span>
+  <span class="synType">position</span>:<span class="synConstant">absolute</span>;
+  <span class="synType">top</span>:<span class="synConstant">50%</span>;
+  <span class="synType">left</span>:<span class="synConstant">50%</span>;
+  <span class="synType">transform</span>:<span class="synIdentifier">translate(</span><span class="synConstant">-50%</span><span class="synIdentifier">,</span><span class="synConstant"> -50%</span><span class="synIdentifier">)</span>;
+  <span class="synType">background</span>:<span class="synConstant">#333</span>;
+  <span class="synType">color</span>:<span class="synConstant">white</span>;
+  <span class="synType">padding</span>:<span class="synConstant">10px</span> <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="Google Fonts 利用.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">Google Fonts 利用</span></a><a href="__before と __after（擬似要素）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">::before と ::after（擬似要素）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

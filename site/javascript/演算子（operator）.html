@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>演算子（operator） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>演算子（operator）</span>
+  </div>
+  <div class="article-head">
+    <h1>演算子（operator）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">演算子</span>
+      <span class="date">2025/10/07</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="式expression">式（expression）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241029234121.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p><a class="keyword" href="https://d.hatena.ne.jp/keyword/JavaScript">JavaScript</a>の式の多くは、</p>
+
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>（operator）：演算するもの</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%AA%A5%DA%A5%E9%A5%F3%A5%C9">オペランド</a>（operand）：演算の対象</li>
+</ul><p>を組み合わせてつくられています。<br>
+<br>
+</p>
+
+<div class="section">
+    <h5 id="式の評価">式の評価</h5>
+    
+<ul>
+<li>式の計算が、式の評価にあたります</li>
+<li>評価された結果を「式の値」と呼びます</li>
+</ul>
+</div>
+</div>
+<div class="section">
+    <h4 id="演算子"><a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></h4>
+    
+<ul>
+<li>簡単な計算をしたり長い文字列をつなぎ合わせる</li>
+<li>代入<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></li>
+<li>数値の演算</li>
+<li>文字列の演算</li>
+<li>単項<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></li>
+<li>代入を伴う<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="算術演算子">算術<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></h4>
+    
+<ul>
+<li>最も基本的な、四則演算（足し算・引き算・掛け算・割り算）をおこなうことができる<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>です</li>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>でつないだ前後の数値の計算をします</li>
+</ul><p></p><table>
+<tbody><tr>
+<th><a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></th><th>説明</th><th>使用例</th><th>結果</th>
+</tr>
+<tr>
+<th>+</th><td>数値の加算</td><td>1+1</td><td>2</td>
+</tr>
+<tr>
+<th>+</th><td>文字列の連結</td><td>'Hello'+'World'</td><td>'HelloWorld'</td>
+</tr>
+<tr>
+<th>-</th><td>数値減算</td><td>2-1</td><td>1</td>
+</tr>
+<tr>
+<th>*</th><td>数値の乗算</td><td>2*2</td><td>4</td>
+</tr>
+<tr>
+<th>/</th><td>数値の除算</td><td>10/2</td><td>5</td>
+</tr>
+<tr>
+<th>%</th><td>数値の剰余算</td><td>10/2</td><td>0</td>
+</tr>
+</tbody></table><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> x <span class="synStatement">=</span> <span class="synConstant">1</span> <span class="synStatement">+</span> <span class="synConstant">1</span><span class="synStatement">;</span>  <span class="synComment">// 結果は2</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>x<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> y <span class="synStatement">=</span> <span class="synConstant">10</span> <span class="synStatement">-</span> <span class="synConstant">8</span><span class="synStatement">;</span>  <span class="synComment">// 結果は2</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>y<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> z <span class="synStatement">=</span> <span class="synConstant">5</span> <span class="synStatement">*</span> <span class="synConstant">2</span><span class="synStatement">;</span>  <span class="synComment">// 結果は10</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>z<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> xx <span class="synStatement">=</span> <span class="synConstant">10</span> <span class="synStatement">/</span> <span class="synConstant">2</span><span class="synStatement">;</span>  <span class="synComment">// 結果は5</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>xx<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synType">const</span> yy <span class="synStatement">=</span> <span class="synConstant">10</span> <span class="synStatement">%</span> <span class="synConstant">3</span><span class="synStatement">;</span>  <span class="synComment">// 結果は1</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>yy<span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="文字列結合演算子">文字列結合<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></h4>
+    
+<ul>
+<li>加算<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>（+）は、数値同士では加算されますが、文字列同士や、数値と文字列を結合させて結果として出力することができます</li>
+<li>このとき、文字列と数値を区別するために、文字列である場合はクオーテーション（’ ‘）で囲う必要があります</li>
+</ul>
+<div class="section">
+    <h5 id="演算子の挙動の違い文字列の連結">+<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>の挙動の違い（文字列の連結）</h5>
+    
+<ul>
+<li>文字列が前にあっても、後ろにあっても、連結された値は「文字列」になります</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"utf-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>+演算子の挙動の違い<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>x<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">123</span><span class="synSpecial"> </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">456</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>y<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">'123'</span><span class="synSpecial"> </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">'456'</span><span class="synStatement">;</span>
+<span class="synType">const</span><span class="synSpecial"> </span>z<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">`123 + 456`</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>x<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>y<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>z<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="特殊な文字を使用する">特殊な文字を使用する</h5>
+    
+<ul>
+<li><a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%A8%A5%B9">エス</a>ケープシーケンス（バックスラッシュキーと特殊な文字を組み合わせたもの）</li>
+</ul><p></p><table>
+<tbody><tr><th>記号</th><th>説明</th></tr>
+<tr><td>\n</td><td>改行</td></tr>
+<tr><td>\t</td><td>タブ</td></tr>
+<tr><td>\'</td><td>'（シングルクォート）</td></tr>
+<tr><td>\"</td><td>"（ダブルクォート）</td></tr>
+<tr><td>\\</td><td>\（バックスラッシュ）</td></tr>
+</tbody></table><p></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="代入演算子assignment-operator">代入<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>（assignment operator）</h4>
+    
+<ul>
+<li>代入<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>は、変数の代入をするときに使用する<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>です</li>
+<li>左辺の変数に右辺の値を代入する</li>
+</ul><p></p><table>
+<tbody><tr>
+<th>記号</th><th>名前</th>
+</tr>
+<tr>
+<th>+=</th><td>加算代入</td>
+</tr>
+<tr>
+<th>-=</th><td>減算代入</td>
+</tr>
+<tr>
+<th>*=</th><td>乗算代入</td>
+</tr>
+<tr>
+<th>/=</th><td>除算代入</td>
+</tr>
+<tr>
+<th>%=</th><td>剰余代入</td>
+</tr>
+<tr>
+<th>$=</th><td><a class="keyword" href="https://d.hatena.ne.jp/keyword/%CF%C0%CD%FD%C0%D1">論理積</a>代入</td>
+</tr>
+<tr>
+<th>^=</th><td>排他的代入</td>
+</tr>
+<tr>
+<th>|=</th><td><a class="keyword" href="https://d.hatena.ne.jp/keyword/%CF%C0%CD%FD%CF%C2">論理和</a>代入</td>
+</tr>
+<tr>
+<th>&lt;&lt;=</th><td>左シフト代入</td>
+</tr>
+<tr>
+<th>&gt;&gt;=</th><td>右シフト代入</td>
+</tr>
+</tbody></table><p></p><p></p>
+
+<div class="section">
+    <h5 id="比較演算子">比較<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></h5>
+    
+<ul>
+<li>比較<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>は値同士を比較し、真偽（trueまたはfalse）で結果を返します</li>
+<li>if文など、条件式で利用されることが多いです</li>
+</ul><p></p><table width="640" border="1">
+    <tbody><tr>
+      <th><a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></th>
+      <th>内容</th>
+      <th>例</th>
+      <th>結果</th>
+  </tr>
+    <tr>
+      <td>&lt;</td>
+      <td>左の値が右の値より小さい</td>
+      <td>10 &lt; 5</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>&lt;=</td>
+      <td>左の値が右の値以下（右の値も含む）</td>
+      <td>10 &lt;= 10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>&gt;</td>
+      <td>左の値が右の値より大きい</td>
+      <td>10 &gt; 5</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>&gt;=</td>
+      <td>左の値が右の値以上（右の値も含む）</td>
+      <td>10 &gt;= 5</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>==</td>
+      <td>値同士が等しい</td>
+      <td>10 == 5</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>===</td>
+      <td>値同士が厳密に等しい</td>
+      <td>10 === 10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>!=</td>
+      <td>値同士が等しくない</td>
+      <td>10 != 10</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>!==</td>
+      <td>値同士が厳密に等しくない</td>
+      <td>10 !== 5</td>
+      <td>true</td>
+    </tr>
+</tbody></table><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="インクリメントデクリメント">インクリメント、デクリメント</h5>
+    
+<ul>
+<li>変数の値を１増やすこと</li>
+<li>「++」はインクリメント<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="デクリメント">デクリメント</h5>
+    
+<ul>
+<li>変数の値を１減らすこと</li>
+<li>「--」はデクリメント<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></li>
+<li>以下の２つは、まったく同じ処理をします</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">let</span><span class="synSpecial"> </span>a<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">10</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span>a<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>a<span class="synSpecial"> </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">5</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synSpecial">  </span><span class="synType">let</span><span class="synSpecial"> </span>a<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">10</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span>a<span class="synSpecial"> </span><span class="synStatement">+=</span><span class="synSpecial"> </span><span class="synConstant">5</span><span class="synStatement">;</span>
+<span class="synSpecial">  </span><span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+<ul>
+<li>以下の３つは、まったく同じ処理をします</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">let</span><span class="synSpecial"> </span>a<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">10</span><span class="synStatement">;</span>
+a<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span>a<span class="synSpecial"> </span><span class="synStatement">+</span><span class="synSpecial"> </span><span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">let</span><span class="synSpecial"> </span>a<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">10</span><span class="synStatement">;</span>
+a<span class="synSpecial"> </span><span class="synStatement">+=</span><span class="synSpecial"> </span><span class="synConstant">1</span><span class="synStatement">;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synType">let</span><span class="synSpecial"> </span>a<span class="synSpecial"> </span><span class="synStatement">=</span><span class="synSpecial"> </span><span class="synConstant">10</span><span class="synStatement">;</span>
+a<span class="synStatement">++;</span>
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>a<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+</pre>
+    <blockquote>
+        <p>演算でデータの計算や代入、比較などの処理を行う</p>
+
+    </blockquote>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="論理演算子">論理<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></h4>
+    
+<ul>
+<li>条件を組み合わせたり、否定の結果を返したい場合に利用します</li>
+</ul><p>《<strong>各論理<a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a>の意味</strong>》</p><table width="640" border="1">
+    <tbody><tr>
+      <th><a class="keyword" href="https://d.hatena.ne.jp/keyword/%B1%E9%BB%BB%BB%D2">演算子</a></th>
+      <th>意味</th>
+      <th>例</th>
+    </tr>
+    <tr>
+      <td>&amp;&amp;</td>
+      <td>かつ</td>
+      <td>a &amp;&amp; b</td>
+    </tr>
+    <tr>
+      <td>||</td>
+      <td>または</td>
+      <td>a || b</td>
+    </tr>
+        <tr>
+      <td>!</td>
+      <td>〜でない</td>
+      <td>!a</td>
+    </tr>
+</tbody></table><p></p><br>
+<p>《<strong>&amp;&amp;（AND）の使用例</strong>》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// if文の中で使用する例</span>
+
+<span class="synType">const</span> age <span class="synStatement">=</span> <span class="synConstant">28</span><span class="synStatement">;</span>
+
+<span class="synComment">// ageの値が20より大きく、かつ30より小さいとき</span>
+<span class="synStatement">if</span> <span class="synSpecial">(</span>age <span class="synStatement">&gt;</span> <span class="synConstant">20</span> <span class="synStatement">&amp;&amp;</span> age <span class="synStatement">&lt;</span> <span class="synConstant">30</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'対象年齢です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'対象年齢ではありません'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+&gt;&gt; 対象年齢です
+</pre><p><br>
+《<strong>|| （OR）の使用例</strong>》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// if文の中で使用する例</span>
+
+<span class="synType">const</span> age <span class="synStatement">=</span> <span class="synConstant">28</span><span class="synStatement">;</span>
+
+<span class="synComment">// ageの値が20である、または30であるとき</span>
+<span class="synStatement">if</span> <span class="synSpecial">(</span>age <span class="synStatement">==</span> <span class="synConstant">20</span> <span class="synStatement">||</span> age <span class="synStatement">==</span> <span class="synConstant">30</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'対象年齢です'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span> <span class="synStatement">else</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'対象年齢ではありません'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+&gt;&gt; 対象年齢ではありません
+</pre><p><br>
+《<strong>! （NOT）の使用例</strong>》</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synComment">// if文の中で使用する例</span>
+
+<span class="synType">let</span> flag <span class="synStatement">=</span> <span class="synConstant">false</span><span class="synStatement">;</span>
+
+<span class="synComment">// flagがfalseであれば、処理する</span>
+<span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synStatement">!</span>flag<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+ <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'変数flagの値はfalseです'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+&gt;&gt; 値はfalseです
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="超入門問題（テンプレートリテラル編）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">超入門問題（テンプレートリテラル編）</span></a><a href="JavaScriptで扱えるデータの種類.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">JavaScriptで扱えるデータの種類</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

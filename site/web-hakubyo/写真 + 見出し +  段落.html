@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>写真 + 見出し +  段落 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>写真 + 見出し +  段落</span>
+  </div>
+  <div class="article-head">
+    <h1>写真 + 見出し +  段落</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">コーディング基礎</span>
+      <span class="date">2026/02/08</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="写真--見出し--段落">写真 + 見出し + 段落</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260228024306.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>HTMLとCSSの役割を200文字程度でまとめたコンテンツを作成したい </p>
+
+<ul>
+<li>各ブロックが写真 + 見出し + 段落で</li>
+</ul>
+    </blockquote>
+
+<div class="section">
+    <h5 id="完成例">完成例</h5>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260228030544.jpg" width="500" height="1149" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="テキスト">テキスト</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink="">【写真：Webページの構造図】
+
+HTMLの役割
+
+HTMLはWebページの骨組みを作る言語です。見出し、文章、画像、リンクなどの要素を配置し、情報の構造と意味を定義します。ページ全体の内容を正しく伝える基盤となります。
+
+【写真：デザイン装飾のイメージ】
+
+CSSの役割
+
+CSSはHTMLで作られた構造にデザインを加える言語です。色、文字サイズ、レイアウト、余白などを調整し、見やすく美しいWebページに仕上げます。
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-模範解答写真--見出し--段落">🧩 模範解答：写真 + 見出し + 段落</h4>
+    
+<ul>
+<li>コーディングルールは、自前のルールで記述（AIのコーディング大筋のみ利用します。）</li>
+<li>画像は、nano bananaで作成</li>
+</ul><p></p><h6 id="HTML">HTML</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>HTMLとCSSの役割<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"block"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/01.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"Webページの構造図"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>HTMLの役割<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>HTMLはWebページの骨組みを作る言語です。見出し、文章、画像、リンクなどの要素を配置し、情報の構造と意味を定義します。ページ全体の内容を正しく伝える基盤となります。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.block --&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">section</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"block"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"img/02.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"デザイン装飾のイメージ"</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>CSSの役割<span class="synIdentifier">&lt;/</span><span class="synStatement">h2</span><span class="synIdentifier">&gt;</span>
+      <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>CSSはHTMLで作られた構造にデザインを加える言語です。色、文字サイズ、レイアウト、余白などを調整し、見やすく美しいWebページに仕上げます。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;/</span><span class="synStatement">section</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.block --&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="CSS">CSS</h6><p></p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">------------------------------------- */</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">------------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#f4f4f4</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  layout</span>
+<span class="synComment">------------------------------------- */</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">480px</span>;
+  <span class="synType">margin</span>: <span class="synConstant">40px</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">30px</span> <span class="synConstant">40px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ffffff</span>;
+  <span class="synType">border-radius</span>: <span class="synConstant">8px</span>;
+  <span class="synType">box-shadow</span>: <span class="synConstant">0</span> <span class="synConstant">0</span> <span class="synConstant">4px</span> <span class="synIdentifier">rgba(</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">0.2</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* -------------------------------------</span>
+<span class="synComment">  section</span>
+<span class="synComment">------------------------------------- */</span>
+  <span class="synIdentifier">.block</span> <span class="synIdentifier">{</span>
+    <span class="synType">margin-bottom</span>: <span class="synConstant">30px</span>;
+  <span class="synIdentifier">}</span>
+    <span class="synIdentifier">.block</span> <span class="synStatement">img</span> <span class="synIdentifier">{</span>
+      <span class="synType">width</span>: <span class="synConstant">100%</span>;
+      <span class="synType">max-width</span>: <span class="synConstant">400px</span>;
+      <span class="synType">display</span>: <span class="synConstant">block</span>;
+      <span class="synType">margin-bottom</span>: <span class="synConstant">8px</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synStatement">h2</span> <span class="synIdentifier">{</span>
+      <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+      <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+    <span class="synIdentifier">}</span>
+    <span class="synStatement">p</span> <span class="synIdentifier">{</span>
+      <span class="synType">text-align</span>: <span class="synConstant">justify</span>;
+      <span class="synType">line-height</span>: <span class="synConstant">1.6</span>;
+    <span class="synIdentifier">}</span>
+</pre>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="初めて作る -１カラムレイアウト.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">初めて作る -１カラムレイアウト</span></a><a href="コンテンツ横並び.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">コンテンツ横並び</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

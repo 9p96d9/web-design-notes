@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>演習課題 - テンプレート - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>演習課題 - テンプレート</span>
+  </div>
+  <div class="article-head">
+    <h1>演習課題 - テンプレート</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">演習課題</span>
+      <span class="date">2026/03/01</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="演習課題-テンプレート">演習課題 テンプレート</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241105045432.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<div class="section">
+    <h5 id="提出サムネイル">提出サムネイル</h5>
+    
+<ul>
+<li>JavaScriptを実装したページを提出課題として表示するページへリンクする</li>
+</ul><p></p><h6 id="モバイルシミュレーター---レスポンシブテストツール">モバイルシミュレーター - レスポンシブテストツール</h6><p></p>
+
+<ul>
+<li>Chrome「拡張機能」</li>
+</ul><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20241105022416.jpg" width="500" height="434" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="デバイスフレームのスクリーンショット">デバイスフレームのスクリーンショット</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-lesson_20260308221530.png" width="500" height="575" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="記述ポイント">記述ポイント</h4>
+    
+<ul>
+<li>ページ全体のレイアウト（ヘッダー・メイン・フッター）を作るときによく使うGridで設定します。</li>
+<li>「フッターを常に画面下に配置するレイアウト」でよく使われます。</li>
+</ul>
+    <blockquote>
+        <p>display: grid;<br>
+grid-template-rows: auto 1fr auto;<br>
+min-height: 100vh;</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="-display-grid">① display: grid;</h5>
+    <p>要素を Gridレイアウトにします。</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">display: grid;
+</pre><p>これを指定すると、その要素の子要素がグリッドで配置されます。</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span><span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+<span class="synIdentifier">}</span>
+</pre><p>すると</p>
+
+<ul>
+<li>header / main / footer が グリッドの行として並びます。</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="-grid-template-rows-auto-1fr-auto">② grid-template-rows: auto 1fr auto;</h5>
+    <p>行の高さのルールを決めています。</p>
+<pre class="code lang-css" data-lang="css" data-unlink="">grid-template-rows: auto 1fr auto;
+</pre><p>これは 3行のレイアウトです。</p>
+
+<table>
+    <tbody><tr>
+    <th>行</th>
+    <th>サイズ</th>
+    <th>意味</th>
+    </tr>
+    <tr>
+    <td> 1行目 </td>
+    <td> auto </td>
+    <td> コンテンツの高さ </td>
+    </tr>
+    <tr>
+    <td> 2行目 </td>
+    <td> 1fr  </td>
+    <td> 残り全部     </td>
+    </tr>
+    <tr>
+    <td> 3行目 </td>
+    <td> auto </td>
+    <td> コンテンツの高さ </td>
+    </tr>
+</tbody></table><p></p><h6 id="ポイント">ポイント</h6><strong>auto</strong>：中身の高さに合わせる<br>
+<strong>1fr</strong>：残りのスペースを全部使う<p></p>
+
+</div>
+<div class="section">
+    <h5 id="-min-height-100vh">③ min-height: 100vh;</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink="">min-height: 100vh;
+</pre><p>これは<br>
+<strong>画面の高さと同じ高さを最低限確保する</strong><br>
+という意味です。</p><p></p><h6 id="vhとは">vhとは</h6><p></p>
+<pre class="code" data-lang="" data-unlink="">vh = viewport height</pre><p>【例】</p>
+
+<ul>
+<li>100vh = 画面の高さ100%</li>
+</ul><p>つまり</p>
+
+<ul>
+<li>bodyの高さ = 画面いっぱい</li>
+</ul><p>になります。</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="この3つを組み合わせるとどうなる">この3つを組み合わせるとどうなる？</h4>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-rows</span>: <span class="synConstant">auto</span> <span class="synConstant">1fr</span> <span class="synConstant">auto</span>;
+  <span class="synType">min-height</span>: <span class="synConstant">100vh</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="結果">結果</h6><p></p>
+
+    <blockquote>
+        <p>画面いっぱいの高さ<br>
+↓<br>
+header<br>
+main（余白全部）<br>
+footer</p>
+
+    </blockquote>
+<p>つまり<br>
+<strong>コンテンツが少なくてもフッターが下に来る</strong><br>
+</p>
+
+<div class="section">
+    <h5 id="よくある問題">よくある問題</h5>
+    <p>普通のHTML</p>
+
+    <blockquote>
+        <p>header<br>
+main（短い）<br>
+footer</p>
+
+    </blockquote>
+<p>だと</p>
+
+    <blockquote>
+        <p>header<br>
+main<br>
+footer<br>
+（下に余白）</p>
+
+    </blockquote>
+<p>になります。</p><p>しかしこのGridを使うと</p>
+
+    <blockquote>
+        <p>header<br>
+main<br>
+（空白をmainが担当）<br>
+footer</p>
+
+    </blockquote>
+<p>になるので<br>
+<strong>フッターが画面下に固定されたように見える</strong><br>
+</p>
+
+</div>
+<div class="section">
+    <h5 id="HTML記述例">HTML記述例</h5>
+    <p></p><h6 id="HTML">【HTML】</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>課題タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"css/style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">script</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"js/script.js"</span><span class="synIdentifier"> </span><span class="synType">defer</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">script</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+
+<span class="synComment">&lt;!-- header --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">header</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"header"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>JavaScript<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>課題タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"btn"</span><span class="synIdentifier">&gt;&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"../index.html"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">トップへ戻る</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">header</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /header --&gt;</span>
+
+<span class="synComment">&lt;!-- main --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">main</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"main"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+    
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">main</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /main --&gt;</span>
+
+<span class="synComment">&lt;!-- footer --&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">footer</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"footer"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier"> </span><span class="synType">id</span><span class="synIdentifier">=</span><span class="synConstant">"update"</span><span class="synIdentifier">&gt;</span>更新日：xxxx年x月x日<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">footer</span><span class="synIdentifier">&gt;</span>
+<span class="synComment">&lt;!-- /footer --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synPreProc">@charset </span><span class="synConstant">"UTF-8"</span>;
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  reset</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">*</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">before</span><span class="synSpecial">,</span> <span class="synStatement">*</span>::<span class="synPreProc">after</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">ul</span> <span class="synIdentifier">{</span>
+  <span class="synType">list-style</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">a</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">inherit</span>;
+  <span class="synType">text-decoration</span>: <span class="synConstant">none</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">img</span> <span class="synIdentifier">{</span>
+  <span class="synType">max-width</span>: <span class="synConstant">100%</span>;
+  <span class="synType">vertical-align</span>: <span class="synConstant">bottom</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  body</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-rows</span>: <span class="synConstant">auto</span> <span class="synConstant">1fr</span> <span class="synConstant">auto</span>;
+  <span class="synType">min-height</span>: <span class="synConstant">100vh</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">1.0rem</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.8</span>;
+<span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  header</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.header</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">20px</span> <span class="synConstant">0</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ece18b</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synStatement">h1</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.5rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.header</span> <span class="synSpecial">&gt;</span> <span class="synStatement">h1</span>::<span class="synPreProc">first-line</span> <span class="synIdentifier">{</span>
+    <span class="synType">font-size</span>: <span class="synConstant">1.125rem</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synIdentifier">{</span>
+    <span class="synType">display</span>: <span class="synConstant">inline-block</span>;
+    <span class="synType">width</span>: <span class="synConstant">100%</span>;
+    <span class="synType">margin-top</span>: <span class="synConstant">10px</span>;
+    <span class="synType">border</span>: <span class="synConstant">#fff</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">border</span>: <span class="synConstant">2px</span> <span class="synConstant">solid</span> <span class="synConstant">#8f8851</span>;
+    <span class="synType">color</span>: <span class="synConstant">#8f8851</span>;
+    <span class="synType">font-weight</span>: <span class="synConstant">700</span>;
+    <span class="synType">transition</span>: <span class="synType">all</span> .<span class="synConstant">3s</span>;
+  <span class="synIdentifier">}</span>
+  <span class="synIdentifier">.btn</span> <span class="synStatement">a</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+    <span class="synType">padding</span>: <span class="synConstant">6px</span> <span class="synConstant">20px</span>;
+    <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+    <span class="synType">color</span>: <span class="synConstant">#8f8851</span>;
+  <span class="synIdentifier">}</span>
+
+
+<span class="synComment">/* --------------------------------</span>
+<span class="synComment">  footer</span>
+<span class="synComment">-------------------------------- */</span>
+<span class="synIdentifier">.footer</span> <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">10px</span>;
+  <span class="synType">background-color</span>: <span class="synConstant">#ece18b</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="シングルクォートかダブルクォートどっち？.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">シングルクォートかダブルクォートどっち？</span></a><a href="ダークモードに対応.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">ダークモードに対応</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

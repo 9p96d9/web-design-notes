@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ページ全体の文字指定（初期値作成） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>ページ全体の文字指定（初期値作成）</span>
+  </div>
+  <div class="article-head">
+    <h1>ページ全体の文字指定（初期値作成）</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">CSS</span>
+      <span class="date">2026/01/23</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="ページ全体の文字指定初期値作成">ページ全体の文字指定（初期値作成）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250314032206.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>CSSのbodyをページ全体の文字の初期値を設定するセレクタとして扱うには？</p>
+
+    </blockquote>
+<p>body セレクタは「<strong>ページ全体の文字スタイルの初期値</strong>」を設定する場所として使うのが定石です。</p>
+
+</div>
+<div class="section">
+    <h4 id="基本の考え方">基本の考え方</h4>
+    
+<ul>
+<li>bodyは、resetとは別でページの文字の初期値を設定する</li>
+<li>ページ全体に反映したい文字の値は「body」に指定します（継承）</li>
+<li>基本的には、文字情報のみ</li>
+<li>文字色、line-heightは適宜変更する場合があります</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">"Noto Sans JP"</span><span class="synSpecial">,</span> <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+</pre><p>こう書くことで：</p>
+
+<ul>
+<li>ページ全体の フォント</li>
+<li>文字サイズ</li>
+<li>行間</li>
+<li>文字色</li>
+</ul><p>の「デフォルト値」を一括指定できます。</p><p>これは <strong>CSSの継承（inheritance）</strong> の仕組みにより、<br>
+body に指定した文字関連プロパティが、ほぼすべての子要素に引き継がれるためです。</p>
+
+</div>
+<div class="section">
+    <h4 id="なぜ-body-が適切なのか">なぜ body が適切なのか？</h4>
+    
+<div class="section">
+    <h5 id="1-文字系プロパティは継承される">1. 文字系プロパティは継承される</h5>
+    <p>以下のプロパティは 自動的に子要素に継承 されます。</p>
+
+<ul>
+<li>color</li>
+<li>font-size</li>
+<li>font-family</li>
+<li>line-height</li>
+<li>letter-spacing</li>
+</ul><p>→ つまり body に書けば、ページ全体に反映されます。</p>
+
+</div>
+<div class="section">
+    <h5 id="2-html-ではなく-body-を使う理由">2. html ではなく body を使う理由</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+<span class="synIdentifier">}</span>
+</pre><p>とするケースもありますが、一般的には：</p>
+
+<ul>
+<li>文字の基本 → body</li>
+<li>remの基準サイズ → html</li>
+</ul><p>という使い分けが多いです。</p>
+<pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">1.0rem</span>;  <span class="synComment">/* 1.0rem = 16px */</span>
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="文字のプロパティ">文字のプロパティ</h5>
+    
+<ul>
+<li>color : 文字の色</li>
+<li>font-size : 文字の大きさ</li>
+<li>font-family : フォントの種類</li>
+<li>font-weight : 文字の太さ</li>
+<li>font-style : 文字のスタイル</li>
+<li>line-height : 文章の行間</li>
+</ul><p>個別の値が指定されなかった場合は、ブラウザの初期値が設定されます。</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="よく使われる初期化セット実用テンプレ">よく使われる初期化セット（実用テンプレ）</h4>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">html</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-size</span>: <span class="synConstant">100%</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">1.0rem</span>;
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="よくあるNGパターン">よくあるNGパターン</h4>
+    
+<div class="section">
+    <h5 id="-全要素に--で指定">❌ 全要素に * で指定</h5>
+    <pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+</pre><p></p><h6 id="理由">理由</h6><p></p>
+
+<ul>
+<li>パフォーマンスが落ちる</li>
+<li>フォーム部品や疑似要素にも影響して事故りやすい</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="背景色">背景色</h5>
+    
+<ul>
+<li>背景色を「白」に設定（この記述がないと、スマートフォンで「ダークモード」にすると黒い文字は読むことができなくなります）</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="font-size">font-size</h5>
+    
+<ul>
+<li>文字の表示される大きさ</li>
+<li>単位は、「px、em、rem、％、vw」などが設定できます
+<ul>
+<li>px（画面サイズの可変や、他要素の単位や大きさに関わらずサイズが固定される絶対値です）</li>
+<li>％（指定する要素の親要素に対する相対値です）</li>
+<li>em（親要素のフォントサイズに影響を受ける単位です）</li>
+<li>rem（ルート要素のフォントサイズが基準になります）</li>
+<li>vw（vwは「viewport width」の略で、画面幅を100とした時の単位になるため、1vwであればビューポート幅の 1%ということになります）</li>
+</ul></li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="font-family">font-family</h5>
+    
+<ul>
+<li>複数の書体名を記述する場合は、頻度の少ないものから順に記述し、最後に「総称ファミリー名」を記述します</li>
+<li>Neue, [nɔ́Yə]-ドイツ語：ノイエ（新しい）</li>
+</ul><p></p><h6 id="記述例">記述例</h6><p></p>
+
+<ul>
+<li>英字→日本語→汎用（自動的にこの順番で適用されます）</li>
+<li>スマートフォンの場合、この書体は「スマートフォンの書体（デバイスフォント）」に変更されます</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>: 
+    <span class="synConstant">"Helvetica Neue"</span><span class="synSpecial">,</span>
+    <span class="synConstant">Arial</span><span class="synSpecial">,</span>
+    <span class="synConstant">"Hiragino Kaku Gothic ProN"</span><span class="synSpecial">,</span>
+    <span class="synConstant">"Hiragino Sans"</span><span class="synSpecial">,</span>
+    Meiryo<span class="synSpecial">,</span>
+    <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+</pre>
+<ul>
+<li>最小指定は「sans-serif（総称ファミリー名）」のみ、各ブラウザーではデバイスフォントで表示されます</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">font-family</span>:  <span class="synConstant">sans-serif</span>;
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="line-height">line-height</h5>
+    
+<ul>
+<li>１行の height の中心から次の行の height の中心までの距離</li>
+<li>リセットする場合は、「1.0」（単位なし）にする（適宜、変更します）</li>
+<li>日本語での読みやすさを考えると「1.6〜1.8」の間で指定する</li>
+</ul><p>※ブラウザの初期値は「1.5」</p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20250314031136.jpg" width="600" height="120" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="body記述例">body記述例</h5>
+    
+<ul>
+<li>resetと同様に「コメント」を入れて他のCSSと区別し見やすくします</li>
+</ul><pre class="code lang-css" data-lang="css" data-unlink=""><span class="synComment">/*-----------------------------------------</span>
+<span class="synComment">  body </span>
+<span class="synComment">-----------------------------------------*/</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">background-color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">color</span>: <span class="synConstant">#333</span>;
+  <span class="synType">font-size</span>: <span class="synConstant">16px</span>;
+  <span class="synType">font-family</span>: 
+    <span class="synConstant">"Helvetica Neue"</span><span class="synSpecial">,</span>
+    <span class="synConstant">Arial</span><span class="synSpecial">,</span>
+    <span class="synConstant">"Hiragino Kaku Gothic ProN"</span><span class="synSpecial">,</span>
+    <span class="synConstant">"Hiragino Sans"</span><span class="synSpecial">,</span>
+    Meiryo<span class="synSpecial">,</span>
+    <span class="synConstant">sans-serif</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>
+<span class="synIdentifier">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="まとめ">まとめ</h4>
+    
+<ul>
+<li>初心者のサイト制作では、以下の最低限のリセットにとどめます</li>
+<li>必要に応じて追加記述します</li>
+</ul>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="リセットCSSの記述.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">リセットCSSの記述</span></a><a href="text-align - 行揃え.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">text-align - 行揃え</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

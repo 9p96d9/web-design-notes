@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>head と body の違い - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">HTML/CSS 演習プロンプト</a>
+    <span class="sep">›</span>
+    <span>head と body の違い</span>
+  </div>
+  <div class="article-head">
+    <h1>head と body の違い</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">HTML</span>
+      <span class="date">2025/12/05</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="head-と-body-の違い">head と body の違い</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/athro_20260221040125.jpg" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>headとbodyの違いを詳しく解説して</p>
+
+    </blockquote>
+
+<table>
+    <tbody><tr>
+    <th>要素</th>
+    <th>役割</th>
+    </tr>
+    <tr>
+    <td> &lt;head&gt; </td>
+    <td> <strong>ページの設定・裏側の情報</strong> </td>
+    </tr>
+    <tr>
+    <td> &lt;body&gt; </td>
+    <td> <strong>画面に表示される内容</strong>  </td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="head-の役割設定エリア">&lt;head&gt; の役割（設定エリア）</h5>
+    <p>👉 ブラウザや検索エンジン向けの情報</p><p></p><h6 id="主な役割">主な役割</h6><p></p>
+
+<ul>
+<li>文字コードの指定</li>
+<li>スマホ対応設定</li>
+<li>ページタイトル</li>
+<li>CSSの読み込み</li>
+<li>JavaScriptの読み込み</li>
+<li>SEO用の設定</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>自己紹介ページ<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">link</span><span class="synIdentifier"> </span><span class="synType">rel</span><span class="synIdentifier">=</span><span class="synConstant">"stylesheet"</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"style.css"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="各タグの意味">各タグの意味</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>タグ</th>
+    <th>役割</th>
+    </tr>
+    <tr>
+    <td> &lt;meta charset="UTF-8"&gt; </td>
+    <td> 日本語が文字化けしない </td>
+    </tr>
+    <tr>
+    <td> &lt;meta name="viewport"&gt; </td>
+    <td> スマートフォン対応       </td>
+    </tr>
+    <tr>
+    <td> &lt;title&gt;               </td>
+    <td> タブに表示される名前  </td>
+    </tr>
+    <tr>
+    <td> &lt;link&gt;                 </td>
+    <td> CSSの読み込み    </td>
+    </tr>
+    <tr>
+    <td> &lt;script&gt;               </td>
+    <td> JSの読み込み     </td>
+    </tr>
+</tbody></table><p>📌 headの中身は基本的に画面には表示されません</p>
+
+</div>
+<div class="section">
+    <h5 id="body-の役割表示エリア">&lt;body&gt; の役割（表示エリア）</h5>
+    <p>👉 実際にユーザーが見る部分</p><p></p><h6 id="主な役割-1">主な役割</h6><p></p>
+
+<ul>
+<li>文字</li>
+<li>画像</li>
+<li>ボタン</li>
+<li>リンク</li>
+<li>表</li>
+<li>フォーム</li>
+</ul><p>【例】</p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>こんにちは！<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>私の自己紹介ページです。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">img</span><span class="synIdentifier"> </span><span class="synType">src</span><span class="synIdentifier">=</span><span class="synConstant">"photo.jpg"</span><span class="synIdentifier"> </span><span class="synType">alt</span><span class="synIdentifier">=</span><span class="synConstant">"プロフィール写真"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">a</span><span class="synIdentifier"> </span><span class="synType">href</span><span class="synIdentifier">=</span><span class="synConstant">"#"</span><span class="synIdentifier">&gt;</span><span class="synUnderlined">お問い合わせ</span><span class="synIdentifier">&lt;/</span><span class="synStatement">a</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="イメージで理解しよう">イメージで理解しよう</h5>
+    <p></p><h6 id="人間に例えると">人間に例えると</h6><p></p>
+
+<table>
+    <tbody><tr>
+    <th>HTML</th>
+    <th>人体</th>
+    </tr>
+    <tr>
+    <td> &lt;head&gt; </td>
+    <td> 脳（設定・制御） </td>
+    </tr>
+    <tr>
+    <td> &lt;body&gt; </td>
+    <td> 体（見える部分） </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h5 id="よくある間違い">よくある間違い</h5>
+    <p></p><h6 id="-bodyに入れるべきでないもの">❌ bodyに入れるべきでないもの</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>タイトル<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><h6 id="-headに入れるべきでないもの">❌ headに入れるべきでないもの</h6><p></p>
+<pre class="code lang-html" data-lang="html" data-unlink=""><span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>見出し<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>文章<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="実践ミニサンプル">実践ミニサンプル</h5>
+    
+<ul>
+<li>スマートフォン対応の記述は不要</li>
+</ul><pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synPreProc">  </span><span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>headとbodyの違い<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>ここが画面に表示されます<span class="synIdentifier">&lt;/</span><span class="synStatement">h1</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>これはbodyの中身です。<span class="synIdentifier">&lt;/</span><span class="synStatement">p</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="HTMLの基本構造.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">HTMLの基本構造</span></a><a href="見出しと段落.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">見出しと段落</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+# アーカイブ（不要な旧ファイル）
+_archive/
+
+# OS・エディタ
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Claude Code
+.claude/

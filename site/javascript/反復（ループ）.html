@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>反復（ループ） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>反復（ループ）</span>
+  </div>
+  <div class="article-head">
+    <h1>反復（ループ）</h1>
+    <div class="meta">
+      
+      <span class="date">2026/01/15</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="反復ループ">反復（ループ）</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260211124621.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptで反復（ループ）の解説をして</p>
+
+    </blockquote>
+
+<ul>
+<li>ループとは、同じ処理を何度も繰り返す仕組みです。</li>
+<li>例えば「1〜10まで表示する」「配列の全要素を処理する」などで使います。</li>
+</ul>
+</div>
+<div class="section">
+    <h4 id="for-文最も基本">for 文（最も基本）</h4>
+    <p></p><h6 id="基本構文">基本構文</h6><p></p>
+
+    <blockquote>
+        <p>for (初期化; 条件式; 更新) {<br>
+  　繰り返したい処理<br>
+}</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="例15を表示">例：1〜5を表示</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p></p><h6 id="流れ">流れ</h6><p></p>
+
+<ol>
+<li>let i = 1 → 変数を初期化</li>
+<li>i &lt;= 5 → 条件チェック</li>
+<li>中の処理実行</li>
+<li>i++ → 1増やす</li>
+<li>②に戻る</li>
+</ol>
+</div>
+</div>
+<div class="section">
+    <h4 id="while-文条件が-true-の間繰り返す">while 文（条件が true の間繰り返す）</h4>
+    <p></p><h6 id="基本構文-1">基本構文</h6><p></p>
+
+    <blockquote>
+        <p>while (条件式) {<br>
+  　繰り返したい処理<br>
+}</p>
+
+    </blockquote>
+
+<div class="section">
+    <h5 id="例15を表示-1">例：1〜5を表示</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+
+<span class="synStatement">while</span> <span class="synSpecial">(</span>i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+  i<span class="synStatement">++;</span>
+<span class="synSpecial">}</span>
+</pre><p>📌 条件がずっと true のままだと無限ループになるので注意！</p>
+
+</div>
+<div class="section">
+    <h5 id="dowhile-文必ず1回は実行">do...while 文（必ず1回は実行）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span>
+
+<span class="synStatement">do</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+  i<span class="synStatement">++;</span>
+<span class="synSpecial">}</span> <span class="synStatement">while</span> <span class="synSpecial">(</span>i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+</pre><p>👉 条件チェックが後なので、最低1回は必ず実行されます。</p>
+
+</div>
+<div class="section">
+    <h5 id="forof配列のループに最適">for...of（配列のループに最適）</h5>
+    <p></p><h6 id="例配列の全要素を表示">例：配列の全要素を表示</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> fruits <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'りんご'</span><span class="synStatement">,</span> <span class="synConstant">'みかん'</span><span class="synStatement">,</span> <span class="synConstant">'バナナ'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+
+<span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">const</span> fruit <span class="synStatement">of</span> fruits<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>fruit<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>👉 配列の中身を1つずつ取り出すのに便利</p>
+
+</div>
+<div class="section">
+    <h5 id="forEach配列専用">forEach（配列専用）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> fruits <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">'りんご'</span><span class="synStatement">,</span> <span class="synConstant">'みかん'</span><span class="synStatement">,</span> <span class="synConstant">'バナナ'</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+
+fruits<span class="synStatement">.</span><span class="synIdentifier">forEach</span><span class="synSpecial">(</span><span class="synStatement">function</span><span class="synSpecial">(</span>fruit<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>fruit<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">})</span><span class="synStatement">;</span>
+</pre><p>またはアロー関数：</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">fruits<span class="synStatement">.</span><span class="synIdentifier">forEach</span><span class="synSpecial">(</span>fruit <span class="synStatement">=&gt;</span> <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>fruit<span class="synSpecial">))</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="break--continue">break / continue</h4>
+    
+<div class="section">
+    <h5 id="breakループを中断">break：ループを中断</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">10</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>i <span class="synStatement">===</span> <span class="synConstant">5</span><span class="synSpecial">)</span> <span class="synStatement">break;</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>👉 1〜4 まで表示</p>
+
+</div>
+<div class="section">
+    <h5 id="continueその回をスキップ">continue：その回をスキップ</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">let</span> i <span class="synStatement">=</span> <span class="synConstant">1</span><span class="synStatement">;</span> i <span class="synStatement">&lt;=</span> <span class="synConstant">5</span><span class="synStatement">;</span> i<span class="synStatement">++</span><span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synStatement">if</span> <span class="synSpecial">(</span>i <span class="synStatement">===</span> <span class="synConstant">3</span><span class="synSpecial">)</span> <span class="synStatement">continue;</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>i<span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>👉 1, 2, 4, 5 を表示</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="よく使うループの使い分け">よく使うループの使い分け</h4>
+    
+<table>
+    <tbody><tr>
+    <th>目的</th>
+    <th>おすすめ</th>
+    </tr>
+    <tr>
+    <td> 回数が決まっている </td>
+    <td> for                </td>
+    </tr>
+    <tr>
+    <td> 条件次第で繰り返す </td>
+    <td> while              </td>
+    </tr>
+    <tr>
+    <td> 配列の中身処理   </td>
+    <td> for...of / forEach </td>
+    </tr>
+</tbody></table>
+<div class="section">
+    <h5 id="-よくある実用例">🔰 よくある実用例</h5>
+    <p></p><h6 id="配列の合計を求める">配列の合計を求める</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> numbers <span class="synStatement">=</span> <span class="synSpecial">[</span><span class="synConstant">10</span><span class="synStatement">,</span> <span class="synConstant">20</span><span class="synStatement">,</span> <span class="synConstant">30</span><span class="synSpecial">]</span><span class="synStatement">;</span>
+<span class="synType">let</span> sum <span class="synStatement">=</span> <span class="synConstant">0</span><span class="synStatement">;</span>
+
+<span class="synStatement">for</span> <span class="synSpecial">(</span><span class="synType">const</span> n <span class="synStatement">of</span> numbers<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  sum <span class="synStatement">+=</span> n<span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+
+<span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span>sum<span class="synSpecial">)</span><span class="synStatement">;</span> <span class="synComment">// 60</span>
+</pre>
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="初心者向け 練習問題（計算 × prompt）.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">初心者向け 練習問題（計算 × prompt）</span></a><a href="配列.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">配列</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transform［トランスフォームアニメーション］ - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>Transform［トランスフォームアニメーション］</span>
+  </div>
+  <div class="article-head">
+    <h1>Transform［トランスフォームアニメーション］</h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">CSS</span>
+      <span class="date">2025/11/07</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="Transformトランスフォームアニメーション">Transform［トランスフォームアニメーション］</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241104071937.jpg" width="100" height="100" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>要素に移動(translate)、拡大縮小(scale)、回転(rotate)、傾斜(skew)などの変形(transform)を適応させる<a class="keyword" href="https://d.hatena.ne.jp/keyword/CSS">CSS</a>プロパティです</li>
+</ul>
+<div class="section">
+    <h5 id="transformプロパティの値に指定できる関数">transformプロパティの値に指定できる関数</h5>
+    <p></p><table width="380">
+    <tbody><tr>
+      <th>関数名</th>
+      <th>読み方</th>
+      <th>実行効果</th>
+    </tr>
+    <tr>
+      <td><strong>translate</strong></td>
+      <td>&nbsp;トランスレイト</td>
+      <td>&nbsp;移動</td>
+    </tr>
+    <tr>
+      <td><strong>rotate</strong></td>
+      <td>&nbsp;ローテート</td>
+      <td>&nbsp;回転</td>
+    </tr>
+    <tr>
+      <td><strong>scale</strong></td>
+      <td>&nbsp;スケール</td>
+      <td>&nbsp;伸縮</td>
+    </tr>
+    <tr>
+      <td><strong>skew</strong></td>
+      <td>&nbsp;スキュー</td>
+      <td>&nbsp;傾斜</td>
+    </tr>
+</tbody></table><p></p><p></p><h6 id="初期値">初期値</h6><p></p>
+
+<ul>
+<li>transform: none;</li>
+</ul>
+</div>
+<div class="section">
+    <h5 id="移動translate">移動（translate）</h5>
+    
+<ul>
+<li>もとの位置から「どれだけ移動させるか」を指定できます</li>
+</ul><p></p><table>
+<tbody><tr><th>プロパティ</th><th>説明</th></tr>
+<tr><td>translate</td><td>X方向の移動距離, Y方向の移動距離</td></tr>
+<tr><td>translateX</td><td>X方向の移動距離</td></tr>
+<tr><td>translateY</td><td>Y方向の移動距離</td></tr>
+<tr><td>translateZ</td><td>Z方向の移動距離</td></tr>
+<tr><td>translate3d</td><td>X方向の移動距離, Y方向の移動距離, Z方向の移動距離</td></tr>
+</tbody></table><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="回転rotate">回転（rotate）</h5>
+    
+<ul>
+<li>要素を回転させることができます</li>
+<li>degという単位で指定（degree：角度）</li>
+</ul><p></p><table>
+<tbody><tr><th>プロパティ</th><th>説明</th></tr>
+<tr><td>rotate</td><td>回転角度</td></tr>
+<tr><td> otate3d</td><td>数値, 数値, 数値, 回転角度</td></tr>
+<tr><td>rotateX</td><td>X軸を軸とする回転角度</td></tr>
+<tr><td>rotateY</td><td>Y軸を軸とする回転角度</td></tr>
+<tr><td>rotateZ</td><td>Z軸を軸とする回転角度</td></tr>
+</tbody></table><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="縮尺scale">縮尺（scale）</h5>
+    
+<ul>
+<li>要素の拡大と縮小を指定できます</li>
+</ul><p></p><table>
+<tbody><tr><th>プロパティ</th><th>説明</th></tr>
+<tr><td>scale</td><td>X方向の縮尺比率, Y方向の縮尺比率</td></tr>
+<tr><td>scaleX</td><td>X方向の縮尺比率</td></tr>
+<tr><td>scaleY</td><td>Y方向の縮尺比率</td></tr>
+<tr><td>scaleZ</td><td>Z方向の縮尺比率</td></tr>
+<tr><td>scale3d</td><td>X方向の縮尺比率, Y方向の縮尺比率, Z方向の縮尺比率</td></tr>
+</tbody></table><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="傾斜skew">傾斜（skew）</h5>
+    
+<ul>
+<li>並行四辺形を表現する際に使用する値</li>
+</ul><p></p><table>
+<tbody><tr><th>プロパティ</th><th>説明</th></tr>
+<tr><td>skew</td><td>X軸の傾斜角度, Y軸の傾斜角度</td></tr>
+<tr><td>skewX</td><td>X軸の傾斜角度</td></tr>
+<tr><td>skewY</td><td>Y軸の傾斜角度</td></tr>
+</tbody></table><p></p><p></p>
+
+</div>
+<div class="section">
+    <h5 id="記述例">記述例</h5>
+    <pre class="code lang-html" data-lang="html" data-unlink=""><span class="synComment">&lt;!DOCTYPE html&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">html</span><span class="synIdentifier"> </span><span class="synType">lang</span><span class="synIdentifier">=</span><span class="synConstant">"ja"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">charset</span><span class="synIdentifier">=</span><span class="synConstant">"UTF-8"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">meta</span><span class="synIdentifier"> </span><span class="synType">name</span><span class="synIdentifier">=</span><span class="synConstant">"viewport"</span><span class="synIdentifier"> </span><span class="synType">content</span><span class="synIdentifier">=</span><span class="synConstant">"width=device-width, initial-scale=1.0"</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>Transform<span class="synIdentifier">&lt;/</span><span class="synStatement">title</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synStatement">*</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin</span>: <span class="synConstant">0</span>;
+  <span class="synType">padding</span>: <span class="synConstant">0</span>;
+  <span class="synType">box-sizing</span>: <span class="synConstant">border-box</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">body</span> <span class="synIdentifier">{</span>
+  <span class="synType">line-height</span>: <span class="synConstant">1.0</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.container</span> <span class="synIdentifier">{</span>
+  <span class="synType">width</span>: min(<span class="synConstant">90%</span><span class="synSpecial">,</span> <span class="synConstant">640px</span>);
+  <span class="synType">margin</span>: <span class="synConstant">30px</span> <span class="synConstant">auto</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">solid</span> <span class="synConstant">#aaa</span>;
+<span class="synIdentifier">}</span>
+<span class="synStatement">h3</span> <span class="synIdentifier">{</span>
+  <span class="synType">margin-bottom</span>: <span class="synConstant">20px</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.content</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  <span class="synType">grid-template-columns</span>: <span class="synConstant">repeat</span>(<span class="synConstant">4</span><span class="synSpecial">,</span> <span class="synConstant">1fr</span>);
+  gap: <span class="synConstant">20px</span>;
+  <span class="synType">padding</span>: <span class="synConstant">20px</span>;
+  <span class="synType">border</span>: <span class="synConstant">1px</span> <span class="synConstant">dashed</span> <span class="synConstant">#aaa</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.box</span> <span class="synIdentifier">{</span>
+  <span class="synType">display</span>: <span class="synConstant">grid</span>;
+  place-<span class="synType">content</span>: <span class="synConstant">center</span>;
+  <span class="synType">height</span>: <span class="synConstant">120px</span>;
+  <span class="synType">background</span>: <span class="synConstant">#4e8996</span>;
+  <span class="synType">color</span>: <span class="synConstant">#fff</span>;
+  <span class="synType">text-align</span>: <span class="synConstant">center</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.2</span>;
+  <span class="synType">transition</span>: <span class="synConstant">2s</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* translate() */</span>
+<span class="synIdentifier">.trans01</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">translate(</span><span class="synConstant">30px</span><span class="synIdentifier">,</span><span class="synConstant">0</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.trans02</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">translate(</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant">30px</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.trans03</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">translate(</span><span class="synConstant">30px</span><span class="synIdentifier">,</span><span class="synConstant">-30px</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* rotate() */</span>
+<span class="synIdentifier">.rotate01</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">rotate(</span><span class="synConstant">45deg</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.rotate02</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">rotate(</span><span class="synConstant">-15deg</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.rotate03</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">rotate(</span><span class="synConstant">90deg</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* scale() */</span>
+<span class="synIdentifier">.scale01</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">scale(</span><span class="synConstant">0.8</span><span class="synIdentifier">,</span><span class="synConstant"> 0.8</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.scale02</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">scale(</span><span class="synConstant">0.5</span><span class="synIdentifier">,</span><span class="synConstant"> 1</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.scale03</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">scale(</span><span class="synConstant">1</span><span class="synIdentifier">,</span><span class="synConstant"> 1.5</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synComment">/* skew() */</span>
+<span class="synIdentifier">.skew01</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">skew(</span><span class="synConstant">30deg</span><span class="synIdentifier">,</span><span class="synConstant"> 0</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.skew02</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">skew(</span><span class="synConstant">0</span><span class="synIdentifier">,</span><span class="synConstant"> 30deg</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">.skew03</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">transform</span>: <span class="synIdentifier">skew(</span><span class="synConstant">30deg</span><span class="synIdentifier">,</span><span class="synConstant"> 30deg</span><span class="synIdentifier">)</span>;
+<span class="synIdentifier">}</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">style</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">head</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>translate()<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>変形なし<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box trans01"</span><span class="synIdentifier">&gt;</span>右へ<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>30px移動<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box trans02"</span><span class="synIdentifier">&gt;</span>下へ<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>30px移動<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box trans03"</span><span class="synIdentifier">&gt;</span>右へ<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>30px<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>上へ<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>30px移動<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>rotate()<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>変形なし<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box rotate01"</span><span class="synIdentifier">&gt;</span>45度回転<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box rotate02"</span><span class="synIdentifier">&gt;</span>15度逆回転<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box rotate03"</span><span class="synIdentifier">&gt;</span>90度逆回転<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>scale()<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>変形なし<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box scale01"</span><span class="synIdentifier">&gt;</span>80%に<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>縮小<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box scale02"</span><span class="synIdentifier">&gt;</span>横を半分に<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>縮小<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box scale03"</span><span class="synIdentifier">&gt;</span>縦に1.5倍に<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>拡大<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+
+<span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"container"</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>skew()<span class="synIdentifier">&lt;/</span><span class="synStatement">h3</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"content"</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box"</span><span class="synIdentifier">&gt;</span>変形なし<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box skew01"</span><span class="synIdentifier">&gt;</span>X軸方向に<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>30度傾斜<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box skew02"</span><span class="synIdentifier">&gt;</span>Y軸方向に<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>30度傾斜<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+    <span class="synIdentifier">&lt;</span><span class="synStatement">div</span><span class="synIdentifier"> </span><span class="synType">class</span><span class="synIdentifier">=</span><span class="synConstant">"box skew03"</span><span class="synIdentifier">&gt;</span>X軸・Y軸<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>両方向に<span class="synIdentifier">&lt;</span><span class="synStatement">br</span><span class="synIdentifier">&gt;</span>30度傾斜<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span>
+  <span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.content --&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">div</span><span class="synIdentifier">&gt;</span><span class="synComment">&lt;!-- /.container --&gt;</span>
+
+<span class="synIdentifier">&lt;/</span><span class="synStatement">body</span><span class="synIdentifier">&gt;</span>
+<span class="synIdentifier">&lt;/</span><span class="synStatement">html</span><span class="synIdentifier">&gt;</span>
+</pre><p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20241104080436.jpg" width="500" height="826" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p><p></p><h6 id="hover時">hover時</h6><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/ihigoro_20250610021542.png" width="500" height="850" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+</div>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="相対位置を指定する position_ relative;.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">相対位置を指定する position: relative;</span></a><a href="中心から外に線が伸びる（下部）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">中心から外に線が伸びる（下部）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

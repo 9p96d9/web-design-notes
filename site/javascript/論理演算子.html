@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>論理演算子 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>論理演算子</span>
+  </div>
+  <div class="article-head">
+    <h1>論理演算子</h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">JavaScript</span>
+      <span class="date">2026/01/20</span>
+    </div>
+  </div>
+  <div class="article-body">
+    
+  
+    
+<div class="section">
+    <h4 id="論理演算子とは">論理演算子とは</h4>
+    <p></p><p align="center"><span itemscope="" itemtype="http://schema.org/Photograph"><img src="../images/web-css-design_20260220091106.png" width="200" height="200" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p><p></p>
+
+<ul>
+<li>プロンプト例</li>
+</ul>
+    <blockquote>
+        <p>JavaScriptの論理演算子について詳しく解説して</p>
+
+    </blockquote>
+<p><strong>論理演算子は、複数の条件を組み合わせたり、真偽値（true / false）を操作するための演算子</strong></p><p>主に次の3つがあります：</p>
+
+<table>
+    <tbody><tr>
+    <th>演算子</th>
+    <th>意味 </th>
+    <th>読み方</th>
+    </tr>
+    <tr>
+    <td> <strong>&amp;&amp;</strong> </td>
+    <td> AND（かつ） </td>
+    <td> &amp;(アンパサンド)  </td>
+    </tr>
+    <tr>
+    <td> <strong>｜｜</strong>    </td>
+    <td> OR（または） </td>
+    <td> ｜(パーティカルライン)  </td>
+    </tr>
+    <tr>
+    <td> <strong>!</strong>  </td>
+    <td> NOT（否定） </td>
+    <td> ! (エクスクラメーション)  </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="section">
+    <h4 id="-1-AND演算子-">🔹 1. AND演算子 &amp;&amp;</h4>
+    <p><strong>両方が true のときのみ true</strong></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">true</span> &amp;&amp; <span class="synConstant">true</span>   <span class="synComment">// true</span>
+<span class="synConstant">true</span> &amp;&amp; <span class="synConstant">false</span>  <span class="synComment">// false</span>
+<span class="synConstant">false</span> &amp;&amp; <span class="synConstant">true</span>  <span class="synComment">// false</span>
+<span class="synConstant">false</span> &amp;&amp; <span class="synConstant">false</span> <span class="synComment">// false</span>
+</pre><p>【例】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> age <span class="synStatement">=</span> <span class="synConstant">20</span><span class="synStatement">;</span>
+<span class="synType">const</span> hasID <span class="synStatement">=</span> <span class="synConstant">true</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>age <span class="synStatement">&gt;=</span> <span class="synConstant">18</span> <span class="synStatement">&amp;&amp;</span> hasID<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">'入場可能'</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre><p>→ 18歳以上 かつ 身分証あり → OK</p>
+
+<div class="section">
+    <h5 id="-ショートサーキット短絡評価">🔸 ショートサーキット（短絡評価）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">false</span> &amp;&amp; <span class="synIdentifier">someFunction</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p>→ false が確定した時点で 右側は評価されない</p><p></p><h6 id="実用例">実用例</h6><p></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink="">user <span class="synStatement">&amp;&amp;</span> user<span class="synStatement">.</span><span class="synIdentifier">login</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre><p>→ user が null ならエラー防止</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-2-OR演算子-">🔹 2. OR演算子 ||</h4>
+    <p><strong>どちらか一方でも true なら true</strong></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">true</span> || <span class="synConstant">true</span>    <span class="synComment">// true</span>
+<span class="synConstant">true</span> || <span class="synConstant">false</span>   <span class="synComment">// true</span>
+<span class="synConstant">false</span> || <span class="synConstant">true</span>   <span class="synComment">// true</span>
+<span class="synConstant">false</span> || <span class="synConstant">false</span>  <span class="synComment">// false</span>
+</pre><p>【例】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> isAdmin <span class="synStatement">=</span> <span class="synConstant">false</span><span class="synStatement">;</span>
+<span class="synType">const</span> isEditor <span class="synStatement">=</span> <span class="synConstant">true</span><span class="synStatement">;</span>
+
+<span class="synStatement">if</span> <span class="synSpecial">(</span>isAdmin <span class="synStatement">||</span> isEditor<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"編集可能"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+<div class="section">
+    <h5 id="-デフォルト値の設定超重要">🔸 デフォルト値の設定（超重要）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> input <span class="synStatement">||</span> <span class="synConstant">'ゲスト'</span><span class="synStatement">;</span>
+</pre>
+<table>
+    <tbody><tr>
+    <th>input</th>
+    <th>結果</th>
+    </tr>
+    <tr>
+    <td> 'Taro' </td>
+    <td> 'Taro' </td>
+    </tr>
+    <tr>
+    <td> ' '     </td>
+    <td> 'ゲスト'  </td>
+    </tr>
+    <tr>
+    <td> 0      </td>
+    <td> 'ゲスト'  </td>
+    </tr>
+    <tr>
+    <td> null   </td>
+    <td> 'ゲスト'  </td>
+    </tr>
+</tbody></table><p>⚠ 注意：0 や "" も false と判定される</p><p>→ ES2020以降は ?? が推奨</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> name <span class="synStatement">=</span> input <span class="synStatement">??</span> <span class="synConstant">'ゲスト'</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-3-NOT演算子-">🔹 3. NOT演算子 !</h4>
+    <p><strong>真偽を反転する</strong></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">!</span><span class="synConstant">true</span>   <span class="synComment">// false</span>
+<span class="synStatement">!</span><span class="synConstant">false</span>  <span class="synComment">// true</span>
+</pre><p>【例】</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">if</span> <span class="synSpecial">(</span><span class="synStatement">!</span>isLoggedIn<span class="synSpecial">)</span> <span class="synSpecial">{</span>
+  <span class="synConstant">console</span><span class="synStatement">.</span><span class="synIdentifier">log</span><span class="synSpecial">(</span><span class="synConstant">"ログインしてください"</span><span class="synSpecial">)</span><span class="synStatement">;</span>
+<span class="synSpecial">}</span>
+</pre>
+<div class="section">
+    <h5 id="-真偽値変換">🔸 真偽値変換（!!）</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synStatement">!!</span><span class="synConstant">'hello'</span>   <span class="synComment">// true</span>
+<span class="synStatement">!!</span><span class="synConstant">0</span>         <span class="synComment">// false</span>
+<span class="synStatement">!!</span><span class="synConstant">null</span>      <span class="synComment">// false</span>
+</pre><p>→ <strong>値をBoolean型に変換するテクニック</strong><br>
+</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-論理演算子の戻り値の正体超重要">🔹 論理演算子の「戻り値」の正体（超重要）</h4>
+    <p>JavaScriptの論理演算子は、true / false を返すとは限らないのが最大の特徴です。</p>
+
+<div class="section">
+    <h5 id="-ANDの戻り値">🔸 AND（&amp;&amp;）の戻り値</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">A <span class="synStatement">&amp;&amp;</span> B
+</pre><p>→ <strong>AがfalseならA、trueならB</strong></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">'OK'</span> <span class="synStatement">&amp;&amp;</span> <span class="synConstant">'YES'</span>   <span class="synComment">// 'YES'</span>
+<span class="synConstant">0</span> <span class="synStatement">&amp;&amp;</span> <span class="synConstant">'YES'</span>      <span class="synComment">// 0</span>
+<span class="synConstant">true</span> &amp;&amp; <span class="synConstant">5</span>       <span class="synComment">// 5</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-ORの戻り値">🔸 OR（||）の戻り値</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">A <span class="synStatement">||</span> B
+</pre><p>→ <strong>AがtrueならA、falseならB</strong></p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">'OK'</span> <span class="synStatement">||</span> <span class="synConstant">'YES'</span>   <span class="synComment">// 'OK'</span>
+<span class="synConstant">0</span> <span class="synStatement">||</span> <span class="synConstant">'YES'</span>      <span class="synComment">// 'YES'</span>
+<span class="synStatement">null</span> || <span class="synConstant">10</span>      <span class="synComment">// 10</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-実務でよく使うパターン">🔹 実務でよく使うパターン</h4>
+    
+<div class="section">
+    <h5 id="-条件付き実行">① 条件付き実行</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">isReady <span class="synStatement">&amp;&amp;</span> <span class="synIdentifier">start</span><span class="synSpecial">()</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-フォールバック処理">② フォールバック処理</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> port <span class="synStatement">=</span> env<span class="synStatement">.</span>PORT <span class="synStatement">||</span> <span class="synConstant">3000</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="-三項演算子との組み合わせ">③ 三項演算子との組み合わせ</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> msg <span class="synStatement">=</span> isLogin <span class="synStatement">&amp;&amp;</span> isAdmin <span class="synStatement">?</span> <span class="synConstant">'管理者'</span> <span class="synStatement">:</span> <span class="synConstant">'一般ユーザー'</span><span class="synStatement">;</span>
+</pre>
+</div>
+</div>
+<div class="section">
+    <h4 id="-論理演算子の優先順位">🔹 論理演算子の優先順位</h4>
+    
+<table>
+    <tbody><tr>
+    <th>優先度</th>
+    <th>演算子</th>
+    </tr>
+    <tr>
+    <td> 高   </td>
+    <td> !  </td>
+    </tr>
+    <tr>
+    <td> 中   </td>
+    <td> &amp;&amp; </td>
+    </tr>
+    <tr>
+    <td> 低   </td>
+    <td> ｜｜ </td>
+    </tr>
+</tbody></table><pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synConstant">true</span> || <span class="synConstant">false</span> &amp;&amp; <span class="synConstant">false</span>
+<span class="synComment">// → true || (false &amp;&amp; false)</span>
+<span class="synComment">// → true</span>
+</pre>
+</div>
+<div class="section">
+    <h4 id="-よくあるバグ落とし穴">🔹 よくあるバグ・落とし穴</h4>
+    
+<div class="section">
+    <h5 id="-0-や--を-false-と判定してしまう">❌ 0 や "" を false と判定してしまう</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> count <span class="synStatement">=</span> input <span class="synStatement">||</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+</pre><p>input = 0 → 10 になってしまう ❌</p><p>→ 正解：</p>
+<pre class="code lang-javascript" data-lang="javascript" data-unlink=""><span class="synType">const</span> count <span class="synStatement">=</span> input <span class="synStatement">??</span> <span class="synConstant">10</span><span class="synStatement">;</span>
+</pre>
+</div>
+<div class="section">
+    <h5 id="--と--の評価順序ミス">❌ &amp;&amp; と || の評価順序ミス</h5>
+    <pre class="code lang-javascript" data-lang="javascript" data-unlink="">a <span class="synStatement">||</span> b <span class="synStatement">&amp;&amp;</span> c
+</pre><p>→ a || (b &amp;&amp; c)</p>
+
+</div>
+</div>
+<div class="section">
+    <h4 id="-まとめ">🔹 まとめ</h4>
+    
+<table>
+    <tbody><tr>
+    <th>演算子</th>
+    <th>意味</th>
+    <th>ポイント</th>
+    </tr>
+    <tr>
+    <td> &amp;&amp; </td>
+    <td> AND    </td>
+    <td> 左がtrueなら右         </td>
+    </tr>
+    <tr>
+    <td> ｜｜ </td>
+    <td> OR </td>
+    <td> 左がfalseなら右 </td>
+    </tr>
+    <tr>
+    <td> ! </td>
+    <td> NOT    </td>
+    <td> 反転                </td>
+    </tr>
+    <tr>
+    <td> ?? </td>
+    <td> Null合体 </td>
+    <td> null, undefinedのみ </td>
+    </tr>
+</tbody></table>
+</div>
+    
+    
+
+
+
+
+    
+
+  
+
+  </div>
+  <nav class="article-nav"><a href="「営業中 _ 時間外」を判別.html" class="nav-prev"><span class="nav-label">← 前の記事</span><span class="nav-title">「営業中 / 時間外」を判別</span></a><a href="初心者向け 練習問題（if文 × 時間・曜日判別）.html" class="nav-next" style="text-align:right"><span class="nav-label">次の記事 →</span><span class="nav-title">初心者向け 練習問題（if文 × 時間・曜日判別）</span></a></nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全8ブログ 579記事
+  </div>
+</footer>
+<script src="../search.js"></script>
+
+</body>
+</html>

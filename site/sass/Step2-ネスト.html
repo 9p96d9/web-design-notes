@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 2：ネストを導入 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #cc6699; }</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Sass入門</a>
+    <span class="sep">›</span>
+    <span>Step 2：ネストを導入</span>
+  </div>
+  <div class="article-head">
+    <h1>Step 2：ネストを導入</h1>
+    <div class="meta">
+      <span class="tag" style="background:#fdf2f8;color:#cc6699">ステップ演習</span>
+      <span class="date">2026/04/09</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+  <h4 id="ネストとは">ネストとは？</h4>
+  <p><strong>ネスト（入れ子）</strong>とは、セレクタの中に別のセレクタを書く機能です。</p>
+  <p>HTMLの構造がそのままコードの構造になるため、<strong>「どの要素のスタイルか」が視覚的にわかりやすくなります</strong>。</p>
+</div>
+
+<div class="section">
+  <h4 id="before-after">CSSとSassの比較</h4>
+  <h5 id="css-ver">CSSの場合（ネストなし）</h5>
+  <pre class="code" data-lang="css">/* CSS：毎回セレクタをフルで書く必要がある */
+.header {
+  background-color: #6F4E37;
+}
+
+.header__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header__nav a {
+  color: #ffffff;
+}
+
+.header__nav a:hover {
+  text-decoration: underline;
+}</pre>
+
+  <h5 id="scss-ver">Sassの場合（ネストあり）</h5>
+  <pre class="code" data-lang="scss">/* SCSS：ネストで構造がわかりやすい */
+.header {
+  background-color: $brand-color;
+
+  &__inner {          /* & は親セレクタ（.header）に置き換わる */
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  &__logo {           /* → .header__logo */
+    color: $white;
+    font-size: 24px;
+  }
+
+  &__nav {            /* → .header__nav */
+    display: flex;
+    gap: 24px;
+
+    a {               /* → .header__nav a */
+      color: $white;
+    }
+
+    a:hover {         /* → .header__nav a:hover */
+      text-decoration: underline;
+    }
+  }
+}</pre>
+</div>
+
+<div class="section">
+  <h4 id="親セレクタ参照">&amp;（親セレクタ参照）</h4>
+  <p><code>&amp;</code> は<strong>「今いる親のセレクタ」</strong>に置き換わる特殊な記号です。</p>
+  <pre class="code" data-lang="scss">.btn {
+  background: $brand-color;
+  color: $white;
+
+  &:hover {       /* → .btn:hover */
+    opacity: 0.8;
+  }
+
+  &--large {      /* → .btn--large（BEMのModifier） */
+    font-size: 18px;
+    padding: 16px 32px;
+  }
+
+  &--outline {    /* → .btn--outline */
+    background: transparent;
+    border: 2px solid $brand-color;
+    color: $brand-color;
+  }
+}</pre>
+  <table>
+    <tbody>
+      <tr><th>Sassの書き方</th><th>コンパイル後のCSS</th></tr>
+      <tr><td><code>&amp;:hover</code></td><td><code>.btn:hover</code></td></tr>
+      <tr><td><code>&amp;--large</code></td><td><code>.btn--large</code></td></tr>
+      <tr><td><code>&amp;__icon</code></td><td><code>.btn__icon</code></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h4 id="BEMとネスト">BEMとネストの相性</h4>
+  <p><strong>BEM（Block Element Modifier）</strong>はクラス命名規則の一つです。</p>
+  <ul>
+    <li><code>.block</code>：独立したコンポーネント（例：<code>.card</code>）</li>
+    <li><code>.block__element</code>：Blockの中の要素（例：<code>.card__title</code>）</li>
+    <li><code>.block--modifier</code>：状態・バリエーション（例：<code>.card--featured</code>）</li>
+  </ul>
+  <pre class="code" data-lang="scss">/* カードコンポーネントのBEM + ネスト */
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+
+  &__image {              /* → .card__image */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  &__body {               /* → .card__body */
+    padding: 16px;
+  }
+
+  &__title {              /* → .card__title */
+    font-size: 18px;
+    color: $brand-color;
+    margin-bottom: 8px;
+  }
+
+  &__price {              /* → .card__price */
+    font-weight: bold;
+    color: $text-color;
+  }
+
+  &--featured {           /* → .card--featured（おすすめカード） */
+    border: 2px solid $brand-color;
+  }
+}</pre>
+  <p>HTMLのブロック構造とSCSSのネスト構造が対応するため、コードを読むだけで構造が把握できます。</p>
+</div>
+
+<div class="section">
+  <h4 id="注意点">ネストの注意点</h4>
+  <ul>
+    <li>深くネストしすぎると逆に読みにくくなる（目安は3階層まで）</li>
+    <li>ネストが深いとコンパイル後のセレクタが長くなり、CSS詳細度が上がる</li>
+  </ul>
+  <pre class="code" data-lang="scss">/* NG：深すぎるネスト */
+.header {
+  .nav {
+    ul {
+      li {
+        a {          /* → .header .nav ul li a（詳細度が高すぎる） */
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+/* OK：適切な深さ */
+.header {
+  &__nav {
+    a { color: $white; }      /* → .header__nav a */
+    a:hover { opacity: 0.8; } /* → .header__nav a:hover */
+  }
+}</pre>
+</div>
+
+  </div>
+  <nav class="article-nav">
+    <a href="Step1-変数.html" class="nav-prev">
+      <span class="nav-label">← 前の記事</span>
+      <span class="nav-title">Step 1：変数を導入</span>
+    </a>
+    <a href="Step3-mixin.html" class="nav-next" style="text-align:right">
+      <span class="nav-label">次の記事 →</span>
+      <span class="nav-title">Step 3：mixinを導入</span>
+    </a>
+  </nav>
+</div>
+<footer class="site-footer">
+  <div class="container">
+    学習ポータル &nbsp;·&nbsp; 全9ブログ
+  </div>
+</footer>
+<script src="../search.js"></script>
+</body>
+</html>
