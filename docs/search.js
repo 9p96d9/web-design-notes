@@ -4,8 +4,20 @@ let searchIndex = null;
 async function loadIndex() {
   if (searchIndex) return;
   try {
-    const res = await fetch('../search-index.json');
-    searchIndex = await res.json();
+    const [baseRes, manualRes] = await Promise.all([
+      fetch('search-index.json'),
+      fetch('manual-articles.json')
+    ]);
+    const base = await baseRes.json();
+    const raw = await manualRes.json();
+    const manuals = raw.map(a => ({
+      title: a.title,
+      url: a.blog + '/' + a.file,
+      blog: a.blogName,
+      date: a.date,
+      cats: a.category
+    }));
+    searchIndex = [...manuals, ...base];
   } catch(e) {
     try {
       const res = await fetch('search-index.json');

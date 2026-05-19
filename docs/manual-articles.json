@@ -1,0 +1,26 @@
+[
+  {
+    "blog": "web-hakubyo",
+    "blogName": "Web白描",
+    "file": "ai-native-development.html",
+    "title": "AIと共同開発する技術 — SPEC駆動・自走エージェントの設計思想",
+    "category": "AI・開発手法",
+    "date": "2026/05/20"
+  },
+  {
+    "blog": "web-hakubyo",
+    "blogName": "Web白描",
+    "file": "chrome-oauth-layers.html",
+    "title": "拡張機能を消してもログイン状態が残る理由 — Chrome の OAuth 階層構造",
+    "category": "Webリテラシー",
+    "date": "2026/05/20"
+  },
+  {
+    "blog": "review",
+    "blogName": "The 復習",
+    "file": "ガチャアプリ制作まとめ.html",
+    "title": "授業まとめ｜ガチャアプリ制作（フォルダ整理〜画像書き出し・実装）",
+    "category": "JavaScript",
+    "date": "2026/05/20"
+  }
+]

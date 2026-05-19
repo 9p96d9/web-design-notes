@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIと共同開発する技術 — SPEC駆動・自走エージェントの設計思想 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#eff6ff; color:#2563eb; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.flow-box { background:#f0f9ff; border-left:4px solid #2563eb; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>AIと共同開発する技術</span>
+  </div>
+  <div class="article-head">
+    <h1>AIと共同開発する技術<br><small style="font-size:.6em;font-weight:400;color:#64748b">SPEC駆動・自走エージェントの設計思想</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">AI・開発手法</span>
+      <span class="date">2026/05/20</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="intro">「AIに指示してたはずが、AIが実行していた」</h4>
+<p>最初はこうだった。</p>
+<div class="flow-box">人間 → 「CloudShellでこれ実行して」
+AI   → コードを出力
+人間 → コピペして実行
+AI   → 「結果を貼ってください」
+人間 → コピペ</div>
+<p>AIは <strong>アドバイザー</strong> でしかなかった。人間がすべて実行していた。</p>
+<p>ある時、AWS CLIをローカルに入れた。gh CLIを認証した。SPEC.mdを整理した。<br>するとフローが変わった。</p>
+<div class="flow-box">人間 → 「phase_plan.md で設計を確認して実装して」
+AI   → AWS状態を確認 → コード変更 → デプロイ → テスト
+人間 → 結果を確認して「OK」</div>
+<p>AIが <strong>実行者</strong> になった。人間は <strong>承認者</strong> になった。</p>
+<p>この変化に必要だったのは、最新の道具ではなく、<strong>設計の思想</strong> だった。</p>
+</div>
+
+<div class="section">
+<h4 id="spec">① SPEC.md を「真実の源」にする意味</h4>
+<p>開発現場でよく起きる問題がある。<strong>仕様書が腐る</strong>、というやつだ。</p>
+<div class="warn-box">
+<strong>よくある失敗パターン：</strong><br>
+仕様書を書く → 実装する → 現実が仕様とズレる → 誰も仕様書を更新しない → 仕様書が「過去の遺物」になる → コードを読むしかなくなる
+</div>
+<p>人間なら「まぁ察する」ができる。でもAIは <strong>仕様を真に受ける</strong>。</p>
+<p>古い仕様書をAIに渡すと、こうなる。</p>
+<ul>
+<li>存在しないAPIを呼ぶコードを書く</li>
+<li>削除済みのテーブルを前提にする</li>
+<li>古い環境変数名を使う</li>
+<li>変更されたディレクトリ構造でパスを組む</li>
+</ul>
+<p>つまり <strong>AIが壊れる</strong>。コードが正確なのに、前提が間違っているせいで動かない。</p>
+<p>解決策はシンプルだ。</p>
+<div class="point-box">
+<strong>SPEC = 理想 ではなく、SPEC = 現実 にする</strong><br>
+実装が終わってから SPEC.md を更新する。仕様書が「今動いているものの記録」になる。
+</div>
+<p>流れはこうなる。</p>
+<div class="flow-box">設計を合意する
+  ↓
+実装する
+  ↓
+動作を確認する
+  ↓
+SPEC.md を更新する（←ここで初めて書く）
+  ↓
+コミット</div>
+<p>「実装前に書くと実装とズレる。実装後に書くと確実に一致する。」</p>
+<p>これが SPEC駆動の核心だ。AIに渡す地図を、常に最新に保つ。</p>
+</div>
+
+<div class="section">
+<h4 id="plan">② 設計合意ファイルの役割</h4>
+<p>SPEC.md が「現在の話」なら、設計合意ファイルは <strong>「未来の話」</strong> だ。</p>
+<table class="map-table">
+  <thead><tr><th>ファイル</th><th>役割</th><th>タイミング</th></tr></thead>
+  <tbody>
+    <tr><td>SPEC.md</td><td>現在の実装の現実</td><td>実装後に更新</td></tr>
+    <tr><td>phase_plan.md</td><td>これから何をどこまでやるか</td><td>実装前に合意</td></tr>
+  </tbody>
+</table>
+<p>phase_plan.md には「なぜやるか・何を変えるか・どこまでやるか」を書く。</p>
+<div class="code-block"><span class="cm">## Phase 21: needs_api バッジ削除</span>
+
+目的: UIから実装待ちバッジを消す
+変更: frontend/components/Badge.tsx を削除
+やらないこと: バックエンドの変更・DB更新</div>
+<p>この「やらないこと」が特に重要だ。</p>
+<p>AIは善意で余計なことをする。指示していないのに「ついでにリファクタリング」「関連ファイルも修正」をやりがちだ。<br>設計ファイルで <strong>境界を先に固定</strong> することで、スコープの爆発を防げる。</p>
+<div class="ok-box">
+<strong>設計合意のある開発：</strong> AIが「どこまでやるか」を理解した状態で動く。余計な変更が入らない。
+</div>
+</div>
+
+<div class="section">
+<h4 id="awscli">③ AWS CLI 導入で AI が「実行者」になる</h4>
+<p>ここが、フローが変わった最大のポイントだ。</p>
+<p>AWS CLIをローカルに入れる前と後を比べると、AIの立場が根本的に変わる。</p>
+<table class="map-table">
+  <thead><tr><th></th><th>CLI なし</th><th>CLI あり</th></tr></thead>
+  <tbody>
+    <tr><td>AIの立場</td><td>アドバイザー</td><td>実行者</td></tr>
+    <tr><td>人間の立場</td><td>実行者</td><td>承認者</td></tr>
+    <tr><td>EC2の状態確認</td><td>人間がコンソールで確認・コピペ</td><td>AIが直接確認</td></tr>
+    <tr><td>デプロイ</td><td>人間がコマンドをコピペ実行</td><td>AIが直接実行</td></tr>
+  </tbody>
+</table>
+<p>CLIの設定は一度だけだ。</p>
+<div class="code-block"><span class="cm"># AWS CLI のセットアップ</span>
+aws configure
+<span class="cm"># Access Key ID、Secret Key、リージョンを入力</span>
+
+<span class="cm"># 接続確認</span>
+aws sts get-caller-identity</div>
+<p>これ以降、AIはコンソール→CloudShell→コピペのループなしに、直接インフラを操作できる。</p>
+<p>同じことが GitHub CLI でも起きる。<code>gh auth login</code> で認証すれば、AIが GitHub Secrets の更新・PR操作・Actions確認を自走できる。</p>
+<div class="point-box">
+<strong>CLI = AIが動ける範囲を広げるレール</strong><br>
+人間が一度設定するだけで、AIが継続的に使える。
+</div>
+</div>
+
+<div class="section">
+<h4 id="approve">④ 破壊的操作だけ承認制にする理由</h4>
+<p>「AIに全部任せる」は危ない。でも「全部確認する」は遅い。</p>
+<p>答えは操作の種類で分けることだ。</p>
+<table class="map-table">
+  <thead><tr><th>操作の種類</th><th>例</th><th>扱い</th></tr></thead>
+  <tbody>
+    <tr><td>読み取り・観測</td><td>describe-instances, docker ps, logs確認</td><td>自動実行</td></tr>
+    <tr><td>コード変更・デプロイ</td><td>ファイル編集, git push, docker restart</td><td>自動実行</td></tr>
+    <tr><td>破壊的・不可逆</td><td>EC2停止, RDS削除, Secrets削除</td><td>確認を取る</td></tr>
+  </tbody>
+</table>
+<p>破壊的操作の特徴は <strong>やり直せない</strong> ことだ。</p>
+<ul>
+<li><code>stop-instances</code> → EC2が停止（本番サービスが落ちる）</li>
+<li><code>rds delete</code> → データが消える</li>
+<li><code>terminate</code> → インスタンスが消える</li>
+</ul>
+<div class="point-box">
+<strong>観測は自動化、破壊は承認制</strong><br>
+リスクの低い操作を自動化して速度を上げ、リスクの高い操作だけ人間が判断する。
+</div>
+<p>コストの低い確認をケチると、コストの高い事故が起きる。逆に確認しすぎると、自走の意味がない。この設計がちょうどいいバランスだ。</p>
+</div>
+
+<div class="section">
+<h4 id="test">⑤ 小刻みテストで自走する開発</h4>
+<p>AI開発で一番危険なパターンがある。</p>
+<div class="warn-box">
+<strong>やりがちな失敗：</strong><br>
+大量変更 → 最後にまとめてテスト → 壊れた場所が分からない
+</div>
+<p>AIは1回の出力で10ファイル・数百行を同時に変更できる。<br>それを全部まとめてテストすると、どこで壊れたか追跡できなくなる。</p>
+<p>正しいフローはこうだ。</p>
+<div class="flow-box">1つ変更する
+  ↓
+即テストする
+  ↓
+通ったら次へ</div>
+<p>人間の開発でも同じ原則だが、AIの場合はより重要だ。AIは「勢いで壊す」からだ。</p>
+<p>フェーズごとにテスト方法をあらかじめ決めておくと、AIが自走できる。</p>
+<table class="map-table">
+  <thead><tr><th>変更の種類</th><th>テスト方法</th></tr></thead>
+  <tbody>
+    <tr><td>Pythonコード変更</td><td>構文チェック → ローカルで起動確認</td></tr>
+    <tr><td>API変更</td><td>curl で直接叩く</td></tr>
+    <tr><td>インフラ変更</td><td>AWS CLI で状態確認 → SSH で docker 確認</td></tr>
+    <tr><td>デプロイ後</td><td>health check + docker logs</td></tr>
+  </tbody>
+</table>
+<p>「次のテストは何か」が決まっていれば、AIは確認を取らずに先へ進める。</p>
+</div>
+
+<div class="section">
+<h4 id="healthcheck">⑥ curl health check と Docker logs が重要な理由</h4>
+<p>テストの最終確認として特に有効な2つがある。</p>
+<p><strong>curl によるヘルスチェック</strong></p>
+<div class="code-block">curl https://example.com/health</div>
+<p>これは単純に見えて、実は多くのレイヤーを一気に貫通している。</p>
+<div class="flow-box">DNS → HTTPS → nginx → アプリサーバー → ルーティング → コンテナ → プロセス</div>
+<p>「ユーザーから見えている現実」を確認できる唯一の方法だ。<br>ログを見るだけでは「内部的には動いているが外から死んでいる」状態を見逃す。</p>
+<p><strong>Docker logs の確認</strong></p>
+<div class="code-block">docker logs gto-app --tail 50</div>
+<p>コンテナが起動していても、内部でクラッシュして再起動ループしている場合がある。<br>AIは「起動成功」を過信しがちだ。ログを見ると実態が分かる。</p>
+<ul>
+<li>マイグレーション失敗</li>
+<li>環境変数の不足</li>
+<li>importエラー</li>
+<li>ポート競合</li>
+</ul>
+<p>これらは起動直後のログにしか出ない。</p>
+<div class="ok-box">
+<strong>health check + docker logs = 「外から」と「内から」の両面確認</strong><br>
+どちらか一方では不十分。セットで使う。
+</div>
+</div>
+
+<div class="section">
+<h4 id="ai-native">⑦ AI-native 開発とは何か</h4>
+<p>ここまでの話をまとめると、共通のテーマが見えてくる。</p>
+<div class="point-box">
+<strong>AI が継続的に正しい世界認識を持てる環境を作ること</strong>
+</div>
+<p>従来の開発は「人間が主体、AIが補助」だった。<br>AI-native 開発は「AIが作業主体、人間が設計と承認」に近づく。</p>
+<p>そのために必要な設計の要素をまとめると：</p>
+<table class="map-table">
+  <thead><tr><th>設計</th><th>目的</th></tr></thead>
+  <tbody>
+    <tr><td>SPEC.md = 現実</td><td>AIに正しい地図を渡す</td></tr>
+    <tr><td>設計合意ファイル</td><td>AIのスコープを固定する</td></tr>
+    <tr><td>CLI 化</td><td>AIが実行できる範囲を広げる</td></tr>
+    <tr><td>破壊だけ承認制</td><td>速度と安全のバランスを取る</td></tr>
+    <tr><td>小刻みテスト</td><td>壊れた場所を特定しやすくする</td></tr>
+    <tr><td>health check</td><td>ユーザー視点の現実を確認する</td></tr>
+  </tbody>
+</table>
+<p>これらはどれも「AIのためのレール整備」だ。</p>
+<p>レールが整っていれば、AIは自走できる。<br>レールが崩れていると、どんなに賢いAIでも道に迷う。</p>
+<p>「どんなツールを使うか」より「どんな環境を作るか」が、AI共同開発の本質だ。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

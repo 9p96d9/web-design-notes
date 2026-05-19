@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>拡張機能を消してもログイン状態が残る理由 — Chrome の OAuth 階層構造 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#eff6ff; color:#2563eb; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.flow-box { background:#f0f9ff; border-left:4px solid #2563eb; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>拡張機能を消してもログイン状態が残る理由</span>
+  </div>
+  <div class="article-head">
+    <h1>拡張機能を消してもログイン状態が残る理由<br><small style="font-size:.6em;font-weight:400;color:#64748b">Chrome の OAuth 階層構造</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">Webリテラシー</span>
+      <span class="date">2026/05/20</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="mystery">「消したのに残ってる」の謎</h4>
+<p>Chrome拡張機能を削除して再インストールしたのに、Googleログイン画面が出ない。<br>メール入力もパスワード入力もスキップされて「アカウントを選択してください」だけ出る。</p>
+<div class="warn-box">
+<strong>ありがちな誤解：</strong><br>
+拡張機能を削除した → データが全部消えた → ログイン状態もリセットされたはず
+</div>
+<p>実はこれ、バグでも不具合でもない。<br>Chromeが <strong>優秀すぎる副作用</strong> として意図的にやっていることだ。</p>
+<p>理解するには、Googleログインが実は <strong>3つの別々の層</strong> で管理されていることを知る必要がある。</p>
+</div>
+
+<div class="section">
+<h4 id="three-layers">① Googleログインの3層構造</h4>
+<p>拡張機能を「削除する」と消えるのは、3層のうち1層だけだ。</p>
+
+<p><strong>第1層：拡張機能自身のストレージ</strong></p>
+<p>これは拡張機能が自分で保存するデータだ。</p>
+<ul>
+  <li><code>localStorage</code></li>
+  <li><code>chrome.storage.local</code></li>
+  <li><code>IndexedDB</code></li>
+</ul>
+<p>設定・APIキー・UI状態などがここに入る。拡張機能を削除すると <strong>ここは消える</strong>。</p>
+
+<p><strong>第2層：Chrome本体のOAuthセッション</strong></p>
+<p>Googleログインを使う拡張機能の多くは、内部でこの関数を呼んでいる。</p>
+<div class="code-block">chrome.identity.getAuthToken({ interactive: <span class="kw">true</span> }, <span class="kw">function</span>(token) {
+  <span class="cm">// Googleのアクセストークンが返ってくる</span>
+});</div>
+<p>これを呼ぶと、Chrome本体が「この拡張機能はこのGoogleアカウントへのアクセス許可済み」という情報を記憶する。<br><strong>拡張機能を削除しても、Chrome本体の記憶は消えない。</strong></p>
+
+<p><strong>第3層：Google側のOAuth許可情報</strong></p>
+<p>さらに奥には、Googleアカウント側の記録がある。<br><code>myaccount.google.com/permissions</code> を開くと確認できる場所だ。</p>
+<p>「このアプリに、いつ、何の権限を許可したか」がGoogleサーバーに残っている。<br>これも拡張機能の削除とは完全に独立している。</p>
+
+<table class="map-table">
+  <thead><tr><th>層</th><th>何が入っているか</th><th>拡張削除で消えるか</th></tr></thead>
+  <tbody>
+    <tr><td>拡張機能ストレージ</td><td>設定・APIキー・UI状態</td><td>✅ 消える</td></tr>
+    <tr><td>Chrome OAuthセッション</td><td>「このアプリ許可済み」の記憶</td><td>❌ 残る</td></tr>
+    <tr><td>Google側の許可情報</td><td>アプリへのアクセス権記録</td><td>❌ 残る</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="section">
+<h4 id="oauth-is-permission">② OAuthは「ログイン」ではなく「許可」</h4>
+<p>多くの人が「Googleログイン = Googleにログインすること」と思っている。</p>
+<p>でも内部で起きているのはそれじゃない。</p>
+<div class="point-box">
+<strong>OAuthの本質：「このアプリにGoogleアカウント情報を渡していいか」という許可システム</strong><br>
+ログインではなく、アクセス権の委譲。
+</div>
+<p>だからGoogle側には「どのアプリに・どの権限を・いつ許可したか」が記録として残る。<br>「ログアウト」や「拡張機能削除」はこの記録に触れない。</p>
+<div class="flow-box">ユーザーが「Googleでログイン」をクリック
+  ↓
+Googleが「このアプリにプロフィール情報を渡していいですか？」と確認
+  ↓
+ユーザーが「許可」
+  ↓
+アプリがアクセストークンを受け取る
+  ↓
+Google側に「許可した」記録が残る</div>
+<p>この許可を取り消すには、Googleアカウントの設定から明示的に削除する必要がある。</p>
+</div>
+
+<div class="section">
+<h4 id="account-picker">③「アカウント選択だけ出る」の正体</h4>
+<p>拡張機能を再インストールしてもメール入力が出ず「アカウントを選択してください」になるのは、Chromeがこのデータを持っているからだ。</p>
+<table class="map-table">
+  <thead><tr><th>Chromeが記憶していること</th></tr></thead>
+  <tbody>
+    <tr><td>このPCで使ったGoogleアカウントの一覧</td></tr>
+    <tr><td>各アカウントのログインセッション</td></tr>
+    <tr><td>このアプリへの許可が存在すること</td></tr>
+  </tbody>
+</table>
+<p>つまりGoogleから見ると「誰か」はすでに知っている。だから確認するのは「どのアカウントで使うか」だけになる。</p>
+<div class="flow-box">普通の状態：
+  メール入力 → パスワード → OAuth許可 → 完了
+
+再インストール後：
+  アカウント選択 → 完了（残りはスキップ）</div>
+<p>Googleの設計思想として「毎回ログイン入力させるのはUXとして最悪」があるため、<br>可能な限りステップを省略する方向に作られている。</p>
+</div>
+
+<div class="section">
+<h4 id="true-first-time">④ 本当の初回状態を作る方法</h4>
+<p>「完全に初回のユーザー体験」を再現したい場合（UIテスト・録画など）、方法は3つある。</p>
+
+<p><strong>方法A：ゲストモード（最も確実）</strong></p>
+<div class="ok-box">
+<strong>これが最強。</strong><br>
+Chrome右上のアイコン → 「ゲストとして閲覧」
+</div>
+<p>ゲストモードは「人格そのものを新規生成」する感覚だ。</p>
+<ul>
+  <li>OAuthキャッシュなし</li>
+  <li>Cookieなし</li>
+  <li>Chrome Profileなし</li>
+  <li>アカウント選択履歴なし</li>
+</ul>
+<p>これで100%の初回状態になる。</p>
+
+<p><strong>方法B：新規Chromeプロファイル</strong></p>
+<p>右上アイコン → プロファイル追加で新しい「人格」を作る。ほぼ初回の状態になる。<br>ゲストモードと違いデータが残るので、開発用テストアカウントとして使い続けられる。</p>
+
+<p><strong>方法C：シークレットモード</strong></p>
+<p>Cookieは消えるが、Chrome拡張の<code>identity</code> APIの挙動が通常モードと変わる場合がある。<br>拡張機能の動作確認には向かないことが多い。</p>
+
+<table class="map-table">
+  <thead><tr><th>方法</th><th>初回再現度</th><th>向いている用途</th></tr></thead>
+  <tbody>
+    <tr><td>ゲストモード</td><td>◎ 完全</td><td>録画・UXテスト</td></tr>
+    <tr><td>新規プロファイル</td><td>○ ほぼ完全</td><td>開発用テストアカウント</td></tr>
+    <tr><td>シークレットモード</td><td>△ 部分的</td><td>Cookieのみリセットしたい場合</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="section">
+<h4 id="browser-as-os">⑤ ブラウザは半分OSになっている</h4>
+<p>昔のブラウザは「HTMLを表示するだけのソフト」だった。<br>今のChromeが管理しているものを並べると、その変化がよくわかる。</p>
+<table class="map-table">
+  <thead><tr><th>機能</th><th>具体的な内容</th></tr></thead>
+  <tbody>
+    <tr><td>認証基盤</td><td>Googleアカウント・OAuthトークン管理</td></tr>
+    <tr><td>ストレージ</td><td>Cookie・localStorage・IndexedDB・キャッシュ</td></tr>
+    <tr><td>アプリ実行環境</td><td>Chrome拡張機能・PWA</td></tr>
+    <tr><td>アカウント同期</td><td>パスワード・履歴・タブをデバイス間で共有</td></tr>
+    <tr><td>通知</td><td>Push通知の受信・管理</td></tr>
+    <tr><td>決済</td><td>Google Payとの連携</td></tr>
+  </tbody>
+</table>
+<p>Chrome Profileはこれらをまるごとひとまとめにした「人格」だ。<br>プロファイルを切り替えると、認証・拡張・履歴・設定が全部別になる。</p>
+<div class="point-box">
+<strong>「拡張機能のデータ」と「ブラウザが持つ認証状態」は別の引き出しに入っている</strong><br>
+今回の現象は、引き出しを1つしか空けていなかったことで起きた。
+</div>
+<p>SaaSやWebアプリを開発するときも同じ視点が重要だ。<br>自分の開発環境はすでにログイン済み・許可済み・Cookie保持済みになっている。<br>「初回ユーザーの体験」を確認するには、ゲストモードや別プロファイルで意図的にリセットする必要がある。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

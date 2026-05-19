@@ -8,7 +8,7 @@
 <style>:root { --accent: #2563eb; }</style>
 
 </head>
-<body>
+<body data-blog="web-hakubyo">
 <header class="site-header">
   <div class="inner">
     <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
@@ -484,19 +484,64 @@
 </footer>
 <script src="../search.js"></script>
 <script>
+document.addEventListener('DOMContentLoaded', async function() {
+  const blog = document.body.dataset.blog;
+  const grid = document.querySelector('.article-grid');
+  const countEl = document.getElementById('article-count');
+  const filterBar = document.querySelector('.filter-bar');
 
-// Category filter for blog index pages
-document.addEventListener('DOMContentLoaded', function() {
+  // Inject manual articles from manifest
+  let manuals = [];
+  try {
+    const res = await fetch('../manual-articles.json');
+    const all = await res.json();
+    manuals = all.filter(a => a.blog === blog);
+  } catch(e) {}
+
+  if (manuals.length) {
+    if (countEl) countEl.textContent = parseInt(countEl.textContent) + manuals.length;
+
+    // Prepend cards (reverse so JSON order = top-to-bottom)
+    [...manuals].reverse().forEach(a => {
+      const card = document.createElement('a');
+      card.href = a.file;
+      card.className = 'article-card';
+      card.dataset.cats = a.category;
+      card.innerHTML =
+        `<div class="ac-title">${a.title}</div>` +
+        `<div class="ac-meta"><span class="tag">${a.category}</span><span class="ac-date">${a.date}</span></div>`;
+      grid.insertBefore(card, grid.firstChild);
+    });
+
+    // Update filter buttons
+    const delta = {};
+    manuals.forEach(a => { delta[a.category] = (delta[a.category] || 0) + 1; });
+
+    Object.entries(delta).forEach(([cat, n]) => {
+      const existing = [...filterBar.querySelectorAll('.filter-btn')].find(b => b.dataset.cat === cat);
+      if (existing) {
+        const prev = parseInt((existing.textContent.match(/\((\d+)\)/) || [0, 0])[1]);
+        existing.innerHTML = `${cat} <small>(${prev + n})</small>`;
+      } else {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.cat = cat;
+        btn.setAttribute('style', '--accent:#2563eb');
+        btn.innerHTML = `${cat} <small>(${n})</small>`;
+        filterBar.appendChild(btn);
+      }
+    });
+  }
+
+  // Initialize category filter
   const btns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.article-card');
-  let active = 'all';
 
   btns.forEach(btn => {
     btn.addEventListener('click', function() {
-      active = this.dataset.cat;
       btns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
-
+      const active = this.dataset.cat;
       let visible = 0;
       cards.forEach(card => {
         const cats = card.dataset.cats ? card.dataset.cats.split(',') : [];
@@ -504,13 +549,10 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.display = show ? '' : 'none';
         if (show) visible++;
       });
-
-      const counter = document.getElementById('article-count');
-      if (counter) counter.textContent = visible;
+      if (countEl) countEl.textContent = visible;
     });
   });
 });
-
 </script>
 </body>
 </html>

@@ -143,19 +143,6 @@ git push
 
 ## 注意事項・既知の問題
 
-### パスのハードコード（要修正）
-`generate_site.py` と `download_images.py` の先頭で以下のパスが固定されている：
-```python
-# 現状（Desktopを参照 → 動かない）
-JSON_DIR = r'c:\Users\user\Desktop\web-hakubyo\JSON'
-OUT_DIR  = r'c:\Users\user\Desktop\web-hakubyo\docs'
-
-# 実際のプロジェクトパス
-JSON_DIR = r'c:\iino\web-hakubyo\JSON'
-OUT_DIR  = r'c:\iino\web-hakubyo\docs'
-```
-→ スクリプト実行前に修正必須
-
 ### sass/ ディレクトリ
 `docs/sass/` は手動作成されたもの。  
 `generate_site.py` の BLOGS リストに含まれていないため、サイト再生成しても上書きされないが、  
@@ -163,64 +150,115 @@ OUT_DIR  = r'c:\iino\web-hakubyo\docs'
 
 ---
 
-## 記事案（フルスタック開発経験を活かした追加記事）
+## 手動記事の管理
 
-GTOポーカー分析アプリ（Chrome拡張 × Firebase × FastAPI × AWS）の開発経験をもとに書ける記事案。
-対象ブログ: `web-hakubyo`（Webリテラシー）または `javascript`（JS技術系）。
+### manual-articles.json
 
-### Webリテラシー系（web-hakubyo）
+`docs/manual-articles.json` が全ブログ横断の手動記事マニフェスト（単一の真実の源）。
 
-| タイトル案 | 概要 | 難易度 |
-|---|---|---|
-| JavaScriptの世界地図 ✅ | Node.js・npm・React・TypeScript・Next.jsを整理する | 初級 |
-| AIが動画を編集する仕組み — FFmpegとClaude Codeの正体 ✅ | AI+CLIツール連携の構造・FFmpegとは・BOM問題などを実例で解説 | 初級 |
-| Webアプリの裏側 — クライアントとサーバーの通信 | ブラウザとサーバーがどうHTTPでやりとりするか。PHPの授業と接続できる | 初級 |
-| GitとGitHubを使う理由 | バージョン管理の概念・git push で公開が変わる体験 | 初級 |
-| クラウドって何？ — AWSとVercelとGitHub Pagesの違い | 静的/動的サイトのホスティング選択肢を整理 | 初級〜中級 |
-| CI/CDとは — GitHub Actionsで自動デプロイを作った話 | コードをpushしたら自動でサーバーが更新される仕組み | 中級 |
-| AIのAPIを使ったWebアプリ開発 | Groq/Gemini APIを叩いて結果を画面に表示する構造 | 中級 |
+```json
+{
+  "blog": "web-hakubyo",   // ブログスラッグ
+  "blogName": "Web白描",   // 表示名（検索結果で使用）
+  "file": "slug.html",
+  "title": "記事タイトル",
+  "category": "カテゴリ名",
+  "date": "YYYY/MM/DD"
+}
+```
 
-### JavaScript技術系（javascript）
+手動記事を追加するときは **このファイルにエントリを追加するだけ**。index.html は触らない。
 
-| タイトル案 | 概要 | 難易度 |
-|---|---|---|
-| WebSocketとは — リアルタイム通信の仕組み | HTTPとの違い、双方向通信が必要な場面（チャット・ゲーム等） | 中級 |
-| Chrome拡張機能の作り方（MV3） | manifest.json・background.js・content.jsの役割分担 | 中級 |
-| SSE（Server-Sent Events）— サーバーからブラウザへ通知を送る | チャットの「打ってる」表示やAI出力のストリーミングの仕組み | 中級 |
-| Firebaseを使ったログイン機能の作り方 | Google認証でサインインし、Firestoreにデータを保存する基礎 | 中級 |
-| Dockerでアプリを動かす — コンテナの概念 | 「環境ごと持ち運ぶ」箱の発想。npm installが要らなくなる理由 | 中級〜上級 |
+### 自動化の仕組み
 
-### アプリ紹介・まとめ系
+各ブログの `index.html` は `<body data-blog="{slug}">` を持ち、DOMContentLoaded 時に：
+1. `../manual-articles.json` を fetch して自ブログ分を抽出
+2. 記事カードを `.article-grid` 先頭に挿入
+3. 記事数カウントを更新
+4. 新カテゴリのフィルターボタンを自動追加
 
-| タイトル案 | 概要 |
-|---|---|
-| ポーカーAI分析ツールを作った話 — 全体アーキテクチャ解説 | Chrome拡張でデータ収集→FastAPIで処理→Firestoreに保存→AIで分析の全フロー |
-| 「PHPしか知らなかった」から「AWS+Docker+CI/CD」まで | 学校で習ったWebの知識がどう実務レベルへ発展するかのロードマップ |
+`docs/search.js` も `manual-articles.json` を読み込み、検索対象に追加している。
 
 ---
 
-## 授業まとめ記事（手動追加）
+## 手動記事 HTML テンプレート
 
-授業内容をそのまま記事化したもの。対象ブログ: `review`（The復習）。
+手動記事を生成するときはこの構造に従う。
+**新しい CSS パターンを追加したときはここを更新する。**
 
-| ファイル名 | タイトル | カテゴリ | ステータス |
-|---|---|---|---|
-| `ガチャアプリ制作まとめ.html` | 授業まとめ｜ガチャアプリ制作（フォルダ整理〜画像書き出し・実装） | JavaScript | ✅ 作成済 |
+### head・共通スタイル
 
-### ガチャアプリ記事の構成
+```html
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }
+/* ブログカラー: web-hakubyo=#2563eb / review=#0891b2 */
+</style>
+```
 
-1. フォルダ構成の整理（portfolio/ ディレクトリ構造・CSSパス修正）
-2. 画像素材のダウンロード（キャラ18枚・ランクアイコン3枚・ガチャ本体・SSR背景）
-3. Photoshopでの画像作成（カードサイズ560×720・レイヤーグループ構成）
-4. 画像の書き出し（SSR=JPEG/SR・R=PNG-24・背景透明）
-5. 設計（ランク別配列・確率ロジック・for文で3枠処理）
-6. HTML（構造）
-7. JavaScript（コード全文＋ポイント①②③解説）
-8. CSS（コード全文）
-9. 次回予告
+### 利用可能な CSS クラス
 
-### 追加手順メモ（generate_site.py 非対象のため手動）
-- `docs/review/ガチャアプリ制作まとめ.html` を作成
-- `docs/review/index.html` の article-grid 先頭にカード追加
-- 記事数 98 → 99、JavaScript カテゴリ (3) → (4) に更新
-- 日付範囲 2026-03 → 2026-05 に更新
+| クラス | 用途 |
+|---|---|
+| `.map-table` | 比較表（th に背景色・偶数行グレー） |
+| `.code-block` | コードブロック（黒背景・monospace）|
+| `.flow-box` | フロー図（青左ボーダー・monospace・行間広め）|
+| `.point-box` | キーポイント（黄左ボーダー）|
+| `.warn-box` | 警告・失敗パターン（赤左ボーダー）|
+| `.ok-box` | 成功・推奨（緑左ボーダー）|
+| `.section` | 各セクションの wrapper div |
+
+`.code-block` 内のスパン: `.cm`（コメント・グレー）`.kw`（キーワード・水色）`.st`（文字列・緑）
+
+### ページ骨格
+
+```html
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search"><span class="ico">🔍</span><input type="text" placeholder="記事を検索..."></div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">{ブログ名}</a>
+    <span class="sep">›</span>
+    <span>{記事タイトル}</span>
+  </div>
+  <div class="article-head">
+    <h1>{タイトル}<br><small style="font-size:.6em;font-weight:400;color:#64748b">{サブタイトル}</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">{カテゴリ}</span>
+      <span class="date">{YYYY/MM/DD}</span>
+    </div>
+  </div>
+  <div class="article-body">
+    <div class="section">
+      <h4 id="{anchor}">{セクションタイトル}</h4>
+      {本文}
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner"><p>学習ポータル</p></div>
+</footer>
+```
+
+### index.html への記事カード追加
+
+```html
+<a href="{slug}.html" class="article-card" data-cats="{カテゴリ}">
+  <div class="ac-title">{タイトル}</div>
+  <div class="ac-meta">
+    <span class="tag">{カテゴリ}</span>
+    <span class="ac-date">{YYYY/MM/DD}</span>
+  </div>
+</a>
+```
+
+カード追加後に更新する数値:
+- `<span id="article-count">N</span>` を +1
+- カテゴリが新規なら filter-btn を追加: `<button class="filter-btn" data-cat="{カテゴリ}" style="--accent:#2563eb">{カテゴリ} <small>(N)</small></button>`

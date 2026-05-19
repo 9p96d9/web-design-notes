@@ -40,11 +40,19 @@ python generate_site.py
 ```
 パスは `__file__` 基準で解決済み（ハードコード不要）。
 
-### 記事を新規追加するとき
+### 記事を新規追加するとき（スクレイピング経由）
 1. `hatena_scraper.js` を Chrome Console で実行 → JSON を `JSON/` に配置
 2. `python download_images.py`（画像取得）
 3. `python generate_site.py`（サイト再生成）
 4. git push → GitHub Pages に自動反映
+
+### 手動記事を追加するとき（ARTICLES.md ドリブン）
+1. 原案をペースト → Claude が `ARTICLES.md` の「未公開」ブロックを埋める
+2. ユーザーが確認して「OK」
+3. Claude が HTML生成・`manual-articles.json` にエントリ追加・ブロックを「完了」に移動
+- index.html は自動更新される（JS が manual-articles.json を読む）
+- 詳細フォーマット・完了記事一覧は `ARTICLES.md` を参照
+- manual-articles.json の構造は `SPEC.md` を参照
 
 ## トークン節約ルール（Claude への指示）
 - ファイル全体を読まず必要な行範囲だけ Read する
