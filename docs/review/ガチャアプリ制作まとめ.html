@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>授業まとめ｜ガチャアプリ制作（フォルダ整理〜画像書き出し・実装） - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #059669; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#ecfdf5; color:#059669; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.88em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .hl { color:#fde68a; }
+.point-box { background:#f0fdf4; border-left:4px solid #059669; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#14532d; }
+.warn-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#854d0e; }
+.tree { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.8; margin:1em 0; white-space:pre; }
+.label { display:inline-block; background:#059669; color:#fff; font-size:.75em; font-weight:700; padding:.15em .6em; border-radius:4px; vertical-align:middle; margin-right:.4em; }
+.label-js { background:#eab308; }
+.label-css { background:#2563eb; }
+.label-html { background:#dc2626; }
+.label-ps { background:#7c3aed; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">The 復習</a>
+    <span class="sep">›</span>
+    <span>授業まとめ｜ガチャアプリ制作</span>
+  </div>
+  <div class="article-head">
+    <h1>授業まとめ｜ガチャアプリ制作<br><small style="font-size:.6em;font-weight:400;color:#64748b">フォルダ整理 → 画像書き出し → HTML・CSS・JS実装</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#ecfdf5;color:#059669">JavaScript</span>
+      <span class="date">2026/05/19</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<!-- ==================== 1. フォルダ構成 ==================== -->
+<div class="section">
+<h4 id="フォルダ構成"><span class="label">1</span> フォルダ構成の整理</h4>
+<p><strong>目的：</strong> おみくじアプリとガチャアプリで共通のCSSを使えるようにする。</p>
+<p>作業手順：</p>
+<ol>
+<li>「portfolio」フォルダを新規作成</li>
+<li>既存の「omikuji」フォルダをその中に移動</li>
+<li>同じ階層に「gacha」フォルダを新規作成</li>
+<li>同じ階層に「css」フォルダを新規作成</li>
+<li>omikuji内のCSSフォルダにあった <code>style.css</code> を、新しい <code>css/</code> フォルダに移動</li>
+<li>空になった omikuji 内の css フォルダは削除</li>
+</ol>
+<p>最終的なフォルダ構成：</p>
+<div class="tree">portfolio/
+├── omikuji/
+├── gacha/
+│   └── img/
+└── css/
+    └── style.css</div>
+<p><strong>CSSのパス修正：</strong> omikuji の index.html のスタイルシートリンクが切れるため、以下のように修正する。</p>
+<div class="code-block"><span class="cm">&lt;!-- 修正前 --&gt;</span>
+&lt;link rel="stylesheet" href="<span class="st">css/style.css</span>"&gt;
+
+<span class="cm">&lt;!-- 修正後 --&gt;</span>
+&lt;link rel="stylesheet" href="<span class="st">../css/style.css</span>"&gt;</div>
+<div class="point-box">
+<strong>「../」の意味</strong><br>
+1階層上のフォルダに戻ってから、そこにある css フォルダを参照する。<br>
+omikuji/ の中から css/ を見るには、一度 portfolio/ まで上がる必要がある。
+</div>
+</div>
+
+<!-- ==================== 2. 画像素材 ==================== -->
+<div class="section">
+<h4 id="画像素材"><span class="label label-ps">2</span> 画像素材のダウンロード（イラスト屋）</h4>
+<p><strong>キャラクター画像（計18枚）</strong></p>
+<table class="map-table">
+  <thead><tr><th>ランク</th><th>人数</th><th>ファイル名の例</th></tr></thead>
+  <tbody>
+    <tr><td>SSR</td><td>3人</td><td>ssr_luffy.png</td></tr>
+    <tr><td>SR</td><td>6人</td><td>sr_zoro.png</td></tr>
+    <tr><td>R</td><td>9人</td><td>r_ussop.png</td></tr>
+  </tbody>
+</table>
+<div class="warn-box">
+<strong>注意点</strong><br>
+・ファイル名はすべて<strong>半角小文字</strong>で統一（大文字混在はパス指定でミスのもと）<br>
+・ファイル名の先頭に必ずランク（<code>ssr_</code> <code>sr_</code> <code>r_</code>）をつける<br>
+・キャラクター画像は<strong>PNG形式（背景透明）</strong>で保存すること<br>
+・画像は一旦クリックで拡大表示してから右クリック保存 → 元サイズで保存できる
+</div>
+<p><strong>ランクアイコン画像（3枚）</strong></p>
+<p>イラスト屋で「ガチャ」と検索し、SSR・SR・R のアイコンを個別にダウンロード。<br>
+ファイル名：<code>ssr.png</code> / <code>sr.png</code> / <code>r.png</code></p>
+<p><strong>ガチャガチャ本体の画像（1枚）</strong></p>
+<p>同じ検索結果からガチャガチャのイラストをダウンロード。</p>
+<p><strong>SSR用背景画像</strong></p>
+<p>先生のブログページの「素材をダウンロード」リンクから入手。同じ img フォルダに入れておく。</p>
+</div>
+
+<!-- ==================== 3. Photoshop ==================== -->
+<div class="section">
+<h4 id="photoshop"><span class="label label-ps">3</span> Photoshopでの画像作成</h4>
+<p><strong>カードサイズ</strong></p>
+<p>560px × 720px（スマホの高解像度ディスプレイを考慮したバイサイズ）<br>
+新規ファイル作成時：「Web」を選択 → 幅560・高さ720を入力。アートボードのチェックは外す。</p>
+<p><strong>レイヤー・グループ構成</strong></p>
+<table class="map-table">
+  <thead><tr><th>グループ名</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>rank</td><td>SSR・SR・R のランクアイコン画像</td></tr>
+    <tr><td>SSR</td><td>SSRキャラ 3枚</td></tr>
+    <tr><td>SR</td><td>SRキャラ 6枚</td></tr>
+    <tr><td>R</td><td>Rキャラ 9枚</td></tr>
+    <tr><td>背景（SSRのみ）</td><td>SSR演出用の背景画像</td></tr>
+  </tbody>
+</table>
+<p><strong>作業のポイント</strong></p>
+<ul>
+<li>各グループを作成したらロックをかけ、作業中は不要なグループを目玉アイコンで非表示にする</li>
+<li>画像を中央揃えにするには <kbd>Ctrl+A</kbd>（全選択）→ 整列パネルで「水平方向中央揃え」→ <kbd>Ctrl+D</kbd>（選択解除）</li>
+<li>縦横比を維持したまま拡大縮小：<kbd>Alt</kbd> キーを押しながらバウンディングボックスをドラッグ</li>
+<li>こまめに <kbd>Ctrl+S</kbd> で上書き保存（Photoshopは落ちる前提で作業すること）</li>
+<li>貼り付け時は右上の丸ボタンで1枚ずつ確定する</li>
+</ul>
+</div>
+
+<!-- ==================== 4. 書き出し ==================== -->
+<div class="section">
+<h4 id="書き出し"><span class="label label-ps">4</span> 画像の書き出し</h4>
+<p><strong>書き出し方法：</strong> ファイル → 書き出し → ウェブ用に保存</p>
+<table class="map-table">
+  <thead><tr><th>ランク</th><th>保存形式</th><th>背景</th></tr></thead>
+  <tbody>
+    <tr><td>SSR</td><td>JPEG（画質100）</td><td>背景画像あり</td></tr>
+    <tr><td>SR</td><td>PNG-24</td><td>背景透明</td></tr>
+    <tr><td>R</td><td>PNG-24</td><td>背景透明</td></tr>
+  </tbody>
+</table>
+<p><strong>手順（1枚ずつ繰り返す）</strong></p>
+<ol>
+<li>書き出したいキャラの目玉アイコンをON、他はOFF</li>
+<li>ファイル → 書き出し → ウェブ用に保存</li>
+<li>形式・画質を確認して保存</li>
+<li>保存先は img フォルダ内に専用サブフォルダを作成して整理</li>
+<li>ファイル名の先頭に必ずランクをつける（例：<code>ssr_luffy.jpg</code>）</li>
+</ol>
+<div class="point-box">
+<strong>SR・Rの背景透明書き出し</strong><br>
+背景レイヤー（白）を非表示にしてから PNG-24 で書き出すと、背景が透明のまま保存される。
+</div>
+</div>
+
+<!-- ==================== 5. 設計 ==================== -->
+<div class="section">
+<h4 id="設計"><span class="label label-js">5</span> 設計</h4>
+<p>要点は以下の通り。</p>
+<ul>
+<li>ランク別の画像を<strong>配列データ</strong>として用意する</li>
+<li>ボタンに<strong>イベントリスナー</strong>を追加し、クリック時に以下の処理を実行</li>
+<li>表示箇所は3つあるので、<strong>for文</strong>で同じ処理を繰り返す</li>
+</ul>
+<p>各ループの中でやること：</p>
+<ol>
+<li>0〜99までのランダム値を取得</li>
+<li>ランダム値を確率代わりにランク別に割り当てる</li>
+</ol>
+<table class="map-table">
+  <thead><tr><th>ランク</th><th>条件（gachaNum）</th><th>確率</th></tr></thead>
+  <tbody>
+    <tr><td>SSR</td><td>0〜9</td><td>10%</td></tr>
+    <tr><td>SR</td><td>10〜49</td><td>40%</td></tr>
+    <tr><td>R</td><td>50〜99</td><td>50%</td></tr>
+  </tbody>
+</table>
+<ol start="3">
+<li>ランダム値に応じて、各ランクの配列からインデックス番号をランダムで取得</li>
+<li>該当する画像を所定の位置に表示する</li>
+</ol>
+</div>
+
+<!-- ==================== 6. HTML ==================== -->
+<div class="section">
+<h4 id="html"><span class="label label-html">6</span> HTML</h4>
+<div class="code-block">&lt;body class=<span class="st">"gacha"</span>&gt;
+    &lt;header&gt;
+        &lt;h1&gt;３連ガチャを作ろう&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;div class=<span class="st">"wrapper"</span>&gt;
+            &lt;div class=<span class="st">"box"</span>&gt;
+                &lt;img src=<span class="st">"img/gacha.png"</span> alt=<span class="st">"ガチャガチャの画像"</span>&gt;
+            &lt;/div&gt;
+            &lt;div class=<span class="st">"box"</span>&gt;
+                &lt;img src=<span class="st">"img/gacha.png"</span> alt=<span class="st">"ガチャガチャの画像"</span>&gt;
+            &lt;/div&gt;
+            &lt;div class=<span class="st">"box"</span>&gt;
+                &lt;img src=<span class="st">"img/gacha.png"</span> alt=<span class="st">"ガチャガチャの画像"</span>&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=<span class="st">"btn"</span>&gt;ボタン&lt;/div&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&lt;small&gt;&amp;copy; &lt;span id=<span class="st">"thisYear"</span>&gt;&lt;/span&gt; ３連ガチャを作ろう&lt;/small&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+
+    &lt;script src=<span class="st">"js/script.js"</span>&gt;&lt;/script&gt;
+&lt;/body&gt;</div>
+</div>
+
+<!-- ==================== 7. JavaScript ==================== -->
+<div class="section">
+<h4 id="javascript"><span class="label label-js">7</span> JavaScript</h4>
+<div class="code-block"><span class="cm">// ssrの画像を用意</span>
+<span class="kw">const</span> ssrImage = [
+    <span class="st">'img/ssr_luffy.png'</span>,
+    <span class="st">'img/ssr_nami.png'</span>,
+    <span class="st">'img/ssr_zoro.png'</span>
+];
+
+<span class="cm">// srの画像を用意</span>
+<span class="kw">const</span> srImage = [
+    <span class="st">'img/sr_usopp.png'</span>,
+    <span class="st">'img/sr_sanji.png'</span>,
+    <span class="st">'img/sr_robin.png'</span>,
+    <span class="st">'img/sr_franky.png'</span>,
+    <span class="st">'img/sr_chopper.png'</span>,
+    <span class="st">'img/sr_brook.png'</span>
+];
+
+<span class="cm">// rの画像を用意</span>
+<span class="kw">const</span> rImage = [
+    <span class="st">'img/r_moria.png'</span>,
+    <span class="st">'img/r_lucci.png'</span>,
+    <span class="st">'img/r_linlin_kaido.png'</span>,
+    <span class="st">'img/r_kurohige_teach.png'</span>,
+    <span class="st">'img/r_jinbe.png'</span>,
+    <span class="st">'img/r_enel.png'</span>,
+    <span class="st">'img/r_doflamingo.png'</span>,
+    <span class="st">'img/r_crocodile.png'</span>,
+    <span class="st">'img/r_buggy.png'</span>
+];
+
+<span class="cm">// ボタンを取得</span>
+<span class="kw">const</span> gachaBtn = document.querySelector(<span class="st">'.btn'</span>);
+<span class="cm">// 表示スペースを取得（3つのboxのimgをまとめて取得）</span>
+<span class="kw">const</span> gachaSpace = document.querySelectorAll(<span class="st">'.box img'</span>);
+
+<span class="cm">// 誤作動防止の存在チェック</span>
+<span class="kw">if</span> (gachaBtn) {
+    gachaBtn.addEventListener(<span class="st">'click'</span>, () =&gt; {
+
+        <span class="cm">// 表示スペース（3つ）分だけ繰り返す</span>
+        <span class="kw">for</span> (<span class="kw">let</span> i = 0; i &lt; gachaSpace.length; i++) {
+            <span class="cm">// 0〜99までの数値をランダムで取得</span>
+            <span class="kw">let</span> gachaNum = Math.floor(Math.random() * 100);
+
+            <span class="kw">if</span> (gachaNum &lt; 10) {
+                <span class="cm">// 0〜9 → SSR（10%）</span>
+                <span class="kw">let</span> ssrNum = Math.floor(Math.random() * <span class="hl">ssrImage.length</span>);
+                gachaSpace[i].src = ssrImage[ssrNum];
+
+            } <span class="kw">else if</span> (gachaNum &lt; 50) {
+                <span class="cm">// 10〜49 → SR（40%）</span>
+                <span class="kw">let</span> srNum = Math.floor(Math.random() * <span class="hl">srImage.length</span>);
+                gachaSpace[i].src = srImage[srNum];
+
+            } <span class="kw">else</span> {
+                <span class="cm">// 50〜99 → R（50%）</span>
+                <span class="kw">let</span> rNum = Math.floor(Math.random() * <span class="hl">rImage.length</span>);
+                gachaSpace[i].src = rImage[rNum];
+            }
+        }
+    });
+}</div>
+
+<p><strong>ポイント① Math.random の働き</strong></p>
+<div class="point-box">
+<code>Math.random()</code> は 0 以上 1 未満の小数をランダムで返す。<br>
+0〜99 の整数を得たいなら <code>Math.random() * 100</code> で最大 99.9… になる。<br>
+小数を切り捨てる <code>Math.floor()</code> を組み合わせて → <code>Math.floor(Math.random() * 100)</code>
+</div>
+
+<p><strong>ポイント② if文で確率を切り分ける</strong></p>
+<div class="point-box">
+<code>gachaNum &lt; 10</code> → 0〜9 の10通りに当たったら SSR（全体の10%）<br>
+<code>gachaNum &lt; 50</code> → 10〜49 の40通りに当たったら SR（40%）<br>
+それ以外（50〜99）→ R（50%）<br>
+条件を重ねるだけで確率の重み付けができる。
+</div>
+
+<p><strong>ポイント③ 各ランクの画像もランダムで選ぶ</strong></p>
+<div class="point-box">
+SSR の配列 <code>ssrImage</code> は3要素なので、インデックスは 0・1・2 のいずれか。<br>
+<code>Math.floor(Math.random() * ssrImage.length)</code> で柔軟に取得できる。<br>
+<code>.length</code> で配列の要素数を数えているので、<strong>画像を追加しても自動で対応</strong>できる。
+</div>
+</div>
+
+<!-- ==================== 8. CSS ==================== -->
+<div class="section">
+<h4 id="css"><span class="label label-css">8</span> CSS</h4>
+<div class="code-block"><span class="cm">/* ―――――――――――――――――――――――――― */</span>
+<span class="cm">/* 共通設定 */</span>
+<span class="cm">/* ―――――――――――――――――――――――――― */</span>
+
+:root {
+    --main_color: #ff8585;
+    --main_text: #232323;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+<span class="cm">/* 画面を垂直方向に３分割 */</span>
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    color: #232323;
+}
+
+<span class="cm">/* 余ったスペースはmainに割り当てる */</span>
+main {
+    flex: 1;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    padding: 30px 0 20px;
+    background-color: #ff8585;
+    margin-bottom: 50px;
+    font-size: clamp(24px, 4vw, 32px);
+}
+
+footer {
+    text-align: center;
+    color: #fff;
+    height: 30px;
+    background-color: #ff8585;
+}
+
+<span class="cm">/* ―――――――――――――――――――――――――― */</span>
+<span class="cm">/* ３連ガチャ */</span>
+<span class="cm">/* ―――――――――――――――――――――――――― */</span>
+
+<span class="cm">/* 表示スペース：3列グリッド */</span>
+.wrapper {
+    display: grid;
+    width: min(90%, 940px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 40px;
+    margin: 0 auto 40px;
+}
+
+<span class="cm">/* 画像1つあたりの表示サイズ */</span>
+.wrapper .box {
+    max-width: 280px;
+    height: 360px;
+    margin: 0 auto;
+}
+
+<span class="cm">/* スペースに画像をフィットさせる */</span>
+.wrapper .box img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+<span class="cm">/* ボタン */</span>
+.btn {
+    cursor: pointer;
+    text-align: center;
+    color: #ff8585;
+    padding: 6px 0;
+    width: 150px;
+    margin: 0 auto;
+    border: 1px solid #ff8585;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff8585;
+    color: #fff;
+}
+
+@media(width &lt; 500px) {
+    .wrapper {
+        gap: 0 10px;
+    }
+    .wrapper .box {
+        height: 196px;
+    }
+}</div>
+</div>
+
+<!-- ==================== 9. 次回 ==================== -->
+<div class="section">
+<h4 id="次回">次回</h4>
+<p>書き出した画像を使って、HTML・CSS・JavaScriptでガチャアプリの実装へ進む。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

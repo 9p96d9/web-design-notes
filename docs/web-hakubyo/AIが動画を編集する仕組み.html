@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIが動画を編集する仕組み — FFmpegとClaude Codeの正体 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#eff6ff; color:#2563eb; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .err { color:#fca5a5; }
+.flow-box { background:#f0f9ff; border-left:4px solid #2563eb; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.dialogue { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:1em 1.4em; margin:1em 0; font-size:.95em; line-height:2; }
+.dialogue .who { font-weight:600; color:#2563eb; }
+.dialogue .who-r { font-weight:600; color:#16a34a; }
+.dialogue .who-e { font-weight:600; color:#dc2626; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>AIが動画を編集する仕組み</span>
+  </div>
+  <div class="article-head">
+    <h1>AIが動画を編集する仕組み<br><small style="font-size:.6em;font-weight:400;color:#64748b">FFmpegとClaude Codeの正体</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">Webリテラシー</span>
+      <span class="date">2026/05/19</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="はじめに">「AIが動画を編集した」は正しいか？</h4>
+<p>Claude Codeに「この動画を切ってつなげて」と頼んだら、実際に動画が完成した。</p>
+<p>すごい。でも「AIが動画編集した」というのは、正確じゃない。</p>
+<p>実際に起きていたのはこうだ。</p>
+<div class="flow-box">
+Claude Code（AI）
+　↓　コマンドを自動生成
+ターミナル（PowerShell）
+　↓　コマンドを実行
+FFmpeg（動画処理ツール）
+　↓　実際に動画を切る・つなぐ
+完成した動画ファイル
+</div>
+<p><strong>本体はFFmpeg。</strong> AIはそれを呼び出す「司令官」だ。</p>
+</div>
+
+<div class="section">
+<h4 id="ffmpegとは">FFmpegとは何か</h4>
+<p>FFmpegは「動画界の包丁」と呼ばれることがある。</p>
+<p>1つのツールで、動画に関するほぼ全てができる。</p>
+<table class="map-table">
+  <thead><tr><th>できること</th><th>コマンド例</th></tr></thead>
+  <tbody>
+    <tr><td>動画を切る</td><td><code>ffmpeg -i input.mp4 -ss 10 -t 30 output.mp4</code></td></tr>
+    <tr><td>動画をつなぐ</td><td><code>ffmpeg -f concat -i list.txt output.mp4</code></td></tr>
+    <tr><td>音声だけ抜く</td><td><code>ffmpeg -i input.mp4 -vn audio.mp3</code></td></tr>
+    <tr><td>GIFに変換</td><td><code>ffmpeg -i input.mp4 output.gif</code></td></tr>
+    <tr><td>ファイルサイズを圧縮</td><td><code>ffmpeg -i input.mp4 -crf 28 output.mp4</code></td></tr>
+    <tr><td>解像度を変える</td><td><code>ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4</code></td></tr>
+    <tr><td>字幕を焼き込む</td><td><code>ffmpeg -i input.mp4 -vf subtitles=sub.srt output.mp4</code></td></tr>
+  </tbody>
+</table>
+<p>YouTubeの動画処理、配信ソフトのOBS、AIの音声・映像パイプライン。<br>業界の裏側でFFmpegが動いている場面は多い。</p>
+<p>コマンド1行で完結する。GUIアプリを使わなくていい。これが強みだ。</p>
+</div>
+
+<div class="section">
+<h4 id="claude-codeの正体">Claude Codeの正体</h4>
+<p>「AIがコードを書いてくれる」「AIがファイルを操作してくれる」</p>
+<p>これを「魔法」だと思っていないか？</p>
+<p>かなり雑に言うと、Claude Codeは：</p>
+<div class="point-box">
+<strong>AI + ターミナル自動操作</strong><br>
+人間がキーボードで打つコマンドを、AIが自動生成して実行しているだけ。
+</div>
+<p>今回の動画編集で実際にやったことを分解するとこうだ。</p>
+<div class="dialogue">
+<span class="who">AI：</span>「FFmpegがインストールされているか確認する」<br>
+<div class="code-block" style="margin:.3em 0;padding:.5em 1em">ffmpeg -version</div>
+<span class="who-r">PC：</span>「あるよ」<br><br>
+<span class="who">AI：</span>「動画を前半・後半に切る」<br>
+<div class="code-block" style="margin:.3em 0;padding:.5em 1em">ffmpeg -i "2A.mp4" -ss 00:00:00 -t 00:01:30 "part_a.mp4"</div>
+<span class="who-r">PC：</span>「完了」<br><br>
+<span class="who">AI：</span>「2つをつなぐためのリストファイルを作る」<br>
+<div class="code-block" style="margin:.3em 0;padding:.5em 1em">file 'part_a.mp4'
+file 'part_b.mp4'</div>
+<span class="who-e">FFmpeg：</span>「文字コードが壊れてる、読めない」<br><br>
+<span class="who">AI：</span>「ASCII文字コードで作り直す」<br>
+<div class="code-block" style="margin:.3em 0;padding:.5em 1em">[System.Text.Encoding]::ASCII.GetBytes(...)</div>
+<span class="who-r">FFmpeg：</span>「OK、つなげた」<br><br>
+<span class="who">AI：</span>「一時ファイルを削除して完了」
+</div>
+<p>これだけ。人間がターミナルで打つのと、やっていることは同じだ。</p>
+</div>
+
+<div class="section">
+<h4 id="ログが長い理由">なぜログがあんなに長いのか</h4>
+<p>FFmpegを実行すると、大量のテキストが流れてくる。</p>
+<div class="code-block"><span class="cm">ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '2A.mp4':
+  Metadata:
+    major_brand     : isom
+  Duration: 00:03:42.18, start: 0.000000, bitrate: 8142 kb/s
+  Stream #0:0: Video: h264 (High), yuv420p, 1920x1080, 8003 kb/s, 59.94 fps
+  Stream #0:1: Audio: aac, 48000 Hz, stereo, fltp, 128 kb/s
+frame=  450 fps= 62 q=-1.0 Lsize=   18432kB time=00:00:07.50 bitrate=20122.0kbits/s</span></div>
+<p>FFmpegはGUIを持たない <strong>CLI（コマンドラインインターフェース）ツール</strong> だ。</p>
+<p>処理の経過・エラー・警告は全部テキストで出力される。</p>
+<ul>
+<li>動画の長さ・解像度・fps</li>
+<li>使われている映像コーデック・音声コーデック</li>
+<li>処理速度・進捗フレーム数</li>
+<li>エラーメッセージ</li>
+</ul>
+<p>全部ログに出る。これは昔からの文化で、今でも変わっていない。</p>
+</div>
+
+<div class="section">
+<h4 id="エラーの正体">エラーの正体 — BOMと文字コード問題</h4>
+<p>今回のエラーの一つは、こういうメッセージだった。</p>
+<div class="code-block"><span class="err">unknown keyword '﻿file'</span></div>
+<p>「<code>file</code>」という単語の前に見えない文字がついていた。</p>
+<p>これが <strong>BOM（Byte Order Mark）</strong> だ。</p>
+<div class="point-box">
+<strong>BOMとは</strong><br>
+UTF-8ファイルの先頭に自動で挿入される「不可視文字」。<br>Windows環境でテキストファイルを作ると付くことがある。<br>人間の目には見えないが、プログラムは読んでしまう。
+</div>
+<p>FFmpegのconcatは、リストファイルの最初の文字が <code>file</code> であることを期待している。<br>でもBOM付きだと、最初の文字は <code>﻿file</code>（見えない文字 + file）になってしまう。</p>
+<p>解決策は「BOMを付けないASCIIで書き直す」だった。</p>
+<div class="code-block"><span class="cm"># BOM付きUTF-8（Windows標準）→ FFmpegが認識できない</span>
+<span class="err">﻿file 'part_a.mp4'</span>
+
+<span class="cm"># ASCII → FFmpegが正常に読める</span>
+<span class="st">file 'part_a.mp4'</span></div>
+<p>目に見えないバグ。こういう問題が現場では頻繁に起きる。</p>
+</div>
+
+<div class="section">
+<h4 id="現代ai開発の実態">現代AI開発の実態</h4>
+<p>「AIは魔法」ではない。AIがやっていることは：</p>
+<div class="flow-box">
+AI
+　↓　指示を解釈してコマンドを生成
+Node.js / Python / PowerShell
+　↓　実行環境
+FFmpeg / Git / Docker / AWS CLI
+　↓　実際の処理
+ファイル・サーバー・クラウド
+</div>
+<p>AIは「既存ツールのオーケストラ指揮者」だ。</p>
+<p>楽器（FFmpeg・Git・Docker）は昔からある。<br>AIが登場したことで、それらを組み合わせる「司令塔」が自動化された。</p>
+<table class="map-table">
+  <thead><tr><th>やりたいこと</th><th>AIが呼び出すツール</th></tr></thead>
+  <tbody>
+    <tr><td>動画を編集する</td><td>FFmpeg</td></tr>
+    <tr><td>コードを管理する</td><td>Git</td></tr>
+    <tr><td>サーバーを動かす</td><td>Docker</td></tr>
+    <tr><td>クラウドにデプロイ</td><td>AWS CLI</td></tr>
+    <tr><td>画像を処理する</td><td>ImageMagick</td></tr>
+    <tr><td>PDFを生成する</td><td>WeasyPrint / Puppeteer</td></tr>
+  </tbody>
+</table>
+<p>AIが賢くなっているのではなく、<strong>AIが扱える道具の種類が増えている</strong>。</p>
+</div>
+
+<div class="section">
+<h4 id="ai時代に強い人">AI時代に強い人とは</h4>
+<p>「Pythonの文法を全部暗記している人」は強いか？</p>
+<p>今の時代、コードの書き方はAIが補完してくれる。</p>
+<p>では、何が差になるか。</p>
+<div class="point-box">
+<strong>裏で何が起きているかを理解できる人</strong><br>
+エラーを見て「BOMの問題だ」と見抜ける。<br>ログを見て「ここのパスがおかしい」と判断できる。<br>AIの出力を「正しいか間違いか」検証できる。
+</div>
+<p>今回のBOMの話。パスの話。FFmpegの仕組み。</p>
+<p>これは「覚えなくていい細かい知識」ではなく、<strong>「起きていることを読む力」</strong> の話だ。</p>
+<p>HTML・CSS・JS・PHPを学んだ時間は、その「読む力」の土台になっている。</p>
+</div>
+
+<div class="section">
+<h4 id="ffmpegを試すなら">FFmpegを試すなら</h4>
+<p>インストールして、コマンドを1つ打ってみるだけでいい。</p>
+<table class="map-table">
+  <thead><tr><th>OS</th><th>インストール方法</th></tr></thead>
+  <tbody>
+    <tr><td>Windows</td><td><a href="https://ffmpeg.org/download.html" target="_blank">ffmpeg.org</a> からZIPをDL、PATHを通す</td></tr>
+    <tr><td>Mac</td><td><code>brew install ffmpeg</code></td></tr>
+    <tr><td>Linux</td><td><code>sudo apt install ffmpeg</code></td></tr>
+  </tbody>
+</table>
+<div class="code-block"><span class="cm"># インストール確認</span>
+ffmpeg -version
+
+<span class="cm"># 動画の情報を見る（何も変換しない）</span>
+ffmpeg -i input.mp4
+
+<span class="cm"># 動画を10秒だけ切り出す（0秒〜10秒）</span>
+ffmpeg -i input.mp4 -ss 0 -t 10 -c copy output.mp4</div>
+<p>「コマンドを打って何かが起きる」体験をすると、ログの意味が分かるようになる。</p>
+<p>AIに頼む前に、自分で1回やってみる。それだけで理解の深さが変わる。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScriptの世界地図 — Node.js・React・TypeScriptを整理する - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #2563eb; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#eff6ff; color:#2563eb; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.flow-box { background:#f0f9ff; border-left:4px solid #2563eb; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">Web白描</a>
+    <span class="sep">›</span>
+    <span>JavaScriptの世界地図</span>
+  </div>
+  <div class="article-head">
+    <h1>JavaScriptの世界地図<br><small style="font-size:.6em;font-weight:400;color:#64748b">Node.js・npm・React・TypeScript・Next.jsを整理する</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#eff6ff;color:#2563eb">Webリテラシー</span>
+      <span class="date">2026/05/19</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="はじめに">「JSだけで作ってた世界じゃなくなってる？」</h4>
+<p>HTMLとCSSを覚えて、JavaScriptも少し書けるようになった。PHPでサーバーの仕組みも触った。</p>
+<p>なのに最近、こんな言葉が急に増えてきていないか？</p>
+<ul>
+<li>Node.js</li>
+<li>npm install</li>
+<li>React</li>
+<li>TypeScript</li>
+<li>Next.js</li>
+</ul>
+<p>「なんかJavaScriptの周りが複雑になってる気がする」という感覚は正常だ。<br>これらは<strong>全部つながっている</strong>。ひとつひとつ地図として整理していこう。</p>
+</div>
+
+<div class="section">
+<h4 id="土台は変わらない">まず大前提：HTML・CSS・JSは今も変わらない</h4>
+<p>ReactもNext.jsも、最終的にブラウザが受け取るのは <strong>HTML・CSS・JS</strong> だ。<br>これは変わっていない。</p>
+<table class="map-table">
+  <thead><tr><th>素材</th><th>役割</th><th>今も使われる？</th></tr></thead>
+  <tbody>
+    <tr><td>HTML</td><td>骨組み・構造</td><td>✅ 変わらない</td></tr>
+    <tr><td>CSS</td><td>見た目・レイアウト</td><td>✅ 変わらない</td></tr>
+    <tr><td>JavaScript</td><td>動き・ロジック</td><td>✅ 変わらない</td></tr>
+  </tbody>
+</table>
+<p>では「Node.js・React・TypeScript」は何者か？<br>これらは HTML/CSS/JS を <strong>もっと快適に・大規模に</strong> 扱うための道具だ。</p>
+</div>
+
+<div class="section">
+<h4 id="nodejs">① Node.js ── JSをブラウザの外で動かす装置</h4>
+<p>もともとJavaScriptは <strong>ブラウザ専用言語</strong> だった。<br>ChromeやFirefoxの中でしか動かなかった。</p>
+<p>PHPを思い出してほしい。PHPは <strong>サーバー側で動く言語</strong> だ。</p>
+<ul>
+<li>ユーザーがURLにアクセス</li>
+<li>サーバー上のPHPが処理</li>
+<li>HTMLを生成してブラウザへ返す</li>
+</ul>
+<p>2009年、<strong>Node.js</strong> が登場した。</p>
+<div class="point-box">
+<strong>Node.js = JavaScriptをPCやサーバー上で動かす仕組み</strong><br>
+ブラウザがなくてもJSが動く。PHPと同じ「サーバーサイド言語」として使える。
+</div>
+<p>これによって、フロント（見た目）もサーバー（処理）も、同じJavaScriptで書けるようになった。<br>「フロントエンドエンジニア」が「バックエンドも触れる」時代の始まりだ。</p>
+</div>
+
+<div class="section">
+<h4 id="npm">② npm ── パッケージ管理ツール</h4>
+<p>Node.jsと一緒に覚えておきたいのが <strong>npm</strong>（Node Package Manager）だ。</p>
+<p>PHPで言えば Composer に近い。「ライブラリをダウンロードして管理する道具」だ。</p>
+<div class="code-block"><span class="cm"># Reactを使えるようにする</span>
+npm install react
+
+<span class="cm"># Tailwind CSSを入れる</span>
+npm install tailwindcss
+
+<span class="cm"># Reactプロジェクトをまるごと作る</span>
+npm create vite@latest</div>
+<p><code>npm install ○○</code> を打つだけで、世界中の開発者が作ったライブラリを使えるようになる。<br>「GitHubのアプリストア」と思えばいい。</p>
+</div>
+
+<div class="section">
+<h4 id="react">③ React ── 画面を「部品」で作る考え方</h4>
+<p>Webサービスが大きくなると、素のJavaScriptだけでは管理が辛くなる。</p>
+<div class="code-block"><span class="cm">// 昔のJS: 全部手書きでDOMを操作する</span>
+document.getElementById(<span class="st">'app'</span>).innerHTML = <span class="st">'&lt;div class="card"&gt;...&lt;/div&gt;'</span>;
+document.getElementById(<span class="st">'btn'</span>).addEventListener(<span class="st">'click'</span>, () =&gt; { ... });
+document.getElementById(<span class="st">'count'</span>).textContent = count;</div>
+<p>画面の部品が増えるたびに、こういうコードが何百行にもなる。<br>Reactはこの問題を解決するために作られた。</p>
+<p>考え方は「画面を <strong>コンポーネント（部品）</strong> に分ける」だ。</p>
+<div class="code-block"><span class="cm">// React: 部品として定義する</span>
+<span class="kw">function</span> UserCard({ name, age }) {
+  <span class="kw">return</span> (
+    &lt;div className=<span class="st">"card"</span>&gt;
+      &lt;h2&gt;{name}&lt;/h2&gt;
+      &lt;p&gt;{age}歳&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+<span class="cm">// どこでも使い回せる</span>
+&lt;UserCard name=<span class="st">"田中"</span> age={25} /&gt;
+&lt;UserCard name=<span class="st">"鈴木"</span> age={32} /&gt;</div>
+<p>「ボタン」「カード」「ナビゲーション」を部品にして組み合わせる。<br>Webサービスをレゴブロックのように作る感覚だ。</p>
+<p>Reactの書き方は <strong>JSX</strong> と呼ばれ、JavaScriptの中にHTMLを書く形式になっている。最初は奇妙に見えるが、すぐ慣れる。</p>
+</div>
+
+<div class="section">
+<h4 id="typescript">④ TypeScript ── JSに「型」をつけたもの</h4>
+<p>PHPには「型」という概念がある。JavaScriptは自由度が高すぎて、大規模開発でバグが起きやすい。</p>
+<div class="code-block"><span class="cm">// JavaScript: 何でも入る（問題になりやすい）</span>
+<span class="kw">let</span> price = <span class="st">"1000"</span>;
+price = 1000;
+price = <span class="kw">true</span>;  <span class="cm">// 全部OK…</span>
+
+<span class="cm">// TypeScript: 型を指定する</span>
+<span class="kw">let</span> price: <span class="kw">number</span> = 1000;
+price = <span class="st">"1000"</span>;  <span class="cm">// ← エラー！ 数字じゃない</span></div>
+<p>TypeScriptは「型を付けたJavaScript」だ。<br>書いたコードが <strong>実行前にチェックされる</strong> ので、バグを早期発見できる。</p>
+<p>最終的にJavaScriptに変換されて動く。ブラウザはTypeScriptを直接読めない。</p>
+<div class="point-box">
+<strong>TypeScript は「安全にJSを書くためのツール」</strong><br>
+今の業界では React + TypeScript が標準的な組み合わせになっている。
+</div>
+</div>
+
+<div class="section">
+<h4 id="nextjs">⑤ Next.js ── Reactをまとめた「全部入りセット」</h4>
+<p>Reactは「画面の部品を作る」ことに特化している。でも実際のWebサービスにはこれだけでは足りない。</p>
+<table class="map-table">
+  <thead><tr><th>必要な機能</th><th>Reactだけ？</th><th>Next.jsなら？</th></tr></thead>
+  <tbody>
+    <tr><td>ページ遷移（ルーティング）</td><td>別で追加が必要</td><td>✅ 標準装備</td></tr>
+    <tr><td>SEO対策</td><td>弱い</td><td>✅ 対応済</td></tr>
+    <tr><td>サーバー処理</td><td>できない</td><td>✅ 組み込み</td></tr>
+    <tr><td>画像最適化</td><td>自分で実装</td><td>✅ 自動最適化</td></tr>
+    <tr><td>TypeScript対応</td><td>設定が必要</td><td>✅ デフォルト対応</td></tr>
+  </tbody>
+</table>
+<p>Next.jsを使えば「ReactでWebサービスを作る」ためのほぼ全部が揃っている。<br>今の業界で「Reactでサービスを作る」と言えば、多くの場合 <strong>Next.jsを使う</strong>。</p>
+</div>
+
+<div class="section">
+<h4 id="まとめ地図">全体の地図</h4>
+<p>ここまでをまとめると、こういう構造になっている。</p>
+<div class="flow-box">
+HTML / CSS / JavaScript　←　今も土台は同じ
+　　↓　複雑化・大規模化
+Node.js　　：JSをサーバーで動かす
+npm　　　　：ライブラリを管理する
+React　　　：画面を部品で作る
+TypeScript　：型でバグを防ぐ
+　　↓　全部まとめると
+Next.js　　：全部入りセット
+　　↓　公開
+Vercel / AWS などにデプロイ
+</div>
+<p>「なんかJSだけで作ってた世界じゃなくなってる」という感覚は正しい。でも積み上がってる。<br>ReactもNext.jsも、最終的にはHTML+CSS+JSを出力している。基礎は一切無駄じゃない。</p>
+</div>
+
+<div class="section">
+<h4 id="実際のアプリ">実際に作ったWebアプリを覗いてみる</h4>
+<p>ここまで説明してきた技術が「実際のWebアプリでどう使われるのか」を見てみよう。</p>
+<p>ポーカーのプレイ記録を自動で収集して、GTO（Game Theory Optimal・ゲーム理論最適戦略）の観点からAIが分析するWebアプリを作った。</p>
+<table class="map-table">
+  <thead><tr><th>要素</th><th>使った技術</th><th>この記事で言うと</th></tr></thead>
+  <tbody>
+    <tr><td>ブラウザ拡張機能</td><td>Chrome Extension（JS）</td><td>素のJavaScript</td></tr>
+    <tr><td>リアルタイム通信の傍受</td><td>WebSocket + JS</td><td>JSのネットワーク機能</td></tr>
+    <tr><td>データベース</td><td>Firebase Firestore</td><td>クラウドDB</td></tr>
+    <tr><td>ログイン認証</td><td>Firebase Auth（Google認証）</td><td>外部サービス連携</td></tr>
+    <tr><td>サーバー（バックエンド）</td><td>FastAPI（Python）</td><td>PHPの代わりにPythonでサーバー処理</td></tr>
+    <tr><td>AI分析</td><td>Groq / Gemini API</td><td>AIサービスのAPI利用</td></tr>
+    <tr><td>PDF生成</td><td>WeasyPrint（Python）</td><td>サーバー側での出力処理</td></tr>
+    <tr><td>デプロイ先</td><td>AWS EC2（クラウドサーバー）</td><td>Vercelの代わりにAWSを使う選択肢</td></tr>
+    <tr><td>自動デプロイ</td><td>GitHub Actions</td><td>GitHubの自動化機能（CI/CD）</td></tr>
+  </tbody>
+</table>
+<p>このアプリはNext.jsではなくPythonのFastAPIをサーバーに使っているが、<strong>「クライアント（ブラウザ）とサーバーが通信する」という構造はまったく同じ</strong>だ。</p>
+<p>技術の選択肢は1つではない。Node.js/Next.jsはJS系の王道。FastAPI/DjangoはPython版。目的は同じで、アプローチが違う。</p>
+<div class="point-box">
+<strong>大事なのは「どの言語・ツールか」より「何ができるかを理解すること」</strong><br>
+HTML・CSS・JSの基礎を持っていれば、どの方向にも広げられる。
+</div>
+</div>
+
+<div class="section">
+<h4 id="次のステップ">次のステップ</h4>
+<p>「実際に動かしてみたい」という人へ、最短コースを紹介する。</p>
+<table class="map-table">
+  <thead><tr><th>ステップ</th><th>やること</th><th>目安</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Node.jsをインストールして <code>node -v</code> で確認</td><td>10分</td></tr>
+    <tr><td>2</td><td><code>npm create vite@latest</code> でReactプロジェクトを作る</td><td>15分</td></tr>
+    <tr><td>3</td><td>コンポーネントを1つ自分で書いてみる</td><td>1時間</td></tr>
+    <tr><td>4</td><td>TypeScriptに切り替えて型エラーを体験する</td><td>30分</td></tr>
+    <tr><td>5</td><td><code>npx create-next-app</code> でNext.jsを試す</td><td>15分</td></tr>
+  </tbody>
+</table>
+<p>まずは「動かす」こと。概念は体で覚えると定着が早い。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

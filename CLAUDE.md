@@ -4,6 +4,8 @@
 はてなブログ8本をスクレイピングして静的HTMLサイト(docs/)に変換するアーカイブ。
 デプロイ先: GitHub Pages（docs/ フォルダを公開）。
 
+**本番URL**: https://9p96d9.github.io/web-design-notes/
+
 ## ディレクトリ（重要なものだけ）
 ```
 web-hakubyo/
