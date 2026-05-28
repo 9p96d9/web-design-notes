@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>401エラーを解剖する — DevToolsでBasic認証を特定してスクレイプする - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #7c3aed; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#f5f3ff; color:#7c3aed; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .ky { color:#fde68a; }
+.flow-box { background:#f5f3ff; border-left:4px solid #7c3aed; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>401エラーを解剖する</span>
+  </div>
+  <div class="article-head">
+    <h1>401エラーを解剖する<br><small style="font-size:.6em;font-weight:400;color:#64748b">DevToolsでBasic認証を特定してスクレイプする</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#f5f3ff;color:#7c3aed">JavaScript・DevTools</span>
+      <span class="date">2026/05/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="intro">「401が返ってくる」だけでは何もわからない</h4>
+<p>Pythonスクリプトでサイトの画像をまとめてダウンロードしようとしたとき、全件 <code>HTTP 401 Unauthorized</code> で弾かれた。</p>
+<p>401は「認証が必要」という意味だが、<strong>認証方式は1種類ではない</strong>。方式を特定しないと対処できない。</p>
+<table class="map-table">
+  <thead><tr><th>認証方式</th><th>仕組み</th><th>よくある用途</th></tr></thead>
+  <tbody>
+    <tr><td>Cookie認証</td><td>ログイン後にCookieを発行し、以降のリクエストに自動添付</td><td>一般的なWebサービスのログイン</td></tr>
+    <tr><td>JWT / Bearer</td><td>Authorization: Bearer &lt;token&gt; ヘッダーで送る</td><td>SPA・API認証</td></tr>
+    <tr><td>Basic認証</td><td>ID:パスワードをBase64エンコードして Authorization ヘッダーに入れる</td><td>静的サイトのアクセス制限</td></tr>
+    <tr><td>OAuth</td><td>アクセストークンを外部プロバイダ経由で取得する</td><td>SNSログイン・APIアクセス</td></tr>
+  </tbody>
+</table>
+<p>まず「このサイトはどの方式を使っているのか」を特定する必要がある。最初は Cookie 認証だと思い込んで、ハマった。</p>
+</div>
+
+<div class="section">
+<h4 id="cookie-limit">document.cookie の限界 — HttpOnly Cookie は見えない</h4>
+<p>最初に試みたのは Chrome DevTools の Console から <code>document.cookie</code> を取得することだった。</p>
+<div class="code-block"><span class="cm">// Console で実行</span>
+document.cookie
+<span class="cm">// → "session_id=abc123; pref=dark"</span></div>
+<p>取得できたCookieをPythonスクリプトの headers に追加して再試行したが、まだ401のままだった。</p>
+<div class="warn-box">
+<strong>なぜ Cookie を渡しても401のままなのか？</strong><br>
+<code>document.cookie</code> で取得できるのは、<strong>JavaScriptからアクセス可能なCookieだけ</strong>だ。<br>
+<code>HttpOnly</code> フラグが付いたCookieは、XSS攻撃への対策としてJSから読めないように設計されている。<br>
+つまり認証に使われているCookieが HttpOnly であれば、Console からは取得できない。
+</div>
+<p>「HttpOnly Cookieはどこで確認できるのか？」と思い、Application タブを開いた。</p>
+<div class="flow-box">DevTools → Application タブ → Storage → Cookies → ドメインを選択
+  → 全Cookieの一覧と HttpOnly フラグが確認できる</div>
+<p>確認すると、そのドメインのCookieは3件だった。<code>document.cookie</code> で取得できたのも同じ3件で、HttpOnly のものはなかった。</p>
+<div class="point-box">
+<strong>ここで気づいたこと：</strong><br>
+Cookie の問題ではなく、そもそも認証方式がCookieではない可能性がある。<br>
+原因を決めつけず、まず「サーバーが何を要求しているか」を確認すべきだった。
+</div>
+</div>
+
+<div class="section">
+<h4 id="www-authenticate">WWW-Authenticate ヘッダーで認証方式を特定する</h4>
+<p>401レスポンスには、サーバーが要求する認証方式を示す <code>WWW-Authenticate</code> ヘッダーが含まれることがある。これを見れば方式が一発でわかる。</p>
+<p>確認方法はいくつかある。最も簡単なのは <code>curl.exe -I</code> でヘッダーだけを取得することだ。</p>
+<div class="code-block"><span class="cm"># Windows PowerShell / ターミナルで実行</span>
+curl.exe -I https://example.com/works/web/osanpo/img/zukan01.jpg</div>
+<div class="code-block"><span class="cm"># レスポンス（抜粋）</span>
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Basic realm=<span class="st">"Restricted Area"</span>
+Content-Type: text/html</div>
+<p><code>WWW-Authenticate: Basic realm="..."</code> が返ってきた。<strong>Basic認証だった。</strong></p>
+<p>同じ情報はDevToolsのNetworkタブからも確認できる。</p>
+<div class="flow-box">DevTools → Network タブ → 401になったリクエストをクリック
+  → Headers → Response Headers → WWW-Authenticate を確認</div>
+<table class="map-table">
+  <thead><tr><th>WWW-Authenticate の値</th><th>認証方式</th></tr></thead>
+  <tbody>
+    <tr><td>Basic realm="..."</td><td>Basic認証（ID・パスワード）</td></tr>
+    <tr><td>Bearer</td><td>OAuth 2.0 / JWT</td></tr>
+    <tr><td>Digest realm="..."</td><td>Digest認証</td></tr>
+    <tr><td>（ヘッダーなし）</td><td>独自実装・Cookie認証の可能性</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="section">
+<h4 id="disable-cache">Disable cache でリクエストヘッダーを「本物」にする</h4>
+<p>認証方式がBasicだとわかった。次はブラウザが実際にどんな <code>Authorization</code> ヘッダーを送っているかを確認したかった。</p>
+<p>しかし、NetworkタブでリクエストのHeaders を見ると「Provisional headers are shown」と表示されていて、Authorization ヘッダーが見当たらない。</p>
+<div class="warn-box">
+<strong>「Provisional headers are shown」とは何か？</strong><br>
+キャッシュからレスポンスが返ったとき、ブラウザは実際にはリクエストを送っていない。<br>
+そのためDevToolsには「送る予定だったヘッダー（暫定ヘッダー）」しか表示されず、<br>
+実際に送信された認証ヘッダーは見えない。
+</div>
+<p>これを解決するには、キャッシュを無効にしてから再リクエストさせる必要がある。</p>
+<div class="flow-box">DevTools → Network タブ → 「Disable cache」にチェックを入れる
+  → ページをリロード（またはリソースを再取得）
+  → 今度は実際のリクエストが発生する</div>
+<p>「Disable cache」にチェックを入れてリロードすると、zukan01.jpg のリクエストヘッダーに以下が現れた。</p>
+<div class="code-block"><span class="cm">Request Headers:</span>
+Authorization: Basic b3lhc3VtaTE5OTc6cGFzc3dvcmQxMjM=</div>
+<div class="ok-box">
+<strong>これが「本物」の Authorization ヘッダーだ。</strong><br>
+<code>Basic</code> の後の文字列は <code>username:password</code> をBase64エンコードしたもの。<br>
+このまま Python スクリプトの headers にコピーして使える。
+</div>
+<div class="point-box">
+<strong>Base64のデコード確認方法（確認したいとき）：</strong><br>
+<code>atob('b3lhc3VtaTE5OTc6cGFzc3dvcmQxMjM=')</code> を Console で実行すると元の文字列が見える。<br>
+ただし実運用では値をそのままコピーするだけでよい。
+</div>
+</div>
+
+<div class="section">
+<h4 id="python-impl">Authorization ヘッダーをスクリプトに追加して完了</h4>
+<p>取得した Authorization ヘッダーの値を Python スクリプトに追加する。</p>
+<div class="code-block"><span class="kw">import</span> urllib.request
+
+<span class="cm"># DevTools から取得した Authorization ヘッダーをそのままコピー</span>
+headers = {
+    <span class="st">'Authorization'</span>: <span class="st">'Basic b3lhc3VtaTE5OTc6cGFzc3dvcmQxMjM='</span>,
+    <span class="st">'User-Agent'</span>: <span class="st">'Mozilla/5.0'</span>,
+}
+
+url = <span class="st">'https://example.com/works/web/osanpo/img/zukan01.jpg'</span>
+req = urllib.request.<span class="ky">Request</span>(url, headers=headers)
+
+<span class="kw">with</span> urllib.request.<span class="ky">urlopen</span>(req) <span class="kw">as</span> res:
+    data = res.<span class="ky">read</span>()
+    <span class="kw">with</span> <span class="ky">open</span>(<span class="st">'zukan01.jpg'</span>, <span class="st">'wb'</span>) <span class="kw">as</span> f:
+        f.<span class="ky">write</span>(data)
+
+<span class="ky">print</span>(<span class="st">'ダウンロード完了'</span>)</div>
+<p>複数ファイルをまとめてダウンロードするときは、URLリストをループさせるだけでよい。</p>
+<div class="code-block">image_urls = [
+    <span class="st">'https://example.com/works/web/osanpo/img/zukan01.jpg'</span>,
+    <span class="st">'https://example.com/works/web/osanpo/img/zukan02.jpg'</span>,
+    <span class="cm"># ...</span>
+]
+
+<span class="kw">for</span> url <span class="kw">in</span> image_urls:
+    filename = url.<span class="ky">split</span>(<span class="st">'/'</span>)[-1]
+    req = urllib.request.<span class="ky">Request</span>(url, headers=headers)
+    <span class="kw">with</span> urllib.request.<span class="ky">urlopen</span>(req) <span class="kw">as</span> res:
+        <span class="kw">with</span> <span class="ky">open</span>(filename, <span class="st">'wb'</span>) <span class="kw">as</span> f:
+            f.<span class="ky">write</span>(res.<span class="ky">read</span>())
+    <span class="ky">print</span>(f<span class="st">'完了: {filename}'</span>)</div>
+<p>実行すると全件ダウンロードが成功した。</p>
+</div>
+
+<div class="section">
+<h4 id="summary">まとめ — 401のデバッグ手順</h4>
+<p>今回の調査で整理できた、401に詰まったときの確認フローをまとめる。</p>
+<div class="flow-box">① curl -I または Network タブで WWW-Authenticate ヘッダーを確認
+  → 認証方式を特定する
+
+② Cookie認証が疑われる場合
+  → Application タブ → Cookies で HttpOnly フラグを確認
+  → document.cookie では HttpOnly は取れない点に注意
+
+③ Basic認証の場合
+  → Disable cache にチェック → リロード
+  → Request Headers の Authorization: Basic ... を取得
+
+④ スクリプトの headers に Authorization を追加して再試行</div>
+<table class="map-table">
+  <thead><tr><th>確認ポイント</th><th>場所</th><th>わかること</th></tr></thead>
+  <tbody>
+    <tr><td>WWW-Authenticate</td><td>curl -I / Network &gt; Response Headers</td><td>サーバーが要求する認証方式</td></tr>
+    <tr><td>Authorization</td><td>Network &gt; Request Headers（Disable cache後）</td><td>ブラウザが実際に送っている認証情報</td></tr>
+    <tr><td>HttpOnly Cookie</td><td>Application &gt; Cookies</td><td>JSから見えないCookieの有無</td></tr>
+    <tr><td>Provisional headers</td><td>Network &gt; Request Headers</td><td>キャッシュ利用時は「暫定」で本物ではない</td></tr>
+  </tbody>
+</table>
+<p>401は「認証失敗」という結果を表すだけで、原因は様々ある。<strong>まずサーバーのレスポンスヘッダーを読む</strong>という習慣を持つことで、無駄なトライ&エラーを減らせる。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

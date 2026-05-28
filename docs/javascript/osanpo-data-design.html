@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お散歩図鑑アプリのデータ設計 — JavaScriptオブジェクト配列の作り方 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #16a34a; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#f0fdf4; color:#16a34a; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .ky { color:#fde68a; }
+.flow-box { background:#f0fdf4; border-left:4px solid #16a34a; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>お散歩図鑑アプリのデータ設計</span>
+  </div>
+  <div class="article-head">
+    <h1>お散歩図鑑アプリのデータ設計<br><small style="font-size:.6em;font-weight:400;color:#64748b">JavaScriptオブジェクト配列の作り方</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#f0fdf4;color:#16a34a">JavaScript・データ設計</span>
+      <span class="date">2026/05/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="intro">アプリの全体像</h4>
+<p>「お散歩図鑑」は、散歩中に見かけた植物・虫・鳥・風景を記録・閲覧できるWebアプリだ。</p>
+<p>機能はシンプルに見えるが、データの設計が核心にある。<strong>どういう構造でデータを持つか</strong>が、絞り込み・カレンダー表示・お気に入り管理などすべての機能を支える土台になる。</p>
+<p>このアプリのデータは5種類のファイルで構成されている。</p>
+<table class="map-table">
+  <thead><tr><th>変数名</th><th>内容</th><th>役割</th></tr></thead>
+  <tbody>
+    <tr><td>zukanData</td><td>図鑑エントリ17件</td><td>全機能の中心。さくら・たんぽぽ・セミなど</td></tr>
+    <tr><td>categoryData</td><td>カテゴリ名の配列</td><td>絞り込みボタンを動的に生成する</td></tr>
+    <tr><td>seasonData</td><td>季節ごとの情報</td><td>季節トップ画面の表示に使う</td></tr>
+    <tr><td>courseData</td><td>散策コース情報</td><td>コース紹介ページに使う</td></tr>
+    <tr><td>calendarData</td><td>月 → 図鑑IDの対応</td><td>月別カレンダー表示に使う</td></tr>
+  </tbody>
+</table>
+<p>それぞれがどういう役割を持ち、どう連携するのかを順に見ていく。</p>
+</div>
+
+<div class="section">
+<h4 id="zukandata">zukanData の設計</h4>
+<p>図鑑データの1件分はこんな形をしている。</p>
+<div class="code-block"><span class="kw">const</span> zukanData = [
+  {
+    id: 1,
+    name: <span class="st">'さくら'</span>,
+    yomi: <span class="st">'さくら'</span>,
+    category: <span class="st">'花'</span>,
+    season: <span class="st">'春'</span>,
+    color: <span class="st">'ピンク'</span>,
+    place: <span class="st">'公園・道端'</span>,
+    description: <span class="st">'春に咲く代表的な花。'</span>,
+    difficulty: <span class="st">'見つけやすい'</span>,
+    month: [3, 4],
+    memo: <span class="st">''</span>,
+    date: <span class="st">'2026-03-28'</span>,
+    image: <span class="st">'/works/web/osanpo/img/zukan01.jpg'</span>,
+    favorite: <span class="kw">true</span>
+  },
+  <span class="cm">// ...以下16件続く</span>
+];</div>
+<p>フィールドを種類別に整理すると、役割がはっきりする。</p>
+<table class="map-table">
+  <thead><tr><th>フィールド</th><th>型</th><th>役割</th></tr></thead>
+  <tbody>
+    <tr><td>id</td><td>number</td><td>一意の識別子。calendarDataから参照するキー</td></tr>
+    <tr><td>name</td><td>string</td><td>表示名（漢字・カタカナ混在OK）</td></tr>
+    <tr><td>yomi</td><td>string</td><td>ひらがな読み。検索機能のインデックスに使う</td></tr>
+    <tr><td>category</td><td>string</td><td>花/草/木/虫/鳥/空/風景/その他。絞り込みに使う</td></tr>
+    <tr><td>season</td><td>string</td><td>春/夏/秋/冬。季節絞り込みに使う</td></tr>
+    <tr><td>month</td><td>number[]</td><td>見られる月の配列。calendarDataと対応</td></tr>
+    <tr><td>image</td><td>string</td><td>画像パス。カード表示に使う</td></tr>
+    <tr><td>favorite</td><td>boolean</td><td>お気に入り状態。localStorageで上書きして永続化</td></tr>
+    <tr><td>memo</td><td>string</td><td>個人メモ。空文字の場合は非表示にする</td></tr>
+  </tbody>
+</table>
+
+<h4 id="month-array">month を「配列」にしている理由</h4>
+<p>ここが設計の工夫ポイントだ。</p>
+<div class="warn-box">
+<strong>NG 設計：</strong><br>
+<code>month: 3</code>（単一の数値）<br>
+→「3月と4月の両方に出る花」を表現できない。
+</div>
+<div class="ok-box">
+<strong>OK 設計：</strong><br>
+<code>month: [3, 4]</code>（配列）<br>
+→ 複数月に対応できる。ハートっぽい石のように <code>[1,2,3,4,5,6,7,8,9,10,11,12]</code> と書けば「通年」も表現できる。
+</div>
+<p>配列にしておくと、カレンダー表示の実装も単純になる。</p>
+<div class="code-block"><span class="cm">// 「3月に見られるもの」を調べる</span>
+<span class="kw">const</span> march = zukanData.<span class="ky">filter</span>(item => item.month.<span class="ky">includes</span>(3));
+<span class="cm">// → さくら・たんぽぽ が返る</span></div>
+
+<h4 id="yomi">yomi フィールドがある理由</h4>
+<p>name フィールドだけでも検索はできる。でも漢字の「朝顔」を「あさがお」で検索したいとき、name だけでは一致しない。</p>
+<p>yomi に平仮名を別途持つことで、ひらがな部分一致検索が実装できる。</p>
+<div class="code-block"><span class="cm">// 「あさ」と入力したとき</span>
+<span class="kw">const</span> results = zukanData.<span class="ky">filter</span>(item =>
+  item.yomi.<span class="ky">includes</span>(<span class="st">'あさ'</span>) || item.name.<span class="ky">includes</span>(<span class="st">'あさ'</span>)
+);
+<span class="cm">// → 朝顔 が返る</span></div>
+</div>
+
+<div class="section">
+<h4 id="related">関連データの設計と zukanData との連携</h4>
+<p>残り4つの変数は、zukanData を別の切り口で整理・参照するための補助データだ。</p>
+
+<h4 id="category">categoryData — 絞り込みボタンを動的生成する</h4>
+<div class="code-block"><span class="kw">const</span> categoryData = [<span class="st">'花'</span>, <span class="st">'草'</span>, <span class="st">'木'</span>, <span class="st">'虫'</span>, <span class="st">'鳥'</span>, <span class="st">'空'</span>, <span class="st">'風景'</span>, <span class="st">'その他'</span>];</div>
+<p>カテゴリ一覧をこの配列から生成すると、新しいカテゴリを追加するときは1行追加するだけで済む。</p>
+<div class="code-block">categoryData.<span class="ky">forEach</span>(cat => {
+  <span class="kw">const</span> btn = document.<span class="ky">createElement</span>(<span class="st">'button'</span>);
+  btn.textContent = cat;
+  filterArea.<span class="ky">appendChild</span>(btn);
+});</div>
+
+<h4 id="season">seasonData — 季節トップ画面に使う</h4>
+<div class="code-block"><span class="kw">const</span> seasonData = [
+  { season: <span class="st">'春'</span>, month: [3,4,5], image: <span class="st">'/img/spring.jpg'</span> },
+  { season: <span class="st">'夏'</span>, month: [6,7,8], image: <span class="st">'/img/summer.jpg'</span> },
+  <span class="cm">// ...</span>
+];</div>
+<p>月と季節の対応（3月は春、など）をここだけで管理できる。zukanData の season フィールドと突き合わせるためのマスタデータだ。</p>
+
+<h4 id="calendar">calendarData — 月別カレンダーのインデックス</h4>
+<div class="code-block"><span class="kw">const</span> calendarData = {
+  3: [1, 2],  <span class="cm">// 3月 → id:1(さくら)・id:2(たんぽぽ)</span>
+  4: [1, 2],
+  6: [3],     <span class="cm">// 6月 → id:3(あじさい)</span>
+  <span class="cm">// ...</span>
+};</div>
+<div class="point-box">
+<strong>なぜ month 配列があるのに calendarData も必要なのか？</strong><br>
+zukanData の month 配列は「図鑑エントリ起点」で月を調べるもの。calendarData は「月起点」で何が見られるかを素早く引くためのインデックス。役割が逆方向になっている。
+</div>
+<p>calendarData を使うと、月をキーにして O(1) で引ける。毎回 zukanData 全件を filter する必要がなくなる。</p>
+
+<h4 id="course">courseData — コース紹介ページ</h4>
+<div class="code-block"><span class="kw">const</span> courseData = [
+  {
+    id: 1,
+    name: <span class="st">'公園コース'</span>,
+    area: <span class="st">'〇〇公園'</span>,
+    time: <span class="st">'30分'</span>,
+    distance: <span class="st">'2km'</span>,
+    image: <span class="st">'/img/course1.jpg'</span>,
+    plants: [1, 2, 3]  <span class="cm">// zukanData の id を参照</span>
+  }
+];</div>
+<p>plants 配列が zukanData の id を持っている点に注目。コースを表示するとき、plants の中身を id で引いて図鑑カードを並べることができる。</p>
+<div class="flow-box">courseData.plants = [1, 2, 3]
+  ↓ id で zukanData を引く
+さくら・たんぽぽ・あじさいのカードを表示</div>
+</div>
+
+<div class="section">
+<h4 id="summary">まとめ</h4>
+<p>データ設計で意識した3つのポイントをまとめる。</p>
+<table class="map-table">
+  <thead><tr><th>設計ポイント</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>配列で複数値を持つ</td><td>month: [3, 4] → 複数月・通年に対応できる</td></tr>
+    <tr><td>id で紐づける</td><td>calendarData・courseData から zukanData を参照する</td></tr>
+    <tr><td>UI用フィールドを分離する</td><td>yomi（検索）・favorite（UI状態）を専用フィールドにする</td></tr>
+  </tbody>
+</table>
+<p>データが整理されていると、絞り込み・検索・カレンダー表示などの機能実装がシンプルになる。<strong>「データ設計がアプリの設計」</strong>と言っても過言ではない。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

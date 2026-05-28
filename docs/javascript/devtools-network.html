@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NetworkタブでHTTP通信を読む — ステータスコードとヘッダーの見方 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #7c3aed; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#f5f3ff; color:#7c3aed; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .ky { color:#fde68a; }
+.flow-box { background:#f5f3ff; border-left:4px solid #7c3aed; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>NetworkタブでHTTP通信を読む</span>
+  </div>
+  <div class="article-head">
+    <h1>NetworkタブでHTTP通信を読む<br><small style="font-size:.6em;font-weight:400;color:#64748b">ステータスコードとヘッダーの見方</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#f5f3ff;color:#7c3aed">JavaScript・DevTools</span>
+      <span class="date">2026/05/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="intro">NetworkタブはHTTP通信の「盗聴器」</h4>
+<p>ページを開いたとき、裏では何十ものリクエストが飛んでいる。HTML本文・CSS・JavaScript・画像・フォント・API呼び出し……ブラウザはそれらをほぼ同時に処理している。</p>
+<p>DevToolsのNetworkタブを開いてからページをリロードすると、これらの通信がすべて記録される。「なぜ画像が表示されないか」「なぜAPIが失敗するか」といった問題の原因は、ここを見れば大抵わかる。</p>
+<div class="flow-box">DevTools を開く（F12）
+  ↓ Networkタブをクリック
+  ↓ ページをリロード（Ctrl+R / Cmd+R）
+  ↓ 全リクエストが一覧表示される</div>
+<p>Network タブを開いた<strong>後</strong>にリロードしないと記録が始まらない点に注意。開く前の通信は記録されていない。</p>
+</div>
+
+<div class="section">
+<h4 id="list">リクエスト一覧の読み方</h4>
+<p>一覧には複数の列が表示される。よく使う列とその意味を確認しておこう。</p>
+<table class="map-table">
+  <thead><tr><th>列名</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>Name</td><td>ファイル名またはURL。クリックするとリクエスト詳細が開く</td></tr>
+    <tr><td>Status</td><td>HTTPステータスコード（後述）</td></tr>
+    <tr><td>Type</td><td>リソースの種類。document / script / stylesheet / image / xhr / fetch など</td></tr>
+    <tr><td>Size</td><td>ファイルサイズ。グレー表示はキャッシュから取得したことを示す</td></tr>
+    <tr><td>Time</td><td>レスポンスが返ってくるまでの時間</td></tr>
+  </tbody>
+</table>
+
+<h4 id="status">ステータスコード早見表</h4>
+<p>Statusの数字はHTTPの「返答コード」だ。3桁の数字で意味が決まっている。</p>
+<table class="map-table">
+  <thead><tr><th>コード</th><th>意味</th><th>よくある状況</th></tr></thead>
+  <tbody>
+    <tr><td>200 OK</td><td>成功</td><td>通常のリクエスト成功</td></tr>
+    <tr><td>301 / 302</td><td>リダイレクト</td><td>URLが変わった、http→httpsへ転送</td></tr>
+    <tr><td>304 Not Modified</td><td>キャッシュを使用</td><td>前回と内容が変わっていないためキャッシュから返した</td></tr>
+    <tr><td>401 Unauthorized</td><td>認証が必要</td><td>ログインが必要なAPIに未認証でアクセスした</td></tr>
+    <tr><td>403 Forbidden</td><td>アクセス禁止</td><td>認証済みでもアクセス権がない</td></tr>
+    <tr><td>404 Not Found</td><td>ファイルが存在しない</td><td>URLを間違えた、ファイルを削除した</td></tr>
+    <tr><td>500 Internal Server Error</td><td>サーバー側のエラー</td><td>サーバーのプログラムがクラッシュした</td></tr>
+  </tbody>
+</table>
+<div class="point-box">
+<strong>色でも大まかに判断できる：</strong><br>
+2xx（緑）→ 成功、3xx（青）→ リダイレクト、4xx（オレンジ）→ クライアントエラー、5xx（赤）→ サーバーエラー。DevToolsによっては色分けされている。
+</div>
+</div>
+
+<div class="section">
+<h4 id="headers">ヘッダーを読む</h4>
+<p>一覧のリクエスト名をクリックすると右パネルが開く。「Headers」タブに Request Headers と Response Headers が表示される。</p>
+
+<h4 id="req-headers">Request Headers — ブラウザからサーバーへ</h4>
+<p>ブラウザがサーバーに送る「付加情報」だ。</p>
+<table class="map-table">
+  <thead><tr><th>ヘッダー名</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>User-Agent</td><td>どのブラウザ・OSからのリクエストか</td></tr>
+    <tr><td>Cookie</td><td>セッションIDなどのCookie情報（自動付与）</td></tr>
+    <tr><td>Authorization</td><td>認証情報。Basic認証（Basic xxxxxx）やBearerトークン（Bearer eyJ…）</td></tr>
+    <tr><td>Referer</td><td>どのページからリンクをたどってきたか</td></tr>
+    <tr><td>Content-Type</td><td>POSTリクエスト時に送るデータの形式（application/json など）</td></tr>
+  </tbody>
+</table>
+
+<h4 id="res-headers">Response Headers — サーバーからブラウザへ</h4>
+<p>サーバーが返す「返答情報」だ。</p>
+<table class="map-table">
+  <thead><tr><th>ヘッダー名</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>Content-Type</td><td>何のファイルか（text/html, image/png, application/json など）</td></tr>
+    <tr><td>Cache-Control</td><td>キャッシュ方針。no-cache / max-age=86400 など</td></tr>
+    <tr><td>Set-Cookie</td><td>このレスポンスで新たにCookieをセットする</td></tr>
+    <tr><td>Access-Control-Allow-Origin</td><td>CORS設定。どのオリジンからのアクセスを許可するか</td></tr>
+    <tr><td>Location</td><td>3xxリダイレクト時の転送先URL</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="section">
+<h4 id="filter">フィルターの使い方</h4>
+<p>多くのリクエストが並ぶときは、フィルターバーで絞り込むと目的のリクエストを探しやすい。</p>
+<table class="map-table">
+  <thead><tr><th>フィルター</th><th>表示されるもの</th></tr></thead>
+  <tbody>
+    <tr><td>All</td><td>全通信</td></tr>
+    <tr><td>Fetch / XHR</td><td>JavaScriptからのAPI通信（fetch・XMLHttpRequest）</td></tr>
+    <tr><td>Img</td><td>画像リクエストのみ</td></tr>
+    <tr><td>JS</td><td>JavaScriptファイル</td></tr>
+    <tr><td>CSS</td><td>スタイルシートファイル</td></tr>
+    <tr><td>Doc</td><td>HTMLドキュメント本体</td></tr>
+  </tbody>
+</table>
+<p>さらに2つのチェックボックスを覚えておくと便利だ。</p>
+<div class="point-box">
+<strong>Disable cache：</strong>チェックするとキャッシュを使わず全リクエストをサーバーに投げる。「Provisional headers are shown」が出たときや、最新のレスポンスヘッダーを確認したいときに使う。DevToolsを開いている間だけ有効。
+</div>
+<div class="point-box">
+<strong>Preserve log：</strong>チェックするとページ遷移・リダイレクトが起きても記録が消えない。ログイン後のリダイレクト通信を追いたいときに必須。
+</div>
+</div>
+
+<div class="section">
+<h4 id="provisional">"Provisional headers are shown" とは</h4>
+<p>Networkタブでリクエストをクリックしたとき、Headers欄に次のような警告が出ることがある。</p>
+<div class="warn-box">
+<strong>Provisional headers are shown. Disable cache to see full headers.</strong>
+</div>
+<p>これはブラウザがキャッシュからレスポンスを返したため、実際にサーバーへリクエストが飛んでおらず、本当のリクエストヘッダーが取得できていない状態を意味する。</p>
+<p>特に Authorization ヘッダーが付いているかどうかを確認したいときに、この警告が出ると何も見えないので詰まりやすい。</p>
+<div class="ok-box">
+<strong>解決方法：</strong><br>
+「Disable cache」にチェックを入れてリロードする。キャッシュを使わず実際にサーバーへリクエストが飛ぶため、全ヘッダーが表示される。
+</div>
+<div class="flow-box">DevTools を開いた状態で
+  ↓ Networkタブ → 「Disable cache」にチェック
+  ↓ ページをリロード
+  ↓ 実際のリクエストヘッダーが確認できる</div>
+<p>確認が終わったら「Disable cache」のチェックは外しておこう。チェックを入れたままだとキャッシュが効かないため、ページ読み込みが毎回遅くなる。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -19,7 +19,6 @@
 -->
 
 
-
 ---
 
 ## 記事案（フルスタック開発経験を活かした追加記事）
@@ -74,6 +73,15 @@ GTOポーカー分析アプリ（Chrome拡張 × Firebase × FastAPI × AWS）�
 |---|---|---|---|
 | `ai-native-development.html` | AIと共同開発する技術 — SPEC駆動・自走エージェントの設計思想 | AI・開発手法 | ✅ 作成済 |
 | `chrome-oauth-layers.html` | 拡張機能を消してもログイン状態が残る理由 — Chrome の OAuth 階層構造 | Webリテラシー | ✅ 作成済 |
+
+### javascript（JavaScript）
+
+| ファイル名 | タイトル | カテゴリ | ステータス |
+|---|---|---|---|
+| `osanpo-data-design.html` | お散歩図鑑アプリのデータ設計 — JavaScriptオブジェクト配列の作り方 | JavaScript・データ設計 | ✅ 作成済 |
+| `osanpo-card-render.html` | お散歩図鑑アプリ — データからカードUIを動的生成する | JavaScript・DOM操作 | ✅ 作成済 |
+| `osanpo-filter.html` | お散歩図鑑アプリ — カテゴリ・季節ボタンで絞り込む filter() の使い方 | JavaScript・配列操作 | ✅ 作成済 |
+| `osanpo-favorite.html` | お散歩図鑑アプリ — お気に入り機能と localStorage の使い方 | JavaScript・localStorage | ✅ 作成済 |
 
 #### ガチャアプリ記事の構成
 

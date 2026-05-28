@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お散歩図鑑アプリ — カテゴリ・季節ボタンで絞り込む filter() の使い方 - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #16a34a; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#f0fdf4; color:#16a34a; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .ky { color:#fde68a; }
+.flow-box { background:#f0fdf4; border-left:4px solid #16a34a; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>カテゴリ・季節ボタンで絞り込む filter() の使い方</span>
+  </div>
+  <div class="article-head">
+    <h1>お散歩図鑑アプリ<br><small style="font-size:.6em;font-weight:400;color:#64748b">カテゴリ・季節ボタンで絞り込む filter() の使い方</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#f0fdf4;color:#16a34a">JavaScript・配列操作</span>
+      <span class="date">2026/05/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="intro">filter() の基本</h4>
+<p>JavaScriptの <code>filter()</code> は、配列から条件に合う要素だけを取り出して<strong>新しい配列を返す</strong>メソッドだ。元の配列は変わらない。</p>
+<div class="code-block"><span class="cm">// 基本形</span>
+<span class="kw">const</span> result = 配列.<span class="ky">filter</span>(要素 => <span class="cm">/* true か false を返す条件 */</span>);</div>
+<p>具体例で見てみよう。</p>
+<div class="code-block"><span class="kw">const</span> numbers = [1, 2, 3, 4, 5];
+<span class="kw">const</span> even = numbers.<span class="ky">filter</span>(n => n % 2 === 0);
+<span class="cm">// → [2, 4]（元の numbers は変わらない）</span></div>
+<p>ルールはシンプルだ。</p>
+<div class="point-box">
+<strong>filter() の動き：</strong><br>
+配列の全要素を1件ずつチェックする。コールバックが <code>true</code> を返した要素だけが新しい配列に入る。
+</div>
+<p>図鑑データに当てはめると、<strong>「花だけ取り出す」「春のものだけ取り出す」</strong>が1行で書ける。</p>
+<div class="code-block"><span class="kw">const</span> flowers = zukanData.<span class="ky">filter</span>(item => item.category === <span class="st">'花'</span>);
+<span class="kw">const</span> spring  = zukanData.<span class="ky">filter</span>(item => item.season === <span class="st">'春'</span>);</div>
+</div>
+
+<div class="section">
+<h4 id="button">カテゴリ絞り込みの実装</h4>
+<p>絞り込みの流れは3ステップだ。</p>
+<div class="flow-box">① ボタンをクリック
+  ↓
+② zukanData を filter() で絞る
+  ↓
+③ renderCards() で再描画</div>
+
+<h4 id="button-gen">ボタンを動的生成する</h4>
+<div class="code-block"><span class="kw">const</span> filterArea = document.<span class="ky">getElementById</span>(<span class="st">'filterArea'</span>);
+
+<span class="cm">// 「全て」ボタン</span>
+<span class="kw">const</span> allBtn = document.<span class="ky">createElement</span>(<span class="st">'button'</span>);
+allBtn.textContent = <span class="st">'全て'</span>;
+allBtn.<span class="ky">addEventListener</span>(<span class="st">'click'</span>, () => <span class="ky">renderCards</span>(zukanData));
+filterArea.<span class="ky">appendChild</span>(allBtn);
+
+<span class="cm">// カテゴリボタン（categoryData から生成）</span>
+categoryData.<span class="ky">forEach</span>(cat => {
+  <span class="kw">const</span> btn = document.<span class="ky">createElement</span>(<span class="st">'button'</span>);
+  btn.textContent = cat;
+  btn.<span class="ky">addEventListener</span>(<span class="st">'click'</span>, () => {
+    <span class="kw">const</span> filtered = zukanData.<span class="ky">filter</span>(item => item.category === cat);
+    <span class="ky">renderCards</span>(filtered);
+  });
+  filterArea.<span class="ky">appendChild</span>(btn);
+});</div>
+<p>クリックのたびに zukanData 全件を filter している。元のデータが破壊されないので、「全て」ボタンで <code>renderCards(zukanData)</code> と呼ぶだけで完全に元に戻せる。</p>
+
+<h4 id="active">アクティブボタンの見た目を変える</h4>
+<div class="code-block">btn.<span class="ky">addEventListener</span>(<span class="st">'click'</span>, () => {
+  <span class="cm">// 全ボタンの active を外す</span>
+  document.<span class="ky">querySelectorAll</span>(<span class="st">'#filterArea button'</span>).<span class="ky">forEach</span>(b => b.<span class="ky">classList</span>.<span class="ky">remove</span>(<span class="st">'active'</span>));
+  <span class="cm">// クリックしたボタンに active を付ける</span>
+  btn.<span class="ky">classList</span>.<span class="ky">add</span>(<span class="st">'active'</span>);
+
+  <span class="kw">const</span> filtered = zukanData.<span class="ky">filter</span>(item => item.category === cat);
+  <span class="ky">renderCards</span>(filtered);
+});</div>
+</div>
+
+<div class="section">
+<h4 id="multi">複数条件の組み合わせ</h4>
+<p>「カテゴリ：花」かつ「季節：春」のように複数条件で絞り込む場合を考える。</p>
+<p>まず選択状態をオブジェクトで管理する。</p>
+<div class="code-block"><span class="kw">let</span> activeFilters = {
+  category: <span class="kw">null</span>,  <span class="cm">// null は「指定なし（全て）」</span>
+  season: <span class="kw">null</span>
+};</div>
+<p>絞り込み関数を1つにまとめる。</p>
+<div class="code-block"><span class="kw">function</span> <span class="ky">applyFilters</span>() {
+  <span class="kw">let</span> result = zukanData;
+
+  <span class="kw">if</span> (activeFilters.category) {
+    result = result.<span class="ky">filter</span>(item => item.category === activeFilters.category);
+  }
+  <span class="kw">if</span> (activeFilters.season) {
+    result = result.<span class="ky">filter</span>(item => item.season === activeFilters.season);
+  }
+
+  <span class="ky">renderCards</span>(result);
+}</div>
+<div class="point-box">
+<strong>設計のポイント：</strong><br>
+filter を2回重ねることで AND 条件になる。<br>
+1回目の filter の結果をさらに filter するので、「カテゴリ AND 季節」の絞り込みが実現できる。
+</div>
+<p>カテゴリボタンのクリック処理はこうなる。</p>
+<div class="code-block">btn.<span class="ky">addEventListener</span>(<span class="st">'click'</span>, () => {
+  activeFilters.category = cat;
+  <span class="ky">applyFilters</span>();
+});</div>
+
+<h4 id="reset">「全て」ボタンのリセット処理</h4>
+<div class="code-block">allBtn.<span class="ky">addEventListener</span>(<span class="st">'click'</span>, () => {
+  activeFilters = { category: <span class="kw">null</span>, season: <span class="kw">null</span> };
+  <span class="ky">applyFilters</span>();
+});</div>
+<p>activeFilters をリセットすれば、条件なし（全件）になる。filter() は元のデータを変えないため、いつでもリセットできる。</p>
+
+<h4 id="or">補足：OR 条件にしたいとき</h4>
+<div class="code-block"><span class="cm">// 「花」か「草」のどちらか</span>
+<span class="kw">const</span> result = zukanData.<span class="ky">filter</span>(item =>
+  item.category === <span class="st">'花'</span> || item.category === <span class="st">'草'</span>
+);
+
+<span class="cm">// 選択中カテゴリが配列の場合（複数選択UIのとき）</span>
+<span class="kw">const</span> selected = [<span class="st">'花'</span>, <span class="st">'草'</span>];
+<span class="kw">const</span> result2 = zukanData.<span class="ky">filter</span>(item => selected.<span class="ky">includes</span>(item.category));</div>
+<div class="ok-box">
+<strong>まとめ：</strong><br>
+AND条件 → filter を2回重ねる<br>
+OR条件 → || または includes() を1つの filter の中で使う
+</div>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

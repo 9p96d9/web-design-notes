@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お散歩図鑑アプリ — データからカードUIを動的生成する - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #16a34a; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#f0fdf4; color:#16a34a; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .ky { color:#fde68a; }
+.flow-box { background:#f0fdf4; border-left:4px solid #16a34a; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>データからカードUIを動的生成する</span>
+  </div>
+  <div class="article-head">
+    <h1>お散歩図鑑アプリ<br><small style="font-size:.6em;font-weight:400;color:#64748b">データからカードUIを動的生成する</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#f0fdf4;color:#16a34a">JavaScript・DOM操作</span>
+      <span class="date">2026/05/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="intro">動的生成とは何か</h4>
+<p>図鑑データが17件ある。これをHTMLで手書きするとこうなる。</p>
+<div class="warn-box">
+<strong>手書きの問題：</strong><br>
+データが1件増えるたびにHTMLを1ブロック追加しなければならない。<br>17件 → 170件になった瞬間、HTMLが膨大になり、修正も地獄になる。
+</div>
+<p>動的生成はこれを解決する。<strong>データは1か所（zukanData）に、HTMLの構造は1か所（JS関数）に</strong>集中させる。</p>
+<div class="flow-box">zukanData（17件のデータ）
+  ↓ JavaScriptが走る
+カード17枚のHTMLを自動生成
+  ↓
+#cardContainer に一気に流し込む</div>
+<p>データが増えても、JS側を変える必要はない。zukanData に1行追加するだけで、カードも自動で増える。</p>
+</div>
+
+<div class="section">
+<h4 id="foreach">forEach でカードを作る基本パターン</h4>
+<p>まずHTMLに空のコンテナを用意する。</p>
+<div class="code-block"><span class="cm">&lt;!-- index.html --&gt;</span>
+&lt;<span class="ky">div</span> id=<span class="st">"cardContainer"</span>&gt;&lt;/<span class="ky">div</span>&gt;</div>
+<p>次にJSで各エントリをHTMLに変換して流し込む。</p>
+<div class="code-block"><span class="kw">const</span> container = document.<span class="ky">getElementById</span>(<span class="st">'cardContainer'</span>);
+
+zukanData.<span class="ky">forEach</span>(item => {
+  <span class="kw">const</span> card = document.<span class="ky">createElement</span>(<span class="st">'div'</span>);
+  card.className = <span class="st">'zukan-card'</span>;
+
+  card.innerHTML = <span class="st">`
+    &lt;img src="${item.image}" alt="${item.name}"&gt;
+    &lt;div class="card-body"&gt;
+      &lt;h3&gt;${item.name}&lt;/h3&gt;
+      &lt;p class="yomi"&gt;${item.yomi}&lt;/p&gt;
+      &lt;span class="tag"&gt;${item.category}&lt;/span&gt;
+      &lt;span class="tag"&gt;${item.season}&lt;/span&gt;
+    &lt;/div&gt;
+  `</span>;
+
+  container.<span class="ky">appendChild</span>(card);
+});</div>
+<p>ポイントは <strong>テンプレートリテラル（バッククォート）</strong> だ。<code>${item.name}</code> のように書くと、変数の値をHTMLの中に埋め込める。</p>
+<table class="map-table">
+  <thead><tr><th>書き方</th><th>結果</th></tr></thead>
+  <tbody>
+    <tr><td><code>'&lt;h3&gt;' + item.name + '&lt;/h3&gt;'</code></td><td>文字列を + で連結（古い書き方）</td></tr>
+    <tr><td><code>`&lt;h3&gt;${item.name}&lt;/h3&gt;`</code></td><td>テンプレートリテラルで埋め込む（読みやすい）</td></tr>
+  </tbody>
+</table>
+
+<h4 id="innerhtml">innerHTML と appendChild の役割分担</h4>
+<div class="code-block">card.innerHTML = <span class="st">`...`</span>;   <span class="cm">// カードの中身を一気に設定</span>
+container.<span class="ky">appendChild</span>(card); <span class="cm">// コンテナにカードを追加</span></div>
+<p>innerHTML はノードの中身をまるごと書き換える。appendChild は子要素として末尾に追加する。この2つを組み合わせることで、「構造を文字列で作り → DOMツリーに挿入する」流れが完成する。</p>
+</div>
+
+<div class="section">
+<h4 id="details">画像・よみがな・月表示の実装</h4>
+<p>実際のカードに表示したい要素を順番に見ていく。</p>
+
+<h4 id="image">画像の表示</h4>
+<div class="code-block">&lt;<span class="ky">img</span> src=<span class="st">"${item.image}"</span> alt=<span class="st">"${item.name}"</span>&gt;</div>
+<p>image フィールドは <code>/works/web/osanpo/img/zukan01.jpg</code> のようなパス文字列になっている。そのまま src に埋め込むだけでよい。alt に name を入れておくと、アクセシビリティ対応にもなる。</p>
+
+<h4 id="yomi">よみがなの表示</h4>
+<div class="code-block">&lt;<span class="ky">p</span> class=<span class="st">"yomi"</span>&gt;<span class="st">${item.yomi}</span>&lt;/<span class="ky">p</span>&gt;</div>
+<p>yomi フィールドはひらがなの読みを持っている。小さめのフォントでカード下部に表示すると図鑑らしさが出る。検索インデックスとして使う場合は非表示（CSS で <code>display:none</code>）にして data属性に持たせる方法もある。</p>
+
+<h4 id="month">月表示 — 配列を join で文字列に変換</h4>
+<p>month フィールドは配列なので、そのまま表示すると <code>3,4</code> のように出る。</p>
+<div class="code-block"><span class="cm">// NG：そのまま埋め込む</span>
+`&lt;span&gt;${item.month}&lt;/span&gt;`  <span class="cm">// → 3,4</span>
+
+<span class="cm">// OK：join で整形する</span>
+`&lt;span&gt;${item.month.<span class="ky">join</span>(<span class="st">'月・'</span>)}月&lt;/span&gt;` <span class="cm">// → 3月・4月</span></div>
+<div class="ok-box">
+<strong>join(区切り文字) の使い方：</strong><br>
+配列の要素を指定した区切り文字でつなぎ、1つの文字列にする。<br>
+<code>[3, 4].join('月・')</code> → <code>"3月・4月"</code>
+</div>
+
+<h4 id="memo">memo フィールド — 空のときは非表示</h4>
+<p>memo が空のエントリもある。空文字のまま表示すると余白が生まれる。三項演算子で制御する。</p>
+<div class="code-block"><span class="cm">// memo が空なら何も表示しない</span>
+`${item.memo ? <span class="st">`&lt;p class="memo"&gt;📝 ${item.memo}&lt;/p&gt;`</span> : <span class="st">''</span>}`</div>
+<div class="point-box">
+<strong>三項演算子の読み方：</strong><br>
+<code>条件 ? 真のとき : 偽のとき</code><br>
+item.memo が空文字（falsy）なら何も表示しない。
+</div>
+</div>
+
+<div class="section">
+<h4 id="complete">完成コード（まとめ）</h4>
+<div class="code-block"><span class="kw">function</span> <span class="ky">renderCards</span>(data) {
+  <span class="kw">const</span> container = document.<span class="ky">getElementById</span>(<span class="st">'cardContainer'</span>);
+  container.innerHTML = <span class="st">''</span>; <span class="cm">// 再描画前にクリア</span>
+
+  data.<span class="ky">forEach</span>(item => {
+    <span class="kw">const</span> card = document.<span class="ky">createElement</span>(<span class="st">'div'</span>);
+    card.className = <span class="st">'zukan-card'</span>;
+    card.innerHTML = <span class="st">`
+      &lt;img src="${item.image}" alt="${item.name}"&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h3&gt;${item.name}
+          &lt;span class="yomi"&gt;${item.yomi}&lt;/span&gt;
+        &lt;/h3&gt;
+        &lt;p&gt;${item.description}&lt;/p&gt;
+        &lt;p&gt;${item.month.join('月・')}月&lt;/p&gt;
+        ${item.memo ? `&lt;p class="memo"&gt;📝 ${item.memo}&lt;/p&gt;` : ''}
+        &lt;span class="tag"&gt;${item.category}&lt;/span&gt;
+        &lt;span class="tag"&gt;${item.season}&lt;/span&gt;
+      &lt;/div&gt;
+    `</span>;
+    container.<span class="ky">appendChild</span>(card);
+  });
+}
+
+<span class="cm">// 最初は全件表示</span>
+<span class="ky">renderCards</span>(zukanData);</div>
+<p>関数化しておく理由がある。絞り込みやリセットのとき、引数を変えて <code>renderCards(filteredData)</code> と呼ぶだけで再描画できる。次の記事ではこの仕組みを使ってフィルター機能を実装する。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

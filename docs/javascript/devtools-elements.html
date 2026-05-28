@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElementsタブでDOMとCSSをリアルタイムデバッグする - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #7c3aed; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#f5f3ff; color:#7c3aed; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .ky { color:#fde68a; }
+.flow-box { background:#f5f3ff; border-left:4px solid #7c3aed; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>ElementsタブでDOMとCSSをリアルタイムデバッグする</span>
+  </div>
+  <div class="article-head">
+    <h1>ElementsタブでDOMとCSSをリアルタイムデバッグする</h1>
+    <div class="meta">
+      <span class="tag" style="background:#f5f3ff;color:#7c3aed">JavaScript・DevTools</span>
+      <span class="date">2026/05/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="what">Elementsタブでできること</h4>
+<p>DevTools の Elementsタブは、HTMLとCSSを同時に確認・編集できる作業台だ。主にできることは3つある。</p>
+<table class="map-table">
+  <thead><tr><th>できること</th><th>詳細</th></tr></thead>
+  <tbody>
+    <tr><td>HTMLツリーの確認</td><td>ブラウザが解釈したDOMの構造を階層表示で見られる</td></tr>
+    <tr><td>CSSのその場編集</td><td>プロパティの値を書き換えて見た目をすぐ試せる（保存はされない）</td></tr>
+    <tr><td>CSS適用状況の確認</td><td>どのルールが効いているか・打ち消されているかを一目で確認できる</td></tr>
+  </tbody>
+</table>
+<div class="point-box">
+<strong>「保存はされない」が重要：</strong><br>
+Elements タブで HTML や CSS を編集しても、ページをリロードすれば元に戻る。あくまでブラウザ上の一時的な表示テストだ。確認できたら、エディタ側のソースファイルを編集する。
+</div>
+</div>
+
+<div class="section">
+<h4 id="dom-tree">DOMツリーの読み方</h4>
+<p>Elementsタブを開くと、左側にHTMLのツリー構造が表示される。基本的な操作をまとめた。</p>
+<div class="flow-box">要素をクリック
+  → 右側の Styles パネルにその要素のCSSが表示される
+
+▶ アイコンをクリック
+  → 子要素を展開して中を確認できる
+
+要素の上にマウスをホバー
+  → ページ上で対応する領域がハイライト表示される
+
+要素を右クリック → 「Copy selector」
+  → CSSセレクタをクリップボードにコピーできる</div>
+<p>「Copy selector」で取得したセレクタは、JavaScript の <code>querySelector()</code> や <code>querySelectorAll()</code> にそのまま使える。</p>
+<div class="code-block"><span class="cm">// Elements で右クリック → Copy selector で取得したセレクタを使う</span>
+<span class="kw">const</span> el = document.<span class="ky">querySelector</span>(<span class="st">'#main > ul > li:nth-child(2)'</span>);
+console.<span class="ky">log</span>(el.textContent);</div>
+<div class="ok-box">
+<strong>ページ内の要素を特定したいとき：</strong><br>
+検査アイコン（矢印マーク）をクリックしてからページ上の要素をクリックすると、DOMツリーの該当箇所に自動でジャンプする。探している要素を素早く特定できる。
+</div>
+</div>
+
+<div class="section">
+<h4 id="css-edit">CSSをその場で編集する</h4>
+<p>右側の Stylesパネルでは、適用中のCSSプロパティを直接編集できる。</p>
+<div class="flow-box">値をクリック → 直接入力で書き換え（矢印キーで数値を増減できる）
+打ち消し線のプロパティ → 別のルールに上書きされて無効になっている
+チェックボックス → オフにするとそのプロパティだけ一時的に無効化できる
+「element.style」欄 → ここに書くとインラインスタイルが追加される</div>
+<div class="warn-box">
+<strong>打ち消し線 = 効いていないプロパティ：</strong><br>
+「color を設定したはずなのに変わらない」というときは、Stylesパネルで打ち消し線が入っていないか確認する。より詳細なセレクタや <code>!important</code> によって上書きされているサインだ。
+</div>
+<p>「element.style」欄はインラインスタイル（<code>style="..."</code> 属性）に対応する。ここで試してから、確認できたら CSS ファイルに書き移す使い方が効率的だ。</p>
+</div>
+
+<div class="section">
+<h4 id="patterns">よく使う検査パターン</h4>
+<p>実際の作業でよく登場するパターンを4つ紹介する。</p>
+
+<h4 id="box-model">余白・パディングの確認</h4>
+<p>Styles パネルの下にある「Computed」タブを開くと、<strong>ボックスモデルの図解</strong>が表示される。margin・border・padding・content の実際の計算値を視覚的に確認できる。「なぜか隙間がある」「要素が押し出されている」というときに使う。</p>
+<div class="flow-box">Computed タブ → ページ上部の box model 図を確認
+  → margin / padding の実際の値が px 単位で表示される</div>
+
+<h4 id="font-inherit">フォントが効いていない</h4>
+<p>Stylesパネルでは、そのプロパティがどのセレクタから継承されているかも表示される。「フォントを指定したのに変わらない」場合、より強いセレクタが別のフォントを設定しているケースが多い。</p>
+<div class="flow-box">Styles パネルで font-family を探す
+  → 打ち消し線のルールを確認 → どのセレクタが勝っているか特定する
+  → 自分のセレクタを強くするか、継承元を修正する</div>
+
+<h4 id="hover-lock">ホバー状態をロックする</h4>
+<p><code>:hover</code> のスタイルは、マウスを乗せている間しか確認できない。DevTools の <strong>:hov ボタン</strong>を使うと、ホバー状態を強制的に固定できる。</p>
+<div class="flow-box">Elements で要素を選択
+  → Styles パネルの「:hov」ボタンをクリック
+  → 「:hover」にチェックを入れる
+  → マウスを外してもホバー状態のスタイルが表示されたまま</div>
+<div class="ok-box">
+<strong>:focus・:active・:visited も同様に強制適用できる。</strong><br>
+:hover だけでなく、フォーカス時・クリック中・訪問済みリンクのスタイルも同じ手順で固定して確認できる。
+</div>
+
+<h4 id="summary-table">検査パターンまとめ</h4>
+<table class="map-table">
+  <thead><tr><th>やりたいこと</th><th>使う場所</th></tr></thead>
+  <tbody>
+    <tr><td>余白・パディングの実測値を確認</td><td>Computed タブ → box model</td></tr>
+    <tr><td>フォントが効かない原因を探る</td><td>Styles パネルで打ち消し線のルールを追う</td></tr>
+    <tr><td>ホバー状態のスタイルを固定確認</td><td>Styles の :hov ボタン → :hover にチェック</td></tr>
+    <tr><td>要素のCSSセレクタを取得</td><td>DOMツリーで右クリック → Copy selector</td></tr>
+  </tbody>
+</table>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

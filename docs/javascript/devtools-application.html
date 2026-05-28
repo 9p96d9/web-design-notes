@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ApplicationタブでStorage・Cookieを管理する - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #7c3aed; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#f5f3ff; color:#7c3aed; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .ky { color:#fde68a; }
+.flow-box { background:#f5f3ff; border-left:4px solid #7c3aed; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>ApplicationタブでStorage・Cookieを管理する</span>
+  </div>
+  <div class="article-head">
+    <h1>ApplicationタブでStorage・Cookieを管理する</h1>
+    <div class="meta">
+      <span class="tag" style="background:#f5f3ff;color:#7c3aed">JavaScript・DevTools</span>
+      <span class="date">2026/05/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="intro">Applicationタブとは</h4>
+<p>DevToolsの「Application」タブは、ページが「保存しているデータ」を全部確認できる場所だ。</p>
+<p>ブラウザはページのために様々なデータを手元に保存している。これらをまとめて確認・編集・削除できるのがApplicationタブの役割だ。</p>
+<table class="map-table">
+  <thead><tr><th>項目</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>Local Storage</td><td>タブを閉じても消えないキー・バリュー保存領域</td></tr>
+    <tr><td>Session Storage</td><td>タブを閉じると消えるキー・バリュー保存領域</td></tr>
+    <tr><td>Cookies</td><td>有効期限付きのデータ。サーバーにも自動送信される</td></tr>
+    <tr><td>IndexedDB</td><td>大量データを扱えるブラウザ内データベース</td></tr>
+    <tr><td>Cache Storage</td><td>Service Workerがキャッシュしたファイル</td></tr>
+  </tbody>
+</table>
+<p>日常の開発でよく使うのは Local Storage と Cookies の2つだ。</p>
+</div>
+
+<div class="section">
+<h4 id="localstorage">localStorage を確認・編集する</h4>
+<p>左側のツリーから「Storage → Local Storage → ドメイン名」をクリックすると、そのドメインが保存しているキーと値の一覧が表示される。</p>
+<div class="flow-box">Application タブを開く
+  ↓ 左ツリー → Storage → Local Storage
+  ↓ ドメイン名をクリック
+  ↓ キーと値の一覧が表示される</div>
+<p>一覧では次の操作ができる。</p>
+<table class="map-table">
+  <thead><tr><th>操作</th><th>方法</th></tr></thead>
+  <tbody>
+    <tr><td>値を確認する</td><td>キー行をクリックすると下部パネルに値の詳細が表示される</td></tr>
+    <tr><td>値を編集する</td><td>Value列をダブルクリックすると直接編集できる</td></tr>
+    <tr><td>キーを削除する</td><td>行を選択してDeleteキーを押す</td></tr>
+    <tr><td>全件削除する</td><td>ツールバーの「Clear All」ボタン（禁止マーク）をクリック</td></tr>
+  </tbody>
+</table>
+<div class="point-box">
+<strong>よく保存されているもの：</strong><br>
+お気に入り機能の状態・ダークモード設定・フォームの入力値・ユーザーの設定情報など。JavaScript側では <code>localStorage.getItem('key')</code> で取得、<code>localStorage.setItem('key', 'value')</code> で保存する。
+</div>
+</div>
+
+<div class="section">
+<h4 id="comparison">localStorage vs sessionStorage vs Cookie</h4>
+<p>3種類のストレージは「いつ消えるか」「JavaScriptからアクセスできるか」「容量」が異なる。</p>
+<table class="map-table">
+  <thead><tr><th>種類</th><th>消えるタイミング</th><th>JSからのアクセス</th><th>容量</th></tr></thead>
+  <tbody>
+    <tr><td>localStorage</td><td>明示的に削除するまで消えない</td><td>可（getItem / setItem）</td><td>約5MB</td></tr>
+    <tr><td>sessionStorage</td><td>タブを閉じると消える</td><td>可（getItem / setItem）</td><td>約5MB</td></tr>
+    <tr><td>Cookie</td><td>有効期限（Expires）まで</td><td>可（document.cookie）※HttpOnlyを除く</td><td>約4KB</td></tr>
+  </tbody>
+</table>
+<div class="point-box">
+<strong>使い分けの目安：</strong><br>
+永続させたい設定 → localStorage、ページセッション中だけ使う一時データ → sessionStorage、サーバーと共有したい認証情報 → Cookie。
+</div>
+<div class="code-block"><span class="cm">// localStorage の基本操作</span>
+localStorage.<span class="ky">setItem</span>(<span class="st">'theme'</span>, <span class="st">'dark'</span>);          <span class="cm">// 保存</span>
+<span class="kw">const</span> theme = localStorage.<span class="ky">getItem</span>(<span class="st">'theme'</span>);   <span class="cm">// 取得 → 'dark'</span>
+localStorage.<span class="ky">removeItem</span>(<span class="st">'theme'</span>);             <span class="cm">// 削除</span>
+localStorage.<span class="ky">clear</span>();                           <span class="cm">// 全削除</span></div>
+</div>
+
+<div class="section">
+<h4 id="cookies">Cookie を確認する</h4>
+<p>左側のツリーから「Cookies → ドメイン名」をクリックすると、そのドメインのCookie一覧が表示される。</p>
+<p>表示される列の意味を確認しておこう。</p>
+<table class="map-table">
+  <thead><tr><th>列名</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>Name</td><td>Cookieの名前</td></tr>
+    <tr><td>Value</td><td>Cookieの値（セッションIDなど）</td></tr>
+    <tr><td>Domain</td><td>このCookieが送信されるドメイン</td></tr>
+    <tr><td>Path</td><td>このCookieが送信されるパス（/ は全パス）</td></tr>
+    <tr><td>Expires / Max-Age</td><td>有効期限。Session は「タブを閉じると消える」</td></tr>
+    <tr><td>Size</td><td>Cookieのデータサイズ（バイト）</td></tr>
+    <tr><td>HttpOnly</td><td>チェックがついているとJavaScriptから読めない</td></tr>
+    <tr><td>Secure</td><td>チェックがついているとHTTPS接続のみで送信される</td></tr>
+  </tbody>
+</table>
+<div class="warn-box">
+<strong>HttpOnly に注意：</strong><br>
+HttpOnly 列にチェックがついているCookieは、<code>document.cookie</code> を実行しても取得できない。サーバー側で Set-Cookie ヘッダーに <code>HttpOnly</code> フラグを付けて発行されたCookieがこれに該当する。
+</div>
+<p>「<code>document.cookie</code>で見えるCookieと、Application → Cookiesで見えるCookieの数が違う」と感じたら、HttpOnlyフラグが原因だ。Application タブには両方が表示されるが、JavaScriptからは HttpOnly でないものしか読めない。</p>
+</div>
+
+<div class="section">
+<h4 id="usecases">よくある使い方</h4>
+<p>Application タブが実際の場面でどう役立つか、パターンをまとめる。</p>
+<table class="map-table">
+  <thead><tr><th>症状</th><th>確認・対処</th></tr></thead>
+  <tbody>
+    <tr><td>ログイン状態がなぜか消える</td><td>sessionStorageに保存していた → localStorage に変更する</td></tr>
+    <tr><td><code>document.cookie</code>で取れないCookieがある</td><td>Application → Cookies で HttpOnly 列を確認する</td></tr>
+    <tr><td>localStorageの値が古くてバグが再現する</td><td>ApplicationタブでDelete Allして再テストする</td></tr>
+    <tr><td>ページの動作をリセットしたい</td><td>Storage → 「Clear site data」ボタンでlocalStorage・Cookies・Cacheを一括削除</td></tr>
+    <tr><td>お気に入り機能が保存されない</td><td>LocalStorageにキーが存在するか確認する</td></tr>
+  </tbody>
+</table>
+<div class="ok-box">
+<strong>「Clear site data」の場所：</strong><br>
+Applicationタブ左ツリーの一番上にある「Storage」をクリックすると、右側に「Clear site data」ボタンが表示される。localStorageとCookiesとCache Storageをまとめて削除できる。
+</div>
+<div class="flow-box">Application → Storage（左ツリー上部）
+  ↓ 右パネルに「Clear site data」ボタン
+  ↓ クリックで全Storageをリセット</div>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>

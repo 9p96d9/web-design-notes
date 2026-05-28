@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chrome DevToolsとは — 6つのタブの役割と使い分け - 学習ポータル</title>
+<link rel="stylesheet" href="../style.css">
+<style>:root { --accent: #7c3aed; }
+.map-table { width:100%; border-collapse:collapse; margin:1.2em 0; }
+.map-table th, .map-table td { padding:.6em 1em; border:1px solid #e2e8f0; text-align:left; font-size:.95em; }
+.map-table th { background:#f5f3ff; color:#7c3aed; font-weight:600; }
+.map-table tr:nth-child(even) td { background:#f8fafc; }
+.code-block { background:#1e293b; color:#e2e8f0; padding:1.2em 1.4em; border-radius:8px; font-family:monospace; font-size:.9em; line-height:1.7; margin:1em 0; overflow-x:auto; white-space:pre; }
+.code-block .cm { color:#94a3b8; }
+.code-block .kw { color:#7dd3fc; }
+.code-block .st { color:#86efac; }
+.code-block .ky { color:#fde68a; }
+.flow-box { background:#f5f3ff; border-left:4px solid #7c3aed; padding:1em 1.4em; border-radius:0 8px 8px 0; margin:1em 0; font-family:monospace; font-size:.9em; line-height:2.2; }
+.point-box { background:#fefce8; border-left:4px solid #eab308; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.point-box strong { color:#854d0e; }
+.warn-box { background:#fff1f2; border-left:4px solid #f43f5e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.warn-box strong { color:#9f1239; }
+.ok-box { background:#f0fdf4; border-left:4px solid #22c55e; padding:.9em 1.2em; border-radius:0 8px 8px 0; margin:1em 0; }
+.ok-box strong { color:#166534; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo"><a href="../index.html">学習ポータル</a></div>
+    <div class="site-search">
+      <span class="ico">🔍</span>
+      <input type="text" placeholder="記事を検索...">
+    </div>
+  </div>
+</header>
+
+<div class="container article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">🏠 ホーム</a>
+    <span class="sep">›</span>
+    <a href="index.html">JavaScript</a>
+    <span class="sep">›</span>
+    <span>Chrome DevToolsとは</span>
+  </div>
+  <div class="article-head">
+    <h1>Chrome DevToolsとは<br><small style="font-size:.6em;font-weight:400;color:#64748b">6つのタブの役割と使い分け</small></h1>
+    <div class="meta">
+      <span class="tag" style="background:#f5f3ff;color:#7c3aed">JavaScript・DevTools</span>
+      <span class="date">2026/05/28</span>
+    </div>
+  </div>
+  <div class="article-body">
+
+<div class="section">
+<h4 id="open">DevToolsを開く</h4>
+<p>Chrome DevToolsは、Webページの内側を調べるためのブラウザ内蔵ツールだ。開き方は2通りある。</p>
+<div class="flow-box">方法①: キーボードショートカット → F12
+方法②: ページ上で右クリック → 「検証」を選択</div>
+<p>DevTools は Chrome 専用ではない。Edge・Firefox にも同様のツールが備わっており、基本的なタブ構成はほぼ共通だ。名称や細かい配置が異なる程度で、操作感はほとんど変わらない。</p>
+<p>一言で言えば、DevTools は <strong>Webページを「外から見る」ツール</strong>だ。ソースを書き換えるわけではなく、ブラウザが受け取ったデータをリアルタイムで観察・仮編集できる。</p>
+</div>
+
+<div class="section">
+<h4 id="tabs">6タブの役割一覧</h4>
+<p>DevTools を開くと上部にタブが並ぶ。代表的な6つの役割をまとめた。</p>
+<table class="map-table">
+  <thead><tr><th>タブ名</th><th>主な用途</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Elements</strong></td><td>HTMLの構造・CSSをリアルタイムで確認・編集</td></tr>
+    <tr><td><strong>Console</strong></td><td>JS実行・エラー確認・document.cookieなど</td></tr>
+    <tr><td><strong>Sources</strong></td><td>JSファイルの中身を見る・ブレークポイント</td></tr>
+    <tr><td><strong>Network</strong></td><td>HTTPリクエスト・レスポンスを監視する</td></tr>
+    <tr><td><strong>Application</strong></td><td>localStorage・Cookie・IndexedDBを確認</td></tr>
+    <tr><td><strong>Performance</strong></td><td>ページの描画速度・処理のボトルネック分析</td></tr>
+  </tbody>
+</table>
+<p>どのタブも「ページを壊さず観察する」という点は共通だ。Elements で HTML を書き換えても、ブラウザをリロードすれば元に戻る。</p>
+</div>
+
+<div class="section">
+<h4 id="when">「どのタブをいつ使うか」フローチャート</h4>
+<p>問題の種類によって、まず開くべきタブが変わる。</p>
+<div class="flow-box">CSSがおかしい（レイアウト崩れ、色が当たらない）
+  → Elements タブ
+
+JSエラーが出た（Uncaught TypeError など）
+  → Console タブ
+
+通信がうまくいかない / 画像が表示されない
+  → Network タブ
+
+ログイン状態が消える / localStorage を確認したい
+  → Application タブ
+
+ページが重い・カクつく
+  → Performance タブ</div>
+<div class="point-box">
+<strong>迷ったらまず Console を開く。</strong><br>
+エラーメッセージが出ていれば、そこに問題の手がかりが書いてある。Console は「ページの健康診断」として最初に確認する習慣をつけると良い。
+</div>
+</div>
+
+<div class="section">
+<h4 id="not-dev-only">開発者だけのツールではない</h4>
+<p>「DevTools = エンジニアのもの」というイメージがあるが、それは正確ではない。</p>
+<p><strong>デザイナーが使う場面</strong>として、Elements タブでフォントサイズ・余白・配色を実際のページ上で確認するケースがある。Figma 上のデザインとブラウザ描画を比較するときに便利だ。</p>
+<p><strong>授業課題でエラーが出たとき</strong>は、Console を開くと何行目で何のエラーが起きているかが一目でわかる。エラー文を読まずに「動かない…」と悩む前に、DevTools を開くのが最短の解決策だ。</p>
+<div class="ok-box">
+<strong>まず開く習慣をつける：</strong><br>
+何かおかしいと感じたら F12 を押す。Console にエラーがあればそこから調べる。エラーがなければ Elements や Network を確認する。この順番を習慣にするだけで、デバッグにかかる時間が大幅に減る。
+</div>
+<p>スクレイピングや認証の調査にも DevTools は活用できる。Network タブでリクエストヘッダーや Cookie を確認することで、Webページがどのように通信しているかを把握できる。</p>
+</div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>学習ポータル</p>
+  </div>
+</footer>
+
+</body>
+</html>
