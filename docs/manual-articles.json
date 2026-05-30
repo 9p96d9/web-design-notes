@@ -16,6 +16,46 @@
     "date": "2026/05/20"
   },
   {
+    "blog": "web-hakubyo",
+    "blogName": "Web白描",
+    "file": "devtools-overview.html",
+    "title": "Chrome DevToolsとは — 6つのタブの役割と使い分け",
+    "category": "DevTools",
+    "date": "2026/05/28"
+  },
+  {
+    "blog": "web-hakubyo",
+    "blogName": "Web白描",
+    "file": "devtools-elements.html",
+    "title": "ElementsタブでDOMとCSSをリアルタイムデバッグする",
+    "category": "DevTools",
+    "date": "2026/05/28"
+  },
+  {
+    "blog": "web-hakubyo",
+    "blogName": "Web白描",
+    "file": "devtools-network.html",
+    "title": "NetworkタブでHTTP通信を読む — ステータスコードとヘッダーの見方",
+    "category": "DevTools",
+    "date": "2026/05/28"
+  },
+  {
+    "blog": "web-hakubyo",
+    "blogName": "Web白描",
+    "file": "devtools-application.html",
+    "title": "ApplicationタブでStorage・Cookieを管理する",
+    "category": "DevTools",
+    "date": "2026/05/28"
+  },
+  {
+    "blog": "web-hakubyo",
+    "blogName": "Web白描",
+    "file": "devtools-basic-auth.html",
+    "title": "401エラーを解剖する — DevToolsでBasic認証を特定してスクレイプする",
+    "category": "DevTools",
+    "date": "2026/05/28"
+  },
+  {
     "blog": "review",
     "blogName": "The 復習",
     "file": "ガチャアプリ制作まとめ.html",
@@ -53,46 +93,6 @@
     "file": "osanpo-favorite.html",
     "title": "お散歩図鑑アプリ — お気に入り機能と localStorage の使い方",
     "category": "JavaScript・localStorage",
-    "date": "2026/05/28"
-  },
-  {
-    "blog": "javascript",
-    "blogName": "JavaScript",
-    "file": "devtools-basic-auth.html",
-    "title": "401エラーを解剖する — DevToolsでBasic認証を特定してスクレイプする",
-    "category": "JavaScript・DevTools",
-    "date": "2026/05/28"
-  },
-  {
-    "blog": "javascript",
-    "blogName": "JavaScript",
-    "file": "devtools-overview.html",
-    "title": "Chrome DevToolsとは — 6つのタブの役割と使い分け",
-    "category": "JavaScript・DevTools",
-    "date": "2026/05/28"
-  },
-  {
-    "blog": "javascript",
-    "blogName": "JavaScript",
-    "file": "devtools-elements.html",
-    "title": "ElementsタブでDOMとCSSをリアルタイムデバッグする",
-    "category": "JavaScript・DevTools",
-    "date": "2026/05/28"
-  },
-  {
-    "blog": "javascript",
-    "blogName": "JavaScript",
-    "file": "devtools-network.html",
-    "title": "NetworkタブでHTTP通信を読む — ステータスコードとヘッダーの見方",
-    "category": "JavaScript・DevTools",
-    "date": "2026/05/28"
-  },
-  {
-    "blog": "javascript",
-    "blogName": "JavaScript",
-    "file": "devtools-application.html",
-    "title": "ApplicationタブでStorage・Cookieを管理する",
-    "category": "JavaScript・DevTools",
     "date": "2026/05/28"
   }
 ]
